@@ -5,7 +5,7 @@ abstract: "An unconditional all-height waiting factor of 10^18 for both dyadic 5
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.1
+version: 1.0.2
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-race-filtered-deadline
 type: software
