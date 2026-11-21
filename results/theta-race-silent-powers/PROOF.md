@@ -19,7 +19,7 @@ Let $`\tau=1.9735\log2`$, $`N=10^9`$, $`M=2^{90000}`$ and $`Y_*=e^{1000}/(2\sqrt
 
 Here and below $`n`$ is an integer. Since $`4/3\lt\tau`$, one has $`\mathcal P\subseteq\mathcal Q`$.
 
-**Theorem.**
+**Theorem.** Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function.
 
 1. For each $`1\le n\le N`$ there are arbitrarily high starts with $`D_n(y)\gt14/5`$ and arbitrarily high starts with $`D_n(y)\lt-14/5`$.
 2. Any two elements of $`\mathcal Q`$ differ by more than $`N`$ if they are distinct. Every block of $`N+1`$ consecutive positive exponents therefore contains at most one exceptional exponent. At every exponent outside $`\mathcal Q`$ both signs exceed $`\tau`$ in magnitude arbitrarily far out.
@@ -32,7 +32,7 @@ Here and below $`n`$ is an integer. Since $`4/3\lt\tau`$, one has $`\mathcal P\s
 
 Here $`T`$ runs through the positive integers. In particular the first exponent in $`\mathcal P`$ lies strictly above a billion and at most $`2^{90000}`$.
 
-Thus the lower uniform density of $`\mathcal P`$ is positive and the upper uniform density of $`\mathcal Q`$ is at most $`1/1000000001`$. All heights in part 3 use the same $`Y_*`$, however large the exponent. These bounds leave the first exceptional exponent unidentified.
+Thus the lower uniform density of $`\mathcal P`$ is positive and the upper uniform density of $`\mathcal Q`$ is at most $`1/1000000001`$. All heights in part 3 use the same $`Y_*`$, however large the exponent. These bounds leave the first exceptional exponent unidentified. All three parts use the hypothesis, part 1 included, because the supremum $`L_n`$ below is defined through the limiting profile. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The arithmetic on the certified zero brackets is unconditional.
 
 ## Telescope the dyadic profile
 
@@ -44,14 +44,14 @@ V(s)=\sum_\nu G(\nu)e^{i\nu s},\qquad
 U(x)=\sum_\nu \frac{2i}a G(\nu)\sin(a\nu/2)e^{i\nu x}.
 ```
 
-The ordinates are real by the independently verified primitive Dirichlet theorem. With multiplicities the family is closed under conjugation. The weights $`G`$ are strictly positive, and both series converge absolutely and uniformly. In particular $`V`$ is real and even. The coefficient identity gives $`aU(x)=V(s+a)-V(s)`$, including any central zeros. The pointwise prime-only estimate is $`|f(x)-U(x)|\le E(x)`$ for $`x\ge1000`$, with
+Under GRH the ordinates are real. With multiplicities the family is closed under conjugation. The weights $`G`$ are strictly positive, and both series converge absolutely and uniformly. In particular $`V`$ is real and even. The coefficient identity gives $`aU(x)=V(s+a)-V(s)`$, including any central zeros. The pointwise prime-only estimate is $`|f(x)-U(x)|\le E(x)`$ for $`x\ge1000`$, with
 
 ```math
 E(x)=2\cdot10^6e^{-x/4}+
  128e^{-(x-2)/2}/(1-e^{-(x-2)})+22000e^{-3x/20}.
 ```
 
-The constants include the contributions of the even base factors, trivial zeros and higher prime powers. The finite excluded primes have left the support. [Dyadic explicit formula, character family and prime-only error](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) · [Independent upstream verification](https://math.mit.edu/~drew/grh/)
+The constants include the contributions of the even base factors, trivial zeros and higher prime powers. The base-factor contribution uses GRH for the base field, including zeta. The finite excluded primes have left the support. [Dyadic explicit formula, character family and prime-only error](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) [Independent upstream verification](https://math.mit.edu/~drew/grh/)
 
 Let $`P_n(s)=V(s+na)-V(s)`$. Telescoping the actual scores and then the Fourier series gives
 
@@ -95,7 +95,7 @@ Choose one positive ordinate from each of the 6,000 brackets with denominator $`
 T(a)=\frac{(1+1/2)\log(1+1/2)+(1-1/2)\log(1-1/2)}{2\sqrt{1/2}}.
 ```
 
-The full mass is $`V(0)=C_*g_0-8(2r_0 T(a)-3a)/c`$. Subtract the directed enclosures of $`2G(\nu)`$ over the chosen brackets. Any repeated or unlisted zero stays in the positive remainder. As a second calculation, the original digamma integral at the origin is integrated in 65,536 directed rectangles per dyadic piece from $`a/2^{20}`$ to $`32a`$. The pieces below and above this range are bounded by the published Lipschitz and exponential estimates, with endpoint $`a/2^{20}`$ in the former. This gives $`R\lt0.649`$, independently sufficient for the claimed bound. [Compact moment and integral estimates](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) · [Numerical transcript](evidence/check.txt)
+The full mass is $`V(0)=C_*g_0-8(2r_0 T(a)-3a)/c`$. Subtract the directed enclosures of $`2G(\nu)`$ over the chosen brackets. Under GRH any repeated or unlisted zero stays in the positive remainder. As a second calculation, the original digamma integral at the origin is integrated in 65,536 directed rectangles per dyadic piece from $`a/2^{20}`$ to $`32a`$. The pieces below and above this range are bounded by the published Lipschitz and exponential estimates, with endpoint $`a/2^{20}`$ in the former. This gives $`R\lt0.649`$, independently sufficient for the claimed bound. [Compact moment and integral estimates](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) [Numerical transcript](evidence/check.txt)
 
 Partition each true coordinate $`a\nu/(2\pi)`$ modulo one into $`q=32768`$ equal arcs of the circle when testing its integer multiples. If every coordinate of the multiple $`n`$ is within $`1/q`$ of an integer, the selected part contributes at most $`2\pi A/q`$ to $`|P_n(s)|`$, for every $`s`$. The remaining part contributes at most $`2R`$. Even using the weaker integral bound,
 
