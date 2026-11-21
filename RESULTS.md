@@ -1,6 +1,6 @@
 # 547/727 theta prime race
 
-Open a result to read its statement, hypotheses and replay instructions. Run its verification commands from that result’s directory. The source link identifies the revision brought into this project. The publication and review links lead to the original records.
+Open a result to read its statement, hypotheses and replay instructions. Run its verification commands from that result’s directory. The source link identifies the revision brought into this project. The publication and review links lead to the original records. [Citation records](#citation-records)
 
 | Result | Source revision | Publication | Reviews |
 | --- | --- | --- | --- |
@@ -69,3 +69,16 @@ GitHub shows the current status and subsequent replies at each original link.
 - [theta-race-width-cusp PR 3](https://github.com/leecrossley/theta-race-width-cusp/pull/3) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/23)
 - [theta-race-width-regularity PR 1](https://github.com/leecrossley/theta-race-width-regularity/pull/1) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/27)
 - [theta-race-finite-euler-readout PR 1](https://github.com/leecrossley/theta-race-finite-euler-readout/pull/1) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/28)
+
+## Citation records
+
+The citation files give the version to cite for each paper. The links beside them open individual editions.
+
+| Citation file | Tagged editions |
+| --- | --- |
+| [Both 547/727 prime-race moves finish by 400H through exp(12500)](results/theta-race-waiting-bound/CITATION.cff) | [1.3.0 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/theta-race-waiting-bound-v1.3.0/results/theta-race-waiting-bound) [1.3.0 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.0) [1.2.2 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/theta-race-waiting-bound-v1.2.2/results/theta-race-waiting-bound) [1.2.1 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/theta-race-waiting-bound-v1.2.1/results/theta-race-waiting-bound) |
+| [Exactly when 6H misses a move in the 547/727 prime race](results/theta-race-factor-18/CITATION.cff) | [1.2.2 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/theta-race-factor-18-v1.2.2/results/theta-race-factor-18) [1.2.2 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-18-v1.2.2) |
+| [Even 1,020H can miss a move in the 547/727 prime race](results/theta-race-factor-400/CITATION.cff) | [1.1.0 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/theta-race-factor-400-v1.1.0/results/theta-race-factor-400) [1.1.0 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.1.0) |
+| [A sharp reversal threshold at four times the starting height](results/asymptotic-waiting-factors/CITATION.cff) | [1.1.0 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/asymptotic-waiting-factors-v1.1.0/results/asymptotic-waiting-factors) [1.1.0 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/asymptotic-waiting-factors-v1.1.0) [1.0.2 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/asymptotic-waiting-factors-v1.0.2/results/asymptotic-waiting-factors) [1.0.1 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/asymptotic-waiting-factors-v1.0.1/results/asymptotic-waiting-factors) |
+| [Two theta prime races in one fixed window](results/joint-levels-and-moves/CITATION.cff) | [1.2.2 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/joint-levels-and-moves-v1.2.2/results/joint-levels-and-moves) [1.2.2 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.2.2) [1.2.1 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/joint-levels-and-moves-v1.2.1/results/joint-levels-and-moves) [1.2.1 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.2.1) |
+| [Fixed windows for independent prime weights](results/compact-filter-oscillation/CITATION.cff) | [1.1.0 source](https://github.com/leecrossley/theta-host-split-inert-race/tree/compact-filter-oscillation-v1.1.0/results/compact-filter-oscillation) [1.1.0 release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/compact-filter-oscillation-v1.1.0) |
