@@ -1,5 +1,7 @@
 # A split–inert prime race on a theta-lift host
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410872.svg)](https://doi.org/10.5281/zenodo.24410872)
+
 Set $K=\mathbf Q(\zeta_{16}+\zeta_{16}^{-1})$, $E=K(\sqrt{-571},\sqrt{-599})$ and $F=K(\sqrt{571\cdot599})$. These are the degree-16 CM field and its degree-8 real subfield in Alpöge’s explicit example. The primes being counted are prime ideals of $F$. Each gets a sign from the first step of the theta parameter recursion over $E/F$. [Host construction](https://github.com/Deicyde/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Formalism/LocalRingCardinality/SpanPowerMembership/ExampleLayerExistsGenerators.lean#L207)
 
 **Both sides win by a fixed margin at every fixed multiplicative width.** For $b>1$, give a prime of norm $n$ the weight $\log n$ times
