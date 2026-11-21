@@ -67,7 +67,7 @@ A_{0k}=1,\qquad A_{jk}=\cos(t_jx_k)\ (1\le j\le n),\qquad
 A w=(1,0,\ldots,0)^{\mathsf T}.
 ```
 
-The true ordinates lie in the certified intervals. The matrix is invertible for all choices in these intervals and each exact weight exceeds $`1/1000`$. Hence the exact solution, rather than rounded decimal masses, defines a probability with exactly zero transfers. By continuity, moving all positive atom locations towards zero by a sufficiently small common factor preserves invertibility and strict positivity after recomputing the weights. This gives the strict upper inequalities. The data lists frequencies in order of increasing positive ordinate, integer dual coefficients in units of $`10^{-12}`$ and atom positions in units of $`10^{-9}`$. [Filter data](evidence/design.json)
+The true ordinates lie in the certified intervals. The matrix is invertible for all choices in these intervals and each exact weight exceeds $`1/1000`$. Hence the exact solution, rather than rounded decimal masses, defines a probability with exactly zero transfers. By continuity, moving all positive atom locations towards zero by a sufficiently small common factor preserves invertibility and strict positivity after recomputing the weights. This gives the strict upper inequalities. The dual coefficients follow increasing positive ordinate. The data gives integer dual coefficients in units of $`10^{-12}`$ and atom positions in units of $`10^{-9}`$. [Filter data](evidence/design.json)
 
 ## Two interval checks of the filters
 
@@ -100,4 +100,4 @@ A surviving off-line term in the right half-plane gives infinite upper RMS by th
 
 The lower bound for a level is therefore $`\sqrt2\,G(t)\cos(10t)`$, and the bound for its normalized move has the additional multiplier $`2\sin(at/2)/a`$. The interval check gives respectively $`2.50`$ and $`0.1214`$ on 547/727, and $`0.946`$ and $`0.1162`$ on 571/599, strictly. The bounds concern the actual prime-only scores and permit arbitrary zeros outside the certified low band. [Numerical checks](positive_widths.py)
 
-The five local Lean deductions check the kernel floor, averaging inequality, transfer separation, inverse margin and joint width saving. The analytic arguments above and the ball-arithmetic computations are separate parts of the proof. [Lean source](AveragingWidths.lean) · [Replay instructions](README.md#replay)
+The five local Lean deductions check the kernel floor, averaging inequality, transfer separation, inverse margin and joint width saving. The averaging and separation lemmas are stated for finite sums. Their extension to compactly supported probability measures, the Neumann-series bound and the interpolation and Taylor enclosures are not in Lean. The analytic arguments above and the ball-arithmetic computations are separate parts of the proof. [Lean source](AveragingWidths.lean) · [Replay instructions](README.md#replay)
