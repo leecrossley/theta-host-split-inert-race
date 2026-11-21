@@ -97,6 +97,9 @@ The unordered-pair j-invariant lies between 2159.399670638032703450 and 2159.399
 The partition j-invariant lies between 1372.295119267165244835 and 1372.295119267165244836.
 Both plane cubics are nonsingular. Their invariants enclose the level-two modular equation to within 10^-90.
 Independent polynomial remainders, depressed quartics and four certified branch roots recover both 18-place j intervals.
+All 16 rational vertices have their own three-height solution, with every weight greater than 1/100.
+At each vertex independent polynomial splitting and original-tent contraction certify all five 18-place brackets.
+The contraction norm is below 1/1000000 at every corner.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for JointOscillation
 'JointOscillation.projected_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.disk_support' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -118,3 +121,5 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'JointOscillation.positive_mass_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.four_sheet_group' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.projection_discriminant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.specialized_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.four_digit_exponents' depends on axioms: [propext, Classical.choice, Quot.sound]

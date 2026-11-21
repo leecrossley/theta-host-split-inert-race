@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this result, please cite the tagged release.
 title: "The four possible weights in a two-field prime-race inverse"
-abstract: "For two explicit prime bands and integer start 13471 in the 547/727 and 571/599 races, all four weights solving the elimination quartic are real near the balanced target and exactly one is physically admissible. The generic Galois group is S4. An explicit simply branched rational slice gives a degree-two isogeny between the elliptic curves of unordered pairs and complementary partitions. Their j-invariants are enclosed by two independent calculations. All new conclusions use finite prime counts."
+abstract: "For two explicit prime bands and integer start 13471 in the 547/727 and 571/599 races, all four weights solving the elimination quartic are real near the balanced target and exactly one is physically admissible. The generic Galois group is S4. An explicit simply branched rational slice gives a degree-two isogeny between the elliptic curves of unordered pairs and complementary partitions. Their j-invariants are enclosed by two independent calculations. Every target in the full closed box admits three heights and weights in one extension of degree at most four, with all 16 corners explicitly certified. All new conclusions use finite prime counts."
 authors:
   - family-names: Crossley
     given-names: Lee

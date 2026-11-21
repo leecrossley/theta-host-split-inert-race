@@ -49,6 +49,12 @@ python3 inverse_resolvent_recheck.py >> "$tmp/branch"
 diff -u evidence/inverse-monodromy.txt "$tmp/branch"
 cat "$tmp/branch" >> "$tmp/receipt"
 
+python3 target_box_corners.py > "$tmp/corners.tsv"
+diff -u evidence/corner-enclosures.tsv "$tmp/corners.tsv"
+python3 target_box_corners_recheck.py > "$tmp/corner-check"
+diff -u evidence/corner-check.txt "$tmp/corner-check"
+cat "$tmp/corner-check" >> "$tmp/receipt"
+
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then
