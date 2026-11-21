@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412641.svg)](https://doi.org/10.5281/zenodo.24412641)
 
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) Without GRH, six values of $`2(V(0)-V(h))`$, where $`V`$ is the explicit-formula sum over zeros, still determine each Euler factor, and GRH identifies this function with the limiting curvature $`C(h)`$ below.
+
 Fix a rational prime $`p`$. **Six values of a single function of the 547/727 prime race determine the Euler factor at $`p`$ of the primitive product $`\zeta_E/\zeta_F`$.** This includes the conductor primes 2, 547 and 727. The six-value formula uses the known local degree at odd primes. Nine values recover it as well when the degree is left unspecified. [Theorem and reconstruction](PROOF.md)
 
 The measured function at log dilation $`h`$ is the largest limiting symmetric second difference in the width-two race,
