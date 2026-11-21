@@ -1,15 +1,14 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "When the 547/727 prime race first misses an 18H deadline"
-abstract: "The sharp simultaneous factor stays 17.493385009687... from height one through exp(40.0507)/(2 sqrt(2)) without assuming GRH. Subject to a critical-line check on eight primitive Dirichlet functions through ordinate five million, the first missed 18H deadline is a loss at a transcendental start between 8.75 and 9.14 times 10^16. Every factor above the sharp height-one factor through 2 exp(2.1973) has the same first miss. The factor 19.95 works unconditionally through exp(41.33)/(2 sqrt(2)). The finite zero condition determines every failing start above the height-one optimum on that larger range and gives 6,892,908,140,538 consecutive failing integer starts."
+abstract: "The sharp simultaneous factor stays 17.493385009687... from height one through exp(40.0507)/(2 sqrt(2)) without assuming GRH. If every zero of the eight specified odd primitive Dirichlet L-functions with absolute ordinate greater than 8,590 and at most five million lies on the critical line, the first missed 18H deadline is a loss at a transcendental start between 8.75 and 9.14 times 10^16. Under the same hypothesis, every factor above the sharp height-one factor and at most 2 exp(2.1973) has the same first miss. The factor 19.95 works unconditionally through exp(41.33)/(2 sqrt(2)). The finite zero condition determines every failing start above the height-one optimum on that larger range and gives 6,892,908,140,538 consecutive failing integer starts."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.3.0
-doi: 10.5281/zenodo.24429850
+version: 1.3.1
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/tree/e809339082a3c9c37ce8394d595ab91ab80aee2b/results/theta-race-factor-18
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-18-v1.3.1
 type: software
 references:
   - type: software
