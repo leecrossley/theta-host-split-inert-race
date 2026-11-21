@@ -5,7 +5,7 @@ abstract: "Under Dirichlet GRH, two synchronised one-way windows on the 547/727 
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.1
+version: 1.0.2
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-race-paired-density
 type: software
