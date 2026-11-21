@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: Please cite this release when using its results or verification code.
+title: "Even 800H can miss a move in the 547/727 prime race"
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.0
+repository-code: https://github.com/leecrossley/theta-race-factor-400
+type: software
