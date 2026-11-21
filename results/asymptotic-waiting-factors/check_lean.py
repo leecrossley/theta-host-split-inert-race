@@ -6,7 +6,7 @@ import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("atom_zero", "positive_tests", "support_in_window",
-            "count_from_reciprocals", "half_wave_factor")
+            "count_from_reciprocals", "half_wave_factor", "balanced_pair", "decreasing_covariance")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

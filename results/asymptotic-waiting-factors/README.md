@@ -1,4 +1,10 @@
-# What repeated factor-400 misses would say about the zeros
+# A sharp reversal threshold at four times the starting height
+
+In the 547/727 prime-ideal race, a gain and a loss of more than **$`269.364\log 2`$** both finish before **$`3.999999997H`$** for a set of starting heights $`H`$ of positive lower logarithmic density. This is unconditional. The successful log heights include intervals of fixed positive length with bounded gaps. Consequently one finite multiplicative factor gives both moves after **every** $`H\ge1`$ at this amplitude. Determining its size remains open. [Proof](PROOF.md#the-sharp-amplitude-at-factor-four)
+
+When all eight odd Dirichlet factors have their strip zeros on the critical line, the exact upper limiting common amplitude before $`4H`$, in units of $`\log 2`$, is **269.3640010193614394…**. For the slightly smaller deadline $`3.999999989H`$, every sufficiently late starting height misses at least one of the two $`269.364\log2`$ moves in this case. If an odd factor instead has an off-line zero, both moves recur before that smaller deadline on a set of positive lower logarithmic density. The numerical thresholds concern two actual doublings, which can overlap. [Whole-window upper bound and attainment](PROOF.md#the-sharp-amplitude-at-factor-four) · [Two interval calculations](fourfold_amplitude.py)
+
+## The earlier threshold of 1.9735
 
 In the 547/727 dyadic prime race, suppose at least one of the eight odd Dirichlet factors has a zero off the critical line. **If $`400H`$ misses a qualifying gain or loss at arbitrarily large $`H`$, the rightmost real part is attained at 14,488 or more distinct positive ordinates.** More precisely, their reciprocal sum is at least $`\log(200)/\pi`$. The move threshold is $`1.9735\log2`$ and the same conclusion holds at every fixed positive threshold. [Theorem and proof](PROOF.md#what-repeated-misses-imply)
 
@@ -12,7 +18,7 @@ For the actual field, the unconditional conclusion is an alternative. Arbitraril
 
 ## Verification
 
-Run `bash verify-release.sh` with Python 3.10 or newer and python-flint 0.9.0 installed. The script checks the manifest, compares rational and interval calculations, tests the signed moment construction, evaluates both variation bounds on 13,946 archived ordinate brackets, checks a second close pair by two gamma-kernel evaluations, and replays five local Lean deductions. On a platform with the pinned Lean and a built Mathlib checkout, pass its path as the sole argument. The density theorem, compactly supported interpolation and uniform prime-score estimates are written proofs. [Numerical and formal transcript](evidence/check.txt) · [Prior work](PRIOR-WORK.md) · [Source hashes](SHA256SUMS)
+Run `bash verify-release.sh` with Python 3.10 or newer and python-flint 0.9.0 installed. The script checks the manifest, compares rational and interval calculations, tests the signed moment construction, evaluates both variation bounds on 13,946 archived ordinate brackets, checks a second close pair by two gamma-kernel evaluations, checks the sharp fourfold amplitude by closed logarithms and rational quadrature, and replays seven local Lean deductions. On a platform with the pinned Lean and a built Mathlib checkout, pass its path as the sole argument. The density theorem, compactly supported interpolation and uniform prime-score estimates are written proofs. [Numerical and formal transcript](evidence/check.txt) · [Prior work](PRIOR-WORK.md) · [Source hashes](SHA256SUMS)
 
 ```sh
 python3 -m pip install -r requirements.txt
