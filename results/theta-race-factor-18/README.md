@@ -1,6 +1,6 @@
 # Exactly when 6H misses a move in the 547/727 prime race
 
-Between one million and one billion, **$`6H`$ misses a required move at exactly 5,372,773 integer starting heights**. The failures occupy three closed intervals of real starts. The first misses a gain and the next two miss a loss. Everywhere else both moves of more than $`1.9735\log2`$ finish in time. This uses direct prime arithmetic on the 547/727 field with $`b=r=2`$. [Theorem and proof](PROOF.md#all-failing-starts-after-one-million)
+Between one million and one billion, **$`6H`$ misses a required move at exactly 5,372,773 integer starting heights**. The failures occupy three closed intervals of real starts. The first misses a gain and the next two miss a loss. Everywhere else both moves of more than $`1.9735\log2`$ finish in time. This uses direct prime arithmetic on the 547/727 field with $`b=r=2`$. [Theorem and proof](PROOF.md#all-failing-starts-from-one-million-to-one-billion)
 
 | Missing move at $`6H`$ | First failing integer $`H`$ | Last failing integer $`H`$ | Count |
 |---|---:|---:|---:|
@@ -8,7 +8,7 @@ Between one million and one billion, **$`6H`$ misses a required move at exactly 
 | Loss | 20,077,386 | 20,356,800 | 279,415 |
 | Loss | 562,481,499 | 567,094,638 | 4,613,140 |
 
-A single factor $`C`$ guarantees both moves by $`CH`$ for all real starts $`10^6\le H\le10^9`$ exactly when $`C`$ exceeds $`6.458177331046\ldots`$. A gain sets that limit. The sharp factor for losses alone is $`6.083501163950\ldots`$. Equality fails in each case. With integer starting heights the corresponding factors are slightly smaller, $`6.458177149109\ldots`$ and $`6.083501148481\ldots`$. The proof also gives the full set of exceptions for every real factor $`C\ge6`$. [Exact endpoints](PROOF.md#all-failing-starts-after-one-million) [Numerical replay](evidence/check.txt)
+A single factor $`C`$ guarantees both moves by $`CH`$ for all real starts $`10^6\le H\le10^9`$ exactly when $`C`$ exceeds $`6.458177331046\ldots`$. A gain sets that limit. The sharp factor for losses alone is $`6.083501163950\ldots`$. Equality fails in each case. With integer starting heights the corresponding factors are slightly smaller, $`6.458177149109\ldots`$ and $`6.083501148481\ldots`$. The proof also gives the full set of exceptions for every real factor $`C\ge6`$. [Exact endpoints](PROOF.md#all-failing-starts-from-one-million-to-one-billion) [Numerical replay](evidence/check.txt)
 
 Two prime sums with independently bounded errors locate the six crossings. An interpolation bound covers every point between their boundary neighborhoods, including all intervening prime norms. [Integer sieve](sieve.cpp) · [Independent prime sums](near_roots.py) · [Interval cover](late_slabs.py)
 
@@ -26,13 +26,13 @@ The answer changes abruptly when the required move grows. Write $`D(y)=(S(2y)-S(
 | $`4.5`$ | $`20.211893558\ldots`$ |
 | $`5`$ | $`20.592958664\ldots`$ |
 
-Two independent computations agree at all 31,776 knots and endpoints through $`y=214710`$. The billion-height cover uses the original sieve through prime norm 32,467,011,360. [Numerical certificate](sharp_deadline.py) · [Independent prime computations](prime_knots.py) · [Verification output](evidence/check.txt)
+Two computations agree at all 31,776 knots and endpoints through $`y=214710`$. The billion-height cover uses the original sieve through prime norm 32,467,011,360. [Numerical certificate](sharp_deadline.py) · [Prime computations](prime_knots.py) · [Verification output](evidence/check.txt)
 
 ## Earlier factor 18 result
 
 [Original factor 18 publication on Zenodo](https://doi.org/10.5281/zenodo.24410788)
 
-From every real starting height $`1\le H\le1{,}000{,}000{,}000`$, a gain and a loss of more than $`1.9735\log2`$ both finish by $`18H`$. The sieve proves this finite statement unconditionally. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $`L`$-functions in the 547/727 race and its base field, including the Riemann zeta function. **At arbitrarily large heights, $`18H`$ misses the loss. At other arbitrarily large heights, it misses the gain.** Even the slightly larger factor $`2e^{11/5}=18.0500\ldots`$ fails. [Theorem and proof](PROOF.md)
+From every real starting height $`1\le H\le1{,}000{,}000{,}000`$, a gain and a loss of more than $`1.9735\log2`$ both finish by $`18H`$. The sieve proves this finite statement unconditionally. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $`L`$-functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. **At arbitrarily large heights, $`18H`$ misses the loss. At other arbitrarily large heights, it misses the gain.** Even the slightly larger factor $`2e^{11/5}=18.0500\ldots`$ fails. [Theorem and proof](PROOF.md)
 
 Each move is a doubling $`S(y)\to S(2y)`$ with $`y\gt H`$. The score measures weighted inert prime ideals minus weighted split prime ideals on the 547/727 theta-lift host, with both the width and the move fixed at two. The allowed starts lie in $`(H,CH/2]`$ when both endpoints must finish by $`CH`$. [Prime convention and weight](PROOF.md#two-statements-about-the-same-race)
 
@@ -51,7 +51,7 @@ The finite result uses direct prime-ideal arithmetic. [All slope enclosures](evi
 
 At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $`2.2`$, that sum stays above $`-1.8`$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $`\log 9=2.19722\ldots`$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. Finding a specific start beyond one billion where a factor of 18 fails remains open. [Recurrence argument](PROOF.md#transfer-the-entire-interval) [Verification output](evidence/check.txt)
 
-The recurrence proof uses Alpöge's announced primitive Dirichlet GRH theorem, independently matched to its formal statement by Sutherland's checks. The local Lean lemmas take the late-translate estimate as an input. The analytic recurrence and its application to gains and losses are written out in the proof. [External verification](https://math.mit.edu/~drew/grh/) [Prior work](PRIOR-WORK.md)
+The recurrence proof uses Alpöge's announced primitive Dirichlet GRH theorem, independently matched to its formal statement by Sutherland's checks. Two of the nine local Lean lemmas take the late-translate estimate as an input, and the other seven check the finite bookkeeping. The analytic recurrence and its application to gains and losses are written out in the proof. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Prior work](PRIOR-WORK.md)
 
 Under GRH for the primitive Dirichlet functions of the race and its base field, including the zeta function, the companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.1)
 
