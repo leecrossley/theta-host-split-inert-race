@@ -41,7 +41,7 @@ def main():
     assert second+arb(3)/2 < arb(389)/100
     assert arb(389)/100 < 2*arb(19735)/10000
     print("13,946 archived frequency brackets match the original SHA-256.")
-    print("The retained derivative sum is below 3805; an independent sine-difference bound verifies the variation.")
+    print("The retained derivative sum is below 3805; a second sine-difference evaluation verifies the variation.")
     print("At C = 1601/800 the critical-line profile changes by less than 3.89, below twice 1.9735.")
 
 

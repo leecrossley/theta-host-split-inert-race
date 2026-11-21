@@ -3,7 +3,7 @@ one positive rightmost ordinate gives an infimum strictly below 2.000732
 a direct compact integral and a differential multiplier agree at six complex exponents
 the target survives; all five other moments, including a larger real part at the same ordinate, vanish
 13,946 archived frequency brackets match the original SHA-256.
-The retained derivative sum is below 3805; an independent sine-difference bound verifies the variation.
+The retained derivative sum is below 3805; a second sine-difference evaluation verifies the variation.
 At C = 1601/800 the critical-line profile changes by less than 3.89, below twice 1.9735.
 Closed gamma terms and 128 positive series terms agree: -1.990 < U(0.00273) < -1.989.
 The opposite point follows by oddness and both fit strictly before factor 2.011.
