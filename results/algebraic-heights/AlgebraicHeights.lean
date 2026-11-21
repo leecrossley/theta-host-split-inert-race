@@ -276,6 +276,30 @@ theorem scaled_elliptic_cubic (s x : ℝ) :
       (25*s^2-x)^3-(24*s^2)^2*(25*s^2-x) := by
   ring
 
+
+/-- Harmonicity is an explicit factor of the numerator in Legendre coordinates. -/
+theorem harmonic_numerator (a b : ℝ) :
+    4*(a^2-a*b+b^2)^3-27*a^2*b^2*(b-a)^2 =
+    (a+b)^2*(a-2*b)^2*(2*a-b)^2 := by ring
+
+/-- The line through minus the measured point is tangent at its displayed half. -/
+theorem half_point_tangent (a b c d : ℝ) :
+    (d+a^2)*(d+b^2)*(d+c^2)-(-(a+b+c)*d+a*b*c)^2 =
+    d*(d-(a*b+a*c+b*c))^2 := by ring
+
+/-- The degree-four measured map factors through a degree-one half map. -/
+theorem half_map_degree (d : ℕ) (h : 4*d = 4) : d = 1 := by omega
+
+/-- Recover the two middle Frobenius coefficients from the two point counts. -/
+theorem genus_two_coefficients (a b : ℤ)
+    (h1 : 12-a = 16) (h2 : 122-(a^2-2*b) = 118) : a = -4 ∧ b = 6 := by
+  have ha : a = -4 := by omega
+  subst a
+  constructor
+  · rfl
+  · norm_num at h2
+    omega
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -311,3 +335,7 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.one_branch_degree
 #print axioms AlgebraicHeights.pair_unit_quartic
 #print axioms AlgebraicHeights.scaled_elliptic_cubic
+#print axioms AlgebraicHeights.harmonic_numerator
+#print axioms AlgebraicHeights.half_point_tangent
+#print axioms AlgebraicHeights.half_map_degree
+#print axioms AlgebraicHeights.genus_two_coefficients

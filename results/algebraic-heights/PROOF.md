@@ -688,3 +688,69 @@ x=(w^q-w^{-q})/a,\qquad y=(cw^p-c^{-1}w^{-p})/b .
 The map to the $`x`$-line can branch only at infinity and $`\pm 2i/a`$. Its finite critical points satisfy $`w^{2q}=-1`$. Ramification indices multiply in towers. Two exceptional pairs must use distinct targets on each host, since eliminating a shared height would violate the one-host independence already proved. Applied to their different positive $`a`$, the two finite branch sets are disjoint. Hence $`k(x,y)/k(x)`$ could branch only at infinity. A degree $`d`$ cover of the line with only one possible branch point has total ramification at most $`d-1`$ in characteristic zero. Riemann–Hurwitz forces $`d=1`$. Interchanging hosts gives $`k(x,y)=k(x)=k(y)`$. [One-branch degree inequality](AlgebraicHeights.lean) · [Riemann–Hurwitz](https://stacks.math.columbia.edu/tag/0C1B)
 
 Consequently $`y`$ is fractional linear in $`x`$. It has no pole over a finite $`x`$ since the displayed Laurent polynomial in $`w`$ is regular whenever $`w\ne0,\infty`$, and the two excluded points lie over infinity. Thus $`y=A x+B`$ with algebraic constants. Comparing the constant Laurent coefficients gives $`B=0`$ and hence $`y/x=\log31/\log7\in k`$. This last ratio is transcendental by unique factorization and Gelfond–Schneider. The contradiction proves the assertion.
+
+## Which new crossings give new elliptic points?
+
+Work on either of the two prime-race hosts separately. Take first gains on 547/727 and first losses on 571/599, with the omissions and normalization in the [first-cell computation](#one-rational-prime-determines-the-initial-interval). Write $`k=\overline{\mathbf Q}`$, $`E:V^2=U^3-U`$ and $`K(T)=k(X)(w_t:t\in T)`$ with $`w_t^2=t^2-X`$. Here $`T`$ is a finite set of distinct positive real algebraic magnitudes in that host’s first band. The original first heights generate this actual field and $`X`$ is transcendental. Constants can be complex algebraic numbers. All ranks below are integer ranks of $`E(K(T))/E(k)`$. The base-field distinction matters because $`E(k)`$ already contains infinitely many points. [First-height field](#the-field-generated-by-any-finite-set-of-targets)
+
+### Counting elliptic factors at four targets
+
+For four targets with rational squares, form the five points $`B=\{\infty\}\cup\{t^2:t\in T\}`$. A four-set is *harmonic* if some ordering has cross-ratio $`-1`$ or, equivalently, if its ordered Legendre parameter in $`(0,1)`$ is $`1/2`$. Let $`h`$ count the harmonic four-subsets of $`B`$. Then the exact rank is $`2h`$. In particular **only the ranks 0, 2 and 4 occur**, and every one occurs for rational magnitudes on each host.
+
+To see this, let $`G=(\mathbf Z/2)^{|T|}`$ act by sign changes and tensor the quotient of points by constants with $`\mathbf Q`$. The action splits into rational sign characters. For every subgroup $`H\subseteq G`$ its invariants are exactly the rationalized points of the fixed field modulo constants. Indeed summing all the conjugates of an actual point gives an actual point defined over the fixed field. On an invariant class the sum acts as multiplication by $`|H|`$. This proves both descent and surjectivity after tensoring. For the full group the invariant space vanishes. A rational map from the projective line to $`E`$ extends everywhere and Riemann–Hurwitz rules out a nonconstant map.
+
+For the character of a nonempty subset $`S\subseteq T`$ the fixed field of its kernel is the double cover
+```math
+C_S:\quad Y^2=\prod_{t\in S}(t^2-X).
+```
+Its rationalized points modulo constants give exactly that character space since the trivial space vanishes. A point over the function field is a morphism from the smooth complete model to $`E`$. On choosing a base point over $`k`$, morphisms modulo translations correspond to $`\mathrm{Hom}_k(J(C_S),E)`$. For $`|S|=1,2`$ the curve has genus zero. For $`|S|=3,4`$ its four branch points are the three finite points and infinity, or the four finite points. This accounts for every four-subset of $`B`$ exactly once. A genus-one quotient contributes rank two if it is isogenous to $`E`$, and zero otherwise. In the isogenous case rational Hom identifies with $`\mathrm{End}(E)\otimes\mathbf Q=\mathbf Q(i)`$. This is the classical character decomposition of these covers applied to the stated group of points. [Auffarth, Lucchini Arteche and Rojas](https://arxiv.org/abs/1905.12690) [Jacobians, Milne](https://www.jmilne.org/math/xnotes/JVs.pdf) [Elliptic curves and isogenies](https://jmilne.org/math/Books/EC2.pdf)
+
+For these rational branch points choose a reduced Legendre parameter $`\lambda=a/b`$ with $`0\lt a\lt b`$. Its invariant is
+```math
+j=\frac{256(a^2-ab+b^2)^3}{a^2b^2(b-a)^2}.
+```
+The three denominator factors $`a,b,b-a`$ are pairwise coprime and each is coprime to $`a^2-ab+b^2`$. If $`j`$ is integral, all three positive integers are powers of two. Since $`a+(b-a)=b`$ and at most one of the three can be even, $`a=b-a=1`$ and $`b=2`$. Conversely this value gives $`j=1728`$. Every curve isogenous to $`E`$ has complex multiplication and hence an algebraic-integer $`j`$. A rational algebraic integer is an integer. For $`j=1728`$ the curve is isomorphic to $`E`$ over $`k`$. Thus only harmonic four-sets contribute. [Integrality of singular moduli](https://arxiv.org/abs/1402.1632) · [Legendre factorization](AlgebraicHeights.lean)
+
+If one four-set is harmonic, apply a projective change sending it to $`\{\infty,0,1,2\}`$. Another harmonic four-set uses the fifth point and three of these four. Each triple has three harmonic completions, one of them already in the original set. The other eight completions are
+```math
+-2,\ -1,\ 1/2,\ 2/3,\ 4/3,\ 3/2,\ 3,\ 4.
+```
+They are distinct, so the fifth point can add at most one harmonic four-set. For example the triples containing infinity are completed by reflection in either finite point or by their midpoint. For three finite points, send the triple to $`0,1,\infty`$ and invert at $`-1,1/2,2`$. The target lists $`(1,2,3,4)/4`$, $`(1,5,7,8)/4`$ and $`(7,13,17,23)/4`$ have respectively zero, one and two harmonic four-sets. Their largest magnitude is $`23/4\lt6`$. [Exact enumeration](four_target_rank.py) · [Independent determinant calculation](four_target_recheck.py)
+
+### A fourth measurement and the full group of points
+
+Fix $`T_0=\{1/2,5/2,7/2\}`$. For a fourth admissible magnitude $`t`$ with $`t^2\in\mathbf Q`$ and $`t\notin T_0`$, the rank increases from two to four exactly at
+```math
+t\in\{\sqrt{13}/2,\sqrt{17}/2,\sqrt{33}/2,\sqrt{37}/2,\sqrt{73}/2,\sqrt{97}/2\}.
+```
+The base branch points become $`\infty,0,1,2`$ under $`z=(4X-1)/24`$. The eight possible further values of $`4t^2=1+24z`$ are $`-47,-23,13,17,33,37,73,97`$. All six positive cases are in both bands and none is a rational target. With three base radicals the only positive-genus subcover is harmonic, giving base rank two. [Exceptional targets](four_target_rank.py)
+
+For every other admissible positive target with rational square we have equality of the **actual groups**
+```math
+E(K(T_0\cup\{t\}))=E(K(T_0)).
+```
+In particular every additional rational target on its own leaves the group fixed. Let $`\tau`$ change the new radical’s sign. Equality of ranks says $`\tau Q-Q`$ is zero in the rationalized quotient for every point $`Q`$. The quotient by constants is torsion-free. If $`nP`$ is a constant for $`n\ge1`$, the finite fibre of multiplication by $`n`$ over that point consists of algebraic points since $`k`$ is algebraically closed. Thus $`\tau Q-Q`$ is constant. Above $`X=t^2`$ the old cover is unramified, and the new radical has a simple branch. There is a geometric point of the full cover fixed by $`\tau`$. Evaluate the morphism $`Q`$ there. The constant difference vanishes, so $`\tau Q=Q`$ and its coordinates descend. This last ramification argument is what converts a rational rank computation into equality of all points.
+
+There is also an explicit generator. For $`s=1/2`$ let $`P_s=(U,V)`$ be the point in the [first-crossing construction](#independent-points-on-one-elliptic-curve). The three square roots of $`U-1,U,U+1`$ are the three height radicals divided by $`\sqrt{24}s`$. Choose signs so their product is $`-V`$ and denote them by $`r_1,r_2,r_3`$. Put $`S_1=r_1+r_2+r_3`$ and $`S_2=r_1r_2+r_1r_3+r_2r_3`$. Then
+```math
+Q=(U+S_2,-V-S_1S_2),\qquad 2Q=P_s.
+```
+Indeed the line of slope $`-S_1`$ through $`(U,-V)`$ meets the cubic with equation in $`d=x-U`$ given by $`d(d-S_2)^2=0`$. The tangent law gives the formula. The map $`P_s`$ from the complete three-radical curve to the cubic quotient has degree four, since its function field is $`k(X,w_s w_{5s}w_{7s})`$. As $`[2]`$ has degree four, the map $`Q`$ has degree one and is an isomorphism of smooth curves. Thus $`Q`$ generates $`E(K(T_0))/E(k)`$ over $`\mathbf Z[i]`$. The already measured $`P_s`$ is twice a generator. [Bekker and Zarhin’s division formulas](https://arxiv.org/abs/1702.02255) · [Tangent identity](AlgebraicHeights.lean)
+
+### Two rational measurements that work together
+
+Take both additional targets $`1/10`$ and $`7/10`$. The resulting group has **rank exactly four** modulo constants. Two extra rational measurements are therefore necessary and sufficient to obtain a new point from the fixed triple on either host.
+
+Scale the five finite branch coordinates by 100. They are now $`1,25,49,625,1225`$. Among the fifteen four-subsets after adjoining infinity the only harmonic ones are $`\{\infty,1,25,49\}`$ and $`\{\infty,25,625,1225\}`$. The first contributes the scale $`s=1/10`$, the second the original $`s=1/2`$. There is one remaining positive-genus character, from the product of all five radicals. Its smooth genus-two curve over $`k`$ is isomorphic to the rational model
+```math
+C:\quad Y^2=(X-1)(X-25)(X-49)(X-625)(X-1225).
+```
+Both $`C`$ and $`E`$ have good reduction at 11, since their roots are distinct modulo 11. Counting over $`\mathbf F_{11}`$ and $`\mathbf F_{121}`$ gives 16 and 118 points on $`C`$, and 12 and 144 on $`E`$. Thus the first two Frobenius power sums for $`C`$ are $`-4,4`$, and its characteristic polynomial is
+```math
+F(T)=T^4+4T^3+6T^2+44T+121.
+```
+The 11-adic Newton polygon gives two roots of valuation zero and two of valuation one, with $`v(11)=1`$. The polynomial for $`E`$ is $`T^2+11`$, whose roots both have valuation $`1/2`$. These sets remain disjoint after raising every root to any common positive power. A nonzero geometric homomorphism $`J(C)\to E`$ descends to a number field. At a place above 11 its reduction is nonzero, since prime-to-11 torsion specializes injectively at good reduction and is Zariski dense. After a finite residue extension it gives a nonzero map on rational Tate modules commuting with Frobenius. Disjoint spectra make this impossible. Hence the genus-two summand contributes zero, proving the stated exact rank. Independently the genus-two Hasse–Witt matrix modulo 11 is $`\mathrm{diag}(1,6)`$, and that of $`E`$ is zero. [Point count](four_target_rank.py) [Hasse–Witt check](four_target_recheck.py) [Harvey and Sutherland](https://arxiv.org/abs/1402.3246) [Good reduction, Milne](https://www.jmilne.org/math/CourseNotes/CM.pdf)
+
+### Algebraic targets outside the rational-square family
+
+In every open subinterval of either first band there are real algebraic fourth targets which enlarge the group. Fix two of the three old targets. On an open subinterval avoiding all three old targets the invariant $`j(t)`$ of the triple formed with $`t`$ is a nonconstant rational function of $`t`$. Its image contains an open interval in $`[1728,\infty)`$. For positive rational $`r`$ the lattice $`\mathbf Z+ir\mathbf Z`$ is commensurable with $`\mathbf Z+i\mathbf Z`$, so its elliptic curve is isogenous to $`E`$ and has algebraic invariant. The function $`r\mapsto j(ir)`$ is continuous and real for real $`r\ge1`$, equals 1728 at one and tends to positive infinity. Its values at rational $`r\ge1`$ are therefore dense in $`[1728,\infty)`$ by continuity. Choose such a value in the open image. Any preimage there is algebraic by the nonconstant rational equation for $`j(t)`$. The associated character contains the new radical and contributes rank two. The countable set so obtained can be chosen off the six rational-square exceptions. This explains how rational targets can be dense and individually ineffective while effective real algebraic targets are dense as well. [Elliptic lattices and the modular invariant, Milne](https://www.jmilne.org/math/CourseNotes/MF.pdf)
