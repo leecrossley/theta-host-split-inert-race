@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Counting exact crossings in two theta prime races"
-abstract: "There are 62 distinct exact hits at magnitude 1.9735 through one million on the two theta fields. The complete positive-amplitude map has 1,273 critical or terminal values and a maximum of 76 hits. The sharp finite joint inverse degree is 2^74. On every height tail a residual set of amplitudes requires infinitely many independent square roots."
+abstract: "There are 62 distinct exact hits at magnitude 1.9735 through one million on the two theta fields. The complete positive-amplitude map has 1,273 critical or terminal values and a maximum of 76 hits. The sharp finite joint inverse degree is 2^74. For a residual set of amplitudes in (0, 5.85), each field and each sign requires infinitely many independent square roots beyond every height cutoff."
 authors:
   - family-names: Crossley
     given-names: Lee
