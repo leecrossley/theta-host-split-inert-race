@@ -161,7 +161,7 @@ theorem exterior_cell {g v b : ℝ} (h : |g-v| ≤ 3/2)
   linarith
 
 
-/-- The three opposite-sign edges form a tree on four distinct height classes. -/
+/-- If four heights are not all in one class, one of the three tree edges joins different classes. -/
 theorem opposite_edge {α : Type*} (a b c d : α)
     (h : ¬ (a = b ∧ a = c ∧ a = d)) : a ≠ b ∨ c ≠ b ∨ c ≠ d := by
   by_contra! hn
