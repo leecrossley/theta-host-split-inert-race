@@ -6,8 +6,22 @@ if [[ $# -gt 2 ]]; then
   echo "Usage: bash verify-release.sh [pinned-mathlib-directory [upstream-records-directory]]" >&2
   exit 2
 fi
+mathrev=0df444a360eaa60ab8c11dca51a86af692955474
+
+check_mathlib() {
+  if [[ "$(git -C "$math" rev-parse HEAD 2>/dev/null)" != "$mathrev" ]]; then
+    echo "The Mathlib directory must be a Git checkout at $mathrev." >&2
+    exit 2
+  fi
+  if ! git -C "$math" diff --quiet HEAD --; then
+    echo "The Mathlib checkout has local changes to tracked files." >&2
+    exit 2
+  fi
+}
+
 if [[ $# -ge 1 ]]; then
   math=$(cd "$1" && pwd)
+  check_mathlib
 fi
 if [[ $# -eq 2 ]]; then
   refs=$(cd "$2" && pwd)
@@ -32,7 +46,6 @@ python3 check_predecessor.py >>"$tmp/receipt"
 python3 phase_budget.py >>"$tmp/receipt"
 python3 check_budget.py >>"$tmp/receipt"
 
-mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then
     echo "Supply the pinned Mathlib directory and Lean toolchain on this platform." >&2
@@ -48,14 +61,7 @@ if [[ $# -eq 0 ]]; then
   git -C "$math" checkout -q --detach FETCH_HEAD
   test "$(git -C "$math" rev-parse HEAD)" = "$mathrev"
   (cd "$math" && lake exe cache get)
-fi
-if [[ "$(git -C "$math" rev-parse HEAD 2>/dev/null)" != "$mathrev" ]]; then
-  echo "The Mathlib directory must be a Git checkout at $mathrev." >&2
-  exit 2
-fi
-if ! git -C "$math" diff --quiet HEAD --; then
-  echo "The Mathlib checkout has local changes to tracked files." >&2
-  exit 2
+  check_mathlib
 fi
 (cd "$math" && "${sum[@]}" -c - <<'MATHLIB_HASHES'
 3bba06a6dcfac62c11b0b06ffe6bbc953a093a92df1a58473b0daa84bd7e07f8  Mathlib.lean

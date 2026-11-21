@@ -21,7 +21,7 @@ Set $`\ell_+=469417229.340`$, $`\ell_-=484947092.225`$, $`L_+=6`$ and $`L_-=45/8
 
 Thus every doubling starting in the first window gains more than $`a/40`$ and every doubling starting in the companion window loses more than $`a/40`$. Their respective completion deadlines are $`2e^6H_+e^t`$ and $`2e^{45/8}H_-e^t`$. The companion starting height always equals the first multiplied by $`\exp(15529862.885)`$. The set is measurable since the score is continuous and extrema over a fixed compact interval vary continuously under translation.
 
-**Theorem.** With $`|\cdot|`$ denoting Lebesgue measure in log height,
+**Theorem.** Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. With $`|\cdot|`$ denoting Lebesgue measure in log height,
 
 ```math
 \liminf_{T\to\infty}\ \inf_{A\ge0}
@@ -29,7 +29,7 @@ Thus every doubling starting in the first window gains more than $`a/40`$ and ev
 \frac{|\mathcal E\cap[0,T]|}{T}\ \ge\ 2^{-52863}\quad(T\gt 0).
 ```
 
-For the first height $`H=H_+e^t`$, integration against $`dt`$ is integration against $`dH/H`$. The first bound is uniform in the lower endpoint of long log intervals. The second applies to every finite prefix measured from the specified starting height. Both are unconditional lower bounds. Computing the actual proportion and an effective convergence rate are separate questions.
+For the first height $`H=H_+e^t`$, integration against $`dt`$ is integration against $`dH/H`$. The first bound is uniform in the lower endpoint of long log intervals. The second applies to every finite prefix measured from the specified starting height. The prime-score bounds use the critical-line input in the predecessor theorem. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) Computing the actual proportion and an effective convergence rate are separate questions.
 
 ## A uniform phase budget for both windows
 
