@@ -11,14 +11,8 @@
       "results/theta-race-filtered-deadline/check_source.py",
       "results/theta-race-log-grid/check_source.py",
       "results/theta-race-excursion-proportions/check_source.py",
-      "results/theta-race-isolated-peaks/check_source.py"
-    ]
-  },
-  {
-    "source": "results/theta-race-curvature-euler-factors/check_source.py",
-    "copies": [
       "results/theta-race-width-cusp/check_source.py",
-      "results/theta-race-width-regularity/check_source.py"
+      "results/theta-race-isolated-peaks/check_source.py"
     ]
   },
   {
@@ -29,6 +23,12 @@
       "results/theta-race-filtered-deadline/evidence/zero-brackets.tsv",
       "results/theta-race-excursion-proportions/evidence/zero-brackets.tsv",
       "results/theta-race-isolated-peaks/evidence/zero-brackets.tsv"
+    ]
+  },
+  {
+    "source": "results/theta-race-curvature-euler-factors/check_source.py",
+    "copies": [
+      "results/theta-race-width-regularity/check_source.py"
     ]
   }
 ]
