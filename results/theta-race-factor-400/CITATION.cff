@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Even 1,020H can miss a move in the 547/727 prime race"
-abstract: "Conditional on Dirichlet GRH, a certified interval containing both move signs rules out a universal waiting factor of 1,020 in the 547/727 prime-ideal race."
+abstract: "Conditional on Dirichlet GRH, a certified interval containing both signs of change rules out a universal waiting factor of 1,020 in the 547/727 prime-ideal race."
 authors:
   - family-names: Crossley
     given-names: Lee
