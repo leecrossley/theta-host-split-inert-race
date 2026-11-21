@@ -341,3 +341,245 @@ For a real frequency difference $`v`$ the sphere transfer has modulus at most on
 For an off-line zero the ordinate after shifting by any harmonic has absolute value at least $`8590-33=8557`$. With this frequency and $`c=8520`$, the earlier square-root calculation gives $`|Q|\gt700`$ and $`|P|\lt7`$. The sphere factor is therefore at most $`37e^{-8513L}`$. Including the two boxes and translation, the exponential has log at most $`(X+108)/2-8513L\le-41`$. Multiply by the total strip mass bound $`10^6`$, the constant 37 and the weight sum 14. The result is below $`0.0001`$. For trivial zeros use $`X-R-2=h\ge100`$ and the pointwise Fejér bound 14 in the earlier trivial-zero estimate. Together these two costs are below $`0.001`$. The two implementations evaluate $`U`$ by direct sinc and by a cosine difference on all the certified intervals. Subtracting the costs, dividing by the upper mass and subtracting $`2.353`$ leaves strictly more than $`3.32`$ in each direction. [Harmonic verifier and exact comparison](carrier_window.py)
 
 The positive tests consequently locate a move of each sign. Every possible centre in the support has start above $`H`$ since $`X-R=h+2`$ and $`2\gt\log(2\sqrt2)`$. Every completion is below $`e^{X+R}\lt e^{219}H^{17001/16999}`$. For $`0\le h\le100`$, the two finite implementations additionally find a gain and a loss larger than $`3.32\log2`$ after $`e^{100}`$ and before $`e^{219}`$. This covers the remaining starting heights. Finally $`250000(1.001-17001/16999)\gt219`$ gives the stated power cutoff. [Finite witnesses and all-height verification](carrier_window.py) · [Support inequality in Lean](WaitingBound.lean)
+
+## An unconditional log-squared wait
+
+Write $`h=\log H`$, $`T=10^6+4h`$ and $`L(t)=\log(12000t)`$. For every real $`H\ge1`$ each of the two signs of the actual dyadic move occurs with the following strict amplitude and completion deadline.
+
+| Magnitude of each signed move | Both doublings finish before |
+|---|---|
+| $`3.02\log2`$ | $`H\exp((13/5)L(T)^2)`$ |
+| $`3.33\log2`$ | $`H\exp(10000+(13/5)L(T)^2)`$ |
+
+Each start is strictly larger than $`H`$. The bound applies to the 547/727 host defined above, at $`b=r=2`$. The proof uses Platt’s unconditional finite Dirichlet computation and an unconditional upper bound on the total number of zeros. The averaging measures may depend on the actual positions of zeros in a finite strip. Their existence suffices for the stated deadlines. The proof needs no list of the possible off-line zeros. [Platt, Theorem 7.1](https://arxiv.org/abs/1305.3087) · [Bennett–Martin–O’Bryant–Rechnitzer, Corollary 1.2](https://doi.org/10.1090/mcom/3599)
+
+### The positive two-point filter
+
+Use the bilateral moment convention $`\widehat\mu(z)=\int e^{zu}\,d\mu(u)`$. For $`\delta\ge0`$ and $`\eta\gt0`$ take $`d=\pi/(2\eta)`$. Give the atoms at $`-d,d`$ probabilities proportional to $`e^{\delta d},e^{-\delta d}`$, respectively. Call this law $`P`$ and let $`\nu_{\delta,\eta}=P*\check P`$, where the check denotes reflection about zero. This symmetric probability has radius $`2d=\pi/\eta`$ and moment
+
+```math
+\widehat\nu_{\delta,\eta}(z)=
+\frac{\cosh(d(z-\delta))\cosh(d(z+\delta))}{\cosh^2(d\delta)}.
+```
+
+It vanishes at every $`z=\pm\delta\pm i\eta`$. At a real frequency $`g`$ its response is
+
+```math
+\widehat\nu_{\delta,\eta}(ig)
+=1-\frac{\sin^2(dg)}{\cosh^2(d\delta)}
+\ge 1-d^2g^2 .
+```
+
+It is real and lies in $`[0,1]`$. A true deficit from one is at most $`d^2g^2`$. The product of finitely many responses in $`[0,1]`$ is at least one minus the sum of their deficits. Convolution adds the radii. Throughout the strip $`|\Re z|\le1/2`$, a probability of radius $`R`$ has moment at most $`e^{R/2}`$ in absolute value. [Formal cancellation and retention lemmas](WaitingBound.lean)
+
+### How many cancellations are needed
+
+Put $`D_0=8590`$. The eight primitive odd factors here have conductors between 547 and 11632. Platt puts every zero through $`D_0`$ on the line. Above it, the functional equation gives reflection about that line and the family is closed under complex conjugation. Count a representative with $`\beta\gt1/2`$ and $`\gamma\gt0`$ from each off-line quartet, including multiplicities. Write $`M(t)`$ for their number up to $`t`$. Every quartet supplies four zeros in the family at the same absolute ordinate. If different factors share a zero, counting each occurrence only increases the allowance.
+
+For $`t\ge D_0`$, Corollary 1.2 of Bennett, Martin, O’Bryant and Rechnitzer bounds the zero count of one factor by $`(t/\pi)L(t)+0.247L(t)+6.894`$. Adding the eight factors gives at most $`3tL(t)`$, since $`8(1/\pi+(0.247+6.894/L(D_0))/D_0)\lt3`$. The corollary counts both signs of the ordinate. In particular $`M(t)\le(3/4)tL(t)`$. Partial summation, dropping the nonpositive lower endpoint term, gives the following for $`D_0\le U\le T`$.
+
+```math
+\sum_{U<\gamma\le T}\frac1\gamma
+\le \frac34\left(L(T)+\frac{L(T)^2-L(U)^2}{2}\right).
+```
+
+The square-reciprocal tail satisfies
+
+```math
+\sum_{\gamma>U}\frac1{\gamma^2}
+\le 2\int_U^\infty M(t)t^{-3}\,dt
+\le \frac{3}{2U}(L(U)+1).
+```
+
+Both sums here and below are over the off-line quartet representatives. The latter estimate controls loss at the desired frequency even if zeros beyond $`U`$ turn out to be plentiful. [Total zero count](https://personal.math.ubc.ca/~bennett/BeMaObRe-MathComp-2021.pdf) · [Checks of the bounds](zero_filter.py)
+
+### Filtering before and after modulation
+
+Use the certified ordinate $`g=2.512037412732\ldots`$ and the order-13 nonnegative Fejér polynomial from the shorter all-height bound. In particular $`g\lt2.513`$ and $`13g\lt33`$. Use $`U=D_0`$ for amplitude 3.02 and $`U=200000`$ for amplitude 3.33. In both cases $`T\ge U`$. Write $`\delta=\beta-1/2`$ for a representative. Form two convolutions of probabilities.
+
+1. For $`D_0\lt\gamma\le U`$, convolve one filter $`\nu_{\delta,\gamma+kg}`$ for each integer $`-13\le k\le13`$. Call the resulting probability $`P_0`$ and its radius bound $`r_0`$. All shifted ordinates are positive. When $`U=D_0`$ use a unit atom at zero.
+2. For $`U\lt\gamma\le T`$, convolve one unshifted filter $`\nu_{\delta,\gamma}`$ per representative. Call this probability $`P_1`$ and its radius bound $`r_1`$. For an empty product use the same unit atom.
+
+Put $`n=\lceil T/4\rceil`$, $`d_s=4/T`$. Take the law of the sum of two uniform boxes of half-width 54, $`n`$ independent uniform boxes of half-width $`d_s`$ and an independent draw from $`P_0`$. Translate its centre to $`X=h+2+R`$, where $`R=108+nd_s+r_0+r_1`$. Multiply the translated measure pointwise by $`F(gx+\theta)`$, then convolve with $`P_1`$. Use $`\theta=\pi/2`$ and $`-\pi/2`$. Each resulting measure is nonnegative with support in $`[h+2,h+2+2R]`$. Its mass lies between $`0.99993`$ and $`1.00007`$ by the same two long boxes as before, since the other probability factors have real-frequency modulus at most one and the last convolution preserves mass.
+
+In the expansion for a single zero, multiplication by $`F`$ shifts its frequency by every $`kg`$. The factors in $`P_0`$ kill every shifted term of each quartet through $`U`$. For a negative ordinate use the opposite harmonic index. At ordinates from $`U`$ through $`T`$ the final convolution kills the *unshifted* moment of each quartet, after the harmonic terms have been added. For the selected critical-line pair the matched harmonic evaluates all the inner moments at zero. Its contribution is the earlier $`\pm2w_1|J(ig)|`$ multiplied by the real response $`\widehat P_1(ig)`$. All remaining critical-line terms keep the same upper leakage bound. The order of the multiplication and the two convolutions is used in each of these statements.
+
+### The tail throughout the strip
+
+For an off-line zero with $`|\gamma|\gt T`$, each short box at a shifted exponent $`z+ikg`$ contributes at most $`e^{d_s/2}/(d_s(T-33))`$. Indeed the moment is $`\sinh(d_s(z+ikg))/(d_s(z+ikg))`$, and $`|\sinh(u+iv)|\le e^{|u|}`$. Since $`4(1-33/T)\gt e`$, the $`n`$ boxes cost at most $`e^{nd_s/2-n}`$. Accounting for the centre, the long boxes and the two filters, the cost of the whole off-line tail is at most
+
+```math
+14\cdot10^6 \exp(h/2+1+R-n).
+```
+
+Here 14 is the sum of the Fejér coefficients and $`10^6`$ bounds the strip sum of the absolute odd zero coefficients in the preceding proof. The absolute convergence on each compact support justifies convolution term by term. For the trivial zeros one can integrate the earlier pointwise bound on this same support, with the Fejér weight at most 14. The left endpoint in the centred coordinate remains $`h+2`$. For $`h\ge100`$ their cost and the high off-line cost together are below $`0.001`$. The following radius estimates establish the latter cost uniformly, including the first eligible height.
+
+For the larger cutoff the first reciprocal bound gives
+
+```math
+r_0\le27\pi\frac{8590}{8590-33}\frac34
+\left(L(U)+\frac{L(U)^2-L(D_0)^2}{2}\right)<5406.
+```
+
+for the smaller one $`r_0=0`$. The post-modulation radius satisfies
+
+```math
+r_1\le \tfrac{13}{10}L(T)^2-\tfrac{3\pi}{8}L(U)^2 ,
+```
+
+since $`(3\pi/4)(1/2+1/L(10^6))\lt1.3`$. Also $`nd_s\le1+4/10^6`$. At $`h=0`$ the crude upper bound $`1+108+1.000004+5406+1.3L(10^6)^2-250000`$ is below $`-100`$. As $`h`$ grows, the derivative of $`1.3L(T)^2`$ is $`10.4L(T)/T\lt1/2`$ and decreases. Since $`n\ge250000+h`$, this proves $`h/2+1+R-n\lt-100`$ throughout. The displayed off-line cost is therefore below $`0.0001`$.
+
+### The two margins and completion factors
+
+At the carrier the product bound gives
+
+```math
+\widehat P_1(ig)\ge1-\left(\frac{\pi g}{2}\right)^2
+\frac{3(L(U)+1)}{2U}=1-\varepsilon_U .
+```
+
+From the two preceding harmonic computations the selected coefficient exceeds $`6.33`$, the bracketed leakage is below $`0.62`$, the unlisted critical-line leakage is below $`0.00014`$ and the signed prime-square and other arithmetic corrections cost less than $`2.353`$ in normalized units. The same bounds apply to the present positive averages. Dividing by the upper mass for either signed inequality, each normalized prime move exceeds in the chosen direction
+
+```math
+\frac{6.33(1-\varepsilon_U)-0.62-0.00014-0.001}{1.00007}-2.353 .
+```
+
+This is greater than $`3.02`$ at $`U=8590`$ and greater than $`3.33`$ at $`U=200000`$. A positive measure of nonzero mass locates an actual start with that signed move. For $`0\le h\lt100`$, the two finite computations give both stronger witnesses after $`e^{100}`$ and before $`e^{219}`$. [Carrier and early witnesses](carrier_window.py) · [Trivial and square corrections](PROOF.md#cancellation-in-the-prime-squares)
+
+The full support lies strictly after the original starting height because $`2\gt\log(2\sqrt2)`$. The endpoint of any permitted doubling is strictly less than $`e^{X+R}`$. Now $`X+R\lt h+221+2r_0+2r_1`$. At $`U=8590`$ one has $`221-(3\pi/4)L(U)^2\lt0`$. At $`U=200000`$ one has $`221+2r_0-(3\pi/4)L(U)^2\lt10000`$. These give both deadlines, including the finite bridge. At $`h=2\cdot10^9`$ and $`2\cdot10^{10}`$ the stronger log overhead is below $`10^{-5}h`$ and $`10^{-6}h`$ respectively. Its derivative $`(104/5)L(T)/T`$ is smaller than the corresponding excess at each cutoff and decreases thereafter. [Rational and ball checks](zero_filter.py) · [Kernel replay](evidence/check.txt)
+
+### What zero counts buy
+
+For fixed conductors the same zero-count theorem gives the sharper asymptotic $`M(t)\le(2/\pi)t\log t+O(t)`$, by symmetry from the eight factors. Partial summation gives $`r_1\le(\log T)^2+O(\log T)`$. Thus for either amplitude and every fixed $`\varepsilon\gt0`$ both completions eventually lie before $`H\exp((2+\varepsilon)(\log\log H)^2)`$. The leading 2 is an upper bound on the proved logarithmic overhead. Optimality is open.
+
+If the number of off-line quartet representatives through $`t`$ is $`O(t)`$, the same argument gives $`r_1=O(\log T)`$ and a deadline of the form $`CH(1+\log H)^K`$ for fixed constants. If their positive-ordinate reciprocals have finite sum, the radii of all the finite post-modulation convolutions are uniformly bounded by $`\pi\sum1/\gamma`$. The low shifted radius is already bounded. The same construction then gives a *fixed* completion factor for both $`3.33\log2`$ moves at every height. This sufficient hypothesis allows an infinite exceptional set. The unconditional result uses the total zero count instead.
+
+## A polylogarithmic waiting factor
+
+**Theorem.** Put $`h=\log H`$, $`T=10^6+4h`$ and $`L=\log(12000T)`$. For every real $`H\ge1`$ the two strict $`3.33\log2`$ moves finish before
+
+```math
+H e^{225}(12000T)^4(3072000\,L^4)^{540}.
+```
+
+The two starts exceed $`H`$. In particular for each $`\varepsilon\gt0`$ both ends eventually precede $`H(\log H)^{4+\varepsilon}`$. The exponent 5 is one example. The explicit formula gives the result for all heights, including those preceding any asymptotic comparison. The individual-zero bounds above can be smaller at moderate heights. [Arithmetic and interpolation checks](separated_zeros.py)
+
+### A positive density for separated complex frequencies
+
+Use a probability on $`[-\pi a/2,\pi a/2]`$ with density $`\cos(x/a)/(2a)`$, where $`0\lt a\le1`$. Its bilateral moment at $`z`$ is $`B(az)`$, with $`B(w)=\cosh(\pi w/2)/(1+w^2)`$ by direct integration, extending at the two removable singularities.
+
+Suppose a finite set of real frequencies $`\lambda_i`$ is closed under negation, adjacent frequencies are at least $`s/a`$ apart with $`s\ge2`$, and $`a|\lambda_i|\ge x_0\ge2`$. Assign equal offsets $`0\le\delta_i\le1/2`$ to opposite frequencies. There is a positive probability on the same interval whose moments vanish at every $`\delta_i+i\lambda_i`$ whenever
+
+```math
+q=\frac{4\cosh(\pi a/4)}{s^2}<1,\qquad
+8\left(x_0^{-2}+(s x_0)^{-1}\right)<1-q.
+```
+
+To prove it multiply the cosine density by $`1+\sum_j c_j e^{-i\lambda_j x}`$. The required equations are $`Ac=-b`$, with $`A_{ij}=B(a(\delta_i+i(\lambda_i-\lambda_j)))`$ and $`b_i=B(a(\delta_i+i\lambda_i))`$. The diagonal $`D_{ii}=B(a\delta_i)\ge1`$ because the original law is symmetric. For real $`v,t`$ the squared modulus of $`1+(v+it)^2`$ equals $`(t^2-1)^2+2v^2(1+t^2)+v^4`$. Thus, if $`|t|\gt1`$ and $`|v|\le a/2`$, the absolute moment is at most $`\cosh(\pi a/4)/(t^2-1)`$. In each column the distances to the other frequencies on either side are at least $`ns/a`$ for successive integers $`n\ge1`$. Since $`s\ge2`$,
+
+```math
+2\sum_{n\ge1}\frac{1}{n^2s^2-1}
+\le\frac{4}{s^2}\,2\sum_{n\ge1}\frac{1}{4n^2-1}=\frac4{s^2}.
+```
+
+The last series telescopes. In the induced column-sum norm $`\|D^{-1}(A-D)\|_1\le q`$. At the positive frequencies the scaled ordinates are at least $`x_0+ns`$ for $`n\ge0`$. Use $`\cosh(\pi a/4)\lt2`$, $`1/(t^2-1)\le2/t^2`$ for $`|t|\ge2`$, and the integral bound on the decreasing reciprocal squares. Including both signs gives $`\|b\|_1\le8(x_0^{-2}+(s x_0)^{-1})`$. The Neumann series now gives a unique solution with $`\sum_j|c_j|\lt1`$. Conjugating the system interchanges opposite indices, so the multiplier is real. It is strictly positive throughout. Dividing the resulting measure by its positive mass preserves the zeros. The empty set requires only a unit atom. [Two finite matrix and integral checks](separated_zeros.py)
+
+### Counting groups and controlling the left half-strip
+
+For an upper cutoff $`W\ge8590`$, write $`L_W=\log(12000W)`$. In a closed interval of length $`d`$ inside $`[8590,W]`$ the number of off-line quartet representatives is at most
+
+```math
+\frac{2d}{\pi}L_W+0.988 L_W+27.576 .
+```
+
+Subtract Corollary 1.2 of Bennett, Martin, O’Bryant and Rechnitzer at the endpoints, using the upper bound at the right and lower bound at the left. For a closed left endpoint take a limit from below. The derivative of the main term is $`\log(qt/(2\pi))/\pi\le L_W/\pi`$. Each of the eight factors costs two error bounds $`0.247L_W+6.894`$. Divide by four for the quartet symmetry. Intersecting an interval with the ordinate range only shortens it. In a finite list of ordinates sorted with multiplicity, assign each in turn to an available group whose last ordinate is at least $`d`$ behind. The largest number of list entries in a closed interval of length $`d`$ bounds the number of groups, including coincident ordinates. Each group has spacing at least $`d`$. This only uses the finite local zero count. [Zero-count theorem](https://doi.org/10.1090/mcom/3599)
+
+Only the growing zeros need interpolation. For a left-hand off-line zero write $`z=\delta+i\gamma`$ with $`\delta\lt0`$. The translated probability averages, including the final convolution, have centre $`X=h+2+R`$ and summed radius $`R`$. The two long boxes give, at a harmonic shift $`v=\gamma+kg`$, an extra factor at most $`(54|v|)^{-2}`$ after extracting their support exponentials. All translation and support exponentials together are at most $`e^{\delta(X-R)}\le1`$. All these ordinates have $`|\gamma|\gt8590`$ and hence $`|v|\gt8557`$. The sum over the entire decaying half, including the Fejér weights and the absolute strip mass, is below $`14\cdot10^6/(54\cdot8557)^2\lt0.00007`$. This estimate holds with the post-modulation convolution because it is a positive probability of its stated radius. It removes any need to impose two nearly coincident real offsets on the interpolation system.
+
+### Two widths for the growing zeros
+
+Take $`U=\min(T,256L^4)`$. Here $`L\gt23`$ and $`U\ge10^6`$. Group the growing representatives through $`U`$ with $`d=4`$. The preceding count gives fewer than $`5L_U`$ groups since $`8/\pi+0.988+27.576/23\lt5`$. For each group and each of the 27 harmonics take the positive density above with $`a=1,s=4`$. Use the shifted positive ordinates $`\lambda=\gamma+kg`$ together with their negatives and the common positive offsets. They are separated by 4 and exceed 8557 in magnitude. The negative-frequency member of a quartet is covered by the opposite harmonic index. The norm condition holds with $`q\lt1/2`$ and $`x_0=8557`$. Convolve these probabilities *before* multiplying by the Fejér test. Every shifted growing zero through $`U`$ is killed, and the total radius satisfies $`r_0\le270L_U`$ since $`\pi/2\lt2`$.
+
+For $`U\lt\gamma\le T`$ use one group per separated list of *unshifted* positive ordinates and their negatives. Set
+
+```math
+a=\frac{1}{256L^2},\qquad s=2+\frac1L,\qquad d=s/a.
+```
+
+The group count satisfies $`m\le(2d/\pi)L+3L`$. If this list is nonempty then $`aU=L^2`$, the reflected list is still $`d`$-separated, and one can use $`x_0=L^2`$. Since $`\cosh(\pi a/4)\le1+a^2`$ for $`0\le a\le1`$, the column-sum bound gives $`q\le1-1/(2L)`$. One way to check it is to put $`u=1/L`$, bound $`a^2\le u^4`$ and expand $`(1-u/2)(2+u)^2-4(1+u^4)=u(2-u-u^2/2-4u^3)\gt0`$. The cosine-hyperbolic estimate follows from its positive power series and $`\cosh(1)\lt2`$. The right-hand side norm times $`2L`$ is at most $`16/L^3+8/L\lt1`$. The probabilities therefore exist. Convolve them *after* modulation. They annihilate all remaining growing zeros through $`T`$ with radius
+
+```math
+r_1\le(\pi a/2)m\le sL+(3\pi/2)aL<2L+2 .
+```
+
+For any probability on $`[-\pi a/2,\pi a/2]`$, its response at the selected frequency $`g`$ has real part at least $`1-g^2(\pi a/2)^2/2`$ by the elementary cosine inequality. The modulus of the convolution response is at least one minus the sum of these deficits, hence greater than
+
+```math
+1-\frac{g^2\pi a}{4}(2L+2)>0.998 .
+```
+
+An asymmetric probability can give a complex response. Choose the two Fejér phases to align the matched conjugate pair with this response, with opposite signs for the two tests. The main contributions then have magnitude above $`6.33(0.998)`$. Neither mass nor any leakage estimate used the phase. In particular all shifted critical-line terms still use the certified two-box bound. [Carrier verification](carrier_window.py)
+
+### Completion, and what would give a fixed factor
+
+Keep the original $`n=\lceil T/4\rceil`$ short boxes and the two long boxes. Now $`R\le108+1.000004+272L+2`$ since $`U\le T`$. The high growing tail has the same bound $`14\cdot10^6\exp(h/2+1+R-n)`$. At $`h=0`$ the crude exponent is below $`-100`$. Its upper envelope decreases thereafter because $`n\ge250000+h`$ and $`4\cdot272/T\lt1/2`$. The high and trivial-zero allowance of 0.001 and the new decaying allowance of 0.00007 together fit inside 0.002. Including both line-leakage bounds and the prime-square correction, the signed normalized margin at $`h\ge100`$ is greater than
+
+```math
+\frac{6.33(0.998)-0.62-0.00014-0.002}{1.00007}-2.353>3.33 .
+```
+
+The support starts after $`H`$ and every completion precedes $`e^{X+R}`$. The radius bounds give
+
+```math
+X+R<h+221+2r_0+2r_1
+<h+225+540\log(3072000L^4)+4L .
+```
+
+The independently verified finite pair covers $`0\le h\lt100`$. Since $`T=10^6+4\log H`$, the displayed deadline grows as $`O(H(\log H)^4(\log\log H)^{2160})`$. Every larger fixed logarithmic exponent absorbs the last factor and the constant. This proves the theorem.
+
+A separate sufficient condition for a fixed completion factor is a uniform bound on the number of off-line quartet representatives in each interval of length four. In that case use only the first, shifted construction through $`T`$. It costs at most 27 probabilities of radius $`\pi/2`$ per group, and the group count is uniformly bounded. Choosing the constant part of $`T`$ larger if needed makes the high tail negligible at every $`h\ge100`$. The same finite pair handles the smaller heights. A bounded local count can allow a sequence of exceptional ordinates with divergent reciprocal sum. More generally, a union of such a locally bounded set and a set with summable reciprocals suffices. Apply the separated construction to the former and the 27 shifted two-point factors to the latter before modulation. Their total radius is finite since $`\gamma/(\gamma-33)`$ is bounded for $`\gamma\gt8590`$. None of these sparsity conditions enters the unconditional polylogarithmic bound. The next argument proves unconditional existence by changing the normalization when an off-line zero is present.
+
+## A fixed factor without a global zero hypothesis
+
+**Theorem.** There exists a finite constant $`C`$ such that, after every real $`H\ge1`$, there are $`y_+,y_-\gt H`$ with $`2\max(y_+,y_-)\lt CH`$ and
+
+```math
+S(2y_+)-S(y_+)>3.33\log2,\qquad S(2y_-)-S(y_-)<-3.33\log2 .
+```
+
+This is unconditional. The proof of existence gives no numerical value of $`C`$ valid in both cases below. The polylogarithmic bound gives a computable deadline for each $`H`$. The finite $`400H`$ certificate and the conditional four-digit obstruction refer to the smaller $`1.9735\log2`$ target.
+
+Let $`\Theta=\sup_\rho(\Re\rho-1/2)`$ over strip zeros of the eight odd factors. If $`0\lt\eta\lt\Theta`$, there is also a finite $`C_\eta`$ such that the two normalized moves exceed $`H^\eta`$ in opposite directions after every sufficiently large $`H`$, both finishing before $`C_\eta H`$. The factor may depend on $`\eta`$ and the field.
+
+### Selecting an ordinate and summing the support radii
+
+Suppose an odd factor has an off-line zero. The reflection and conjugation symmetries give a zero at $`\sigma+ig`$ with $`1/2\lt\sigma\lt1`$ and $`g\gt0`$. For the power assertion first select an ordinate at which some real part exceeds $`1/2+\eta`$. At the selected ordinate take the **largest** real part among all eight odd factors and call it $`\sigma`$. This maximum is over a finite nonempty set. Set $`d=\sigma-1/2\gt0`$. The selection rules out a farther-right zero at exactly the same ordinate. It needs no zero at the global supremum. The coefficient $`A=mJ(d+ig)`$ is nonzero, where $`m`$ is the sum of the multiplicities there. All odd factors enter with the same sign in (3). The zeros of the tent numerator have real parts $`\pm1/2`$ and those of the move multiplier have real part zero. [Transform and arithmetic factors](PROOF.md#the-transform-and-the-prime-powers)
+
+Montgomery’s Dirichlet zero-density theorem with fixed conductor cap $`Q=11632`$ gives
+
+```math
+\sum_{\chi} N_\chi(\sigma,t)
+\ll_Q t^{\,3(1-\sigma)/(2-\sigma)}(\log(Qt))^{13}\qquad (t\ge2).
+```
+
+Here the sum can be restricted to the eight factors by positivity. The exponent is strictly less than one because $`\sigma\gt1/2`$. A dyadic summation therefore gives $`\sum_{\beta\ge\sigma,\,\gamma\gt0}1/\gamma\lt\infty`$, counting multiplicities. There are no real odd zeros off the critical line by the finite verification. [Montgomery, *Zeros of L-functions*](https://www.mathnet.ru/eng/mat564) · [Explicit statement, Lemma 1](https://www.numdam.org/item/10.5802/jtnb.1162.pdf#page=11)
+
+For every positive ordinate of a zero $`\beta+i\gamma`$ with $`\beta\ge\sigma`$, and every $`k\in\{-1,0,1\}`$, put $`v=\gamma+kg`$. If $`v\ne0`$ include the positive two-point convolution $`\nu_{\beta-\sigma,|v|}`$ from above. If $`v=0`$ then $`\gamma=g,k=-1`$ and maximality at this ordinate forces $`\beta=\sigma`$. Leave this matched harmonic and its conjugate in place. For $`\gamma\gt2g`$ each radius is at most $`2\pi/\gamma`$. At smaller ordinates only finitely many positive radii occur. The sum of all radii is finite. Hence the infinite convolution is a compactly supported probability. Indeed, independent draws from its factors form an absolutely convergent series on every outcome, and the sum is bounded by the sum of the radii. At any targeted exponent its moment vanishes by factoring off that one independent summand. In particular no convergence of a conditionally ordered product of complex values is required. Convolve with two additional independent uniforms on $`[-1,1]`$, to provide integrable Fourier decay. Denote the resulting centred probability by $`P`$ and its finite radius bound by $`R`$. [Positive two-point formula](PROOF.md#the-positive-two-point-filter)
+
+### The tilted prime move
+
+Write $`f(x)=(S(2y)-S(y))/\log2`$ with $`y=e^x/(2\sqrt2)`$. Translate $`P`$ to $`X=h+2+R`$ where $`h=\log H`$ and integrate $`e^{-dx}f(x)`$ against $`1\pm\cos(gx+\theta)`$ times the translated probability. These are nonnegative tests of mass at most two. For $`h`$ large the absolute-convergence argument for (2), (3) and (6) applies on this compact support. More explicitly, a nontrivial odd zero contributes at a harmonic $`k`$ its coefficient $`J(\rho-1/2)`$, multiplied by the translation and the centred moment at $`(\beta-\sigma)+i(\gamma+kg)`$ and the harmonic coefficient. The two extra boxes justify the same contour inversion. The tilt changes the test exponent and leaves $`J(\rho-1/2)`$ evaluated at the original zero.
+
+All terms with $`\beta\ge\sigma`$ vanish except the two matched harmonics. For negative ordinates take the opposite harmonic index. The surviving exponent is zero, so the centred moment and the translation both equal one. The surviving pair contributes $`\pm\Re(Ae^{-i\theta})`$ and can be made $`\pm|A|`$. This also handles multiple zeros at the same point.
+
+For $`\beta\lt\sigma`$ the absolute translation-and-moment factor at each harmonic is bounded by $`\exp(-(\sigma-\beta)(X-R))`$. It tends to zero for each such zero and is at most one. Equations (2) and (6) give the summable majorant $`\sum_\rho|J(\rho-1/2)|\lt10^6`$. Dominated convergence for this series gives an $`o(1)`$ total as $`h\to\infty`$, even if real parts accumulate at $`\sigma`$ from below. The unweighted signed square correction, higher prime powers and excluded primes are bounded for $`x\ge h+2`$ by the earlier arithmetic estimates, so multiplying by $`e^{-dx}`$ sends their contribution to zero. The odd trivial-zero terms also tend to zero uniformly there. Equivalently the base terms in (3) have real exponent at most zero before tilting. This gives the two signed integrals $`\pm|A|+o(1)`$ for the actual prime-only move.
+
+Eventually the integral in each chosen direction exceeds $`|A|/2`$. Positivity and mass at most two give a start in the support satisfying $`\pm e^{-dx}f(x)\gt |A|/4`$. All such starts obey $`y\gt H`$ and $`2y\lt e^{2+2R}H`$. Since $`x\ge h+2`$, the two signed magnitudes are at least a positive constant times $`H^d`$. This proves the power assertion whenever $`d\gt\eta`$ and eventually gives both strict $`3.33\log2`$ moves even for an arbitrarily small positive $`d`$.
+
+### The critical-line case and the finite bridge
+
+If all zeros of the odd factors are on the critical line, there is no growing or decaying off-line contribution. Use the two uniform boxes of half-width 54 and the degree-13 Fejér weight at the certified ordinate. A centre $`X=h+110`$ and radius 108 suffice. The matched contribution above 6.33, the two critical-line leakage bounds, the mass bound and the signed arithmetic cost from the harmonic calculation give both normalized moves greater than 3.33 in absolute value, in opposite directions for $`h\ge100`$. The finite pair after $`e^{100}`$ with both completions before $`e^{219}`$ covers $`0\le h\lt100`$. Thus $`e^{219}`$ is one choice for the stronger target in this case. [Carrier margins](carrier_window.py)
+
+In the off-line case take any finite $`H_0`$ beyond which the tilted tests already work. The explicit all-height deadline at $`H_0`$ supplies a single gain and loss starting after $`H_0`$ and finishing before a finite number $`B`$. For every $`1\le H\le H_0`$ the same pair qualifies, with endpoint below $`BH`$. Taking $`C=\max(B,e^{2+2R})`$ covers every height. The possible dependence of $`R`$ on a small gap between two ordinates and of $`H_0`$ on an unknown real-part separation explains why this argument gives no unconditional numerical factor.
+
+Consequently bounded normalized moves and power-sized moves in every sufficiently late window of **some fixed multiplicative width** distinguish the two spectral cases. More precisely, the supremum of the positive $`\eta`$ for which *both* signs exceed $`H^\eta`$ in such windows is $`\Theta`$, with value zero when no positive exponent qualifies. For the upper direction the absolutely convergent strip sum is $`O(e^{\Theta x})`$ and the prime-only corrections are bounded. The same pointwise estimate follows directly by applying the finite-measure identity to smooth approximations to a point: on each compact positive interval (2) and (6) give uniform convergence, and the tent move is continuous. A fixed multiplicative window changes this upper bound by only a constant. Earlier results characterized a limsup on sparse observations. Here each sufficiently late starting height supplies both signs. [Earlier sparse sampling result](https://github.com/leecrossley/theta-host-split-inert-race/blob/compact-filter-oscillation-v1.0.0/results/compact-filter-oscillation/PROOF.md#what-survives-on-sparse-grids)
