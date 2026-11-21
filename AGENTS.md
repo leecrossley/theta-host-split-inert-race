@@ -14,3 +14,5 @@ Use the following maintained homes when the mathematical question belongs to one
 - [Integrated prime-counting errors in progressions](https://github.com/leecrossley/integrated-prime-errors-mod-11)
 
 Keep original release tags, assets, commit links and Zenodo identifiers available. Cite a result through its original publication record. A new release in a family repository can have different contents from an earlier paper, so identify what was released and use the appropriate citation.
+
+When a paper’s version changes, remove the previous edition’s DOI from its citation file before tagging the release. For a paper released from a collection, set its title, description and version in the root `.zenodo.json` on the release tag. After publication, check that the DOI resolves to that tag and add it to the paper’s `CITATION.cff` and the [edition index](RESULTS.md#edition-dois). If several papers share a release, give the shared archive DOI and the path to each paper. [Zenodo release metadata](https://help.zenodo.org/docs/github/describe-software/zenodo-json/)

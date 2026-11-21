@@ -11,3 +11,12 @@ date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
 url: https://github.com/leecrossley/theta-host-split-inert-race/tree/ac8bef3453765667b8ffd5d2a93f744328c7a36c/results/theta-race-waiting-bound
 type: software
+references:
+  - type: software
+    title: "Theta prime races for the 547/727 and 571/599 fields"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "collection-2026-11-21"
+    doi: 10.5281/zenodo.24426586
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/collection-2026-11-21
