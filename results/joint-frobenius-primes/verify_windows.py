@@ -79,7 +79,7 @@ def check_map(patterns):
         assert (l == 1 or matches(l)) and matches(u) and not any(matches(n) for n in range(l+1, u))
     print(f"Exact sieve to {SIEVE_LIMIT:,}. The complete exceptional-gap table has "
           f"{len(patterns_map)} sign rows and {len(pairs_map)} trace rows including initial gaps.")
-    print("All four corners and all nine trace pairs persist from 14,493/4. All sixteen sign patterns persist from 26,211/4. The best factors from L >= 1 are respectively 337, 431 and 769.")
+    print("Below 2^1585 the final thresholds are 14,493/4 for corners and trace pairs and 26,211/4 for all signs. The three optimal factors on this finite range are 337, 431 and 769.")
 
 
 def trial_prime(p):
