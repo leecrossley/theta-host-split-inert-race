@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Transcendental crossing heights in two theta prime races"
-abstract: "Every nonzero algebraic target of the normalized doubling move is attained only at transcendental starts. A finite knot matrix classifies all algebraic linear relations among readings of the two hosts at sufficiently large algebraic starts. The six readings at scales 1, √2 and 2 have rank seven with 1 exactly above the threshold 79√2/8."
+abstract: "Every nonzero algebraic target of the normalized doubling move is attained only at transcendental starts. A finite knot matrix classifies all algebraic linear relations among readings of the two hosts at sufficiently large algebraic starts. At algebraic starts, the six readings at scales 1, √2 and 2 have rank seven with 1 exactly above the threshold 79√2/8."
 authors:
   - family-names: Crossley
     given-names: Lee
