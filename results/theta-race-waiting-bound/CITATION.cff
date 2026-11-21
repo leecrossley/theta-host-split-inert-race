@@ -5,7 +5,7 @@ abstract: "An unconditional waiting bound for both dyadic moves in the 547/727 s
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.1.0
+version: 1.1.1
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
