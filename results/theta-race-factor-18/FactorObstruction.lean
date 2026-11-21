@@ -58,6 +58,36 @@ theorem strict_bridge {w t τ : ℝ} (hw : w = -τ) : w < -t ↔ t < τ := by
   rw [hw]
   constructor <;> intro h <;> linarith
 
+
+/-- The maximum discrepancy between a unit hinge and its secant is a quarter of the cell width. -/
+theorem hinge_ceiling {l k r : ℝ} (hlr : l < r) :
+    (k-l)*(r-k)/(r-l) ≤ (r-l)/4 := by
+  apply (div_le_iff₀ (sub_pos.mpr hlr)).2
+  nlinarith [sq_nonneg (2*k-l-r)]
+
+/-- Convex interpolation preserves the margin left for the sum of all hinge errors. -/
+theorem secant_ceiling {w a b ta tb E : ℝ} (hw : 0 ≤ w) (hw' : w ≤ 1)
+    (ha : a + E < ta) (hb : b + E < tb) :
+    (1-w)*a + w*b + E < (1-w)*ta + w*tb := by
+  by_cases h : w = 1
+  · simpa [h] using hb
+  · have h1 : 0 < 1-w := by linarith [lt_of_le_of_ne hw' h]
+    nlinarith [mul_pos h1 (sub_pos.mpr ha), mul_nonneg hw (sub_nonneg.mpr hb.le)]
+
+/-- On a closed excursion gap, the first later strict event fits exactly when the deadline clears it. -/
+theorem failure_at_height {F : ℝ → ℝ} {a b H C t : ℝ} (ha : a ≤ H) (hb : H ≤ b)
+    (gap : ∀ y ∈ Set.Icc a b, F y ≤ t)
+    (right : ∀ e > 0, ∃ y > b, y < b+e ∧ t < F y) :
+    (¬ ∃ y > H, 2*y ≤ C*H ∧ t < F y) ↔ C*H ≤ 2*b := by
+  constructor
+  · intro h
+    by_contra! hn
+    have he : 0 < C*H/2-b := by linarith
+    obtain ⟨y, hy, hy', ht⟩ := right _ he
+    exact h ⟨y, lt_of_le_of_lt hb hy, by linarith, ht⟩
+  · rintro h ⟨y, hy, he, ht⟩
+    exact (not_lt_of_ge (gap y ⟨le_trans ha hy.le, by linarith⟩)) ht
+
 end FactorObstruction
 
 #print axioms FactorObstruction.recurring_no_loss
@@ -67,3 +97,7 @@ end FactorObstruction
 #print axioms FactorObstruction.gap_endpoint
 #print axioms FactorObstruction.beyond_gap
 #print axioms FactorObstruction.strict_bridge
+
+#print axioms FactorObstruction.hinge_ceiling
+#print axioms FactorObstruction.secant_ceiling
+#print axioms FactorObstruction.failure_at_height

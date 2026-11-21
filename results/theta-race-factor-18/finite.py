@@ -10,19 +10,19 @@ from flint import arb, ctx, fmpz
 if not __debug__:
     raise RuntimeError("Run with assertions enabled.")
 
-def log_table():
+def log_table(precision=40):
     bins = 2**15
     table = []
     for j in range(bins+1):
-        v = ((1+arb(j)/bins).log()*2**40).floor().unique_fmpz()
+        v = ((1+arb(j)/bins).log()*2**precision).floor().unique_fmpz()
         assert v is not None
         table.append(int(v))
     return table
 
-def sieve(binary, edges):
-    numbers = [*log_table(), *edges]
+def sieve(binary, edges, *, fine=False):
+    numbers = [*log_table(58 if fine else 40), *edges]
     feed = "".join(f"{n}\n" for n in numbers)
-    out = subprocess.run([binary], input=feed, text=True, capture_output=True, check=True)
+    out = subprocess.run([binary, "--fine"] if fine else [binary], input=feed, text=True, capture_output=True, check=True)
     blocks = {}
     prefix = [0]*4
     for edge, line in zip(edges, out.stdout.splitlines(), strict=True):

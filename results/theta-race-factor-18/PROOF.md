@@ -1,4 +1,4 @@
-# The factor 18 obstruction
+# Waiting factors in the 547/727 prime race
 
 ## Two statements about the same race
 
@@ -173,3 +173,66 @@ Suppose now that $`\tau\le t\le5`$. The factor $`2v/u`$ is greater than $`2(2070
 ### Numerical and formal checks
 
 One implementation sieves rational primes by Eratosthenes, finds their signs from residue tables and accumulates the changes of $`c,d`$ at each knot. An independent implementation tests primality with FLINT, applies Euler's criterion and forms the two original tent sums from prefixes of signed $`\log\ell`$ and $`(\log\ell)/n`$. Both run with 176-bit Arb arithmetic. They agree in overlapping intervals of radius below $`10^{-30}`$ at every one of 31,776 knots and endpoints through $`q`$. Comparison against the independently regenerated integer sieve checks a further 305 common grid values. The verifier brackets the boundary roots at $`\tau,4,4.5,5`$, confirms the signs of the derivatives on the four pairs of crossing cells, and compares all witness ratios as exact fractions. Four local Lean lemmas check the interpolation inequality, the failed endpoint, the strict upper bound immediately beyond a gap and the touching bridge. The prime enumeration and the analytic cell representation are covered by the programs and the foregoing argument. [Independent evaluations](prime_knots.py) · [Root and coverage checks](sharp_deadline.py) · [Lean deductions](FactorObstruction.lean) · [Replay transcript](evidence/check.txt)
+
+## All failing starts after one million
+
+Retain the field, omitted places, tent and score from the first section. Put $`t=1.9735`$, $`D(y)=(S(2y)-S(y))/\log2`$ and fix $`10^6\le H\le10^9`$. For a sign $`\sigma\in\{+1,-1\}`$ an eligible move requires $`H\lt y\le CH/2`$ and $`\sigma D(y)\gt t`$. The following six real numbers give the complete answer for $`C\ge6`$. Each is the unique root of $`\sigma D(y)=t`$ in the specified prime-knot cell. The integers in square brackets are bounds on $`8y`$. The decimals below identify the roots to seven places by truncation.
+
+| $`i`$ | $`\sigma_i`$ | Cell for $`8a_i`$ | $`a_i`$ | Cell for $`8b_i`$ | $`b_i`$ |
+|---|---:|---|---:|---|---:|
+| 1 | $`+1`$ | $`[50308994,50309071]`$ | $`6288626.8228400\ldots`$ | $`[162452254,162452386]`$ | $`20306533.5953377\ldots`$ |
+| 2 | $`-1`$ | $`[160619068,160619119]`$ | $`20077385.9489463\ldots`$ | $`[488563106,488563336]`$ | $`61070400.3947486\ldots`$ |
+| 3 | $`-1`$ | $`[4499851921,4499852033]`$ | $`562481498.8459634\ldots`$ | $`[13610271236,13610271343]`$ | $`1701283915.0779512\ldots`$ |
+
+**Theorem.** For each real $`C\ge6`$ the starting heights missing the required sign are precisely the intervals
+
+```math
+\left[a_i,\frac{2b_i}{C}\right]\qquad (i=1,2,3),
+```
+
+taken only for the sign in that row and interpreted as empty when the upper endpoint is smaller. These intervals are disjoint whenever nonempty. At $`C=c_i=2b_i/a_i`$ the corresponding interval is the single height $`a_i`$. The critical factors in decreasing order are $`6.458177331046\ldots,6.083501163950\ldots,6.049208439987\ldots`$. For real starts both signs are covered exactly for $`C\gt c_1`$. The strictness of the move matters at equality.
+
+At $`C=6`$ the failing integers in row $`i`$ run from $`\lceil a_i\rceil`$ through $`\lfloor b_i/3\rfloor`$. This gives the three ranges in the README and exactly 5,372,773 failures among the 999,000,001 permitted integer starts. With only integer starts the critical factors are $`2b_i/\lceil a_i\rceil`$. For general $`C\ge6`$ the total logarithmic length of the failing real starts is $`\sum_{i=1}^3\max(0,\log(c_i/C))`$. This is a finite integral against $`dH/H`$ over the stated range.
+
+### Reducing the full range to three intervals
+
+Sort the original certified starts of each sign and look up the first strictly later witness after each breakpoint. Outside the following three gaps the next same-sign endpoint is strictly below $`6H`$. The test includes both domain endpoints and every witness height in the domain. On a gap the endpoint is constant and the ratio to $`H`$ falls. [Original witnesses](evidence/windows.tsv) · [Exact comparison](late_roots.py)
+
+| Sign | Left witness $`p`$ | Right witness $`q`$ |
+|---|---:|---:|
+| $`+1`$ | 6,145,473 | 20,405,658 |
+| $`-1`$ | 19,787,304 | 61,780,789 |
+| $`-1`$ | 549,154,839 | 1,714,594,397 |
+
+For each row the finite calculation proves $`p\lt a_i\lt b_i\lt q`$, $`\sigma_iD(y)\le t`$ on $`[a_i,b_i]`$ and strict qualifying values approaching $`a_i`$ from the left and $`b_i`$ from the right. It also proves $`2a_i/p\lt3`$ and $`2q/b_i\lt3`$. Here and below intersect each range of $`H`$ with $`[10^6,10^9]`$. If $`p\le H\lt a_i`$, a strict witness near $`a_i`$ fits before $`3H`$. If $`b_i\lt H\lt q`$ use $`q`$. If $`a_i\le H\le b_i`$, a strict witness fits exactly when $`CH\gt2b_i`$. At equality every permitted start is still in the closed gap. Thus the failures are exactly the displayed closed intervals. The verifier checks $`2b_i/6\lt a_{i+1}`$ for adjacent rows and the inclusion of all three intervals at 6 in the permitted range. This proves disjointness for every higher factor and justifies adding their integer counts and logarithmic lengths.
+
+### Certifying the interiors without sampling assumptions
+
+Write $`G(y)=\sqrt yD(y)`$. Between the prime knots $`G`$ is affine. Let $`[\alpha,\beta]`$ be a trial interval with length $`h`$. The secant interpolation error of a unit hinge $`(y-k)_+`$ inside the interval has magnitude at most $`(k-\alpha)(\beta-k)/h\le h/4`$. On each side of $`k`$ the interpolation error is linear and attains its maximum magnitude at $`k`$. A piecewise affine function is its initial affine function plus the sum of its slope jumps times unit hinges, so its absolute secant error is at most $`h/4`$ times the sum of the absolute jumps inside the interval.
+
+For a good norm $`n=\ell^f`$, its coefficient in $`G`$ is the signed $`8\log\ell/(B_0\log2)`$ from the fibre trace. At a knot $`y=n/j`$ the absolute change of slope has the additional factor $`M_j/n`$. In the order $`j=8,4,2,1`$ these constants are
+
+```math
+M_8=8/\sqrt2,\qquad M_4=12/\sqrt2+4,\qquad
+M_2=4/\sqrt2+6,\qquad M_1=2.
+```
+
+These follow by differentiating the two linear tent branches on either side of each knot. There are at most $`jh+1`$ integer norms in $`[j\alpha,j\beta]`$. Each good norm comes from a unique rational prime after the fibre has been summed. Since $`n\ge j\alpha`$ and $`\ell\le8\beta`$, the following bounds the absolute secant error of either signed $`G`$.
+
+```math
+E(\alpha,\beta)=
+\frac{h}{4}\frac{8\log(8\beta)}{B_0\log2}
+\sum_{j=1,2,4,8}M_j\frac{jh+1}{j\alpha}.
+```
+
+Both endpoint margins $`(t-\sigma D(v))\sqrt v`$ exceed $`E`$ on every accepted cell. Linear interpolation therefore keeps the entire signed graph below the secant through $`t\sqrt\alpha,t\sqrt\beta`$. The concavity of $`t\sqrt y`$ puts that secant below the threshold curve. This proves the strict exclusion $`\sigma D(y)\lt t`$ throughout each interior cell. The integer endpoint partition closes every interval and is reconstructed from three regular meshes with 1,213 further abscissae. The printed totals count cells separately for each sign. [Certified mesh](evidence/late-subdivisions.txt) · [Error and coverage checks](late_slabs.py)
+
+### Resolving the six crossings
+
+The knot search in the six boundary neighborhoods uses $`k=8y`$ and tests every possible norm in each of the four relevant prime-power ranges. For the three interiors the integer endpoints in ordinary $`y`$ units are $`[6288755,20306405]`$, $`[20077514,61070272]`$ and $`[562485616,1701279810]`$. Each boundary search reaches the adjacent interior endpoint. Two implementations enclose the normalized move at all 1,530 resulting boundary knots and endpoints.
+
+The first forms 160-bit Arb logarithms of the primes in two independently sieved residue progressions. It uses signed prefix sums of $`\log\ell`$ and $`(\log\ell)/n`$ for the exact tent branches. Higher degrees are determined separately using primality tests and Euler’s criterion. The second implementation uses the integer segmented sieve with a finer fixed-point log table. It encloses $`z,z^2,z^3,z^4`$ by directed integer arithmetic and bounds $`\log(1+z)`$ between its fourth and third Taylor sums for $`0\le z\le2^{-15}`$. The log units are $`2^{-58}`$ and the reciprocal units $`2^{-96}`$. The earlier sieve precision and its stored billion-height table are also replayed. [Independent prime sums](near_roots.py) · [Integer logarithms](sieve.cpp) · [Rational-height scores](band_values.py)
+
+On each candidate crossing cell, $`\sqrt y(\sigma D(y)-t)`$ is an affine function minus $`t\sqrt y`$. The derivative has one strict sign throughout the reported cell. The two methods enclose its root independently and select the same prime-knot cells. Their root intervals overlap and their factor intervals agree within radius $`10^{-11}`$ for the integer implementation. The high-precision method supplies the decimal bounds in the table. All intervening boundary cells are below threshold by the endpoint interpolation inequality from the preceding finite theorem. On the opposite sides of the roots continuity gives strictly qualifying values arbitrarily close. These checks together with the interior certificate establish all the hypotheses in the three-gap reduction. [Endpoint, integer-count and coverage verifier](late_roots.py) · [Verification output](evidence/check.txt)
+
+Three further local Lean lemmas check the one-hinge ceiling, interpolation with the certified error margin and the exact condition $`CH\le2b_i`$ for failure inside a gap. The prime enumeration, knot locations and numerical inequalities have the separate reproducible checks above. [Lean deductions](FactorObstruction.lean)
