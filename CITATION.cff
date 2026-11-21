@@ -5,7 +5,7 @@ abstract: "Unconditional bounds for a weighted split–inert prime race on an ad
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.3
+version: 1.0.4
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
 type: software
