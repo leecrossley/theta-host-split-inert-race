@@ -531,8 +531,8 @@ Keep the original $`n=\lceil T/4\rceil`$ short boxes and the two long boxes. Now
 The support starts after $`H`$ and every completion precedes $`e^{X+R}`$. The radius bounds give
 
 ```math
-X+R<h+221+2r_0+2r_1
-<h+225+540\log(3072000L^4)+4L .
+X+R\lt h+221+2r_0+2r_1
+\lt h+225+540\log(3072000L^4)+4L .
 ```
 
 The independently verified finite pair covers $`0\le h\lt100`$. Since $`T=10^6+4\log H`$, the displayed deadline grows as $`O(H(\log H)^4(\log\log H)^{2160})`$. Every larger fixed logarithmic exponent absorbs the last factor and the constant. This proves the theorem.
