@@ -583,3 +583,44 @@ If all zeros of the odd factors are on the critical line, there is no growing or
 In the off-line case take any finite $`H_0`$ beyond which the tilted tests already work. The explicit all-height deadline at $`H_0`$ supplies a single gain and loss starting after $`H_0`$ and finishing before a finite number $`B`$. For every $`1\le H\le H_0`$ the same pair qualifies, with endpoint below $`BH`$. Taking $`C=\max(B,e^{2+2R})`$ covers every height. The possible dependence of $`R`$ on a small gap between two ordinates and of $`H_0`$ on an unknown real-part separation explains why this argument gives no unconditional numerical factor.
 
 Consequently bounded normalized moves and power-sized moves in every sufficiently late window of **some fixed multiplicative width** distinguish the two spectral cases. More precisely, the supremum of the positive $`\eta`$ for which *both* signs exceed $`H^\eta`$ in such windows is $`\Theta`$, with value zero when no positive exponent qualifies. For the upper direction the absolutely convergent strip sum is $`O(e^{\Theta x})`$ and the prime-only corrections are bounded. The same pointwise estimate follows directly by applying the finite-measure identity to smooth approximations to a point: on each compact positive interval (2) and (6) give uniform convergence, and the tent move is continuous. A fixed multiplicative window changes this upper bound by only a constant. Earlier results characterized a limsup on sparse observations. Here each sufficiently late starting height supplies both signs. [Earlier sparse sampling result](https://github.com/leecrossley/theta-host-split-inert-race/blob/compact-filter-oscillation-v1.0.0/results/compact-filter-oscillation/PROOF.md#what-survives-on-sparse-grids)
+
+## Both moves through exp(12500)
+
+**Theorem.** For every real $`1\le H\le e^{12500}`$ both dyadic changes of magnitude greater than $`1.9735\log2`$, one in each direction, occur at starts strictly after $`H`$ and finish strictly before $`400H`$. This uses the field, sign, width, and five omitted rational primes of the statement above. The earlier finite result covers $`H\le e^{2000}`$. It remains to treat $`2000\le\log H\le12500`$. The argument below uses Platt’s finite zero verification and the explicit formula throughout the rest of the strip. [Earlier finite certificate](#both-moves-through-exp2000) · [Arithmetic trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+
+### A positive test at each recorded centre
+
+Split the log-height range into 83 closed intervals $`[\ell,T]`$ of length 128, shortening the final interval. Take $`c=8500`$, $`L=(T+82)/(2\cdot8492)`$ and $`d=1/k`$ with $`k\in\{16,24,32,48,64\}`$. Convolve the projected tilted-sphere probability of the earlier proof, of radius $`L`$, with two uniform probability boxes of half-width $`d`$. The convolution is positive, has mass one and is supported on $`[-R,R]`$ for $`R=L+2d`$. Its bilateral transform is
+
+```math
+\Psi_L(z)\left(\frac{\sinh(dz)}{dz}\right)^2,\qquad
+\Psi_L(z)=\frac{c\,\sinh(L\sqrt{c^2+z^2})}{\sqrt{c^2+z^2}\,\sinh(cL)}.
+```
+
+The continuous values at removable singularities are understood. For each recorded centre $`x`$ we have $`x\lt T+7`$ and $`x-R\gt2000`$. Coordinates are $`x=\log(2\sqrt2\,y)`$ for a doubling starting at $`y`$. The positive average of the normalized prime-only move is estimated in each direction. [Probability construction](#a-smaller-explicit-exponent-at-every-height) · [Sphere calculation](finite_sphere.py)
+
+For an odd-factor zero $`z=u+iv`$ measured from the critical line, $`|u|\le1/2`$. All with $`|v|\le8590`$ are on the line by the same finite theorem as before. For $`|v|\ge8590`$ write $`P+iQ=\sqrt{c^2+z^2}`$. Then $`Q^2\ge v^2-c^2-1/4\gt1200^2`$ and $`|P|=|uv|/|Q|\lt8`$, using monotonicity of $`v/\sqrt{v^2-c^2-1/4}`$ for positive $`v`$. Since $`cL\gt1`$, the sphere factor is at most $`30e^{-8492L}`$. Translation costs at most $`e^{x/2}`$ and the two boxes at most $`e^d`$. The total odd strip coefficient mass is less than $`10^6`$. The high-zero bound is therefore $`30\cdot10^6 e^{x/2+d-8492L}`$, whose exponent is below $`-37`$. In the odd trivial-zero bound the earliest support exceeds 2000, so the high-zero and trivial-zero costs together are less than $`0.001`$. This controls every possible off-line zero. [Total coefficient mass](#total-mass-of-the-omitted-zeros) · [Platt, Theorem 7.1](https://arxiv.org/pdf/1305.3087#page=14)
+
+### The omitted line spectrum
+
+The same 6,000 genuine positive brackets and their partners are used. To extend completeness from absolute ordinate 48 through 63, take five further exterior Poisson centres $`v=51,54,57,60,63`$. Evaluate at $`3/2+iv`$ and subtract the two positive terms contributed by each selected bracket and its partner. The resulting enclosures are positive and below $`1/4`$ at all five centres. Any omitted line ordinate within distance $`3/2`$ contributes at least $`4/13`$ to the same positive sum, a contradiction. The existing seventeen centres cover the lower strip and at zero give a total unlisted line mass $`\sum(1+t^2)^{-1}\lt0.127`$. Multiplicity and shared ordinates are counted. [Exterior logarithmic derivatives](finite_spectrum.py) · [Five additional enclosures](finite_sphere.py)
+
+For $`|t|\ge D=63`$, the imaginary-axis sphere response has modulus at most $`\Psi_L(iD)`$. For $`|t|\le c`$ this follows because $`\sinh(Lp)/p`$ is increasing for $`p\ge0`$, by its power series, and $`p=\sqrt{c^2-t^2}`$ decreases. Beyond $`c`$, the sine ratio is bounded by its value at $`p=0`$. Combining this with $`|J(it)|\le50/(1+t^2)`$ and the boxes gives an omitted-line allowance of
+
+```math
+50(0.127)\,\Psi_L(iD)\min\{1,(Dd)^{-2}\}.
+```
+
+The selected pairs with $`t\gt190`$ are also charged by the sum of their individual absolute transformed amplitudes. The 2,364 remaining pairs are evaluated with their signs. Separately, the signed square difference, higher prime powers and all omitted primes cost less than $`2.353`$ in normalized units everywhere on these supports. The arithmetic estimate uses the two rational residue classes modulo 16 and the signed square kernel. [Arithmetic cancellation](#cancellation-in-the-prime-squares) · [Independent arithmetic verifier](carrier_window.py)
+
+### Cover of every real starting height
+
+Each table row consists of the block endpoint $`T`$, the sign, the numerator $`m`$ of the centre $`x=m/64`$, and $`k=1/d`$. For every row the signed retained sum exceeds $`1.9735`$ plus all four allowances for the omitted line terms, the selected ordinates above 190, high and trivial zeros, and prime arithmetic. Positivity locates an actual signed move above the threshold in that support. For $`h=\log H`$, set $`u=h+3\log2/2`$. The *entire support* gives legal starts strictly after $`H`$ and completions strictly before $`400H`$ whenever
+
+```math
+x+R-\log(200)\lt u\lt x-R .
+```
+
+For each sign separately the open intervals cover each closed block in $`u`$, including its two endpoints. One verifier advances a frontier through the recorded rows with strict overlap. A second orders the lower endpoints and merges their open intervals. The 2,735 gain rows and 2,743 loss rows thus include every real starting height. [Covering table](evidence/sphere-cover.tsv) · [Full verification transcript](evidence/check.txt)
+
+The first calculation uses 128-bit balls, the direct hyperbolic sphere ratio, sinc boxes and direct phase sines. The second uses 160-bit balls, a rationalized exponential formula for the sphere ratio, cosine differences for the boxes, the half-angle identity for the tent and a phase split at the left block endpoint. Both use the certified frequencies themselves, enclose all discarded terms and check every interval. The Lean module separately checks the high-frequency exponent, the exterior-cell contradiction and the preceding average and support deductions. The explicit formula, estimates and passage to the prime-only score have written proofs. [Numerical implementation](finite_sphere.py) · [Lean deductions](WaitingBound.lean)
