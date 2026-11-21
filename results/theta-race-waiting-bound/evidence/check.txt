@@ -37,7 +37,7 @@ With the tilted sphere, every completion is before exp(219) times H^(17001/16999
 sinc: 6,000 positive ordinates, 27 harmonics, and the unlisted tail certify both 3.32 log 2 moves in the shorter kernel.
 cosine: 6,000 positive ordinates, 27 harmonics, and the unlisted tail certify both 3.32 log 2 moves in the shorter kernel.
 Both finite implementations find 3.33 log 2 moves after exp(100) and before exp(219).
-two independent constant checks: finite zero cancellation preserves both 3.02 and 3.33 log 2 moves
+Rational series and Arb bound the inputs to the same inequalities for the 3.02 and 3.33 log 2 moves.
 short-box tail below 0.0001; low shifted filter radius below 5406; explicit log-squared deadlines
 the stronger moves finish before H^1.00001 at log H >= 2000000000 and H^1.000001 at log H >= 20000000000
 separated positive interpolation: exact norm, local zero-count, support and 3.33 log 2 margin checks passed
