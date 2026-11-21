@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this result, please cite the tagged release.
 title: "Three disjoint doublings for two theta prime races"
-abstract: "Three common starting heights, including one prescribed integer, reproduce four level and move targets on the 547/727 and 571/599 prime races. Their doublings are disjoint and each weight exceeds 1/400. Direct prime-ideal calculations prove the finite theorem. A local inverse has exact generic degree four. The late recurrence uses the critical-line result for the sixteen primitive odd Dirichlet factors."
+abstract: "Three common starting heights, including one prescribed integer, reproduce four level and move targets on the 547/727 and 571/599 prime races. Their doublings are disjoint and each weight exceeds 1/400. Direct prime-ideal calculations prove the finite theorem. A local inverse has exact generic degree four. The late recurrence assumes that the sixteen primitive odd Dirichlet factors have all zeros on the critical line, which Alpöge's announced Dirichlet GRH theorem supplies."
 authors:
   - family-names: Crossley
     given-names: Lee
