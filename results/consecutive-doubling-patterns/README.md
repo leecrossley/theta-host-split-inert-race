@@ -1,6 +1,8 @@
 # All 4,096 sign patterns on six consecutive doublings
 
-Pick a gain or a loss for each of the 547/727 and 571/599 prime races. Do that six times. **Every one of the 4,096 sequences occurs starting at arbitrarily large powers of two.** Both races start at the same height, and the twelve prescribed changes each exceed $`4\log 2`$ in magnitude. The recurrence uses Alpöge's primitive Dirichlet critical-line theorem (Dirichlet GRH), applied to the sixteen odd characters. [Proof](PROOF.md) · [Upstream verification](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the sixteen odd primitive Dirichlet functions in the 547/727 and 571/599 races. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+
+Pick a gain or a loss for each of the 547/727 and 571/599 prime races. Do that six times. **Every one of the 4,096 sequences occurs starting at arbitrarily large powers of two.** Both races start at the same height, and the twelve prescribed changes each exceed $`4\log 2`$ in magnitude. The recurrence, the dyadic certificate and the bounds on longer words use GRH. [Proof](PROOF.md)
 
 Write $`S_i(y)`$ for field $`i`$'s normalized width-two inert-minus-split score, and $`D_i(y)=(S_i(2y)-S_i(y))/\log 2`$. A word of length $`m`$ specifies the signs of both fields at $`y,2y,\ldots,2^{m-1}y`$. Each entry of the table holds at actual power-of-two starts.
 
@@ -10,12 +12,12 @@ Write $`S_i(y)`$ for field $`i`$'s normalized width-two inert-minus-split score,
 | 5 | 1,024 | 9 |
 | 6 | 4,096 | 4 |
 
-There is a common set of integer translations that preserves all 5,376 witnesses, with lower uniform density at least $`2^{-252000000}`$. Each pattern has a fixed integer offset. Adding the same successful translation to every offset gives late starting exponents for the whole table. Two independent calculations verify 61,440 signed component bounds using 14,000 brackets for genuine zeros, an explicit remainder for the unlisted spectrum, and exact integer phase arithmetic. [Dyadic witnesses](evidence/dyadic-starts.tsv) · [Grid certificate](PROOF.md#every-six-step-word-on-the-dyadic-grid) · [Independent replay](grid_independent.py)
+There is a common set of integer translations that preserves all 5,376 witnesses, with lower uniform density at least $`2^{-252000000}`$. Each pattern has a fixed integer offset. Adding the same successful translation to every offset gives late starting exponents for the whole table. Two independent calculations verify 61,440 signed component bounds using 14,000 brackets for genuine zeros, an explicit remainder for the unlisted spectrum, which uses GRH, and exact integer phase arithmetic. [Dyadic witnesses](evidence/dyadic-starts.tsv) · [Grid certificate](PROOF.md#every-six-step-word-on-the-dyadic-grid) · [Independent replay](grid_independent.py)
 
-The same proof gives a deadline in terms of the starting exponent for the whole catalogue. It also gives finite examples and bounds on longer words.
+The same proof gives a deadline in terms of the starting exponent for the whole catalogue, beyond a threshold that the proof does not make explicit. It also gives finite examples and bounds on longer words.
 
-- Direct counts give all sixteen two-step patterns at tabulated positive rational starts below 47,000, with every normalized move exceeding 1.6 in magnitude. These finite examples use elementary splitting and prime counts. [Rational witnesses](evidence/witnesses.tsv) · [Direct count](patterns.py)
-- At margin 9, the number of different sufficiently late patterns is bounded by $`2^{241000}`$ independently of word length. At 547/727, 57 successive gains of that size are impossible sufficiently far out, as are 57 successive losses. At 571/599 the corresponding obstruction holds at 56. [Word-count and run bounds](PROOF.md#what-longer-patterns-can-occur)
+- Direct counts give all sixteen two-step patterns at tabulated positive rational starts below 47,000, with every normalized move exceeding 1.6 in magnitude. These finite examples use elementary splitting and prime counts, and need no hypothesis. [Rational witnesses](evidence/witnesses.tsv) · [Direct count](patterns.py)
+- Under GRH, at margin 9, the number of different sufficiently late patterns is bounded by $`2^{241000}`$ independently of word length. At 547/727, 57 successive gains of that size are impossible sufficiently far out, as are 57 successive losses. At 571/599 the corresponding obstruction holds at 56. [Word-count and run bounds](PROOF.md#what-longer-patterns-can-occur)
 
 ## Verification
 
