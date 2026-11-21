@@ -1,8 +1,8 @@
 # Both prime-race moves on geometric grids up to ratio four
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 and 571/599 races and their base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the eight odd primitive Dirichlet factors in each race and the eight even factors of each base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
-On the 547/727 field, **every block of 223 consecutive dyadic starting heights** above $`e^{100}`$ contains a gain and a loss of more than $`1.9735\log 2`$. On 571/599 the bound is 319. The first height in the block can be any real number above $`e^{100}`$. For example, on the first field check the doublings starting at $`Y,2Y,\ldots,2^{222}Y`$. Both signs must occur. These are prime-ideal counts at width and dilation two. Every statement uses GRH. [Proof](PROOF.md) · [Arithmetic trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+On the 547/727 field, **every block of 223 consecutive dyadic starting heights** above $`e^{100}`$ contains a gain and a loss of more than $`1.9735\log 2`$. On 571/599 the bound is 319. The first height in the block can be any real number above $`e^{100}`$. For example, on the first field check the doublings starting at $`Y,2Y,\ldots,2^{222}Y`$. Both signs must occur. These are prime-ideal counts at width and dilation two. The block lengths, densities and deadlines use GRH. [Proof](PROOF.md) [Arithmetic trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
 
 | Allowed starts, at any offset | What is guaranteed in each field |
 |---|---|
