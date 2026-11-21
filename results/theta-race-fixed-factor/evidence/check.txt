@@ -1,0 +1,11 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+6 positive crossings, selected residue > 3.3428, global multiplier < 7/2 in magnitude
+sum of inverse squared distances: (936,937) at zero; (216,217) at the selected root
+weighted central sum < 225 after removing ten low ordinates
+prime powers, square zeros and trivial zeros cost < 1/10 per moment
+two triangular-window tests clear 1.9735; their endpoints are below exp(175) H
+regularized Poisson sum at real displacement 1/1000 independently gives inverse-square sum < 937
+regularized Poisson sum at real displacement 1/1000 independently gives inverse-square sum < 217
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FixedFactor
+'FixedFactor.test_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FixedFactor.endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
