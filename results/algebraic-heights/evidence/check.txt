@@ -38,6 +38,10 @@ The two paired A cells each have at least two distinct active norms. Their oppos
 Both adjacent-band secant tables agree with the original knot jumps. Distinct absolute secants differ by a factor of at least sqrt(2). Each late-to-early within-band factor is 2 sqrt(2).
 For all 16 target-sign orders both chronological pairs have opposite barycentric weight signs.
 Two prime fourth powers suffice in each large factor-11/10 interval. The combined certified crossing counts yield 3,283 classes overall, 1,641 for gains and 1,642 for losses.
+The sole active norms in the first open cells are 31 on 547/727 and 49 on 571/599. The next norms are 47 and 79.
+The endpoint magnitudes lie in (12.297276305,12.297276306) and (6.375809184,6.375809185). Both named first hits agree with the earlier prime census.
+The rational triples (1,2,3) and (1/2,5/2,7/2) give j = 470596/225 and 1728. The first 100 reciprocal-integer targets have distinct finite branch values.
+The first 100 scaled triples on the curve V^2 = U^3 - U pass the simple-root square-class test.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -66,3 +70,8 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'AlgebraicHeights.reciprocal_secant' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.four_node_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.two_weight_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.normalized_first_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.first_branch_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.one_branch_degree' depends on axioms: [propext, Quot.sound]
+'AlgebraicHeights.pair_unit_quartic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.scaled_elliptic_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
