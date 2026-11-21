@@ -35,7 +35,7 @@ E(x)=2\cdot10^6e^{-x/4}
   +128e^{-(x-2)/2}/(1-e^{-(x-2)})+22000e^{-3x/20}.
 ```
 
-The terms cover the nontrivial base-field zeros, trivial zeros and prime powers. Each excluded norm is below $`e^{53}`$ and the log support has half-width $`3a/2\lt2`$, so the excluded primes have left the window. The decreasing bound satisfies $`E(100)\lt0.007`$. The previously certified 6,000 positive brackets select pairs whose omitted absolute $`\alpha`$-mass is below 1.44. A separate gamma-integral calculation bounds the same mass by 1.52. [Pointwise prime-only bound](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#from-the-profile-to-prime-ideals) · [Bracket and tail certificate](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) · [Independent primitive-theorem checks](https://math.mit.edu/~drew/grh/)
+The terms cover the nontrivial base-field zeros, trivial zeros and prime powers. Each excluded norm is below $`e^{53}`$ and the log support has half-width $`3a/2\lt2`$, so the excluded primes have left the window. The linked derivation states the bound for $`x\ge1000`$. Its three terms already hold from 55 for this reason, as in the fixed-factor window. The decreasing bound satisfies $`E(100)\lt0.007`$. The previously certified 6,000 positive brackets select pairs whose omitted absolute $`\alpha`$-mass is below 1.44. A separate gamma-integral calculation bounds the same mass by 1.52. [Pointwise prime-only bound](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#from-the-profile-to-prime-ideals) · [Bracket and tail certificate](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) · [Fixed-factor window from 55](https://github.com/leecrossley/theta-race-fixed-factor/blob/c88b8295954f2f5b55f7d3b6b4315626e99dd7a8/PROOF.md#fixed-log-window) · [Independent primitive-theorem checks](https://math.mit.edu/~drew/grh/)
 
 ## Where the missing zeros can be
 
@@ -81,7 +81,7 @@ For $`H\ge e^{100}`$, the eligible log abscissae form the interval $`(\ell,r]`$ 
 2R+2\pi/\gamma+\log2\lt18\log10 .
 ```
 
-Indeed the open interval $`(\ell+R,r-R)`$ has length exceeding one carrier period. Select one centre of each sign there. Every point of its averaging support exceeds 100, so the corresponding signed average of the prime-only score $`f`$ exceeds 1.9735. The measure is nonnegative and has mass one. At some point in its support the signed score must exceed 1.9735 as well. This gives the required strict signs and starting heights. [Local Lean deductions](FilteredDeadline.lean)
+Indeed the open interval $`(\ell+R,r-R)`$ has length exceeding one carrier period. Select one centre of each sign there. Every point of its averaging support exceeds 100, so the corresponding signed average of the prime-only score $`f`$ exceeds 1.9735. The measure is nonnegative and has mass one. At some point in its support the signed score must exceed 1.9735 as well. This gives the required strict signs and starting heights. [Abstract Lean steps](FilteredDeadline.lean)
 
 The published finite count covers every real $`1\le H\le10^9`$ with factor 18. Three pairs of individual log abscissae cover the remaining heights. The column abscissae are exact terminating decimals. [Finite coverage proof](https://github.com/leecrossley/theta-race-factor-18/blob/31ea5d495ca29f7f17869d1a3f321000266e4867/PROOF.md)
 
