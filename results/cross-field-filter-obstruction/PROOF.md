@@ -45,7 +45,7 @@ Let $`d=\sup(\{0\}\cup\{\Re z:b_z\ne0\})`$. If $`d=0`$, the left-half-plane term
 |b_0^*|^2+2\sum_{t\gt0}|b_{it}|^2 .
 ```
 
-For continuous time this follows by averaging a finite sum, then taking uniform limits. For fixed powers, distinct frequencies differ by $`\lambda\ne0`$ and the harmonic mean of $`n^{ik\lambda}`$ tends to zero. Indeed the difference between $`\sum_{n\le N}n^{-1+ik\lambda}`$ and its integral is $`O_{k,\lambda}(1)`$ by integrating the absolute derivative on unit intervals. The integral is bounded and the total harmonic mass is asymptotic to $`\log N`$. This weighting is essential to this calculation. [Mean squares and arithmetic almost periodicity](https://arxiv.org/abs/1306.1657)
+For continuous time this follows by averaging a finite sum, then taking uniform limits. For fixed powers, distinct frequencies differ by $`\lambda\ne0`$ and the harmonic mean of $`n^{ik\lambda}`$ tends to zero. Indeed the difference between $`\sum_{n\le N}n^{-1+ik\lambda}`$ and its integral is $`O_{k,\lambda}(1)`$ by integrating the absolute derivative on unit intervals. The integral is bounded and the total harmonic mass is asymptotic to $`\log N`$. This weighting is essential to this calculation. [Akbary, Ng and Shahabi, limiting distributions of prime error terms](https://arxiv.org/abs/1306.1657)
 
 Suppose $`d\gt0`$. Both RMS quantities have upper exponential growth rate $`d`$ on the log-height scale, so each has infinite upper limit. The strip formula gives the upper bound $`|F(x)|\ll e^{dx}+o(1)`$. To prove the reverse inequality for continuous time, suppose the upper rate is smaller. Choose an exponent $`\omega`$ between it and $`d`$, with $`\omega\gt0`$. The squared integral up to $`X_0`$ is then $`O((1+X_0)e^{2\omega X_0})`$. Cauchy–Schwarz on successive unit intervals makes the Laplace integral of $`F`$ absolutely and locally uniformly convergent for $`\Re z\gt\omega`$. This contradicts a surviving pole there.
 
@@ -87,7 +87,7 @@ For completeness, let $`V_j`$ be the least energy for predicting one entry from 
 
 ## The exact distance when the two spectra are on the line
 
-For this section only, suppose all sixteen odd factors have their strip zeros on the critical line. Fix the target polynomial $`P`$ and observable. Write $`\alpha_t`$ for its signed complex coefficient at positive frequency $`t`$ and $`\beta_t`$ for the coefficient of the comparison level there. For continuous time and every harmonically sampled fixed power, the infimum of the limiting **mean square** over $`b,\nu`$ equals
+For this section only, suppose all sixteen odd factors have their strip zeros on the critical line. This is GRH for these factors, which Alpöge's announced, unrefereed Dirichlet GRH theorem supplies. [Announcement](https://alpo.ge/remark.pdf) Fix the target polynomial $`P`$ and observable. Write $`\alpha_t`$ for its signed complex coefficient at positive frequency $`t`$ and $`\beta_t`$ for the coefficient of the comparison level there. For continuous time and every harmonically sampled fixed power, the infimum of the limiting **mean square** over $`b,\nu`$ equals
 
 ```math
 2\sum_{\substack{t\gt0\\\beta_t=0}}|\alpha_t|^2 .
