@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Why 18 fails in the 547/727 prime race"
+abstract: "Factor 18 covers a billion starting heights in the 547/727 prime-ideal race by direct sieve. Under Dirichlet GRH it fails at arbitrarily large heights."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.3
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-factor-18
+type: software
