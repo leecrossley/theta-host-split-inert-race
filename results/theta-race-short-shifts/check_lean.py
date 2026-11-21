@@ -108,8 +108,11 @@ def main():
                     completed += 1
                     if completed % 100 == 0 or completed == len(graph):
                         print(f"Lean build: {completed}/{len(graph)} modules ready", file=sys.stderr, flush=True)
-        subprocess.run(["leanchecker", *LOCAL], env=env, cwd=build, check=True,
-                       stdout=subprocess.DEVNULL)
+        # leanchecker imports a separate environment for each target in parallel.
+        for module in LOCAL:
+            print(f"Kernel replay: {module}", file=sys.stderr, flush=True)
+            subprocess.run(["leanchecker", module], env=env, cwd=build, check=True,
+                           stdout=subprocess.DEVNULL)
         audit = Path(temp) / "Audit.lean"
         audit.write_text("import RaceTrace\nimport ShiftBound\n" + "".join(
             f"#print axioms {t}\n" for t in THEOREMS))
