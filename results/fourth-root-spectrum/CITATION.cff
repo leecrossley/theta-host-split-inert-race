@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Recovering two theta prime races from zeros up to a fourth-root bound"
-abstract: "A finite weighted sum of actual nontrivial zeros recovers every sufficiently late unsmoothed normalized move on the 547/727 and 571/599 prime-ideal races to absolute error below 0.0008. The unconditional cutoff grows as the fourth root of the prime height times the square root of its logarithm."
+title: "How many zeros recover the two theta prime races?"
+abstract: "An explicit quintic weight recovers the unsmoothed move on each field from the nontrivial zeros of its eight odd Dirichlet factors up to a pure fourth-root cutoff, with absolute error below 0.0008. A direct truncation saves all logarithmic powers eventually. A fixed power saving for the absolute tail is equivalent to a fixed high-ordinate zero-free strip."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.1
+version: 1.1.0
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/fourth-root-spectrum-v1.0.1
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/fourth-root-spectrum-v1.1.0
 type: software
