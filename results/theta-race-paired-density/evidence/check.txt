@@ -1,0 +1,13 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+Exact 400H v1.0.0 bracket table and signed-window verification transcript matched.
+6000 certified coefficient ceilings reproduced at 160 bits; total phase bits 52862.
+Dyadic exponents range from 1 through 21; the greedy table matches exactly.
+6000 independent half-angle coefficient bounds passed at 192 bits.
+Shift error upper bound 788089118617009/7881299347898368 < 1/10; best bound with one fewer bit 788180326378929/7881299347898368 >= 1/10.
+Uniform lower log density >= 2^-52862; finite prefix fraction >= 2^-52863.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for PairedDensity
+'PairedDensity.translated_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDensity.sum_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDensity.collision_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDensity.finite_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDensity.partition_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
