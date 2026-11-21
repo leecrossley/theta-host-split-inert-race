@@ -38,6 +38,9 @@ python -m pip install -r requirements.txt
 python check_zeros.py
 python paired_windows.py
 python cell_check.py
+python thousand_zeros.py
+python thousand_window.py
+python thousand_cells.py
 python check_source.py
 ```
 
