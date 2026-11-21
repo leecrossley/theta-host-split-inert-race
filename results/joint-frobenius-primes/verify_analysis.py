@@ -93,14 +93,14 @@ def log_free_check(path):
 def verify_constants():
     modulus = 16 * prod(PRIMES)
     assert modulus == 2_176_229_286_416
-    assert modulus * 3**30 < 8**30
-    assert F(366, 24) + 11 < 366
-    assert 10**7 * modulus * 366**12 < 2**173 < 2**183
+    assert modulus * 3**29 < 8**29 and F(11, 4)**2 < 8  # M < e^29 and log 2 > 2/3
+    assert F(11, 24) * 366**2 > F(29, 6) * 366 + 60  # Grenie-Molteni plus prime powers < 2 sqrt(x) t^2
+    assert 2 * 10**7 * modulus * 366**12 < 2**174 and 2**174 * 3**183 < 8**183
     error = F(1, 10**7) * (2 + F(1, 366**10))
     assert F(1, 65) < F(1, 64) - error
     assert F(1, 64) + error < F(1, 63)
     assert 366**10 > 3 and F(1, 198) < F(1, 3*65) < F(1, 3*63) < F(1, 186)
-    print("Checked the rational margins in Lee's bound under Dirichlet GRH for log L >= 366. For widths from L/(log L)^10 the prime weight of each sign pattern lies between width/65 and width/63.")
+    print("Checked the rational margins in Grenié and Molteni's bound under Dirichlet GRH for log L >= 366. For widths from L/(log L)^10 the prime weight of each sign pattern lies between width/65 and width/63.")
 
 
 if __name__ == "__main__":
