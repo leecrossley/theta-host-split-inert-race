@@ -1,0 +1,3 @@
+All 16 rational vertices have their own three-height solution, with every weight greater than 1/100.
+At each vertex independent polynomial splitting and original-tent contraction certify all five 18-place brackets.
+The contraction norm is below 1/1000000 at every corner.

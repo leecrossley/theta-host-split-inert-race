@@ -141,6 +141,42 @@ theorem recover_weight {a b c : ℝ} (mass : a+b+c = 1) (remaining : 0 < 1-a) :
   rw [h]
   ring
 
+/-- On the positive sheet the sign discarded by squaring is prescribed. -/
+theorem positive_mass_sign {h b c : ℝ} (hm : h+b+c=1) (hb : 0<b) (hc : 0<c) :
+    0 < (1-h)^2-b^2-c^2 := by
+  have h : 1-h = b+c := by linarith
+  rw [h]
+  nlinarith [mul_pos hb hc]
+
+/-- The group deduction for a connected four-sheeted cover with simple branch generators. -/
+theorem four_sheet_group (S : Set (Equiv.Perm (Fin 4)))
+    (hs : ∀ σ ∈ S, σ.IsSwap) [MulAction.IsPretransitive (Subgroup.closure S) (Fin 4)] :
+    Subgroup.closure S = ⊤ :=
+  closure_of_isSwap_of_isPretransitive hs
+
+/-- The discriminant of the quadratic left after projection from a point of a cubic. -/
+theorem projection_discriminant {a b c x : ℝ} (hx : a*x^2+b*x+c=0) :
+    (2*a*x+b)^2=b^2-4*a*c := by
+  nlinarith [show (2*a*x+b)^2-(b^2-4*a*c)=4*a*(a*x^2+b*x+c) by ring,
+    show 4*a*(a*x^2+b*x+c)=0 by rw [hx, mul_zero]]
+
+/-- A bounded branch on a continuous normalized pencil supplies a root on the target fibre. -/
+theorem specialized_root {f : ℝ × ℝ → ℝ} (hf : Continuous f) {u v : ℕ → ℝ} {s : ℝ}
+    (hu : Filter.Tendsto u Filter.atTop (nhds 0))
+    (hv : Filter.Tendsto v Filter.atTop (nhds s))
+    (hz : ∀ n, f (u n,v n)=0) : f (0,s)=0 := by
+  have ht : Filter.Tendsto (fun n => f (u n,v n)) Filter.atTop (nhds (f (0,s))) :=
+    hf.continuousAt.tendsto.comp (hu.prodMk_nhds hv)
+  have he : (fun n => f (u n,v n)) = fun _ => 0 := funext hz
+  rw [he] at ht
+  exact tendsto_nhds_unique ht tendsto_const_nhds
+
+/-- Distinct four-variable exponents of individual degree at most four stay distinct. -/
+theorem four_digit_exponents {a b c d i j k l : ℕ}
+    (ha : a<5) (hb : b<5) (hc : c<5) (hi : i<5) (hj : j<5) (hk : k<5)
+    (h : a+5*b+25*c+125*d=i+5*j+25*k+125*l) :
+    a=i ∧ b=j ∧ c=k ∧ d=l := by omega
+
 end JointOscillation
 
 #print axioms JointOscillation.projected_norm
@@ -163,3 +199,10 @@ end JointOscillation
 
 #print axioms JointOscillation.quartic_elimination
 #print axioms JointOscillation.recover_weight
+
+#print axioms JointOscillation.positive_mass_sign
+#print axioms JointOscillation.four_sheet_group
+#print axioms JointOscillation.projection_discriminant
+
+#print axioms JointOscillation.specialized_root
+#print axioms JointOscillation.four_digit_exponents

@@ -408,3 +408,116 @@ Here $`M=[A\ B\ C\ D]`$ is invertible. Use $`\lambda`$ itself as free parameter 
 The second verifier factors the defining polynomials, evaluates the original tents at two values in each band, and interpolates the linear function obtained by multiplying each raw reading by $`\sqrt y`$. On the final four-dimensional box its preconditioned map $`x\mapsto x-N(F(x)-P)`$ is a strict contraction into the interior, where $`N`$ is the verified nonsingular dyadic midpoint of the inverse derivative. The contraction norm is below $`10^{-6}`$. This proves uniqueness within that box for the physical equations without using the elimination polynomial. The same computation checks all targets with $`\|P-(1,1,0,0)\|_\infty\le10^{-4}`$ simultaneously. Take the midpoints of the reported 18-place brackets for the two moving heights and their two weights, and give them respective radii $`1/20,2/5,10^{-5},10^{-5}`$. Every perturbed map takes this larger box strictly into itself, with weighted sup-norm Lipschitz constant below $`1/2`$. Each such target has a unique solution **in this common parameter box** with anchor 13,471. Other timing rows can give other representations. [Independent interval contraction](three_inverse_recheck.py) · [Transcript](evidence/three-inverse.txt)
 
 The quartic on this branch is generically irreducible. Over $`K_0(U,V,S,T)`$ with four indeterminates, $`UV`$ and $`ST`$ have independent square classes by the valuations at $`U`$ and $`S`$. The four signs of $`\sqrt{UV}+\sqrt{ST}`$ give distinct conjugates. The monic polynomial $`((1-h)^2-UV-ST)^2-4UVST`$ is therefore irreducible, also in the polynomial ring $`K_0[U,V,S,T,h]`$ by Gauss’s lemma. Write $`g=M^{-1}P_0`$ and apply the invertible linear substitution $`(U,V,S,T)=H-hg`$ in five variables, where $`H=(H_1,H_2,H_3,H_4)`$. The transformed polynomial stays irreducible. Its fourth-degree coefficient is the constant $`(1-g_1g_2-g_3g_4)^2-4g_1g_2g_3g_4`$, certified nonzero for these prime bands. Gauss’s lemma now gives irreducibility as a quartic over $`K_0(H_1,H_2,H_3,H_4)`$. For any algebraically independent target in the displayed neighbourhood, $`H=M^{-1}P`$ has independent coordinates as well. Its local integer-start weight has exact degree four over the field of its four observations and $`K_0`$. All other solution coordinates lie in that same degree-four field. This sharpness is for the specified local branch. The rational centre has a certified simple quartic root, with no assertion of irreducibility at that specialization.
+
+### A quartic for every target, including the boundary
+
+Let $`P`$ be **any** target in the full closed four-dimensional box of the three-start theorem, and let $`E=K_0(P)`$. There is a representation on its prescribed timing row in which the two moving heights, their positive square roots and all three weights belong to a single real extension of $`E`$ of degree at most four. The two movable starts and the integer from the lookup retain all the earlier timing and weight bounds. This includes every rational target, each corner, and every target with algebraic relations among its four coordinates.
+
+Fix one closed target cell containing $`P`$. The target intervals in this cell all have positive length. For small positive $`t`$, perturb coordinate $`i`$ by adding $`\sigma_i t^{5^{i-1}}`$, where $`\sigma_i=-1`$ at the upper endpoint of that coordinate interval and $`\sigma_i=1`$ elsewhere. The target $`P(t)`$ stays in the same closed cell and has the same prescribed integer. If $`G`$ is any nonzero polynomial over $`E`$ of total degree at most four in the target coordinates, then $`G(P(t))`$ is a nonzero polynomial in $`t`$. Indeed translation by $`P`$ and the four signs give an invertible affine substitution. Distinct remaining multiindices $`\alpha`$ produce distinct exponents $`\alpha_1+5\alpha_2+25\alpha_3+125\alpha_4`$ by uniqueness of base-five digits. There are at most 70 monomials and the exponent never exceeds 500. [Digit identity and limiting root in Lean](JointOscillation.lean)
+
+The two compact moving arcs of the chosen row meet only finitely many prime-norm bands. Include their closures, since the prime sums agree at every common knot. For an ordered pair of such bands let $`N=[P_0\ A\ B\ C\ D]`$ be its constant four-by-five matrix over $`K_0`$. Write $`v=(\lambda,u,v_2,s,v_4)`$ for the five unknowns, with $`v_2=b/\sqrt y`$ and $`v_4=c/\sqrt z`$. The four observations give $`Nv=P(t)`$. If $`N`$ has rank less than four, a nonzero linear form annihilates its image. The perturbed target can meet that image for only finitely many $`t`$.
+
+For each rank-four pair, choose any free coordinate $`h`$ whose four complementary columns are independent. The solution $`v=L(P(t),h)`$ is linear in the five arguments and has coefficients in $`K_0`$. Define its mass polynomial before specialization by
+
+```math
+G(P,h)=\bigl((1-\lambda)^2-u v_2-s v_4\bigr)^2-4u v_2 s v_4,
+\qquad (\lambda,u,v_2,s,v_4)=L(P,h).
+```
+
+It has total degree at most four. The constant-in-$`h`$ coefficient $`G(P,0)`$ is a nonzero polynomial in $`P`$, since $`L(0,0)=0`$ gives $`G(0,0)=1`$. The perturbation makes $`G(P(t),h)`$ nonzero as a polynomial in $`t,h`$ for every rank-four pair. All but finitely many positive perturbation values also avoid its finitely many exceptional zero specializations and all the rank-deficient images.
+
+Take a sequence of such perturbations tending to zero. The three-start theorem for the fixed chart supplies a solution at each one. Some fixed ordered pair of band closures occurs on a subsequence. Their matrix has rank four. By compactness pass to a further subsequence on which all the heights and weights converge. Its limit stays on the two closed arcs, satisfies the four original prime equations by continuity, and retains positive weights at least $`77/30000\gt1/400`$. The strict timing bounds hold throughout the closed arcs. The free coordinate converges to some finite $`h_0`$ because every linear unknown is continuous in the heights and weights and the heights are bounded away from zero.
+
+In the single polynomial $`G(P(t),h)`$ divide by the largest common power of $`t`$ in its coefficients and then set $`t=0`$. The resulting polynomial $`g(h)\in E[h]`$ is nonzero and has degree at most four. Before specializing, the normalized equation vanishes along the chosen sequence. Continuity gives $`g(h_0)=0`$. If the original equation $`G(P,h)`$ was identically zero at this particular target, every surviving coefficient involves a positive power of at least one target increment. Total degree four then gives $`\deg g\le3`$ in this case. All five linear unknowns at the limit belong to $`E(h_0)`$. The positive formulas for $`b,c`$ above have nonzero denominator $`2(1-\lambda)`$. They recover the two square roots as $`u/b,s/c`$ and the heights as $`u/v_2,s/v_4`$. This proves the degree bound without an exceptional target set.
+
+This also describes a finite list of candidate equations for a given target. On each rank-four pair of bands, apply the displayed substitution and read the first nonzero polynomial coefficient in ascending powers of $`t`$. A real root represents the target only if it gives the original positive weights, the assigned prime bands and the prescribed timing. At least one pair passes. The general argument establishes existence and a finite exact procedure given exact sign and equality tests in the coefficient field. The finite prime sums and the 23-row covering certificate supply its hypotheses.
+
+At the 16 vertices the replay isolates an explicit positive witness at each one, with every weight exceeding $`1/100`$. The table gives each movable start and all three weights as an open interval with adjacent 18-decimal endpoints. Its integer entry is exact. In each row the four targets are the two raw midpoint levels and the two moves divided by $`\log2`$. The primary calculation solves a quartic on the indicated open bands, tests the unsquared signs and checks the timing row. A second implementation factors the defining polynomials and contracts all four original equations, with norm below $`10^{-6}`$ on every box. [All 16 corner enclosures](evidence/corner-enclosures.tsv) · [Quartic isolation](target_box_corners.py) · [Independent direct equations](target_box_corners_recheck.py)
+
+## The four conjugates of the integer-start weight
+
+Use the two maximal open prime-norm bands from the balanced example above. They are the bands containing the two specified movable starts, with their order fixed. On them the raw four-vector has the two expressions $`A\sqrt y+B/\sqrt y`$ and $`C\sqrt z+D/\sqrt z`$. Put $`M=[A\ B\ C\ D]`$, take $`P_0`$ at the fixed integer 13,471, and keep the field $`K_0`$ defined above. All entries lie in $`K_0`$. Write $`H=M^{-1}P`$, $`g=M^{-1}P_0`$, and let $`h`$ denote the weight of the integer. The four unknown linear coordinates are $`H_i-g_i h`$. Define
+
+```math
+Q_1=(H_1-g_1h)(H_2-g_2h),\quad Q_2=(H_3-g_3h)(H_4-g_4h),
+\qquad F(h)=\big((1-h)^2-Q_1-Q_2\big)^2-4Q_1Q_2.
+```
+
+Over the entire closed box $`\|P-(1,1,0,0)\|_\infty\le10^{-4}`$ the coefficient of degree four stays nonzero. The verifier tests opposite endpoint signs for $`F`$ on each of the following disjoint intervals. Direct evaluation of the factored expression keeps the same target enclosure in all factors.
+
+| Interval for $`h`$ | Test in the original equations |
+| --- | --- |
+| $`(-1.81,-1.77)`$ | The integer-start weight is negative. |
+| $`(0.38,0.41)`$ | The interval contraction gives a positive solution on the designated bands. |
+| $`(0.77,0.81)`$ | Throughout the interval $`(1-h)^2-Q_1-Q_2\lt0`$. |
+| $`(1.34,1.38)`$ | The integer-start weight exceeds one. |
+
+A quartic with four distinct real roots has exactly one in each interval. On any positive solution the expression tested in the third row is twice the product of the two positive movable weights. For the second row the existence theorem above gives the solution, since the other three intervals are excluded. The recovery formulas give at most one pair of heights and weights for any admissible $`h`$. This proves uniqueness on the **whole ordered pair of maximal bands** with this anchor, throughout the target box. It also identifies three real extraneous roots produced by squaring. All statements so far use only finite prime arithmetic. [Interval tests](inverse_monodromy.py) · [Existence by contraction](three_inverse_recheck.py) · [Lean sign identity](JointOscillation.lean)
+
+### A simply branched line in target space
+
+Complexify the algebraic coefficients of the fixed prime bands and set $`H=(T,1,1,1)`$. On a dense open subset let $`c`$ denote the signed weight of the second movable start and put $`z=c/(1-g_3h)`$. Then $`c^2=(1-g_3h)(1-g_4h)`$. Introduce the following polynomials in $`z`$.
+
+```math
+d=g_4-g_3z^2,\qquad n=1-z^2,\qquad p=d-g_2n,\qquad
+m=d-n-(g_4-g_3)z .
+```
+
+Solving for the weights gives $`h=n/d`$, $`c=z(g_4-g_3)/d`$ and $`1-h-c=m/d`$. The first squared-weight equation is $`(1-h-c)^2=(T-g_1h)(1-g_2h)`$. It becomes
+
+```math
+T=\frac{a(z)}{b(z)}
+=\frac{g_1np+m^2}{dp}.
+```
+
+Conversely, the two squared weights at a root of $`F`$ recover $`c=((1-h)^2+Q_2-Q_1)/(2(1-h))`$ on the open set where the denominators are nonzero. This recovers $`z`$. Thus the four parameters of this rational map and the four weights give the same function field and the same generic permutations. Exceptional fibres introduced by the rational coordinates are allowed in this argument. The complex parameters here describe algebraic continuation of the two fixed band formulas. Physical starting heights still belong to their specified positive real bands.
+
+The determinant calculation encloses all coefficients from the original prime counts. The quartics $`a,b`$ have coprime homogenizations and four simple poles, all finite. For the binary quartic $`a-Tb`$, its discriminant as a polynomial in $`T`$ has degree at most six. At seven values $`T=1000k`$, $`0\le k\le6`$, the real-ball computation evaluates the Sylvester determinant divided by the leading quartic coefficient. Interpolation gives a sextic with nonzero leading coefficient and nonzero resultant with its derivative. The binary discriminant handles a root passing through infinity in $`z`$. It follows that the map has six simple branch values, with exactly one ramified point of index two above each. The two working precisions are 448 and 576 bits. [Resultants](inverse_monodromy.py)
+
+The second computation factors the defining fields at the rational primes and interpolates the two original tents in each prime band to recover $`g`$. It obtains the numerator of the rational map from five values of the two weight equations. Applied to $`a'b-ab'`$, Rouché’s theorem places one simple critical point in each of six disjoint discs of radius $`10^{-10}`$. The interval images of those discs are pairwise disjoint. Conjugation fixes the critical points in the two discs centred on the real axis. Their images satisfy
+
+```math
+-0.025\lt T_-\lt-0.024,\qquad 1375\lt T_+\lt1376 .
+```
+
+The other four critical images have imaginary part of absolute value exceeding 10,000. At $`T=0`$ four sign-changing intervals exhibit four real inverse parameters. Above $`T=\infty`$ the two quadratic factors of $`b`$ exhibit precisely two real poles. The number of real points of a regular real fibre is locally constant on the real projective target. The two critical values divide it into two components. The bounded interval $`(T_-,T_+)`$ has four real points in each fibre. Its complement outside the endpoints has two. At either endpoint there are three distinct real points, one of multiplicity two. These counts refer to the normalized rational parameter curve. [Independent complex-disc tests](inverse_branch_recheck.py)
+
+The sphere of source parameters with the inverse images of the branch values removed is connected. Hence the monodromy is transitive. A small loop about each simple branch induces one transposition. Such loops generate the fundamental group of the punctured sphere. The graph whose edges are the generating transpositions is therefore connected. Transpositions along the edges of a connected graph generate every permutation. This proves the group is $`S_4`$ on the line. Removing finitely many extra regular target values to avoid the exceptional birational coordinates preserves this permutation group. Each remaining loop also lies in the complement of the four-variable weight discriminant, so the full group contains $`S_4`$. It acts on four letters, giving equality. The geometric group over complex coefficients is contained in the arithmetic group over $`K_0(H)`$, giving the same equality there. [Pakovich, Theorem 2.2](https://www.math.bgu.ac.il/~pakovich/Publications/imax.pdf) · [Formal transposition deduction](JointOscillation.lean)
+
+Now take any target in the above real box with four coordinates algebraically independent over $`K_0`$. Evaluation identifies the rational function field in the indeterminates with $`K_0(P)`$ since $`M`$ is invertible. The unique admissible weight has four real conjugates. The field containing all four has degree 24 over $`K_0(P)`$. A tower of square-root adjunctions has normal closure of degree a power of two, by adjoining the conjugates of each square root successively. The normal closure of the physical weight has order 24, so that weight cannot belong to such a tower. This holds for almost every target in the box since $`K_0`$ is countable. The rational balanced target itself has a certified quartic and a unique physical root on these bands. Its specialized Galois group remains undetermined.
+
+### The two elliptic resolvents
+
+On the preceding $`T`$-line choose an unordered pair of the four $`z`$-roots. Forgetting which of the pair and its complement was chosen gives a map to the curve of partitions into two complementary pairs. Use smooth projective normalizations throughout. These connected covers have degrees six and three over the target line since $`S_4`$ acts transitively in each case. In the action on six pairs a transposition fixes two pairs and exchanges the remaining four in two cycles. In the action on three partitions it fixes one and exchanges two. With six simple branch points, Riemann–Hurwitz gives genus one for both curves. The complement map between them has degree two and is unramified. Above $`T=\infty`$ the two quadratic factors of $`b`$ give two distinct $`K_0`$-rational unordered pairs and one partition. Take one of the pairs and its image as origins. The complement quotient is then a degree-two isogeny over $`K_0`$, with the other pole pair as the nontrivial kernel point. For comparison, the ordered distinct-pair curve has degree 12 and genus four, and the Galois closure has degree 24 and genus thirteen. Their ramification contributions at each branch value are five and twelve, respectively. This is the classical trigonal construction applied to the specified prime pencil. [Donagi and Smith, section III.1](https://doi.org/10.1007/BF02392458) · [Ordered pairs](https://www.math.bgu.ac.il/~pakovich/Publications/imax.pdf)
+
+Both curves have explicit plane cubics over $`K_0`$. Write $`a_i,b_i`$ for the ascending coefficients of $`a,b`$. For an unordered pair $`z,w`$ put $`s=z+w`$, $`p=zw`$. The divided difference of $`a(z)b(w)-a(w)b(z)`$ by $`z-w`$ is
+
+```math
+\sum_{0\le j\lt i\le4}(a_i b_j-a_j b_i)\,p^j U_{i-j-1}(s,p)=0,\qquad
+(U_0,U_1,U_2,U_3)=(1,s,s^2-p,s^3-2sp).
+```
+
+Generically its points recover the two roots as the unordered roots of $`X^2-sX+p`$. For a partition use $`S=1/T`$, set $`c_i=Sa_i-b_i`$ and $`v=c_4(z_1z_2+z_3z_4)`$ for the chosen partition. The three generically distinct pair products summed this way yield the second cubic
+
+```math
+v^3-c_2v^2+(c_3c_1-4c_4c_0)v
++4c_4c_2c_0-c_4c_1^2-c_3^2c_0=0 .
+```
+
+The first cubic contains $`(0,p_0)`$ and $`(0,p_1)`$, where $`p_0=-g_4/g_3`$ and $`p_1=-(g_4-g_2)/(g_3-g_2)`$ are the products of the two pole pairs. Their common image on the second is $`(0,-b_4(p_0+p_1))`$. Project either cubic along lines through its stated rational point. The remaining quadratic in the line coordinate has a branch discriminant that is a polynomial of degree at most four in the slope. The primary calculation encloses its coefficients and checks its binary discriminant is nonzero. For binary quartic coefficients $`(a,b,c,d,e)`$ in descending order use
+
+```math
+I=12ae-3bd+c^2,\quad J=72ace+9bcd-27ad^2-27b^2e-2c^3,\qquad
+j=\frac{6912I^3}{4I^3-J^2}.
+```
+
+The resulting enclosures are
+
+| Curve | Lower bound for $`j`$ | Upper bound for $`j`$ |
+| --- | ---: | ---: |
+| Unordered pair | 2159.399670638032703450 | 2159.399670638032703451 |
+| Complementary partition | 1372.295119267165244835 | 1372.295119267165244836 |
+
+The independent calculation starts from the separately reconstructed prime pencil. It reduces both quartics modulo $`X^2-sX+p`$ on the pair curve, uses the depressed quartic on the partition curve, and computes the cross-ratio of the four certified projection branch points. The two resulting intervals agree with the invariant calculation. They also enclose zero on evaluation of the classical level-two modular equation. The complement quotient proves the exact isogeny. [Both cubics and invariant calculation](inverse_resolvent.py) · [Independent cross-ratios](inverse_resolvent_recheck.py) · [Binary quartic invariants](https://arxiv.org/abs/math/0610318) · [Classical modular polynomial](https://math.mit.edu/~drew/ClassicalModPolys.html)
+
+The first invariant exceeds 1728. The second lies strictly between zero and 1728. In a short real Weierstrass model these ranges force positive and negative elliptic discriminant, respectively. Consequently the unordered-pair curve has two real components and the partition curve has one. The isogeny maps each real component bijectively to the target circle. Indeed the homomorphism restricted to the identity component is open and surjective, as its derivative is invertible. Both components map onto the circle, and the full map has degree two. The nontrivial real kernel point lies on the other component. All these objects and enclosures come from finite sums in the two actual fields.
