@@ -1,0 +1,12 @@
+{
+  "title": "A sharp reversal threshold at four times the starting height",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>In the 547/727 prime-ideal race, a gain and a loss greater than 269.364 log 2 both finish strictly before 3.999999997H on a set of starting heights of positive lower logarithmic density, unconditionally. If the eight odd factors satisfy the critical-line assertion, the upper limiting common normalized amplitude at 4H is 269.3640010193614394... . This deposit preserves the source from the original GitHub release.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/fc51faf4c7294948f0ef6ba16ee88b25d6ffe4c9/results/asymptotic-waiting-factors/PROOF.md\">Proof and hypotheses</a>. <a href=\"https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/asymptotic-waiting-factors-v1.1.2\">Original release</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "asymptotic-waiting-factors-v1.1.2"
+}
