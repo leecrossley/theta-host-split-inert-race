@@ -2,7 +2,7 @@
 
 On the 547/727 and 571/599 fields, take any nonzero, continuous real weight supported in a fixed closed interval of positive prime-norm ratios. The weighted inert-minus-split prime count swings strictly above and below its square-term bias by a positive amount, arbitrarily far out. The amount can depend on the weight. The proof is **unconditional**. It uses Bauer's theorem on simple critical-line zeros and a real-axis check on the two fields. [Proof](PROOF.md) · [Bauer, Corollary 1](https://matwbn.icm.edu.pl/ksiazki/aa/aa93/aa9313.pdf#page=2)
 
-**A consequence for forecasting.** Even with the previous fifteen dyadic scores, every fixed affine linear prediction of the next score misses by more than **1.394** at arbitrarily large starts on each field. The corresponding bound for predicting the next normalized move is **1.19**. The start can be restricted to $`n^k`$ for any fixed real $`k\gt0`$, including squares, cubes or hundredth powers. The coefficients and intercept are chosen once and held fixed.
+**A consequence for forecasting.** Even with the previous fifteen dyadic scores, every fixed affine linear prediction of the next score misses by more than **1.394** at arbitrarily large starts on each field. The corresponding bound for predicting the next normalized move from the previous fifteen moves is **1.19**. The start can be restricted to $`n^k`$ for any fixed real $`k\gt0`$, including squares, cubes or hundredth powers. The coefficients and intercept are chosen once and held fixed.
 
 | Coordinates, including the one predicted | Two-sided radius for levels | Two-sided radius for normalized moves |
 |---:|---:|---:|
