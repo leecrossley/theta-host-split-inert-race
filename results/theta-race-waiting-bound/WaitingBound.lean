@@ -160,6 +160,26 @@ theorem exterior_cell {g v b : ℝ} (h : |g-v| ≤ 3/2)
   have hc : (4/13 : ℝ) ≤ 1/(1+(g-v)^2) := (le_div_iff₀ hd).2 (by nlinarith)
   linarith
 
+
+/-- The three opposite-sign edges form a tree on four distinct height classes. -/
+theorem opposite_edge {α : Type*} (a b c d : α)
+    (h : ¬ (a = b ∧ a = c ∧ a = d)) : a ≠ b ∨ c ≠ b ∨ c ≠ d := by
+  by_contra! hn
+  exact h ⟨hn.1, hn.1.trans hn.2.1.symm, (hn.1.trans hn.2.1.symm).trans hn.2.2⟩
+
+/-- Compare each exterior real-part term with reciprocal-square zero mass. -/
+theorem base_mass_point (w t : ℝ) (h1 : 1 ≤ w) (h2 : w ≤ 2) :
+    1 / (1 + t ^ 2) ≤ (2 * w) / (w ^ 2 + t ^ 2) := by
+  have hw : 0 < w := by linarith
+  apply (div_le_div_iff₀ (by positivity) (by positivity)).2
+  nlinarith [mul_nonneg hw.le (sub_nonneg.mpr h2),
+    mul_nonneg (show 0 ≤ 2 * w - 1 by linarith) (sq_nonneg t)]
+
+/-- A strict lower grid edge gives a strict elapsed log width at the final endpoint. -/
+theorem centilog_elapsed (u v i j : ℝ) (h : i - 1 < 100 * u)
+    (k : 100 * v ≤ j) : v - u < (j - i + 1) / 100 := by
+  linarith
+
 end WaitingBound
 
 #print axioms WaitingBound.box_support
@@ -183,3 +203,7 @@ end WaitingBound
 
 #print axioms WaitingBound.finite_sphere_exponent
 #print axioms WaitingBound.exterior_cell
+
+#print axioms WaitingBound.opposite_edge
+#print axioms WaitingBound.base_mass_point
+#print axioms WaitingBound.centilog_elapsed
