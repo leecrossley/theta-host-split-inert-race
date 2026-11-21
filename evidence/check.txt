@@ -1,0 +1,37 @@
+547.546: opposite Hardy signs at 3287178298086/1000000000000 and 3287178298087/1000000000000
+547.546: both critical-line neighborhoods certified
+4376.1093: both critical-line neighborhoods certified
+8752.1093: both critical-line neighborhoods certified
+8752.5469: both critical-line neighborhoods certified
+727.726: both critical-line neighborhoods certified
+5816.1453: both critical-line neighborhoods certified
+11632.7269: both critical-line neighborhoods certified
+11632.1453: both critical-line neighborhoods certified
+selected residue magnitude lies in (3.342843, 3.342844)
+height 8500, spectrum, trivial zeros, prime powers and endpoint constants verified
+base twist=0 quartic=1 conductor=16 partial-sum bound=2: both disk margins > 1/100
+base twist=0 quartic=2 conductor=8 partial-sum bound=2: both disk margins > 1/100
+base twist=0 quartic=3 conductor=16 partial-sum bound=2: both disk margins > 1/100
+base twist=1 quartic=0 conductor=397669 partial-sum bound=421: both disk margins > 1/100
+base twist=1 quartic=1 conductor=6362704 partial-sum bound=1026: both disk margins > 1/100
+base twist=1 quartic=2 conductor=3181352 partial-sum bound=891: both disk margins > 1/100
+base twist=1 quartic=3 conductor=6362704 partial-sum bound=1026: both disk margins > 1/100
+Riemann zeta: regularized central disk and nonreal disk exclude zero
+independent Hurwitz series confirms the crossing of the conductor-547 factor
+direct slope at y=5 lies in (7, 8)
+direct slope at y=9 lies in (-5, -4)
+direct slope at y=2474870 lies in (4, 5)
+direct slope at y=1220778 lies in (-16, -15)
+H=1: gain 5 to 10, loss 9 to 18
+H=100: gain 155 to 310, loss 107 to 214
+H=1000: gain 1038 to 2076, loss 1479 to 2958
+H=1000000: gain 2474870 to 4949740, loss 1220778 to 2441556
+starting heights [1,1000000]: verified endpoint <= (18) H
+starting heights [100,1000000]: verified endpoint <= (6851/657) H
+starting heights [1000,1000000]: verified endpoint <= (6851/657) H
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for WaitingBound
+'WaitingBound.box_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.power_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.gain_of_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.loss_of_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.moment_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
