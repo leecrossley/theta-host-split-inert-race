@@ -24,7 +24,7 @@ Fix a finite list of observations $`(i,b,u)`$, with real algebraic $`b\gt1`$ and
 | $`bu`$ | $`-(b+1)`$ |
 | $`b^2u`$ | 1 |
 
-**Theorem.** For every sufficiently large positive algebraic $`y`$ the linear relations over $`K`$ among 1 and the readings have zero constant coefficient and their remaining coordinates form exactly $`\ker J_A\oplus\ker J_B`$. The dimension of the span, including 1, is $`1+\operatorname{rank}J_A+\operatorname{rank}J_B`$. Every relation from the two kernels holds at *every* real $`y\gt0`$. The onset depends on the list. It works for every choice of coefficients for that list.
+**Theorem.** For every sufficiently large positive algebraic $`y`$ the linear relations over $`K`$ among 1 and the readings have zero constant coefficient and their remaining coordinates form exactly $`\ker J_A\oplus\ker J_B`$. The dimension of the span, including 1, is $`1+\mathrm{rank}(J_A)+\mathrm{rank}(J_B)`$. Every relation from the two kernels holds at *every* real $`y\gt0`$. The onset depends on the list. It works for every choice of coefficients for that list.
 
 Let $`z`$ denote norm divided by $`y`$. After removing $`1/\sqrt y`$, the score kernel is $`W_b(z/u)/(B_b\sqrt u)`$. Multiplication by the common positive variable $`z`$ gives the piecewise-linear numerator
 
