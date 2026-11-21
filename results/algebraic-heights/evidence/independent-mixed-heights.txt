@@ -1,0 +1,1 @@
+Exact FLINT polynomial arithmetic recovered both four-value secant tables by interpolation at rational points of the original tents.

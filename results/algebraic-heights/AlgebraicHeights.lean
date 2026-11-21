@@ -198,6 +198,46 @@ theorem lattice_margin {g n z t e : ℝ} (hg : g^2 ≤ n+z^2)
   have hk := mul_nonneg (sub_nonneg.mpr hr) (add_nonneg hn (abs_nonneg z))
   nlinarith [sq_abs z]
 
+
+/-- The signed scale, its square and a constant separate three distinct nodes. -/
+theorem signed_vandermonde (x y z : ℝ) :
+    x^2*(y-z) + y^2*(z-x) + z^2*(x-y) = (x-y)*(x-z)*(y-z) := by ring
+
+/-- The two zeros of both reciprocal-coordinate quadratics give the secant factor. -/
+theorem reciprocal_secant (x u v : ℝ) (hx : x ≠ 0) (hu : u ≠ 0) (hv : v ≠ 0) :
+    x^2*(1/x-1/u)*(1/x-1/v) = (x-u)*(x-v)/(u*v) := by
+  field_simp
+  ring
+
+/-- The coefficient of degree three in the interpolation of a quadratic is zero. -/
+theorem four_node_quadratic (a b c d p q r : ℝ)
+    (hab : a ≠ b) (hac : a ≠ c) (had : a ≠ d)
+    (hbc : b ≠ c) (hbd : b ≠ d) (hcd : c ≠ d) :
+    (p+q*a+r*a^2)/((a-b)*(a-c)*(a-d)) +
+    (p+q*b+r*b^2)/((b-a)*(b-c)*(b-d)) +
+    (p+q*c+r*c^2)/((c-a)*(c-b)*(c-d)) +
+    (p+q*d+r*d^2)/((d-a)*(d-b)*(d-c)) = 0 := by
+  have f := sub_ne_zero.mpr hab
+  have g := sub_ne_zero.mpr hac
+  have h := sub_ne_zero.mpr had
+  have i := sub_ne_zero.mpr hbc
+  have j := sub_ne_zero.mpr hbd
+  have k := sub_ne_zero.mpr hcd
+  rw [show b-a = -(a-b) by ring, show c-a = -(a-c) by ring,
+      show d-a = -(a-d) by ring, show c-b = -(b-c) by ring,
+      show d-b = -(b-d) by ring, show d-c = -(c-d) by ring]
+  field_simp
+  ring
+
+/-- Two positive weights keep a weighted reading between the endpoint readings. -/
+theorem two_weight_interval (a b low x y high : ℝ)
+    (ha : 0 ≤ a) (hb : 0 ≤ b) (hlx : low ≤ x) (hly : low ≤ y)
+    (hxh : x ≤ high) (hyh : y ≤ high) :
+    (a+b)*low ≤ a*x+b*y ∧ a*x+b*y ≤ (a+b)*high := by
+  constructor
+  · nlinarith [mul_le_mul_of_nonneg_left hlx ha, mul_le_mul_of_nonneg_left hly hb]
+  · nlinarith [mul_le_mul_of_nonneg_left hxh ha, mul_le_mul_of_nonneg_left hyh hb]
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -223,3 +263,7 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.log_midpoint
 #print axioms AlgebraicHeights.isolate_character
 #print axioms AlgebraicHeights.lattice_margin
+#print axioms AlgebraicHeights.signed_vandermonde
+#print axioms AlgebraicHeights.reciprocal_secant
+#print axioms AlgebraicHeights.four_node_quadratic
+#print axioms AlgebraicHeights.two_weight_interval

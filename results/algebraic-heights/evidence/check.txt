@@ -35,6 +35,9 @@ Grid 10^240: Gram-Schmidt length floor 511; for coefficient box 20, every nonzer
 Grid 10^360: Gram-Schmidt length floor 20606; for coefficient box 1000, every nonzero log sum has absolute value at least 697/10^360.
 Grid 10^500: Gram-Schmidt length floor 2003443; for coefficient box 90000, every nonzero log sum has absolute value at least 72212/10^500.
 The two paired A cells each have at least two distinct active norms. Their opposite hits have the exact zero as geometric mean.
+Both adjacent-band secant tables agree with the original knot jumps. Distinct absolute secants differ by a factor of at least sqrt(2). Each late-to-early within-band factor is 2 sqrt(2).
+For all 16 target-sign orders both chronological pairs have opposite barycentric weight signs.
+Two prime fourth powers suffice in each large factor-11/10 interval. The combined certified crossing counts yield 3,283 classes overall, 1,641 for gains and 1,642 for losses.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -59,3 +62,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'AlgebraicHeights.log_midpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.isolate_character' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.lattice_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.signed_vandermonde' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.reciprocal_secant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.four_node_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.two_weight_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
