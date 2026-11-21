@@ -19,3 +19,27 @@ references:
     version: "collection-2026-11-21"
     doi: 10.5281/zenodo.24426586
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/collection-2026-11-21
+  - type: software
+    title: "Prime-race crossings with a deadline and a transcendental height ratio"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "1.4.0"
+    doi: 10.5281/zenodo.24428962
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.4.0
+  - type: software
+    title: "Algebraic curves from first prime-race crossings"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "1.6.0"
+    doi: 10.5281/zenodo.24429234
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.6.0
+  - type: software
+    title: "When a fourth prime-race crossing gives new elliptic points"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "1.7.0"
+    doi: 10.5281/zenodo.24429348
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.7.0
