@@ -62,7 +62,7 @@ def prime_cost(ell):
         base += 132*mass(low)*(-x/(20*(q.log()+high))).exp()
     base += 132*mass(cuts[-1])+20/(arb(1).exp()*x)
     base += 10**6*((-x/10).exp()+(-x/3).exp())
-    base += 128*(-(x-2)/2).exp()/(1-(-2*(x-2)).exp())
+    base += 128*(-(x-2)/2).exp()/(1-(-(x-2)).exp())
     return value.min(base)
 
 
