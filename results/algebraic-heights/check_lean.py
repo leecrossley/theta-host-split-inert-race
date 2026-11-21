@@ -8,7 +8,8 @@ COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cell", "eligible", "simultaneous_cells",
             "inverse_discriminant", "common_normalizer", "repeated_cell", "paired_roots",
             "cell_energy", "energy_jump", "simple_root_obstruction",
-            "ratio_relation", "recover_scaled_slope", "fresh_prime_order")
+            "ratio_relation", "recover_scaled_slope", "fresh_prime_order",
+            "dilation_elimination", "dilation_amplitude", "passage_length", "farey_denominator")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

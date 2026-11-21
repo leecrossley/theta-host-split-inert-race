@@ -22,6 +22,13 @@ The two common degree-one directions have last deficient gaps 2609 to 3313 and 2
 Two exact interval algorithms find 4894 alternating disjoint signed supports. The 4893 intervening traversals give that many crossings of each signed target and of zero.
 Including the early crossings gives 9821 signed hits before completion height exp(12500). The unconditional one-field theorem gives at least 3274 classes, 1637 per sign, and the zero hits give 2447 classes.
 The finite prime chains alone give 349 classes among 1045 signed hits before completion height exp(1000).
+51 joint cells through 641/8 checked for signed identities. The only common zero cell is (0,31/8).
+Factor 200, starts 1 through 5000. Joint cells in AA, AB, BA, BB order: [132733, 131895, 132734, 131896].
+All endpoints strict. Signed equations give 70 interior roots, 56 at different positive amplitudes.
+Positive contacts in AA, AB, BA, BB order: 14, 16, 15, 11. Adjacent amplitude floors at 10^12: 1745425318934 and 2057225896979.
+Two directed original-tent endpoint signs fix all 62 exact heights in disjoint intervals of width 10^-72.
+All 1891 ratios in increasing-height order have rational denominator at least 1089356799264850590264254484675820 if rational.
+First candidate allowed by the brackets: 107198303351144631635944969682793472187/1089356799264850590264254484675820; early host/sign/left eighths ('A', 1, 62), late ('B', 1, 6620833).
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -39,3 +46,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'AlgebraicHeights.ratio_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.recover_scaled_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.fresh_prime_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.dilation_elimination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.dilation_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.passage_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.farey_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]

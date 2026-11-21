@@ -360,3 +360,89 @@ In particular both heights and $`(\log2)^2`$ belong to the field generated over 
 If infinitely many pairs have algebraic quotient at this magnitude, the odd prime logs have unbounded transcendence deficiency above every prime cutoff. Finitely many hits lie in any bounded height range, and each class has at most six hits over both hosts, so both members of new pairs can be taken beyond any cutoff. In a pair with heights between $`Y`$ and $`Z`$, the active primes lie between $`Y^{1/4}`$ and $`8Z`$. Select $`m+1`$ pairs with disjoint finite prime sets $`B_j`$ above the prescribed cutoff. Every field $`K(\log p:p\in B_j)`$ contains the same transcendental $`(\log2)^2`$. Over $`K((\log2)^2)`$ each has transcendence degree at most $`|B_j|-1`$. Subadditivity gives transcendence degree over $`K`$ of their compositum at most $`|\bigcup_j B_j|-m`$. In particular bounded deficiency implies that only finitely many pairs can be commensurate at this exact magnitude. This argument concerns quotients of heights, separately from the inverse-field degree. [Prime-log deficiency formulation](#a-test-at-the-fixed-rational-amplitude)
 
 A **triple** in one class within the ranges just specified at the named magnitude would give a counterexample to Roy’s strong four exponentials conjecture. The three nonzero readings span one dimension, and their three coefficient pairs are independent. Their two independent relations give two $`K`$-independent elements $`u,v`$ in the Roy space for the transcendental base $`h`$. All four products from $`(1,h)`$ and $`(u,v)`$ therefore lie in $`\mathcal V`$. This is precisely the configuration forbidden by the strong four exponentials conjecture. The same implication holds for general magnitudes on the corresponding high ranges, unconditionally on a single field. Its truth would lower the general bound there to two, a value attained on the late cells constructed above. [Strong four exponentials conjecture](https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/LegacyRamanujan2013Text.pdf#page=5)
+
+## An algebraic dilation determines the amplitude
+
+Write $`a=\log2`$, $`K=\overline{\mathbf Q}`$ and $`F_o=K(\log p:p\text{ an odd prime})`$. A normalized value $`D_i(y)=\pm t`$ represents a doubling whose signed move is $`\pm t\log2`$ on field $`i`$. Fix a positive real algebraic ratio $`k=s^2\ne1`$, with $`s\gt0`$. Suppose the first move at $`y`$ and the second at $`ky`$ have equal positive magnitude. Choose the relative sign $`\epsilon\in\{-1,1\}`$. Use any common interval of prime cells extending immediately to the right of this height. At every positive start only finitely many prime knots are nearby. The two formulas extend continuously to the left endpoint. On this interval use the unnormalized coefficients $`U,V,P,Q`$ of the two moves in the original height variable of each field. They are finite algebraic linear forms in odd prime logarithms. The signed equality is
+
+```math
+(U-\epsilon sP)y=\epsilon Q/s-V.
+```
+
+Put $`A=U-\epsilon sP`$ and $`B=\epsilon Q/s-V`$. For a nonzero common value, the two forms cannot both vanish. To see this, use Baker’s theorem to compare every odd-prime coefficient separately in both equations. On a single field an unramified rational prime contributes through one norm $`n=p^f`$ and a signed algebraic mass of fixed absolute value after removing $`\log p`$. The magnitude of that prefactor is the same on both fields because the $`8/f`$ ideals each have log norm $`f\log p`$ and the score width is two. An omitted prime contributes zero on its host. For a prime active on the open cell the slope and intercept coefficients, after removing the common signed mass, are as follows. [Original prime-ideal normalization](#prime-logarithms-at-algebraic-heights)
+
+| Norm band | Slope | Intercept | Product |
+| --- | --- | --- | --- |
+| $`4y\lt n\lt8y`$ | $`4\sqrt2/n`$ | $`-1/\sqrt2`$ | $`-4/n`$ |
+| $`2y\lt n\lt4y`$ | $`-(4+2\sqrt2)/n`$ | $`1+\sqrt2`$ | $`-(8+6\sqrt2)/n`$ |
+| $`y\lt n\lt2y`$ | $`2/n`$ | $`-2`$ | $`-4/n`$ |
+
+If $`A=B=0`$ then both supports agree. Choose an active prime, which exists because the observed value is nonzero. Multiplication of its slope by $`\epsilon s`$ and of its intercept by $`\epsilon/s`$ preserves their product. Equality between a middle-band and an end-band product would equate a rational number with an irrational number. In the same product family equality forces identical norms. If the bands coincide, the absolute slopes then force $`s=1`$. Swapping inner and outer bands forces $`s=2\sqrt2`$ or its reciprocal, so $`k=8`$ or $`k=1/8`$. A fixed norm cannot be strictly inside both $`(y,8y)`$ and $`(ky,8ky)`$ at either dilation. This exhausts the cases. The argument on an adjacent open interval also rules out an identity at a knot with nonzero observed value. A single contact at a knot is included in the equation.
+
+At a contact, $`A=0`$ would imply $`B=0`$. Hence $`y=B/A`$ and $`AB\gt0`$. Substituting into the common squared value gives
+
+```math
+y=\frac BA,\qquad (ta)^2=\frac{(UQ/s-sPV)^2}{AB}.
+```
+
+Thus both actual heights belong to the field generated over $`K`$ by the odd prime logs of their two cells. The squared unnormalized amplitude belongs to the same field. There are countably many algebraic dilations and countably many pairs of prime cells. For each choice and relative sign there is at most one nonzero solution. Consequently for all but countably many positive magnitudes every quotient of two **different heights** is transcendental, across both fields jointly on the entire positive height axis. The complement of the exceptions has full Lebesgue measure and is residual. This statement includes every positive real amplitude, whether algebraic or transcendental. [Cleared equality and resultant in Lean](AlgebraicHeights.lean) · [Baker](https://doi.org/10.1112/S0025579300003971)
+
+There is an effective enumeration with possible repetitions. Enumerate positive real algebraic $`k\ne1`$, ordered hosts, overlapping right-hand cells and relative signs. Coefficient vanishing for $`A`$, and the ordering of $`B/A`$ against algebraic cell endpoints, reduce to testing algebraic linear forms in distinct prime logs. Baker gives exact zero tests from their coefficients. For a nonzero linear form successive certified enclosures decide its sign. Run the positive-amplitude tests in parallel to increasing precision and emit a witness when a strict positive magnitude is certified. A zero need not be recognized by this last test. Every positive exception eventually appears with its formula and isolating data.
+
+For equal heights on different fields the dilation is one. This case is excluded from the all-height countability assertion. It can be included on the certified finite and sufficiently late mixed ranges of the prime-direction theorem. In the initial 51 common cells through $`641/8`$, the replay compares the prime, norm, band and sign tables. The only common identity is the zero plateau on $`(0,31/8)`$. Above this finite check two independent outer prime directions prevent a joint identity in the ranges where those directions are certified. At an endpoint use a neighboring open cell. Unconditionally the result with this extra labelling convention holds up to $`2^{1582}`$ and on an unspecified sufficiently late tail. Dirichlet GRH allows this extra convention at every height. [Early identity check](dilated_crossings.py) · [Mixed-range hypotheses](#two-relations-on-a-geometric-progression)
+
+## Many consecutive integer dilations
+
+Fix a nonempty open amplitude interval $`I\subset(0,5.85)`$, ordered fields $`i,j`$ which may be equal, signs $`\sigma,\tau`$ and a lower cutoff for both starts. Define a set of positive integers by requiring that for some $`y`$ above the cutoff and some $`t\in I`$ one has $`\sigma D_i(y)=\tau D_j(ky)=t`$. There are positive constants $`c,\eta,\lambda`$ depending on the choices such that for every sufficiently large real $`X`$, at least $`cX`$ integers $`k\in[\lambda X,X]`$ start a run of $`\lfloor\eta\log X\rfloor`$ consecutive integers in this set, all at most $`X`$. In each fixed residue class modulo $`d`$ there are at least $`cX/d`$ such starts for sufficiently large $`X`$ depending on $`d`$. The realization may choose different magnitudes in $`I`$ for different integers.
+
+The unconditional common-window theorem gives points strictly above and below the whole chosen band for each signed move past every cutoff with a fixed multiplicative completion bound. Applying it twice in successive windows orders a low point before a high one, or a high point before a low one. First choose a fixed traversal from low to high for $`\sigma D_i`$ after the cutoff. On the compact traversal there are only finitely many prime knots and regular pieces. Each smooth cell has at most one derivative zero unless identically zero. A nonzero constant is impossible for $`(Uy+V)/\sqrt y`$ on an interval. Choose a regular level inside $`I`$ away from every endpoint and critical value on this traversal. Its first upwards passage lies on a strictly increasing branch. Shrink to a nontrivial closed interval $`[a_0,b_0]\subset I`$ of regular levels with a fixed increasing inverse $`u(t)\gt0`$. [Unconditional field excursions](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.2.0/results/joint-levels-and-moves/PROOF.md#one-fixed-window-for-all-directions)
+
+For all sufficiently large $`Y`$ there is a late traversal for $`\tau D_j`$ that starts above $`b_0`$ and ends below $`a_0`$, entirely within $`[Y,B_0Y]`$ for a fixed $`B_0\gt1`$. For each level $`t`$ use its **first** hitting height $`v(t)`$ on this traversal. If $`t_1\lt t_2`$ then $`v(t_1)\gt v(t_2)`$ by continuity and the initial high value. Delete the finitely many levels attained at endpoints, prime knots or interior stationary points. On each remaining component $`v`$ is a continuous strictly decreasing inverse. Indeed the path breaks into finitely many monotone arcs. The arcs which cross a level, and their chronological order, are fixed on the component, so the same earliest arc is used throughout. The number of components is $`O_{B_0}(Y/\log Y)`$. Every prime up to $`8B_0Y`$ has at most one contributing norm on this field and creates at most four knots, and each intervening nonconstant cell creates at most one additional critical level. The ordinary upper bound for the number of primes suffices.
+
+The realized dilations $`v(t)/u(t)`$ on these components form ordered, disjoint open intervals. They lie between $`Y/u(b_0)`$ and $`B_0Y/u(a_0)`$. For a component $`(l,r)`$, let $`v_l\ge v_r\ge Y`$ denote the one-sided endpoint limits. Its image length satisfies
+
+```math
+\frac{v_l}{u(l)}-\frac{v_r}{u(r)}
+ \ \ge\ Y\left(\frac1{u(l)}-\frac1{u(r)}\right).
+```
+
+Summing gives total length at least $`\delta Y`$ for $`\delta=1/u(a_0)-1/u(b_0)\gt0`$. The deleted finitely many levels do not change the telescoping sum on the right. If there are at most $`D Y/\log Y`$ image intervals, keep the integers in each that are at least $`m`$ below its right endpoint. For any single residue class modulo $`d`$, an interval of length $`l`$ supplies at least $`(l-m)/d-1`$ such integer starts, with this lower bound still valid when it is negative. Their first $`m`$ consecutive integers remain inside that interval. The total over all components in that class is at least
+
+```math
+\frac1d\left(\delta Y-(m+d)D\,Y/\log Y\right).
+```
+
+Take $`X=B_0Y/u(a_0)`$ and $`\lambda=u(a_0)/(B_0u(b_0))`$. Choose $`\eta\gt0`$ small enough that $`(\lfloor\eta\log X\rfloor+d)D/\log Y\le\delta/2`$ eventually for each fixed $`d`$. The right side is at least $`cX/d`$, with $`c=\delta u(a_0)/(2B_0)`$. This proves positive lower natural density, logarithmically long consecutive runs and the claimed localization in factor size. Apply the argument inside any smaller open band to see that the exceptional amplitudes for the prescribed signs, order and arbitrarily specified cutoff are dense in $`(0,5.85)`$. The first branch can be fixed after any cutoff chosen in advance. The proof does not assert that one amplitude works for every integer, or that a single amplitude must recur at integer dilation on every tail. [Length inequality in Lean](AlgebraicHeights.lean)
+
+## The complete factor-200 test
+
+The factor-400 deadline permits starts up to $`200H`$ because a doubling finishes at $`2y`$. Here the question is whether the **two endpoints in start height** can have exactly the same normalized magnitude. Fix $`1\le y\le5000`$ and $`z=200y\le10^6`$. For every ordered pair of fields and both relative signs solve $`D_i(y)=\epsilon D_j(200y)`$. In the joint knot coordinate $`m=1600y`$, the later move has events at $`n,2n,4n,8n`$ for its supported norms, and the early move has those same types multiplied by 200. After multiplying by $`\sqrt y`$, each difference is affine between successive joint knots. Strict endpoint signs determine the complete list of roots, including the possibility of a single interior root when the signs differ. Every endpoint test here is strict. [Integer interval sweep](dilated_crossings.py) · [Independent original-tent calculation](dilation_recheck.py)
+
+| Earlier field | Later field | Joint open cells | Positive-magnitude solutions |
+| --- | --- | ---: | ---: |
+| 547/727 | 547/727 | 132,733 | 14 |
+| 547/727 | 571/599 | 131,895 | 16 |
+| 571/599 | 547/727 | 132,734 | 15 |
+| 571/599 | 571/599 | 131,896 | 11 |
+
+The eight signed equations give 70 roots counted with their equation labels. Fourteen have zero amplitude, confirmed by the initial plateau on the early host. The 56 positive amplitudes occupy disjoint rational intervals of width $`10^{-12}`$. The largest below 1.9735 occurs on B then A, with opposite signs and a positive first move. Its common magnitude is $`1.745425318934\ldots`$ at $`y=55.176921989025\ldots`$. The smallest above is an A-to-A pair with opposite signs and a negative first move, of magnitude $`2.057225896979\ldots`$ at $`y=88.948073267113\ldots`$. In particular the closed interval $`[1.745425318935,2.057225896979]`$ contains no such magnitudes. The table records each host, relative sign, bounding joint knots and strict height and amplitude brackets. The two independent evaluations use fixed-grid integer interval jumps and 416-bit Arb evaluation of the original prime-ideal tents at rational endpoints. This is a finite statement about equality at two starts. A 400H failure requires control of a strict signed inequality at every eligible start in a whole window. [Every equation root](evidence/factor-200-contacts.tsv) · [Independent verification](evidence/independent-dilations.txt)
+
+## Rational ratios at the named amplitude
+
+The 62 signed crossing heights through one million are all distinct. Refine the previously certified one-billionth brackets to width $`10^{-72}`$ at each of the 62 simple roots. The standard-library proof evaluates the two original tents at both rational endpoints. The signed residual after multiplication by the positive $`B_2\sqrt y\log2`$ has opposite strict signs of the original orientations. Prefixes of lower and upper bounds for each signed prime logarithm and its quotient by the norm give directed sums on the three support bands. Differences of lower prefixes (respectively upper prefixes) add exactly the individual lower (respectively upper) summands on the selected indices. Natural logarithms are rounded to nearest at 128 decimal digits and then enclosed on a $`10^{-105}`$ grid with an extra unit at either end. The square roots use exact integer square root. An independent Arb evaluator refines all 62 roots by signed bisection at 416-bit precision, with an independent deterministic primality test and direct Euler-character values. [Refined brackets](evidence/height-brackets-72.tsv) · [Directed residuals](rational_ratios.py) · [Arb check](dilation_recheck.py)
+
+If two increasing heights have lower bracket numerators $`u,v`$ on this common grid, the true ratio belongs to $`(v/(u+1),(v+1)/u)`$. For each of the 1,891 intervals, the Euclidean algorithm proposes an interior reduced fraction $`p/q`$. Its Farey parents $`l/a,r/b`$ are checked by integer arithmetic to enclose the entire interval and to satisfy $`ra-lb=1`$ and $`a+b=q`$. For a fraction $`P/Q`$ strictly between the parents, both integers $`Pa-Ql,Qr-Pb`$ are positive. The identity
+
+```math
+Q=b(Pa-Ql)+a(Qr-Pb)\ \ge\ a+b
+```
+
+proves that $`q`$ is the **smallest possible reduced denominator inside this bracket interval**. As a separate check take the midpoint of each open ratio interval. Its closest fraction with denominator below the claimed global bound falls outside the open interval in all 1,891 cases. [Integer determinant and height tests](rational_ratios.py) · [Farey inequality in Lean](AlgebraicHeights.lean)
+
+Taking the minimum gives
+
+```math
+q_{\min}=1089356799264850590264254484675820.
+```
+
+The first rational candidate allowed by the brackets is $`107198303351144631635944969682793472187/q_{\min}`$. Its early height is the positive hit on A in the cell beginning at $`62/8`$, and its late height is the positive hit on B in the cell beginning at $`6620833/8`$. The candidate is an interior rational in the quotient interval. Whether the actual quotient equals any rational remains open. Reversing the order exchanges numerator and denominator, and the larger-height quotient exceeds one, so the same lower bound holds in either order. This applies to every pair at the named amplitude, including the pairs whose individual transcendence is unknown.
