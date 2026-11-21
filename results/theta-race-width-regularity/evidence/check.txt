@@ -1,0 +1,16 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+782 true-ordinate Hardy sign changes rechecked for eight primitive characters (1564 endpoints).
+At h=1/T for T=1,2,4,8,16,32 the corresponding T^3/log(2T)-scaled mean squares exceed 79,51,73,35,31,28.
+The positive cosine coefficient of the smooth example exceeds 1/10 at a certified zero below 1/20.
+Directed complex integration reproduces the synthesized kernel at seven interior, boundary and exterior points.
+At geometric centres 31, 100 and 250, complete good-prime ideal sums agree through 47 decimal places.
+The smooth compact example has spectral coefficient above 1/10 throughout |t|<1/20.
+Independent half-angle and double-angle evaluations reproduce all six shell certificates.
+The constant-free contrast has exact mean numerator square 172/25.
+Exact rational polynomial antiderivatives give the same compact kernel on the full interval.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for WidthRegularity
+'WidthRegularity.atom_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthRegularity.diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthRegularity.square_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthRegularity.critical_shell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthRegularity.green_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
