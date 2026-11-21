@@ -5,12 +5,11 @@ abstract: "On two prime bands in the 547/727 and 571/599 races, the quartic for 
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.4.0
-doi: 10.5281/zenodo.24430264
+version: 1.4.1
 date-released: 2026-11-21
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/tree/6b7415b4c24be079bff56b91119c3fbd412104ff/results/joint-levels-and-moves
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.4.1
 type: software
 references:
   - type: software
