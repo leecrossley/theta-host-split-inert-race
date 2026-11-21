@@ -1,0 +1,43 @@
+central value of Hardy Z for 547.546 has sign +1
+central value of Hardy Z for 4376.1093 has sign +1
+central value of Hardy Z for 8752.1093 has sign +1
+central value of Hardy Z for 8752.5469 has sign +1
+central value of Hardy Z for 727.726 has sign +1
+central value of Hardy Z for 5816.1453 has sign +1
+central value of Hardy Z for 11632.7269 has sign -1
+central value of Hardy Z for 11632.1453 has sign -1
+zero in (48536362, 48536363) / 1000000000 for 11632.7269; endpoint signs -1, +1
+zero in (248572181, 248572182) / 1000000000 for 8752.1093; endpoint signs +1, -1
+zero in (434216664, 434216665) / 1000000000 for 4376.1093; endpoint signs +1, -1
+zero in (446011529, 446011530) / 1000000000 for 547.546; endpoint signs +1, -1
+zero in (579615600, 579615601) / 1000000000 for 11632.7269; endpoint signs +1, -1
+116 mixed frequencies up to sign exclude zero and all eight zero spectra (928 interval tests)
+Rational lower bounds: level amplitude > 6.6921; logarithmic shift slope > 1.9735
+Euler factors agree on all 16 Frobenius classes through a full period
+Polynomial factorizations confirm all 77 unramified rational-prime profiles through 400
+Direct b=r=2 slope from 25 to 50 in (-12294/1000, -12293/1000)
+Direct b=r=2 slope from 50 to 100 in (34499/1000, 34500/1000)
+Residue-class computation confirms 8 centres, 5 sign changes and 928 exclusions
+Independent sine and level bounds exceed 1.9735 and 6.6921
+547.546: real interval [1/2,1] covered by 64 cells; partial sums at most 21
+8752.1093: real interval [1/2,1] covered by 59 cells; partial sums at most 70
+4376.1093: real interval [1/2,1] covered by 44 cells; partial sums at most 62
+8752.5469: real interval [1/2,1] covered by 59 cells; partial sums at most 70
+727.726: real interval [1/2,1] covered by 17 cells; partial sums at most 29
+11632.7269: real interval [1/2,1] covered by 137 cells; partial sums at most 80
+5816.1453: real interval [1/2,1] covered by 24 cells; partial sums at most 121
+11632.1453: real interval [1/2,1] covered by 137 cells; partial sums at most 80
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6
+2763 upstream source modules, SHA-256 of sorted module names and hashes 9af7a85d27f2e8cd9ac6934919fe899b98f2813dbcf47281c09234f012662212
+Pinned trace source hashes match both files
+Kernel replay passed for HostPrimes, SecondField, FiberTrace, RaceTrace, ShiftBound
+HostRace.jump_eq: propext, Classical.choice, Quot.sound
+HostRace.fiber_trace: propext, Classical.choice, Quot.sound
+SecondHost.normPrime: propext, Classical.choice, Quot.sound
+SecondHost.field_parameters: propext, Classical.choice, Quot.sound
+SecondHost.field_degrees: propext, Classical.choice, Quot.sound
+SecondHost.frame_exists: propext, Classical.choice, Quot.sound
+SecondHost.admissible_exists: propext, Classical.choice, Quot.sound
+SecondHost.concrete_fiber_trace: propext, Classical.choice, Quot.sound
+ShiftBound.width_floor: propext, Classical.choice, Quot.sound
+ShiftBound.uniform_short_shift: propext, Classical.choice, Quot.sound
