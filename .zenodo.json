@@ -1,0 +1,12 @@
+{
+  "title": "Three disjoint doublings for two theta prime races",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Three common starting heights reproduce four prescribed level and move targets on the 547/727 and 571/599 fields. One start is an integer, the doublings are disjoint and every weight exceeds 1/400. In the finite window a direct prime count proves the result unconditionally. For exact balance one of the starts is 13,471. Recurrence on arbitrarily late windows uses the critical-line theorem for sixteen primitive Dirichlet factors.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/a41bbf8a3d8a9d53c05a207df7472d9d98a0fe01/results/joint-levels-and-moves/PROOF.md\">Proof, target box and hypotheses</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "joint-levels-and-moves-v1.3.0"
+}
