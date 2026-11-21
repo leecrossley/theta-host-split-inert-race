@@ -9,6 +9,8 @@ W(u)=\max(0,\min(2-2/u,4/u-1)),\qquad
 S(y)=\frac1{B\sqrt y}\sum_v-\epsilon_v\log Nv\,W(Nv/y).
 ```
 
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Lean theorem supplies this zero-location input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+
 For every real $`H\ge1`$, there exist $`y_+,y_-\gt H`$ with $`2y_\pm\lt e^{175}H`$ and
 
 ```math
