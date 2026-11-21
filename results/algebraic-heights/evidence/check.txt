@@ -5,8 +5,8 @@ Exact slope jumps and direct piecewise-linear evaluations agree for 36 geometric
 Exact degree-six Bernstein minors cover 901 knot intervals from 79*sqrt(2)/8 (open) through 1,500. At and below that transition the first two second-host readings use at most the logarithm of 7.
 Two overlapping prime chains cover the interval from one million to exp(366). The 5,140 witnesses passed 160 trial divisions and 4,980 Proth certificates, with every successive ratio below sqrt(2).
 All 43 nonprincipal real primitive characters exceed 0.363 on [15/16,1] by sixteen directed Abel bounds with 1,002 integration blocks per cell.
-Pairwise trace moments need moduli at most 6,967,568. Every interval (L,4L/3] with log L >= 366 has log-prime mass greater than L/864 in each projected direction above 1/32 and below -1/32.
-Four local directions and the least-eigenvalue bound give seven independent readings including 1 at every algebraic y >= exp(366).
+Checked the 16 trace patterns, the modulus bound 6,967,568 and the rational constants 1/20, 1/64 and 1/288 in the prime-mass estimate.
+Checked the two comparisons with sqrt(2) and the numerical bound at 366 used in the proof of rank seven.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
