@@ -22,6 +22,8 @@ python3 small_heights.py >>"$tmp/receipt"
 python3 prime_bridges.py >>"$tmp/receipt"
 python3 real_characters.py >>"$tmp/receipt"
 python3 trace_moments.py >>"$tmp/receipt"
+python3 crossing_cells.py >>"$tmp/receipt"
+python3 check_jump.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then

@@ -1,0 +1,1 @@
+The independent 192-bit Arb prefix sums and deterministic prime tests verify all 62 disjoint rational root brackets, all 60 distinct branch constants, the 1,273 ordered amplitude changes, the four maximal intervals, and the 74 distinct branch constants at amplitude 2.302529.
