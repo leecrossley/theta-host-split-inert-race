@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this result, please cite the tagged release.
 title: "Two theta prime races in one fixed window"
-abstract: "Two common doublings realize every normalized move pair in a fixed square after every starting height in the 547/727 and 571/599 prime races."
+abstract: "For the 547/727 and 571/599 prime races, a weighted average of at most two common doublings gives any pair of normalised moves in the square from −5.85 to 5.85 in each coordinate. After every real starting height H ≥ 1, all targets fit before CH for one finite constant C. The existence proof is unconditional."
 authors:
   - family-names: Crossley
     given-names: Lee
