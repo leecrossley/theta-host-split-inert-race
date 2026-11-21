@@ -14,7 +14,7 @@ In every interval of log starting heights of length at least 250,000, **more tha
 | 250,000 | 10% |
 | Lower uniform log density | 15% |
 
-The fractions weight each start $`y`$ by $`dy/y`$. For example, the 10% claim applies on every $`[H,H\exp(250000)]`$ with $`H\ge1`$. Every move compares the score at $`y`$ with the score at $`2y`$. [Score and theta trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [Prior work](PRIOR-WORK.md)
+The fractions weight each start $`y`$ by $`dy/y`$. For example, the 10% claim applies on every $`[H,H\exp(250000)]`$ with $`H\ge1`$. Every move compares the score at $`y`$ with the score at $`2y`$. [Score and theta trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83) · [Prior work](PRIOR-WORK.md)
 
 The calculation separates 1,281,601 frequencies built from 800 certified zero ordinates. This controls four moments on finite intervals without assuming that the zeros are linearly independent. A separate calculation counts the same near coincidences with binary searches. The comparison with actual prime scores requires Dirichlet GRH. [Zero brackets](evidence/zero-brackets.tsv) [Verification output](evidence/check.txt)
 

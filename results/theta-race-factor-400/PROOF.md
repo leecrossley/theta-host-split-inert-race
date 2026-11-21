@@ -4,7 +4,7 @@ The $`1{,}020H`$ obstruction and the recurrence statements assume Dirichlet GRH 
 
 ## Statement
 
-Put $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$, $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$ the sign $`\epsilon_v`$ is $`+1`$ for splitting in $`E/F`$ and $`-1`$ for inertia. Omit the places above $`2,547,727,343057911569,343070636977`$. The product of the normalized first-step theta trace jumps gives this sign at each good place. [Field and trace lemma](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+Put $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$, $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$ the sign $`\epsilon_v`$ is $`+1`$ for splitting in $`E/F`$ and $`-1`$ for inertia. Omit the places above $`2,547,727,343057911569,343070636977`$. The product of the normalized first-step theta trace jumps gives this sign at each good place. [Field and trace lemma](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 Write $`a=\log2`$, $`r_0=\sqrt2`$, $`c=2(r_0-1)^2`$ and $`B=r_0c`$. For $`b=r=2`$ use
 
@@ -47,7 +47,7 @@ The sums run over all ordinates of the eight odd factors with multiplicity. Conj
  \lt10^{-20}\qquad(x\ge1000).
 ```
 
-The three terms bound the base-field zeros, trivial zeros and higher prime powers. The omitted norms have left the compact support at these heights. The verifier reevaluates the decreasing bound at 1,000. [Prime-only estimate](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#from-the-profile-to-prime-ideals)
+The three terms bound the base-field zeros, trivial zeros and higher prime powers. The omitted norms have left the compact support at these heights. The verifier reevaluates the decreasing bound at 1,000. [Prime-only estimate](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-distant-interval/PROOF.md#from-the-profile-to-prime-ideals)
 
 ## Four moments for the missing zeros
 
@@ -85,7 +85,7 @@ V_k=D_k-\frac8c\big[r_0(T_{k+1}+T_{k-1})-3T_k\big],
 \qquad (D_0,D_1,D_2,D_3)=(A_*g(0),\,0,\,-a g(0),\,0).
 ```
 
-To check the prime contributions directly, the support at $`x=ka`$ only permits $`2^{k-1}\le n\le2^{k+1}`$ for $`n=p^j`$. For an odd prime power up to 16 the sum over quartic twists vanishes unless $`n\equiv\pm1\bmod16`$. No such odd prime power contributes. At 2 the two odd-conductor characters have opposite values, so the coefficient is $`-2\log2`$ at even exponents and zero at odd exponents. The endpoints have weight $`g(a)=0`$. Only $`n=4`$ at $`k=2`$ survives, with contribution $`-2a\,g(0)/\sqrt4`$. The term $`A_*g(ka)`$ occurs only at $`k=0`$. Reflection supplies no further prime contribution at these abscissae. [Even explicit formula](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#a-positive-bound-for-all-omitted-ordinates) · [Cubic identity in Lean](PairedWindows.lean)
+To check the prime contributions directly, the support at $`x=ka`$ only permits $`2^{k-1}\le n\le2^{k+1}`$ for $`n=p^j`$. For an odd prime power up to 16 the sum over quartic twists vanishes unless $`n\equiv\pm1\bmod16`$. No such odd prime power contributes. At 2 the two odd-conductor characters have opposite values, so the coefficient is $`-2\log2`$ at even exponents and zero at odd exponents. The endpoints have weight $`g(a)=0`$. Only $`n=4`$ at $`k=2`$ survives, with contribution $`-2a\,g(0)/\sqrt4`$. The term $`A_*g(ka)`$ occurs only at $`k=0`$. Reflection supplies no further prime contribution at these abscissae. [Even explicit formula](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-distant-interval/PROOF.md#a-positive-bound-for-all-omitted-ordinates) · [Cubic identity in Lean](PairedWindows.lean)
 
 The table lists 6,000 positive rational brackets. The columns give the conductor, Conrey label and lower and upper numerators with denominator $`10^{14}`$. Strict opposite Hardy signs at the endpoints prove that each contains a zero. Brackets within a factor are pairwise disjoint. Choose one zero per bracket and its negative partner in the aggregate family. Denote these 6,000 positive choices by $`Z`$ and set $`u_\nu=\sin^2(a\nu/2)`$. A uniform upper bound for the absolute omitted part of $`U`$ is
 
@@ -114,7 +114,7 @@ sU(x)\gt1.64-0.043-0.024-1.44\gt0.13 .
 
 [Four-moment verifier](paired_windows.py) · [Reproducible output](evidence/check.txt)
 
-The second computation bounds the omitted part by Cauchy–Schwarz. Over the remaining multiset let $`A=\sum G(\nu)`$ and $`D=\sum G(\nu)\sin^2(a\nu/2)`$. Then $`\sum_{\mathrm{omitted}}|\alpha(\nu)|\le2\sqrt{AD}/a\lt1.52`$. The full moments used before subtracting the selected pairs are $`V_0`$ and $`(V_0-V_1)/2`$. This calculation recovers both from the original real integral with kernel $`e^{-t/2}/(2\sinh t)`$ acting on $`g(x-t)+g(x+t)-2g(x)`$. It uses 16,384 directed rectangles per dyadic piece from $`a/2^{16}`$ to $`32a`$. Below the first piece the integral is bounded in absolute value by $`[2\cosh(a/2)/B]a/2^{16}`$. Above $`b=32a`$ the bound is $`4g(0)e^{-3b/2}/[(3/2)(1-e^{-2b})]`$. The conductor and gamma constant before integration is $`\sum_\chi\log(q_\chi/\pi)+8\psi(3/4)`$. [Integral formula and tail estimates](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#two-whole-interval-calculations)
+The second computation bounds the omitted part by Cauchy–Schwarz. Over the remaining multiset let $`A=\sum G(\nu)`$ and $`D=\sum G(\nu)\sin^2(a\nu/2)`$. Then $`\sum_{\mathrm{omitted}}|\alpha(\nu)|\le2\sqrt{AD}/a\lt1.52`$. The full moments used before subtracting the selected pairs are $`V_0`$ and $`(V_0-V_1)/2`$. This calculation recovers both from the original real integral with kernel $`e^{-t/2}/(2\sinh t)`$ acting on $`g(x-t)+g(x+t)-2g(x)`$. It uses 16,384 directed rectangles per dyadic piece from $`a/2^{16}`$ to $`32a`$. Below the first piece the integral is bounded in absolute value by $`[2\cosh(a/2)/B]a/2^{16}`$. Above $`b=32a`$ the bound is $`4g(0)e^{-3b/2}/[(3/2)(1-e^{-2b})]`$. The conductor and gamma constant before integration is $`\sum_\chi\log(q_\chi/\pi)+8\psi(3/4)`$. [Integral formula and tail estimates](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-distant-interval/PROOF.md#two-whole-interval-calculations)
 
 This second verifier encloses each actual frequency and each full time cell inside the sine, starting with 256 closed cells in each window. Bisection yields 2,194 covering cells for $`I_+`$ and 993 for $`I_-`$. It independently proves $`sU(x)\gt1/20`$ everywhere on the two intervals. The two calculations share the scale, field and sign-certified bracket table. [Direct cell verifier](cell_check.py)
 

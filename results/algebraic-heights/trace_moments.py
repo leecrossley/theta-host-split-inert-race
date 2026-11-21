@@ -1,27 +1,17 @@
 """Verify the rational inequalities for joint local trace projections in every late prime interval."""
 from fractions import Fraction as F
 from itertools import combinations, product
-from math import factorial, prod
-
-
-def exp_upper(x):
-    # Positive Taylor polynomial, followed by a geometric majorant for the tail.
-    terms = [F(1)]
-    for k in range(1,65):
-        terms.append(terms[-1]*x/k)
-    first = terms[-1]*x/65
-    return sum(terms) + first/(1-x/66)
 
 
 def verify():
-    f = (547,727,571,599)
-    assert max(16*p*q for p,q in combinations(f,2)) == 6_967_568 < 366**3
-    assert 16*max(f) < 366**2 and exp_upper(F(59,10)) < 366
-    assert exp_upper(F(16,1)/F(6397,1000)) < 16
-    # In the prime-power bound, even with a second logarithm of saving
-    # it suffices that exp(t/2)>400*t^4 for t>=366.
-    assert F(183)**10/factorial(10) > 400*366**4
-    assert 366 > 8
+    conductors = (547, 727, 571, 599)
+    largest_pair = max(16*p*q for p,q in combinations(conductors, 2))
+    bound = 2_176_229_286_416
+    assert largest_pair == 6_967_568 < bound
+    assert bound * 3**30 < 8**30
+    assert F(366, 24) + 11 < 366
+    assert 10**7 * bound * 366**12 < 2**173 < 2**183
+    assert F(1, 10**7 * 366**10) < min(F(19, 10*366), F(73, 1000*366**2))
     for x,y,z,w in product((-1,1),repeat=4):
         a,b = F(x+y,2),F(z+w,2)
         assert a*a == F(1+x*y,2) and b*b == F(1+z*w,2)

@@ -2,7 +2,7 @@
 
 ## The two fields and the error
 
-Take $`(p,q)=(547,727)`$ or $`(571,599)`$. In each case set $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{pq})`$, $`E=K(\sqrt{-p},\sqrt{-q})`$. At a good prime ideal $`v`$ of $`F`$ write $`\epsilon_v=1`$ for splitting and $`\epsilon_v=-1`$ for inertia in $`E/F`$. The fibre product of the first-step theta trace jumps gives this character. Omit the primes above $`2pq`$. Any further fixed finite omissions give the same limiting statements. [547/727 trace lemma](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [571/599 host and trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean#L80)
+Take $`(p,q)=(547,727)`$ or $`(571,599)`$. In each case set $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{pq})`$, $`E=K(\sqrt{-p},\sqrt{-q})`$. At a good prime ideal $`v`$ of $`F`$ write $`\epsilon_v=1`$ for splitting and $`\epsilon_v=-1`$ for inertia in $`E/F`$. The fibre product of the first-step theta trace jumps gives this character. Omit the primes above $`2pq`$. Any further fixed finite omissions give the same limiting statements. [547/727 trace lemma](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83) · [571/599 host and trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean#L80)
 
 Use $`a=\log2`$, $`r=\sqrt2`$ and the same weight on each field,
 

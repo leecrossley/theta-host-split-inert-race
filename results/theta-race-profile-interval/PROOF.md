@@ -2,7 +2,7 @@
 
 ## Statement
 
-Set $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$ write $`\epsilon_v=1`$ when it splits in $`E/F`$ and $`-1`$ when it is inert. Omit the places above $`2,547,727,343057911569,343070636977`$. The product of the normalized first-step theta trace jumps above each good place recovers $`\epsilon_v`$ for this field. [Concrete fibre theorem](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+Set $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$ write $`\epsilon_v=1`$ when it splits in $`E/F`$ and $`-1`$ when it is inert. Omit the places above $`2,547,727,343057911569,343070636977`$. The product of the normalized first-step theta trace jumps above each good place recovers $`\epsilon_v`$ for this field. [Concrete fibre theorem](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 Let $`a=\log 2`$, $`r_0=\sqrt2`$, $`c=2(r_0-1)^2`$ and $`B=r_0c`$. For the dyadic race parameters $`b=r=2`$ put
 
@@ -35,7 +35,7 @@ The support of $`j`$ is $`[-j_0,j_0]`$ with $`j_0=3a/2`$. Write $`\nu`$ for the 
 U(x)=\sum_\nu J(i\nu)e^{i\nu x},\qquad f(x)-U(x)\longrightarrow0\quad(x\longrightarrow+\infty).
 ```
 
-Indeed $`J(i\nu)=O((1+\nu^2)^{-1})`$, which is summable against the zero count. The base-field square terms have shifted real part $`-1/4`$, the base pole is killed by $`J(0)=0`$, the higher-power remainder is $`O(e^{-x/10})`$, and the finitely many excluded norms eventually leave the support. These estimates and the compact-kernel inversion are proved for this precise field and score in the earlier paper. The series is absolutely and uniformly convergent. The eight characters are stable under conjugation and $`j`$ is real and odd, so $`U`$ is real and odd. [Prime-only limit and explicit formula](https://github.com/leecrossley/theta-race-factor-18/blob/31ea5d495ca29f7f17869d1a3f321000266e4867/PROOF.md#the-limiting-oscillation)
+Indeed $`J(i\nu)=O((1+\nu^2)^{-1})`$, which is summable against the zero count. The base-field square terms have shifted real part $`-1/4`$, the base pole is killed by $`J(0)=0`$, the higher-power remainder is $`O(e^{-x/10})`$, and the finitely many excluded norms eventually leave the support. These estimates and the compact-kernel inversion are proved for this precise field and score in the earlier paper. The series is absolutely and uniformly convergent. The eight characters are stable under conjugation and $`j`$ is real and odd, so $`U`$ is real and odd. [Prime-only limit and explicit formula](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-18/PROOF.md#the-limiting-oscillation)
 
 ## Sum the gamma correction
 
@@ -57,7 +57,7 @@ I(x)&=\int_0^\infty\frac{e^{-t/2}}{2\sinh t}
 \end{aligned}
 ```
 
-The integral converges at zero by the Lipschitz bound on $`j`$ and at infinity by exponential decay. The kernel in it is $`\sum_{k\ge0}e^{-u_k t}`$, where $`u_k=2k+3/2`$. It can be integrated term by term since the integrated absolute second difference is bounded by $`28/u_k^2`$ for each term. [Derivation for this family](https://github.com/leecrossley/theta-race-factor-18/blob/31ea5d495ca29f7f17869d1a3f321000266e4867/PROOF.md#evaluate-the-zero-sum-near-the-origin)
+The integral converges at zero by the Lipschitz bound on $`j`$ and at infinity by exponential decay. The kernel in it is $`\sum_{k\ge0}e^{-u_k t}`$, where $`u_k=2k+3/2`$. It can be integrated term by term since the integrated absolute second difference is bounded by $`28/u_k^2`$ for each term. [Derivation for this family](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-18/PROOF.md#evaluate-the-zero-sum-near-the-origin)
 
 Define $`D_u(v)=r_0(e^{-u|v+a|}+e^{-u|v-a|})-3e^{-u|v|}`$. Convolution of $`g`$ with $`e^{-u|\cdot|}`$ gives $`(2u g+D_u/c)/(u^2-1/4)`$. This follows by multiplying their bilateral transforms and taking partial fractions. Take the same difference of two translates as in $`j`$, then subtract $`2j(x)/u`$. The integral for one exponential becomes
 

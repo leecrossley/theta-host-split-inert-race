@@ -15,12 +15,13 @@ At the four knot types the protected coefficients in the derivative sum are 1/sq
 The protected 60 by 60 slope minor has residues 303857281 and 674797901 modulo 1000000007 and 2147483647. Every column norm on both fields is at most one million.
 The protected 60 by 60 intercept minor has residues 290245403 and 1234467739 modulo 1000000007 and 2147483647. Every column norm on both fields is at most one million.
 The two repeated cells each contain two opposite signed hits, separated by a factor below 4/3.
-The four last deficient prime gaps are 479 to 641, 241 to 337, 113 to 223 and 127 to 223. The joint rank threshold for (6y,8y] is 641/8.
+The four last deficient prime gaps are 479 to 641, 241 to 337, 113 to 223 and 127 to 223. The last small-prime gap puts the joint prime-band threshold at 641/8 in the certified range.
 The 62 individual heights give at least 21 classes and 1830 transcendental ratios.
 The 514 additional midpoint primes pass 16 trial divisions and 498 Proth tests. Both degree-one chains have every ratio below 19/16 after their last gaps 479 to 641 and 479 to 577. The unconditional fourth-power intervals overlap the finite chains.
 The two common degree-one directions have last deficient gaps 2609 to 3313 and 2351 to 2879 at factor 19/16. The joint chains certify 16504 primes (172 trial divisions and 16332 Proth tests).
 Two exact interval algorithms find 4894 alternating disjoint signed supports. The 4893 intervening traversals give that many crossings of each signed target and of zero.
-With the initial 35 hits, 547/727 has at least 9821 signed hits, 3274 pairwise inequivalent heights and 1637 per sign before completion height exp(12500). At least 2447 zero heights in that range have pairwise transcendental quotients.
+Including the early crossings gives 9821 signed hits before completion height exp(12500). The unconditional one-field theorem gives at least 3274 classes, 1637 per sign, and the zero hits give 2447 classes.
+The finite prime chains alone give 349 classes among 1045 signed hits before completion height exp(1000).
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
