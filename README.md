@@ -30,7 +30,7 @@ For $b=2$, a direct count gives $7.512<A_2(50)/(B_2\sqrt{50})<7.513$ and $-38.47
 
 ## Where the trace enters
 
-At each prime $w$ of $E$ above a prime $v$ of $F$, subtract the twisted previous Hecke trace from the next trace and divide by the trace of the added untwisted segment. Multiply those normalized jumps over all $w$ above $v$. Away from the level, the answer is $+1$ when $v$ splits and $-1$ when $v$ is inert. A split prime has two factors in this product. An inert prime has one. The race counts each $v$ once with its norm in $F$.
+At each prime $w$ of $E$ above a prime $v$ of $F$, subtract the twisted trace of the preceding parameter row from the trace of the next row. Divide this difference by the trace of the added untwisted segment. Multiply those normalized jumps over all $w$ above $v$. Away from the level, the answer is $+1$ when $v$ splits and $-1$ when $v$ is inert. A split prime has two factors in this product. An inert prime has one. The race counts each $v$ once with its norm in $F$.
 
 The Lean proof constructs character data satisfying the upstream admissibility record on this particular host and proves the product identity for every input parameter family. The arithmetic bounds follow from a written Mellin-transform argument and numerical certificates. They apply to the resulting trace observable and to the ordinary split–inert count. [Concrete admissible datum and trace theorem](HostAdmissible.lean) · [Trace extraction](FiberTrace.lean) · [Full proof](PROOF.md)
 
@@ -57,7 +57,7 @@ python independent.py
 python real_axis.py
 ```
 
-For a fresh replay of the numerical and Lean checks on x86-64 Linux, install the requirements above and run the following with Git, curl, tar, zstd and a C toolchain available. The script downloads the pinned Lean, Mathlib, original sources and trace module. A replay with an existing pinned Mathlib checkout and source cache is documented in the proof. [Verification output](evidence/check.txt) · [File hashes](SHA256SUMS)
+For a fresh replay of the numerical and Lean checks on x86-64 Linux, install the requirements above and run the following with Git, curl, tar, zstd and a C toolchain available. The script downloads the pinned Lean, Mathlib, original sources and trace module. The fresh replay builds about 2,800 upstream modules and needs several gigabytes for the Mathlib cache and compiled dependencies. The four-path mode trusts the supplied compiled cache and uses modification times to decide which upstream modules to rebuild. Use an empty build directory to recompile the upstream sources. [Replay instructions](PROOF.md) [Verification output](evidence/check.txt) [File hashes](SHA256SUMS)
 
 ```sh
 bash verify-release.sh
