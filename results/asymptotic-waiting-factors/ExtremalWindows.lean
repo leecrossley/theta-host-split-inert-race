@@ -50,6 +50,21 @@ theorem half_wave_factor {g : ℝ} (hg : 8590 < g) :
   have h := div_lt_div_of_pos_left Real.pi_pos (by norm_num : (0:ℝ)<8590) hg
   exact mul_lt_mul_of_pos_left (Real.exp_lt_exp.mpr h) (by norm_num)
 
+/-- A two-sign amplitude is at most half the range between its witnesses. -/
+theorem balanced_pair (a b t : ℝ) (ha : t ≤ a) (hb : t ≤ -b) :
+    2*t ≤ a-b := by linarith
+
+/-- A decreasing covariance bounds the Cauchy--Schwarz product. -/
+theorem decreasing_covariance {v₀ v₁ v₂ a m : ℝ}
+    (horder : v₁ ≤ v₂) (hgap : v₁ ≤ v₀) (hscale : 0 < a)
+    (h : (a*m)^2 ≤ (v₀-v₁)*(v₀-v₂)) :
+    m ≤ (v₀-v₁)/a := by
+  apply (le_div_iff₀ hscale).mpr
+  have hb := mul_le_mul_of_nonneg_left (show v₀-v₂ ≤ v₀-v₁ by linarith) (sub_nonneg.mpr hgap)
+  by_contra! hbad
+  have hsq := mul_self_lt_mul_self (sub_nonneg.mpr hgap) hbad
+  nlinarith only [h,hb,hsq]
+
 end ExtremalWindows
 
 #print axioms ExtremalWindows.atom_zero
@@ -57,3 +72,5 @@ end ExtremalWindows
 #print axioms ExtremalWindows.support_in_window
 #print axioms ExtremalWindows.count_from_reciprocals
 #print axioms ExtremalWindows.half_wave_factor
+#print axioms ExtremalWindows.balanced_pair
+#print axioms ExtremalWindows.decreasing_covariance

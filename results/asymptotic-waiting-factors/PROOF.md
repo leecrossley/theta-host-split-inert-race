@@ -147,3 +147,83 @@ T(v)=\frac{(1+z)\log(1+z)+(1-z)\log(1-z)}{2\sqrt z}
 ```
 
 The second evaluation bounds the omitted positive tail geometrically after 128 terms. Every argument has absolute value larger than $`0.34`$. Both calculations enclose $`-1.990\lt U(s)\lt-1.989`$ and oddness gives the opposite value at $`-s`$. The width $`2s=0.00546`$ is strictly less than $`\log(2.011/2)`$. Leaving slack at both ends, translate this pair by uniform approximate periods of $`U`$. Both actual prime-only moves retain their strict margins since their errors tend to zero. The same bounded-gap argument from the preceding section yields the asserted density. This is recurrence of the *pair* in one window. The computation at the origin is an evaluation of the limiting profile. [Earlier even explicit formula](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#a-positive-bound-for-all-omitted-ordinates) · [Both numerical evaluations](check_close_pair.py)
+
+## The sharp amplitude at factor four
+
+Keep the score, the five finite exclusions and the strict start convention above. Let $`a=\log2`$ and let $`B_C(H)`$ be the supremum of the common normalized magnitudes of a gain and a loss on two eligible doublings starting strictly after $`H`$ and finishing by $`CH`$. Equivalently take the smaller of the positive parts of the supremum of $`f`$ and of $`-f`$ over the eligible log interval, where $`f`$ is the actual normalized move. A strict threshold below $`B_C(H)`$ has two actual witnesses. Put $`W=\log(C/2)`$, the width available to their starts in log coordinates. We consider $`2\lt C\le4`$.
+
+**Theorem.** If the eight odd factors have their strip zeros on the critical line, then
+
+```math
+\limsup_{H\to\infty}B_4(H)=
+A=\frac{V(0)-V(a)}{a}
+\in(269.3640010193614394,\ 269.3640010193614395).
+```
+
+For every threshold $`0\lt t\lt A`$, strict successes at factor four have positive lower logarithmic density. If any of the eight has an off-line zero, the upper limit is infinite for every $`C\gt2`$ and every fixed positive threshold has successes of positive lower logarithmic density. In particular $`269.364\log2`$ in both directions works before $`3.999999997H`$ on sets of positive lower logarithmic density **without any assumption**. Recurrence before $`3.999999989H`$ at that same threshold is equivalent to an off-line zero. This window comparison does not assert an outcome at the exact threshold $`A`$ itself.
+
+### The level profile decreases through the first dyadic interval
+
+Work first in the critical-line case. The absolutely convergent even profile is $`V(t)=\sum_\nu G(\nu)e^{i\nu t}`$, over all odd-family ordinates with multiplicity. The coefficients $`G(\nu)`$ are real, even and positive. The limiting move is $`U(t)=(V(t+a/2)-V(t-a/2))/a`$. In particular $`f(t)=U(t)+o(1)`$ uniformly on the late tail. The base-field prime-square term tends to its constant by the prime ideal theorem, and this constant cancels in the difference. Only the eight odd factors enter the critical-line premise. [Exact profile](#a-short-reversal-detects-an-off-line-zero) · [Prime-only arithmetic remainder](https://github.com/leecrossley/theta-host-split-inert-race/blob/compact-filter-oscillation-v1.1.0/results/compact-filter-oscillation/PROOF.md#what-survives-on-sparse-grids)
+
+For $`s=\sqrt2`$, $`c=2(s-1)^2`$ and $`0\le x\le a`$, the elementary explicit formula is
+
+```math
+V(x)=K\,\frac{4\sinh((a-x)/2)}{sc}
+-\frac8c\left[s\big(T(x+a)+T(a-x)\big)-3T(x)\right],
+\qquad K=\sum_\chi\log(q_\chi/\pi)-8(\gamma_{\rm E}+a).
+```
+
+Here $`q_\chi`$ runs over the eight primitive conductors, and $`K\gt47`$. In the translated tent no prime power above 4 occurs. At 2 the two nonvanishing characters cancel, at 3 the quartic twist sum vanishes, and at 4 the tent vanishes on the possible boundary $`x=a`$. The same holds at the reflected endpoint. Thus the formula extends to the entire closed interval, including its cusps. For $`x\ge0`$ the positive gamma kernel is
+
+```math
+T(x)=\sum_{k\ge0}\frac{e^{-(2k+3/2)x}}{(2k+1)(2k+2)},\qquad T(0)=\log2 .
+```
+
+On $`(0,\infty)`$, $`T'\lt0`$ and $`T''\gt0`$ by termwise differentiation on compact subintervals. For $`0\lt x\lt a`$, the derivative of the bracket in the explicit formula is $`s(T'(x+a)-T'(a-x))-3T'(x)\gt0`$. The tent is strictly decreasing and $`K\gt0`$. Hence $`V`$ is strictly decreasing on $`[0,a]`$. This last conclusion uses the absence of a nonzero prime contribution throughout this particular range. [Gamma series and tent formula](https://github.com/leecrossley/theta-host-split-inert-race/blob/9fdf8c9dea230464fc8ab635d1bdf1659c3539fd/results/asymptotic-waiting-factors/PROOF.md#both-signs-in-a-window-ending-by-2011h) · [Underlying even explicit formula](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#a-positive-bound-for-all-omitted-ordinates)
+
+### An upper bound for every choice of two starts
+
+Consider any two log centres at distance $`d\le W`$. Half the absolute difference between their limiting moves is at most
+
+```math
+\frac{2}{a}\sum_\nu G(\nu)
+  |\sin(a\nu/2)\sin(d\nu/2)|
+\ \le\ \frac{\sqrt{(V(0)-V(a))(V(0)-V(d))}}{a}.
+```
+
+The first bound follows by taking absolute values of the two Fourier differences, with both signs of every ordinate included. Cauchy–Schwarz gives the second since $`2\sum_\nu G(\nu)\sin^2(h\nu/2)=V(0)-V(h)`$. The smaller of two opposite magnitudes is at most half their separation in value. Strict decrease of $`V`$ bounds the right side by its value at $`d=W`$. The uniform prime-only remainder tends to zero independently of the two chosen starts. This proves a whole-window upper bound and permits either order and any overlap of the doublings. [Formal scalar deductions](ExtremalWindows.lean)
+
+For a lower bound use the symmetric log centres $`-W/2`$ and $`W/2`$ in the limiting profile. Evenness of $`V`$ gives values $`L(W)`$ and $`-L(W)`$, where
+
+```math
+L(W)=\frac{V((a-W)/2)-V((a+W)/2)}{a},\qquad
+P(W)=\frac{\sqrt{(V(0)-V(a))(V(0)-V(W))}}{a}.
+```
+
+For every $`t\lt L(W)`$, continuity lets us shorten the distance between the centres slightly, keeping both strict margins and leaving space at both endpoints of a window of width $`W`$. The uniformly almost-periodic zero series has a relatively dense set of translations preserving both margins. Uniform continuity gives log intervals of placement of fixed positive length at bounded gaps. The actual prime-only error tends to zero there. Such a set has positive lower logarithmic density in $`H`$. Consequently
+
+```math
+L(W)\le\limsup_{H\to\infty} B_C(H)\le P(W).
+```
+
+At $`W=a`$ both expressions equal $`A`$. The symmetric profile witnesses are an up move followed by a down move. To enforce the strict start at the exact completion factor four we first shorten their separation as above. Near equality also forces the ratio of the later start to the earlier start to tend to two, since any fixed shorter separation has strictly smaller $`P`$. Equality of zero frequencies or rational relations among ordinates causes no difficulty in this argument.
+
+### Two deadlines eight billionths apart
+
+Put $`t=269.364`$, $`C_+=3.999999997`$ and $`C_-=3.999999989`$. The two outward-rounded computations give
+
+```math
+L(\log(C_+/2))\gt t+0.00000015,\qquad
+P(\log(C_-/2))\lt t-0.00000008.
+```
+
+The second computation integrates the positive series using $`1/((2k+1)(2k+2))=\int_0^1 u^{2k}(1-u)\,du`$. After summation and the change of variable $`v=1-u`$, the integrand for $`T(x)`$ is
+
+```math
+e^{-3x/2}\frac{v}{(1-z+zv)(1+z-zv)},\qquad z=e^{-x}.
+```
+
+At $`x=0`$ it reduces to $`1/(2-v)`$. At positive $`x`$ the verifier integrates over dyadic subintervals with complex ball quadrature. The first computation uses the closed logarithmic expression for $`T`$, including the exact limiting value at zero. Both methods enclose the endpoint and the two strict comparisons. The coefficient positivity, monotonicity and the all-start upper bound are analytic deductions. [Numerical replay](fourfold_amplitude.py) · [Transcript](evidence/check.txt)
+
+If an odd factor has an off-line zero, the earlier positive-density theorem applies at each of these factors and every fixed threshold. It also gives the infinite upper limit by applying it to arbitrarily large fixed thresholds. Combining the two cases proves the unconditional success at $`C_+`$ and the equivalence at $`C_-`$. In the critical-line case the infimum of factors with arbitrarily late successes at amplitude $`t`$ belongs to $`[C_-,C_+]`$, an interval of width $`8\cdot10^{-9}`$. In the off-line case that infimum is 2. To obtain a fixed deadline after **every** $`H\ge1`$ for the amplitude $`t`$, use the bounded gaps between the intervals of successful log heights in either case. Enlarge the factor once more so that all bounded initial heights can use one fixed later successful pair. This argument gives no numerical bound for that all-height factor. [Off-line and bounded-gap conclusions](#a-short-reversal-detects-an-off-line-zero)
