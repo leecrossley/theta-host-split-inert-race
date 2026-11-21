@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "How smooth can the 547/727 prime race be?"
-abstract: "The mean-square regularity threshold and smooth width mixtures for the 547/727 prime-ideal race"
+abstract: "Under Dirichlet GRH, the mean-square regularity threshold for the 547/727 prime-ideal race, with smooth width mixtures that hold at every finite height without it"
 authors:
   - family-names: Crossley
     given-names: Lee
