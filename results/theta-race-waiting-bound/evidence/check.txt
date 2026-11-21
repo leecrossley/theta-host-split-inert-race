@@ -54,6 +54,13 @@ direct: 5478 signed spherical averages cover both moves at every real log height
 direct: all high zeros, omitted line ordinates, arithmetic corrections and strict endpoint inequalities passed.
 split: 5478 signed spherical averages cover both moves at every real log height from 2000 through 12500.
 split: all high zeros, omitted line ordinates, arithmetic corrections and strict endpoint inequalities passed.
+1,404 additional Hardy signs and 792 exterior Euler sums certify all 4194 positive zeros through ordinate 294, with multiplicity.
+The eight primitive characters use the conjugate character for each reflected bracket. The retained list has 6,702 positive brackets.
+direct: all 49,868 signed spherical averages exceed the threshold after the odd-zero, base-field and prime-power errors.
+split: all 49,868 signed spherical averages exceed the threshold after the odd-zero, base-field and prime-power errors.
+Forward earliest finishes and backward latest starts agree on all 1,250,001 centilog cutoffs.
+The three maximal certified log starting-widths are 4.83, 7.38 and 9.53, giving completion factors 251, 3208 and 27534.
+At factor 400 the stronger two conclusions cover at least 1,241,977 and 977,328 whole centilog cells in a log range of length 12,500.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for WaitingBound
 'WaitingBound.box_support' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.power_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -73,3 +80,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'WaitingBound.grouped_support' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.finite_sphere_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.exterior_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.opposite_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.base_mass_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.centilog_elapsed' depends on axioms: [propext, Classical.choice, Quot.sound]

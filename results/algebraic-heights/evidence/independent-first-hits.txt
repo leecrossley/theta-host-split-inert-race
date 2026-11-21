@@ -1,0 +1,2 @@
+Direct prime-ideal tents at 256 bits reproduce both first branches. Two translated Weierstrass cubics give the same exact j-invariants.
+Polynomial identities recover the scaled points on V^2 = U^3 - U, including overlapping target triples.

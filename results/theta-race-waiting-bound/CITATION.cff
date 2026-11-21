@@ -1,16 +1,15 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Both 547/727 prime-race moves finish by 400H through exp(12500)"
-abstract: "Both opposite dyadic changes greater than 1.9735 log 2 finish strictly before 400H after every real H between 1 and exp(12500) in the 547/727 prime-ideal race, unconditionally."
+title: "Prime-race crossings with a deadline and a transcendental height ratio"
+abstract: "Strict opposite 547/727 moves finish before 251H for every H through exp(12500). Opposite exact crossings with transcendental height ratio finish before 3208H, or before 27534H in either prescribed order. All three bounds are unconditional."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.3.2
+version: 1.4.0
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.2
-doi: 10.5281/zenodo.24426857
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.4.0
 type: software
 references:
   - type: software
@@ -21,3 +20,4 @@ references:
     version: "collection-2026-11-21"
     doi: 10.5281/zenodo.24426586
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/collection-2026-11-21
+doi: 10.5281/zenodo.24428962
