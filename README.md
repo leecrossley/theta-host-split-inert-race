@@ -1,5 +1,7 @@
 # Isolated peaks in the 547/727 prime race
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412645.svg)](https://doi.org/10.5281/zenodo.24412645)
+
 The upper limit of the weighted prime-ideal score rounds to **175.71160384848**. If two high scores both reach 162, their log heights must be **less than one half apart or more than one billion apart**, once both log centres reach 300. Every intervening real displacement is excluded. [Exact upper limit and proof](PROOF.md)
 
 A score above 170 stands more than 20 units above every point at log distance between $`1/2`$ and $`10^9`$ on either side. A score above 175 stands more than 40 units above those points. Both points must meet the same minimum log-centre condition. Scores above 175 occur with positive lower logarithmic density. [Peak and density calculation](peak_profile.py)
