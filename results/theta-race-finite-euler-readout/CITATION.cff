@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Three finite prime-race scores determine a local Euler factor"
-abstract: "Three finite prime-ideal counts recover each good local Euler factor on the 547/727 field"
+abstract: "Three finite weighted signed prime-ideal sums recover each good local Euler factor on the 547/727 field, unconditionally"
 authors:
   - family-names: Crossley
     given-names: Lee
