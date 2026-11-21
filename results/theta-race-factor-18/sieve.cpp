@@ -94,10 +94,13 @@ struct Strike {
 
 int main(int argc, char** argv) {
     Sums acc;
+    const bool countsOnly = argc == 2 && std::string(argv[1]) == "--degree-one-counts";
     if (argc==2 && std::string(argv[1])=="--fine") acc.fine=true;
-    else if (argc!=1) return 2;
-    acc.logTable.resize(bins+1);
-    for (auto &x : acc.logTable) if (!(std::cin >> x)) return 2;
+    else if (argc!=1 && !countsOnly) return 2;
+    if (!countsOnly) {
+        acc.logTable.resize(bins+1);
+        for (auto &x : acc.logTable) if (!(std::cin >> x)) return 2;
+    }
     u64 x;
     while (std::cin >> x) acc.edges.push_back(x);
     if (acc.edges.empty() || !std::is_sorted(acc.edges.begin(), acc.edges.end())) return 2;
@@ -120,7 +123,7 @@ int main(int argc, char** argv) {
             return (p*m-r)/16;
         };
         strikes.push_back({p,start(1),start(15)});
-        if (p==547 || p==727) continue;
+        if (countsOnly || p==547 || p==727) continue;
         bool f1 = (p%16==1 || p%16==15) && t[p%547]==u[p%727];
         if (f1) continue;
         u64 sq = p*p;
@@ -151,7 +154,8 @@ int main(int argc, char** argv) {
                 int sign = t[p%547];
                 if (sign != u[p%727]) return;
                 while (acc.edges[bucket] < p) ++bucket;
-                acc.add(bucket,p,p,-sign);
+                if (countsOnly) ++acc.sums[bucket].a;
+                else acc.add(bucket,p,p,-sign);
             };
             enter(a[j],16*(first+j)+1);
             enter(b[j],16*(first+j)+15);
@@ -159,6 +163,10 @@ int main(int argc, char** argv) {
     }
     for (std::size_t j=0; j<acc.edges.size(); ++j) {
         const auto &s=acc.sums[j];
+        if (countsOnly) {
+            std::cout << acc.edges[j] << ' ' << decimal(s.a) << '\n';
+            continue;
+        }
         std::cout << acc.edges[j] << ' ' << decimal(s.a) << ' ' << decimal(s.b)
                   << ' ' << decimal(s.c) << ' ' << decimal(s.d) << '\n';
     }

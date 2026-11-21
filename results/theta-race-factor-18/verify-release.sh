@@ -35,6 +35,14 @@ python3 finite.py "$tmp/sieve" >>"$tmp/receipt"
 python3 sharp_deadline.py >>"$tmp/receipt"
 python3 late_slabs.py "$tmp/sieve" >>"$tmp/receipt"
 python3 late_roots.py "$tmp/sieve" >>"$tmp/receipt"
+python3 splitting_square_bound.py "$tmp/sieve" "$tmp/bins" >>"$tmp/receipt"
+python3 splitting_square_recheck.py "$tmp/bins" >>"$tmp/receipt"
+python3 onset_spectrum.py hardy >>"$tmp/receipt"
+python3 onset_spectrum.py exterior >>"$tmp/receipt"
+python3 onset_spectrum.py direct >>"$tmp/receipt"
+python3 onset_spectrum.py split >>"$tmp/receipt"
+python3 onset_window.py >>"$tmp/receipt"
+python3 onset_window.py cells >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
