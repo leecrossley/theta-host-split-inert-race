@@ -25,6 +25,8 @@ python3 check_zeros.py >>"$tmp/receipt"
 python3 quadrature.py >>"$tmp/receipt"
 python3 independent.py >>"$tmp/receipt"
 
+python3 fixed_weight_checks.py >>"$tmp/receipt"
+
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then

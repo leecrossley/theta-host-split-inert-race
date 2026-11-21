@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Exactly when 6H misses a move in the 547/727 prime race"
-abstract: "The full set of late starting heights missing a move is determined for every completion factor at least six. The three sharp cutoffs and the exact integer census follow from prime arithmetic. The predecessor also gives a large-height obstruction under Dirichlet GRH."
+abstract: "For starting heights from one million through one billion, the paper determines exactly which heights miss a gain or a loss for each deadline factor of at least six. At a factor of six there are 5,372,773 exceptional integer starts. These finite results follow from prime arithmetic. The earlier obstruction at arbitrarily large heights assumes Dirichlet GRH."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.2.0
+version: 1.2.2
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-18-v1.2.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-18-v1.2.2
 type: software

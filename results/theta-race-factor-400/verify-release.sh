@@ -25,6 +25,8 @@ if [[ $# -ge 1 ]]; then
 fi
 if [[ $# -eq 2 ]]; then
   refs=$(cd "$2" && pwd)
+elif [[ -d "$repo/../geometric-grid-deadlines/evidence/upstream" ]]; then
+  refs=$(cd "$repo/../geometric-grid-deadlines/evidence/upstream" && pwd)
 fi
 cd "$repo"
 if command -v sha256sum >/dev/null 2>&1; then
@@ -37,7 +39,7 @@ tmp=$(mktemp -d)
 trap 'rm -rf -- "$tmp"' EXIT
 export PYTHONDONTWRITEBYTECODE=1
 python3 -c 'import flint; assert flint.__version__ == "0.9.0"'
-if [[ $# -eq 2 ]]; then
+if [[ -n "${refs:-}" ]]; then
   python3 check_source.py "$refs" >"$tmp/receipt"
 else
   python3 check_source.py >"$tmp/receipt"
@@ -48,6 +50,8 @@ python3 cell_check.py >>"$tmp/receipt"
 python3 thousand_zeros.py >>"$tmp/receipt"
 python3 thousand_window.py >>"$tmp/receipt"
 python3 thousand_cells.py >>"$tmp/receipt"
+python3 early_400.py >>"$tmp/receipt"
+python3 first_cover.py >>"$tmp/receipt"
 
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then

@@ -1,0 +1,38 @@
+name: Verify joint-levels-and-moves
+
+on:
+  push:
+    branches: [main]
+    paths: ['results/joint-levels-and-moves/**', '.github/workflows/joint-levels-and-moves-verify.yml']
+  pull_request:
+    paths: ['results/joint-levels-and-moves/**', '.github/workflows/joint-levels-and-moves-verify.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-joint-levels-and-moves-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: results/joint-levels-and-moves
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Free space for Lean and Mathlib
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+      - name: Install the pinned arithmetic package
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/python" -m pip install -r requirements.txt
+          echo "$RUNNER_TEMP/venv/bin" >> "$GITHUB_PATH"
+      - name: Replay numerical and Lean checks
+        run: bash verify-release.sh

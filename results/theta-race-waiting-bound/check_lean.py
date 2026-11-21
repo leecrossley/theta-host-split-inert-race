@@ -5,7 +5,9 @@ import subprocess
 import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
-THEOREMS = ("box_support", "power_cutoff", "gain_of_test", "loss_of_test", "moment_margins", "sphere_support", "stop_band", "overlap_witness", "square_move", "carrier_support")
+THEOREMS = ("box_support", "power_cutoff", "gain_of_test", "loss_of_test", "moment_margins", "sphere_support", "stop_band", "overlap_witness", "square_move", "carrier_support",
+            "filter_zero", "filter_retention", "filter_product", "filter_support",
+            "cosine_column", "grouped_support", "finite_sphere_exponent", "exterior_cell")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Even 1,020H can miss a move in the 547/727 prime race"
-abstract: "Conditional on Dirichlet GRH, a certified interval containing both signs of change rules out a universal waiting factor of 1,020 in the 547/727 prime-ideal race."
+title: "The first missed move at factor 400 in the 547/727 prime race"
+abstract: "The first 400H miss in the dyadic 547/727 prime-ideal race is a gain, at a starting height located to within a factor of 1.0131. This follows from a finite region for eight primitive Dirichlet factors. Failure of this localization unconditionally forces a zero in the specified region."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.1.0
+version: 1.2.0
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.1.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.2.0
 type: software

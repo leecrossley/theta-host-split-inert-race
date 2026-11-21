@@ -106,10 +106,10 @@ def early_witnesses():
                     sa,ca=(t*left).sin_cos()
                     sb,cb=(t*right/100).sin_cos()
                     value+=c*(sa*cb+ca*sb)
-            if sign*value-rest-arithmetic(tier)>arb(332)/100:
+            if sign*value-rest-arithmetic(tier)>arb(333)/100:
                 found.add(sign)
         assert found=={-1,1}
-    print('Both finite implementations find stronger witnesses after exp(100) and before exp(219).')
+    print('Both finite implementations find 3.33 log 2 moves after exp(100) and before exp(219).')
 
 
 if __name__=='__main__':

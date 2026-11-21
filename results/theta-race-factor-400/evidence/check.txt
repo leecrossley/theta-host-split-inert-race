@@ -18,6 +18,19 @@ A 22-bit phase mesh in 13,946 coordinates changes the retained sum by less than 
 The rational log width 6.235 exceeds log(500), and twice its exponential exceeds 1,020.
 Two gamma integrals give a separate Cauchy-Schwarz tail below 0.83. Direct interval sines certify the profile above -1.97 on 2,926 closed cells.
 Inside that same interval the profile exceeds 12.1 at log centre 3855250215.346 and falls below -0.05 at 3855250215.954.
+At log centre 1620542278/1000 the odd displacement is below 22/1000, the remaining arithmetic costs less than 0.001, and the factor lies strictly between 406729/1000 and 406730/1000.
+Closed gamma terms and the projected cubic majorant give the earlier tail below 0.751.
+The interval Fourier transform covers 32,769 nodes, their connecting intervals and frequency uncertainty at 1620542278/1000.
+At log centre 3895686221/1000 the odd displacement is below 30/1000, the remaining arithmetic costs less than 0.001, and the factor lies strictly between 400273/1000 and 400274/1000.
+The interval Fourier transform covers 32,769 nodes, their connecting intervals and frequency uncertainty at 3895686221/1000.
+Real gamma integrals at four shifts give the earlier projected tail below 0.751. Two shifts independently give the other window's tail below 0.831.
+The retained true frequencies are below 117/100 on all 2,150 closed cells starting at 1620542278/1000.
+The retained true frequencies are below 110/100 on all 1,062 closed cells starting at 3895686221/1000.
+Uniform base and arithmetic cost from log centre 12,494 is below 0.001. The finite odd region costs less than 0.022 everywhere and 0.012 at the narrow bridge.
+Five extra gain witnesses use direct true-frequency sines. 23 closed cells join the upper endpoint to the certified no-gain interval.
+The 32,768-point integer grid certifies 5,911,490 gain samples and 5,911,639 loss samples, with all gaps and strict endpoints checked.
+The 16,384-point integer grid certifies 5,911,490 gain samples and 5,911,639 loss samples, with all gaps and strict endpoints checked.
+The first missed move at factor 400 is a gain. The two bounding starting heights have ratio below 1.0131 if the finite odd exceptional region is empty.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for PairedWindows
 'PairedWindows.cubic_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.spectral_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -28,3 +41,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'PairedWindows.thousand_deadline' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.shallow_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.both_move_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.early_deadline' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.early_gain_exclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.earlier_deadline_and_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.first_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]

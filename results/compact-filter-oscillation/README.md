@@ -1,4 +1,12 @@
-# No compact prime weight erases either theta race
+# Fixed windows for independent prime weights
+
+On the 547/727 field or the 571/599 field, choose $`n`$ real, continuous, compactly supported weights for the split–inert prime-ideal race. Their linear independence is equivalent to the following property. There are constants $`r\gt0`$ and $`C\lt\infty`$ such that, after **every** real height $`H\ge1`$, every vector of length at most $`r`$ is the exact convex average of the centred prime scores from at most $`n`$ common starts between $`H`$ and $`CH`$. The same positive weights are used in all coordinates. For a single prime weight, the score takes **every** value in a fixed interval about its bias before the deadline. The constants may depend on the chosen weights and field. The proof is unconditional. It uses finite zero information and classical density estimates throughout the strip. [Fixed-window proof](PROOF.md#the-fixed-window-theorem)
+
+For the dyadic scores there is also a fixed deadline if every start must be a rational prime, a prime square or, more generally, $`p^s`$ for any one fixed $`s\gt0`$. A single factor for this grid works for **every** affine predictor in the table below, across both fields. With fifteen previous scores, every fixed affine rule makes an absolute error greater than **1.394** on the next score at some eligible start after every $`H`$. For the next normalized move the guaranteed error exceeds **1.19**. The factor can include completion of the last doubling. The proof gives existence of a finite factor. [Prime starts and the uniform forecast bound](PROOF.md#prime-power-starts)
+
+For the dyadic scores, $`n+1`$ common starts on the chosen grid suffice for every target in the guaranteed ball. Almost every target needs all $`n+1`$, even allowing unlimited waiting. For other independent weights, the grid proof assumes that the second distributional derivative of each log profile $`e^{v/2}w_j(e^v)`$ is a finite signed measure. [Exact number of grid starts](PROOF.md#prime-power-starts)
+
+## The weights and numerical radii
 
 On the 547/727 and 571/599 fields, take any nonzero, continuous real weight supported in a fixed closed interval of positive prime-norm ratios. The weighted inert-minus-split prime count swings strictly above and below its square-term bias by a positive amount, arbitrarily far out. The amount can depend on the weight. The proof is **unconditional**. It uses Bauer's theorem on simple critical-line zeros and a real-axis check on the two fields. [Proof](PROOF.md) · [Bauer, Corollary 1](https://matwbn.icm.edu.pl/ksiazki/aa/aa93/aa9313.pdf#page=2)
 
@@ -27,4 +35,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The replay checks 710 critical-line brackets, the real segments for sixteen characters, 28 positive quadratures by two methods and six local Lean deductions. The analytic proofs of survival, oscillation and sampling are written arguments. [Verification transcript](evidence/check.txt) · [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The replay checks 710 critical-line brackets, the real segments for sixteen characters, 28 positive quadratures by two methods, their margins after log smoothing by one method, and nine local Lean deductions. The analytic proofs of survival, oscillation and sampling are written arguments. [Verification transcript](evidence/check.txt) · [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)

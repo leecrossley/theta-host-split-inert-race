@@ -13,7 +13,7 @@ def read(name):
     return [tuple(map(int,row.split())) for row in (ROOT/'evidence'/name).read_text().splitlines()]
 
 
-def main():
+def verify_frames(retention):
     if not __debug__:
         raise RuntimeError("Run with assertions enabled.")
     ctx.prec=144
@@ -43,7 +43,11 @@ def main():
                 moments[j]+=w*(j*omega).cos()
         floor=mass-2*sum(abs(b) for b in moments[1:])
         target=arb(THRESHOLDS[n][kind])/10**6
-        assert floor>target**2*reciprocal,(f,kind,n)
+        assert floor*retention**2>target**2*reciprocal,(f,kind,n)
+
+
+def main():
+    verify_frames(arb(1))
     print("Positive quadratures at 710 genuine zero brackets certify all 28 width-two level and move radii by diagonal dominance.")
     for n,(level,move) in THRESHOLDS.items():
         print(f"{n} coordinates: strict two-sided level margin {level}/1000000 and normalized move margin {move}/1000000 in each field.")

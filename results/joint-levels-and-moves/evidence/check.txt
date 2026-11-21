@@ -32,6 +32,10 @@ Eight direct prime-ideal witnesses through norm 166322920 cover every H from 1 t
 All unverified high zeros are suppressed throughout the strip. Every completion is before exp(14004) times H^(17001/16999).
 sinc: 289 mixed harmonics certify both midpoint-level/move ellipses with axes 1.17 and 2.45, the two-move square of radius 3.5 and an odd-spectrum margin above 5.85.
 cosine: 289 mixed harmonics certify both midpoint-level/move ellipses with axes 1.17 and 2.45, the two-move square of radius 3.5 and an odd-spectrum margin above 5.85.
+fixed windows: nine-carrier harmonic magnitudes are below 6; the 289 dyadic shifts stay below 38
+the strict two-field ellipse axes and 17.9106 level contrast survive the common filters
+three exact colliding exponential modes recovered from three translations by polynomial interpolation
+sixteen primitive factors give a completion exponent of eight plus any positive excess on log H
 direct: 860 common positive averages cover all 4 sign choices through exp(2000) with factor 2^18.
 direct: 695 common positive averages cover all 16 sign choices through exp(2000) with factor 2^80.
 split: 860 common positive averages cover all 4 sign choices through exp(2000) with factor 2^18.
@@ -47,3 +51,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'JointOscillation.mixed_stop_band' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.contrast_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.cover_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.translated_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.near_perpendicular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.transverse' depends on axioms: [propext, Classical.choice, Quot.sound]

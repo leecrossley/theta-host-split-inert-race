@@ -62,6 +62,23 @@ theorem cover_endpoint {u x radius b width : ℝ}
     (position : x-radius ≤ u ∧ u ≤ x+radius) : b < u ∧ u < b+width := by
   constructor <;> linarith [position.1,position.2]
 
+
+/-- Distinct real growth rates remain separable at equally spaced log translations. -/
+theorem translated_det {n : ℕ} (d : Fin n → ℝ) (hd : Function.Injective d) :
+    (Matrix.vandermonde (fun j => Real.exp (d j))).det ≠ 0 := by
+  apply Matrix.det_vandermonde_ne_zero_iff.mpr
+  exact Real.exp_injective.comp hd
+
+/-- In the nearly perpendicular case the growing target and the discarded error share the margin. -/
+theorem near_perpendicular {support target error growth margin : ℝ}
+    (hs : target + margin ≤ support) (he : error + growth < margin) :
+    target + growth < support - error := by linarith
+
+/-- In the complementary case the extracted exponential dominates both error and target. -/
+theorem transverse {signal error target growth : ℝ}
+    (h : target + growth + error < signal) :
+    target + growth < signal - error := by linarith
+
 end JointOscillation
 
 #print axioms JointOscillation.projected_norm
@@ -74,3 +91,7 @@ end JointOscillation
 #print axioms JointOscillation.mixed_stop_band
 #print axioms JointOscillation.contrast_margin
 #print axioms JointOscillation.cover_endpoint
+
+#print axioms JointOscillation.translated_det
+#print axioms JointOscillation.near_perpendicular
+#print axioms JointOscillation.transverse
