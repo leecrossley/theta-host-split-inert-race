@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Why 18 fails in the 547/727 prime race"
-abstract: "Factor 18 covers a billion starting heights in the 547/727 prime-ideal race by direct sieve. Under Dirichlet GRH it fails at arbitrarily large heights."
+title: "The sharp finite deadline in the 547/727 prime race"
+abstract: "The exact finite deadline, its first amplitude discontinuity and the sharp amplitude for factor 18 follow from prime arithmetic. The predecessor also gives a large-height obstruction under Dirichlet GRH."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.3
+version: 1.1.0
 license: CC-BY-4.0
-repository-code: https://github.com/leecrossley/theta-race-factor-18
+repository-code: https://github.com/leecrossley/theta-host-split-inert-race
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-18-v1.1.0
 type: software
