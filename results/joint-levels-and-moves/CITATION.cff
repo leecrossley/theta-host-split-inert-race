@@ -6,6 +6,7 @@ authors:
   - family-names: Crossley
     given-names: Lee
 version: 1.4.1
+doi: 10.5281/zenodo.24430410
 date-released: 2026-11-21
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
