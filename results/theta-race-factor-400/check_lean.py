@@ -6,7 +6,7 @@ import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("cubic_majorant", "spectral_budget", "deadlines", "strict_move", "reflection", "move_fits",
-            "thousand_deadline", "shallow_loss", "both_move_signs", "early_deadline", "early_gain_exclusion")
+            "thousand_deadline", "shallow_loss", "both_move_signs", "early_deadline", "early_gain_exclusion", "earlier_deadline_and_margin")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

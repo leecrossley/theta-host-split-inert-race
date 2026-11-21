@@ -78,6 +78,14 @@ theorem early_gain_exclusion {f p : ℝ} (head : p ≤ 11/10)
     (remainder : |f-p| ≤ 831/1000 + 3/100 + 1/1000) :
     f < (19735:ℝ)/10000 := by linarith [(abs_le.mp remainder).2]
 
+/-- The earlier rational interval fits a factor above 406 and excludes the target gain. -/
+theorem earlier_deadline_and_margin {f p : ℝ} (head : p ≤ 117/100)
+    (remainder : |f-p| ≤ 751/1000 + 22/1000 + 1/1000) :
+    406 < 2 * Real.exp (5315/1000 : ℝ) ∧ f < (19735:ℝ)/10000 := by
+  have h := Real.sum_le_exp_of_nonneg (x := (5315/1000:ℝ)) (by norm_num) 20
+  norm_num [Finset.sum_range_succ, Nat.factorial_succ] at h
+  constructor <;> linarith [(abs_le.mp remainder).2]
+
 end PairedWindows
 
 #print axioms PairedWindows.cubic_majorant
@@ -92,3 +100,4 @@ end PairedWindows
 #print axioms PairedWindows.both_move_signs
 #print axioms PairedWindows.early_deadline
 #print axioms PairedWindows.early_gain_exclusion
+#print axioms PairedWindows.earlier_deadline_and_margin

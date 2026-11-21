@@ -246,3 +246,25 @@ Retain the 13,946 verified positive brackets and their conjugates. For one brack
 The direct calculation passes the full ordinate bracket and each closed time cell into the sine. It bisects 512 initial cells as needed. On all 1,062 leaves the retained sum is below 1.1. The Fourier calculation separately encloses 32,769 signed nodes, the degree-16 Taylor remainder, the interpolation between adjacent nodes and the displacement of each bracket from its midpoint. It also bounds the retained sum below 1.1 at every real point of $`[\ell,\ell+W]`$. The two computations use the same bracket table, kernels and ball arithmetic library. [Both interval checks](early_400.py) · [Fourier implementation](thousand_window.py) · [Check transcript](evidence/check.txt)
 
 Adding every allowance gives $`f(x)\lt1.1+0.831+0.03+0.001=1.962`$. The endpoints $`y\gt H_0`$ and $`2y\le2e^WH_0`$ imply $`\ell\lt x=\log(2\sqrt2\,y)\le\ell+W`$. This proves the theorem by contraposition. The local Lean proofs check the deadline comparison and the numerical implication at the requested move size. The explicit formula, zero counts and kernel estimates are written proofs. [Lean deductions](PairedWindows.lean) · [Numerical verifier](early_400.py)
+
+### A second witness below log height 1,620,543
+
+A wider search identified the earlier closed interval $`[1620542.278,1620547.593]`$, at a different stretch of the same race. Put $`H_1=e^{1620542.278}/(2\sqrt2)`$. If any doubling after $`H_1`$ that finishes by $`2e^{5.315}H_1`$ gains at least $`1.944\log2`$, an odd-factor zero satisfies
+
+```math
+8590\lt|\gamma|\le e^{810330},\qquad
+\beta\gt\frac12+4\cdot10^{-8}
+ +\frac{49}{50\cdot1620548}\log^+\!\left(\frac{|\gamma|}{10^{12}}\right).
+```
+
+This is an unconditional implication. In particular the forced zero has $`\beta\gt0.50000004`$ and has $`\beta\gt3/4`$ if $`|\gamma|\ge e^{420000}`$. The announced primitive theorem therefore rules out the requested gain at $`H_1`$, even by the factor $`2e^{5.315}=406.72902625769\ldots`$. The starting log centre is over 289 times smaller than the previously published $`469417229.340`$ witness for factor 400. [Two-window verifier](early_400.py) · [Earlier witnesses](#statement)
+
+Here the retained true-frequency sum has an interior peak which makes the two-moment allowance too large. Use the cubic majorant from the four-moment proof. With $`X=1620548`$ and $`\epsilon=4\cdot10^{-8}`$ the same paired-zero, weighted-band and unrestricted-tail estimates give an odd displacement below $`0.022`$. At the four even shifts $`0,a,2a,3a`$, insert $`3a`$ for the largest shift in the even-moment bounds above. Each exact moment then differs from the projected moment by less than $`2\cdot10^{-5}`$. The only interior prime contribution is at $`2a`$ from the prime power 4, as computed in the earlier cubic proof. Expanding the power-reduction identities, the total projected majorant before subtracting the retained pairs is
+
+```math
+\frac{71V_0(0)-42V_0(a)-6V_0(2a)-V_0(3a)}{54a}.
+```
+
+The error allowance for this quantity is only $`120(2\cdot10^{-5})/(54a)`$. After subtracting the sign-certified pairs, the omitted projected mass is below $`0.751`$. One calculation uses the closed gamma terms. The other encloses the two original real gamma integrals at $`0,a`$ and two additional integrals at $`ka`$, $`k=2,3`$. For these last two the interval is $`[(k-1)a,(k+1)a]`$, away from the singularity at zero. The integrand is $`e^{-t/2}g(ka-t)/(2\sinh t)`$, with the prime term at $`k=2`$ added separately. The computation encloses all 32,768 equal subintervals of each integral. [Four cosine moments](#four-moments-for-the-missing-zeros) · [Gamma integrals and both tail checks](early_400.py)
+
+The retained sum is below $`1.17`$ on all 2,150 closed cells of the direct cover. The Fourier grid proves the same inequality at every point after bracket, Taylor and interpolation costs. The base and all other arithmetic terms still cost less than $`0.001`$ at this earlier $`\ell`$. Thus the normalized move is strictly below $`1.17+0.751+0.022+0.001=1.944`$ throughout. The width $`5.315`$ exceeds $`\log200`$. Both witnesses explicitly exclude a large gain. The separate four-digit example above excludes a large loss. [Exact margin and endpoint deductions](PairedWindows.lean) · [Replay transcript](evidence/check.txt)
