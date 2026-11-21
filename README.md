@@ -1,5 +1,7 @@
 # How long can the 547/727 prime race go without a gain or a loss?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410806.svg)](https://doi.org/10.5281/zenodo.24410806)
+
 After **every** starting height $H\ge1$, the split–inert lead on the 547/727 field both gains and loses more than $1.9735\log 2$ over a doubling. Both moves finish before
 
 $$
