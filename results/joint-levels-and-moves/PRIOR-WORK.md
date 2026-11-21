@@ -1,6 +1,6 @@
 # Prior work and scope
 
-Reviewed 21 November 2026. The claim concerns the two specified theta-host races at common starting heights, their joint level and doubling-move geometry at independent widths, and the numerical single-height comparisons. It now also covers deadlines for each field's advantage on a common doubling at width two. The published sources and code searched yielded no earlier statement of these bounds for this pair.
+Reviewed 21 November 2026. The claim concerns the two specified theta-host races at common starting heights, their joint level and doubling-move geometry at independent widths, and the numerical single-height comparisons. It now also covers deadlines for each field's advantage on a common doubling at width two, and one fixed completion factor for every target pair. The published sources and code searched yielded no earlier statement of these bounds for this pair.
 
 | Source | Relation to this result |
 |---|---|
@@ -10,7 +10,7 @@ Reviewed 21 November 2026. The claim concerns the two specified theta-host races
 | Platt | Finite-height Dirichlet zero verification covers the conductors in this computation. The selected zeros occur in known spectra. The new calculation excludes all mixed signed sums and opposite-host singleton tubes needed for these two races, with two independent evaluators, both using Arb ball arithmetic. [Numerical computations concerning the GRH](https://arxiv.org/abs/1305.3087) |
 | Fenchel and Bárány–Karasev | The theorem reducing the number of points needed for a connected subset of Euclidean space is classical. Four common starts here follow by applying that result after proving the numerical product of ellipses is in the ordinary convex hull. [Notes About the Carathéodory Number](https://www.renyi.hu/~barany/cikkek/131.pdf) |
 
-Searches used the four conductor primes together, both field pairs, split–inert prime ideals, smoothed levels and increments, weak independence, comparative oscillations, joint prime races and convex hulls. The comparison included the maintained theta collection and public GitHub code. The first-publication assessment is limited to the material found. The ten local Lean results verify projection and support inequalities and the deadline arithmetic. The interval calculations and the written analytic and geometric proof have their own verification records. [Proof](PROOF.md) · [Certificate](evidence/check.txt)
+Searches used the four conductor primes together, both field pairs, split–inert prime ideals, smoothed levels and increments, weak independence, comparative oscillations, joint prime races and convex hulls. The comparison included the maintained theta collection and public GitHub code. The first-publication assessment is limited to the material found. The thirteen local Lean results verify projection and support inequalities, the deadline arithmetic and three fixed-window deductions. The interval calculations and the written analytic and geometric proof have their own verification records. [Proof](PROOF.md) · [Certificate](evidence/check.txt)
 
 ## Deadlines for a common doubling
 
