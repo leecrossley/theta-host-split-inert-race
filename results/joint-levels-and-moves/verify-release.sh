@@ -25,6 +25,12 @@ python3 zeros.py >>"$tmp/receipt"
 python3 independent.py >>"$tmp/receipt"
 python3 amplitudes.py >>"$tmp/receipt"
 python3 finite_examples.py >>"$tmp/receipt"
+python3 deadline_spectrum.py >>"$tmp/receipt"
+python3 early_common.py >>"$tmp/receipt"
+python3 all_height_common.py >>"$tmp/receipt"
+for method in direct split; do
+  python3 finite_common.py "$method" >>"$tmp/receipt"
+done
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then

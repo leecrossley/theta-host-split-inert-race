@@ -37,6 +37,31 @@ theorem ellipse_axes {a b c d x y : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
   nlinarith only [mul_nonneg (mul_nonneg (sub_nonneg.mpr hac) (by linarith : 0 ≤ c+a)) (sq_nonneg x),
     mul_nonneg (mul_nonneg (sub_nonneg.mpr hbd) (by linarith : 0 ≤ d+b)) (sq_nonneg y)]
 
+theorem deadline_support (h : ℝ) :
+    let L := (h+14084)/16999
+    let X := h+7002+L
+    let R := 7000+L
+    X-R = h+2 ∧ X+R < (17001/16999)*h+14004 := by
+  dsimp
+  constructor
+  · ring
+  · linarith
+
+theorem mixed_stop_band {h : ℝ} (hh : 100 ≤ h) :
+    let L := (h+14084)/16999
+    let X := h+7002+L
+    (X+7000)/2-8503*L ≤ -41 := by
+  dsimp
+  linarith
+
+theorem contrast_margin {x y r : ℝ} (hx : r < x) (hy : y < -r) :
+    2*r < x-y := by linarith
+
+theorem cover_endpoint {u x radius b width : ℝ}
+    (left : b < x-radius) (right : x+radius-width < b)
+    (position : x-radius ≤ u ∧ u ≤ x+radius) : b < u ∧ u < b+width := by
+  constructor <;> linarith [position.1,position.2]
+
 end JointOscillation
 
 #print axioms JointOscillation.projected_norm
@@ -45,3 +70,7 @@ end JointOscillation
 #print axioms JointOscillation.projection_gap
 #print axioms JointOscillation.one_sided_pair
 #print axioms JointOscillation.ellipse_axes
+#print axioms JointOscillation.deadline_support
+#print axioms JointOscillation.mixed_stop_band
+#print axioms JointOscillation.contrast_margin
+#print axioms JointOscillation.cover_endpoint

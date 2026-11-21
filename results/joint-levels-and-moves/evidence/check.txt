@@ -25,6 +25,17 @@ Start 97: normalized moves in (-10742, -10741)/1000 and (-15402, -15401)/1000.
 Start 162: normalized moves in (10382, 10383)/1000 and (-16281, -16280)/1000.
 Start 658: normalized moves in (10221, 10222)/1000 and (22952, 22953)/1000.
 All four sign pairs exceed magnitude 10 in both races. The Frobenius and polynomial counts agree.
+3218 genuine brackets, 6436 strict Hardy signs, sixteen primitive characters.
+547/727: 1584 positive brackets. The line is complete through 48 and its omitted mass is below 0.30 at zero.
+571/599: 1634 positive brackets. The line is complete through 48 and its omitted mass is below 0.30 at zero.
+Eight direct prime-ideal witnesses through norm 166322920 cover every H from 1 through exp(15) for the two-move square.
+All unverified high zeros are suppressed throughout the strip. Every completion is before exp(14004) times H^(17001/16999).
+sinc: 289 mixed harmonics certify both midpoint-level/move ellipses with axes 1.17 and 2.45, the two-move square of radius 3.5 and an odd-spectrum margin above 5.85.
+cosine: 289 mixed harmonics certify both midpoint-level/move ellipses with axes 1.17 and 2.45, the two-move square of radius 3.5 and an odd-spectrum margin above 5.85.
+direct: 860 common positive averages cover all 4 sign choices through exp(2000) with factor 2^18.
+direct: 695 common positive averages cover all 16 sign choices through exp(2000) with factor 2^80.
+split: 860 common positive averages cover all 4 sign choices through exp(2000) with factor 2^18.
+split: 695 common positive averages cover all 16 sign choices through exp(2000) with factor 2^80.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for JointOscillation
 'JointOscillation.projected_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.disk_support' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -32,3 +43,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'JointOscillation.projection_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.one_sided_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.ellipse_axes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.deadline_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.mixed_stop_band' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.contrast_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.cover_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]

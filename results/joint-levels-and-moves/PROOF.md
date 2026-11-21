@@ -89,3 +89,129 @@ The constant term vanishes. For $`\Re s=1/2`$ and $`|s|\lt 4`$ the rising factor
 This second evaluator samples the 26 Chebyshev roots in each cell of length $`1/4`$ and encloses the interpolating polynomial by the Clenshaw recurrence. On that cell the monic node polynomial has absolute value bounded by $`2(1/16)^{26}`$. The same analytic-disc bound gives complex interpolation error at most $`96q\,4^{-26}`$. A separate rational enumeration generates the signed intervals. The real-axis check constructs the characters on every residue and covers $`[1/2,1]`$ by derivative-bounded cells. It uses $`|C(t)|\le\min(t,M)`$ from one full period, whence $`|L'(s)|\le4\sqrt M+4\sqrt M\log M+4`$ for real $`1/2\le s\le1`$, by splitting the integral at $`M`$. [Independent interpolation](independent.py) · [Real segments](real_axis.py)
 
 For the four finite examples the residue degree $`f`$ of an unramified rational prime $`\ell`$ is its Frobenius order modulo complex conjugation. All $`8/f`$ base ideals have norm $`\ell^f`$ and sign $`(\ell/p)^f`$ in Legendre-symbol notation. An independent local computation factors the real quartic, the real quadratic and the imaginary quadratic defining polynomials over the residue field. The common degree in the real compositum is the least common multiple of the first two degrees. Adjoining the third determines the sign. The resulting coefficients agree prime by prime through $`8\cdot658`$. The height weights are exact rational numbers before multiplication by logarithms. These four finite counts certify all four sign patterns at the specified starts. [Prime counts](finite_examples.py) · [Full verification transcript](evidence/check.txt)
+
+## The finite common windows
+
+Fix both widths at two and retain the prime and score conventions of the two explicit theta hosts. In field A omit primes over 2, 547, 727, 343057911569 and 343070636977. In field B omit primes over 2, 571, 599, 413718278401 and 603339156001. Write $`r=\sqrt2`$, $`a=\log2`$, $`B_0=2r(r-1)^2`$, and now write $`x=\log(2r y)`$ for the log centre of a doubling with start $`y`$. Then the midpoint score is $`L_i=S_i(ry)`$ and the normalized move is $`D_i=(S_i(2y)-S_i(y))/a`$. A completion occurs at $`2y=e^x/r`$. [547/727 trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [571/599 trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean)
+
+**Theorem.** At each $`1\le H\le e^{2000}`$, the convex hull of actual common observations with $`H\lt y`$ and $`2y\lt2^{18}H`$ contains the closed square $`[-4,4]^2`$ of normalized moves in its interior. With $`2y\lt2^{80}H`$ the corresponding four-dimensional hull contains the closed box $`|L_i-1|\le2`$, $`|D_i|\le4`$ in its interior.
+
+### Prime-power and zero errors
+
+For each field, replace the prime-only level by the fully signed odd-factor prime-power level $`P_i`$. The local Euler factors above give the eight odd primitive Dirichlet characters $`\mathcal A_i`$. The comparison score is
+
+```math
+P_i(y)=-\frac{1}{B_0\sqrt y}
+\sum_{p\ {\rm prime}}\sum_{k\ge1}\log p\,
+   \sum_{\chi\in\mathcal A_i}\chi(p)^k W_2(p^k/y).
+```
+
+Use the midpoint or take the normalized dyadic difference as appropriate. For a nontrivial zero with $`z=\rho-1/2`$, the corresponding term is $`G(z)e^{zx}`$ for the midpoint and $`J(z)e^{zx}`$ for the move. Here $`G=G_2`$ as in the original result and $`J(z)=2G(z)\sinh(az/2)/a`$. These formulas follow on integrating the two tent branches and applying the logarithmic derivatives, including the odd trivial zeros. No principal factor occurs. The strip mass bound for each family is $`\sum_\rho(1+(\Im\rho)^2)^{-1}\lt1000`$, and both strip kernels are bounded by $`1000/(1+(\Im z)^2)`$. Indeed the completed exterior derivative estimate uses at most eight primitive factors of conductor at most 11632 in either field. The level kernel has mass 2 and support within $`[-a,a]`$, and its rational expression gives the same strip bound used for the move. Both kernels have total variation at most 6 and support in $`[-2,2]`$. [Single-field derivation and mass estimate](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.1.0/results/theta-race-waiting-bound/PROOF.md#total-mass-of-the-omitted-zeros)
+
+Here are uniform physical bounds for replacing prime powers by primes at starts above $`Y\ge10^9`$. Put $`Z=\sqrt Y`$ and $`B=B_0`$ temporarily. A degree-one prime splits in the real quartic field and lies in one of the classes $`\pm1\bmod16`$. For both classes and every $`u\ge Z`$, Ramaré and Rumely give $`|\vartheta(u;16,l)-u/8|\le\epsilon u/8`$. When $`Z\ge10^{10}`$ take $`\epsilon=0.009`$ by Table 1. Otherwise take the larger of this and $`8(2.072)/\sqrt Z`$, using their Theorem 2 for $`u\le10^{10}`$. [Ramaré and Rumely, Theorems 1 and 2](https://ramare-olivier.github.io/Maths/rumely.pdf)
+
+The square correction to a level is nonnegative and bounded by
+
+```math
+Q=2+8\epsilon/B+d,\qquad d=8.16\sqrt{2/Z}/B .
+```
+
+There are at most eight degree-one ideals per rational prime. Partial summation against $`W_2(v^2)`$ on $`1\le v\le2`$ bounds their contribution by $`2+8\epsilon/B`$. The ordinary theta bound $`\vartheta(t)\le1.02t`$ controls the higher-degree ideals by $`d`$. For the square change use the positive or negative part of $`r^{-1}W_2(v^2/2)-W_2(v^2)`$. Both have area $`A=6r-2(1+r)\sqrt{2r}`$, and weighted variation at most $`2+r`$. The change costs at most $`Q_D=(2A+2\epsilon(2+r))/B+d`$ before division by $`a`$. Bounding higher powers and the five omitted primes at either scale gives
+
+```math
+E=\frac{8.16}{B\sqrt Y}\left((4Y)^{1/3}+(4Y)^{1/4}
+       +\frac{\log(4Y)}{a}(4Y)^{1/5}\right),\qquad
+E_b=\frac{8(3\log2+\sum_{p\in{\cal B}_i,\ p\ne2}\log p)}{B\sqrt Y}.
+```
+
+Here $`\mathcal B_i`$ is the five-prime omission set. All these bounds decrease, or stay constant, as the floor increases. The centred level therefore differs from the signed prime-power level by at most $`\max(1,Q-1)+E+E_b`$. The normalized move differs from its prime-power counterpart by at most $`(Q_D+2E+2E_b)/a`$. At $`Y=e^{100}`$ these two costs are below 1.151 and 2.353 in both fields. The finite calculation uses each row's own floor. The finitely many omitted prime powers are charged at every scale. [Derivation of the signed square bound](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.1.0/results/theta-race-waiting-bound/PROOF.md#cancellation-in-the-prime-squares) · [Arithmetic calculation](deadline_arithmetic.py)
+
+Platt's finite theorem puts every odd-factor zero through height 8590 on the line because $`8590\cdot11632\lt10^8`$. We include 1,584 positive sign brackets for A and 1,634 for B, all below 125. At each $`3/2+iv`$ for $`v=0,2,\ldots,48`$ take the real part of the completed logarithmic derivative. It is the sum of $`(3/2-\beta)/((3/2-\beta)^2+(v-t)^2)`$ over all true zeros. Subtract the known brackets and their negative partners, supplied by conjugation of the complete family. Every residual is below 0.49. An omitted line zero through 48 would contribute at least one half at a nearby centre. At zero each residual is below 0.30. Thus the total unlisted critical-line mass is below 0.30 in each field and all such ordinates exceed 48 in absolute value. Counts include multiplicity. [Zero verifier](deadline_spectrum.py) · [Integer brackets](evidence/common-deadline-zeros.tsv) · [Platt, Theorem 7.1](https://arxiv.org/pdf/1305.3087#page=14)
+
+### Signed common averages
+
+Centre one probability on each listed $`x`$. Convolve 1,150 uniform boxes of half-width $`1/3000`$ and two of half-width $`1/8`$. Its support radius is $`R=1150/3000+2/8`$. On a retained positive ordinate $`t`$ its transfer is $`U(t)=\mathrm{sinc}(t/3000)^{1150}\mathrm{sinc}(t/8)^2`$, using $`\mathrm{sinc}(v)=\sin(v)/v`$. The positive and negative pair contributes
+
+```math
+2G(it)U(t)\cos(tx)\quad\hbox{and}\quad
+-\frac{4G(it)\sin(at/2)}a\,U(t)\sin(tx)
+```
+
+to the level and move. For unlisted line ordinates $`|t|\gt48`$, the rational formula gives bounds $`18/(1+t^2)`$ for $`G(it)`$ and $`50/(1+t^2)`$ for $`J(it)`$. The two wider boxes give a further factor $`1/(48/8)^2`$. Multiply by the omitted mass cap. Zeros above height 8,000 anywhere in the strip cost at most $`10^6 e^{1040+1/8}(\cosh(1/6000)/(8000/3000))^{1150}`$ for the full allowed centre range $`x\le2080`$. At the trivial zeros use the total variation and the support bound. Their total is at most $`48 e^{-3(x-R-2)/2}/(1-e^{-2(x-R-2)})`$. At our smallest allowed $`x-R`$ the latter and the higher-zero estimate together are below 0.002. Counting some high line zeros twice in these upper bounds preserves the inequalities. [Enclosures in both coordinates](finite_common.py)
+
+For each of four move orthants choose a row whose two signed average moves exceed 4. For four coordinates choose rows for all sixteen orthants, with both signed centred levels above 2 and signed moves above 4. All margins include the arithmetic and spectral uncertainties above. One evaluation uses direct sine, cosine and sinc, and another uses split phases, half-angles and cosine differences. Each row $`(m,s,t)`$ gives the centre $`m/100`$, the orthant as a binary integer in lexicographic sign order with negative first, and the log-height floor. Floor zero denotes height $`10^9`$. The two-coordinate order is $`(D_A,D_B)`$ and the four-coordinate order is $`(L_A-1,D_A,L_B-1,D_B)`$. [860 move rows](evidence/common-2.tsv) · [695 four-coordinate rows](evidence/common-4.tsv)
+
+Each row covers the open interval $`(x+R-\log(C/2),x-R)`$ of possible values $`\log(2rH)`$. Its entire support starts strictly after $`H`$ and finishes before $`CH`$. For each orthant the open intervals overlap strictly, through $`\log(2r)+2000`$. With four coordinates they start at $`H=1`$, and for the two moves they start at $`H=e^{15}`$. The remaining two-move range is covered by eight direct prime-ideal counts. The first four starts exceed 2,048 and finish before $`2^{18}`$. The next four exceed $`e^{15}`$ and finish before $`2048\cdot2^{18}`$. A congruence-class sieve handles good degree-one primes modulo 16 and the residue-degree calculation adds all higher-degree ideals. Interval logarithms enclose both scores on every selected doubling, through norm 166,322,920. Each of the four sign pairs exceeds magnitude 4 in both groups. [Direct count](early_common.py) · [Endpoint inequalities](JointOscillation.lean)
+
+## A common test at every height
+
+**Theorem.** For every $`H\ge1`$, with both completions before $`e^{14004}H^{17001/16999}`$, the move hull contains $`[-3.5,3.5]^2`$ in its interior. The level and move hull contains the product of the two closed ellipses centred at $`(1,0)`$ with semiaxes $`1.17`$ and $`2.45`$. All statements concern actual prime-only scores.
+
+For $`h=\log H\ge100`$ select the following two actual ordinates from the bracket table. All endpoints in the last two columns have denominator $`10^{14}`$.
+
+| Field | Conductor | Conrey label | Lower numerator | Upper numerator |
+|---|---:|---:|---:|---:|
+| A | 11632 | 1453 | 236949851779030 | 236949851779034 |
+| B | 9136 | 5709 | 231411042788551 | 231411042788555 |
+
+Call the ordinates $`g_A,g_B`$. For $`M=8`$ let $`w_k=1-|k|/9`$ when $`|k|\le8`$. The Fejér polynomial $`F(\theta)=|\sum_{j=0}^8e^{ij\theta}|^2/9`$ is nonnegative with coefficients $`w_k`$. Use the product $`F(g_Ax+\theta_A)F(g_Bx+\theta_B)`$. Its 289 terms have frequencies $`\nu=kg_A+lg_B`$ and weights $`w_kw_l`$, with arbitrary phases determined by two independently chosen angles. Their absolute weights sum to 81.
+
+Use two uniform boxes of half-width 3,500 convolved with the compact positive sphere probability of the waiting-bound proof, now with $`c=8510`$. Its Laplace transform is
+
+```math
+\Psi_L(z)=\frac{c}{\sinh(cL)}
+  \frac{\sinh(L\sqrt{c^2+z^2})}{\sqrt{c^2+z^2}} .
+```
+
+The law is that of $`Lv_3`$ on the unit sphere with surface measure tilted by $`e^{cLv_1}`$ and normalized. Rotation proves the formula on the real axis and analytic continuation extends it to the plane. Its modulus on the imaginary axis is at most one. Translate the convolution to centre $`X`$ where
+
+```math
+L=(h+14084)/16999,\quad R=7000+L,\quad X=h+7002+L.
+```
+
+The support has $`X-R=h+2`$ and $`X+R\lt14004+(17001/16999)h`$. Thus every possible common start exceeds $`H`$ and its doubling completes before the stated deadline. [Sphere kernel and the earlier single-field test](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.1.0/results/theta-race-waiting-bound/PROOF.md#a-smaller-explicit-exponent-at-every-height) · [Lean support deductions](JointOscillation.lean)
+
+Take a real linear functional with coefficients $`(u_i,v_i)`$ on $`(L_i-1,D_i)`$ for each host. On its own selected zero the complex coefficient is $`u_iG(ig_i)+v_iJ(ig_i)`$, its real and imaginary parts in quadrature. The cancelling harmonics and the conjugate zero contribute twice $`w_1`$ times the absolute value of this coefficient when the phase is chosen to align it. Each host has its own angle, so these choices can be made simultaneously. If a coefficient is zero, any angle for that host suffices. All other terms are bounded uniformly in both angles.
+
+In detail set $`V_i=|J(ig_i)|`$ and $`U(v)=\mathrm{sinc}(3500v)^2`$. The mass of the modulated test lies between $`1-E_0`$ and $`1+E_0`$, where $`E_0=\sum_{(k,l)\ne(0,0)}w_kw_l U(kg_A+lg_B)\lt0.01`$. For a retained positive ordinate $`t`$, put
+
+```math
+B_i(t)=\sum_{k,l}' w_k w_l U(t-kg_A-lg_B).
+```
+
+The prime on the sum omits exactly $`(k,l)=(1,0)`$ at the selected A row in A, or $`(0,1)`$ at the B row in B. Negative ordinates give conjugates. For the level leakage use $`\sum_t2G(it)B_i(t)`$ and for the move use $`\sum_t2|J(it)|B_i(t)`$. All evaluated nonselected frequency differences exclude zero. Missing line terms add $`18m`$ and $`50m`$ respectively, where
+
+```math
+m=\frac{0.30\cdot81}{3500^2(48-8(g_A+g_B))^2}.
+```
+
+An off-line zero has absolute ordinate above 8590. Since $`8(g_A+g_B)\lt38`$, every shifted ordinate has magnitude at least 8552. For $`z=u+iv`$ at that distance with $`|u|\le1/2`$, a square root $`P+iQ`$ of $`c^2+z^2`$ has $`Q^2\ge v^2-c^2-1/4\gt700^2`$ and $`|P|\le|v|/(2\sqrt{v^2-c^2-1/4})\lt7`$. Hence $`|\Psi_L(z)|\lt37e^{-8503L}`$. Including the two boxes and the translation gives the exponent $`(X+7000)/2-8503L\le-41`$. The off-line cost per coordinate is below $`81\cdot37\cdot10^6e^{-41}\lt0.0001`$. The trivial zeros have real shifted abscissae $`-3/2-2j`$. The pointwise bound 81 on the polynomial product and $`X-R-2=h\ge100`$ give a trivial-zero contribution below 0.0001. The calculation assigns 0.001 to these two sources together. These estimates apply for every centre, regardless of the positions of the higher zeros. [Mixed-frequency checks](all_height_common.py)
+
+Divide the main amplitudes by $`1+E_0`$, obtaining $`b_i=2w_1G(ig_i)/(1+E_0)`$ and $`d_i=2w_1 V_i/(1+E_0)`$. Divide the two spectral error bounds by $`1-E_0`$, then add the corresponding prime-square and higher-power costs. Call the resulting positive errors $`e_i,f_i`$. The normalized average of the chosen functional is at least
+
+```math
+\sum_i\left(\sqrt{(b_iu_i)^2+(d_iv_i)^2}
+                  -e_i|u_i|-f_i|v_i|\right).
+```
+
+By Cauchy–Schwarz the $`i`$-th summand is at least $`p_i\sqrt{(b_iu_i)^2+(d_iv_i)^2}`$ where $`p_i=1-\sqrt{(e_i/b_i)^2+(f_i/d_i)^2}`$. Two implementations check $`p_ib_i\gt1.17`$, $`p_id_i\gt2.45`$ and $`d_i-f_i\gt3.5`$ for both fields. The last inequality applies to a move-only functional directly. For smaller $`H`$ use the stronger finite boxes from $`H=e^{100}`$. Their completions are before $`e^{100}2^{80}\lt e^{14004}`$. The large-height tests and the finite calculations together prove the theorem. [Sinc and cosine evaluations](all_height_common.py)
+
+## Why these are actual prime observations
+
+At any fixed starting height all witnesses for the relevant comparison live in a compact interval of eligible starts, strictly inside its completion limit. In the finite theorem there are finitely many support intervals or direct witnesses. Enclose their union in its compact interval hull. In the infinite theorem the kernel itself has one compact support interval. The four-coordinate score curve is continuous throughout either interval, so its image and its convex hull are compact.
+
+For a real projection of the finite box choose the orthant agreeing with the signs of its coefficients. The certified positive mean, or the early exact observation, gives a strict support-function margin in that direction. In the all-height theorem choose the two modulating phases as above. Separation puts the specified boxes or ellipse products in the actual hull, in its interior since every nonzero direction has a strict margin. The connected-set refinement of Carathéodory's theorem, applied along the same interval of eligible starts, gives at most two common starts for the two moves and at most four for all coordinates. This reproduces any target in the claimed sets with one common vector of nonnegative weights. [Original connected-curve proof](#common-starts-and-the-number-of-readings) · [Bárány and Karasev](https://www.renyi.hu/~barany/cikkek/131.pdf)
+
+A single linear functional takes a value at least as large as any of its positive averages. With direction $`(1,-1)`$ or $`(-1,1)`$ the strict support inequalities give a single doubling where one normalized move exceeds the other by more than 8 in the finite theorem or 7 at every height. Multiplication by $`\log2`$ restores the original units. More generally the two-sided margins are $`4(|s|+|t|)`$ and $`3.5(|s|+|t|)`$ for any fixed nonzero linear combination $`sD_A+tD_B`$.
+
+## Larger contrasts on power intervals
+
+**Theorem.** Fix $`(s,t)\ne(0,0)`$ and $`\delta\gt0`$. For all sufficiently large $`H`$ the projection $`sD_A+tD_B`$ takes a value above $`5.85(|s|+|t|)`$ and another below its negative, at starts greater than $`H`$ whose doublings finish before $`H^{1+\delta}`$. The height can depend on the direction and on $`\delta`$.
+
+For each field the good-square correction to the level tends to 1 by its unconditional prime ideal theorem and compactly supported partial summation. Explicitly the unsigned sum against $`W_2((Nv/Z)^2)`$ divided by $`BZ`$ tends to $`\int_1^2W_2(v^2)\,dv/B=1`$. Higher powers and finite omissions contribute $`o(1)`$. The move's arithmetic correction consequently tends to zero. Removing the arithmetic error from the mixed-frequency computation gives a move amplitude after spectral errors above 5.85 in each field. This check allows arbitrary modulating phases and both signs.
+
+The Mellin transform of the fixed real projection on the half-plane $`\Re z\gt0`$ is meromorphic. Its possible poles there are shifted odd-factor zeros, with coefficient $`J(z)(s m_A+t m_B)`$ times a nonzero centering exponential, where $`m_i`$ counts multiplicity in the $`i`$-th family. The prime-square logarithmic derivative is holomorphic at $`1+2z`$ and the higher powers are holomorphic there as well. The tent's possible zeros have real part $`\pm1/2`$ and the move multiplier's zeros have real part zero. Every uncancelled off-line residue on the right is therefore nonzero. There are no real poles there by finite verification.
+
+If there is no such pole, the off-line terms in the projected odd prime-power formula cancel with their multiplicities. The functional equations reflect the multiplicities within each family and hence also cancel the left-hand partners. The remaining nontrivial terms give an absolutely convergent trigonometric series on the log axis by the total mass bound. For instance, convolve first with small centred probability boxes, apply the explicit formula, and shrink the boxes at fixed positive log height; the line series and the trivial zeros are dominated there. The latter vanish in the limit at large log height. With the arithmetic correction restored, the actual projection is this uniformly almost periodic series plus $`o(1)`$. Apply the same mixed-frequency test to the series, omitting the sphere factor (its earlier imaginary-axis majorant was one). For each sign the supremum exceeds $`5.85(|s|+|t|)`$ strictly. Almost periodicity gives such values with a fixed margin in each sufficiently long log interval. The actual prime scores inherit both signs.
+
+If there is a pole on the right, let $`\Theta\gt0`$ be the supremum of the real parts of these poles. For any $`0\lt\eta\lt\Theta`$ add and subtract $`\mathbf1_{y\ge1}y^\eta`$ from the projected observable separately. Its Mellin transform converges absolutely far to the right, since prime sums have polynomial growth and vanish sufficiently near zero. In $`\Re z\gt\Theta-c_0`$ with $`0\lt c_0\lt\Theta-\eta`$, the two transforms have precisely the same nonreal poles, with no finite accumulation, conjugate in pairs and with ordinary pole expansions. These are the hypotheses of the power-interval theorem of Kaczorowski and Pintz. Each modified function changes sign on every sufficiently late $`[Y^{1-\varepsilon},Y]`$ for each fixed $`0\lt\varepsilon\lt1`$. The original projection exceeds $`y^\eta`$ and falls below $`-y^\eta`$ there. Put $`Y=H^{1+\delta/2}`$ and $`\varepsilon=(\delta/4)/(1+\delta/2)`$. All starts exceed $`H`$ and $`2Y\lt H^{1+\delta}`$ eventually. The two alternatives prove the claim without a global zero-location hypothesis. [Kaczorowski and Pintz, theorem (1.7)](https://personal.math.ubc.ca/~gerg/teaching/592-Fall2018/papers/1987.Kaczorowski_2.pdf) · [Single-field application](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.1.0/results/theta-race-waiting-bound/PROOF.md#every-positive-excess-exponent)
