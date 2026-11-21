@@ -95,7 +95,7 @@ and the identification of the loss as successful and the gain as the first miss 
 \Re\rho\gt\tfrac12+\epsilon+\frac{p}{X}\log^+(|t|/10^{12}).
 ```
 
-Here $`\log^+u=\max(0,\log u)`$. Equivalently, failure of the localization or its boundary conclusions forces such a zero, unconditionally. For the separate interval starting at log centre 3895686.221, replace $`X`$ by 3895692, $`\epsilon`$ by $`2\cdot10^{-8}`$ and the upper endpoint by $`e^{973947}`$. All gains there up to the factor $`2e^{5.299}`$ are then below $`1.962\log2`$. The previous respective endpoints were $`e^{810330}`$ and $`e^{1947900}`$. [Original finite regions and all-height certificate](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-factor-400-v1.2.0/results/theta-race-factor-400/PROOF.md#the-first-missed-move-at-factor-400)
+Here $`\log^+u=\max(0,\log u)`$. Equivalently, failure of the localization or its boundary conclusions forces such a zero, unconditionally. For the separate interval starting at log centre 3895686.221, replace $`X`$ by 3895692, $`\epsilon`$ by $`2\cdot10^{-8}`$ and the upper endpoint by $`e^{973947}`$. The quintic weights below lower the two endpoints to $`e^{405153}`$ and $`e^{973939}`$ ([recovery at every stated height](#recovery-at-every-stated-height)). All gains there up to the factor $`2e^{5.299}`$ are then below $`1.962\log2`$. The previous respective endpoints were $`e^{810330}`$ and $`e^{1947900}`$. [Original finite regions and all-height certificate](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-factor-400-v1.2.0/results/theta-race-factor-400/PROOF.md#the-first-missed-move-at-factor-400)
 
 For the transfer, write $`U_0(s)=\sum J(it)e^{its}`$ for the projection of all odd zeros with multiplicity. The earlier proof bounds the difference from this projected profile throughout the whole negative intervals and at every certified gain and loss witness. Keep the same retained zeros, projected moment bounds and witness data. For shifts $`|u|\le R`$ and $`|t|\le e^{100}`$, the phase shift costs at most $`10^6 e^{100}R`$ in the aggregate. The coefficient sum on the complementary projected tail costs at most $`100C_{11632}(e^{100})`$ in the difference. Also $`|1-1/m|\le R`$ and $`|U_0|\le10^6`$. These bounds make the total discrepancy between $`U_0(x)`$ and its normalized symmetric average less than $`10^{-10}`$. The even projected moments at the four small shifts use only the old low-ordinate real-part control to $`10^{12}`$ and an unrestricted high tail. They are still valid for both new regions. [Earlier projected moments](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-factor-400-v1.2.0/results/theta-race-factor-400/PROOF.md#what-a-displacement-of-an-odd-zero-can-change)
 
@@ -105,7 +105,7 @@ Specifically these budgets are $`0.022`$ up to log centre 1620550, $`0.012`$ at 
 
 ## A pure fourth-root cutoff with polynomial weights
 
-For either host take $`x\ge12494`$, put $`\lambda=(5\cdot10^6/6)e^{x/4}`$ and write $`z=\rho-1/2=d+it`$. With $`v_+=\max(v,0)`$, define the quintic spline
+For either host take $`x\ge12494`$, put $`\lambda=(5\cdot10^6/6)e^{x/4}`$ and for each nontrivial odd zero write $`z=\rho-1/2=d+it`$. With $`v_+=\max(v,0)`$, define the quintic spline
 
 ```math
 B(w)=\frac1{2112}\sum_{j=0}^6(-1)^j\binom6j(w+6-2j)_+^5,
@@ -121,7 +121,7 @@ Put $`m_P=1+5/(88\lambda^2)`$. The following estimate is unconditional for the s
        J(\rho-\tfrac12)e^{(\rho-1/2)x}P_\lambda(d,t)\right|\lt0.0008 .
 ```
 
-The cutoff is a constant times the fourth root of the actual prime height. All three polynomial weights vanish at and beyond the endpoint. The real parts of the zeros enter through the two derivative terms and the original explicit formula. The conjugate terms combine to a real sum. [Polynomial and integral checks](quintic.py)
+The sum runs over the nontrivial odd zeros. The cutoff is a constant times the fourth root of the actual prime height. All three polynomial weights vanish at and beyond the endpoint. The real parts of the zeros enter through the two derivative terms and the original explicit formula. The conjugate terms combine to a real sum. [Polynomial and integral checks](quintic.py)
 
 ### The kernel on the strip
 
