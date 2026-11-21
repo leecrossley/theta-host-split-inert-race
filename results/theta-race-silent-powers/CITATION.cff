@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Exceptional powers of two in the 547/727 prime race"
+abstract: "A billion-exponent gap between possible exceptions and a positive density of uniformly small dyadic moves on the 547/727 field."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.2
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-silent-powers
+type: software
