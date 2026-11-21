@@ -1,0 +1,15 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+The two host frames, four split type primes, the published zero table and the prime-only error below 0.007 from log centre 100 are verified.
+Field 0: 1,063 closed cells cover every log step from log 2 to log 4; the dyadic point uses N=216.
+Field 1: 1,072 closed cells cover every log step from log 2 to log 4; the dyadic point uses N=315.
+Integer distance certificates force both signs above 1.985 in the limiting profiles, uniformly in the offset.
+Sine envelopes from directed arithmetic, endpoint products and cubic moments independently verify all 2,137 filter certificates.
+Both evaluations certify the exact dyadic lattice in 223 consecutive starts for field 0.
+Both evaluations certify the exact dyadic lattice in 319 consecutive starts for field 1.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for GeometricGrid
+'GeometricGrid.forced_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricGrid.error_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricGrid.stride' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricGrid.block_counts' does not depend on any axioms
+'GeometricGrid.positive_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricGrid.alias_run' depends on axioms: [propext, Classical.choice, Quot.sound]
