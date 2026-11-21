@@ -5,7 +5,7 @@ abstract: "A fixed multiplicative deadline under Dirichlet GRH for both signed d
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.2
+version: 1.0.3
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-race-fixed-factor
 type: software
