@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Fixed windows for independent prime weights"
+abstract: "For either the 547/727 or the 571/599 prime-ideal race, independence of compact continuous prime weights is equivalent to a fixed interior ball of convex score averages after every height in one multiplicative window. The numerical affine forecast errors hold with a uniform deadline on rational-prime-power starts."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.1.0
+license: CC-BY-4.0
+date-released: 2026-11-21
+repository-code: https://github.com/leecrossley/theta-host-split-inert-race
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/compact-filter-oscillation-v1.1.0
+type: software

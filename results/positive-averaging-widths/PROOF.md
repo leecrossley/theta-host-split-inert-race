@@ -23,8 +23,8 @@ Let $`\mu`$ be a compactly supported nonnegative probability measure on the log-
 **Theorem.** Write $`m_A,m_B,m_{AB}`$ for these three minimum widths. Then
 
 ```math
-88.436<m_A<88.440,\qquad47.698<m_B<47.702,\qquad
-103.945<m_{AB}<103.949 .
+88.436\lt m_A<88.440,\qquad47.698\lt m_B<47.702,\qquad
+103.945\lt m_{AB}<103.949 .
 ```
 
 For each lower endpoint and every admissible average of at most that width, some indicated positive ordinate has $`|\widehat\mu(t)|\gt1/1000001`$. Each upper endpoint admits a positive symmetric atomic filter and a smooth nonnegative density. The same filter cancels the selected contributions in both the level and the dyadic move. On the joint problem one filter serves both fields. The contribution at zero frequency from the prime-square bias is retained by normalized averaging.

@@ -24,6 +24,10 @@ for method in direct split; do
   python3 finite_deadlines.py "$method" >>"$tmp/receipt"
 done
 
+for method in direct split; do
+  python3 finite_sphere.py "$method" >>"$tmp/receipt"
+done
+
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then
   math=$(cd "$1" && pwd)

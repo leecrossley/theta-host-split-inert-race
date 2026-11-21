@@ -5,7 +5,8 @@ import subprocess
 import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
-THEOREMS = ("weighted_bound", "quadrature_radius", "affine_error", "two_sided", "unrepresented", "frame_perturbation")
+THEOREMS = ("weighted_bound", "quadrature_radius", "affine_error", "two_sided", "unrepresented", "frame_perturbation",
+            "positive_probe", "grid_rounding", "rounding_exponent")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

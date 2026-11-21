@@ -37,7 +37,7 @@ With the tilted sphere, every completion is before exp(219) times H^(17001/16999
 sinc: 6,000 positive ordinates, 27 harmonics, and the unlisted tail certify both 3.32 log 2 moves in the shorter kernel.
 cosine: 6,000 positive ordinates, 27 harmonics, and the unlisted tail certify both 3.32 log 2 moves in the shorter kernel.
 Both finite implementations find 3.33 log 2 moves after exp(100) and before exp(219).
-two independent constant checks: finite zero cancellation preserves both 3.02 and 3.33 log 2 moves
+Rational series and Arb bound the inputs to the same inequalities for the 3.02 and 3.33 log 2 moves.
 short-box tail below 0.0001; low shifted filter radius below 5406; explicit log-squared deadlines
 the stronger moves finish before H^1.00001 at log H >= 2000000000 and H^1.000001 at log H >= 20000000000
 separated positive interpolation: exact norm, local zero-count, support and 3.33 log 2 margin checks passed
@@ -49,6 +49,11 @@ direct: 526 signed positive averages cover the full real range from 10^9 through
 direct: 1017 signed positive averages cover the full real range from 10^9 through exp(2000) with completion factor 400.
 split: 526 signed positive averages cover the full real range from 10^9 through exp(1000) with completion factor 256.
 split: 1017 signed positive averages cover the full real range from 10^9 through exp(2000) with completion factor 400.
+Five exterior logarithmic derivatives extend low-ordinate completeness through 63.
+direct: 5478 signed spherical averages cover both moves at every real log height from 2000 through 12500.
+direct: all high zeros, omitted line ordinates, arithmetic corrections and strict endpoint inequalities passed.
+split: 5478 signed spherical averages cover both moves at every real log height from 2000 through 12500.
+split: all high zeros, omitted line ordinates, arithmetic corrections and strict endpoint inequalities passed.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for WaitingBound
 'WaitingBound.box_support' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.power_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -66,3 +71,5 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'WaitingBound.filter_support' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.cosine_column' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.grouped_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.finite_sphere_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.exterior_cell' depends on axioms: [propext, Classical.choice, Quot.sound]

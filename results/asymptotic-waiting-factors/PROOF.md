@@ -29,7 +29,7 @@ It is nonzero for $`0\lt\Re z\lt1/2`$. The tent numerator vanishes only on $`\Re
 For $`1/2\lt\sigma\le\sigma_*`$ let $`S(\sigma)`$ sum $`1/\gamma`$ over distinct **complex points** $`\beta+i\gamma`$ of these factors with $`\beta\ge\sigma`$ and $`\gamma\gt0`$. For fixed $`\sigma\gt1/2`$, Montgomery’s density bound has power $`3(1-\sigma)/(2-\sigma)\lt1`$ in the height. Summing its dyadic bound divided by the lower endpoint gives $`S(\sigma)\lt\infty`$. As $`\sigma\uparrow\sigma_*`$, these sums decrease to $`S_*`$ by domination by any one earlier summable series. If the supremum is attained take $`\sigma=\sigma_*`$. Otherwise take the real part of an actual zero sufficiently close to $`\sigma_*`$. In both cases choose $`g\gt0`$ with $`\sigma+ig`$ a zero and ensure
 
 ```math
-d=\sigma-1/2>\eta,\qquad \pi S(\sigma)<W .
+d=\sigma-1/2>\eta,\qquad \pi S(\sigma)\lt W .
 ```
 
 No equality or spacing between other ordinates is assumed. [Montgomery](https://www.mathnet.ru/eng/mat564) · [The density estimate in full](https://www.numdam.org/item/10.5802/jtnb.1162.pdf#page=11)
@@ -104,7 +104,7 @@ In the off-line case, the positive-density conclusion extends to **every** $`C\g
 
 **All eight factors on the line.** By the prime ideal theorem for the fixed base field, the square contribution to the normalized level tends to a constant. Taking a dyadic difference removes it. Higher powers and bad primes give $`o(1)`$. The actual move is therefore an absolutely convergent sine series $`U(x)`$ plus $`o(1)`$ as $`x\to\infty`$. This only uses the eight odd critical-line assertions. The prime ideal theorem for the square contribution is unconditional. Uniform continuity already gives, for every fixed positive threshold, a sufficiently small width on which two opposite qualifying moves are impossible at all sufficiently late heights. [Prime-square argument](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.2.0/results/theta-race-waiting-bound/PROOF.md#every-positive-excess-exponent)
 
-For the stated width write $`a=\log2`$, $`r=\sqrt2`$. The earlier four-moment certificate bounds the omitted absolute sine-coefficient mass by $`0.75`$ after retaining 13,946 positive ordinates with their partners. Its cosine moments use just the eight odd factors. The independent Cauchy–Schwarz certificate gives $`0.83`$. The earlier removal of the finite-height square bias used extra zero information. Here the limiting square-bias cancellation just proved suffices. For a retained positive ordinate $`g`$ the absolute sine coefficient is
+For the stated width write $`a=\log2`$, $`r=\sqrt2`$. The earlier four-moment certificate bounds the omitted absolute sine-coefficient mass by $`0.75`$ after retaining 13,946 positive ordinates with their partners. Its cosine moments use just the eight odd factors. The independent Cauchy–Schwarz certificate gives $`0.83`$, which alone would not close the inequality below. The earlier removal of the finite-height square bias used extra zero information. Here the limiting square-bias cancellation just proved suffices. For a retained positive ordinate $`g`$ the absolute sine coefficient is
 
 ```math
 B(g)=\frac{2(3-2r\cos(ag))|\sin(ag/2)|}
