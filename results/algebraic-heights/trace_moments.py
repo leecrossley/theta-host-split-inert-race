@@ -36,8 +36,8 @@ def verify():
     assert F(57,41)**2 < 2  # 8*(r+1)<49*(r-1)
     assert F(29,21)**2 < 2  # 7*(r-1)/8>1/3
     assert F(366)**3/6 > 480*(366+3)
-    print("Pairwise trace moments need moduli at most 6,967,568. Every interval (L,4L/3] with log L >= 366 has log-prime mass greater than L/864 in each projected direction above 1/32 and below -1/32.")
-    print("Four local directions and the least-eigenvalue bound give seven independent readings including 1 at every algebraic y >= exp(366).")
+    print("Checked the 16 trace patterns, the modulus bound 6,967,568 and the rational constants 1/20, 1/64 and 1/288 in the prime-mass estimate.")
+    print("Checked the two comparisons with sqrt(2) and the numerical bound at 366 used in the proof of rank seven.")
 
 
 if __name__ == "__main__":
