@@ -1,0 +1,17 @@
+Verified 810 positive Hardy brackets (1,620 strict endpoint signs) and the sixteen primitive field characters.
+All sixteen completed logarithmic derivatives at 3/2 leave positive remainders below 1/5. The closed unit-height band has nine and seven simple positive zeros, mutually disjoint, their negative partners, and no real zeros.
+At real part two, independent finite Euler sums through 4,096, including an absolute tail, place each omitted positive logarithmic-derivative mass below 1/4.
+547/727: a signed cosine sum exceeds 1/1,000,000 throughout half the lower width 88436/1000. At width 88440/1000 each of 10 exact symmetric-pair weights exceeds 1/1000.
+547/727: at log width 20 the private first mode alone forces level and move RMS above 25000/10000 and 1214/10000.
+571/599: a signed cosine sum exceeds 1/1,000,000 throughout half the lower width 47698/1000. At width 47702/1000 each of 8 exact symmetric-pair weights exceeds 1/1000.
+571/599: at log width 20 the private first mode alone forces level and move RMS above 9460/10000 and 1162/10000.
+both: a signed cosine sum exceeds 1/1,000,000 throughout half the lower width 103945/1000. At width 103949/1000 each of 17 exact symmetric-pair weights exceeds 1/1000.
+547/727: 233 Taylor cells independently separate every shorter filter. The rational inverse has row-sum defect below one millionth and gives strictly positive exact weights.
+571/599: 163 Taylor cells independently separate every shorter filter. The rational inverse has row-sum defect below one millionth and gives strictly positive exact weights.
+both: 948 Taylor cells independently separate every shorter filter. The rational inverse has row-sum defect below one millionth and gives strictly positive exact weights.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AveragingWidths
+'AveragingWidths.kernel_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AveragingWidths.positive_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AveragingWidths.dual_separation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AveragingWidths.inverse_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AveragingWidths.shared_saving' depends on axioms: [propext, Classical.choice, Quot.sound]
