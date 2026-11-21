@@ -62,7 +62,7 @@ def main():
         assert arb(2693640010193614394)/10**16 < endpoint < arb(2693640010193614395)/10**16
         assert lower > threshold + arb(15)/10**8
         assert upper < threshold - arb(8)/10**8
-    print("Closed gamma terms and certified rational-integral quadrature independently enclose the factor-four endpoint between 269.3640010193614394 and 269.3640010193614395.")
+    print("Closed gamma terms and certified rational-integral quadrature of the gamma kernel, within one explicit formula, enclose the factor-four endpoint between 269.3640010193614394 and 269.3640010193614395.")
     print("At 3.999999997 the symmetric pair beats 269.364 by more than 0.00000015; at 3.999999989 the critical-line upper bound is below 269.364 by more than 0.00000008.")
 
 
