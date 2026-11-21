@@ -8,9 +8,11 @@ For the actual field, the unconditional conclusion is an alternative. Arbitraril
 
 There is also a test in the other direction. **A gain and a loss above the stated magnitude both finish by $`2.00125H`$ at arbitrarily large $`H`$ if and only if one of the eight odd factors has a zero off the critical line.** In that case successes have positive lower logarithmic density for every fixed $`C\gt2`$. Every such factor works at *all* sufficiently late starts exactly when the supremum of the zero real parts is unattained. [Short-reversal criterion](PROOF.md#a-short-reversal-detects-an-off-line-zero)
 
+**Both moves do fit before $`2.011H`$ for a set of starting heights of positive lower logarithmic density, unconditionally.** Those successful log heights contain intervals of fixed positive length with bounded gaps. In the critical-line case two independent evaluations locate the opposite signs at $`\pm0.00273`$ in the limiting profile. [Close-pair proof](PROOF.md#both-signs-in-a-window-ending-by-2011h)
+
 ## Verification
 
-Run `bash verify-release.sh` with Python 3.10 or newer and python-flint 0.9.0 installed. The script checks the manifest, compares rational and interval calculations, tests the signed moment construction, evaluates both variation bounds on 13,946 archived ordinate brackets and replays five local Lean deductions. On a platform with the pinned Lean and a built Mathlib checkout, pass its path as the sole argument. The density theorem, compactly supported interpolation and uniform prime-score estimates are written proofs. [Numerical and formal transcript](evidence/check.txt) · [Prior work](PRIOR-WORK.md) · [Source hashes](SHA256SUMS)
+Run `bash verify-release.sh` with Python 3.10 or newer and python-flint 0.9.0 installed. The script checks the manifest, compares rational and interval calculations, tests the signed moment construction, evaluates both variation bounds on 13,946 archived ordinate brackets, checks a second close pair by two gamma-kernel evaluations, and replays five local Lean deductions. On a platform with the pinned Lean and a built Mathlib checkout, pass its path as the sole argument. The density theorem, compactly supported interpolation and uniform prime-score estimates are written proofs. [Numerical and formal transcript](evidence/check.txt) · [Prior work](PRIOR-WORK.md) · [Source hashes](SHA256SUMS)
 
 ```sh
 python3 -m pip install -r requirements.txt

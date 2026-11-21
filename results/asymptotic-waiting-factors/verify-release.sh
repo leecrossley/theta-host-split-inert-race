@@ -19,6 +19,7 @@ export PYTHONDONTWRITEBYTECODE=1
 python3 -c 'import flint; assert flint.__version__ == "0.9.0"'
 python3 check_windows.py >"$tmp/receipt"
 python3 check_reversals.py >>"$tmp/receipt"
+python3 check_close_pair.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then
