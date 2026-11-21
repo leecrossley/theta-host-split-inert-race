@@ -1,0 +1,35 @@
+central value of Hardy Z for 571.570 has sign +1
+central value of Hardy Z for 4568.1141 has sign +1
+central value of Hardy Z for 9136.1141 has sign +1
+central value of Hardy Z for 9136.5709 has sign +1
+central value of Hardy Z for 599.598 has sign +1
+central value of Hardy Z for 4792.1197 has sign +1
+central value of Hardy Z for 9584.5989 has sign -1
+central value of Hardy Z for 9584.1197 has sign -1
+zero in (12294899, 12294900) / 100000000 for 9584.5989; endpoint signs -1, +1
+zero in (27941486, 27941487) / 100000000 for 4568.1141; endpoint signs +1, -1
+zero in (31952267, 31952268) / 100000000 for 4792.1197; endpoint signs +1, -1
+zero in (37800727, 37800728) / 100000000 for 9136.1141; endpoint signs +1, -1
+36 mixed frequencies up to sign exclude zero and all eight zero spectra (288 interval tests)
+sum of four coefficient lower bounds strictly exceeds 61027/10000
+Euler factors agree on all 16 Frobenius classes through a full period
+Direct b=2 window at y=50: normalized race in (7512/1000, 7513/1000)
+Direct b=2 window at y=5000: normalized race in (-38475/1000, -38474/1000)
+Residue-class computation confirms 8 centres, 4 sign changes and 288 exclusions
+571.570: real interval [1/2,1] covered by 32 cells; partial sums at most 21
+9136.1141: real interval [1/2,1] covered by 56 cells; partial sums at most 76
+4568.1141: real interval [1/2,1] covered by 64 cells; partial sums at most 53
+9136.5709: real interval [1/2,1] covered by 56 cells; partial sums at most 76
+599.598: real interval [1/2,1] covered by 9 cells; partial sums at most 37
+9584.5989: real interval [1/2,1] covered by 64 cells; partial sums at most 73
+4792.1197: real interval [1/2,1] covered by 116 cells; partial sums at most 45
+9584.1197: real interval [1/2,1] covered by 64 cells; partial sums at most 73
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6
+2763 upstream source modules, SHA-256 of sorted module names and hashes 9af7a85d27f2e8cd9ac6934919fe899b98f2813dbcf47281c09234f012662212
+Pinned trace source hashes match both files
+Kernel replay passed for FiberTrace, HostFrame, HostAdmissible
+HostRace.jump_eq: propext, Classical.choice, Quot.sound
+HostRace.fiber_trace: propext, Classical.choice, Quot.sound
+HostRace.charFrame_exists: propext, Classical.choice, Quot.sound
+HostRace.admissible_exists: propext, Classical.choice, Quot.sound
+HostRace.concrete_fiber_trace: propext, Classical.choice, Quot.sound
