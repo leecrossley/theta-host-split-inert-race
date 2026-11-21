@@ -40,6 +40,50 @@ direct: 860 common positive averages cover all 4 sign choices through exp(2000) 
 direct: 695 common positive averages cover all 16 sign choices through exp(2000) with factor 2^80.
 split: 860 common positive averages cover all 4 sign choices through exp(2000) with factor 2^18.
 split: 695 common positive averages cover all 16 sign choices through exp(2000) with factor 2^80.
+physical trace: 64560 whole-arc enclosures, row norms < 3/20, all arc coordinates < 3/2
+integer singleton for each timing row: 13471 15007 2911 45084 49034 13471 8994 43490 10345 24156 23395 2982 1759 39826 15557 22210 14077 1650 312475 1696 1897 40631 1999
+limiting trace: 64560 whole-arc enclosures, row norms < 3/20, all arc coordinates < 3/2
+23 configurations cover all 320 closed boxes on both traces
+one shared configuration per level cell; all five face clearances > 1/250
+starts > 1155, finishes < 701816, adjacent ratios > 41/20, group completion factor < 110
+positive weights > 1/400 persist under sup-norm perturbation at most 1/1000
+chart indices, A-level cells -10 through 9; B-level cells -8 through 7:
+9 9 5 5 5 5 5 5 5 5 5 5 5 8 14 22
+9 9 5 5 5 5 5 5 5 5 5 8 8 8 8 14
+9 1 1 1 5 5 5 5 5 5 4 4 4 8 6 14
+1 1 1 1 1 1 5 5 5 4 4 4 4 8 6 14
+1 1 1 1 1 1 1 1 4 4 4 4 4 4 6 17
+1 1 1 1 1 1 1 1 4 4 4 4 4 6 6 6
+1 1 1 1 1 1 1 4 4 4 4 4 4 6 6 6
+1 1 1 1 1 1 1 4 4 4 4 4 6 6 6 6
+1 1 1 1 1 1 1 4 4 4 4 4 6 6 6 3
+1 1 1 1 1 1 1 15 4 4 4 6 6 6 3 3
+1 1 1 1 1 1 1 2 2 4 4 6 6 3 3 3
+15 1 1 1 1 1 1 2 2 4 10 10 3 3 3 3
+2 2 2 2 1 1 1 2 2 10 10 3 3 3 3 3
+2 2 2 2 2 2 2 2 2 10 3 3 3 3 3 3
+7 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3
+7 7 2 2 2 2 2 2 2 3 3 3 3 3 3 3
+7 7 7 2 2 2 2 2 2 12 3 3 3 3 3 3
+7 7 7 7 11 2 2 2 2 13 12 12 3 3 3 3
+7 7 7 7 7 11 2 2 2 13 13 18 12 3 3 3
+16 11 11 11 7 11 23 2 2 13 20 18 19 19 12 3
+Polynomial splitting and independent secant errors:
+23 configurations, 320 closed rectangular cells, 16 corners per cell
+Full Conrey table and independent secant errors:
+23 configurations, 320 closed rectangular cells, 16 corners per cell
+Same chart covers both traces on each cell with clearance > 1/250.
+Every arc coordinate < 3/2 and every row norm < 3/20 by the independent secant bound.
+first movable start in (2457452761630441562944, 2457452761630441562945) / 10^18
+second movable start in (61460713123523079975916, 61460713123523079975917) / 10^18
+integer-start weight in (394908054881663751, 394908054881663752) / 10^18
+first movable weight in (246867572221531610, 246867572221531611) / 10^18
+second movable weight in (358224372896804637, 358224372896804638) / 10^18
+Integer start 13471; one simple quartic root gives both levels exactly one and both moves exactly zero.
+Every target within 1/10000 of the balanced vector has a unique inverse in the larger specified box.
+Finite-field splitting and two original tent evaluations per prime band:
+the four physical equations give a strict contraction of the 18-place box, with norm < 1/1000000.
+The integer-start weight agrees in its 18-place bracket; the zero-move and level-one witness is unique in this box.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for JointOscillation
 'JointOscillation.projected_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.disk_support' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -54,3 +98,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'JointOscillation.translated_det' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.near_perpendicular' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.transverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.simplex_fixed_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.three_point_face' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.quartic_elimination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.recover_weight' depends on axioms: [propext, Classical.choice, Quot.sound]

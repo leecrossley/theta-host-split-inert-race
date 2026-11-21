@@ -79,6 +79,68 @@ theorem transverse {signal error target growth : ℝ}
     (h : target + growth + error < signal) :
     target + growth < signal - error := by linarith
 
+
+/-- The fixed point of the simplex map with strict inward boundary displacements
+has five positive weights and zero displacement in every coordinate. -/
+theorem simplex_fixed_displacement (w d : Fin 5 → ℝ) (s : ℝ)
+    (hw : ∀ i, 0 ≤ w i) (hm : ∑ i, w i = 1) (hd : ∑ i, d i = 0)
+    (hs : s = ∑ i, max 0 (w i + d i))
+    (hf : ∀ i, max 0 (w i + d i) = w i * s)
+    (hb : ∀ i, w i = 0 → 0 < d i) :
+    (∀ i, 0 < w i) ∧ ∀ i, d i = 0 := by
+  have hmass : ∑ i, (w i + d i) = 1 := by
+    rw [Finset.sum_add_distrib, hm, hd, add_zero]
+  have hscale : 1 ≤ s := by
+    rw [hs, ← hmass]
+    exact Finset.sum_le_sum (fun i _ => le_max_right _ _)
+  have hpos : ∀ i, 0 < w i := by
+    intro i
+    by_contra! hi
+    have hz := le_antisymm hi (hw i)
+    have hle := le_max_right 0 (w i + d i)
+    rw [hf i, hz, zero_mul, zero_add] at hle
+    exact (not_lt_of_ge hle) (hb i hz)
+  have hunclip (i) : w i + d i = w i * s := by
+    have hmax := hf i
+    have hgt : 0 < w i * s := mul_pos (hpos i) (by linarith)
+    by_cases hn : 0 ≤ w i + d i
+    · rwa [max_eq_right hn] at hmax
+    · rw [max_eq_left (le_of_not_ge hn)] at hmax
+      linarith
+  have hone : s = 1 := by
+    calc
+      s = ∑ i, w i * s := by rw [← Finset.sum_mul, hm, one_mul]
+      _ = ∑ i, (w i + d i) := Finset.sum_congr rfl (fun i _ => (hunclip i).symm)
+      _ = 1 := hmass
+  refine ⟨hpos, fun i => ?_⟩
+  have h := hunclip i
+  rw [hone, mul_one] at h
+  linarith
+
+/-- An upper bound on all three face contributions also bounds their common average. -/
+theorem three_point_face {u v w x y z m : ℝ} (hu : 0 ≤ u) (hv : 0 ≤ v)
+    (hw : 0 ≤ w) (hm : u+v+w = 1) (hx : x ≤ m) (hy : y ≤ m) (hz : z ≤ m) :
+    u*x+v*y+w*z ≤ m := by
+  calc
+    u*x+v*y+w*z ≤ u*m+v*m+w*m := by gcongr
+    _ = m := by rw [← add_mul, ← add_mul, hm, one_mul]
+
+
+/-- Squaring the positive mass equation eliminates both square roots. -/
+theorem quartic_elimination {a b c : ℝ} (mass : a+b+c = 1) :
+    ((1-a)^2-b^2-c^2)^2-4*b^2*c^2 = 0 := by
+  have h : 1-a = b+c := by linarith
+  rw [h]
+  ring
+
+/-- Once the anchor parameter is known, recovering the other weights needs no new radical. -/
+theorem recover_weight {a b c : ℝ} (mass : a+b+c = 1) (remaining : 0 < 1-a) :
+    ((1-a)^2+b^2-c^2)/(2*(1-a)) = b := by
+  apply (div_eq_iff (ne_of_gt (mul_pos (by norm_num) remaining))).mpr
+  have h : 1-a = b+c := by linarith
+  rw [h]
+  ring
+
 end JointOscillation
 
 #print axioms JointOscillation.projected_norm
@@ -95,3 +157,9 @@ end JointOscillation
 #print axioms JointOscillation.translated_det
 #print axioms JointOscillation.near_perpendicular
 #print axioms JointOscillation.transverse
+
+#print axioms JointOscillation.simplex_fixed_displacement
+#print axioms JointOscillation.three_point_face
+
+#print axioms JointOscillation.quartic_elimination
+#print axioms JointOscillation.recover_weight
