@@ -17,7 +17,7 @@ Take $`\theta=1.9735`$, $`\ell=3895686.23`$, $`h=3895691.51`$, $`L=h-\ell=132/25
 1. At $`H=H_*`$, every real $`y\gt H`$ with $`2y\le CH`$ satisfies $`S(2y)-S(y)\lt\theta a`$.
 2. The same conclusion holds for arbitrarily large $`H`$. At other arbitrarily large $`H`$, every such $`y`$ satisfies $`S(2y)-S(y)\gt-\theta a`$.
 
-Thus any factor guaranteeing both strict moves after every height must exceed $`C`$. The certificate locates one failure and leaves the first failure and the optimal universal factor open.
+Thus any factor guaranteeing either strict move after every height must exceed $`C`$. The certificate locates one failure and leaves the first failure and the optimal universal factor open.
 
 ## Spectral profile and the eight factors
 
@@ -65,7 +65,7 @@ T(s)=\sum_{k\ge0}\frac{e^{-u_k|s|}}{u_k^2-1/4}
 =\frac{(1+z)\log(1+z)+(1-z)\log(1-z)}{2\sqrt z},\qquad T(0)=a.
 ```
 
-Expand $`e^{-t/2}/(2\sinh t)=\sum_{k\ge0}e^{-u_kt}`$. The integrated absolute second difference for each term is at most $`2\operatorname{Lip}(g)/u_k^2`$, justifying interchange. For $`u=u_k`$, convolution of $`g`$ with $`e^{-u|\cdot|}`$ gives
+Expand $`e^{-t/2}/(2\sinh t)=\sum_{k\ge0}e^{-u_kt}`$. The integrated absolute second difference for each term is at most $`2\mathrm{Lip}(g)/u_k^2`$, justifying interchange. For $`u=u_k`$, convolution of $`g`$ with $`e^{-u|\cdot|}`$ gives
 
 ```math
 \frac{2u\,g(x)+[r_0(e^{-u|x+a|}+e^{-u|x-a|})-3e^{-u|x|}]/c}{u^2-1/4}.
@@ -117,4 +117,4 @@ At $`H_*`$ all permitted starts have $`\ell\lt x\le h`$, since $`2y\le2e^LH_*`$ 
 
 For every $`\eta\gt0`$, there are arbitrarily large positive translations $`\tau`$ with $`\sup_x |U(x+\tau)-U(x)|\lt\eta`$. Truncate the absolutely convergent series with uniformly small tail. Compactness of the torus gives two arbitrarily widely separated integer times with all retained phases arbitrarily close, and their difference is a uniform approximate period. This argument allows any rational relations among the ordinates.
 
-Take the translation error below $`1/40`$ and choose translations with the full translated window above 1,000. The total error in transferring the profile to $`f`$ is below $`1/20`$. On translates of $`[\ell,h]`$, this excludes the gain because $`1.9+1/20\lt\theta`$. Oddness gives $`-U(x)\lt1.9`$ on $`[-h,-\ell]`$, so sufficiently late translates of that interval exclude the loss. The respective starting heights are $`e^{\tau+\ell}/(2r_0)`$ and $`e^{\tau-h}/(2r_0)`$. The right endpoint is included in both cases. The five local Lean deductions check the error arithmetic, explicit gain exclusion, reflection, translation implication and log-centre conversion. [Lean proofs](DistantInterval.lean)
+Take the translation error below $`1/40`$ and choose translations with the full translated window above 1,000. The total error in transferring the profile to $`f`$ is below $`1/20`$. On translates of $`[\ell,h]`$, this excludes the gain because $`1.9+1/20\lt\theta`$. Oddness gives $`-U(x)\lt1.9`$ on $`[-h,-\ell]`$, so sufficiently late translates of that interval exclude the loss. The respective starting heights are $`e^{\tau+\ell}/(2r_0)`$ and $`e^{\tau-h}/(2r_0)`$. The right endpoint is included in both cases. The five local Lean deductions check the budget arithmetic, explicit gain exclusion, reflection, translation implication and log-centre conversion. [Lean proofs](DistantInterval.lean)
