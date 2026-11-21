@@ -148,7 +148,7 @@ def prime_intervals():
         lasts.append(bad[-1])
     assert lasts == [(479,641), (241,337), (113,223), (127,223)]
     print("The four last deficient prime gaps are 479 to 641, 241 to 337, "
-          "113 to 223 and 127 to 223. The joint rank threshold for (6y,8y] is 641/8.")
+          "113 to 223 and 127 to 223. The last small-prime gap puts the joint prime-band threshold at 641/8 in the certified range.")
 
 
 def counts():

@@ -80,11 +80,14 @@ def verify():
     assert (positives+negatives+2)//3 == 3274
     assert (positives+2)//3 == (negatives+2)//3 == 1637
     assert (traversals+1)//2 == 2447
+    early = [row for row in intervals if row[0] <= 1000]
+    assert [alternating(early, sign) for sign in (-1, 1)] == [505, 506]
+    assert dynamic_length(early) == 506
+    assert 2 * 505 + 35 == 1045 and (1045 + 2) // 3 == 349
     print("Two exact interval algorithms find 4894 alternating disjoint signed supports. "
           "The 4893 intervening traversals give that many crossings of each signed target and of zero.")
-    print("With the initial 35 hits, 547/727 has at least 9821 signed hits, "
-          "3274 pairwise inequivalent heights and 1637 per sign before completion height exp(12500). "
-          "At least 2447 zero heights in that range have pairwise transcendental quotients.")
+    print("Including the early crossings gives 9821 signed hits before completion height exp(12500). Under Dirichlet GRH these give at least 3274 classes, 1637 per sign, and the zero hits give 2447 classes.")
+    print("The finite prime chains alone give 349 classes among 1045 signed hits before completion height exp(1000).")
 
 
 if __name__ == "__main__":
