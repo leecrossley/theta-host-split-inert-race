@@ -1,6 +1,6 @@
 # Two theta prime races in one fixed window
 
-**After every real $`H\ge1`$, the same finite completion factor $`C`$ works for every target pair in $`[-5.85,5.85]^2`$.** At most two actual common doublings reproduce the target pair of normalized moves exactly, using the same nonnegative weights in both fields. Each start is strictly after $`H`$, and each doubling finishes before $`CH`$. The fields are 547/727 and 571/599, both at width two. The proof establishes existence of $`C`$. Its numerical value remains open. [Fixed-window theorem](PROOF.md#one-fixed-window-for-all-directions)
+**After every real $`H\ge1`$, the same finite completion factor $`C`$ works for every target pair in $`[-5.85,5.85]^2`$.** At most two actual common doublings reproduce the target pair of normalized moves exactly, using the same nonnegative weights in both fields. Each start is strictly after $`H`$, and each doubling finishes before $`CH`$. The fields are 547/727 and 571/599, both at width two. The proof establishes existence of $`C`$. Its numerical value remains open. The proof is unconditional. [Fixed-window theorem](PROOF.md#one-fixed-window-for-all-directions)
 
 On **one actual doubling** the first race can outgain the second by more than $`11.7\log2`$. Another doubling gives the reverse advantage before the same deadline. Almost every pair in the square needs two common starts. The four-coordinate result reproduces both midpoint levels and both moves with at most four common starts. Its full closed target is the product of the ellipses below. Almost every point in that four-dimensional target needs at least three starts. Whether three always suffice remains open. [Common weights](PROOF.md#resolving-collisions-at-a-common-ordinate) [Lower bounds on the number of readings](PROOF.md#how-many-observations-are-necessary)
 
@@ -9,7 +9,7 @@ On **one actual doubling** the first race can outgain the second by more than $`
 | 547/727 | 9.9375 and 3.4686 | 6.6921 and 1.9735 |
 | 571/599 | 7.9731 and 2.1866 | 6.1027 and 1.5894 |
 
-Each level ellipse is centred at level one and move zero. The widths may be chosen independently, with a fixed factor for each choice. For all sufficiently large $`H`$ the bounded targets also fit before $`H(\log H)^{8+\varepsilon}`$ for every fixed $`\varepsilon\gt0`$. Neither result assumes global Dirichlet zero location. The proof checks even directions that change with $`H`$ and handles several growth rates at the same zero ordinate. [Logarithmic exponent](PROOF.md#a-numerical-exponent-independent-of-the-zeros) · [Reproducible checks](evidence/check.txt)
+Each level ellipse is centred at level one and move zero. The widths may be chosen independently, with a fixed factor for each choice. For all sufficiently large $`H`$ the bounded targets also fit before $`H(\log H)^{8+\varepsilon}`$ for every fixed $`\varepsilon\gt0`$. The proof gives no numerical onset. Neither result assumes global Dirichlet zero location. The proof checks even directions that change with $`H`$ and handles several growth rates at the same zero ordinate. [Logarithmic exponent](PROOF.md#a-numerical-exponent-independent-of-the-zeros) · [Reproducible checks](evidence/check.txt)
 
 ## Earlier explicit and finite-height bounds
 
@@ -61,4 +61,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The replay checks the real segments, the nine sign changes, the mixed frequencies by two independent evaluations, the ellipse bounds, the finite examples, the deadline spectrum, the early prime-ideal counts, the all-height common test, both methods for the common averages and the six original Lean deductions, four earlier deadline deductions and three fixed-window deductions. Both evaluations use Arb ball arithmetic. The Mellin, positive-weight and convex-geometric arguments are written proofs. [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The replay checks the real segments, the nine sign changes, the mixed frequencies by two independent evaluations, the ellipse bounds, the finite examples, the deadline spectrum, the early prime-ideal counts, the all-height common test, both methods for the common averages, the fixed-window checks and the six original Lean deductions, four earlier deadline deductions and three fixed-window deductions. Both evaluations use Arb ball arithmetic. The Mellin, positive-weight and convex-geometric arguments are written proofs. [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
