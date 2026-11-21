@@ -519,7 +519,7 @@ On a residual set of $`t\in(0,5.85)`$ every sign and field on every tail has inf
 Fix **any** real $`0\lt t\le5.85`$, any one of the two hosts, either sign and any lower height cutoff. If the multiplicative rank of the subsequent hits modulo $`F(t)^\times`$ is finite, then for every integer $`m`$ and every prime cutoff $`P`$ there is a finite set $`B`$ of odd primes above $`P`$ with
 
 ```math
-|B|-\operatorname{trdeg}_{\overline{\mathbf Q}}\overline{\mathbf Q}(\log p:p\in B)\ge m.
+|B|-\mathrm{trdeg}_{\overline{\mathbf Q}}\overline{\mathbf Q}(\log p:p\in B)\ge m.
 ```
 
 This includes amplitudes that are transcendental and depend on the prime logarithms. Assuming bounded deficiency instead, one can prescribe an infinite itinerary of signs, hosts and successive cutoffs and find a multiplicatively independent sequence realizing it at this same fixed amplitude.
