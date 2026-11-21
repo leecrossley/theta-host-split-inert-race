@@ -269,7 +269,7 @@ b(g)=-\frac{2(3-2r\cos(ag))\sin(ag/2)}
                  {a(r-1)^2(1/4+g^2)}
 ```
 
-times $`\sin(gx)\Psi(ig)\operatorname{sinc}(dg)^2`$ at centre $`x`$. On the line $`|\Psi|\le1`$. The omitted line terms cost $`50(0.047)/(294d)^2`$. For off-line zeros, write $`z=\rho-1/2`$ and $`\sqrt{c^2+z^2}=P+iQ`$. Above ordinate 8,590 the real and imaginary equations give $`|Q|^2\ge(\Im z)^2-c^2-1/4`$ and $`|P|\le|\Im z|/(2|Q|)\lt8`$. The prior strip-mass estimate then bounds the total by $`30\cdot10^6 e^{43/2+1/48-8492L}`$. Together with odd trivial zeros this is below 0.001 on the listed supports, all lying strictly inside $`(21,43)`$. [Sphere and strip estimates](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.3.0/results/theta-race-waiting-bound/PROOF.md)
+times $`\sin(gx)\Psi(ig)\mathrm{sinc}(dg)^2`$ at centre $`x`$. On the line $`|\Psi|\le1`$. The omitted line terms cost $`50(0.047)/(294d)^2`$. For off-line zeros, write $`z=\rho-1/2`$ and $`\sqrt{c^2+z^2}=P+iQ`$. Above ordinate 8,590 the real and imaginary equations give $`|Q|^2\ge(\Im z)^2-c^2-1/4`$ and $`|P|\le|\Im z|/(2|Q|)\lt8`$. The prior strip-mass estimate then bounds the total by $`30\cdot10^6 e^{43/2+1/48-8492L}`$. Together with odd trivial zeros this is below 0.001 on the listed supports, all lying strictly inside $`(21,43)`$. [Sphere and strip estimates](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.3.0/results/theta-race-waiting-bound/PROOF.md)
 
 After subtracting all these allowances and $`A(\lfloor x-R-3a/2\rfloor)`$, the signed average for each listed support exceeds $`t`$. Two ball-arithmetic evaluations use different trigonometric, hyperbolic and phase formulas. A strict average of a continuous real function against a probability gives a strict point on its support. Its doubling fits before $`16.5H`$ whenever $`x+R-\log(33/4)\lt h\lt x-R`$. Merging these open intervals forwards and backwards gives both directions through $`40.041`$ and the positive direction through $`40.095`$, beginning at $`H=10^9`$. [22 supports](evidence/onset-supports.tsv) · [Two covers](onset_spectrum.py)
 
@@ -337,9 +337,9 @@ For every $`C_0\lt C\le C_*`$, **all** failing starts on that range form the sin
 Put $`n_*=\lceil H_*\rceil`$. Under the same finite zero condition the sharp factor on integer starts through $`e^{41.33}/(2\sqrt2)`$ is $`C_{\mathbf Z}=2H_{\rm back}/n_*`$. It is transcendental. Equality fails at exactly one integer, $`n_*`$. Every integer start already succeeds at the sharp *real-start* factor $`C_*`$, even though its universal real-start claim fails. The two constants satisfy
 
 ```math
-0<C_*-C_{\mathbf Z}
-   =C_*\,\frac{n_*-H_*}{n_*}
-   <2.28\times10^{-16}.
+0\lt C_*-C_{\mathbf Z}
+   =C_*\frac{n_*-H_*}{n_*}
+   \lt 2.28\times10^{-16}.
 ```
 
 Indeed $`0\lt n_*-H_*\lt1`$ since $`H_*`$ is transcendental. The last bound uses $`C_*\lt19.95`$ and $`H_*\gt8.75\times10^{16}`$. In particular $`C_{\mathbf Z}\gt18.0013\gt C_0`$. Apply the exact closed failure interval to the least eligible integer. Dividing the transcendental return height by a nonzero rational proves the stated transcendence. More generally the number of missed integer starts for $`C_0\lt C\le C_*`$ is $`\max(0,\lfloor2H_{\rm back}/C\rfloor-n_*+1)`$. [Closed-gap deduction](FactorObstruction.lean) · [Endpoint inequalities](onset_window.py)
