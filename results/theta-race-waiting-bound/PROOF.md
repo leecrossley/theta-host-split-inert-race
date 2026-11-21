@@ -173,7 +173,7 @@ The independent zero check expands the conductor-547 Dirichlet series by residue
 $`q^{-s}(-1)^k(s)_ k\zeta(s+k,3/2)\sum_{b=1}^q\chi(b)(b/q-1/2)^k/k!`$.
 The constant term cancels. For $`\vert s\vert \lt 4`$, bound $`\vert (s)_k/k!\vert \le {k+3\choose3}`$, the Hurwitz factor by $`4(3/2)^{-k}`$ and the inner sum by $`q/2^k`$. After $`k=70`$ the tail ratio of the bounds is below $`1/2`$. This gives the implemented error and a second pair of opposite signs of the real completed quadratic function. [Independent calculation](independent.py)
 
-The analytic estimates and explicit formula above are written proofs. The release replay checks the complex balls and direct counts, compiles the ten local Lean theorems and independently rechecks the compiled module with the kernel. The pinned field and trace release supplies its own replay. [Prior host receipt](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/evidence/check.txt) · [This release's receipt](evidence/check.txt)
+The analytic estimates and explicit formula above are written proofs. The release replay checks the complex balls and direct counts, compiles the 21 local Lean theorems and independently rechecks the compiled module with the kernel. The pinned field and trace release supplies its own replay. [Prior host receipt](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/evidence/check.txt) · [This release's receipt](evidence/check.txt)
 
 ## Both moves through exp(2000)
 
