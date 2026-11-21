@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Recovering two theta prime races from zeros up to a fourth-root bound"
-abstract: "A finite weighted sum of actual complex zeros recovers every sufficiently late unsmoothed normalized move on the 547/727 and 571/599 prime-ideal races to absolute error below 0.0008. The unconditional cutoff grows as the fourth root of the prime height times the square root of its logarithm."
+abstract: "A finite weighted sum of actual nontrivial zeros recovers every sufficiently late unsmoothed normalized move on the 547/727 and 571/599 prime-ideal races to absolute error below 0.0008. The unconditional cutoff grows as the fourth root of the prime height times the square root of its logarithm."
 authors:
   - family-names: Crossley
     given-names: Lee

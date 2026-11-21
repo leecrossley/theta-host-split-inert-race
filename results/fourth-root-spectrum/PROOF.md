@@ -34,7 +34,7 @@ Use value one for the quotient at zero. On either field the following absolute e
              J(z)e^{zx}\Phi(z)\right|\lt0.0008 .
 ```
 
-The sum is finite and real by conjugation of the family. It asks for both real and imaginary parts of the zeros. It imposes no independence, simplicity or critical-line assumption. This is an error theorem for a finite sum. The release does not enumerate zeros to this cutoff. [Implementation of the error estimates](spectrum.py)
+The sum runs over strip zeros, so it is finite, and it is real by conjugation of the family. It asks for both real and imaginary parts of the zeros. It imposes no independence, simplicity or critical-line assumption. This is an error theorem for a finite sum. The release does not enumerate zeros to this cutoff. [Implementation of the error estimates](spectrum.py)
 
 ## What the symmetric average changes
 
