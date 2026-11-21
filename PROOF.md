@@ -14,6 +14,8 @@ S(y)=\frac{1}{B\sqrt y}\sum_v-\epsilon_v\log(Nv)\,W(Nv/y),
 
 Take $`\theta=1.9735`$, $`\ell=3895686.23`$, $`h=3895691.51`$, $`L=h-\ell=132/25`$, $`C=2e^L`$ and $`H_* = e^\ell/(2r_0)`$. All terminating decimals in the proof denote exact rational numbers.
 
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Lean theorem supplies this zero-location input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+
 1. At $`H=H_*`$, every real $`y\gt H`$ with $`2y\le CH`$ satisfies $`S(2y)-S(y)\lt\theta a`$.
 2. The same conclusion holds for arbitrarily large $`H`$. At other arbitrarily large $`H`$, every such $`y`$ satisfies $`S(2y)-S(y)\gt-\theta a`$.
 

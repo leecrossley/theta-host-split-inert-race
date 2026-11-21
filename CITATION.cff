@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "A factor of 392 fails in the 547/727 prime race"
-abstract: "A certified 5.28-wide interval rules out the waiting factor 2 exp(5.28) in the dyadic 547/727 prime-ideal race."
+abstract: "Under Dirichlet GRH, a certified log interval of length 5.28 rules out a waiting factor of 2 exp(5.28) in the dyadic 547/727 prime-ideal race."
 authors:
   - family-names: Crossley
     given-names: Lee
