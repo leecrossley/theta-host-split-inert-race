@@ -1,6 +1,6 @@
 # The first missed gain and loss at factor 400 in the 547/727 prime race
 
-Assume the eight odd primitive Dirichlet factors have no zero in the later region of the first-loss theorem. GRH for these factors implies this exclusion. The first missed $`400H`$ deadline is then a gain. The first missed loss occurs at more than 26 times the centred log height of that gain. The score is the weighted split–inert prime-ideal race with $`b=r=2`$. Each move must exceed $`1.9735\log2`$ in magnitude and start strictly after $`H`$. [Two directional bounds](PROOF.md#the-first-missed-loss) · [First gain](PROOF.md#the-first-missed-move-at-factor-400)
+Assume the eight odd primitive Dirichlet factors have no zero in the later region of the first-loss theorem. GRH for these factors implies this exclusion, and Alpöge's announced Dirichlet GRH theorem supplies it. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The first missed $`400H`$ deadline is then a gain. The first missed loss occurs at more than 26 times the centred log height of that gain. The score is the weighted split–inert prime-ideal race with $`b=r=2`$. Each move must exceed $`1.9735\log2`$ in magnitude and start strictly after $`H`$. [Two directional bounds](PROOF.md#the-first-missed-loss) · [First gain](PROOF.md#the-first-missed-move-at-factor-400)
 
 | First missed direction | Bounds on the starting log height $`h=\log(2\sqrt2 H)`$ |
 | --- | --- |
@@ -91,6 +91,6 @@ python check_source.py
 
 `thousand_zeros.py` reuses the 4,000 brackets that `check_zeros.py` checks, so run it after `check_zeros.py`.
 
-`first_cover.py` compiles `first_grid.cpp`, so this replay also needs a C++17 compiler supporting signed 128-bit integers.
+`first_cover.py` and `directional_loss.py` compile `first_grid.cpp`, so this replay also needs a C++17 compiler supporting signed 128-bit integers.
 
 For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar, zstd and a C++17 compiler supporting signed 128-bit integers installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. The family tree supplies the five pinned upstream records in the [geometric-grid evidence directory](https://github.com/leecrossley/theta-host-split-inert-race/tree/b9f9d9178f689c5aa9840eff4e61bdd75fe7268f/results/geometric-grid-deadlines/evidence/upstream). An optional second argument selects another directory with the same five records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays seventeen local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)
