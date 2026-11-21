@@ -1,5 +1,7 @@
 # How often the 547/727 prime race makes a large move
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412163.svg)](https://doi.org/10.5281/zenodo.24412163)
+
 In every interval of log starting heights of length at least 250,000, **more than 10% of starts give a gain above $`1.9735\log2`$ and more than 10% give a loss of that magnitude**. This holds wherever the interval begins above height one. Over increasingly long intervals the lower proportion exceeds 15% in each direction, uniformly in the starting height. The score width and the move are both two. [Theorem and proof](PROOF.md)
 
 | Minimum log length | Guaranteed share for each sign |
