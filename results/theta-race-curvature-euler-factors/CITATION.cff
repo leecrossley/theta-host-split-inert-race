@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Six values of an extremal prime-race function recover an Euler factor"
+abstract: "Recover the local Euler factors of the 547/727 field from six limiting prime-race curvature values."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.1
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-curvature-euler-factors
+type: software
