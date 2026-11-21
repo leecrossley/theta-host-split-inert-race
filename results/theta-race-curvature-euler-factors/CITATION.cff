@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Six values of an extremal prime-race function recover an Euler factor"
-abstract: "Recover the local Euler factors of the 547/727 field from six limiting prime-race curvature values."
+abstract: "Under Dirichlet GRH, recover the local Euler factors of the 547/727 field from six limiting prime-race curvature values. Without GRH the same inversion applies to the explicit-formula sum over zeros."
 authors:
   - family-names: Crossley
     given-names: Lee
