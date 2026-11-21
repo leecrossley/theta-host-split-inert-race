@@ -6,7 +6,8 @@ import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("recurring_no_loss", "move_fits", "knot_lower", "gap_endpoint", "beyond_gap", "strict_bridge",
-            "hinge_ceiling", "secant_ceiling", "failure_at_height")
+            "hinge_ceiling", "secant_ceiling", "failure_at_height", "first_missing_loss",
+            "unique_first_direction", "separate_first_onsets")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

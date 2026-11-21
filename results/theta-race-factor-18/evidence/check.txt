@@ -32,6 +32,19 @@ sharp integer-start factors for gain and loss: (6.458177149109, 6.458177149110) 
 6H misses 480218 gains and 4892555 losses at 5372773 distinct integer starts
 1530 boundary knots and endpoints agree in the independent 160-bit and integer sums
 all remaining same-sign grid gaps on [1000000,1000000000] finish before 6H
+The degree-one splitting counts cover every real endpoint in 117,010 bins through 2,700,000,000. The relative error for eight times the Chebyshev sum is below 0.001 above 135,000,000.
+The separate odd-integer sieve with Euler’s criterion reproduced every degree-one prime-count bin and certified the Chebyshev bounds.
+The 27,892 Hardy endpoint signs certify the 13,946 disjoint positive brackets on the eight primitive characters.
+792 exterior Euler sums prove completeness through 294, with 4,194 positive zeros. The total unlisted line mass at zero is below 0.047.
+direct: the 22 positive averages cover every real start from one billion through centred log height 40.041 at factor 16.5; gains continue through 41.33.
+direct: two further strict loss supports extend the sharp-factor range through 40.0507 and prove that 19.95H works for both directions through centred log height 41.33.
+split: the 22 positive averages cover every real start from one billion through centred log height 40.041 at factor 16.5; gains continue through 41.33.
+split: two further strict loss supports extend the sharp-factor range through 40.0507 and prove that 19.95H works for both directions through centred log height 41.33.
+The interval transform also proves the 13,946 retained modes exceed -1.015 on the whole width 2.1973, which exceeds log 9.
+If the eight factors have no off-line zero between ordinates 8,590 and 5,000,000 in absolute value, the actual normalized score exceeds -1.96 throughout the window. Zeros above 5,000,000 are unrestricted.
+Under that finite condition all integer starts from 91386963248971966 through 91393856157112503 miss the loss at factor 18, a run of 6892908140538.
+The possible log onsets span less than the shortest tested gap. All factors above the sharp height-one factor through 2 exp(2.1973), between 18.0013 and 18.0014, have the same first missed height under the finite condition.
+Direct closed-cell arithmetic puts the retained true-ordinate sum above -1.015 throughout the proposed loss-free interval.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FactorObstruction
 'FactorObstruction.recurring_no_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -42,3 +55,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'FactorObstruction.hinge_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.secant_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.failure_at_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.first_missing_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.unique_first_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.separate_first_onsets' depends on axioms: [propext, Classical.choice, Quot.sound]
