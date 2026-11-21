@@ -87,6 +87,8 @@ def main():
     if not __debug__:
         raise RuntimeError("Run with assertions enabled.")
     ctx.prec = 120
+    # The weights vanish exactly at and beyond the cutoff.
+    assert all(spline(w, j) == 0 for w in (6, Fraction(33, 5)) for j in range(3))
     check_fourier()
     check_costs()
 
