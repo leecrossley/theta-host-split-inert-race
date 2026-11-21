@@ -1,0 +1,20 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+All 16 pairs of consecutive joint moves certified: 64 finite moves exceed 1.6 and 64 profile moves exceed 9.1 in their specified directions.
+Finite sums use norms at most 747539 and primitive prime powers at most 54638. Both spectral masses are below 180.
+Polynomial splitting, primitive Conrey traces, direct prime sums and the convergent gamma series independently confirm all 128 strict inequalities.
+Common returns: exponent below 252,000,000 and profile error below 0.06.
+Margin-nine words: at most 2^241000 per length on a tail. Monotone runs of 57 and 56 moves are excluded in the two fields.
+14,000 positive disjoint-within-factor zero brackets verified by 28,000 strict Hardy endpoint signs on all sixteen primitive factors.
+Length 4: all 256 two-field words at dyadic starts have profile margin above 141000/10000.
+Length 5: all 1,024 two-field words at dyadic starts have profile margin above 91000/10000.
+Length 6: all 4,096 two-field words at dyadic starts have profile margin above 41000/10000.
+Shifted cosine cells and the cubic moment majorant independently certify every move in 5,376 dyadic witnesses.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DoublingPatterns
+'DoublingPatterns.sign_preserved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.separated_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.move_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.telescoping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.excluded_run' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.word_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.reflect_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.cubic_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]

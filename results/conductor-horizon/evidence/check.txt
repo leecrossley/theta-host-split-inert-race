@@ -1,0 +1,21 @@
+Segmented sieve reproduced every integer enclosure through norm 89526025682.
+Independent primality tests and direct Arb logarithms agree by band through norm 10000000.
+Six actual raw scores certify absence at norms 528529 and 89526025681.
+Each measured mass divided by log p is enclosed strictly between -1 and 1. An unramified prime would give -8.
+Direct factorization over residue fields and termwise sums independently enclose the three scores at 727 squared.
+Exact rational sums of the archived sieve bands enclose all six raw scores.
+Exact rational differences exclude the alternative mass at both conductor norms.
+All 32 residue and sign combinations obey the claimed local detection rule.
+Explicit prime-conductor alternatives agree at every smaller norm and first disagree at 81, 529 and 961.
+The target thresholds are 528529/4 for 727 and 89526025681/4 for 547.
+The two target diagnostic bands are disjoint and each final sample lies strictly in its own band.
+A single rational observation distinguishes the 3/7 target from 27 comparison pairs at a point where both diagnostic bands overlap.
+Exact integer factorization recovers a sample's prime coefficients. A reduced residue class separates the 3/7 and 3/23 high tails.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for ConductorHorizon
+'ConductorHorizon.hinge_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConductorHorizon.centered_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConductorHorizon.strict_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConductorHorizon.missing_or_present' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConductorHorizon.round_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConductorHorizon.larger_conductor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConductorHorizon.prime_products_injective' depends on axioms: [propext, Classical.choice, Quot.sound]

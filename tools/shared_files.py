@@ -1,6 +1,5 @@
 """Check replayable copies against their maintained source, or update them with --sync."""
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import sys
