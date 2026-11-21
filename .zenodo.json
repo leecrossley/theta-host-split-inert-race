@@ -1,0 +1,12 @@
+{
+  "title": "The four possible weights in a two-field prime-race inverse",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Every target in a four-dimensional box of the 547/727 and 571/599 prime races, including the boundary, admits three heights and their positive weights in one real extension of degree at most four over the measured targets and the finite prime-log field. Near exact balance on two specified prime bands all four roots are real, one satisfies the physical equations, and the generic splitting group is S4. An explicit rational slice has two elliptic resolvents linked by an isogeny of degree two. Two independent calculations certify every target-box corner and both elliptic invariants.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/87fa0674829cc26fee9d384db460d3819b7bf4b4/results/joint-levels-and-moves/PROOF.md\">Proof and hypotheses</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "joint-levels-and-moves-v1.4.0"
+}
