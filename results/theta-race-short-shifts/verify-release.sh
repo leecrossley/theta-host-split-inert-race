@@ -20,6 +20,7 @@ export PYTHONDONTWRITEBYTECODE=1
 python3 verify.py >"$tmp/receipt"
 python3 independent.py >>"$tmp/receipt"
 python3 real_axis.py >>"$tmp/receipt"
+mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 4 ]]; then
   math=$(cd "$1" && pwd)
   src=$(cd "$2" && pwd)
@@ -38,7 +39,6 @@ else
   tar --zstd -xf "$tmp/lean.tar.zst" -C "$tmp"
   export PATH="$tmp/lean-4.33.1-linux/bin:$PATH"
   math="$tmp/mathlib4"
-  mathrev=0df444a360eaa60ab8c11dca51a86af692955474
   git init -q "$math"
   git -C "$math" fetch -q --depth 1 https://github.com/leanprover-community/mathlib4.git "$mathrev"
   git -C "$math" checkout -q --detach FETCH_HEAD
@@ -56,6 +56,7 @@ else
     fetch "$tracebase/$file" "$trace/$file"
   done
 fi
+test "$(git -C "$math" rev-parse HEAD)" = "$mathrev"
 
 (cd "$math" && lake env python3 "$repo/check_lean.py" "$src" "$build" "$trace" --jobs "${LEAN_JOBS:-4}") >>"$tmp/receipt"
 diff -u evidence/check.txt "$tmp/receipt"
