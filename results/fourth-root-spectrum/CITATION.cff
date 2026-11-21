@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "How many zeros recover the two theta prime races?"
-abstract: "An explicit quintic weight recovers the unsmoothed move on each field from zeros up to a pure fourth-root cutoff, with absolute error below 0.0008. A direct truncation saves all logarithmic powers eventually. A fixed power saving for the absolute tail is equivalent to a fixed high-ordinate zero-free strip."
+abstract: "An explicit quintic weight recovers the unsmoothed move on each field from the nontrivial zeros of its eight odd Dirichlet factors up to a pure fourth-root cutoff, with absolute error below 0.0008. A direct truncation saves all logarithmic powers eventually. A fixed power saving for the absolute tail is equivalent to a fixed high-ordinate zero-free strip."
 authors:
   - family-names: Crossley
     given-names: Lee
