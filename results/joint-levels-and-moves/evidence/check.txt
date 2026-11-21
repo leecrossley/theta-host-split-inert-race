@@ -1,0 +1,34 @@
+547.546: real interval [1/2,1] covered by 64 cells; partial sums at most 21
+8752.1093: real interval [1/2,1] covered by 59 cells; partial sums at most 70
+4376.1093: real interval [1/2,1] covered by 44 cells; partial sums at most 62
+8752.5469: real interval [1/2,1] covered by 59 cells; partial sums at most 70
+727.726: real interval [1/2,1] covered by 17 cells; partial sums at most 29
+11632.7269: real interval [1/2,1] covered by 137 cells; partial sums at most 80
+5816.1453: real interval [1/2,1] covered by 24 cells; partial sums at most 121
+11632.1453: real interval [1/2,1] covered by 137 cells; partial sums at most 80
+571.570: real interval [1/2,1] covered by 32 cells; partial sums at most 21
+9136.1141: real interval [1/2,1] covered by 56 cells; partial sums at most 76
+4568.1141: real interval [1/2,1] covered by 64 cells; partial sums at most 53
+9136.5709: real interval [1/2,1] covered by 56 cells; partial sums at most 76
+599.598: real interval [1/2,1] covered by 9 cells; partial sums at most 37
+9584.5989: real interval [1/2,1] covered by 64 cells; partial sums at most 73
+4792.1197: real interval [1/2,1] covered by 116 cells; partial sums at most 45
+9584.1197: real interval [1/2,1] covered by 64 cells; partial sums at most 73
+Nine sign changes certified in the two theta hosts. All 9,832 mixed positive frequencies miss all sixteen spectra.
+157,384 rigorous frequency exclusions include 72 singleton tests against the other host.
+Residue sums and Chebyshev interpolation independently verify all 157,384 exclusions and nine sign changes.
+547/727: dyadic and all-width ellipse semiaxes exceed (99375, 34686, 66921, 19735) / 10000.
+571/599: dyadic and all-width ellipse semiaxes exceed (79731, 21866, 61027, 15894) / 10000.
+At width two the level and move differences exceed 17.9106 and 5.6552 in both directions on every tail.
+Start 17: normalized moves in (-20174, -20173)/1000 and (11833, 11834)/1000.
+Start 97: normalized moves in (-10742, -10741)/1000 and (-15402, -15401)/1000.
+Start 162: normalized moves in (10382, 10383)/1000 and (-16281, -16280)/1000.
+Start 658: normalized moves in (10221, 10222)/1000 and (22952, 22953)/1000.
+All four sign pairs exceed magnitude 10 in both races. The Frobenius and polynomial counts agree.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for JointOscillation
+'JointOscillation.projected_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.disk_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.ellipse_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.projection_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.one_sided_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.ellipse_axes' depends on axioms: [propext, Classical.choice, Quot.sound]
