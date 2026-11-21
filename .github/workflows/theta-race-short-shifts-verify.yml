@@ -3,9 +3,9 @@ name: Verify theta-race-short-shifts
 on:
   push:
     branches: [main]
-    paths: ['results/theta-race-short-shifts/**']
+    paths: ['results/theta-race-short-shifts/**', '.github/workflows/theta-race-short-shifts-verify.yml']
   pull_request:
-    paths: ['results/theta-race-short-shifts/**']
+    paths: ['results/theta-race-short-shifts/**', '.github/workflows/theta-race-short-shifts-verify.yml']
   workflow_dispatch:
 
 defaults:
@@ -40,4 +40,6 @@ jobs:
           "$RUNNER_TEMP/venv/bin/python" -m pip install -r requirements.txt
           echo "$RUNNER_TEMP/venv/bin" >> "$GITHUB_PATH"
       - name: Certificates, Lean rebuild, replay and audit
+        env:
+          LEAN_JOBS: "2"
         run: bash verify-release.sh
