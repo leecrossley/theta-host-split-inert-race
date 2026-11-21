@@ -1,0 +1,12 @@
+{
+  "title": "How many starts can be prescribed in two theta prime races?",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>For every real height from 13450 through 13490 chosen in advance, two further disjoint doublings realize every target in a four-dimensional box of the 547/727 and 571/599 prime races. The finite theorem uses direct prime counts. With starts 2457 and 13471 fixed, the best possible error in the balanced target over disjoint third starts through 300000 is 0.002274350938622389..., with a unique optimizer. For general targets the minimax solution requires at most one quadratic extension, and the optimal height generically attains degree two near balance. Whole intervals of prescribed heights recur with bounded multiplicative waiting under the nontrivial critical-line condition for the sixteen primitive Dirichlet factors.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/98cd51ac7ac83c4de2915917e41b788326ad2913/results/joint-levels-and-moves/PROOF.md\">Proof, exact targets and hypotheses</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "joint-levels-and-moves-v1.5.0"
+}
