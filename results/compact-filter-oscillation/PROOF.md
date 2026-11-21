@@ -10,7 +10,7 @@ S_w(y)=-\frac1{\sqrt y}\sum_v\epsilon_v\log(Nv)\,w(Nv/y),
 \quad B_w=\frac12 H_w(0).
 ```
 
-Define $`F_w(x)=S_w(e^x)-B_w`$. Continuity and finite support give local boundedness. Before the constant is subtracted, the score vanishes for sufficiently negative $`x`$ and is $`O_w(e^{x/2})`$ for large $`x`$ by the prime ideal Chebyshev bound. [A fibre identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [B admissible host and trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean#L80)
+Define $`F_w(x)=S_w(e^x)-B_w`$. Continuity and finite support give local boundedness. Before the constant is subtracted, the score vanishes for sufficiently negative $`x`$ and is $`O_w(e^{x/2})`$ for large $`x`$ by the prime ideal Chebyshev bound. [547/727 fibre identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [571/599 admissible host and trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean#L80)
 
 Let $`\mathcal L`$ be the product of the eight odd primitive Dirichlet factors of $`\zeta_E/\zeta_F`$. They are the quadratic characters of conductors $`p,q`$, each twisted by the four powers of the even quartic character modulo 16. For $`\Re s\gt1`$ one has the continuation
 
