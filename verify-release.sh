@@ -6,8 +6,17 @@ if [[ $# -gt 2 ]]; then
   echo "Usage: bash verify-release.sh [pinned-mathlib-directory [upstream-records-directory]]" >&2
   exit 2
 fi
+mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -ge 1 ]]; then
   math=$(cd "$1" && pwd)
+  if [[ "$(git -C "$math" rev-parse HEAD 2>/dev/null)" != "$mathrev" ]]; then
+    echo "The Mathlib directory must be a Git checkout at $mathrev." >&2
+    exit 2
+  fi
+  if ! git -C "$math" diff --quiet HEAD --; then
+    echo "The Mathlib checkout has local changes to tracked files." >&2
+    exit 2
+  fi
 fi
 if [[ $# -eq 2 ]]; then
   refs=$(cd "$2" && pwd)
@@ -32,7 +41,6 @@ python3 check_zeros.py >>"$tmp/receipt"
 python3 paired_windows.py >>"$tmp/receipt"
 python3 cell_check.py >>"$tmp/receipt"
 
-mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then
     echo "Supply the pinned Mathlib directory and Lean toolchain on this platform." >&2
