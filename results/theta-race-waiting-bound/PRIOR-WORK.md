@@ -1,5 +1,7 @@
 # Prior work and scope
 
+Version 1.2 adds an unconditional fixed completion factor for both moves above 3.33 log 2. The proof gives an explicit deadline of H(log H)⁵ for sufficiently large H and leaves the value of a working fixed factor open. The earlier numerical ranges and exponents are recorded below. [Fixed factor](PROOF.md#a-fixed-factor-without-a-global-zero-hypothesis)
+
 Checked on 21 November 2026. Version 1.1.0 adds the finite guarantees $`400H`$ through $`e^{2000}`$ and $`256H`$ through $`e^{1000}`$, and the all-height endpoint $`e^{219}H^{17001/16999}`$ for changes greater than $`3.32\log2`$. The original claim under review was the explicit endpoint $`e^{162000}H^{3001/2999}`$, valid after every starting height for **both** signed dyadic changes of magnitude greater than $`1.9735\log 2`$ in the 547/727 split–inert prime-ideal score. The direct $`18H`$ certificate through one million concerns the same observable. No earlier statement or proof of this quantitative bound surfaced in the sources reviewed. Unpublished results and gaps in indexing limit any claim of priority.
 
 | Source | Comparison |
