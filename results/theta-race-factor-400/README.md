@@ -34,7 +34,7 @@ Two integer Fourier sweeps certify 5,911,490 gain samples and 5,911,639 loss sam
 | $`[1620542.278,1620547.593]`$ | $`2e^{5.315}=406.729026\ldots`$ | $`1.944`$ |
 | $`[3895686.221,3895691.520]`$ | $`2e^{5.299}=400.273146\ldots`$ | $`1.962`$ |
 
-The second interval extends a published window that reached $`392.73975\ldots H`$. The first uses four moments to resolve an interior peak. An additional 23 closed cells extend its left edge to the upper endpoint of the first-failure bracket. [Earlier window](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md) · [New finite alternatives](PROOF.md#an-earlier-height-for-factor-400)
+The second interval extends a published window that reached $`392.73975\ldots H`$. The first uses four moments to resolve an interior peak. An additional 23 closed cells extend its left edge to the upper endpoint of the first-failure bracket. [Earlier window](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-distant-interval/PROOF.md) · [New finite alternatives](PROOF.md#an-earlier-height-for-factor-400)
 
 ## The four-digit obstruction
 
@@ -56,7 +56,7 @@ The failure also occupies a positive fraction of log heights. For each prescribe
 
 ## The earlier factor-400 certificate
 
-The two earlier one-way windows and their original publication record remain available. [Original tagged release](https://github.com/leecrossley/theta-race-factor-400/releases/tag/v1.0.0) · [Original archived paper](https://doi.org/10.5281/zenodo.24411635)
+The two earlier one-way windows and their original publication record remain available. [Original tagged release](https://doi.org/10.5281/zenodo.24411635) · [Original archived paper](https://doi.org/10.5281/zenodo.24411635)
 
 **A factor of 400 fails in both directions at explicit starting heights.** In the 547/727 prime-ideal race with $`b=r=2`$, every eligible doubling gains at one height and every eligible doubling loses at another. The two certified log intervals have widths $`6`$ and $`45/8`$, both greater than $`\log200`$. [Theorem and proof](PROOF.md)
 
@@ -65,7 +65,7 @@ The two earlier one-way windows and their original publication record remain ava
 | $`e^{469417229.340}/(2\sqrt2)`$ | $`2e^6 H=806.857586\ldots H`$ | Gain of more than $`0.1\log2`$ |
 | $`e^{484947092.225}/(2\sqrt2)`$ | $`2e^{45/8}H=554.544569\ldots H`$ | Loss of more than $`0.1\log2`$ |
 
-There are also arbitrarily large starting heights with only gains by $`2e^6H`$, and others with only losses by that same deadline. Thus a factor guaranteeing a gain, or one guaranteeing a loss, of more than $`1.9735\log2`$ after **every** height must exceed $`2e^6`$. The previous obstruction was $`392.7397507\ldots`$. [Previous result](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md) [Prior-work comparison](PRIOR-WORK.md)
+There are also arbitrarily large starting heights with only gains by $`2e^6H`$, and others with only losses by that same deadline. Thus a factor guaranteeing a gain, or one guaranteeing a loss, of more than $`1.9735\log2`$ after **every** height must exceed $`2e^6`$. The previous obstruction was $`392.7397507\ldots`$. [Previous result](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-distant-interval/PROOF.md) [Prior-work comparison](PRIOR-WORK.md)
 
 The proof uses four cosine moments to bound every omitted zero and certifies all points of both intervals. A second calculation uses two real integrals, Cauchy–Schwarz and direct interval evaluations of the sines. The omitted-zero bounds and the two comparisons with actual prime scores require Dirichlet GRH. [Zero brackets](evidence/zero-brackets.tsv) [Verification output](evidence/check.txt) [Upstream verification](https://math.mit.edu/~drew/grh/)
 

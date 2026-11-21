@@ -16,7 +16,7 @@ J(z)=\frac{2\sinh(az/2)}{a}\,
       \frac{3-2r\cosh(az)}{2(r-1)^2(1/4-z^2)}.
 ```
 
-The singularities at $`\pm1/2`$ are removable. The trace identification, explicit formula and finite omissions are recorded for both hosts. [Both fields and their omitted primes](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.2.0/results/joint-levels-and-moves/PROOF.md) · [547/727 trace in Lean](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [571/599 admissible datum](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean)
+The singularities at $`\pm1/2`$ are removable. The trace identification, explicit formula and finite omissions are recorded for both hosts. [Both fields and their omitted primes](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.2.0/results/joint-levels-and-moves/PROOF.md) · [547/727 trace in Lean](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83) · [571/599 admissible datum](https://github.com/leecrossley/theta-host-split-inert-race/blob/8fca7cad37185e3d7951f0dffff5e2442d1dfa24/HostAdmissible.lean)
 
 **Theorem.** For every real $`x\ge12494`$ put
 
