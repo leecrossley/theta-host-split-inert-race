@@ -8,7 +8,7 @@ Between one million and one billion, **$`6H`$ misses a required move at exactly 
 | Loss | 20,077,386 | 20,356,800 | 279,415 |
 | Loss | 562,481,499 | 567,094,638 | 4,613,140 |
 
-For **every real** $`10^6\le H\le10^9`$, both moves finish by $`CH`$ exactly when $`C`$ exceeds $`6.458177331046\ldots`$. A gain sets that limit. The sharp factor for losses alone is $`6.083501163950\ldots`$. Equality fails in each case. With integer starting heights the corresponding factors are slightly smaller, $`6.458177149109\ldots`$ and $`6.083501148481\ldots`$. The proof also gives the full set of exceptions for every real factor $`C\ge6`$. [Exact endpoints](PROOF.md#all-failing-starts-after-one-million) · [Numerical replay](evidence/check.txt)
+A single factor $`C`$ guarantees both moves by $`CH`$ for all real starts $`10^6\le H\le10^9`$ exactly when $`C`$ exceeds $`6.458177331046\ldots`$. A gain sets that limit. The sharp factor for losses alone is $`6.083501163950\ldots`$. Equality fails in each case. With integer starting heights the corresponding factors are slightly smaller, $`6.458177149109\ldots`$ and $`6.083501148481\ldots`$. The proof also gives the full set of exceptions for every real factor $`C\ge6`$. [Exact endpoints](PROOF.md#all-failing-starts-after-one-million) [Numerical replay](evidence/check.txt)
 
 Two prime sums with independently bounded errors locate the six crossings. An interpolation bound covers every point between their boundary neighborhoods, including all intervening prime norms. [Integer sieve](sieve.cpp) · [Independent prime sums](near_roots.py) · [Interval cover](late_slabs.py)
 
@@ -49,11 +49,11 @@ The finite result uses direct prime-ideal arithmetic. [All slope enclosures](evi
 
 ## Why the pattern eventually breaks
 
-At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $`2.2`$, that sum stays above $`-1.8`$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $`\log 9=2.19722\ldots`$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. The index of the first numerical failure remains open. [Recurrence argument](PROOF.md#transfer-the-entire-interval) · [Verification output](evidence/check.txt)
+At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $`2.2`$, that sum stays above $`-1.8`$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $`\log 9=2.19722\ldots`$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. Finding a specific start beyond one billion where a factor of 18 fails remains open. [Recurrence argument](PROOF.md#transfer-the-entire-interval) [Verification output](evidence/check.txt)
 
 The recurrence proof uses Alpöge's announced primitive Dirichlet GRH theorem, independently matched to its formal statement by Sutherland's checks. The local Lean lemmas take the late-translate estimate as an input. The analytic recurrence and its application to gains and losses are written out in the proof. [External verification](https://math.mit.edu/~drew/grh/) [Prior work](PRIOR-WORK.md)
 
-The companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.1)
+Under GRH for the primitive Dirichlet functions of the race and its base field, including the zeta function, the companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.1)
 
 ## Replay
 
