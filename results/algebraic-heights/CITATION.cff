@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Algebraic ratios between exact prime-race crossings"
-abstract: "Across the two hosts at most three exact hits of magnitude 1.9735 share algebraic starting-height ratios. At least 1,830 pairs through one million have transcendental quotient. On 547/727 at least 3,274 inequivalent hits finish below exp(12500). The general high-range bound and the geometric-sampling rank apply to both fields."
+abstract: "On each theta field at most three exact hits of magnitude 1.9735 can share algebraic height ratios. At least 3,274 inequivalent hits on 547/727 finish by exp(12500). The joint three-hit bound is unconditional through 2^1582 and sufficiently far out. Dirichlet GRH connects the ranges."
 authors:
   - family-names: Crossley
     given-names: Lee

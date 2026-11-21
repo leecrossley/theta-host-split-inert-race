@@ -53,12 +53,16 @@ def bridges():
         assert max(large) > 2**531
         assert min(large) < max(initial)
     assert final == [(479,641),(479,577)]
-    # For t >= 366 the diagonal log mass is >= Delta/8 - 1.90 (U+L)/t.
-    assert Fraction(1,8) > Fraction(190,100) * Fraction(35,3) / 366
+    # Each of two smaller prime intervals supplies a fourth-power norm on both fields.
+    step = Fraction(51,50)
+    assert step**8 < RATE and (8*10**9)**4 < 2**132
+    assert (step-1)/8-(step+1)/3200 > Fraction(1,1000)
+    assert 8*10**9//1000 > 300
+    assert all(pow(3,f,16) not in (1,15) for f in (1,2)) and pow(3,4,16)==1
     assert RATE**4 < 2 and RATE < 2 and 2*RATE < 4
     print("The 514 additional midpoint primes pass 16 trial divisions and 498 Proth tests. "
           "Both degree-one chains have every ratio below 19/16 after their last gaps "
-          "479 to 641 and 479 to 577. The analytic mass is positive from log L = 366.")
+          "479 to 641 and 479 to 577. The unconditional fourth-power intervals overlap the finite chains.")
 
 
 def joint_corners():

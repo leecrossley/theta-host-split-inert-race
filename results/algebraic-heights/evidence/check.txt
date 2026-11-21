@@ -17,7 +17,7 @@ The protected 60 by 60 intercept minor has residues 290245403 and 1234467739 mod
 The two repeated cells each contain two opposite signed hits, separated by a factor below 4/3.
 The four last deficient prime gaps are 479 to 641, 241 to 337, 113 to 223 and 127 to 223. The joint rank threshold for (6y,8y] is 641/8.
 The 62 individual heights give at least 21 classes and 1830 transcendental ratios.
-The 514 additional midpoint primes pass 16 trial divisions and 498 Proth tests. Both degree-one chains have every ratio below 19/16 after their last gaps 479 to 641 and 479 to 577. The analytic mass is positive from log L = 366.
+The 514 additional midpoint primes pass 16 trial divisions and 498 Proth tests. Both degree-one chains have every ratio below 19/16 after their last gaps 479 to 641 and 479 to 577. The unconditional fourth-power intervals overlap the finite chains.
 The two common degree-one directions have last deficient gaps 2609 to 3313 and 2351 to 2879 at factor 19/16. The joint chains certify 16504 primes (172 trial divisions and 16332 Proth tests).
 Two exact interval algorithms find 4894 alternating disjoint signed supports. The 4893 intervening traversals give that many crossings of each signed target and of zero.
 With the initial 35 hits, 547/727 has at least 9821 signed hits, 3274 pairwise inequivalent heights and 1637 per sign before completion height exp(12500). At least 2447 zero heights in that range have pairwise transcendental quotients.
