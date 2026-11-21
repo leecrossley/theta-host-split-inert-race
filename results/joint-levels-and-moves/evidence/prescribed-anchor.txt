@@ -1,0 +1,14 @@
+Direct physical trace: 41 charts, 1280 closed root boxes and 1415 certified leaves.
+All real anchors in [13450,13490] pass all five face tests with clearance > 1/200.
+Every affine coordinate < 2 on its complete chart, gradient norm < 3/20.
+Template starts > 1155, every finish < 583866, adjacent start ratio > 2.017, completion factor < 148.
+Adaptive prime-norm interval evaluations: 13189
+Polynomial factorization and independent secants: all 1415 closed leaves pass all 16 corners.
+Both moving arcs and the full prescribed-anchor interval have uniform face clearance > 1/200.
+Direct limiting trace: 35 charts, 1280 closed root boxes and 1430 certified leaves.
+All real anchors in [13450,13490] pass all five face tests with clearance > 1/200.
+Every affine coordinate < 2 on its complete chart, gradient norm < 3/20.
+Template starts > 1155, every finish < 586206, adjacent start ratio > 2.017, completion factor < 148.
+Adaptive prime-norm interval evaluations: 11935
+Primitive Conrey tables and independent secants: all 1430 closed leaves pass all 16 corners.
+Both moving arcs and the full prescribed-anchor interval have uniform face clearance > 1/200.

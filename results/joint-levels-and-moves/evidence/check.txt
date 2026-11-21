@@ -100,6 +100,34 @@ Independent polynomial remainders, depressed quartics and four certified branch 
 All 16 rational vertices have their own three-height solution, with every weight greater than 1/100.
 At each vertex independent polynomial splitting and original-tent contraction certify all five 18-place brackets.
 The contraction norm is below 1/1000000 at every corner.
+Direct physical trace: 41 charts, 1280 closed root boxes and 1415 certified leaves.
+All real anchors in [13450,13490] pass all five face tests with clearance > 1/200.
+Every affine coordinate < 2 on its complete chart, gradient norm < 3/20.
+Template starts > 1155, every finish < 583866, adjacent start ratio > 2.017, completion factor < 148.
+Adaptive prime-norm interval evaluations: 13189
+Polynomial factorization and independent secants: all 1415 closed leaves pass all 16 corners.
+Both moving arcs and the full prescribed-anchor interval have uniform face clearance > 1/200.
+Direct limiting trace: 35 charts, 1280 closed root boxes and 1430 certified leaves.
+All real anchors in [13450,13490] pass all five face tests with clearance > 1/200.
+Every affine coordinate < 2 on its complete chart, gradient norm < 3/20.
+Template starts > 1155, every finish < 586206, adjacent start ratio > 2.017, completion factor < 148.
+Adaptive prime-norm interval evaluations: 11935
+Primitive Conrey tables and independent secants: all 1430 closed leaves pass all 16 corners.
+Both moving arcs and the full prescribed-anchor interval have uniform face clearance > 1/200.
+The unique optimum persists on the closed target box of radius 4/10^9.
+The projected quadratics have nonzero resultant and a nonzero linear coefficient.
+optimal third start in (61455609822534600169779, 61455609822534600169780) / 10^18
+minimum worst error in (2274350938622389, 2274350938622390) / 10^18
+weight 2457 in (246827861901412719, 246827861901412720) / 10^18
+weight 13471 in (394992237138323180, 394992237138323181) / 10^18
+weight at the third start in (358179900960264099, 358179900960264100) / 10^18
+Direct prime count: 300 closed separating intervals outside the local band.
+Unique minimizer over disjoint third doublings with starts from 1 through 300000.
+Independent original equations contract all four 18-place boxes; the fifth weight is recovered.
+Both supporting-plane derivatives have the required strict signs throughout the local band.
+A uniform interval contraction covers target perturbations 4/10^9 in all four coordinates.
+Independent projected minors and the quadratic resultant give a degree-two rational map.
+Independent polynomial splitting and 1621 closed secants validate every global separator.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for JointOscillation
 'JointOscillation.projected_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.disk_support' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -123,3 +151,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'JointOscillation.projection_discriminant' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.specialized_root' depends on axioms: [propext, Classical.choice, Quot.sound]
 'JointOscillation.four_digit_exponents' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.prescribed_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.band_cone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.strict_third_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JointOscillation.quadratic_basis_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]

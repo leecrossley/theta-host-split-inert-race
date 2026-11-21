@@ -130,9 +130,9 @@ class Reference:
         return self.level(z), (d if x>0 else -d)
 
 
-def secant_errors(left,right):
-    """Componentwise interpolation errors over a grid of step 1/SCALE."""
-    h = arb(1)/SCALE
+def secant_errors(left,right,scale=SCALE):
+    """Componentwise interpolation errors over a grid of step 1/scale."""
+    h = arb(1)/scale
     r = arb(2).sqrt()
     B = 2*r*(r-1)**2
     a = arb(2).log()

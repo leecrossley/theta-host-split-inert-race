@@ -177,6 +177,26 @@ theorem four_digit_exponents {a b c d i j k l : ℕ}
     (h : a+5*b+25*c+125*d=i+5*j+25*k+125*l) :
     a=i ∧ b=j ∧ c=k ∧ d=l := by omega
 
+/-- A strict face margin gives a lower bound for every designated mass. -/
+theorem prescribed_weight {x m w : ℝ} (gap : m + 1/200 < x) (cap : x ≤ m+2*w) :
+    1/400 < w := by linarith
+
+/-- After quotienting by the two prescribed observations, a band lies on a quadratic cone. -/
+theorem band_cone (w t : ℝ) (ht : t ≠ 0) : (w*t)*(w/t)=w^2 := by
+  field_simp
+
+/-- A supporting covector is strict away from the optimizing third observation. -/
+theorem strict_third_support {a b c d z : ℝ} (hm : a+b+c=1)
+    (hc : 0<c) (hz : d<z) : d < a*d+b*d+c*z := by
+  calc
+    d = (a+b+c)*d := by rw [hm, one_mul]
+    _ < a*d+b*d+c*z := by nlinarith [mul_pos hc (sub_pos.mpr hz)]
+
+/-- The derivative numerator of a quotient of two quadratics is at most quadratic. -/
+theorem quadratic_basis_derivative (a b c d e f t : ℝ) :
+    (2*a*t+b)*(d*t^2+e*t+f)-(a*t^2+b*t+c)*(2*d*t+e) =
+      (a*e-b*d)*t^2 + 2*(a*f-c*d)*t + (b*f-c*e) := by ring
+
 end JointOscillation
 
 #print axioms JointOscillation.projected_norm
@@ -206,3 +226,8 @@ end JointOscillation
 
 #print axioms JointOscillation.specialized_root
 #print axioms JointOscillation.four_digit_exponents
+
+#print axioms JointOscillation.prescribed_weight
+#print axioms JointOscillation.band_cone
+#print axioms JointOscillation.strict_third_support
+#print axioms JointOscillation.quadratic_basis_derivative

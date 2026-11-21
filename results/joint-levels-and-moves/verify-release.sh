@@ -55,6 +55,18 @@ python3 target_box_corners_recheck.py > "$tmp/corner-check"
 diff -u evidence/corner-check.txt "$tmp/corner-check"
 cat "$tmp/corner-check" >> "$tmp/receipt"
 
+for trace in physical limiting; do
+  python3 prescribed_anchor.py "$trace" >> "$tmp/prescribed"
+  python3 prescribed_anchor_recheck.py "$trace" >> "$tmp/prescribed"
+done
+diff -u evidence/prescribed-anchor.txt "$tmp/prescribed"
+cat "$tmp/prescribed" >> "$tmp/receipt"
+
+python3 fixed_pair_balance.py > "$tmp/fixed-pair"
+python3 fixed_pair_recheck.py >> "$tmp/fixed-pair"
+diff -u evidence/fixed-pair-balance.txt "$tmp/fixed-pair"
+cat "$tmp/fixed-pair" >> "$tmp/receipt"
+
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then
