@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "The first missed move at factor 400 in the 547/727 prime race"
-abstract: "The first 400H miss in the dyadic 547/727 prime-ideal race is a gain, at a starting height located to within a factor of 1.0131. This holds whenever eight primitive Dirichlet L-functions have no zeros in an explicit bounded region, a condition supplied by the announced Dirichlet GRH theorem. Failure of this localization unconditionally forces a zero in the specified region."
+abstract: "Assuming the eight odd primitive Dirichlet factors have no zero in an explicit bounded region, which Dirichlet GRH implies, the first 400H miss in the dyadic 547/727 prime-ideal race is a gain, at a starting height located to within a factor of 1.0131. Unconditionally, failure of this localization forces a zero in that region."
 authors:
   - family-names: Crossley
     given-names: Lee
