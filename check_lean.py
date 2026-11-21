@@ -50,8 +50,8 @@ def main():
         paths[module] = (path, root)
         hashes[module] = sha256(text).hexdigest()
         graph[module] = []
-        for dep in re.findall(rb"^import[ \t]+([\w.]+)[ \t]*$", text, re.M):
-            name = dep.decode()
+        # Decode first: a bytes pattern's \w is ASCII only and would skip modules such as DataParams₂.
+        for name in re.findall(r"^import[ \t]+(\S+)[ \t]*$", text.decode("utf-8"), re.M):
             visit(name)
             if name in paths:
                 graph[module].append(name)
