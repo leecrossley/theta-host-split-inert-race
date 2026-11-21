@@ -15,7 +15,7 @@ There is also an exact averaging result. Write $`D_A,D_B`$ for the two changes d
 
 The starts and nonnegative weights are the same for both fields. A projected advantage is attained on one actual doubling. Prescribing two or four coordinates allows several doublings with weights adding to one. The newer deadlines fix both window widths at two and use all five rational omissions specified for each host. The original arbitrary-width, arbitrarily late theorem follows below. [Common starts and weights](PROOF.md#why-these-are-actual-prime-observations) · [Original release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.0.0)
 
-Run `bash verify-release.sh` in the result directory after installing the pinned arithmetic package. The release includes 3,218 genuine positive zero brackets, two evaluations of 1,555 common averages that differ in the trigonometric sums but share the zero table, costs and geometry, eight early prime-ideal counts and ten local Lean deductions. The written analytic and geometric steps identify how the certificates imply the result. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+Run `bash verify-release.sh` in the result directory after installing the pinned arithmetic package. The release includes 3,218 genuine positive zero brackets, two evaluations of 1,555 common averages that use different formulas for the kernel and the trigonometric sums but share the zero table, costs and geometry, eight early prime-ideal counts and ten local Lean deductions. The written analytic and geometric steps identify how the certificates imply the result. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
 
 ## The earlier unrestricted-width result
 
