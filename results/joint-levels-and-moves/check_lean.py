@@ -6,7 +6,7 @@ import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("projected_norm", "disk_support", "ellipse_support", "projection_gap", "one_sided_pair", "ellipse_axes", "deadline_support", "mixed_stop_band", "contrast_margin", "cover_endpoint",
-            "translated_det", "near_perpendicular", "transverse", "simplex_fixed_displacement", "three_point_face", "quartic_elimination", "recover_weight")
+            "translated_det", "near_perpendicular", "transverse", "simplex_fixed_displacement", "three_point_face", "quartic_elimination", "recover_weight", "positive_mass_sign", "four_sheet_group", "projection_discriminant")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

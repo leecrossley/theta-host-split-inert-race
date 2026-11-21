@@ -1,0 +1,13 @@
+Two real-ball precisions reproduce the degree-four rational slice and a squarefree degree-six branch discriminant.
+Signs of the coprimality resultant, leading branch coefficient and separability resultant: -1 -1 1
+All four poles are simple and the six finite branch values are distinct.
+Throughout the balanced target box of radius 1/10000 all four algebraic weights are real.
+Three disjoint root intervals violate an original positivity condition, leaving one physical solution on the two prime bands.
+Independent original-tent interpolation and six disjoint Rouche discs of radius 10^-10.
+All six critical images are separated. The two real branch values lie in (-0.025,-0.024) and (1375,1376).
+The other four branch values have imaginary part of absolute value above 10000.
+The slice above zero has four distinct real parameters; two of the four simple poles are real.
+The unordered-pair j-invariant lies between 2159.399670638032703450 and 2159.399670638032703451.
+The partition j-invariant lies between 1372.295119267165244835 and 1372.295119267165244836.
+Both plane cubics are nonsingular. Their invariants enclose the level-two modular equation to within 10^-90.
+Independent polynomial remainders, depressed quartics and four certified branch roots recover both 18-place j intervals.

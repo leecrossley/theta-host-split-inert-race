@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: If you use this result, please cite the tagged release.
-title: "Three disjoint doublings for two theta prime races"
-abstract: "Three common starting heights, including one prescribed integer, reproduce four level and move targets on the 547/727 and 571/599 prime races. Their doublings are disjoint and each weight exceeds 1/400. Direct prime-ideal calculations prove the finite theorem. A local inverse has exact generic degree four. The late recurrence uses the critical-line result for the sixteen primitive odd Dirichlet factors."
+title: "The four possible weights in a two-field prime-race inverse"
+abstract: "For two explicit prime bands and integer start 13471 in the 547/727 and 571/599 races, all four weights solving the elimination quartic are real near the balanced target and exactly one is physically admissible. The generic Galois group is S4. An explicit simply branched rational slice gives a degree-two isogeny between the elliptic curves of unordered pairs and complementary partitions. Their j-invariants are enclosed by two independent calculations. All new conclusions use finite prime counts."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.3.0
+version: 1.4.0
 date-released: 2026-11-21
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race

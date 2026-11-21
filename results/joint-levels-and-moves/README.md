@@ -1,4 +1,12 @@
-# Three disjoint doublings for two theta prime races
+# The four possible weights in a two-field prime-race inverse
+
+Three disjoint doublings can make the 547/727 and 571/599 prime races balance exactly. Fix the integer start at **13,471** and keep the other two starts on the prime bands containing **2,457.452762** and **61,460.713124**. Given the four target measurements, the weight at the integer start solves a quartic.
+
+**Exactly one of four real roots works.** This holds throughout the closed box of radius 0.0001 about the balanced target (both midpoint levels one, both moves zero). The other three roots violate the signs required by the original prime sums. The conclusion covers the whole ordered pair of prime bands. For almost every target in this box the four roots have Galois group $`S_4`$ over the target coordinates and the real algebraic numbers with the finite prime logarithms adjoined. In particular, field operations and iterated square roots cannot recover even the admissible weight. The proof uses finite prime counts and has no zero-location hypothesis. [Proof](PROOF.md#the-four-conjugates-of-the-integer-start-weight) · [Certificate](evidence/inverse-monodromy.txt)
+
+**An elliptic curve records each way to choose a pair.** On a specified one-parameter slice, forgetting which of two complementary root pairs was selected gives a degree-two isogeny. The two elliptic curves have $`j`$-invariants approximately 2,159.399671 and 1,372.295119. The first has two real components and the second has one. Two independent calculations enclose both invariants to 18 decimal places. [Equations of the two curves](PROOF.md#the-two-elliptic-resolvents) · [Branch calculation](inverse_branch_recheck.py) · [Prior work](PRIOR-WORK.md#the-quartic-inverse-and-its-resolvents)
+
+## Three disjoint doublings for two theta prime races
 
 For the 547/727 and 571/599 theta prime races at width two, **three common starts reproduce any four targets in the following box exactly**. Take a positive weighted average of the midpoint levels and the normalized dyadic moves at the three starts. Use exactly the same weights and heights for both fields.
 
@@ -13,7 +21,7 @@ For the 547/727 and 571/599 theta prime races at width two, **three common start
 
 **An exact example.** At starts approximately 2,457.452761630442, exactly 13,471, and approximately 61,460.713123523080, one set of three positive weights gives both levels exactly one and both moves exactly zero. A quartic isolates the solution to 18 decimal places. An independent interval contraction verifies the original four equations. Every target within 0.0001 of this example has a unique solution in a specified parameter box with the same integer start. For almost every such target the local inverse has algebraic degree exactly four over the observations and the field of prime logarithms with real algebraic coefficients. [Balanced example and degree proof](PROOF.md#an-exact-balanced-example-and-the-degree-of-its-local-inverse) · [18-place brackets](evidence/three-inverse.txt)
 
-The two calculations check complete arcs and all closed target cells. One uses the jumps of the tent at prime norms. The other factors defining polynomials, evaluates all primitive Conrey characters, and bounds the error of each secant. The 17 local Lean deductions include the fixed-point algebra for the three-start argument. The analytic and topological theorems are written proofs. [Numerical replay](three_starts.py) · [Independent verifier](three_recheck.py) · [Lean](JointOscillation.lean) · [Prior work](PRIOR-WORK.md#three-common-starts)
+The two calculations check complete arcs and all closed target cells. One uses the jumps of the tent at prime norms. The other factors defining polynomials, evaluates all primitive Conrey characters, and bounds the error of each secant. The original 17 local Lean deductions include the fixed-point algebra for the three-start argument. The analytic and topological theorems are written proofs. [Numerical replay](three_starts.py) · [Independent verifier](three_recheck.py) · [Lean](JointOscillation.lean) · [Prior work](PRIOR-WORK.md#three-common-starts)
 
 ## The preceding fixed-window bounds
 

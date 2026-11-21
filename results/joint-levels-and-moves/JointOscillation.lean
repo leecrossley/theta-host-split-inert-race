@@ -141,6 +141,25 @@ theorem recover_weight {a b c : ℝ} (mass : a+b+c = 1) (remaining : 0 < 1-a) :
   rw [h]
   ring
 
+/-- On the positive sheet the sign discarded by squaring is prescribed. -/
+theorem positive_mass_sign {h b c : ℝ} (hm : h+b+c=1) (hb : 0<b) (hc : 0<c) :
+    0 < (1-h)^2-b^2-c^2 := by
+  have h : 1-h = b+c := by linarith
+  rw [h]
+  nlinarith [mul_pos hb hc]
+
+/-- The group deduction for a connected four-sheeted cover with simple branch generators. -/
+theorem four_sheet_group (S : Set (Equiv.Perm (Fin 4)))
+    (hs : ∀ σ ∈ S, σ.IsSwap) [MulAction.IsPretransitive (Subgroup.closure S) (Fin 4)] :
+    Subgroup.closure S = ⊤ :=
+  closure_of_isSwap_of_isPretransitive hs
+
+/-- The discriminant of the quadratic left after projection from a point of a cubic. -/
+theorem projection_discriminant {a b c x : ℝ} (hx : a*x^2+b*x+c=0) :
+    (2*a*x+b)^2=b^2-4*a*c := by
+  nlinarith [show (2*a*x+b)^2-(b^2-4*a*c)=4*a*(a*x^2+b*x+c) by ring,
+    show 4*a*(a*x^2+b*x+c)=0 by rw [hx, mul_zero]]
+
 end JointOscillation
 
 #print axioms JointOscillation.projected_norm
@@ -163,3 +182,7 @@ end JointOscillation
 
 #print axioms JointOscillation.quartic_elimination
 #print axioms JointOscillation.recover_weight
+
+#print axioms JointOscillation.positive_mass_sign
+#print axioms JointOscillation.four_sheet_group
+#print axioms JointOscillation.projection_discriminant
