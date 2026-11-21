@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Isolated peaks in the 547/727 prime race"
-abstract: "The exact upper limit and a certified billion-unit isolation band in the 547/727 prime-ideal race."
+abstract: "Under Dirichlet GRH, the exact upper limit and a certified billion-unit isolation band in the 547/727 prime-ideal race. The finite bound over the listed zero brackets is unconditional."
 authors:
   - family-names: Crossley
     given-names: Lee
