@@ -1,15 +1,23 @@
-# A 406H obstruction at an earlier height in the 547/727 race
+# The first missed move at factor 400 in the 547/727 prime race
 
-Take $`H_1=e^{1620542.278}/(2\sqrt2)`$ in the dyadic 547/727 prime-ideal race. **Every doubling that starts after this height and finishes by $`406.72902625769\ldots H_1`$ gains less than $`1.944\log2`$**, using the announced primitive Dirichlet critical-line theorem. In particular, $`400H_1`$ misses the required gain of more than $`1.9735\log2`$. The smallest previously published log centre in this family that ruled out 400 was more than 289 times larger. [Earlier-height proof](PROOF.md#a-second-witness-below-log-height-1620543) · [Upstream verification](https://math.mit.edu/~drew/grh/)
+The first starting height $`H_*\ge1`$ at which the dyadic 547/727 race misses a required move by $`400H_*`$ satisfies
 
-**Without the global theorem, a qualifying gain would force a particular kind of zero.** One of the eight odd primitive Dirichlet factors would have a zero $`\beta+i\gamma`$ with $`\beta\gt0.50000004`$ and $`8590\lt|\gamma|\le e^{810330}`$. If $`|\gamma|\ge e^{420000}`$, it would have $`\beta\gt3/4`$. The proof gives a continuous lower bound between these ranges and controls the base-field factors unconditionally. It verifies 13,946 positive zero brackets. The finite computation leaves open whether the larger exceptional region is empty. [Exact region](PROOF.md#a-second-witness-below-log-height-1620543) · [Verification transcript](evidence/check.txt)
+```math
+1620542.262999\lt\log(2\sqrt2\,H_*)\le1620542.276 .
+```
 
-| Closed interval of log centres | Exact deadline factor | Upper bound for the normalized gain under the primitive theorem |
+The upper and lower heights differ by less than **1.31%**. The first miss is a **gain**. A loss greater than $`1.9735\log2`$ still finishes on time. The doubling that starts exactly at the boundary has gain **equal to** $`1.9735\log2`$. The deadline asks for a strictly later start. These conclusions use the announced primitive Dirichlet critical-line theorem only through a finite condition on eight odd factors. [First-failure proof](PROOF.md#the-first-missed-move-at-factor-400) · [Upstream theorem and audit](https://math.mit.edu/~drew/grh/)
+
+**Unconditionally, a failure of this localization forces a particular Dirichlet zero.** One of those eight factors must then have a zero $`\beta+i\gamma`$ with $`\beta\gt0.50000004`$ and $`8590\lt|\gamma|\le e^{810330}`$. At $`|\gamma|\ge e^{420000}`$ the real part must exceed $`3/4`$. The base-field terms are bounded unconditionally. The certificate checks 13,946 positive zero brackets. A separate verification of zero exclusion throughout the much larger region remains open. [Exact finite condition](PROOF.md#a-second-witness-below-log-height-1620543) · [Verification transcript](evidence/check.txt)
+
+Two integer Fourier sweeps certify 5,911,490 gain samples and 5,911,639 loss samples each. Five additional gains bridge the gaps. Open intervals around the witnesses cover **every real starting height** up to the lower endpoint. Two whole-interval calculations prove the large gain is absent on the later stretch. [Positive cover](first_cover.py) · [Negative interval calculations](early_400.py) · [Prior work](PRIOR-WORK.md#the-first-failure)
+
+| Closed interval of log centres | Certified deadline factor | Upper bound for the normalized gain under the finite condition for that interval |
 |---|---|---|
 | $`[1620542.278,1620547.593]`$ | $`2e^{5.315}=406.729026\ldots`$ | $`1.944`$ |
 | $`[3895686.221,3895691.520]`$ | $`2e^{5.299}=400.273146\ldots`$ | $`1.962`$ |
 
-The proof checks every point of the two intervals using direct interval sines and two separate 32,769-node Fourier grids with bounds between nodes. The second interval extends a published window which reached $`392.73975\ldots H`$. The first uses four exact moments to resolve an interior peak. [Previous interval](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md) · [Prior-work comparison](PRIOR-WORK.md#the-earlier-400h-obstruction)
+The second interval extends a published window that reached $`392.73975\ldots H`$. The first uses four moments to resolve an interior peak. An additional 23 closed cells extend its left edge to the upper endpoint of the first-failure bracket. [Earlier window](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md) · [New finite alternatives](PROOF.md#an-earlier-height-for-factor-400)
 
 ## The four-digit obstruction
 
@@ -55,7 +63,8 @@ python thousand_zeros.py
 python thousand_window.py
 python thousand_cells.py
 python early_400.py
+python first_cover.py
 python check_source.py
 ```
 
-For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar and zstd installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. An optional second argument names the directory of the five upstream records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays twelve local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)
+For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar, zstd and a C++17 compiler supporting signed 128-bit integers installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. The family tree supplies the five pinned upstream records in the [geometric-grid evidence directory](https://github.com/leecrossley/theta-host-split-inert-race/tree/b9f9d9178f689c5aa9840eff4e61bdd75fe7268f/results/geometric-grid-deadlines/evidence/upstream). An optional second argument selects another directory with the same five records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays thirteen local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)

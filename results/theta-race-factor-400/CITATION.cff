@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "A 406H obstruction at an earlier height in the 547/727 race"
-abstract: "At log centre 1620542.278 a qualifying gain by 406.729H in the 547/727 prime-ideal race forces a zero of one of eight odd Dirichlet factors in an explicitly bounded region. The finite implication is unconditional. The primitive Dirichlet critical-line theorem therefore excludes the gain."
+title: "The first missed move at factor 400 in the 547/727 prime race"
+abstract: "The first 400H miss in the dyadic 547/727 prime-ideal race is a gain, at a starting height located to within a factor of 1.0131. This follows from a finite region for eight primitive Dirichlet factors. Failure of this localization unconditionally forces a zero in the specified region."
 authors:
   - family-names: Crossley
     given-names: Lee

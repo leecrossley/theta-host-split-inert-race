@@ -86,6 +86,17 @@ theorem earlier_deadline_and_margin {f p : ℝ} (head : p ≤ 117/100)
   norm_num [Finset.sum_range_succ, Nat.factorial_succ] at h
   constructor <;> linarith [(abs_le.mp remainder).2]
 
+/-- At a first missed gain, approaching qualifying values and right-hand
+nonqualifying values pin the continuous move to its threshold. -/
+theorem first_boundary {f : ℝ → ℝ} {h t : ℝ} {l r : ℕ → ℝ}
+    (hc : ContinuousAt f h)
+    (hl : Filter.Tendsto l Filter.atTop (nhds h))
+    (hr : Filter.Tendsto r Filter.atTop (nhds h))
+    (before : ∀ n, t ≤ f (l n)) (after : ∀ n, f (r n) ≤ t) :
+    f h = t := by
+  exact le_antisymm (le_of_tendsto' (hc.tendsto.comp hr) after)
+    (ge_of_tendsto' (hc.tendsto.comp hl) before)
+
 end PairedWindows
 
 #print axioms PairedWindows.cubic_majorant
@@ -101,3 +112,4 @@ end PairedWindows
 #print axioms PairedWindows.early_deadline
 #print axioms PairedWindows.early_gain_exclusion
 #print axioms PairedWindows.earlier_deadline_and_margin
+#print axioms PairedWindows.first_boundary

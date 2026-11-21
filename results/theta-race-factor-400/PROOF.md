@@ -268,3 +268,57 @@ Here the retained true-frequency sum has an interior peak which makes the two-mo
 The error allowance for this quantity is only $`120(2\cdot10^{-5})/(54a)`$. After subtracting the sign-certified pairs, the omitted projected mass is below $`0.751`$. One calculation uses the closed gamma terms. The other encloses the two original real gamma integrals at $`0,a`$ and two additional integrals at $`ka`$, $`k=2,3`$. For these last two the interval is $`[(k-1)a,(k+1)a]`$, away from the singularity at zero. The integrand is $`e^{-t/2}g(ka-t)/(2\sinh t)`$, with the prime term at $`k=2`$ added separately. The computation encloses all 32,768 equal subintervals of each integral. [Four cosine moments](#four-moments-for-the-missing-zeros) · [Gamma integrals and both tail checks](early_400.py)
 
 The retained sum is below $`1.17`$ on all 2,150 closed cells of the direct cover. The Fourier grid proves the same inequality at every point after bracket, Taylor and interpolation costs. The base and all other arithmetic terms still cost less than $`0.001`$ at this earlier $`\ell`$. Thus the normalized move is strictly below $`1.17+0.751+0.022+0.001=1.944`$ throughout. The width $`5.315`$ exceeds $`\log200`$. Both witnesses explicitly exclude a large gain. The separate four-digit example above excludes a large loss. [Exact margin and endpoint deductions](PairedWindows.lean) · [Replay transcript](evidence/check.txt)
+
+## The first missed move at factor 400
+
+Let $`H_*`$ denote the first real starting height $`H\ge1`$ at which at least one of the two strict $`1.9735\log2`$ moves fails to finish by $`400H`$. Write $`h=\log(2\sqrt2 H)`$ for a height and $`x=\log(2\sqrt2 y)`$ for an actual start. Let $`\mathcal E`$ be the open-right exceptional region for the eight odd factors in the preceding $`1620542.278`$ theorem, with absolute ordinates above 8,590 through $`e^{810330}`$.
+
+**Theorem.** If $`\mathcal E`$ contains no odd-factor zero, $`H_*`$ exists, the missing move is a **gain**, and
+
+```math
+1620542.262999\lt h_*=\log(2\sqrt2 H_*)\le1620542.276 .
+```
+
+The bounding values for $`H_*`$ itself differ by a factor below $`1.0131`$. The loss still occurs at this first height. The doubling **starting exactly at** $`H_*`$ satisfies $`S(2H_*)-S(H_*)=1.9735\log2`$. It is the boundary value of the move and is excluded by the strict requirement $`y\gt H`$. The theorem supplies an unconditional alternative: failure of any of these conclusions forces a zero in $`\mathcal E`$. The announced primitive Dirichlet critical-line theorem rules out that alternative. The independent finite search for prime-race witnesses does not exhaust the zeros in $`\mathcal E`$. [Finite-zero alternative](#a-second-witness-below-log-height-1620543) · [Upstream statement and checks](https://math.mit.edu/~drew/grh/)
+
+### Comparing to the actual primes throughout the search
+
+Write $`D=[12500,1620550]`$ for the range of log centres needed by the new sweep. Below it, the unconditional finite-height result supplies both moves for every $`1\le H\le e^{12500}`$. This overlaps the new cover in the common coordinate $`h`$. [Finite-height certificate](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.0)
+
+The group of base characters needs no zero-location hypothesis on $`D`$. Split the base sum at $`B=e^{10}`$ and $`D_b=e^{25}`$. Use McCurley below $`D_b`$, with the single possible exceptional real zero handled separately. The eight characters induce distinct characters modulo $`Q_b`$, so at most one such zero is counted across the full product. With $`x_0=12500`$, the total base cost is at most
+
+```math
+2\cdot10^6 e^{-x_0/[20\log(Q_bB)]}
++2000S_{Q_b}(B)e^{-x_0/[20\log(Q_bD_b)]}
++2000S_{Q_b}(D_b)+\frac{20}{e x_0}.
+```
+
+With the higher prime powers, trivial zeros and omitted-prime terms included, the result is below $`0.001`$. Under emptiness of $`\mathcal E`$ the odd projection costs less than $`0.022`$ up to $`1620550`$. The upper grid endpoint exceeds the previous ceiling $`X=1620548`$ by two log units. For this comparison substitute $`p'=(49/50)(1620550/1620548)\lt1`$ in the weighted-tail bound and use 1620550 as the evaluation coordinate throughout. Below 1177000 the earlier calculation sharpens the odd cost to $`0.012`$. The same cubic moment bound $`0.751`$ applies throughout. [Uniform arithmetic and finite-strip bounds](first_cover.py)
+
+### Certifying over twelve million grid positions
+
+The samples are $`x=k/8`$ for integer $`k`$ from $`8\cdot12494`$ to $`8\cdot1620550`$ inclusive. Points before 12500 serve only to initialise the search. A witness there is never needed for a starting log height $`h\ge12500`$. At each grid point the verifier evaluates the 13,946-pair retained head with total absolute error below $`0.002`$. A computed value strictly greater than $`2.76`$ or strictly less than $`-2.76`$ therefore gives a qualifying actual move in that direction whenever $`x\in D`$, since $`2.76-0.002-0.751-0.022-0.001\gt1.9735`$. Two runs return the same six positive runs and one negative run. They use different block sizes and opposite orders of the Fourier butterfly stages. [Integer transforms](first_grid.cpp) · [Coefficient generator](make_grid.py)
+
+Here are the error bounds for those evaluations. For $`N=32768`$ or $`16384`$ put $`L=N/8`$. The midpoint of one true zero bracket is $`t`$ and its signed sine coefficient is $`b_t`$. Choose an integer $`q`$ with $`\delta=tL/2-\pi q`$ satisfying $`|\delta|\lt8/5`$, verified by ball arithmetic. At block number $`m`$ the centre is $`(m+1/2)L`$. For $`k=-N/2,\ldots,N/2-1`$ the grid coordinate relative to this centre is $`k/8`$. Evaluate the imaginary part of
+
+```math
+\sum_t e^{itmL}\,e^{2\pi iqk/N}
+\sum_{j=0}^{16} b_t e^{itL/2}\frac{(i\delta)^j}{j!}
+\left(\frac{2k}{N}\right)^j .
+```
+
+The two exponentials and the detuning reconstruct the exact midpoint phase before Taylor truncation. Ball arithmetic verifies $`\sum_t|b_t|\lt346`$, that the sum of all absolute Taylor coefficients through order 16 is below 2,000, and that replacing the retained true frequencies and weights by their midpoints costs less than $`0.001`$ over the entire range. The real-argument exponential remainder is at most $`346(8/5)^{17}/17!\lt10^{-7}`$.
+
+The fixed-point scale is $`S=2^{48}`$. Each component of every stored complex coefficient, root of unity and phase advance is within $`1/S`$ of its exact value. Floating-point conversion only proposes an integer whose error is then checked with balls. The complex product uses signed 128-bit intermediate integers and truncates each output coordinate toward zero. Its additive complex error is below $`2/S`$. After at most 800 block advances, the phase error is at most $`4(800)(1+2/S)^{800}/S`$. If this is $`e_p`$, the total input error across all transform orders is at most $`2000e_p+6(13946)(17)/S`$. Grouping coefficients with equal indices is exact addition.
+
+For the transform of the rounded inputs, each ideal butterfly output and each ideal twiddle multiplicand has magnitude at most the sum of absolute inputs, below 2,001. Starting with $`E_0=0`$, a worst-case output error at each stage obeys $`E_{j+1}\le(2+4/S)E_j+5000/S`$. This covers both multiplication before addition and multiplication after subtraction. The ideal positive-exponential transform is unnormalized, so the input error already summed above bounds its total effect by the triangle inequality. Horner evaluation adds at most $`1/S`$ per order because $`|2k/N|\le1`$. The combined fixed-point error is below $`10^{-4}`$ at either block size. Signed 64-bit arithmetic suffices for the stored components and sums, since $`4004S\lt2^{61}`$. Twiddle products before division fit in signed 128 bits. The block phase, transform, root enclosure, frequency, Taylor and final witness bounds are replayed from the bracket table. [Arithmetic verification](make_grid.py) · [Full replay](verify-release.sh)
+
+### From grid points to every real height
+
+Keep every signed grid point passing the stated threshold. A run ends when the next witness of that sign is more than 42 ticks away. Within a single run every successive gap is at most $`42/8=5.25`$. Let $`w=5.298\lt\log200`$. The first and last points $`s,u`$ of a run certify every start coordinate in $`(s-w,u)`$. A single additional point $`v`$ certifies $`(v-w,v)`$. Indeed one can always take a strictly later signed point within distance $`w`$, even when the starting height coincides with a grid point. For heights in $`D`$ the selected later point is in $`D`$. These open intervals are a conservative subcover of the allowed deadline.
+
+Both integer sweeps certify **5,911,490 gain samples and 5,911,639 loss samples** on the full grid. The six gain runs leave narrow gaps, and five supplementary gain samples are enough through the lower endpoint. Their exact log coordinates are $`208856.045`$, $`245587.081`$, $`1099489.440`$, $`1176832.610`$ and $`1620542.263`$. At each the verifier evaluates the actual retained true-frequency intervals directly, independent of Fourier gridding. At $`1176832.610`$ it uses the sharper odd displacement $`0.012`$. Exact rational comparisons then check that the union of the open gain intervals covers the entire closed interval $`[12500,1620542.262999]`$. The single loss run covers through $`1620542.276`$. [Open-cover and direct-sine verification](first_cover.py)
+
+At the upper endpoint, 23 further closed interval-sine cells extend the earlier retained-head upper bound $`1.17`$ from $`1620542.278`$ back to $`1620542.276`$. The right endpoint $`1620547.593`$ has more than $`\log200`$ of clearance. Thus a factor of 400 misses the gain at this starting height. Combining the positive cover, this negative interval and the earlier unconditional low-height result proves the bracket in the theorem.
+
+Finally the set of simultaneous successes is open in log height. A signed strict witness at the completion endpoint can be moved slightly left by continuity, leaving strict slack at both ends. Hence the set of misses is closed and its nonempty bounded-below part has a first point. Every sufficiently close smaller log height has a qualifying gain. At $`h_*`$ there is no qualifying gain in $`(h_*,h_*+\log200]`$. The preceding gains therefore occur at coordinates converging to $`h_*`$ from the left, and all points immediately to its right have move at most the threshold. Continuity gives $`f(h_*)=1.9735`$. The loss cover identifies the direction. [Boundary deduction in Lean](PairedWindows.lean) · [Certified output](evidence/check.txt)
