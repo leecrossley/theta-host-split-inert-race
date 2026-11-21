@@ -5,8 +5,8 @@ abstract: "A loss missing its 400H deadline through centred log height 43380912.
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.3.0
+version: 1.3.1
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.3.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.3.1
 type: software
