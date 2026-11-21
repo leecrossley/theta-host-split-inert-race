@@ -1,21 +1,14 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "A split–inert prime race on a theta-lift host"
-abstract: "Unconditional bounds for a weighted split–inert prime race on an admissible theta-lift host."
+title: "Three distinct crossing heights per algebraic-ratio class"
+abstract: "Among any four distinct starting heights for either sign of the exact magnitude 1.9735 on the 547/727 and 571/599 prime-ideal races, two have transcendental quotient. This holds without assuming the generalized Riemann hypothesis. From height 2790 the same bound applies to every fixed nonzero magnitude, with at most two distinct zero heights per class."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.4
+version: 1.5.2
 license: CC-BY-4.0
+date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-doi: 10.5281/zenodo.24415520
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.5.2
+doi: 10.5281/zenodo.24429612
 type: software
-references:
-  - type: software
-    title: "Theta prime races for the 547/727 and 571/599 fields"
-    authors:
-      - family-names: Crossley
-        given-names: Lee
-    version: "collection-2026-11-21"
-    doi: 10.5281/zenodo.24426586
-    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/collection-2026-11-21

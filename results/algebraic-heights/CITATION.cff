@@ -5,10 +5,10 @@ abstract: "Among any four distinct starting heights for either sign of the exact
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.5.1
+version: 1.5.2
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.5.1
-doi: 10.5281/zenodo.24426860
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.5.2
+doi: 10.5281/zenodo.24429612
 type: software

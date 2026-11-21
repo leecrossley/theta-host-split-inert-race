@@ -1,5 +1,7 @@
 # A split–inert prime race on a theta-lift host
 
+This archive contains [version 1.5.2](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.5.2) of [Three distinct crossing heights per algebraic-ratio class](results/algebraic-heights/README.md). Cite the paper with [10.5281/zenodo.24429612](https://doi.org/10.5281/zenodo.24429612). The badge below identifies the theta collection.
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410872.svg)](https://doi.org/10.5281/zenodo.24410872)
 
 Published edition 1.0.4 has DOI [10.5281/zenodo.24415520](https://doi.org/10.5281/zenodo.24415520). The [edition index](RESULTS.md#edition-dois) lists the other papers.

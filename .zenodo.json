@@ -1,0 +1,30 @@
+{
+  "title": "Three distinct crossing heights per algebraic-ratio class",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "version": "1.5.2",
+  "upload_type": "software",
+  "license": "cc-by-4.0",
+  "doi": "10.5281/zenodo.24429612",
+  "description": "<p>Among any four distinct starting heights for either sign of the exact magnitude 1.9735 on the 547/727 and 571/599 prime-ideal races, two have transcendental quotient. This holds without assuming the generalized Riemann hypothesis. From height 2790 the same bound applies to every fixed nonzero magnitude, with at most two distinct zero heights per class.</p><p>Version 1.5.2 corrects the citation in the ZIP. The proof, Lean files, verification programs and evidence are identical to version 1.5.1. The citation files at the root and in the algebraic-heights directory both identify this edition.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/tree/algebraic-heights-v1.5.2/results/algebraic-heights\">Tagged proof and verification files</a>. <a href=\"https://doi.org/10.5281/zenodo.24427111\">Preceding edition</a>.</p>",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24427111",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/leecrossley/theta-host-split-inert-race/tree/algebraic-heights-v1.5.2",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.24410872",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    }
+  ]
+}
