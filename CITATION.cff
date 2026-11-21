@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Tuning a prime race to one prime power"
+abstract: "Variable-width prime-race extrema isolate individual prime powers and have a sharp two-term curvature cusp."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.1
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-width-cusp
+type: software
