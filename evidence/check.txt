@@ -1,6 +1,6 @@
 5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
 Thirteen positive Poisson remainders below 4/25 certify completeness through ordinate 48.
-Positive measure with 125 atom pairs, total integer weight 10002.
+Positive measure with 125 atoms, total integer weight 10002.
 Carrier amplitude > 4.917; all other retained amplitudes total < 2.85.
 Carrier minus all other listed pairs, unlisted modes and prime error exceeds 1.9735.
 Two support radii, one carrier period and log 2 fit strictly within log(10^18).

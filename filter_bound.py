@@ -55,7 +55,7 @@ def main():
     for i,(bottom,top) in enumerate(((9*arb(10).log(),arb(55)),(arb(55),arb(80)),(arb(80),arb(100)))):
         for x in heights[2*i:2*i+2]:
             assert x-3*a/2 > top and x-a/2 < bottom+divisor.log()
-    print(f"Positive measure with {len(support)} atom pairs, total integer weight {total}.")
+    print(f"Positive measure with {len(support)} atoms, total integer weight {total}.")
     print("Carrier amplitude > 4.917; all other retained amplitudes total < 2.85.")
     print("Carrier minus all other listed pairs, unlisted modes and prime error exceeds 1.9735.")
     print(f"Two support radii, one carrier period and log 2 fit strictly within log(10^{bounds['deadline_power']}).")
