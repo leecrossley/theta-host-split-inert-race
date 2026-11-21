@@ -1,5 +1,5 @@
 All 63 real primitive nonprincipal factors exceed 0.288 on [127/128,1]. Two rational cells, 2,758 Abel blocks and a uniform character-sum tail per factor.
-Checked the rational margins in Lee's bound under Dirichlet GRH for log L >= 366. For widths from L/(log L)^10 the prime weight of each sign pattern lies between width/65 and width/63.
+Checked the rational margins in Grenié and Molteni's bound under Dirichlet GRH for log L >= 366. For widths from L/(log L)^10 the prime weight of each sign pattern lies between width/65 and width/63.
 Exact sieve to 33,554,432. The complete exceptional-gap table has 73 sign rows and 42 trace rows including initial gaps.
 Below 2^1585 the final thresholds are 14,493/4 for corners and trace pairs and 26,211/4 for all signs. The three optimal factors on this finite range are 337, 431 and 769.
 Verified 4,126 complete bins, 66,016 labelled primes (688 trial and 65,328 Proth), and every connecting gap. Largest witness has 1,586 bits.

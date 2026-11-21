@@ -42,7 +42,7 @@ For either race, two rational starts in the same guaranteed window can bracket a
 
 If an algebraic deadline fails but every rational height escapes a strict counterexample, the square of the logarithm of 2 must be a rational function of finitely many odd prime logarithms with algebraic coefficients. The proof gives its degree-two or degree-four equation. [Misses that a rational search could overlook](PROOF.md#what-an-isolated-missed-deadline-would-force)
 
-The proof uses Baker’s theorem on logarithms, the prime number theorem in fixed progressions and Lee’s explicit progression bound under Dirichlet GRH. It works directly with the prime-ideal scores. The rank is linear rank over the algebraic numbers. [Baker](https://doi.org/10.1112/S0025579300003971) [Prior work](PRIOR-WORK.md)
+The proof uses Baker’s theorem on logarithms, the prime number theorem in fixed progressions and Grenié and Molteni's explicit Chebotarev bound under Dirichlet GRH. Alpöge's announced Dirichlet GRH theorem supplies this input. It works directly with the prime-ideal scores. The rank is linear rank over the algebraic numbers. [Baker](https://doi.org/10.1112/S0025579300003971) [Prior work](PRIOR-WORK.md) [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
 ## Replay
 

@@ -8,9 +8,9 @@ def verify():
     largest_pair = max(16*p*q for p,q in combinations(conductors, 2))
     bound = 2_176_229_286_416
     assert largest_pair == 6_967_568 < bound
-    assert bound * 3**30 < 8**30
-    assert F(366, 24) + 11 < 366
-    assert 10**7 * bound * 366**12 < 2**173 < 2**183
+    assert bound * 3**29 < 8**29 and F(11, 4)**2 < 8  # M < e^29 and log 2 > 2/3
+    assert F(11, 24) * 366**2 > F(29, 6) * 366 + 60  # Grenie-Molteni plus prime powers < 2 sqrt(x) t^2
+    assert 2 * 10**7 * bound * 366**12 < 2**174 and 2**174 * 3**183 < 8**183
     assert F(1, 10**7 * 366**10) < min(F(19, 10*366), F(73, 1000*366**2))
     for x,y,z,w in product((-1,1),repeat=4):
         a,b = F(x+y,2),F(z+w,2)
