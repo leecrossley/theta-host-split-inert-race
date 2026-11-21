@@ -21,6 +21,8 @@ python3 check_windows.py >"$tmp/receipt"
 python3 check_reversals.py >>"$tmp/receipt"
 python3 check_close_pair.py >>"$tmp/receipt"
 
+python3 fourfold_amplitude.py >>"$tmp/receipt"
+
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then
   math=$(cd "$1" && pwd)

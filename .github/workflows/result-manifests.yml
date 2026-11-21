@@ -10,3 +10,5 @@ jobs:
         with:
           persist-credentials: false
       - run: sh verify-collection.sh
+      - name: Check displayed inequalities
+        run: python3 tools/check_display_math.py

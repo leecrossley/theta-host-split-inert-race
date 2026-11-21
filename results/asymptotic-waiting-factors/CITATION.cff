@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Asymptotic waiting factors for the 547/727 prime race"
-abstract: "In the 547/727 prime race, a gain and a loss each larger than 1.9735 log 2 in magnitude both finish by 2.00125H at arbitrarily large starting heights H if and only if one of the eight odd Dirichlet factors has an off-line zero. If an off-line zero exists and a move is missed by 400H at arbitrarily large H, the rightmost line contains at least 14,488 distinct positive zero ordinates."
+title: "A sharp reversal threshold at four times the starting height"
+abstract: "In the 547/727 prime-ideal race, a gain and a loss greater than 269.364 log 2 both finish strictly before 3.999999997H on a set of starting heights of positive lower logarithmic density, unconditionally. If the eight odd factors satisfy the critical-line assertion, the upper limiting common normalized amplitude at 4H is 269.3640010193614394… ."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.2
+version: 1.1.0
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/asymptotic-waiting-factors-v1.0.2
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/asymptotic-waiting-factors-v1.1.0
 type: software
