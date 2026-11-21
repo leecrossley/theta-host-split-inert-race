@@ -28,6 +28,7 @@ python3 finite_examples.py >>"$tmp/receipt"
 python3 deadline_spectrum.py >>"$tmp/receipt"
 python3 early_common.py >>"$tmp/receipt"
 python3 all_height_common.py >>"$tmp/receipt"
+python3 fixed_windows.py >>"$tmp/receipt"
 for method in direct split; do
   python3 finite_common.py "$method" >>"$tmp/receipt"
 done

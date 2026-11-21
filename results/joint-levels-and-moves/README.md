@@ -1,4 +1,17 @@
-# A deadline for either theta prime race to outgain the other
+# Two theta prime races in one fixed window
+
+**After every real $`H\ge1`$, the same finite completion factor $`C`$ works for every target pair in $`[-5.85,5.85]^2`$.** At most two actual common doublings reproduce the target pair of normalized moves exactly, using the same nonnegative weights in both fields. Each start is strictly after $`H`$, and each doubling finishes before $`CH`$. The fields are 547/727 and 571/599, both at width two. The proof establishes existence of $`C`$. Its numerical value remains open. [Fixed-window theorem](PROOF.md#one-fixed-window-for-all-directions)
+
+On **one actual doubling** the first race can outgain the second by more than $`11.7\log2`$. Another doubling gives the reverse advantage before the same deadline. Almost every pair in the square needs two common starts. The four-coordinate result reproduces both midpoint levels and both moves with at most four common starts. Its full closed target is the product of the ellipses below. Almost every point in that four-dimensional target needs at least three starts. [Common weights](PROOF.md#resolving-collisions-at-a-common-ordinate) · [Lower bounds on the number of readings](PROOF.md#how-many-observations-are-necessary)
+
+| Field | Width-two semiaxes for level and move | Semiaxes at any fixed width greater than one |
+|---|---|---|
+| 547/727 | 9.9375 and 3.4686 | 6.6921 and 1.9735 |
+| 571/599 | 7.9731 and 2.1866 | 6.1027 and 1.5894 |
+
+Each level ellipse is centred at level one and move zero. The widths may be chosen independently, with a fixed factor for each choice. For all sufficiently large $`H`$ the bounded targets also fit before $`H(\log H)^{8+\varepsilon}`$ for every fixed $`\varepsilon\gt0`$. Neither result assumes global Dirichlet zero location. The proof checks even directions that change with $`H`$ and handles several growth rates at the same zero ordinate. [Logarithmic exponent](PROOF.md#a-numerical-exponent-independent-of-the-zeros) · [Reproducible checks](evidence/check.txt)
+
+## Earlier explicit and finite-height bounds
 
 Compare the change in the 547/727 race with the change in the 571/599 race **on the same doubling**. After every real $`1\le H\le e^{2000}`$, there is a doubling where the first field outgains the second by more than $`8\log2`$, and another where the second outgains the first by more than $`8\log2`$. Both starts exceed $`H`$. Both doublings finish before $`262144H`$. The result is unconditional. [Finite-height proof](PROOF.md#the-finite-common-windows) · [Verification transcript](evidence/check.txt)
 
@@ -15,7 +28,7 @@ There is also an exact averaging result. Write $`D_A,D_B`$ for the two changes d
 
 The starts and nonnegative weights are the same for both fields. A projected advantage is attained on one actual doubling. Prescribing two or four coordinates allows several doublings with weights adding to one. The newer deadlines fix both window widths at two and use all five rational omissions specified for each host. The original arbitrary-width, arbitrarily late theorem follows below. [Common starts and weights](PROOF.md#why-these-are-actual-prime-observations) · [Original release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.0.0)
 
-Run `bash verify-release.sh` in the result directory after installing the pinned arithmetic package. The release includes 3,218 genuine positive zero brackets, two evaluations of 1,555 common averages that use different formulas for the kernel and the trigonometric sums but share the zero table, costs and geometry, eight early prime-ideal counts and ten local Lean deductions. The written analytic and geometric steps identify how the certificates imply the result. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+Run `bash verify-release.sh` in the result directory after installing the pinned arithmetic package. The release includes 3,218 genuine positive zero brackets, two evaluations of 1,555 common averages that use different formulas for the kernel and the trigonometric sums but share the zero table, costs and geometry, eight early prime-ideal counts and thirteen local Lean deductions. The written analytic and geometric steps identify how the certificates imply the result. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
 
 ## The earlier unrestricted-width result
 
@@ -48,4 +61,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The replay checks the real segments, the nine sign changes, the mixed frequencies by two independent evaluations, the ellipse bounds, the finite examples, the deadline spectrum, the early prime-ideal counts, the all-height common test, both methods for the common averages and the six original Lean deductions plus four deadline deductions. Both evaluations use Arb ball arithmetic. The Mellin, positive-weight and convex-geometric arguments are written proofs. [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The replay checks the real segments, the nine sign changes, the mixed frequencies by two independent evaluations, the ellipse bounds, the finite examples, the deadline spectrum, the early prime-ideal counts, the all-height common test, both methods for the common averages and the six original Lean deductions, four earlier deadline deductions and three fixed-window deductions. Both evaluations use Arb ball arithmetic. The Mellin, positive-weight and convex-geometric arguments are written proofs. [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
