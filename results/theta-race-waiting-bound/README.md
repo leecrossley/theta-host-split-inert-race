@@ -4,9 +4,9 @@ On the 547/727 field, after **every real $`1\le H\le e^{12500}`$**, one doubling
 
 | Requirement after $`H`$ | Both doublings finish before |
 | --- | --- |
-| A strict gain and a strict loss above the named magnitude | $`2e^{4.83}H<251H`$ |
-| Exact gain and loss, with transcendental starting-height quotient | $`2e^{7.38}H<3208H`$ |
-| Exact gain and loss in either prescribed order, with transcendental starting-height quotient | $`2e^{9.53}H<27534H`$ |
+| A strict gain and a strict loss above the named magnitude | $`2e^{4.83}H\lt 251H`$ |
+| Exact gain and loss, with transcendental starting-height quotient | $`2e^{7.38}H\lt 3208H`$ |
+| Exact gain and loss in either prescribed order, with transcendental starting-height quotient | $`2e^{9.53}H\lt 27534H`$ |
 
 At the original factor 400, the last two guarantees cover at least **99.35816%** and **78.18624%** of the log-height range, respectively. The two orders can use different pairs. At all heights $`H\ge1`$, an unspecified fixed factor suffices for any prescribed finite sequence of signs with pairwise transcendental starting-height ratios. [Order test](PROOF.md#an-order-test-on-four-hits) · [Continuous coverage](PROOF.md#both-endpoints-of-every-waiting-interval)
 
