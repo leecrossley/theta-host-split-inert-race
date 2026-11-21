@@ -194,7 +194,7 @@ Divide the main amplitudes by $`1+E_0`$, obtaining $`b_i=2w_1G(ig_i)/(1+E_0)`$ a
                   -e_i|u_i|-f_i|v_i|\right).
 ```
 
-By Cauchy–Schwarz the $`i`$-th summand is at least $`p_i\sqrt{(b_iu_i)^2+(d_iv_i)^2}`$ where $`p_i=1-\sqrt{(e_i/b_i)^2+(f_i/d_i)^2}`$. Two implementations check $`p_ib_i\gt1.17`$, $`p_id_i\gt2.45`$ and $`d_i-f_i\gt3.5`$ for both fields. The last inequality applies to a move-only functional directly. For smaller $`H`$ use the stronger finite boxes from $`H=e^{100}`$. Their completions are before $`e^{100}2^{80}\lt e^{14004}`$. The large-height tests and the finite calculations together prove the theorem. [Sinc and cosine evaluations](all_height_common.py)
+By Cauchy–Schwarz the $`i`$-th summand is at least $`p_i\sqrt{(b_iu_i)^2+(d_iv_i)^2}`$ where $`p_i=1-\sqrt{(e_i/b_i)^2+(f_i/d_i)^2}`$. Two implementations check $`p_ib_i\gt1.17`$, $`p_id_i\gt2.45`$ and $`d_i-f_i\gt3.5`$ for both fields. The last inequality applies to a move-only functional directly. For $`H\lt e^{100}`$ use the stronger boxes of the finite theorem. Their completions are before $`e^{100}2^{80}\lt e^{14004}`$. The large-height tests and the finite calculations together prove the theorem. [Sinc and cosine evaluations](all_height_common.py)
 
 ## Why these are actual prime observations
 
