@@ -1,4 +1,22 @@
-# Both 547/727 prime-race moves finish by 400H through exp(2000)
+# A fixed waiting factor for both moves in the 547/727 prime race
+
+**There is a finite constant $`C`$ such that after every real $`H\ge1`$ the race gains more than $`3.33\log2`$ on one doubling and loses more than $`3.33\log2`$ on another.** Both start strictly after $`H`$ and finish before $`CH`$. This is unconditional for the 547/727 field at $`b=r=2`$. The proof establishes existence and leaves the numerical value of $`C`$ open. [Fixed-factor theorem](PROOF.md#a-fixed-factor-without-a-global-zero-hypothesis)
+
+There is also a computable deadline. For every sufficiently large $`H`$ both moves finish before **$`H(\log H)^5`$**. Every fixed logarithmic exponent above four works. The table gives explicit bounds applicable at every height. [Explicit theorem](PROOF.md#a-polylogarithmic-waiting-factor) · [Certificate output](evidence/check.txt)
+
+For the all-height formulas put $`T=10^6+4\log H`$ and $`L=\log(12000T)`$. At any real $`H\ge1`$ use the smallest applicable bound below. All logarithms are natural.
+
+| Strict move in each direction | Both doublings finish before |
+|---|---|
+| $`3.33\log2`$ | $`H e^{225}(12000T)^4(3072000L^4)^{540}`$ |
+| $`3.33\log2`$ | $`H\exp(10000+(13/5)L^2)`$ |
+| $`3.02\log2`$ | $`H\exp((13/5)L^2)`$ |
+
+The last bound includes the original $`1.9735\log2`$ target. At $`\log H\ge2\cdot10^9`$ even the stronger pair finishes before $`H^{1.00001}`$. From $`\log H=2\cdot10^{10}`$ onwards, $`H^{1.000001}`$ suffices. The earlier $`400H`$ bound is smaller through $`e^{2000}`$. [Explicit comparisons](PROOF.md#the-two-margins-and-completion-factors)
+
+The proof builds a positive average that cancels whole groups of possible off-line zeros. Two different widths preserve the measured low-frequency signal. The explicit bound uses a finite verification and a count of all Dirichlet zeros. The fixed-factor proof uses Montgomery’s zero-density theorem to isolate a growing oscillation whenever an off-line zero exists. [Separated interpolation](PROOF.md#a-positive-density-for-separated-complex-frequencies) · [Fixed-factor criteria](PROOF.md#completion-and-what-would-give-a-fixed-factor)
+
+## Earlier finite-height and power bounds
 
 After every real starting height $`1\le H\le e^{2000}`$, the 547/727 prime-ideal race gains more than $`1.9735\log2`$ on one doubling and loses more than $`1.9735\log2`$ on another. Both starts are strictly after $`H`$ and both ends are **before $`400H`$**. Through $`e^{1000}`$, **$`256H`$** suffices. These bounds are unconditional. They use Platt's published finite verification of Dirichlet zeros and bound every higher zero wherever it lies in the critical strip. [Finite-height proof](PROOF.md#both-moves-through-exp2000) · [Verification transcript](evidence/check.txt)
 
@@ -9,11 +27,11 @@ After every real starting height $`1\le H\le e^{2000}`$, the 547/727 prime-ideal
 | $`1\le H\le e^{2000}`$ | Before $`400H`$ | More than $`1.9735\log2`$ |
 | Every $`H\ge1`$ | Before $`e^{219}H^{17001/16999}`$ | More than $`3.32\log2`$ |
 
-For every fixed $`\delta\gt0`$, both $`3.32\log2`$ moves also finish before $`H^{1+\delta}`$ for all sufficiently large $`H`$. This last statement gives no numerical starting height as a function of $`\delta`$. Separately, the all-height bound in the table puts the two stronger moves before $`H^{1.001}`$ once $`\log H\ge250000`$. [Shorter all-height bound](PROOF.md#a-shorter-all-height-bound) · [Arbitrarily small excess exponent](PROOF.md#every-positive-excess-exponent)
+For every fixed $`\delta\gt0`$, both $`3.32\log2`$ moves also finish before $`H^{1+\delta}`$ for all sufficiently large $`H`$. That earlier power-interval argument gives no numerical starting height as a function of $`\delta`$. Separately, the all-height bound in the table puts the two stronger moves before $`H^{1.001}`$ once $`\log H\ge250000`$. [Shorter all-height bound](PROOF.md#a-shorter-all-height-bound) · [Arbitrarily small excess exponent](PROOF.md#every-positive-excess-exponent)
 
-The finite proof checks 526 signed averages for the first range and 1,017 for the second. Each average has positive weights, so it locates at least one actual prime-score move of the stated size. Overlapping the intervals covered by the witnesses handles every real starting height. The four-digit obstruction at a much greater height assumes Dirichlet GRH, which Alpöge's announced theorem supplies. [First witness table](evidence/finite-1000.tsv) · [Second witness table](evidence/finite-2000.tsv) · [Four-digit obstruction](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.1.0)
+The finite proof checks 526 signed averages for the first range and 1,017 for the second. Each average has positive weights, so it locates at least one actual prime-score move of the stated size. Overlapping the intervals covered by the witnesses handles every real starting height. The four-digit obstruction at a much greater height uses the global Dirichlet critical-line assertion in Alpöge’s announcement. [First witness table](evidence/finite-1000.tsv) · [Second witness table](evidence/finite-2000.tsv) · [Four-digit obstruction](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.1.0)
 
-Run `bash verify-release.sh` to replay the complete paper on x86-64 Linux, or supply a built checkout of the pinned Mathlib with Lean 4.33.1 on the executable path. The release includes ten local Lean deductions. The analytic proof, interval computations and finite arithmetic are identified separately below. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+Run `bash verify-release.sh` to replay the complete paper on x86-64 Linux, or supply a built checkout of the pinned Mathlib with Lean 4.33.1 on the executable path. The release includes sixteen local Lean deductions. The analytic proof, interval computations and finite arithmetic are identified separately below. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
 
 ## Earlier waiting interval
 
@@ -61,6 +79,9 @@ python finite_windows.py
 python finite_spectrum.py
 python power_window.py
 python carrier_window.py
+python zero_filter.py
+python separated_zeros.py
+python tilted_moments.py
 python finite_deadlines.py direct
 python finite_deadlines.py split
 ```
