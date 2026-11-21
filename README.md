@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412163.svg)](https://doi.org/10.5281/zenodo.24412163)
 
-In every interval of log starting heights of length at least 250,000, **more than 10% of starts give a gain above $`1.9735\log2`$ and more than 10% give a loss of that magnitude**. This holds wherever the interval begins above height one. Over increasingly long intervals the lower proportion exceeds 15% in each direction, uniformly in the starting height. The score width and the move are both two. [Theorem and proof](PROOF.md)
+In every interval of log starting heights of length at least 250,000, **more than 10% of starts give a gain above $`1.9735\log2`$ and more than 10% give a loss of that magnitude**. This holds for every such interval that starts at height one or above. Over increasingly long intervals the lower proportion exceeds 15% in each direction, uniformly in the starting height. The score width and the move are both two. [Theorem and proof](PROOF.md)
 
 | Minimum log length | Guaranteed share for each sign |
 |---:|---:|
@@ -27,4 +27,4 @@ python independent.py
 python check_source.py
 ```
 
-On x86-64 Linux with Git, curl, tar and zstd, `bash verify-release.sh` also checks the file hashes, the upstream theorem records and five local Lean deductions. With Lean 4.33.1 on PATH and a built Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. An optional second argument supplies the directory of the five upstream records. The explicit formula and averaging arguments are written mathematics. [Local Lean proof](ExcursionProportions.lean) · [File hashes](SHA256SUMS) · [Hardy-sign replay](https://github.com/leecrossley/theta-race-factor-400/releases/tag/v1.0.0)
+On x86-64 Linux with Git, curl, tar and zstd, `bash verify-release.sh` also checks the file hashes, the upstream theorem records and five local Lean deductions. With Lean 4.33.1 on PATH and a built Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. An optional second argument supplies the directory of the five upstream records. The explicit formula and averaging arguments are written mathematics. The four table rows are certified in Python with exact fractions. [Local Lean proof](ExcursionProportions.lean) · [File hashes](SHA256SUMS) · [Hardy-sign replay](https://github.com/leecrossley/theta-race-factor-400/releases/tag/v1.0.0)

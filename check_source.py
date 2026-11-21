@@ -6,13 +6,28 @@ import subprocess
 
 SOURCE = "https://raw.githubusercontent.com/leanprover-community/riemann-hypothesis/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/"
 RECORDS = "https://math.mit.edu/~drew/grh/"
+# The record page is live and may be updated as further runs finish, so each log also has an archived copy.
+ARCHIVE = "https://web.archive.org/web/{}id_/https://math.mit.edu/~drew/grh/"
 FILES = (
-    ("Main.lean", SOURCE, "017645ca448f2fd1f6fd5c4c2cb2c6e96e472725be13f6e180ca6e1574360939"),
-    ("Statements.lean", SOURCE, "79ef7ca776e42abe1f46caee13ea09bd19f1e2d0b1620d8d5d200258f33b47bf"),
-    ("audit.log", RECORDS, "0a1473fce6eed840011f4a76b1c51558fc6f03edd1e6bd1ee542e6c738d87a62"),
-    ("con-leche-compare.log", RECORDS, "5a068bf55f24904eea9f05eda947c63d43bdee3c6ab0490e43943a3bd9af1f6e"),
-    ("nanoda.log", RECORDS, "d4c5360b02d8dd885150c1cc28b616cb6fb5bf5b20d142558d79a7b15ae9d9df"),
+    ("Main.lean", (SOURCE,), "017645ca448f2fd1f6fd5c4c2cb2c6e96e472725be13f6e180ca6e1574360939"),
+    ("Statements.lean", (SOURCE,), "79ef7ca776e42abe1f46caee13ea09bd19f1e2d0b1620d8d5d200258f33b47bf"),
+    ("audit.log", (RECORDS, ARCHIVE.format(20261120231712)),
+     "0a1473fce6eed840011f4a76b1c51558fc6f03edd1e6bd1ee542e6c738d87a62"),
+    ("con-leche-compare.log", (RECORDS, ARCHIVE.format(20261120231744)),
+     "5a068bf55f24904eea9f05eda947c63d43bdee3c6ab0490e43943a3bd9af1f6e"),
+    ("nanoda.log", (RECORDS, ARCHIVE.format(20261120195844)),
+     "d4c5360b02d8dd885150c1cc28b616cb6fb5bf5b20d142558d79a7b15ae9d9df"),
 )
+
+
+def fetch(name, bases, expected):
+    """Return the first published copy whose digest matches the pin."""
+    for base in bases:
+        result = subprocess.run(["curl", "-fsSL", "--retry", "3", "--max-time", "60", base+name],
+                                capture_output=True)
+        if result.returncode == 0 and sha256(result.stdout).hexdigest() == expected:
+            return result.stdout
+    raise ValueError("No published copy of " + name + " matches its pinned digest")
 
 
 def main():
@@ -21,9 +36,8 @@ def main():
                         help="optional local directory containing the five files with published names")
     path = parser.parse_args().directory
     files = {}
-    for name, base, expected in FILES:
-        data = ((path/name).read_bytes() if path else subprocess.check_output(
-            ["curl", "-fsSL", "--retry", "3", "--max-time", "60", base+name]))
+    for name, bases, expected in FILES:
+        data = (path/name).read_bytes() if path else fetch(name, bases, expected)
         if sha256(data).hexdigest() != expected:
             raise ValueError("Digest mismatch for " + name)
         files[name] = data.decode()
