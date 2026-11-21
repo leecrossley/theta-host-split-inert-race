@@ -1,0 +1,12 @@
+{
+  "title": "Three distinct crossing heights per algebraic-ratio class",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Among any four distinct starting heights for either sign of the exact magnitude 1.9735 on the 547/727 and 571/599 prime-ideal races, two have transcendental quotient. This holds independently of global zero location. From height 2790 the same bound applies to every fixed nonzero magnitude, with at most two distinct zero heights per class.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/a29fa8cac07474b434165b1f59be764a070eb7c3/results/algebraic-heights/PROOF.md\">Proof and hypotheses</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "algebraic-heights-v1.5.0"
+}
