@@ -1,0 +1,12 @@
+{
+  "title": "Both 547/727 prime-race moves finish by 400H through exp(12500)",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Both opposite dyadic changes greater than 1.9735 log 2 finish strictly before 400H after every real H between 1 and exp(12500) in the 547/727 prime-ideal race, unconditionally. This deposit preserves the source from the original GitHub release.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/3057dfc92b052321b39467d5d337c7cca5a77c37/results/theta-race-waiting-bound/PROOF.md\">Proof and hypotheses</a>. <a href=\"https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.2\">Original release</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "theta-race-waiting-bound-v1.3.2"
+}
