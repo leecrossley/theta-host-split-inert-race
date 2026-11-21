@@ -5,7 +5,9 @@ import subprocess
 import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
-THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cell", "eligible", "simultaneous_cells")
+THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cell", "eligible", "simultaneous_cells",
+            "inverse_discriminant", "common_normalizer", "repeated_cell", "paired_roots",
+            "cell_energy", "energy_jump", "simple_root_obstruction")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

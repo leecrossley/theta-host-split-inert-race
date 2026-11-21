@@ -58,6 +58,58 @@ theorem simultaneous_cells {a b c d w s : ℝ}
   rw [← gap, det]
   ring
 
+
+/-- The inverse-height discriminant after clearing the positive square root. -/
+theorem inverse_discriminant {u v s y : ℝ}
+    (h : (u*y+v)^2 = s^2*y) :
+    (2*u^2*y+2*u*v-s^2)^2 = s^2*(s^2-4*u*v) := by
+  linear_combination 4*u^2*h
+
+/-- Two exact nonzero-target observations recover the same squared normalizer. -/
+theorem common_normalizer {u v p q x y t s a : ℝ}
+    (hx : (u*x+v)^2 = t^2*a^2*x) (hy : (p*y+q)^2 = s^2*a^2*y) :
+    s^2*y*(u*x+v)^2 = t^2*x*(p*y+q)^2 := by
+  rw [hx, hy]
+  ring
+
+/-- A repeated root of the cleared cell equation cannot change its sign. -/
+theorem repeated_cell {u v t w : ℝ} (hw : u*w^2-t*w+v=0)
+    (hd : 2*u*w=t) (z : ℝ) :
+    u*z^2-t*z+v = u*(z-w)^2 := by
+  linear_combination hw + z*hd - w*hd
+
+/-- Squaring yields paired roots of the height equation in one prime cell. -/
+theorem paired_roots {u v t x y : ℝ} (hxy : x ≠ y)
+    (hx : (u*x+v)^2=t^2*x) (hy : (u*y+v)^2=t^2*y) :
+    u^2*x*y = v^2 := by
+  apply (mul_right_cancel₀ (sub_ne_zero.mpr hxy) : _)
+  linear_combination y*hx - x*hy
+
+
+/-- In log height the squared value minus four times the squared derivative
+is constant on a prime cell. The second bracket is twice that derivative. -/
+theorem cell_energy (u v w : ℝ) (hw : w ≠ 0) :
+    (u*w+v/w)^2 - (u*w-v/w)^2 = 4*u*v := by
+  field_simp
+  ring
+
+/-- The change of this constant at a knot with a continuous score value. -/
+theorem energy_jump (value before after : ℝ) :
+    (value^2-4*after^2) - (value^2-4*before^2) =
+      -4*(after-before)*(after+before) := by ring
+
+/-- A simple zero of a polynomial prevents it from being a polynomial square. -/
+theorem simple_root_obstruction {K : Type*} [Field K]
+    (f : Polynomial K) (z : K) (hz : f.eval z = 0)
+    (hs : f.derivative.eval z ≠ 0) : ¬ ∃ g : Polynomial K, f = g^2 := by
+  rintro ⟨g, rfl⟩
+  have hg : g.eval z = 0 := by
+    rw [Polynomial.eval_pow] at hz
+    by_contra hn
+    exact (pow_ne_zero 2 hn) hz
+  apply hs
+  simp [Polynomial.derivative_pow, hg]
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -66,3 +118,10 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.threshold_cell
 #print axioms AlgebraicHeights.eligible
 #print axioms AlgebraicHeights.simultaneous_cells
+#print axioms AlgebraicHeights.inverse_discriminant
+#print axioms AlgebraicHeights.common_normalizer
+#print axioms AlgebraicHeights.repeated_cell
+#print axioms AlgebraicHeights.paired_roots
+#print axioms AlgebraicHeights.cell_energy
+#print axioms AlgebraicHeights.energy_jump
+#print axioms AlgebraicHeights.simple_root_obstruction

@@ -1,4 +1,16 @@
-# Transcendental crossing heights in two theta prime races
+# Counting exact crossings in two theta prime races
+
+Through starting height one million, the 547/727 race hits $`+1.9735\log2`$ exactly **17 times** and $`-1.9735\log2`$ exactly **18 times**. The 571/599 counts are **13 and 14**. All 62 heights are distinct and transcendental. Each is isolated to an interval one billionth wide. [Crossing heights and directions](evidence/exact-crossings.tsv) · [Complete count proof](PROOF.md#all-crossings-through-one-million)
+
+How many hits can one choice of target size produce? Across the two fields and both signs the maximum is **76** on $`1\le y\le10^6`$. Exactly four open intervals of positive target sizes attain it. The complete table gives the count at and between every one of the 1,273 amplitudes where it can change. The four counts at 1.9735 persist throughout the open interval from $`1.822860194015\ldots`$ to $`2.033070577248\ldots`$. [Amplitude table](evidence/critical-amplitudes.tsv) · [Four maximizing intervals](PROOF.md#all-crossings-through-one-million)
+
+On a prime cell each crossing requires at most one square root. The 62 crossings near target 1.9735 use 60 distinct quadratic discriminants. For almost every target between 1.97349 and 1.97351 their joint field has degree **$`2^{60}`$** over the field of algebraic numbers, prime logarithms and the target. The sharp maximum degree through one million is **$`2^{74}`$**. At exactly 1.9735 the unconditional degree bound is $`2^{60}`$. [Exact degree and specialization](PROOF.md#how-many-square-roots-determine-the-crossings)
+
+On the unbounded height range a dense countable intersection of open dense sets of amplitudes in $`(0,5.85)`$ requires **infinitely many independent square roots**. This holds in each field, for each sign and beyond every starting cutoff. At every prime knot a protected prime logarithm forces the discriminant to change, even as its jumps tend to zero. The finite counts and the infinite-range result are unconditional. [Infinitely many independent branches](PROOF.md#infinitely-many-independent-inverse-branches)
+
+At exactly 1.9735 there is a further unconditional implication. Finite joint degree for all future hits on even one field and one sign would force arbitrarily large deficits in the transcendence degree of finite sets of odd prime logarithms, even using only primes above any chosen bound. [Fixed-amplitude proof](PROOF.md#a-test-at-the-fixed-rational-amplitude)
+
+## Exact hits and the rank threshold
 
 The 547/727 race hits both exact thresholds $`+1.9735\log 2`$ and $`-1.9735\log 2`$ after every starting height $`H\ge1`$, within one fixed multiplicative window. **Every height where it hits either threshold is transcendental.** Through $`H=e^{12500}`$ both exact hits finish by $`400H`$. Every finite interior boundary of a missed $`400H`$ deadline is also transcendental. The arithmetic conclusions are unconditional. Locating the first misses numerically uses the separate zero conditions of the directional result, which GRH implies and Alpöge's announced Dirichlet GRH theorem supplies. [Crossings and deadlines](PROOF.md#exact-crossings-and-deadlines) · [Finite deadline](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.0) · [Directional first misses](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.3.0)
 
@@ -23,4 +35,10 @@ python3 verify_rank.py
 bash verify-release.sh
 ```
 
-The arithmetic checkers use the Python 3.10+ standard library. They verify exact determinants, 5,140 large prime witnesses, the local splitting tests, 43 real Dirichlet functions over a full interval and 36 geometric refinements of the tent. The full replay checks the hashes, compiles six local Lean deductions and replays their proofs in the kernel. On Linux x86-64 the script downloads Lean 4.33.1 and Mathlib revision `0df444a360eaa60ab8c11dca51a86af692955474` using curl, Git and tar with zstd support. It checks the download with sha256sum or shasum. On other platforms put Lean 4.33.1 on PATH and pass the directory of a clean, built checkout of that Mathlib revision to `verify-release.sh`. The trace script checks the moment identities and their numerical constants. The written proof uses Baker’s theorem, the prime number theorem, Bordignon’s progression bounds and the cited window theorems to deduce the prime bound and rank formula. [Lean deductions](AlgebraicHeights.lean) [Transcript](evidence/check.txt) [File hashes](SHA256SUMS)
+The arithmetic checkers use the Python 3.10+ standard library. They verify exact determinants, 5,140 large prime witnesses, the local splitting tests, 43 real Dirichlet functions over a full interval and 36 geometric refinements of the tent. The full replay checks the hashes, compiles thirteen local Lean deductions and replays their proofs in the kernel. On Linux x86-64 the script downloads Lean 4.33.1 and Mathlib revision `0df444a360eaa60ab8c11dca51a86af692955474` using curl, Git and tar with zstd support. It checks the download with sha256sum or shasum. On other platforms put Lean 4.33.1 on PATH and pass the directory of a clean, built checkout of that Mathlib revision to `verify-release.sh`. The trace script checks the moment identities and their numerical constants. The written proof uses Baker’s theorem, the prime number theorem, Bordignon’s progression bounds and the cited window theorems to deduce the prime bound and rank formula. [Lean deductions](AlgebraicHeights.lean) [Transcript](evidence/check.txt) [File hashes](SHA256SUMS)
+
+The standard-library replay also counts all real crossings through one million and checks the four knot coefficients. An independent prefix-sum replay uses python-flint 0.9.0. With that package installed, run the following in the result directory. [Independent transcript](evidence/independent-crossings.txt)
+
+```sh
+python3 crossing_recheck.py
+```

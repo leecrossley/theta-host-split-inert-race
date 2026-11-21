@@ -7,6 +7,11 @@ Two overlapping prime chains cover the interval from one million to exp(366). Th
 All 43 nonprincipal real primitive characters exceed 0.363 on [15/16,1] by sixteen directed Abel bounds with 1,002 integration blocks per cell.
 Checked the 16 trace patterns, the modulus bound 6,967,568 and the rational constants 1/20, 1/64 and 1/288 in the prime-mass estimate.
 Checked the two comparisons with sqrt(2) and the numerical bound at 366 used in the proof of rank seven.
+All 262,569 prime cells through one million give 17 gain and 18 loss crossings on 547/727, and 13 gain and 14 loss crossings on 571/599. All 62 roots have distinct enclosures of width one billionth.
+The full map has 1,273 distinct positive critical or terminal amplitudes. The maximum is 76 crossings on exactly four open intervals. Near 2.302529 they occupy 74 cells with distinct nonzero branch constants.
+The count interval ends at the two B knots 1732/8 and 4382524/8, with magnitudes in (1.822860194015,1.822860194016) and (2.033070577248,2.033070577249).
+The same 60 crossing cells persist between the B knot 1939489/8 and A knot 1622212/8. Their 60 nonzero discriminant constants lie in pairwise disjoint intervals.
+At the four knot types the protected coefficients in the derivative sum are 1/sqrt(2), -1, -sqrt(2) and 2. Each derivative jump is nonzero.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -14,3 +19,10 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'AlgebraicHeights.threshold_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.eligible' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.simultaneous_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.inverse_discriminant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.common_normalizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.repeated_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.paired_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.cell_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.energy_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.simple_root_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
