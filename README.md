@@ -6,13 +6,13 @@ Let $K=\mathbf Q(\zeta_{16}+\zeta_{16}^{-1})$, $F=K(\sqrt{397669})$ and $E=K(\sq
 
 ## The bound
 
-For $b>1$ give a prime of norm $n$ the weight $\log n\,W_b(n/y)$, where
+For $b>1$ give a prime of norm $n$ the weight $\log n\thinspace W_b(n/y)$, where
 
 $$
 W_b(t)=
 \begin{cases}
- b(1-1/t),&1<t\le b,\\
- b^2/t-1,&b<t<b^2,\\
+ b(1-1/t),&1 < t\le b,\\
+ b^2/t-1,&b < t < b^2,\\
  0,&\text{otherwise}.
 \end{cases}
 $$
