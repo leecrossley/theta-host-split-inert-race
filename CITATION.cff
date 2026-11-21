@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "How fast can a split–inert prime race move?"
+abstract: "Unconditional short-shift bounds for a split–inert prime race on the 547/727 theta-lift host."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.2
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-short-shifts
+type: software
