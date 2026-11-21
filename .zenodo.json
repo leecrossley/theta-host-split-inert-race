@@ -1,0 +1,12 @@
+{
+  "title": "Products of exact prime-race crossing heights",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>At the exact amplitude 1.9735, the 62 crossing heights through one million and the eleven primes through 31 have no nontrivial product relation with exponents bounded by 90,000. Two opposite-sign crossing pairs have transcendental geometric midpoints. The proof determines the generic multiplicative rank and gives an arithmetic alternative for every fixed positive magnitude through 5.85.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/6428eddf1f164f3a89a1f1c2324e416c9513c579/results/algebraic-heights/PROOF.md\">Proof and hypotheses</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "algebraic-heights-v1.4.0"
+}
