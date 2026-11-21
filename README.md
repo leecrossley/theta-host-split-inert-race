@@ -1,27 +1,27 @@
 # Why 18 fails in the 547/727 prime race
 
-From every real starting height $1\le H\le1{,}000{,}000{,}000$, a gain and a loss of more than $1.9735\log2$ both finish by $18H$. **At arbitrarily large heights, $18H$ misses the loss. At other arbitrarily large heights, it misses the gain.** Even the slightly larger factor $2e^{11/5}=18.0500\ldots$ fails. [Theorem and proof](PROOF.md)
+From every real starting height $`1\le H\le1{,}000{,}000{,}000`$, a gain and a loss of more than $`1.9735\log2`$ both finish by $`18H`$. **At arbitrarily large heights, $`18H`$ misses the loss. At other arbitrarily large heights, it misses the gain.** Even the slightly larger factor $`2e^{11/5}=18.0500\ldots`$ fails. [Theorem and proof](PROOF.md)
 
-Each move is a doubling $S(y)\to S(2y)$ with $y>H$. The score measures weighted inert prime ideals minus weighted split prime ideals on the 547/727 theta-lift host, with both the width and the move fixed at two. The allowed starts lie in $(H,CH/2]$ when both endpoints must finish by $CH$. [Prime convention and weight](PROOF.md#two-statements-about-the-same-race)
+Each move is a doubling $`S(y)\to S(2y)`$ with $`y\gt H`$. The score measures weighted inert prime ideals minus weighted split prime ideals on the 547/727 theta-lift host, with both the width and the move fixed at two. The allowed starts lie in $`(H,CH/2]`$ when both endpoints must finish by $`CH`$. [Prime convention and weight](PROOF.md#two-statements-about-the-same-race)
 
 ## What the direct count shows
 
-From one million through one billion, both moves actually finish by **$7H$**. The sieve covers norms through 32,467,011,360. It certifies the slopes at 625 integer starts. Checking the next strictly later witness at each breakpoint covers every real starting height in the range. At $H=1{,}000{,}000{,}000$ the two verified moves are
+From one million through one billion, both moves actually finish by **$`7H`$**. The sieve covers norms through 32,467,011,360. It certifies the slopes at 625 integer starts. Checking the next strictly later witness at each breakpoint covers every real starting height in the range. At $`H=1{,}000{,}000{,}000`$ the two verified moves are
 
-| Move | Start | End | Change divided by $\log2$ |
+| Move | Start | End | Change divided by $`\log2`$ |
 |---|---:|---:|---:|
-| Gain | 1,016,187,975 | 2,032,375,950 | $[33.1637,33.1639]$ |
-| Loss | 1,714,594,397 | 3,429,188,794 | $[-2.7357,-2.7356]$ |
+| Gain | 1,016,187,975 | 2,032,375,950 | $`[33.1637,33.1639]`$ |
+| Loss | 1,714,594,397 | 3,429,188,794 | $`[-2.7357,-2.7356]`$ |
 
 The finite result uses direct prime-ideal arithmetic. [All slope enclosures](evidence/windows.tsv) · [Coverage verifier](finite.py)
 
 ## Why the pattern eventually breaks
 
-At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $2.2$, that sum stays above $-1.8$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $\log 9=2.19722\ldots$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. The index of the first numerical failure remains open. [Recurrence argument](PROOF.md#transfer-the-entire-interval) · [Verification output](evidence/check.txt)
+At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $`2.2`$, that sum stays above $`-1.8`$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $`\log 9=2.19722\ldots`$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. The index of the first numerical failure remains open. [Recurrence argument](PROOF.md#transfer-the-entire-interval) · [Verification output](evidence/check.txt)
 
 The obstruction is unconditional. It uses Alpöge's primitive Dirichlet zero theorem, independently matched to its formal statement by Sutherland's checks. It requires no independence hypothesis on the zeros. [External verification](https://math.mit.edu/~drew/grh/) · [Prior work](PRIOR-WORK.md)
 
-The companion result gives a fixed factor that works at every height. [The upper bound of $e^{175}$](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.0)
+The companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.1)
 
 ## Replay
 
