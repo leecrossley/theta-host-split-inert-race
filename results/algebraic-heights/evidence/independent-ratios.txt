@@ -1,0 +1,2 @@
+Exact differences of the two original tents at every bounding knot and FLINT determinants give the same four protected minor residues.
+Independent GMP replay verified 514 midpoint primes and 16504 corner primes, their exact signs, and the narrow chain ratios in both common directions.

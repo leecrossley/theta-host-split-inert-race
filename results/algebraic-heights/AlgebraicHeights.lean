@@ -110,6 +110,34 @@ theorem simple_root_obstruction {K : Type*} [Field K]
   apply hs
   simp [Polynomial.derivative_pow, hg]
 
+/-- Relations among scaled samples give relations between logarithmic forms. -/
+theorem ratio_relation {ι : Type*} [Fintype ι] (x z : ℂ)
+    (u v target coeff : ι → ℂ)
+    (h : ∀ i, u i * x + v i = target i * z)
+    (hz : ∑ i, coeff i * target i = 0) :
+    x * (∑ i, coeff i * u i) = -(∑ i, coeff i * v i) := by
+  have hzero : (∑ i, coeff i * (u i * x + v i)) = 0 := by
+    calc
+      _ = ∑ i, (coeff i * target i) * z := by
+        apply Finset.sum_congr rfl
+        intro i hi
+        rw [h i, mul_assoc]
+      _ = (∑ i, coeff i * target i) * z := (Finset.sum_mul ..).symm
+      _ = 0 := by rw [hz, zero_mul]
+  simp_rw [mul_add, ← mul_assoc] at hzero
+  rw [Finset.sum_add_distrib, ← Finset.sum_mul] at hzero
+  rw [mul_comm]
+  exact eq_neg_of_add_eq_zero_left hzero
+
+/-- Two different scaled observations of one quadratic cell isolate its slope. -/
+theorem recover_scaled_slope {p q u v a t s : ℝ}
+    (hp : p^2*u+v=p*t*a) (hq : q^2*u+v=q*s*a) :
+    (p^2-q^2)*u=(p*t-q*s)*a := by linear_combination hp - hq
+
+/-- A factor-four-thirds gap puts the next outer prime beyond every earlier norm. -/
+theorem fresh_prime_order {y z p : ℝ} (h : 4*y ≤ 3*z) (hp : 6*z < p) :
+    8*y < p := by linarith
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -125,3 +153,6 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.cell_energy
 #print axioms AlgebraicHeights.energy_jump
 #print axioms AlgebraicHeights.simple_root_obstruction
+#print axioms AlgebraicHeights.ratio_relation
+#print axioms AlgebraicHeights.recover_scaled_slope
+#print axioms AlgebraicHeights.fresh_prime_order
