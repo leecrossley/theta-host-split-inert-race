@@ -1,0 +1,6 @@
+Checked 1800 upstream and 2 local modules for ThetaPrimeTrace.
+Compiler commit: 819816b2e0a3bf405af45ae5c7af2491d8f5bee6
+Kernel replay passed: DyadicArithmetic, ThetaPrimeTrace
+Axioms for ThetaTransfer.theta_step_trace: propext, Classical.choice, Quot.sound
+Axioms for ThetaTransfer.theta_prime_trace_extract: propext, Classical.choice, Quot.sound
+Axioms for ThetaTransfer.theta_band_prime_trace: propext, Classical.choice, Quot.sound
