@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412645.svg)](https://doi.org/10.5281/zenodo.24412645)
 
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) Without GRH, the finite bound over the listed zero brackets on $`[1/2,10^9]`$ and the Lean lemmas still hold.
+
 The upper limit of the weighted prime-ideal score rounds to **175.71160384848**. If two high scores both reach 162, their log heights must be **less than one half apart or more than one billion apart**, once both log centres reach 300. Every intervening real displacement is excluded. [Exact upper limit and proof](PROOF.md)
 
 A score above 170 stands more than 20 units above every point at log distance between $`1/2`$ and $`10^9`$ on either side. A score above 175 stands more than 40 units above those points. Both points must meet the same minimum log-centre condition. Scores above 175 occur with positive lower logarithmic density. [Peak and density calculation](peak_profile.py)
