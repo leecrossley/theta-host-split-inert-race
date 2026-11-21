@@ -1,4 +1,22 @@
-# The four possible weights in a two-field prime-race inverse
+# How many starts can be prescribed in two theta prime races?
+
+**Choose any real start from 13,450 through 13,490 before choosing the targets.** That single prescribed observation and two further disjoint doublings can match any four targets in the table below. Both prime races use the same three heights and the same positive weights. Every start exceeds 1,155, every doubling finishes below 583,866, and the last finishes before 148 times the earliest start. Each weight exceeds $`1/400`$. The result uses finite prime counts on 547/727 and 571/599 at width two. [Proof](PROOF.md#one-start-prescribed-before-all-four-targets) · [Timing rows](evidence/prescribed-anchor-charts.tsv) · [Two independent checks](evidence/prescribed-anchor.txt)
+
+| Target | 547/727 | 571/599 |
+| --- | --- | --- |
+| Midpoint level | $`[-9,11]`$ | $`[-7,9]`$ |
+| Move divided by $`\log2`$ | $`[-3.5,3.5]`$ | $`[-2.2,2.2]`$ |
+
+For each fixed target, a continuous path of exact solutions joins an observation at 13,450 to one at 13,490. The proof also gives a connected family covering every combination of the prescribed height and all four measurements in each certified target cell. A solution with the prescribed height can be recovered in one real extension of degree at most four over the targets, the finite prime logarithms with real algebraic coefficients, and the square root of that height. [Continuation and algebraic recovery](PROOF.md#connected-families-of-exact-solutions)
+
+Under the critical-line condition for the sixteen primitive Dirichlet factors, whole intervals of prescribed heights work arbitrarily far out. After every starting height, a bounded multiplicative window contains an interval from $`T`$ through $`(1349/1345)T`$ in which **every** real anchor works for every target. The waiting factor is finite and its numerical value is open. [Late prescribed intervals and density](PROOF.md#intervals-of-prescribed-heights-beyond-every-starting-point)
+
+**Two fixed starts have a measurable cost.** Prescribe 2,457 and 13,471 and aim for both levels exactly one and both moves zero. Over all common nonnegative weights and all disjoint third starts from 1 to 300,000, the least possible worst coordinate error is **0.002274350938622389…**. Its unique third start is **61,455.609822534600169779…**. The two integer starts differ from the earlier exact example by rounding its first moving height. The calculations check the original prime equations and the full range of possible third starts. More generally, for any two fixed starts the attainable targets have four-dimensional volume zero even with no height cap. [Sharp error and uniqueness](PROOF.md#the-sharp-cost-of-fixing-2457-and-13471) · [18-place enclosures](evidence/fixed-pair-balance.txt) · [Global separators](evidence/fixed-pair-separators.tsv) · [Prior work](PRIOR-WORK.md#prescribing-one-or-two-starts)
+
+
+With two starts fixed and a compact range for the third, every four-coordinate target has a best fit obtainable with at most one square root over its input field. The quadratic degree is necessary for almost every target in a certified neighbourhood of exact balance for this integer pair. [Best fit for every target](PROOF.md#one-square-root-suffices-for-the-best-fit-to-any-target)
+
+## The four possible weights in a two-field prime-race inverse
 
 Three disjoint doublings can make the 547/727 and 571/599 prime races balance exactly. Fix the integer start at **13,471** and keep the other two starts on the prime bands containing **2,457.452762** and **61,460.713124**. Given the four target measurements, the weight at the integer start solves a quartic.
 
