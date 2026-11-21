@@ -9,6 +9,7 @@ version: 1.4.1
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
+doi: 10.5281/zenodo.24429783
 url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.4.1
 type: software
 references:

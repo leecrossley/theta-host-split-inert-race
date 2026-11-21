@@ -9,5 +9,6 @@ version: 1.7.1
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
+doi: 10.5281/zenodo.24429782
 url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.7.1
 type: software
