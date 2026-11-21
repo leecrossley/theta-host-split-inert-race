@@ -138,6 +138,42 @@ theorem recover_scaled_slope {p q u v a t s : ℝ}
 theorem fresh_prime_order {y z p : ℝ} (h : 4*y ≤ 3*z) (hp : 6*z < p) :
     8*y < p := by linarith
 
+/-- Clearing a signed equality at algebraically related starts recovers its height. -/
+theorem dilation_elimination {u v p q y : ℝ} (h : u*y+v=p*y+q) :
+    (u-p)*y=q-v ∧ (u-p)*(u*y+v)=u*q-p*v := by
+  constructor
+  · linear_combination h
+  · linear_combination u*h
+
+/-- The squared common amplitude is obtained without adjoining the height's square root. -/
+theorem dilation_amplitude {u v p q y w : ℝ}
+    (h : u*y+v=p*y+q) (hw : w*y=(u*y+v)^2) :
+    (u-p)*(q-v)*w = (u*q-p*v)^2 := by
+  obtain ⟨hy,ht⟩ := dilation_elimination h
+  calc
+    _ = (u-p)^2*(w*y) := by rw [← hy]; ring
+    _ = ((u-p)*(u*y+v))^2 := by rw [hw]; ring
+    _ = _ := by rw [ht]
+
+/-- A descending late branch and an ascending early branch sweep a long ratio interval. -/
+theorem passage_length {v₁ v₂ h a b : ℝ} (hv : v₂ ≤ v₁) (hh : h ≤ v₂)
+    (ha : 0 ≤ a) (hab : b ≤ a) :
+    h*(a-b) ≤ v₁*a-v₂*b := by
+  nlinarith [mul_nonneg (sub_nonneg.mpr hv) ha,
+    mul_nonneg (sub_nonneg.mpr hh) (sub_nonneg.mpr hab)]
+
+/-- Between two neighbours of determinant one, every fraction uses their summed denominator or more. -/
+theorem farey_denominator {p q l r a b : ℤ}
+    (hd : r*a-l*b=1) (ha : 0 ≤ a) (hb : 0 ≤ b)
+    (hl : 0 < p*a-q*l) (hr : 0 < q*r-p*b) : a+b ≤ q := by
+  have xl : 1 ≤ p*a-q*l := by omega
+  have xr : 1 ≤ q*r-p*b := by omega
+  have hz : b*(p*a-q*l)+a*(q*r-p*b)=q := by
+    calc
+      _ = q*(r*a-l*b) := by ring
+      _ = q := by rw [hd, mul_one]
+  nlinarith [mul_nonneg hb (sub_nonneg.mpr xl), mul_nonneg ha (sub_nonneg.mpr xr)]
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -156,3 +192,7 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.ratio_relation
 #print axioms AlgebraicHeights.recover_scaled_slope
 #print axioms AlgebraicHeights.fresh_prime_order
+#print axioms AlgebraicHeights.dilation_elimination
+#print axioms AlgebraicHeights.dilation_amplitude
+#print axioms AlgebraicHeights.passage_length
+#print axioms AlgebraicHeights.farey_denominator

@@ -1,0 +1,2 @@
+Independent prefix sums and signed bisection certified 72 decimal places for all 62 crossing heights.
+Arb at 416 bits verified all 70 entries of the four ordered factor-200 equations using the original tents at every joint endpoint.
