@@ -1,8 +1,8 @@
 # Recovering a character sum from two theta-lift traces
 
-This is a Lean-checked identity inside the tower of theta lifts used by the pinned upstream development. Take the local Hecke traces at two consecutive steps of the tower. Subtracting one from the other, after undoing a twist, and dividing by an explicit positive factor returns exactly a weighted sum of a character over prime ideals.
+This is a Lean-checked identity inside the tower of theta lifts used by the pinned upstream development. Take the local Hecke traces at two consecutive steps of the tower. Subtracting one from the other, after undoing a twist, and dividing by an explicit positive factor returns, at each prime ideal, the value of the character of the segment added at the later step. Summing with weights over a finite set of prime ideals then gives exactly a weighted sum of that character.
 
-A bound on the difference of two adjacent rows of the tower would therefore give a bound on a concrete prime sum, such as a race between residue classes. The result is an identity for supplied data. It does not construct that data, and it bounds nothing by itself.
+A bound on the difference of two adjacent rows of the tower would therefore bound the weighted sum of the tower's character; a residue-class race would also need admissible data realizing that race's character. The result is an identity for supplied data. It does not construct that data, and it bounds nothing by itself.
 
 ## Statement
 
