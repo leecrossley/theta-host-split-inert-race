@@ -44,6 +44,41 @@ theorem moment_margins {u v massGain massLoss : ℝ}
   rcases abs_le.mp hu with ⟨hu₁, hu₂⟩
   constructor <;> linarith
 
+
+theorem sphere_support (h : ℝ) :
+    let L := (h+162000)/16999
+    let X := h+81000+L
+    let R := 80000+L
+    X-R = h+1000 ∧ X+R < (17001/16999)*h+161020 := by
+  dsimp
+  constructor
+  · ring
+  · linarith
+
+theorem stop_band (X L : ℝ) (size : 17000*L = X+81000) (hL : 0 ≤ L) :
+    (X+80000)/2-8544*L ≤ -500 := by linarith
+
+theorem overlap_witness {left right centre radius width offset : ℝ}
+    (early : left < centre-radius) (late : centre+radius-width < left)
+    (in_window : centre-radius ≤ right ∧ right ≤ centre+radius) :
+    left-offset < right-offset ∧ right-offset < left+width-offset := by
+  constructor <;> linarith [in_window.1,in_window.2]
+
+theorem square_move {first last cap : ℝ} (hfirst : 0 ≤ first ∧ first ≤ cap)
+    (hlast : 0 ≤ last ∧ last ≤ cap) : |last-first| ≤ cap := by
+  exact abs_le.mpr ⟨by linarith [hfirst.1,hfirst.2,hlast.1,hlast.2],
+    by linarith [hfirst.1,hfirst.2,hlast.1,hlast.2]⟩
+
+theorem carrier_support (h : ℝ) :
+    let L := (h+300)/16999
+    let X := h+110+L
+    let R := 108+L
+    X-R = h+2 ∧ X+R < (17001/16999)*h+219 := by
+  dsimp
+  constructor
+  · ring
+  · linarith
+
 end WaitingBound
 
 #print axioms WaitingBound.box_support
@@ -51,3 +86,8 @@ end WaitingBound
 #print axioms WaitingBound.gain_of_test
 #print axioms WaitingBound.loss_of_test
 #print axioms WaitingBound.moment_margins
+#print axioms WaitingBound.sphere_support
+#print axioms WaitingBound.stop_band
+#print axioms WaitingBound.overlap_witness
+#print axioms WaitingBound.square_move
+#print axioms WaitingBound.carrier_support

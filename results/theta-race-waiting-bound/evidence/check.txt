@@ -29,9 +29,26 @@ H=1000000: gain 2474870 to 4949740, loss 1220778 to 2441556
 starting heights [1,1000000]: verified endpoint <= (18) H
 starting heights [100,1000000]: verified endpoint <= (6851/657) H
 starting heights [1000,1000000]: verified endpoint <= (6851/657) H
+Verified 6,000 true positive zero brackets and 12,000 strict Hardy signs on the eight primitive odd factors.
+Seventeen exterior logarithmic derivatives have residuals below 1/5. The line is complete through 48 and the unlisted line mass at the origin is below 127/1000.
+The tilted sphere kernel has stop-band multiplier below 34 exp(-8544 L). The verified finite-height range is 8590.
+The improved endpoint is below exp(161020) times H^(17001/16999). The two signed moment tests also clear 3.32 log 2.
+With the tilted sphere, every completion is before exp(219) times H^(17001/16999).
+sinc: 6,000 positive ordinates, 27 harmonics, and the unlisted tail certify both 3.32 log 2 moves in the shorter kernel.
+cosine: 6,000 positive ordinates, 27 harmonics, and the unlisted tail certify both 3.32 log 2 moves in the shorter kernel.
+Both finite implementations find stronger witnesses after exp(100) and before exp(219).
+direct: 526 signed positive averages cover the full real range from 10^9 through exp(1000) with completion factor 256.
+direct: 1017 signed positive averages cover the full real range from 10^9 through exp(2000) with completion factor 400.
+split: 526 signed positive averages cover the full real range from 10^9 through exp(1000) with completion factor 256.
+split: 1017 signed positive averages cover the full real range from 10^9 through exp(2000) with completion factor 400.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for WaitingBound
 'WaitingBound.box_support' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.power_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.gain_of_test' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.loss_of_test' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WaitingBound.moment_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.sphere_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.stop_band' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.overlap_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.square_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WaitingBound.carrier_support' depends on axioms: [propext, Classical.choice, Quot.sound]
