@@ -1,0 +1,14 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+The gamma-integral bound gives V(0)-V(s) <= s*(309+70*log(1/s)) through s=1/4.
+Absolute-sine Fourier summation bounds the profile change by 0.0141 for every |h| <= 1/2000000.
+Closed gamma-series calculation in 344 blocks independently bounds the profile change by 0.0085.
+The independent 1.52 spectral tail still leaves the strict prime-race margin on the full interval.
+Finite prime counts and piecewise slope bounds preserve both signs for every H through 10^9.
+All six intermediate intervals and the expanded large-height filter fit strictly within the deadline.
+A log grid of step 1/1000000 has at most 40753385 eligible starts at any height.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for LogGrid
+'LogGrid.reciprocal_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LogGrid.primary_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LogGrid.second_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LogGrid.buffered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LogGrid.grid_hits' depends on axioms: [propext, Classical.choice, Quot.sound]
