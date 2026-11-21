@@ -5,7 +5,7 @@ abstract: "Factor 18 covers a billion starting heights in the 547/727 prime-idea
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.2
+version: 1.0.3
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-race-factor-18
 type: software
