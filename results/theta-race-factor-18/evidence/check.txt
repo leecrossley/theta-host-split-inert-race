@@ -19,6 +19,19 @@ tau: left (21033.5229566, 21033.5229567), right (207428.0927825, 207428.0927826)
 5: left (20399.0626013, 20399.0626014), right (210038.5264724, 210038.5264725), sharp factor (20.592958664, 20.592958665)
 625 signed grid enclosures: gains by 41H/4 from H=2; losses by 10H except one witness gap
 strict loss witnesses 20068 and 214710 flank the gap; the central bridge gives 41H/4
+3515 interpolation intervals exclude a strict gain from 6288755 through 20306405
+5136 interpolation intervals exclude a strict loss from 20077514 through 61070272
+9732 interpolation intervals exclude a strict loss from 562485616 through 1701279810
++1 left in 8y cell [50308994,50309071], y (6288626.8228400, 6288626.8228401)
++1 right in 8y cell [162452254,162452386], y (20306533.5953377, 20306533.5953378); factor (6.458177331046, 6.458177331047)
+-1 left in 8y cell [160619068,160619119], y (20077385.9489463, 20077385.9489464)
+-1 right in 8y cell [488563106,488563336], y (61070400.3947486, 61070400.3947487); factor (6.083501163950, 6.083501163951)
+-1 left in 8y cell [4499851921,4499852033], y (562481498.8459634, 562481498.8459635)
+-1 right in 8y cell [13610271236,13610271343], y (1701283915.0779512, 1701283915.0779513); factor (6.049208439987, 6.049208439988)
+sharp integer-start factors for gain and loss: (6.458177149109, 6.458177149110) (6.083501148481, 6.083501148482)
+6H misses 480218 gains and 4892555 losses at 5372773 distinct integer starts
+1530 boundary knots and endpoints agree in the independent 160-bit and integer sums
+all remaining same-sign grid gaps on [1000000,1000000000] finish before 6H
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FactorObstruction
 'FactorObstruction.recurring_no_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -26,3 +39,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'FactorObstruction.gap_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.beyond_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.strict_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.hinge_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.secant_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.failure_at_height' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,4 +1,18 @@
-# The sharp finite deadline in the 547/727 prime race
+# Exactly when 6H misses a move in the 547/727 prime race
+
+Between one million and one billion, **$`6H`$ misses a required move at exactly 5,372,773 integer starting heights**. The failures occupy three closed intervals of real starts. The first misses a gain and the next two miss a loss. Everywhere else both moves of more than $`1.9735\log2`$ finish in time. This uses direct prime arithmetic on the 547/727 field with $`b=r=2`$. [Theorem and proof](PROOF.md#all-failing-starts-after-one-million)
+
+| Missing move at $`6H`$ | First failing integer $`H`$ | Last failing integer $`H`$ | Count |
+|---|---:|---:|---:|
+| Gain | 6,288,627 | 6,768,844 | 480,218 |
+| Loss | 20,077,386 | 20,356,800 | 279,415 |
+| Loss | 562,481,499 | 567,094,638 | 4,613,140 |
+
+For **every real** $`10^6\le H\le10^9`$, both moves finish by $`CH`$ exactly when $`C`$ exceeds $`6.458177331046\ldots`$. A gain sets that limit. The sharp factor for losses alone is $`6.083501163950\ldots`$. Equality fails in each case. With integer starting heights the corresponding factors are slightly smaller, $`6.458177149109\ldots`$ and $`6.083501148481\ldots`$. The proof also gives the full set of exceptions for every real factor $`C\ge6`$. [Exact endpoints](PROOF.md#all-failing-starts-after-one-million) · [Numerical replay](evidence/check.txt)
+
+Two prime sums with independently bounded errors locate the six crossings. An interpolation bound covers every point between their boundary neighborhoods, including all intervening prime norms. [Integer sieve](sieve.cpp) · [Independent prime sums](near_roots.py) · [Interval cover](late_slabs.py)
+
+## The sharp finite deadline from height one
 
 A gain and a loss of more than $`1.9735\log 2`$ both finish by $`CH`$ after **every real start from 1 through one billion** precisely when $`C`$ exceeds $`17.493385009687\ldots`$. The infimum itself fails. At $`H=1`$ the first loss reaches the required magnitude with equality. Every larger factor gives it room to cross. These finite conclusions follow from prime arithmetic. [Exact statement and proof](PROOF.md#the-sharp-finite-deadline)
 
@@ -53,6 +67,8 @@ python finite.py
 python sharp_deadline.py
 c++ -std=c++17 -O3 sieve.cpp -o /tmp/theta-factor-18-sieve
 python finite.py /tmp/theta-factor-18-sieve
+python late_slabs.py /tmp/theta-factor-18-sieve
+python late_roots.py /tmp/theta-factor-18-sieve
 python check_source.py
 ```
 

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <utility>
 
 using u64 = std::uint64_t;
 using i128 = __int128_t;
@@ -28,7 +29,23 @@ std::string decimal(i128 x) {
     return s;
 }
 
+
+// Fixed-point Taylor bounds for log(1+z), 0 <= z <= 2^-15, in units of 2^-58.
+std::pair<u64, u64> fineCorrection(u64 remainder, u64 base) {
+    constexpr u64 unit = u64(1) << 58;
+    u64 z = (u128(remainder) * unit) / base;
+    auto down = [&](u64 a, u64 b) { return u64(u128(a)*b / unit); };
+    auto up = [&](u64 a, u64 b) { return u64((u128(a)*b + unit-1) / unit); };
+    u64 low2 = down(z,z), high2 = up(z+1,z+1);
+    u64 low3 = down(low2,z), high3 = up(high2,z+1);
+    u64 high4 = up(high3,z+1);
+    i128 lower = i128(z) - (high2+1)/2 + low3/3 - (high4+3)/4;
+    u64 upper = (z+1) - low2/2 + (high3+2)/3;
+    return {u64(std::max<i128>(0,lower)), upper};
+}
+
 struct Sums {
+    bool fine = false;
     std::vector<u64> logTable, edges;
     std::vector<Bounds> sums;
 
@@ -37,15 +54,24 @@ struct Sums {
         u64 j = ((p - (u64(1) << k)) << bits) >> k;
         u64 base = (bins + j) << k;
         u64 remainder = (p << bits) - base;
-        u64 linear = (u128(remainder) << 40) / base;
-        // For z = remainder/base <= 2^-15, z - z^2/2 <= log(1+z) <= z.
-        constexpr u64 quadraticError = u64(1) << (40-2*bits-1);
-        u64 correction = linear > quadraticError ? linear - quadraticError : 0;
-        u64 lo = k * logTable[bins] + logTable[j] + correction;
-        u64 hi = k * (logTable[bins] + 1) + logTable[j] + 1 + linear + 1;
-        // Logarithms use 2^40 units; log(p)/norm uses 2^72 units.
-        i128 lowerRec = (u128(lo) << 32) / norm;
-        i128 upperRec = ((u128(hi) << 32) + norm - 1) / norm;
+        u64 lo, hi;
+        unsigned shift;
+        if (fine) {
+            auto range = fineCorrection(remainder, base);
+            lo = k*logTable[bins] + logTable[j] + range.first;
+            hi = k*(logTable[bins]+1) + logTable[j]+1 + range.second;
+            shift = 38;  // reciprocal sums in units of 2^-96
+        } else {
+            u64 linear = (u128(remainder) << 40) / base;
+            // z - z^2/2 <= log(1+z) <= z.
+            constexpr u64 quadraticError = u64(1) << (40-2*bits-1);
+            u64 correction = linear > quadraticError ? linear - quadraticError : 0;
+            lo = k*logTable[bins] + logTable[j] + correction;
+            hi = k*(logTable[bins]+1) + logTable[j]+1 + linear+1;
+            shift = 32;  // reciprocal sums in units of 2^-72
+        }
+        i128 lowerRec = (u128(lo) << shift) / norm;
+        i128 upperRec = ((u128(hi) << shift) + norm-1) / norm;
         auto &s = sums[bucket];
         if (sign > 0) {
             s.a += lo; s.b += hi; s.c += lowerRec; s.d += upperRec;
@@ -66,8 +92,10 @@ struct Strike {
     u64 p, first, second;
 };
 
-int main() {
+int main(int argc, char** argv) {
     Sums acc;
+    if (argc==2 && std::string(argv[1])=="--fine") acc.fine=true;
+    else if (argc!=1) return 2;
     acc.logTable.resize(bins+1);
     for (auto &x : acc.logTable) if (!(std::cin >> x)) return 2;
     u64 x;

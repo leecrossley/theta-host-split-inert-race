@@ -33,6 +33,8 @@ python3 profile_series.py >>"$tmp/receipt"
 "${CXX:-c++}" -std=c++17 -O3 sieve.cpp -o "$tmp/sieve"
 python3 finite.py "$tmp/sieve" >>"$tmp/receipt"
 python3 sharp_deadline.py >>"$tmp/receipt"
+python3 late_slabs.py "$tmp/sieve" >>"$tmp/receipt"
+python3 late_roots.py "$tmp/sieve" >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
