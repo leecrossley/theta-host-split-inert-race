@@ -5,6 +5,7 @@
       "results/theta-race-factor-18/check_source.py",
       "results/theta-race-profile-interval/check_source.py",
       "results/theta-race-distant-interval/check_source.py",
+      "results/theta-race-curvature-euler-factors/check_source.py",
       "results/theta-race-factor-400/check_source.py",
       "results/theta-race-paired-density/check_source.py",
       "results/theta-race-silent-powers/check_source.py",
@@ -13,8 +14,9 @@
       "results/theta-race-excursion-proportions/check_source.py",
       "results/theta-race-width-cusp/check_source.py",
       "results/theta-race-isolated-peaks/check_source.py",
-      "results/theta-race-curvature-euler-factors/check_source.py",
-      "results/theta-race-width-regularity/check_source.py"
+      "results/theta-race-width-regularity/check_source.py",
+      "results/consecutive-doubling-patterns/check_source.py",
+      "results/geometric-grid-deadlines/check_source.py"
     ]
   },
   {

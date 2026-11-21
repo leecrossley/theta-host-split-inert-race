@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412163.svg)](https://doi.org/10.5281/zenodo.24412163)
 
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+
 In every interval of log starting heights of length at least 250,000, **more than 10% of starts give a gain above $`1.9735\log2`$ and more than 10% give a loss of that magnitude**. This holds for every such interval that starts at height one or above. Over increasingly long intervals the lower proportion exceeds 15% in each direction, uniformly in the starting height. The score width and the move are both two. [Theorem and proof](PROOF.md)
 
 | Minimum log length | Guaranteed share for each sign |
@@ -14,7 +16,7 @@ In every interval of log starting heights of length at least 250,000, **more tha
 
 The fractions weight each start $`y`$ by $`dy/y`$. For example, the 10% claim applies on every $`[H,H\exp(250000)]`$ with $`H\ge1`$. Every move compares the score at $`y`$ with the score at $`2y`$. [Score and theta trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [Prior work](PRIOR-WORK.md)
 
-The calculation separates 1,281,601 frequencies built from 800 certified zero ordinates. This controls four moments on finite intervals without assuming that the zeros are linearly independent. A separate calculation counts the same near coincidences with binary searches. [Zero brackets](evidence/zero-brackets.tsv) · [Verification output](evidence/check.txt)
+The calculation separates 1,281,601 frequencies built from 800 certified zero ordinates. This controls four moments on finite intervals without assuming that the zeros are linearly independent. A separate calculation counts the same near coincidences with binary searches. The comparison with actual prime scores requires Dirichlet GRH. [Zero brackets](evidence/zero-brackets.tsv) [Verification output](evidence/check.txt)
 
 ## Replay
 

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Both prime-race moves on any one-part-per-million log grid"
-abstract: "Whole intervals of winning starts and an offset-independent geometric grid for the dyadic 547/727 prime race."
+abstract: "Under Dirichlet GRH, whole intervals of winning starts and an offset-independent geometric grid for the dyadic 547/727 prime race. Heights up to 10^9 need no hypothesis."
 authors:
   - family-names: Crossley
     given-names: Lee
