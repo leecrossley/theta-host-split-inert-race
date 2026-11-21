@@ -29,6 +29,7 @@ python3 ratio_prime_chains.py >>"$tmp/receipt"
 python3 alternating_hits.py >>"$tmp/receipt"
 python3 dilated_crossings.py >>"$tmp/receipt"
 python3 rational_ratios.py >>"$tmp/receipt"
+python3 product_relations.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then

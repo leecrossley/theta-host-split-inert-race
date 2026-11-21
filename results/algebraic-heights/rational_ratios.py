@@ -31,30 +31,30 @@ def multiply(x,y):
     return min(terms),max(terms)
 
 
-def root(x):
-    z = isqrt(x.numerator*GRID**2//x.denominator)
-    return Fraction(z,GRID),Fraction(z+1,GRID)
+def root(x,grid=GRID):
+    z = isqrt(x.numerator*grid**2//x.denominator)
+    return Fraction(z,grid),Fraction(z+1,grid)
 
 
 @cache
-def log_bounds(p):
+def log_bounds(p,grid=GRID,precision=128):
     # Decimal.ln is correctly rounded to nearest. One fixed-grid unit
     # exceeds its absolute rounding error throughout the prime range.
     with localcontext() as ctx:
-        ctx.prec = 128
+        ctx.prec = precision
         a,b = Decimal(p).ln().as_integer_ratio()
-    k = a*GRID//b
+    k = a*grid//b
     return k-1,k+2
 
 
-def norm_sums(primes,host):
+def norm_sums(primes,host,grid=GRID,precision=128):
     entries = []
     for p in primes:
         local = prime_data(host,p,True)
         if local is None or local[0]>MAX_NORM:
             continue
         n,sg = local
-        a,b = scale(log_bounds(p),sg)
+        a,b = scale(log_bounds(p,grid,precision),sg)
         entries.append((n,a,b,a//n,-((-b)//n)))
     entries.sort()
     norms = [row[0] for row in entries]
@@ -66,7 +66,7 @@ def norm_sums(primes,host):
     def mass(left,right,offset):
         # Prefixes enclose sums of the same rounded summands. Subtract
         # like endpoints to retain precisely the sum over this index slice.
-        return tuple(Fraction(sums[k][right]-sums[k][left],GRID) for k in (offset,offset+1))
+        return tuple(Fraction(sums[k][right]-sums[k][left],grid) for k in (offset,offset+1))
     def tent(y):
         i,j,k = (bisect_right(norms,int(m*y)) for m in (1,2,4))
         inside = add(scale(mass(i,j,0),2),scale(mass(i,j,2),-2*y))
@@ -80,17 +80,20 @@ def read_table(name):
         return list(csv.DictReader(source,delimiter="\t"))
 
 
-def deep_brackets():
+def deep_brackets(digits=72):
+    unit = 10**digits
+    grid = 10**(digits+33)
+    precision = digits+56
     catalog = read_table("exact-crossings.tsv")
-    table = read_table("height-brackets-72.tsv")
+    table = read_table(f"height-brackets-{digits}.tsv")
     assert len(catalog)==len(table)==62
     ps = list(primes_through(MAX_NORM))
-    tents = {host:norm_sums(ps,host) for host in "AB"}
-    root_two = root(Fraction(2))
+    tents = {host:norm_sums(ps,host,grid,precision) for host in "AB"}
+    root_two = root(Fraction(2),grid)
     inverse_root = (1/root_two[1],1/root_two[0])
     gap = add(root_two,(-1,-1))
     b = multiply(scale(root_two,2),multiply(gap,gap))
-    log_two = tuple(Fraction(x,GRID) for x in log_bounds(2))
+    log_two = tuple(Fraction(x,grid) for x in log_bounds(2,grid,precision))
     b_log = multiply(b,log_two)
     found = []
     for reference,entry in zip(catalog,table):
@@ -98,16 +101,16 @@ def deep_brackets():
         host = entry["host"]
         sg = int(entry["sign"])
         orientation = int(reference["orientation"])
-        k = int(entry["height_floor_1e72"])
-        assert k//(UNIT//10**9)==int(reference["lower_billionths"])
+        k = int(entry[f"height_floor_1e{digits}"])
+        assert k//(unit//10**9)==int(reference["lower_billionths"])
         for step,side in ((0,-orientation),(1,orientation)):
-            y = Fraction(k+step,UNIT)
+            y = Fraction(k+step,unit)
             tent = tents[host]
             delta = add(multiply(inverse_root,tent(2*y)),scale(tent(y),-1))
-            residual = add(scale(delta,-8),scale(multiply(b_log,root(y)),-sg*Fraction(3947,2000)))
+            residual = add(scale(delta,-8),scale(multiply(b_log,root(y,grid)),-sg*Fraction(3947,2000)))
             assert residual[0]>0 if side>0 else residual[1]<0
         found.append((k,host,sg,int(entry["left_eighths"])))
-    print("Two directed original-tent endpoint signs fix all 62 exact heights in disjoint intervals of width 10^-72.")
+    print(f"Two directed original-tent endpoint signs fix all 62 exact heights in disjoint intervals of width 10^-{digits}.")
     ordered = sorted(found)
     assert all(a[0]+1<b[0] for a,b in zip(ordered,ordered[1:]))
     return ordered

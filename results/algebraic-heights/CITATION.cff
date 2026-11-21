@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Equal amplitudes at different prime-race dilations"
-abstract: "Only countably many positive amplitudes repeat at an algebraic ratio of distinct heights. These amplitudes are dense from 0 to 5.85 even at integer ratios. At the named amplitude all 1,891 finite pairs exclude rational denominators below 1089356799264850590264254484675820. The factor-200 census gives 56 positive amplitudes and their gap around 1.9735."
+title: "Products of exact prime-race crossing heights"
+abstract: "At the exact amplitude 1.9735, the 62 crossing heights through one million and the eleven primes through 31 have no nontrivial product relation with exponents bounded by 90,000. Two opposite-sign crossing pairs have transcendental geometric midpoints. The proof determines the generic multiplicative rank and gives an arithmetic alternative for every fixed positive magnitude through 5.85."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.3.0
+version: 1.4.0
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.3.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.4.0
 type: software

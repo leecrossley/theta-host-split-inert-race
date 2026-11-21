@@ -1,0 +1,1 @@
+Arb at 1,880 bits reproduced all 62 positive quadratic roots in their 512-place brackets. FLINT determinants and direct log enclosures verified all four lattice bounds.
