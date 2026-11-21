@@ -1,0 +1,16 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+6000 signed pairs have even kernel mass below 175; omitted positive mass is below 0.647.
+25 disjoint low ordinates have kernel > 7/5 and certified 64-bit phases accurate to 1/1000 through 10^9.
+The sum of all dyadic prime-only errors is below 10^-19 from log centre 1000.
+The 32768-arc partition certifies < 4/3, strictly below 1.9735 log 2.
+All 1000000000 positive exponents have two certified phase witnesses; at most 24 of the 25 phases were needed per exponent.
+Independent real gamma integral gives omitted mass < 0.649, sufficient for 4/3.
+Independent decimal sieve finds two witnesses for all 1000000000 exponents in blocks of 8192.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DyadicPowers
+'DyadicPowers.telescope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPowers.small_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPowers.phase_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPowers.coefficient_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPowers.two_mode_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPowers.separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPowers.box_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
