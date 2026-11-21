@@ -1,5 +1,7 @@
 # Two one-way windows in the dyadic 547/727 prime race
 
+The theorem assumes Dirichlet GRH for the eight odd factors of the extension and the factors of the base field, including zeta. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+
 ## Statement
 
 Put $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$, $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$ the sign $`\epsilon_v`$ is $`+1`$ for splitting in $`E/F`$ and $`-1`$ for inertia. Omit the places above $`2,547,727,343057911569,343070636977`$. The product of the normalized first-step theta trace jumps gives this sign at each good place. [Field and trace lemma](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
@@ -16,7 +18,7 @@ Let $`I_+=[469417229.340,469417235.340]`$ and $`I_-=[484947092.225,484947097.850
 
 **Theorem.** One has $`f(x)\gt1/10`$ throughout $`I_+`$ and $`f(x)\lt-1/10`$ throughout $`I_-`$. The corresponding explicit starting heights are $`H_+=e^{469417229.340}/(2r_0)`$ and $`H_-=e^{484947092.225}/(2r_0)`$. For $`y\gt H_+`$ every doubling finishing by $`2e^6 H_+`$ gains more than $`a/10`$. For $`y\gt H_-`$ every doubling finishing by $`2e^{45/8}H_-`$ loses more than $`a/10`$. In particular the deadline $`400H`$ misses the required loss at the first height and the required gain at the second.
 
-For arbitrarily large $`H`$ every eligible doubling by $`2e^6H`$ gains more than $`a/10`$. For arbitrarily large $`H`$ they all lose more than $`a/10`$. Hence no factor up to and including $`2e^6`$ can guarantee either move of magnitude greater than $`1.9735a`$ after every height.
+For arbitrarily large $`H`$ every eligible doubling by $`2e^6H`$ gains more than $`a/10`$. For arbitrarily large $`H`$ they all lose more than $`a/10`$. Any factor that guarantees a gain greater than $`1.9735a`$ after every height must exceed $`2e^6`$. The same lower bound holds for a factor that guarantees a loss of that magnitude after every height.
 
 ## Prime score and zero ordinates
 

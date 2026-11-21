@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Even 800H can miss a move in the 547/727 prime race"
-abstract: "Two explicit 400H counterexamples and an 806.8575H obstruction in the dyadic 547/727 prime-ideal race."
+abstract: "Conditional on Dirichlet GRH, two certified windows give an obstruction to a universal waiting factor of 400 in the 547/727 prime-ideal race."
 authors:
   - family-names: Crossley
     given-names: Lee
