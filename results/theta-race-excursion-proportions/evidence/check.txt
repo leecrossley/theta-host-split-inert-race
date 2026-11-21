@@ -1,0 +1,21 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+800 ordinates give 1281601 separated Fourier nodes through degree two.
+Grouped integer weights certify all four moment errors and the residual variance.
+Log length >= 20000: signed fraction > 16694/1000000 > 1/100.
+Log length >= 50000: signed fraction > 68771/1000000 > 1/16.
+Log length >= 100000: signed fraction > 88631/1000000 > 1/12.
+Log length >= 250000: signed fraction > 101178/1000000 > 1/10.
+Each signed excursion set has lower uniform log density greater than 3/20.
+Half-angle coefficients and grouped diagonal energies pass at 224 bits.
+Independent signed-pair enumeration and exact cumulative-distance counts pass.
+Log length >= 20000: signed fraction > 22676/1000000 > 1/100.
+Log length >= 50000: signed fraction > 71387/1000000 > 1/16.
+Log length >= 100000: signed fraction > 90044/1000000 > 1/12.
+Log length >= 250000: signed fraction > 101716/1000000 > 1/10.
+Each signed excursion set has lower uniform log density greater than 3/20.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for ExcursionProportions
+'ExcursionProportions.minorant_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExcursionProportions.minorant_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExcursionProportions.signed_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExcursionProportions.fourth_moment_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExcursionProportions.asymptotic_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
