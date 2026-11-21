@@ -2,6 +2,9 @@ The prime-side smoothing error is below 0.00000011. The unrestricted high odd sp
 The base, trivial-zero, excluded-prime and higher-power cost is below 0.00079 for both fields throughout the required support.
 The finite weighted odd-zero sum approximates every unsmoothed normalized move to absolute error below 0.0008 from log centre 12,494.
 The first-400H region ends at exp(405161). The second window's region ends at exp(973947). The three projected error budgets survive the smoothing.
+The quintic and its first two derivatives pass 24 outward real-Fourier checks at interior points, knots, the band edge and beyond it. The normalized variance is exactly 5/11.
+The normalized prime correction is below 0.00000007. The strip Taylor and normalization errors together cost less than 10^-10. The strict 0.0008 reconstruction bound holds from log centre 12,494 with cutoff 5,000,000 exp(x/4).
+The first-400H ordinate region now ends at exp(405153). The separate later interval uses exp(973939). All three projected margins survive.
 547/727: eight full prime-move defects agree with the exact rational breakpoint corrections within 10^-38; 54 nonzero norm contributions.
 571/599: eight full prime-move defects agree with the exact rational breakpoint corrections within 10^-38; 36 nonzero norm contributions.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FourthRoot
@@ -11,3 +14,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'FourthRoot.box_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FourthRoot.reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FourthRoot.signed_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourthRoot.quintic_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourthRoot.quintic_variance_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourthRoot.density_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourthRoot.density_exponential_budget' depends on axioms: [propext, Classical.choice, Quot.sound]

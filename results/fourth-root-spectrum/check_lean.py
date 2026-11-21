@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
-THEOREMS = ("affine_cell", "corrected_pair", "box_variance", "box_cutoff", "reconstruction", "signed_witness")
+THEOREMS = ("affine_cell", "corrected_pair", "box_variance", "box_cutoff", "reconstruction", "signed_witness", "quintic_normalization", "quintic_variance_budget", "density_gap", "density_exponential_budget")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 
