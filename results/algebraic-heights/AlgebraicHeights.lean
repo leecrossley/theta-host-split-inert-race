@@ -238,6 +238,68 @@ theorem two_weight_interval (a b low x y high : ℝ)
   · nlinarith [mul_le_mul_of_nonneg_left hlx ha, mul_le_mul_of_nonneg_left hly hb]
   · nlinarith [mul_le_mul_of_nonneg_left hxh ha, mul_le_mul_of_nonneg_left hyh hb]
 
+
+/-- The positive inverse of the first tent is a reciprocal quadratic unit. -/
+theorem normalized_first_hit (u z : ℝ) (hu : u ≠ 0) (h : u - 1 / u = z) :
+    u^2 + 1 / u^2 = 2 + z^2 := by
+  rw [← h]
+  field_simp
+  ring
+
+/-- The branch value is the square of the target in the common coordinate. -/
+theorem first_branch_square (v t Z : ℝ) (hv : v ≠ 0) (ht : t ≠ 0) (hZ : Z ≠ 0)
+    (h : v + 1/v = 2 + t^2 * Z) :
+    ((v-1/v)/(t*Z))^2 = t^2 + 4/Z := by
+  have he : (v-1/v)^2 = (v+1/v)^2 - 4 := by
+    field_simp
+    ring
+  rw [div_pow, he, h]
+  field_simp
+  ring
+
+/-- A tame cover with a single possible branch value in genus zero has degree one. -/
+theorem one_branch_degree (d g ram : ℤ) (hd : 0 < d) (hg : 0 ≤ g)
+    (hh : 2*g-2 = -2*d+ram) (hr : ram ≤ d-1) : d = 1 := by
+  omega
+
+/-- A reciprocal quadratic pair gives the quartic of its products and quotients. -/
+theorem pair_unit_quartic (u v : ℝ) (hu : u ≠ 0) (hv : v ≠ 0) :
+    (u/v)^4 - (u+1/u)*(v+1/v)*(u/v)^3 +
+      ((u+1/u)^2+(v+1/v)^2-2)*(u/v)^2 -
+      (u+1/u)*(v+1/v)*(u/v) + 1 = 0 := by
+  field_simp
+  ring
+
+/-- The three rationally scaled cuts give one fixed elliptic curve. -/
+theorem scaled_elliptic_cubic (s x : ℝ) :
+    (s^2-x)*(25*s^2-x)*(49*s^2-x) =
+      (25*s^2-x)^3-(24*s^2)^2*(25*s^2-x) := by
+  ring
+
+
+/-- Harmonicity is an explicit factor of the numerator in Legendre coordinates. -/
+theorem harmonic_numerator (a b : ℝ) :
+    4*(a^2-a*b+b^2)^3-27*a^2*b^2*(b-a)^2 =
+    (a+b)^2*(a-2*b)^2*(2*a-b)^2 := by ring
+
+/-- The line through minus the measured point is tangent at its displayed half. -/
+theorem half_point_tangent (a b c d : ℝ) :
+    (d+a^2)*(d+b^2)*(d+c^2)-(-(a+b+c)*d+a*b*c)^2 =
+    d*(d-(a*b+a*c+b*c))^2 := by ring
+
+/-- The degree-four measured map factors through a degree-one half map. -/
+theorem half_map_degree (d : ℕ) (h : 4*d = 4) : d = 1 := by omega
+
+/-- Recover the two middle Frobenius coefficients from the two point counts. -/
+theorem genus_two_coefficients (a b : ℤ)
+    (h1 : 12-a = 16) (h2 : 122-(a^2-2*b) = 118) : a = -4 ∧ b = 6 := by
+  have ha : a = -4 := by omega
+  subst a
+  constructor
+  · rfl
+  · norm_num at h2
+    omega
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -267,3 +329,13 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.reciprocal_secant
 #print axioms AlgebraicHeights.four_node_quadratic
 #print axioms AlgebraicHeights.two_weight_interval
+
+#print axioms AlgebraicHeights.normalized_first_hit
+#print axioms AlgebraicHeights.first_branch_square
+#print axioms AlgebraicHeights.one_branch_degree
+#print axioms AlgebraicHeights.pair_unit_quartic
+#print axioms AlgebraicHeights.scaled_elliptic_cubic
+#print axioms AlgebraicHeights.harmonic_numerator
+#print axioms AlgebraicHeights.half_point_tangent
+#print axioms AlgebraicHeights.half_map_degree
+#print axioms AlgebraicHeights.genus_two_coefficients
