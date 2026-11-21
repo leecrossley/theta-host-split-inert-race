@@ -14,6 +14,8 @@ Under the same finite condition this first loss stays at exactly the same height
 
 The unconditional bound **$`19.95H`$ works for both signs through $`H=e^{41.33}/(2\sqrt2)`$**, about $`3.15\times10^{17}`$. Under the finite zero condition the sharp factor on this larger range is $`C_*=2H_{\rm back}/H_*`$, strictly between $`18.0013`$ and $`19.95`$. Here $`H_{\rm back}`$ is the boundary where strict losses resume. For every factor above the height-one optimum and at most $`C_*`$, the complete set of failures is the single closed interval $`[H_*,2H_{\rm back}/C]`$. At $`C_*`$ only one real starting height fails and every integer start succeeds. The sharp integer factor is transcendental and lies within $`2.28\times10^{-16}`$ of the real factor. [Every exceptional start](PROOF.md#the-next-loss-and-every-exceptional-start)
 
+A further cross-check in the family checkout independently integrates the four gamma terms, enumerates the signed residue classes and reproduces the integer endpoints at 95 decimal places. Run `python3 independent_onset.py` from this result directory. [Cross-check](independent_onset.py) · [Output](evidence/independent-onset.txt)
+
 ## Exactly when 6H misses an earlier move
 
 
