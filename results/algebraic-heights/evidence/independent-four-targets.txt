@@ -1,2 +1,2 @@
 Homogeneous cross-ratio cubics independently give all six exceptional positive branch values.
-The genus-two Hasse-Witt matrix modulo 11 is diag(1,6); that of V^2=U^3-U is zero. Determinants and point enumeration agree.
+The genus-two Hasse-Witt matrix modulo 11 is diag(1,6); that of V^2=U^3-U is zero. Their traces agree with the point counts 16 and 12 over F_11.

@@ -54,7 +54,17 @@ def verify():
     assert entries == [1,0,0,6]
     elliptic = (x**3-x) ** ((prime-1)//2)
     assert int(elliptic[prime-1]) == 0
-    print("The genus-two Hasse-Witt matrix modulo 11 is diag(1,6); that of V^2=U^3-U is zero. Determinants and point enumeration agree.")
+
+    def points(poly):
+        # Odd degree, so one point at infinity.
+        total = 1
+        for a in range(prime):
+            value = int(poly(a))
+            total += 1 if value == 0 else (2 if pow(value, (prime-1)//2, prime) == 1 else 0)
+        return total
+    assert points(curve) == 16 and points(x**3-x) == 12
+    assert (entries[0]+entries[3]) % prime == (1-16) % prime and (1-12) % prime == 0
+    print("The genus-two Hasse-Witt matrix modulo 11 is diag(1,6); that of V^2=U^3-U is zero. Their traces agree with the point counts 16 and 12 over F_11.")
 
 
 if __name__ == "__main__":
