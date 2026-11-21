@@ -1,0 +1,16 @@
+All 78,498 primes through 1,000,000 decoded. 78,495 good odd primes were evaluated from their three finite scores.
+Ordered (p, residue degree, sign, exponent) rows SHA-256: 90a3636f31671a2162266d7782e63c7653ed3a02a4647c694222714112139138
+Counts by (degree, sign, exponent): (1, -1, 8)=4991, (1, 1, 8)=4822, (2, 1, 1)=1, (2, 1, 2)=1, (2, 1, 4)=29407, (4, 1, 1)=1, (4, 1, 2)=39275
+16 three-score examples reproduce the archived 24-decimal enclosures.
+Eight primitive Conrey characters independently reproduce every ordered local denominator and both omitted type factors.
+Independent polynomial factorizations and direct field sums reproduce each archived triple through p=1009.
+All archived three-sample intervals recover their integer trace.
+All single-mass quarter-grid stencils through norm 256 match the three prescribed jumps exactly.
+Exact rational inversion recovers 256 signed masses, including every dyadic overlap.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FiniteReadout
+'FiniteReadout.hinge_stencil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteReadout.kernel_stencil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteReadout.odd_isolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteReadout.dyadic_inverse_step' depends on axioms: [propext, Quot.sound]
+'FiniteReadout.noise_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteReadout.signed_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
