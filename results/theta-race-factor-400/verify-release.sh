@@ -45,6 +45,9 @@ fi
 python3 check_zeros.py >>"$tmp/receipt"
 python3 paired_windows.py >>"$tmp/receipt"
 python3 cell_check.py >>"$tmp/receipt"
+python3 thousand_zeros.py >>"$tmp/receipt"
+python3 thousand_window.py >>"$tmp/receipt"
+python3 thousand_cells.py >>"$tmp/receipt"
 
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then

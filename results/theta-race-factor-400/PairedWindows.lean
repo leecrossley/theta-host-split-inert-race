@@ -51,6 +51,22 @@ theorem move_fits {H y L : ℝ} (hH : 0 < H) (hy : H < y)
   rw [Real.log_mul (Real.exp_ne_zero _) hH.ne',Real.log_exp] at hupper
   constructor <;> linarith
 
+/-- The 6.235-unit window excludes the four-digit deadline. -/
+theorem thousand_deadline : 1020 < 2 * Real.exp (1247/200 : ℝ) := by
+  have h := Real.sum_le_exp_of_nonneg (x := (1247/200:ℝ)) (by norm_num) 24
+  norm_num [Finset.sum_range_succ, Nat.factorial_succ] at h
+  linarith
+
+/-- Uniform spectral and prime-only errors preserve the loss threshold. -/
+theorem shallow_loss {f u : ℝ} (floor : -(197:ℝ)/100 < u)
+    (error : |f-u| ≤ 1/1000) : -(19735:ℝ)/10000 < f := by
+  linarith [(abs_le.mp error).1]
+
+/-- An interior small loss and a large gain coexist with a threshold-free interval. -/
+theorem both_move_signs {lo hi : ℝ} (fall : lo < -(1:ℝ)/25)
+    (rise : 12 < hi) : lo < 0 ∧ 19735/10000 < hi := by
+  constructor <;> linarith
+
 end PairedWindows
 
 #print axioms PairedWindows.cubic_majorant
@@ -59,3 +75,7 @@ end PairedWindows
 #print axioms PairedWindows.strict_move
 #print axioms PairedWindows.reflection
 #print axioms PairedWindows.move_fits
+
+#print axioms PairedWindows.thousand_deadline
+#print axioms PairedWindows.shallow_loss
+#print axioms PairedWindows.both_move_signs
