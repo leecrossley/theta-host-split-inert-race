@@ -60,7 +60,7 @@ Let $`P_n(s)=V(s+na)-V(s)`$. Telescoping the actual scores and then the Fourier 
  \le a\sum_{k\ge0}E(x+ka)\lt10^{-19}\qquad(x\ge1000).
 ```
 
-For the last inequality, retain the denominator $`1-e^{-(x-2)}`$ at the initial point. The three geometric ratios are $`e^{-a/4},e^{-a/2},e^{-3a/20}`$. Substitution at 1,000 gives the stated bound. Its right-hand majorant tends to zero as $`x\to\infty`$, uniformly in $`n`$. [Arithmetic check](power_phases.py) · [Telescoping in Lean](DyadicPowers.lean)
+For the last inequality, retain the denominator $`1-e^{-(x-2)}`$ at the initial point. The three geometric ratios are $`e^{-a/4},e^{-a/2},e^{-3a/20}`$. Substitution at 1,000 gives the stated bound. Its right-hand majorant tends to zero as $`x\to\infty`$, uniformly in $`n`$. [Arithmetic check](power_phases.py) · [Finite telescoping identity in Lean](DyadicPowers.lean)
 
 For fixed $`n`$, write $`L_n=\sup_{s\in\mathbf R}|P_n(s)|`$. Centred at $`s+na/2`$ the difference is odd. Either sign therefore attains values arbitrarily close to $`L_n`$ in magnitude. These values recur arbitrarily far to the right. Indeed truncate the absolutely convergent series uniformly, then use compactness of its finite phase torus to find unbounded positive translations changing every retained coordinate by arbitrarily little. Infinite pigeonholing in a finite cover of the torus yields pairs of integers arbitrarily far apart in the same small box. The discarded mass bounds the remaining translation error. Together with the vanishing prime error this proves
 
