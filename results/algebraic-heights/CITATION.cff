@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Counting exact crossings in two theta prime races"
-abstract: "There are 62 distinct exact hits at magnitude 1.9735 through one million on the two theta fields. The complete positive-amplitude map has 1,273 critical or terminal values and a maximum of 76 hits. The sharp finite joint inverse degree is 2^74. For a residual set of amplitudes in (0, 5.85), each field and each sign requires infinitely many independent square roots beyond every height cutoff."
+title: "Algebraic ratios between exact prime-race crossings"
+abstract: "Across the two hosts at most three exact hits of magnitude 1.9735 share algebraic starting-height ratios. At least 1,830 pairs through one million have transcendental quotient. On 547/727 at least 3,274 inequivalent hits finish below exp(12500). The general high-range bound and the geometric-sampling rank apply to both fields."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.1.1
+version: 1.2.0
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.1.1
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.2.0
 type: software

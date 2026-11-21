@@ -24,6 +24,9 @@ python3 real_characters.py >>"$tmp/receipt"
 python3 trace_moments.py >>"$tmp/receipt"
 python3 crossing_cells.py >>"$tmp/receipt"
 python3 check_jump.py >>"$tmp/receipt"
+python3 height_ratios.py >>"$tmp/receipt"
+python3 ratio_prime_chains.py >>"$tmp/receipt"
+python3 alternating_hits.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then
