@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "How often the 547/727 prime race makes a large move"
-abstract: "Certified finite log-interval proportions for gains and losses in the 547/727 prime-ideal race."
+abstract: "Under Dirichlet GRH, certified finite log-interval proportions for gains and losses in the 547/727 prime-ideal race."
 authors:
   - family-names: Crossley
     given-names: Lee
