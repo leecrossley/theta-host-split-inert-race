@@ -1,0 +1,14 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+Four-knot formula: U + 1.9735 > 10^-11 throughout [1.008796429610, 3.221800332553].
+x = 1008796429609/10^12: -313 < 10^12 (U + 1.9735) < -312.
+x = 1008796429610/10^12: 81 < 10^12 (U + 1.9735) < 82.
+x = 3221800332553/10^12: 40 < 10^12 (U + 1.9735) < 41.
+x = 3221800332554/10^12: -65 < 10^12 (U + 1.9735) < -64.
+C = 2 exp(2.213003902943)
+18.286280578160 < certified factor < 18.286280578161; component upper bound < 18.286280578198.
+Real integral, ten breakpoint cells and positive trivial terms independently certify the full interval.
+Independent exterior checks put both neighbouring points strictly outside the superlevel set.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for ProfileInterval
+'ProfileInterval.recurring_no_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProfileInterval.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProfileInterval.component_length' depends on axioms: [propext, Classical.choice, Quot.sound]
