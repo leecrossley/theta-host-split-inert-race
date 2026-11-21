@@ -147,6 +147,19 @@ theorem grouped_support (h L U R p q : ℝ)
     (hp : p ≤ 270*U) (hq : q ≤ 2*L+2) :
     h+2+2*R < h+225+540*U+4*L := by linarith
 
+/-- Every eligible sphere centre leaves a strict margin at the high ordinates. -/
+theorem finite_sphere_exponent {top x d L : ℝ} (hL : 2*8492*L = top+82)
+    (hx : x < top+7) (hd : d ≤ 1/16) : x/2+d-8492*L < -37 := by
+  linarith
+
+/-- An unlisted real frequency in a covering cell overspends the Poisson budget. -/
+theorem exterior_cell {g v b : ℝ} (h : |g-v| ≤ 3/2)
+    (hb : b < 1/4) : b < 1/(1+(g-v)^2) := by
+  have hsq : (g-v)^2 ≤ (3/2 : ℝ)^2 := sq_le_sq.mpr (by simpa only [abs_of_pos (by norm_num : (0:ℝ)<3/2)] using h)
+  have hd : 0 < 1+(g-v)^2 := by positivity
+  have hc : (4/13 : ℝ) ≤ 1/(1+(g-v)^2) := (le_div_iff₀ hd).2 (by nlinarith)
+  linarith
+
 end WaitingBound
 
 #print axioms WaitingBound.box_support
@@ -167,3 +180,6 @@ end WaitingBound
 
 #print axioms WaitingBound.cosine_column
 #print axioms WaitingBound.grouped_support
+
+#print axioms WaitingBound.finite_sphere_exponent
+#print axioms WaitingBound.exterior_cell
