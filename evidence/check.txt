@@ -1,0 +1,13 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+20 weighted extrema at ten primes independently isolate the indicated first and second traces.
+Each archived limiting value has an outward enclosure of width 10^-32. Both ramified odd primes and two are included.
+243 complete-profile cusp evaluations agree with the triangular limit within 100000 times the displacement.
+Nine centres include empty, invisible, positive and negative prime-power weights. Nine detunings include both edges; three step sizes reach 2*log(1+10^-18).
+Independent gamma series and hyperbolic logarithms recover all 20 traces using the eight primitive Conrey characters.
+Seven additional bands match direct local sums to 83 decimals, from an empty band to one containing 112 prime powers.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for WidthCusp
+'WidthCusp.triangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthCusp.hyperbolic_stencil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthCusp.extremal_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthCusp.subtract_background' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WidthCusp.single_power' depends on axioms: [propext, Classical.choice, Quot.sound]

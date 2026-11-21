@@ -1,0 +1,23 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+81 curvature samples in intervals of width 10^-36 match complete finite prime-power sums.
+All three values use the full arithmetic and Archimedean terms, including the sample at log 2.
+p=2: denominator multiplicities for (1-T), (1+T), (1+T^2) are (1, 1, 0).
+p=3: denominator multiplicities for (1-T), (1+T), (1+T^2) are (2, 2, 2).
+p=5: denominator multiplicities for (1-T), (1+T), (1+T^2) are (2, 2, 2).
+p=7: denominator multiplicities for (1-T), (1+T), (1+T^2) are (4, 4, 0).
+p=11: denominator multiplicities for (1-T), (1+T), (1+T^2) are (2, 2, 2).
+p=17: denominator multiplicities for (1-T), (1+T), (1+T^2) are (4, 4, 0).
+p=31: denominator multiplicities for (1-T), (1+T), (1+T^2) are (0, 8, 0).
+p=47: denominator multiplicities for (1-T), (1+T), (1+T^2) are (8, 0, 0).
+p=547: denominator multiplicities for (1-T), (1+T), (1+T^2) are (1, 1, 1).
+p=727: denominator multiplicities for (1-T), (1+T), (1+T^2) are (2, 2, 0).
+Six samples per prime suffice with the given local degree. The odd-prime nine-sample decode also passes.
+Independent gamma-series corrections and two one-sided derivatives recover every sample jump.
+All ten example primes match direct primitive Conrey characters, including 2, 547 and 727.
+Exact multiplicity inversion also holds on all 95 fourth-root multisets of degree at most eight.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for CurvatureEuler
+'CurvatureEuler.peak_extreme' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CurvatureEuler.stencil_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CurvatureEuler.fourth_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CurvatureEuler.two_adic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CurvatureEuler.rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
