@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Both prime-race moves finish by a factor of 10¹⁸"
+abstract: "An unconditional all-height waiting factor of 10^18 for both dyadic 547/727 prime-race moves."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.2
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-filtered-deadline
+type: software

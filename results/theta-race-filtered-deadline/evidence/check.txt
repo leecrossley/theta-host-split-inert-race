@@ -1,0 +1,15 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+Thirteen positive Poisson remainders below 4/25 certify completeness through ordinate 48.
+Positive measure with 125 atoms, total integer weight 10002.
+Carrier amplitude > 4.917; all other retained amplitudes total < 2.85.
+Carrier minus all other listed pairs, unlisted modes and prime error exceeds 1.9735.
+Two support radii, one carrier period and log 2 fit strictly within log(10^18).
+Six fixed prime-score moves clear normalized magnitude 20 and bridge 10^9 through exp(100).
+Seventeen unit-displacement Poisson checks independently cover all ordinates through 48.
+Laurent-polynomial evaluation and the independent 1.52 tail bound certify both signs and the deadline.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FilteredDeadline
+'FilteredDeadline.no_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FilteredDeadline.carrier_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FilteredDeadline.witness_of_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FilteredDeadline.centre_room' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FilteredDeadline.support_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
