@@ -26,7 +26,8 @@
       "results/theta-race-silent-powers/evidence/zero-brackets.tsv",
       "results/theta-race-filtered-deadline/evidence/zero-brackets.tsv",
       "results/theta-race-excursion-proportions/evidence/zero-brackets.tsv",
-      "results/theta-race-isolated-peaks/evidence/zero-brackets.tsv"
+      "results/theta-race-isolated-peaks/evidence/zero-brackets.tsv",
+      "results/theta-race-waiting-bound/evidence/finite-zeros.tsv"
     ]
   }
 ]

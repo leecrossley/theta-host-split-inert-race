@@ -17,8 +17,11 @@ tmp=$(mktemp -d)
 trap 'rm -rf -- "$tmp"' EXIT
 export PYTHONDONTWRITEBYTECODE=1
 python3 -c 'import flint; assert flint.__version__ == "0.9.0"'
-for file in verify.py square_factors.py independent.py finite_windows.py; do
+for file in verify.py square_factors.py independent.py finite_windows.py finite_spectrum.py power_window.py carrier_window.py; do
   python3 "$file" >>"$tmp/receipt"
+done
+for method in direct split; do
+  python3 finite_deadlines.py "$method" >>"$tmp/receipt"
 done
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
@@ -40,6 +43,8 @@ else
   test "$(git -C "$math" rev-parse HEAD)" = "$mathrev"
   (cd "$math" && lake exe cache get)
 fi
+test "$(git -C "$math" rev-parse HEAD)" = "$mathrev"
+git -C "$math" diff --quiet HEAD --
 (cd "$math" && lake env python3 "$repo/check_lean.py") >>"$tmp/receipt"
 diff -u evidence/check.txt "$tmp/receipt"
 cat "$tmp/receipt"
