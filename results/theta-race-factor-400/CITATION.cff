@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Even 800H can miss a move in the 547/727 prime race"
+abstract: "Conditional on Dirichlet GRH, two certified windows give an obstruction to a universal waiting factor of 400 in the 547/727 prime-ideal race."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.2
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-factor-400
+type: software
