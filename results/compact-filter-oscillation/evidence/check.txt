@@ -24,6 +24,8 @@ Positive quadratures at 710 genuine zero brackets certify all 28 width-two level
 128 coordinates: strict two-sided level margin 5900/1000000 and normalized move margin 120/1000000 in each field.
 256 coordinates: strict two-sided level margin 1360/1000000 and normalized move margin 60/1000000 in each field.
 The trigonometric symbols stay above their required thresholds on 896 closed angular cells by an independent midpoint-and-derivative calculation.
+All 710 bracket ordinates are below 133 and lie inside Platt's zero-verification range for their conductors.
+All 28 strict frame bounds survive even log smoothing of radius one millionth by a second-moment estimate.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for CompactFilters
 'CompactFilters.weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CompactFilters.quadrature_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -31,3 +33,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'CompactFilters.two_sided' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CompactFilters.unrepresented' does not depend on any axioms
 'CompactFilters.frame_perturbation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.positive_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.grid_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.rounding_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]

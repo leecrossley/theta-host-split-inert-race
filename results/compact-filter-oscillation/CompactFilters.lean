@@ -38,6 +38,30 @@ theorem frame_perturbation (mass error cost radius : ℝ)
     (h : radius^2 * cost < mass-2*error) :
     radius^2 * cost + 2*error < mass := by linarith
 
+theorem positive_probe (signal leak mass radius : ℝ)
+    (hm : 0 < mass) (h : radius * mass < signal - leak) :
+    radius < (signal - leak) / mass := (lt_div_iff₀ hm).mpr h
+
+theorem grid_rounding (r δ b ε M K s : ℝ)
+    (hM : 0 ≤ M) (hK : 0 ≤ K) (he : 0 ≤ ε)
+    (hδ : ε * (1 + K) < δ) (heb : ε ≤ b)
+    (hsmall : M ≤ K → r + δ < s)
+    (hlarge : K < M → r + δ + b * M < s) :
+    r < s - ε * (1 + M) := by
+  by_cases h : M ≤ K
+  · have horder : 1 + M ≤ 1 + K := by linarith
+    linarith [mul_le_mul_of_nonneg_left horder he, hsmall h]
+  · have hprod := mul_le_mul_of_nonneg_right heb hM
+    have hcut := mul_nonneg he hK
+    nlinarith only [hlarge (lt_of_not_ge h), hprod, hcut, hδ]
+
+theorem rounding_exponent (d k : ℝ) (hd : 0 < d) (hk : 0 < k) :
+    ∃ e : ℝ, 0 < e ∧ d - k < e ∧ e < d := by
+  refine ⟨d - min d k / 2, ?_, ?_, ?_⟩
+  · linarith [min_le_left d k]
+  · linarith [min_le_right d k]
+  · linarith [lt_min hd hk]
+
 end CompactFilters
 
 #print axioms CompactFilters.weighted_bound
@@ -46,3 +70,6 @@ end CompactFilters
 #print axioms CompactFilters.two_sided
 #print axioms CompactFilters.unrepresented
 #print axioms CompactFilters.frame_perturbation
+#print axioms CompactFilters.positive_probe
+#print axioms CompactFilters.grid_rounding
+#print axioms CompactFilters.rounding_exponent
