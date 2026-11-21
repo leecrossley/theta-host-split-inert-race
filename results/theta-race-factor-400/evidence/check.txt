@@ -10,6 +10,14 @@ Prime-only error < 10^-20 for x >= 1000; log(200) < 45/8 < 6.
 806.857586985470 < 2 exp(6) < 806.857586985471; 554.544569046267 < 2 exp(45/8) < 554.544569046268.
 Two real gamma integrals and Cauchy-Schwarz independently bound omitted absolute mass by 1.52.
 Direct true-frequency sines give U > 1/20 on 2194 closed gain cells and U < -1/20 on 993 closed loss cells.
+The extended table contains 13,946 disjoint-within-factor positive brackets. The earlier replay supplies 4,000 identical pairs and this replay checks 9,946 further Hardy sign changes.
+Extended counts by modulus and character: 547/546=1424, 727/726=1525, 4376/1093=1747, 5816/1453=1790, 8752/1093=1842, 8752/5469=1841, 11632/1453=1890, 11632/7269=1887.
+Four exact spectral moments bound the omitted absolute mass below 0.75. Ordinate uncertainty contributes less than 0.14 on the whole interval.
+32,769 signed nodes exceed -1.06 after the frequency Taylor remainder. Interpolation of the midpoint sum costs less than 0.01 and the continuous profile exceeds -1.94.
+A 22-bit phase mesh in 13,946 coordinates changes the retained sum by less than 0.001. The factor-1000 interval has more than 0.02 log units of slack.
+The rational log width 6.235 exceeds log(500), and twice its exponential exceeds 1,020.
+Two gamma integrals give a separate Cauchy-Schwarz tail below 0.83. Direct interval sines certify the profile above -1.97 on 2,926 closed cells.
+Inside that same interval the profile exceeds 12.1 at log centre 3855250215.346 and falls below -0.05 at 3855250215.954.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for PairedWindows
 'PairedWindows.cubic_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.spectral_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -17,3 +25,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'PairedWindows.strict_move' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.thousand_deadline' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.shallow_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.both_move_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
