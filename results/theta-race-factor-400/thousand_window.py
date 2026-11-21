@@ -11,17 +11,12 @@ GRID = 32768
 DEGREE = 16
 
 
-def main():
-    if not __debug__:
-        raise RuntimeError('Run with assertions enabled.')
-    ctx.prec = 144
+def grid_enclosures(left, width):
+    """Return rigorous signed nodes and separate errors for a specified interval."""
     a,r = arb(2).log(),arb(2).sqrt()
     c = 2*(r-1)**2
-    width = arb(WIDTH)/1000
-    left = arb(LEFT)/1000
     centre = left+width/2
     right = left+width
-    total = full_mass(a,r,c)
     removed, shift, curvature, mass = (arb(0) for _ in range(4))
     # All ordinate bins belong to the same equally spaced frequency lattice.
     bins = [{} for _ in range(DEGREE+1)]
@@ -59,6 +54,18 @@ def main():
             values[i] = values[i]*(arb(k)/half)+transformed[(-k)%GRID].imag
     taylor = mass*(arb(8)/5)**(DEGREE+1)/factorial(DEGREE+1)
     interpolation = curvature*(width/GRID)**2/8
+    return values,taylor,interpolation,shift,removed
+
+
+def main():
+    if not __debug__:
+        raise RuntimeError('Run with assertions enabled.')
+    ctx.prec = 144
+    a,r = arb(2).log(),arb(2).sqrt()
+    c = 2*(r-1)**2
+    width = arb(WIDTH)/1000
+    values,taylor,interpolation,shift,removed = grid_enclosures(arb(LEFT)/1000,width)
+    total = full_mass(a,r,c)
     tail = total-removed
     # Check every ball individually, including the two different boundary nodes.
     assert taylor < arb(1)/10**7

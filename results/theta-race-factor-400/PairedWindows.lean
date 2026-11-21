@@ -67,6 +67,36 @@ theorem both_move_signs {lo hi : ℝ} (fall : lo < -(1:ℝ)/25)
     (rise : 12 < hi) : lo < 0 ∧ 19735/10000 < hi := by
   constructor <;> linarith
 
+/-- The shorter log-height certificate still spans all starts for factor 400. -/
+theorem early_deadline : 400 < 2 * Real.exp (5299/1000 : ℝ) := by
+  have h := Real.sum_le_exp_of_nonneg (x := (5299/1000:ℝ)) (by norm_num) 20
+  norm_num [Finset.sum_range_succ, Nat.factorial_succ] at h
+  linarith
+
+/-- An attempted qualifying rise contradicts the finite strip error budget. -/
+theorem early_gain_exclusion {f p : ℝ} (head : p ≤ 11/10)
+    (remainder : |f-p| ≤ 831/1000 + 3/100 + 1/1000) :
+    f < (19735:ℝ)/10000 := by linarith [(abs_le.mp remainder).2]
+
+/-- The earlier rational interval fits a factor above 406 and excludes the target gain. -/
+theorem earlier_deadline_and_margin {f p : ℝ} (head : p ≤ 117/100)
+    (remainder : |f-p| ≤ 751/1000 + 22/1000 + 1/1000) :
+    406 < 2 * Real.exp (5315/1000 : ℝ) ∧ f < (19735:ℝ)/10000 := by
+  have h := Real.sum_le_exp_of_nonneg (x := (5315/1000:ℝ)) (by norm_num) 20
+  norm_num [Finset.sum_range_succ, Nat.factorial_succ] at h
+  constructor <;> linarith [(abs_le.mp remainder).2]
+
+/-- At a first missed gain, approaching qualifying values and right-hand
+nonqualifying values pin the continuous move to its threshold. -/
+theorem first_boundary {f : ℝ → ℝ} {h t : ℝ} {l r : ℕ → ℝ}
+    (hc : ContinuousAt f h)
+    (hl : Filter.Tendsto l Filter.atTop (nhds h))
+    (hr : Filter.Tendsto r Filter.atTop (nhds h))
+    (before : ∀ n, t ≤ f (l n)) (after : ∀ n, f (r n) ≤ t) :
+    f h = t := by
+  exact le_antisymm (le_of_tendsto' (hc.tendsto.comp hr) after)
+    (ge_of_tendsto' (hc.tendsto.comp hl) before)
+
 end PairedWindows
 
 #print axioms PairedWindows.cubic_majorant
@@ -79,3 +109,7 @@ end PairedWindows
 #print axioms PairedWindows.thousand_deadline
 #print axioms PairedWindows.shallow_loss
 #print axioms PairedWindows.both_move_signs
+#print axioms PairedWindows.early_deadline
+#print axioms PairedWindows.early_gain_exclusion
+#print axioms PairedWindows.earlier_deadline_and_margin
+#print axioms PairedWindows.first_boundary
