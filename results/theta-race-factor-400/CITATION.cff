@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "The first missed gain and loss at factor 400 in the 547/727 prime race"
-abstract: "A loss missing its 400H deadline through centred log height 43380912.47 would force an odd Dirichlet zero above real part 0.5000000012 below ordinate 3.5 billion. Under an explicitly larger finite exclusion, the first missed loss occurs by log height 77157950.44, between 26 and 48 times the log height of the first missed gain."
+abstract: "A loss missing its 400H deadline through centred log height 43380912.47 would force a zero of one of the eight odd factors with real part above 0.5000000012 and absolute ordinate greater than 8,590 and at most 3.5 billion. Under an explicitly larger finite exclusion, the first missed loss occurs by log height 77157950.44, between 26 and 48 times the log height of the first missed gain."
 authors:
   - family-names: Crossley
     given-names: Lee
