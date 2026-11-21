@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. For an unramified prime ideal $`v`$ of $`F`$, put $`\epsilon_v=1`$ for splitting in $`E/F`$ and $`\epsilon_v=-1`$ for inertia. The normalized first-step theta traces give these signs. Omit the places above $`2,547,727,343057911569,343070636977`$. Throughout the scale and move parameters are $`b=r=2`$. [Field and trace identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+Let $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. For an unramified prime ideal $`v`$ of $`F`$, put $`\epsilon_v=1`$ for splitting in $`E/F`$ and $`\epsilon_v=-1`$ for inertia. The normalized first-step theta traces give these signs. Omit the places above $`2,547,727,343057911569,343070636977`$. Throughout the scale and move parameters are $`b=r=2`$. [Field and trace identity](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 Put $`a=\log2`$, $`r_0=\sqrt2`$, $`c=2(r_0-1)^2`$ and $`B=r_0c`$. Define the score and normalized change by
 
@@ -40,7 +40,7 @@ G(v)=\frac{3-2r_0\cos(av)}{c(v^2+1/4)},\qquad
 \alpha(v)=2G(v)\sin(av/2)/a,\qquad P(x)=-2\sum_{j=1}^{6000}\alpha(\nu_j)\sin(\nu_j x).
 ```
 
-Three bounds from the predecessor will be used. With sign $`s=+1`$ on the first base interval and $`s=-1`$ on the second, the selected true-frequency head there satisfies $`sP(x)\gt 1.64-0.043-0.024=1.573`$. Indeed its signed midpoint head exceeds 1.64 at every interpolation node, the interpolation cost is below 0.024 and the bracket error below 0.043. The full absolutely convergent profile $`U`$ satisfies $`|U-P|\lt 1.44`$ **everywhere**. Finally $`|f(x)-U(x)|\lt 10^{-20}`$ for $`x\ge1000`$. Only the first of these bounds is restricted to the base windows. [Signed head, cubic tail and prime-only estimate](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) · [Pinned replay output](evidence/paired-window-check.txt)
+Three bounds from the predecessor will be used. With sign $`s=+1`$ on the first base interval and $`s=-1`$ on the second, the selected true-frequency head there satisfies $`sP(x)\gt 1.64-0.043-0.024=1.573`$. Indeed its signed midpoint head exceeds 1.64 at every interpolation node, the interpolation cost is below 0.024 and the bracket error below 0.043. The full absolutely convergent profile $`U`$ satisfies $`|U-P|\lt 1.44`$ **everywhere**. Finally $`|f(x)-U(x)|\lt 10^{-20}`$ for $`x\ge1000`$. Only the first of these bounds is restricted to the base windows. [Signed head, cubic tail and prime-only estimate](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-400/PROOF.md) · [Pinned replay output](evidence/paired-window-check.txt)
 
 Let $`w_j=2|\alpha(\nu_j)|`$. Row $`j`$ of the phase table gives positive integers $`W_j,b_j`$ for which $`w_j\lt W_j2^{-32}`$ and $`q_j=2^{b_j}\ge2`$. Put $`d_j=q_j^{-1}`$. If $`\|\nu_jt/(2\pi)\|_{\mathbf R/\mathbf Z}\le d_j`$ for all $`j`$, periodicity and the unit Lipschitz constant of sine give, for every real $`x`$,
 

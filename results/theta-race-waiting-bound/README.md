@@ -41,7 +41,7 @@ Run `bash verify-release.sh` to replay the complete paper on x86-64 Linux, or su
 
 ## Earlier waiting interval
 
-The original all-height proof and its direct prime counts are retained below. Its archived edition has its own citation. [Original release](https://github.com/leecrossley/theta-race-waiting-bound/releases/tag/v1.0.1) · [Original archived paper](https://doi.org/10.5281/zenodo.24410806)
+The original all-height proof and its direct prime counts are retained below. Its archived edition has its own citation. [Original release](https://doi.org/10.5281/zenodo.24410806) · [Original archived paper](https://doi.org/10.5281/zenodo.24410806)
 
 After **every** starting height $`H\ge1`$, the split–inert lead on the 547/727 field both gains and loses more than $`1.9735\log 2`$ over a doubling. Both moves finish before
 
@@ -53,7 +53,7 @@ The exponent is about $`1.000667`$. The prefactor is large. For $`1\le H\le1{,}0
 
 ## What is being measured?
 
-Take $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{547\cdot727})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. Count prime ideals of $`F`$, assigning $`+\log(Nv)`$ to an inert prime in $`E/F`$ and $`-\log(Nv)`$ to a split prime. The product of the normalized first-step theta trace jumps above each good prime gives its splitting sign. Use the good-prime convention in the proof. [Published trace identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+Take $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{547\cdot727})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. Count prime ideals of $`F`$, assigning $`+\log(Nv)`$ to an inert prime in $`E/F`$ and $`-\log(Nv)`$ to a split prime. The product of the normalized first-step theta trace jumps above each good prime gives its splitting sign. Use the good-prime convention in the proof. [Published trace identity](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 For the score $`S(y)`$ multiply each signed log by $`W(Nv/y)`$ and divide the sum by $`2\sqrt2(\sqrt2-1)^2\sqrt y`$. The weight is $`2(1-1/u)`$ on $`1\lt u\le2`$, $`4/u-1`$ on $`2\lt u\lt 4`$ and zero elsewhere. A move is the difference $`S(2y)-S(y)`$. The theorem supplies $`y_+,y_-\gt H`$ with opposite moves exceeding the threshold in magnitude. Either move can happen first.
 

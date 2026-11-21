@@ -18,7 +18,7 @@ S(2y_+)-S(y_+)\gt 1.9735\log2,\qquad
 S(2y_-)-S(y_-)\lt -1.9735\log2 .
 ```
 
-The two locations can occur in either order. All logarithms are natural. [Field and trace identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+The two locations can occur in either order. All logarithms are natural. [Field and trace identity](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 ## Global input and transform
 
@@ -34,7 +34,7 @@ J(z)=G(z)\frac{2\sinh(az/2)}a,\quad
 D(s)=\frac{L'}L(s)-\frac{\zeta_F'}{\zeta_F}(2s)+D_R(s).
 ```
 
-Direct Mellin integration gives $`G`$ with removable values filled in. Its kernel is nonnegative of mass 2 on $`[-a,a]`$. The kernel of $`J`$ has support $`[-j_0,j_0]`$, $`j_0=3a/2`$, and total variation at most $`4/a\lt 6`$. Euler coefficients give $`D(s)=-\sum_v\epsilon_v\log(Nv)(Nv)^{-s}`$. Prime squares cancel in the two logarithmic derivatives and residual powers have exponent at least three. The predecessor supplies the following two estimates, $`|J(u+it)|\le1000/(1+t^2)`$ for $`|u|\le1/2`$, and $`\sum_\rho(1+(\Im\rho)^2)^{-1}\lt 1000`$ across all sixteen factors with multiplicity. The latter follows from the completed logarithmic derivatives at 2 and the functional equation. [Transforms and absolute zero mass](https://github.com/leecrossley/theta-race-waiting-bound/blob/9193ef9459374da9f68156ad6a1aa8db088882b0/PROOF.md)
+Direct Mellin integration gives $`G`$ with removable values filled in. Its kernel is nonnegative of mass 2 on $`[-a,a]`$. The kernel of $`J`$ has support $`[-j_0,j_0]`$, $`j_0=3a/2`$, and total variation at most $`4/a\lt 6`$. Euler coefficients give $`D(s)=-\sum_v\epsilon_v\log(Nv)(Nv)^{-s}`$. Prime squares cancel in the two logarithmic derivatives and residual powers have exponent at least three. The predecessor supplies the following two estimates, $`|J(u+it)|\le1000/(1+t^2)`$ for $`|u|\le1/2`$, and $`\sum_\rho(1+(\Im\rho)^2)^{-1}\lt 1000`$ across all sixteen factors with multiplicity. The latter follows from the completed logarithmic derivatives at 2 and the functional equation. [Transforms and absolute zero mass](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-waiting-bound/PROOF.md)
 
 Let $`\nu`$ run over the zero ordinates of the eight odd factors with multiplicity. Then $`U(x)=\sum_\nu J(i\nu)e^{i\nu x}`$ converges absolutely and uniformly. For $`x\gt j_0`$ the explicit formula for $`f`$ contains $`U`$, the base terms $`-\tfrac12 J((\rho-1)/2)e^{(\rho-1)x/2}`$, the trivial-zero terms and $`f_R`$. The pole of ordinary zeta contributes zero because $`J(0)=0`$. To justify inversion, convolve first with four boxes of half-width $`\delta`$ and apply the predecessor's partial-fraction argument. Let $`\delta\downarrow0`$. The nontrivial sums have summable coefficient bounds and fixed shifted real parts 0 and $`-1/4`$. The trivial-zero series converges uniformly on compact subintervals of $`x\gt j_0`$. The original prime sum is continuous.
 
@@ -73,7 +73,7 @@ At $`\sigma=7/20`$ the absolute coefficient mass of $`D_R=\sum_n c_n n^{-s}`$ sa
  \le \frac{16}{1-2^{-\sigma}}\left(-\frac{\zeta'}{\zeta}(3\sigma)\right)\lt 1600.
 ```
 
-Here $`\sum_{v\mid p}\log Nv\le8\log p`$, $`Nv\ge p`$, and $`-\zeta'/\zeta(21/20)\lt 21`$. The two windows use $`n\le e^{x+j_0}`$ with weight per absolute coefficient at most $`[\sqrt2(e^{a/4}+e^{-a/4})/(Ba)]e^{-x/2}`$. Hence $`|f_R(x)|\lt 22000e^{-3x/20}`$, whose averaged error costs at most $`22000 e^{-165/20}/81`$. The three error bounds sum to less than $`1/10`$. The type primes split completely and all norms over $`2,547,727`$ are at most $`727^8`$. Every omitted norm is below $`e^{53}\lt e^{55-j_0}`$, so none enters the averaging window. [Type-prime splitting](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/SecondField.lean#L177)
+Here $`\sum_{v\mid p}\log Nv\le8\log p`$, $`Nv\ge p`$, and $`-\zeta'/\zeta(21/20)\lt 21`$. The two windows use $`n\le e^{x+j_0}`$ with weight per absolute coefficient at most $`[\sqrt2(e^{a/4}+e^{-a/4})/(Ba)]e^{-x/2}`$. Hence $`|f_R(x)|\lt 22000e^{-3x/20}`$, whose averaged error costs at most $`22000 e^{-165/20}/81`$. The three error bounds sum to less than $`1/10`$. The type primes split completely and all norms over $`2,547,727`$ are at most $`727^8`$. Every omitted norm is below $`e^{53}\lt e^{55-j_0}`$, so none enters the averaging window. [Type-prime splitting](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/SecondField.lean#L177)
 
 The nonnegative tests $`1\mp\sin(\gamma x)`$ have masses at most $`1+1/90^2`$ because $`\gamma\gt 3`$. Their $`f`$ integrals are $`M_0\pm\Im M_\gamma`$. Subtracting both error budgets from $`V`$ leaves more than $`1.9735(1+1/90^2)`$. The first test forces a point with $`f\gt 1.9735`$, the second a point with $`f\lt -1.9735`$. Substituting $`y=e^x/(2\sqrt2)`$ gives both strict start and endpoint bounds. [Lean deductions](FixedFactor.lean) · [Expected output](evidence/check.txt)
 

@@ -2,7 +2,7 @@
 
 ## Statement
 
-Put $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$, $`E=K(\sqrt{-547},\sqrt{-727})`$, $`a=\log2`$, $`r_0=\sqrt2`$, $`c=2(r_0-1)^2`$ and $`B=r_0c`$. At each good prime ideal $`v`$ of $`F`$, put $`\epsilon_v=1`$ for splitting in $`E/F`$ and $`\epsilon_v=-1`$ for inertia. These signs equal the products of the normalized first-step theta trace jumps. Omit the places above $`2,547,727,343057911569,343070636977`$. The score width and dilation are both two. [Field and trace identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+Put $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$, $`E=K(\sqrt{-547},\sqrt{-727})`$, $`a=\log2`$, $`r_0=\sqrt2`$, $`c=2(r_0-1)^2`$ and $`B=r_0c`$. At each good prime ideal $`v`$ of $`F`$, put $`\epsilon_v=1`$ for splitting in $`E/F`$ and $`\epsilon_v=-1`$ for inertia. These signs equal the products of the normalized first-step theta trace jumps. Omit the places above $`2,547,727,343057911569,343070636977`$. The score width and dilation are both two. [Field and trace identity](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 ```math
 W(t)=\max(0,\min(2-2/t,4/t-1)),\qquad
@@ -16,7 +16,7 @@ S(2y_+)-S(y_+)\gt1.9735\log2,\qquad
 S(2y_-)-S(y_-)\lt-1.9735\log2 .
 ```
 
-The two starts may differ. Alpöge's announced Dirichlet GRH theorem supplies the hypothesis. The range $`1\le H\le10^9`$ does not use it. The earlier all-height upper factor was $`e^{175}`$. A separate pair of certified one-way windows shows that each universal factor must exceed $`2e^6`$. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Earlier upper bound](https://github.com/leecrossley/theta-race-fixed-factor/blob/12b7c94cfb9586c25fb29e7c7aaf0a20adaf5b2f/PROOF.md) [Lower obstruction](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md)
+The two starts may differ. Alpöge's announced Dirichlet GRH theorem supplies the hypothesis. The range $`1\le H\le10^9`$ does not use it. The earlier all-height upper factor was $`e^{175}`$. A separate pair of certified one-way windows shows that each universal factor must exceed $`2e^6`$. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Earlier upper bound](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md) [Lower obstruction](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-400/PROOF.md)
 
 ## The full spectrum and the prime-only error
 
@@ -35,7 +35,7 @@ E(x)=2\cdot10^6e^{-x/4}
   +128e^{-(x-2)/2}/(1-e^{-(x-2)})+22000e^{-3x/20}.
 ```
 
-The terms cover the nontrivial base-field zeros, trivial zeros and prime powers. The base-field term uses GRH for the base field, including zeta. Each excluded norm is below $`e^{53}`$ and the log support has half-width $`3a/2\lt2`$, so the excluded primes have left the window. The linked derivation states the bound for $`x\ge1000`$. Its three terms already hold from 55 for this reason, as in the fixed-factor window. The decreasing bound satisfies $`E(100)\lt0.007`$. The previously certified 6,000 positive brackets select pairs whose omitted absolute $`\alpha`$-mass is below 1.44. A separate gamma-integral calculation bounds the same mass by 1.52. [Pointwise prime-only bound](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md#from-the-profile-to-prime-ideals) [Bracket and tail certificate](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) [Fixed-factor window from 55](https://github.com/leecrossley/theta-race-fixed-factor/blob/c88b8295954f2f5b55f7d3b6b4315626e99dd7a8/PROOF.md#fixed-log-window) [Independent primitive-theorem checks](https://math.mit.edu/~drew/grh/)
+The terms cover the nontrivial base-field zeros, trivial zeros and prime powers. The base-field term uses GRH for the base field, including zeta. Each excluded norm is below $`e^{53}`$ and the log support has half-width $`3a/2\lt2`$, so the excluded primes have left the window. The linked derivation states the bound for $`x\ge1000`$. Its three terms already hold from 55 for this reason, as in the fixed-factor window. The decreasing bound satisfies $`E(100)\lt0.007`$. The previously certified 6,000 positive brackets select pairs whose omitted absolute $`\alpha`$-mass is below 1.44. A separate gamma-integral calculation bounds the same mass by 1.52. [Pointwise prime-only bound](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-distant-interval/PROOF.md#from-the-profile-to-prime-ideals) [Bracket and tail certificate](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-400/PROOF.md) [Fixed-factor window from 55](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md#fixed-log-window) [Independent primitive-theorem checks](https://math.mit.edu/~drew/grh/)
 
 ## Where the missing zeros can be
 
@@ -46,7 +46,7 @@ For $`d\gt0`$ and real $`z`$, use the completed odd functions $`\Lambda(s,\chi)=
   =\sum_\nu\frac1{d^2+(\nu-z)^2}.
 ```
 
-Indeed the difference of logarithmic derivatives at the two points reflected across the critical line is twice the real part by the functional equation. In the genus-one product every zero contributes the difference of its two reciprocal terms. The subtraction cancels the constant and gives the displayed positive kernel on division by $`2d`$. The completed odd factors are entire. Each retained positive ordinate is counted with its negative partner, including for nonreal characters in the aggregate family. [Poisson identity and functional-equation argument](https://github.com/leecrossley/theta-race-fixed-factor/blob/12b7c94cfb9586c25fb29e7c7aaf0a20adaf5b2f/PROOF.md)
+Indeed the difference of logarithmic derivatives at the two points reflected across the critical line is twice the real part by the functional equation. In the genus-one product every zero contributes the difference of its two reciprocal terms. The subtraction cancels the constant and gives the displayed positive kernel on division by $`2d`$. The completed odd factors are entire. Each retained positive ordinate is counted with its negative partner, including for nonreal characters in the aggregate family. [Poisson identity and functional-equation argument](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md)
 
 At displacement $`d=1/2`$, take $`z=0,4,\ldots,48`$. Subtract the Poisson terms of both partners from each selected bracket using outward arithmetic. At every centre the remaining sum is below $`4/25`$. A missing ordinate in $`[0,48]`$ would be within distance 2 of a centre. It would contribute at least $`1/(1/4+4)=4/17\gt4/25`$. Hence every zero through height 48 is included with its multiplicity. Symmetry supplies the negative half. This also excludes an unlisted central zero. An independent check takes $`d=1`$ and centres $`0,3,\ldots,48`$. Each remaining sum is below $`1/5\lt1/(1+(3/2)^2)`$. [Thirteen half-unit displacement checks](check_spectrum.py) · [Seventeen unit-displacement checks](independent.py)
 
@@ -83,7 +83,7 @@ For $`H\ge e^{100}`$, the eligible log abscissae form the interval $`(\ell,r]`$ 
 
 Indeed the open interval $`(\ell+R,r-R)`$ has length exceeding one carrier period. Select one centre of each sign there. Every point of its averaging support exceeds 100, so the corresponding signed average of the prime-only score $`f`$ exceeds 1.9735. The measure is nonnegative and has mass one. At some point in its support the signed score must exceed 1.9735 as well. This gives the required strict signs and starting heights. [Abstract Lean steps](FilteredDeadline.lean)
 
-The published finite count covers every real $`1\le H\le10^9`$ with factor 18. Three pairs of individual log abscissae cover the remaining heights. The column abscissae are exact terminating decimals. [Finite coverage proof](https://github.com/leecrossley/theta-race-factor-18/blob/31ea5d495ca29f7f17869d1a3f321000266e4867/PROOF.md)
+The published finite count covers every real $`1\le H\le10^9`$ with factor 18. Three pairs of individual log abscissae cover the remaining heights. The column abscissae are exact terminating decimals. [Finite coverage proof](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-18/PROOF.md)
 
 | Range of $`\log H`$ | Gain abscissa | Loss abscissa |
 |---|---|---|
