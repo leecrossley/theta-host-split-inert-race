@@ -5,7 +5,7 @@ abstract: "A Lean proof extracting a weighted prime-ideal character sum from adj
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.3
+version: 1.0.4
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-prime-trace
 type: software
