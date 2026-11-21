@@ -5,9 +5,9 @@ abstract: "For either the 547/727 or the 571/599 prime-ideal race, independence 
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.1.0
+version: 1.1.1
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/compact-filter-oscillation-v1.1.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/compact-filter-oscillation-v1.1.1
 type: software
