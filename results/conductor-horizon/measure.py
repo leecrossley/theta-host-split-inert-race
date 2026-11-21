@@ -51,7 +51,10 @@ def raw(rows,k):
 
 
 def check_small(binary):
-    edges=(3,4,16,31,547,727,5000,50000,250000)
+    segment_span = 16 * (1 << 18)
+    edges = (3, 4, 16, 31, 547, 727, 5000, 50000, 250000,
+             segment_span - 128, segment_span + 128,
+             2 * segment_span - 128, 2 * segment_span + 128, 10_000_000)
     rows=parse(boundaries(binary,edges),edges)
     sums=[[arb(0),arb(0)] for _ in edges]
     for p in range(3,edges[-1]+1,2):
@@ -115,7 +118,7 @@ def main():
             obs.write_text(samples(data))
         assert data==saved.read_text()
         print("Segmented sieve reproduced every integer enclosure through norm 89526025682.")
-        print("Independent primality tests and direct Arb logarithms agree by band through norm 250000.")
+        print("Independent primality tests and direct Arb logarithms agree by band through norm 10000000.")
     elif args.generate:
         ap.error("--generate requires the compiled sieve")
     text=samples(saved.read_text())
