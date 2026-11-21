@@ -50,15 +50,13 @@ A prime $`p`$ in a band $`(Ly/10,Ry/10)`$ covers the open interval $`(10p/R,10p/
 
 ## An explicit infinite range and a prime bound
 
-The six readings at scales $`1,\sqrt2,2`$ have full rank at **every algebraic $`y\ge e^{366}`$**. The proof gives a bound on ordinary primes as well. For a rational prime $`p\equiv\pm1\bmod16`$, let $`e_A(p)`$ and $`e_B(p)`$ be the two signed degree-one splitting coefficients divided by 8, with the split sign positive. A degree exceeding one gives zero. For any unit vector $`v\in\mathbf R^2`$ and every $`L\ge e^{366}`$,
+The six readings at scales $`1,\sqrt2,2`$ have full rank at **every algebraic $`y\ge e^{366}`$**. The proof gives a bound on ordinary primes as well. For a rational prime $`p\equiv\pm1\bmod16`$, let $`e_A(p)`$ and $`e_B(p)`$ be the two signed degree-one splitting coefficients divided by 8, with the split sign positive. A degree exceeding one gives zero. For a unit vector $`v\in\mathbf R^2`$ and $`L\ge e^{366}`$, let $`\mathcal P_\sigma(L)`$ contain the primes $`L\lt p\le4L/3`$ with $`p\equiv\pm1\bmod16`$ and $`\sigma v\cdot(e_A(p),e_B(p))\gt1/32`$. The prime bound is
 
 ```math
-\sum_{\substack{L\lt p\le4L/3,\ p\equiv\pm1\bmod16\\
-                  \pm v\cdot(e_A(p),e_B(p))\gt1/32}}\log p
-\gt L/864
+\sum_{p\in\mathcal P_\sigma(L)}\log p\gt L/864,\qquad \sigma=\pm1.
 ```
 
-holds for each sign. Each set therefore has more than $`L/(864\log(4L/3))`$ distinct primes. All the fixed conductor and host omissions lie below this range. Reversing both sign conventions leaves the two bounds intact.
+Each set therefore has more than $`L/(864\log(4L/3))`$ distinct primes. All the fixed conductor and host omissions lie below this range. Reversing both sign conventions leaves the two bounds intact.
 
 ### The real characters needed for an explicit onset
 
