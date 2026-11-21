@@ -18,7 +18,7 @@ J_b(h)=\limsup_{y\to\infty}\{2dS_b(y)-S_b(e^hy)-S_b(e^{-h}y)\},\qquad
 C_b(h)=\limsup_{y\to\infty}\{2S_b(y)-S_b(e^hy)-S_b(e^{-h}y)\}.
 ```
 
-Let $`x_+=\max(x,0)`$. For $`n=p^j`$ write $`\beta_n=(\log p)u_j(p)/\sqrt n`$. Define the known background $`B_b(h)=2(d-1)+2[d\Gamma_b(0)-\Gamma_b(h)]`$ using the explicit gamma term below. Then for every allowed width and displacement,
+Let $`x_+=\max(x,0)`$. For $`n=p^j`$ write $`\beta_n=(\log p)u_j(p)/\sqrt n`$. Define the known background $`B_b(h)=2(d-1)+2[d\Gamma_b(0)-\Gamma_b(h)]`$ using the explicit gamma term below. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Then for every allowed width and displacement,
 
 ```math
 J_b(h)-B_b(h)=\frac{4r}{c}\sum_{n=p^j}\beta_n\,
@@ -33,6 +33,8 @@ u_j(p)=\frac{c\,[J_{p^j}(h)-B_{p^j}(h)]}{4(\log p)\sinh(h/2)}.
 
 This includes negative traces, invisible prime powers with zero trace and all conductor primes. Absolute error strictly below $`2(\log p)\sinh(h/2)/c`$ in the corrected extremum permits rounding to the unique integer. At odd primes the local degree $`w`$ is eight except at 547 and 727, where it is four. At the prime two it is two. From $`u=u_1(p)`$ and $`v=u_2(p)`$ the multiplicities of $`1,-1,i,-i`$ are $`(w+v+2u)/4,(w+v-2u)/4,(w-v)/4,(w-v)/4`$. Thus two limiting extrema at widths $`p,p^2`$ determine the Euler factor, or three at widths $`p,p^2,p^4`$ determine it without the degree. This counts extremal values of prime sums. [Fixed-width inverse theorem and conductors](https://github.com/leecrossley/theta-race-curvature-euler-factors/blob/af7093b56a7f6b4155dba27e735b5b1d471ff707/PROOF.md) · [Certified examples](aperture.py)
 
+Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The cusp law for $`C_b`$ below uses the same assumption. Without GRH, the exact band formula and the $`h\log(1/h)`$ expansion still hold for the corresponding expressions in $`V_b`$, the explicit-formula sum over zeros. GRH is used to identify these expressions with $`J_b`$ and $`C_b`$.
+
 ## The prime-only limit at a fixed width
 
 The log centre is $`s=\log(by)`$. Set
@@ -43,7 +45,7 @@ G_b(t)=\frac{b+1-2r\cos(at)}{c(t^2+1/4)},\qquad
 V_b(s)=\sum_\nu G_b(\nu)e^{i\nu s}.
 ```
 
-Here $`\nu`$ runs over the nontrivial zero ordinates of the eight primitive factors, with multiplicity. Direct Mellin integration gives the displayed transform $`G_b`$ of $`g_b`$. The numerator is at least $`(r-1)^2`$, so every weight is positive. The primitive Dirichlet strip theorem places the zeros on the critical line. The zero count and the quadratic denominator give absolute uniform convergence. Complex conjugation makes the series real and even. [Mellin transform at general width](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/PROOF.md#euler-factors-and-the-kernel) · [Primitive theorem and independent checks](https://math.mit.edu/~drew/grh/)
+Here $`\nu`$ runs over the nontrivial zero ordinates of the eight primitive factors, with multiplicity. Direct Mellin integration gives the displayed transform $`G_b`$ of $`g_b`$. The numerator is at least $`(r-1)^2`$, so every weight is positive. Under GRH, which Alpöge's announced Dirichlet GRH theorem supplies, the zeros lie on the critical line. The zero count and the quadratic denominator give absolute uniform convergence. Complex conjugation makes the series real and even. [Mellin transform at general width](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/PROOF.md#euler-factors-and-the-kernel) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
 For each fixed width, $`S_b(e^s/b)=1+V_b(s)+o_b(1)`$. Here are the details extending the dyadic inversion. The transform of the centred score is the continuation of the transform of $`g_b`$ times the signed prime series at $`1/2+z`$. Split the prime series into $`L'/L(1/2+z)-\zeta_F'/\zeta_F(1+2z)`$ and a Dirichlet series whose absolute coefficient mass at $`7/20`$ is finite. The latter starts at third prime-ideal powers, apart from finitely many local corrections which may equivalently be handled before sieving. Bounds for each of those finitely many Euler-factor series are geometric for positive real part. On the fixed compact support its prime contribution after normalization is $`O_b(e^{-3s/20})`$. The original omitted primes eventually leave the support.
 
