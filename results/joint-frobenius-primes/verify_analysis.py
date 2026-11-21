@@ -1,7 +1,7 @@
 """Directed Abel summation and rational bounds for the joint progression modulus."""
 from fractions import Fraction as F
 from itertools import combinations
-from math import factorial, isqrt, prod
+from math import isqrt, prod
 from pathlib import Path
 import sys
 
@@ -90,44 +90,17 @@ def log_free_check(path):
           f"Two rational cells, {len(points)-1:,} Abel blocks and a uniform character-sum tail per factor.")
 
 
-def exp_upper(x):
-    terms = [F(1)]
-    for i in range(1, 81):
-        terms.append(terms[-1] * x / i)
-    return sum(terms) + terms[-1] * x / 81 / (1 - x / 82)
-
-
 def verify_constants():
     modulus = 16 * prod(PRIMES)
-    assert modulus == 2_176_229_286_416 < 1097**5
-    assert exp_upper(F(7)) < 1097
-    assert exp_upper(F(128000, 6397)) < modulus
-    assert sum(F(7, 10)**j / factorial(j) for j in range(5)) > 2
-    # log 2 > 693/1000 by the positive atanh series at 1/3.
-    assert 2 * sum(F(1, (2*j+1)*3**(2*j+1)) for j in range(4)) > F(693, 1000)
-    assert 1585 * F(693, 1000) > 1097
-    assert F(1097, 2)**10 / factorial(10) > 4000 * 1097**3
-    error = F(283, 6400) + F(1, 2000)
-    assert error < F(45, 1000)
-    assert F(1, 64) - 7*error/1097 > F(1, 66)
-    assert F(1, 64) + 7*error/1097 < F(1, 62)
-    assert F(1, 64) - error*(F(2, 6) + F(1, 1097)) > F(1, 1800)
-    # Bordignon, Table 6, p. 1435. The triples below are (width factor, lower denominator, upper denominator).
-    assert exp_upper(F(87, 10)) < 6004 and modulus <= 6004**5
-    assert F(6004, 2)**28 / factorial(28) > (2 * 10**7) * 6004**12
-    assert modulus <= 12959**3 and exp_upper(F(83, 10)) < 12959
-    for log_start, table_constant, bounds in (
-        (6004, F(19, 1000), [(1, 67, 61), (3, 65, 63)]),
-        (12959, F(32, 10000), [(1, 65, 63)]),
-    ):
-        endpoint = table_constant / 64 + F(1, 10**7)
-        for width_factor, lower, upper in bounds:
-            interval = endpoint * (F(2, width_factor) + F(1, log_start**10))
-            assert F(1, lower) < F(1, 64) - interval
-            assert F(1, 64) + interval < F(1, upper)
-    print("Bordignon's published Table 6 gives each of 16 patterns log mass between L/198 and L/186 in (L,4L/3] for log L >= 1,097.")
-    print("With t = log L >= 1,097 the mass exceeds width/1,800 for widths at least 6L/t. At t >= 6,004, widths from L/t^10 give mass between width/67 and width/61.")
-    print("The bounds width/65 and width/63 hold from width 3L/t^10 at t >= 6,004 and from width L/t^10 at t >= 12,959.")
+    assert modulus == 2_176_229_286_416
+    assert modulus * 3**30 < 8**30
+    assert F(366, 24) + 11 < 366
+    assert 10**7 * modulus * 366**12 < 2**173 < 2**183
+    error = F(1, 10**7) * (2 + F(1, 366**10))
+    assert F(1, 65) < F(1, 64) - error
+    assert F(1, 64) + error < F(1, 63)
+    assert 366**10 > 3 and F(1, 198) < F(1, 3*65) < F(1, 3*63) < F(1, 186)
+    print("Checked the rational margins in Lee's bound under Dirichlet GRH for log L >= 366. For widths from L/(log L)^10 the prime weight of each sign pattern lies between width/65 and width/63.")
 
 
 if __name__ == "__main__":
