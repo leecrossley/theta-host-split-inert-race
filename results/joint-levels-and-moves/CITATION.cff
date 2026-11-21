@@ -1,16 +1,15 @@
 cff-version: 1.2.0
 message: If you use this result, please cite the tagged release.
-title: "Two theta prime races in one fixed window"
-abstract: "For the 547/727 and 571/599 prime races, a weighted average of at most two common doublings gives any pair of normalised moves in the square from −5.85 to 5.85 in each coordinate. After every real starting height H ≥ 1, all targets fit before CH for one finite constant C. The existence proof is unconditional."
+title: "Three disjoint doublings for two theta prime races"
+abstract: "Three common starting heights, including one prescribed integer, reproduce four level and move targets on the 547/727 and 571/599 prime races. Their doublings are disjoint and each weight exceeds 1/400. Direct prime-ideal calculations prove the finite theorem. A local inverse has exact generic degree four. The late recurrence uses the critical-line result for the sixteen primitive odd Dirichlet factors."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.2.2
+version: 1.3.0
 date-released: 2026-11-21
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.2.2
-doi: 10.5281/zenodo.24419521
+url: https://github.com/leecrossley/theta-host-split-inert-race/tree/60c58c5ac6951bb7f562fe6e52644af061470831/results/joint-levels-and-moves
 type: software
 references:
   - type: software

@@ -33,6 +33,15 @@ for method in direct split; do
   python3 finite_common.py "$method" >>"$tmp/receipt"
 done
 
+python3 three_starts.py > "$tmp/three"
+python3 three_recheck.py >> "$tmp/three"
+diff -u evidence/three-starts.txt "$tmp/three"
+cat "$tmp/three" >> "$tmp/receipt"
+python3 three_inverse.py > "$tmp/inverse"
+python3 three_inverse_recheck.py >> "$tmp/inverse"
+diff -u evidence/three-inverse.txt "$tmp/inverse"
+cat "$tmp/inverse" >> "$tmp/receipt"
+
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then

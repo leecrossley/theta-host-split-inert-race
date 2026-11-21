@@ -1,0 +1,10 @@
+first movable start in (2457452761630441562944, 2457452761630441562945) / 10^18
+second movable start in (61460713123523079975916, 61460713123523079975917) / 10^18
+integer-start weight in (394908054881663751, 394908054881663752) / 10^18
+first movable weight in (246867572221531610, 246867572221531611) / 10^18
+second movable weight in (358224372896804637, 358224372896804638) / 10^18
+Integer start 13471; one simple quartic root gives both levels exactly one and both moves exactly zero.
+Every target within 1/10000 of the balanced vector has a unique inverse in the larger specified box.
+Finite-field splitting and two original tent evaluations per prime band:
+the four physical equations give a strict contraction of the 18-place box, with norm < 1/1000000.
+The integer-start weight agrees in its 18-place bracket; the zero-move and level-one witness is unique in this box.
