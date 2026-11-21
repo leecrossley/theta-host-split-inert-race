@@ -88,6 +88,34 @@ theorem failure_at_height {F : ℝ → ℝ} {a b H C t : ℝ} (ha : a ≤ H) (hb
   · rintro h ⟨y, hy, he, ht⟩
     exact (not_lt_of_ge (gap y ⟨le_trans ha hy.le, by linarith⟩)) ht
 
+/-- A first missed strict loss pins the score at the starting height itself. -/
+theorem first_missing_loss {f : ℝ → ℝ} {H W t : ℝ} {h y r : ℕ → ℝ}
+    (hc : ContinuousAt f H) (hl : Filter.Tendsto h Filter.atTop (nhds H))
+    (hr : Filter.Tendsto r Filter.atTop (nhds H))
+    (prior : ∀ n, h n < H) (hit : ∀ n, h n < y n ∧ y n ≤ h n + W ∧ f (y n) < -t)
+    (right : ∀ n, H < r n ∧ r n ≤ H + W)
+    (miss : ∀ u, H < u → u ≤ H + W → -t ≤ f u) : f H = -t := by
+  have bound (n : ℕ) : y n ≤ H := by
+    by_contra! hn
+    exact (not_lt_of_ge (miss _ hn (by linarith [(hit n).2.1, prior n]))) (hit n).2.2
+  have hy : Filter.Tendsto y Filter.atTop (nhds H) :=
+    tendsto_of_tendsto_of_tendsto_of_le_of_le hl tendsto_const_nhds
+      (fun n => (hit n).1.le) bound
+  exact le_antisymm (le_of_tendsto' (hc.tendsto.comp hy) (fun n => (hit n).2.2.le))
+    (ge_of_tendsto' (hc.tendsto.comp hr) (fun n => miss _ (right n).1 (right n).2))
+
+/-- The boundary scores of two simultaneous first misses cannot have opposite nonzero levels. -/
+theorem unique_first_direction {u t : ℝ} (ht : 0 < t) (gain : u = t) (loss : u = -t) :
+    False := by linarith
+
+/-- Separate first onsets of one sign by the full width of the earlier failed window. -/
+theorem separate_first_onsets {f : ℝ → ℝ} {h₁ h₂ W t : ℝ}
+    (before : h₁ < h₂) (gap : ∀ y, h₁ < y → y ≤ h₁+W → -t ≤ f y)
+    (approach : ∀ s < h₂, ∃ y, s < y ∧ y ≤ h₂ ∧ f y < -t) : h₁+W < h₂ := by
+  by_contra! h
+  obtain ⟨y,hy,hy',hf⟩ := approach _ before
+  exact (not_lt_of_ge (gap _ hy (le_trans hy' h))) hf
+
 end FactorObstruction
 
 #print axioms FactorObstruction.recurring_no_loss
@@ -101,3 +129,6 @@ end FactorObstruction
 #print axioms FactorObstruction.hinge_ceiling
 #print axioms FactorObstruction.secant_ceiling
 #print axioms FactorObstruction.failure_at_height
+#print axioms FactorObstruction.first_missing_loss
+#print axioms FactorObstruction.unique_first_direction
+#print axioms FactorObstruction.separate_first_onsets

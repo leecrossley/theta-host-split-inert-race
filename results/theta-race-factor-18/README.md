@@ -1,4 +1,21 @@
-# Exactly when 6H misses a move in the 547/727 prime race
+# When the 547/727 prime race first misses an 18H deadline
+
+The sharp factor for obtaining both a gain and a loss of more than $`1.9735\log 2`$ is **$`17.493385009687\ldots`$** over every real starting height from $`1`$ through $`e^{40.0507}/(2\sqrt2)`$, about $`8.75\times10^{16}`$. Every larger factor works throughout this range. Equality already fails at $`H=1`$. From $`10^9`$ to the new upper endpoint, $`16.5H`$ suffices. This result uses finite prime and zero checks and assumes no global zero hypothesis. [Proof](PROOF.md#the-first-missed-18h-deadline) · [Two checks of the positive averages](onset_spectrum.py) · [Replay output](evidence/check.txt)
+
+For the first miss at $`18H`$, the proof gives the following finite test. Suppose all zeros of the eight specified Dirichlet functions with $`8590\lt|\Im\rho|\le5{,}000{,}000`$ lie on the critical line. The **first missed move is a loss**, and its starting height $`H_*`$ satisfies
+
+```math
+40.0507 < \log(2\sqrt2\,H_*) \le 40.0936.
+```
+
+The upper endpoint is about $`9.14\times10^{16}`$. The first failed start is transcendental and its doubling hits the negative threshold exactly. From **91,386,963,248,971,966 through 91,393,856,157,112,503** every integer start misses the loss, a run of 6,892,908,140,538. The same finite condition applies to this run. Alpöge’s announced primitive Dirichlet theorem supplies the condition. The standalone finite replay uses Platt’s published verification through 8,590 and leaves the extra range to five million open. A single qualifying loss from any integer in the displayed run would force an off-line zero in that finite range. [Finite upper test](PROOF.md#a-finite-zero-test-for-the-first-miss) · [Whole-interval programs](onset_window.py) · [Independent upstream check](https://math.mit.edu/~drew/grh/)
+
+Under the same finite condition this first loss stays at exactly the same height for **every** factor above $`17.493385009687\ldots`$ through $`2e^{2.1973}=18.0013\ldots`$. At the sharp factor itself the first miss is at height one. [Why the starting height stays fixed](PROOF.md#one-first-failed-height-for-an-interval-of-factors)
+
+The unconditional bound **$`19.95H`$ works for both signs through $`H=e^{41.33}/(2\sqrt2)`$**, about $`3.15\times10^{17}`$. Under the finite zero condition the sharp factor on this larger range is $`C_*=2H_{\rm back}/H_*`$, strictly between $`18.0013`$ and $`19.95`$. Here $`H_{\rm back}`$ is the boundary where strict losses resume. For every factor above the height-one optimum and at most $`C_*`$, the complete set of failures is the single closed interval $`[H_*,2H_{\rm back}/C]`$. At $`C_*`$ only one real starting height fails and every integer start succeeds. The sharp integer factor is transcendental and lies within $`2.28\times10^{-16}`$ of the real factor. [Every exceptional start](PROOF.md#the-next-loss-and-every-exceptional-start)
+
+## Exactly when 6H misses an earlier move
+
 
 Between one million and one billion, **$`6H`$ misses a required move at exactly 5,372,773 integer starting heights**. The failures occupy three closed intervals of real starts. The first misses a gain and the next two miss a loss. Everywhere else both moves of more than $`1.9735\log2`$ finish in time. This uses direct prime arithmetic on the 547/727 field with $`b=r=2`$. [Theorem and proof](PROOF.md#all-failing-starts-from-one-million-to-one-billion)
 
@@ -49,9 +66,9 @@ The finite result uses direct prime-ideal arithmetic. [All slope enclosures](evi
 
 ## Why the pattern eventually breaks
 
-At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $`2.2`$, that sum stays above $`-1.8`$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $`\log 9=2.19722\ldots`$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. Finding a specific start beyond one billion where a factor of 18 fails remains open. [Recurrence argument](PROOF.md#transfer-the-entire-interval) [Verification output](evidence/check.txt)
+At large heights the normalized change approaches a uniformly convergent sum over zeros. On one closed log interval of length $`2.2`$, that sum stays above $`-1.8`$ everywhere. Two computations certify the entire interval, including the point where the kernel crosses the origin. Its shape recurs arbitrarily far out. A factor of 18 gives potential doubling starts only $`\log 9=2.19722\ldots`$ units of log height, so a whole search interval can fit inside a recurring stretch with no qualifying loss. Reflection yields stretches with no qualifying gain. The first-miss theorem above now supplies an explicit start under a finite zero condition. [Recurrence argument](PROOF.md#transfer-the-entire-interval) [Verification output](evidence/check.txt)
 
-The recurrence proof uses Alpöge's announced primitive Dirichlet GRH theorem, independently matched to its formal statement by Sutherland's checks. Of the nine local Lean lemmas, `recurring_no_loss` assumes a bound on late translates. The lemma `move_fits` places the doubling inside the logarithmic interval. The other seven check interpolation, endpoints and deadlines in the finite calculation. The analytic recurrence and its application to gains and losses are written out in the proof. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Prior work](PRIOR-WORK.md)
+The recurrence proof uses Alpöge's announced primitive Dirichlet GRH theorem, independently matched to its formal statement by Sutherland's checks. Of the original nine local Lean lemmas, `recurring_no_loss` assumes a bound on late translates. The lemma `move_fits` places the doubling inside the logarithmic interval. The other seven check interpolation, endpoints and deadlines in the finite calculation. The analytic recurrence and its application to gains and losses are written out in the proof. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Prior work](PRIOR-WORK.md)
 
 Under GRH for the primitive Dirichlet functions of the race and its base field, including the zeta function, the companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.1)
 
