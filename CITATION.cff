@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Exceptional powers of two in the 547/727 prime race"
-abstract: "A billion-exponent gap between possible exceptions and a positive density of uniformly small dyadic moves on the 547/727 field."
+abstract: "Under Dirichlet GRH, a billion-exponent gap between possible exceptions and a positive density of uniformly small dyadic moves on the 547/727 field."
 authors:
   - family-names: Crossley
     given-names: Lee
