@@ -98,6 +98,6 @@ def ball_check():
 if __name__=='__main__':
     rational_check()
     ball_check()
-    print("two independent constant checks: finite zero cancellation preserves both 3.02 and 3.33 log 2 moves")
+    print("Rational series and Arb bound the inputs to the same inequalities for the 3.02 and 3.33 log 2 moves.")
     print("short-box tail below 0.0001; low shifted filter radius below 5406; explicit log-squared deadlines")
     print("the stronger moves finish before H^1.00001 at log H >= 2000000000 and H^1.000001 at log H >= 20000000000")
