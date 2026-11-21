@@ -7,7 +7,7 @@ The retained derivative sum is below 3805; a second sine-difference evaluation v
 At C = 1601/800 the critical-line profile changes by less than 3.89, below twice 1.9735.
 Closed gamma terms and 128 positive series terms agree: -1.990 < U(0.00273) < -1.989.
 The opposite point follows by oddness and both fit strictly before factor 2.011.
-Closed gamma terms and certified rational-integral quadrature independently enclose the factor-four endpoint between 269.3640010193614394 and 269.3640010193614395.
+Closed gamma terms and certified rational-integral quadrature of the gamma kernel, within one explicit formula, enclose the factor-four endpoint between 269.3640010193614394 and 269.3640010193614395.
 At 3.999999997 the symmetric pair beats 269.364 by more than 0.00000015; at 3.999999989 the critical-line upper bound is below 269.364 by more than 0.00000008.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for ExtremalWindows
 'ExtremalWindows.atom_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -164,7 +164,7 @@ For every threshold $`0\lt t\lt A`$, strict successes at factor four have positi
 
 ### The level profile decreases through the first dyadic interval
 
-Work first in the critical-line case. The absolutely convergent even profile is $`V(t)=\sum_\nu G(\nu)e^{i\nu t}`$, over all odd-family ordinates with multiplicity. The coefficients $`G(\nu)`$ are real, even and positive. The limiting move is $`U(t)=(V(t+a/2)-V(t-a/2))/a`$. In particular $`f(t)=U(t)+o(1)`$ uniformly on the late tail. The base-field prime-square term tends to its constant by the prime ideal theorem, and this constant cancels in the difference. Only the eight odd factors enter the critical-line premise. [Exact profile](#a-short-reversal-detects-an-off-line-zero) · [Prime-only arithmetic remainder](https://github.com/leecrossley/theta-host-split-inert-race/blob/compact-filter-oscillation-v1.1.0/results/compact-filter-oscillation/PROOF.md#what-survives-on-sparse-grids)
+Work first in the critical-line case. The absolutely convergent even profile is $`V(t)=\sum_\nu G(\nu)e^{i\nu t}`$, over all odd-family ordinates with multiplicity. The coefficients $`G(\nu)`$ are real, even and positive. The limiting move is $`U(t)=(V(t+a/2)-V(t-a/2))/a`$. In particular $`f(t)=U(t)+o(1)`$ uniformly on the late tail. The base-field prime-square term tends to its constant by the prime ideal theorem, and this constant cancels in the difference. Only the eight odd factors enter the critical-line premise. [Exact profile](#both-signs-in-a-window-ending-by-2011h) · [Prime-only arithmetic remainder](https://github.com/leecrossley/theta-host-split-inert-race/blob/compact-filter-oscillation-v1.1.0/results/compact-filter-oscillation/PROOF.md#what-survives-on-sparse-grids)
 
 For $`s=\sqrt2`$, $`c=2(s-1)^2`$ and $`0\le x\le a`$, the elementary explicit formula is
 
@@ -192,7 +192,7 @@ Consider any two log centres at distance $`d\le W`$. Half the absolute differenc
 \ \le\ \frac{\sqrt{(V(0)-V(a))(V(0)-V(d))}}{a}.
 ```
 
-The first bound follows by taking absolute values of the two Fourier differences, with both signs of every ordinate included. Cauchy–Schwarz gives the second since $`2\sum_\nu G(\nu)\sin^2(h\nu/2)=V(0)-V(h)`$. The smaller of two opposite magnitudes is at most half their separation in value. Strict decrease of $`V`$ bounds the right side by its value at $`d=W`$. The uniform prime-only remainder tends to zero independently of the two chosen starts. This proves a whole-window upper bound and permits either order and any overlap of the doublings. [Formal scalar deductions](ExtremalWindows.lean)
+The first bound follows by taking absolute values of the two Fourier differences, with both signs of every ordinate included. Cauchy–Schwarz gives the second since $`2\sum_\nu G(\nu)\sin^2(h\nu/2)=V(0)-V(h)`$. The smaller of two opposite magnitudes is at most half their separation in value. Strict decrease of $`V`$ bounds the right side by its value at $`d=W`$. The uniform prime-only remainder tends to zero independently of the two chosen starts. This proves a whole-window upper bound and permits either order and any overlap of the doublings. `balanced_pair` and `decreasing_covariance` are checked in Lean; the second covers the endpoint $`W=\log2`$ and takes the monotonicity of $`V`$ as a hypothesis. [Formal scalar deductions](ExtremalWindows.lean)
 
 For a lower bound use the symmetric log centres $`-W/2`$ and $`W/2`$ in the limiting profile. Evenness of $`V`$ gives values $`L(W)`$ and $`-L(W)`$, where
 
