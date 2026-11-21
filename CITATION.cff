@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Recovering a character sum from two theta-lift traces"
+abstract: "A Lean proof extracting a weighted prime-ideal character sum from adjacent theta-lift parameters."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.3
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-prime-trace
+type: software
