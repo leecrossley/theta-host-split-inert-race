@@ -1,0 +1,15 @@
+rational and ball calculations: 14487 < 8590 log(200)/pi < 14488
+one positive rightmost ordinate gives an infimum strictly below 2.000732
+a direct compact integral and a differential multiplier agree at six complex exponents
+the target survives; all five other moments, including a larger real part at the same ordinate, vanish
+13,946 archived frequency brackets match the original SHA-256.
+The retained derivative sum is below 3805; an independent sine-difference bound verifies the variation.
+At C = 1601/800 the critical-line profile changes by less than 3.89, below twice 1.9735.
+Closed gamma terms and 128 positive series terms agree: -1.990 < U(0.00273) < -1.989.
+The opposite point follows by oddness and both fit strictly before factor 2.011.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for ExtremalWindows
+'ExtremalWindows.atom_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExtremalWindows.positive_tests' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExtremalWindows.support_in_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExtremalWindows.count_from_reciprocals' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExtremalWindows.half_wave_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
