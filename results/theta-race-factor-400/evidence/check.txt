@@ -26,7 +26,7 @@ The interval Fourier transform covers 32,769 nodes, their connecting intervals a
 Real gamma integrals at four shifts give the earlier projected tail below 0.751. Two shifts independently give the other window's tail below 0.831.
 The retained true frequencies are below 117/100 on all 2,150 closed cells starting at 1620542278/1000.
 The retained true frequencies are below 110/100 on all 1,062 closed cells starting at 3895686221/1000.
-Uniform base and arithmetic cost from log centre 12,500 is below 0.001. The finite odd region costs less than 0.022 everywhere and 0.012 at the narrow bridge.
+Uniform base and arithmetic cost from log centre 12,494 is below 0.001. The finite odd region costs less than 0.022 everywhere and 0.012 at the narrow bridge.
 Five extra gain witnesses use direct true-frequency sines. 23 closed cells join the upper endpoint to the certified no-gain interval.
 The 32,768-point integer grid certifies 5,911,490 gain samples and 5,911,639 loss samples, with all gaps and strict endpoints checked.
 The 16,384-point integer grid certifies 5,911,490 gain samples and 5,911,639 loss samples, with all gaps and strict endpoints checked.

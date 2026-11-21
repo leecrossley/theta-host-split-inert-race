@@ -279,13 +279,13 @@ Let $`H_*`$ denote the first real starting height $`H\ge1`$ at which at least on
 1620542.262999\lt h_*=\log(2\sqrt2 H_*)\le1620542.276 .
 ```
 
-The bounding values for $`H_*`$ itself differ by a factor below $`1.0131`$. The loss still occurs at this first height. The doubling **starting exactly at** $`H_*`$ satisfies $`S(2H_*)-S(H_*)=1.9735\log2`$. It is the boundary value of the move and is excluded by the strict requirement $`y\gt H`$. The theorem supplies an unconditional alternative: failure of any of these conclusions forces a zero in $`\mathcal E`$. The announced primitive Dirichlet critical-line theorem rules out that alternative. The independent finite search for prime-race witnesses does not exhaust the zeros in $`\mathcal E`$. [Finite-zero alternative](#a-second-witness-below-log-height-1620543) · [Upstream statement and checks](https://math.mit.edu/~drew/grh/)
+The bounding values for $`H_*`$ itself differ by a factor below $`1.0131`$. The loss still occurs at this first height. The doubling **starting exactly at** $`H_*`$ satisfies $`S(2H_*)-S(H_*)=1.9735\log2`$. It is the boundary value of the move and is excluded by the strict requirement $`y\gt H`$. The theorem implies unconditionally that failure of any of these conclusions forces a zero in $`\mathcal E`$. The announced primitive Dirichlet critical-line theorem rules out that alternative. The independent finite search for prime-race witnesses does not exhaust the zeros in $`\mathcal E`$. [Finite-zero alternative](#a-second-witness-below-log-height-1620543) · [Upstream statement and checks](https://math.mit.edu/~drew/grh/)
 
 ### Comparing to the actual primes throughout the search
 
-Write $`D=[12500,1620550]`$ for the range of log centres needed by the new sweep. Below it, the unconditional finite-height result supplies both moves for every $`1\le H\le e^{12500}`$. This overlaps the new cover in the common coordinate $`h`$. [Finite-height certificate](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.0)
+Write $`D=[12494,1620550]`$ for the range of log centres needed by the new sweep. Below it, the unconditional finite-height result supplies both moves for every $`1\le H\le e^{12500}`$. This overlaps the new cover in the common coordinate $`h`$. [Finite-height certificate](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.0)
 
-The group of base characters needs no zero-location hypothesis on $`D`$. Split the base sum at $`B=e^{10}`$ and $`D_b=e^{25}`$. Use McCurley below $`D_b`$, with the single possible exceptional real zero handled separately. The eight characters induce distinct characters modulo $`Q_b`$, so at most one such zero is counted across the full product. With $`x_0=12500`$, the total base cost is at most
+The group of base characters needs no zero-location hypothesis on $`D`$. Split the base sum at $`B=e^{10}`$ and $`D_b=e^{25}`$. Use McCurley below $`D_b`$, with the single possible exceptional real zero handled separately. The eight characters induce distinct characters modulo $`Q_b`$, so at most one such zero is counted across the full product. With $`x_0=12494`$, the total base cost is at most
 
 ```math
 2\cdot10^6 e^{-x_0/[20\log(Q_bB)]}

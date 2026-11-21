@@ -18,7 +18,7 @@ BRIDGES = (208856045, 245587081, 1099489440, 1176832610, 1620542263)
 
 def arithmetic_bounds():
     a = arb(2).log()
-    x = arb(12500)
+    x = arb(12494)
     q = 16*547*727
     b, c = arb(10).exp(), arb(25).exp()
     low = 2*10**6*(-x/(20*(q*b).log())).exp()
@@ -51,7 +51,7 @@ def arithmetic_bounds():
     assert arb(276)/100-arb(2)/1000-arb(751)/1000-arb(22)/1000-arb(1)/1000 > arb(19735)/10000
     ratio=(arb(UPPER.numerator)/UPPER.denominator-arb(LOWER.numerator)/LOWER.denominator).exp()
     assert ratio < arb(10131)/10000
-    print("Uniform base and arithmetic cost from log centre 12,500 is below 0.001. The finite odd region costs less than 0.022 everywhere and 0.012 at the narrow bridge.")
+    print("Uniform base and arithmetic cost from log centre 12,494 is below 0.001. The finite odd region costs less than 0.022 everywhere and 0.012 at the narrow bridge.")
 
 
 def verify_points():
