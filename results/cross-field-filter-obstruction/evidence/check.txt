@@ -1,0 +1,20 @@
+710 positive disjoint-within-factor zero brackets verified by 1,420 strict Hardy endpoint signs on all sixteen primitive factors.
+Closed-interval Dirichlet L excludes all 5,680 opposite-field factors on 710 certified intervals (381 and 329).
+Midpoint Hardy modulus with derivative enclosure excludes all 5,680 opposite-field factors on 710 certified intervals (381 and 329).
+Rigorous preconditioned linear systems certify 32 lower bounds from the two disjoint sets of field-specific frequencies.
+1 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 14419, 26294, 14586, 26690.
+2 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 14124, 24533, 14304, 25005.
+4 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 14087, 22590, 14245, 22959.
+8 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 13966, 21535, 14220, 21613.
+16 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 13338, 20198, 13313, 19995.
+32 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 11311, 16265, 12686, 18542.
+64 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 4967, 7754, 5732, 8325.
+128 coordinates, RMS bounds in thousandths (547/727 level and move, 571/599 level and move): 1500, 2180, 1750, 2500.
+Exact rational prediction recursion, with midpoint phases and an outward row-sum correction, verifies all 32 lower bounds.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for CrossFieldPrediction
+'CrossFieldPrediction.private_frequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CrossFieldPrediction.dual_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CrossFieldPrediction.reflection_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CrossFieldPrediction.perturbation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CrossFieldPrediction.two_energies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CrossFieldPrediction.strict_rms' depends on axioms: [propext, Classical.choice, Quot.sound]
