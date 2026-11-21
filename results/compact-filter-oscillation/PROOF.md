@@ -110,7 +110,7 @@ Fix either of the two fields in the prime-ideal definition above. For a real $`w
 
 ```math
 \{v\in\mathbb R^n:\|v\|_2\le r\}
-\ \subset\ \operatorname{conv}\{F(\log y):H\lt y\lt CH\}
+\ \subset\ \mathrm{conv}\{F(\log y):H\lt y\lt CH\}
 \qquad(H\ge1).
 ```
 

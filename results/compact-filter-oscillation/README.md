@@ -4,7 +4,7 @@ On the 547/727 field or the 571/599 field, choose $`n`$ real, continuous, compac
 
 For the dyadic scores there is also a fixed deadline if every start must be a rational prime, a prime square or, more generally, $`p^s`$ for any one fixed $`s\gt0`$. A single factor for this grid works for **every** affine predictor in the table below, across both fields. With fifteen previous scores, every fixed affine rule makes an absolute error greater than **1.394** on the next score at some eligible start after every $`H`$. For the next normalized move the guaranteed error exceeds **1.19**. The factor can include completion of the last doubling. The proof gives existence of a finite factor. [Prime starts and the uniform forecast bound](PROOF.md#prime-power-starts)
 
-On these countable grids, $`n+1`$ common starts suffice for every target in the guaranteed ball. Almost every target requires all $`n+1`$, even allowing unlimited waiting. [Exact number of grid starts](PROOF.md#prime-power-starts)
+For the dyadic scores, $`n+1`$ common starts on the chosen grid suffice for every target in the guaranteed ball. Almost every target needs all $`n+1`$, even allowing unlimited waiting. For other independent weights, the grid proof assumes that the second distributional derivative of each log profile $`e^{v/2}w_j(e^v)`$ is a finite signed measure. [Exact number of grid starts](PROOF.md#prime-power-starts)
 
 ## The weights and numerical radii
 
