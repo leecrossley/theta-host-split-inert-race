@@ -2,7 +2,7 @@
 
 Compare the change in the 547/727 race with the change in the 571/599 race **on the same doubling**. After every real $`1\le H\le e^{2000}`$, there is a doubling where the first field outgains the second by more than $`8\log2`$, and another where the second outgains the first by more than $`8\log2`$. Both starts exceed $`H`$. Both doublings finish before $`262144H`$. The result is unconditional. [Finite-height proof](PROOF.md#the-finite-common-windows) · [Verification transcript](evidence/check.txt)
 
-For every $`H\ge1`$ the corresponding advantage exceeds $`7\log2`$ in each direction before $`e^{14004}H^{17001/16999}`$. For each fixed $`\delta\gt0`$ it exceeds $`11.7\log2`$ in each direction before $`H^{1+\delta}`$ for all sufficiently large $`H`$. The first two deadlines are explicit. The last one gives no numerical onset. [All-height proof](PROOF.md#a-common-test-at-every-height) · [Power intervals](PROOF.md#larger-contrasts-on-power-intervals)
+For every $`H\ge1`$ the corresponding advantage exceeds $`7\log2`$ in each direction before $`e^{14004}H^{17001/16999}`$. For each fixed $`\delta\gt0`$ it exceeds $`11.7\log2`$ in each direction before $`H^{1+\delta}`$ for all sufficiently large $`H`$. The first two deadlines are explicit. The last one gives no numerical onset. Both statements are unconditional. [All-height proof](PROOF.md#a-common-test-at-every-height) · [Power intervals](PROOF.md#larger-contrasts-on-power-intervals)
 
 There is also an exact averaging result. Write $`D_A,D_B`$ for the two changes divided by $`\log2`$ and $`L_A,L_B`$ for the two midpoint scores.
 
@@ -15,7 +15,7 @@ There is also an exact averaging result. Write $`D_A,D_B`$ for the two changes d
 
 The starts and nonnegative weights are the same for both fields. A projected advantage is attained on one actual doubling. Prescribing two or four coordinates allows several doublings with weights adding to one. The newer deadlines fix both window widths at two and use all five rational omissions specified for each host. The original arbitrary-width, arbitrarily late theorem follows below. [Common starts and weights](PROOF.md#why-these-are-actual-prime-observations) · [Original release](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-levels-and-moves-v1.0.0)
 
-Run `bash verify-release.sh` in the result directory after installing the pinned arithmetic package. The release includes 3,218 genuine positive zero brackets, two independent evaluations of 1,555 common averages, eight early prime-ideal counts and ten local Lean deductions. The written analytic and geometric steps identify how the certificates imply the result. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+Run `bash verify-release.sh` in the result directory after installing the pinned arithmetic package. The release includes 3,218 genuine positive zero brackets, two evaluations of 1,555 common averages that use different formulas for the kernel and the trigonometric sums but share the zero table, costs and geometry, eight early prime-ideal counts and ten local Lean deductions. The written analytic and geometric steps identify how the certificates imply the result. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
 
 ## The earlier unrestricted-width result
 
@@ -35,7 +35,7 @@ There is a stronger joint result. For each race draw an ellipse centred at $`(1,
 | 547/727 | 9.9375 | 3.4686 | 6.6921 | 1.9735 |
 | 571/599 | 7.9731 | 2.1866 | 6.1027 | 1.5894 |
 
-Choose a point on or inside each ellipse. Beyond any specified height, a weighted average of **at most four common starts** matches all four coordinates exactly. The weights are nonnegative, sum to one and are the same for both races. For the two moves alone, any point of the corresponding rectangle takes at most two common starts. The two individual difference bounds in the opening paragraph each hold at single heights. [Convex-hull argument](PROOF.md#common-starts-and-the-number-of-readings)
+Choose a point on or inside each ellipse. Beyond any specified height, a weighted average of **at most four common starts** matches all four coordinates exactly. The weights are nonnegative, sum to one and are the same for both races. For the two moves alone, any point of the corresponding rectangle takes at most two common starts. The two individual difference bounds 5.6552 and 17.9106 above each hold at single heights. [Convex-hull argument](PROOF.md#common-starts-and-the-number-of-readings)
 
 Finite counts give examples where both normalized moves have magnitude greater than 10. In field order 547/727 then 571/599, the signs at starts 17, 97, 162 and 658 are respectively $`(-,+)`$, $`(-,-)`$, $`(+,-)`$ and $`(+,+)`$. These counts omit the primes over 2 and the two conductors in each race. [Direct counts](finite_examples.py)
 
@@ -48,4 +48,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The replay checks the real segments, the nine sign changes, the mixed frequencies by two independent evaluations, the ellipse bounds, the finite examples and the six original Lean deductions plus four deadline deductions. Both evaluations use Arb ball arithmetic. The Mellin, positive-weight and convex-geometric arguments are written proofs. [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The replay checks the real segments, the nine sign changes, the mixed frequencies by two independent evaluations, the ellipse bounds, the finite examples, the deadline spectrum, the early prime-ideal counts, the all-height common test, both methods for the common averages and the six original Lean deductions plus four deadline deductions. Both evaluations use Arb ball arithmetic. The Mellin, positive-weight and convex-geometric arguments are written proofs. [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
