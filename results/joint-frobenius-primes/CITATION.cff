@@ -5,9 +5,9 @@ abstract: "Certified prime chains below 2^1585 put the last missed starts at 144
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.0
+version: 1.0.1
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-frobenius-primes-v1.0.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-frobenius-primes-v1.0.1
 type: software
