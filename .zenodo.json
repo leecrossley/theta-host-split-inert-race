@@ -1,0 +1,12 @@
+{
+  "title": "Theta prime races for the 547/727 and 571/599 fields",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>This collection contains the trace formulae, finite certificates and estimates for both theta fields. The algebraic-height and splitting-pattern papers distinguish their unconditional ranges from the explicit estimates under Dirichlet GRH. The result index identifies the proof and verification files for each paper.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/1a1b226429e4afe337a6bd3d2b818830c5db4f98/RESULTS.md\">Proofs and verification</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "collection-2026-11-21"
+}
