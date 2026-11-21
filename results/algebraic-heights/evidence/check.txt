@@ -29,6 +29,12 @@ Positive contacts in AA, AB, BA, BB order: 14, 16, 15, 11. Adjacent amplitude fl
 Two directed original-tent endpoint signs fix all 62 exact heights in disjoint intervals of width 10^-72.
 All 1891 ratios in increasing-height order have rational denominator at least 1089356799264850590264254484675820 if rational.
 First candidate allowed by the brackets: 107198303351144631635944969682793472187/1089356799264850590264254484675820; early host/sign/left eighths ('A', 1, 62), late ('B', 1, 6620833).
+Two directed original-tent endpoint signs fix all 62 exact heights in disjoint intervals of width 10^-512.
+Grid 10^156: Gram-Schmidt length floor 32; for coefficient box 1, every nonzero log sum has absolute value at least 11/10^156.
+Grid 10^240: Gram-Schmidt length floor 511; for coefficient box 20, every nonzero log sum has absolute value at least 90/10^240.
+Grid 10^360: Gram-Schmidt length floor 20606; for coefficient box 1000, every nonzero log sum has absolute value at least 697/10^360.
+Grid 10^500: Gram-Schmidt length floor 2003443; for coefficient box 90000, every nonzero log sum has absolute value at least 72212/10^500.
+The two paired A cells each have at least two distinct active norms. Their opposite hits have the exact zero as geometric mean.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for AlgebraicHeights
 'AlgebraicHeights.protected_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.affine_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -50,3 +56,6 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'AlgebraicHeights.dilation_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.passage_length' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicHeights.farey_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.log_midpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.isolate_character' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicHeights.lattice_margin' depends on axioms: [propext, Classical.choice, Quot.sound]

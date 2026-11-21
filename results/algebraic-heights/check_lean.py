@@ -9,7 +9,8 @@ THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cel
             "inverse_discriminant", "common_normalizer", "repeated_cell", "paired_roots",
             "cell_energy", "energy_jump", "simple_root_obstruction",
             "ratio_relation", "recover_scaled_slope", "fresh_prime_order",
-            "dilation_elimination", "dilation_amplitude", "passage_length", "farey_denominator")
+            "dilation_elimination", "dilation_amplitude", "passage_length", "farey_denominator",
+            "log_midpoint", "isolate_character", "lattice_margin")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

@@ -446,3 +446,86 @@ q_{\min}=1089356799264850590264254484675820.
 ```
 
 The first rational candidate allowed by the brackets is $`107198303351144631635944969682793472187/q_{\min}`$. Its early height is the positive hit on A in the cell beginning at $`62/8`$, and its late height is the positive hit on B in the cell beginning at $`6620833/8`$. The candidate is an interior rational in the quotient interval. Whether the actual quotient equals any rational remains open. Reversing the order exchanges numerator and denominator, and the larger-height quotient exceeds one, so the same lower bound holds in either order. This applies to every pair at the named amplitude, including the pairs whose individual transcendence is unknown.
+
+## Bounded products at the exact amplitude
+
+In the order of the signed crossing table let $`y_1,\ldots,y_{62}`$ be the exact physical starts through $`10^6`$ at amplitude $`3947/2000`$. Append the ordinary primes $`2,3,5,7,11,13,17,19,23,29,31`$. Write $`\ell_i`$ for the logarithms of these 73 positive numbers. With any nonzero integer vector $`v`$ satisfying $`|v_i|\le H`$, the following are unconditional bounds.
+
+| Exponent bound $`H`$ | Lower bound for $`\lvert\sum_i v_i\ell_i\rvert`$ |
+| ---: | ---: |
+| 1 | $`11/10^{156}`$ |
+| 20 | $`90/10^{240}`$ |
+| 1,000 | $`697/10^{360}`$ |
+| 90,000 | $`72212/10^{500}`$ |
+
+Consequently all $`90001^{73}\gt10^{361}`$ products with exponents between 0 and 90,000 are distinct, including all $`90001^{62}\gt10^{307}`$ products using only crossing heights. The proof makes no unrestricted multiplicative independence assumption. To reproduce it start with the existing one-billionth brackets and their strict crossing orientations. At each new bracket, evaluate both endpoints in the two original tents with directed bounds at 568 decimal digits and a fixed grid of width $`10^{-545}`$. The change of sign and the previously proved uniqueness enclose the exact height in an interval of width $`10^{-512}`$. As an independent check recover the quadratic coefficients from the two original tent values at the bounding prime knots in Arb. At 1,880 bits, the positive quadratic root inside the coarse isolator lies strictly inside the recorded deep bracket in every case. [Directed prime sums](rational_ratios.py) · [All brackets](evidence/height-brackets-512.tsv) · [Independent reconstruction](product_recheck.py)
+
+Compute a strict enclosure of each $`\ell_i`$ between consecutive multiples of $`10^{-505}`$. Decimal logarithms at both endpoints are correctly rounded to nearest at 575 digits. An outward allowance of $`10^{-545}`$ for each logarithm covers their rounding errors. For each integer scale $`S=10^e`$ in the table let $`b_i`$ be the nearest integer to $`S\ell_i`$. The two interval endpoints give the same rounded integer. If $`k_i`$ is the lower numerator on the $`10^{-505}`$ grid and $`d=10^{505-e}`$, then a rational upper bound on total rounding error is
+
+```math
+E=\frac1d\sum_i\max\{|k_i-db_i|,\ |k_i+1-db_i|\}.
+```
+
+Use the 73-dimensional integral lattice with row basis $`(I\mid b)`$. Its vectors are $`(v,\sum v_i b_i)`$. At each scale python-flint 0.9.0 produced the integral change matrix by applying `lll(transform=True)` to the displayed row basis with default parameters. The certificate independently computes its determinant $`\pm1`$ and multiplies out the rows in exact integers. Let $`M_j`$ be the positive determinant of the leading $`j`$ by $`j`$ Gram matrix in this basis, with $`M_0=1`$. Then $`M_j/M_{j-1}`$ is the squared length of its $`j`$-th Gram–Schmidt vector. Every nonzero lattice vector has length at least the smallest of these lengths. In its basis expansion take the last nonzero integer coordinate and project orthogonally off the preceding rows. Its magnitude is at least one. This bound holds for any unimodular basis and requires no assumption about the quality or implementation of a reduction algorithm. [Reduction method of Lenstra, Lenstra and Lovász](https://www.math.ucdavis.edu/~deloera/MISC/LA-BIBLIO/trunk/Lovasz/LovaszLenstraLenstrafactor.pdf)
+
+For $`e=156,240,360,500`$ the four floors $`g`$ of the minimum Gram–Schmidt length are 32, 511, 20,606 and 2,003,443. The checker evaluates all leading determinants by exact fraction-free elimination. Since $`\sum v_i^2\le73H^2`$ and $`|\sum v_i b_i|\le S|\sum v_i\ell_i|+HE`$, one gets
+
+```math
+S\left|\sum_i v_i\ell_i\right|
+ \ \ge\ \left\lfloor\sqrt{g^2-73H^2}\right\rfloor-\lceil HE\rceil.
+```
+
+The four exact integers on the right are 11, 90, 697 and 72,212. The second implementation calculates each leading determinant with FLINT and evaluates the error directly in Arb using the original heights. The rank test is for the actual prime sums and the indicated exponent boxes. [Primary proof checker](product_relations.py) · [Independent transcript](evidence/independent-products.txt) · [Rounding inequality in Lean](AlgebraicHeights.lean)
+
+## Two transcendental geometric midpoints
+
+There are two 547/727 prime cells which each contain opposite-signed hits of the named amplitude. Their eighth-height endpoints are $`(62,79)`$ and $`(289,316)`$. On such a cell let $`D(y)=u\sqrt y+v/\sqrt y`$ with coefficients including the normalization by $`\log2`$. Denote the two heights by $`y_+,y_-`$. Continuity gives a zero $`c=-v/u`$ strictly between them. The quadratic for either squared hit and the product of its roots give
+
+```math
+y_+y_-=c^2.
+```
+
+The two zero heights are individually transcendental. At an algebraic $`y`$ every contribution to a zero is an algebraic coefficient of an odd prime logarithm after clearing the normalizer. Each active prime would have to have coefficient zero separately by Baker. Its norm $`n`$ has a single interior zero in the dyadic move kernel, at $`y=n/(2\sqrt2)`$ in its middle band. The outer and inner coefficients vanish only at the edges of their support. The first cell has distinct active norms 49 and 31. The second has 81 and 49. Two different norms cannot vanish at the same interior point, proving the assertion. In particular, for each of these specific pairs the product of the two signed hit heights is transcendental. [Kernel coefficients](#an-algebraic-dilation-determines-the-amplitude) · [Prime check](product_relations.py) · [Baker](https://doi.org/10.1112/S0025579300003971)
+
+Adjoin both $`c`$ values to the list of 73. For any multiplicative identity with exponents of absolute value at most 30,000, square the identity and substitute the two midpoint equations. The new exponents at a paired height are twice its original exponent plus the corresponding centre exponent. Every exponent in the resulting relation on the original 73 is bounded by 90,000 and is therefore zero. The exponents on the unpaired heights and ordinary primes vanish, and each original pair has equal exponents, the negative of half the centre exponent. These are exactly the integer combinations of the two displayed midpoint identities within the given box. [Logarithmic midpoint in Lean](AlgebraicHeights.lean)
+
+## All product relations at a moving magnitude
+
+Use the real field $`F=(\overline{\mathbf Q}\cap\mathbf R)(\log p:p\text{ prime})`$. Adjoining $`i`$ gives the complex coefficient field used earlier. For a fixed real magnitude $`t\gt0`$ take $`K=F(t)`$. Consider any finite list of interior hits with nonzero cell coefficients $`u_j,v_j`$. Each $`y_j`$ is a positive root of
+
+```math
+u_j^2 y^2+(2u_jv_j-t^2)y+v_j^2=0.
+```
+
+Its companion is positive, whether or not it belongs to the physical cell. Put $`c_j=|v_j/u_j|`$ and $`w_j=y_j/c_j`$. The field of the two roots is obtained by adjoining $`\sqrt{t^2-4u_jv_j}`$. If the radicand is zero or square in $`K`$ the corresponding heights already lie in $`K`$. If a coefficient vanishes the remaining height equation also has its solution in $`K`$. At an algebraic knot the height itself belongs to the base field.
+
+Let $`G`$ be the Galois group of the compositum of these real quadratic extensions over $`K`$. Each nonsquare radicand determines a nontrivial sign character $`\chi_j:G\to\{\pm1\}`$. Its action on the normalized height is $`w_j\mapsto w_j^{\chi_j(g)}`$, because the two normalized roots are reciprocals. They are distinct, so $`\log w_j\ne0`$. For an integer vector $`m`$, the product $`\prod_j y_j^{m_j}`$ lies in $`K^\times`$ exactly when
+
+```math
+\sum_{\chi_j=\chi}m_j\log w_j=0
+\quad\text{for every nontrivial character }\chi.
+```
+
+Indeed, apply every automorphism to the product and divide by the original. All conjugate factors are positive real numbers. Taking ordinary real logarithms gives a sum of the component sums with coefficients $`\chi(g)-1`$. Multiply by any one nontrivial character and sum over the group. Finite character orthogonality isolates its component. Conversely the displayed equations make the product fixed by $`G`$. In particular, **one height from each distinct nontrivial square class gives a multiplicatively independent set modulo $`K^\times`$**, including when the square classes themselves satisfy relations. [Character projection in Lean](AlgebraicHeights.lean) · [Kummer theory](https://www.jmilne.org/math/CourseNotes/FT.pdf#page=75)
+
+If $`t`$ is transcendental over $`F`$, distinct nonzero values of $`d=4uv`$ give independent square classes $`t^2-d`$ by their disjoint simple zeros in the variable-amplitude calculation. For a common $`d`$ one has $`w+w^{-1}=(t^2-2uv)/|uv|`$. Hence all normalized roots are a fixed $`w\gt1`$ or its reciprocal. In this case the complete multiplicative criterion has one signed integer sum per distinct nonzero cell constant. The multiplicative rank modulo $`F(t)^\times`$ equals the number of those constants represented. [Inverse-branch theorem](#how-many-square-roots-determine-the-crossings)
+
+Apply this to the open amplitude interval between the two knots surrounding 1.9735 which preserve all 60 cells. For each $`t`$ there transcendental over $`F`$, the 62 hits have rank **60** modulo $`F(t)^\times`$. The two repeated cells give the complete basis of integer relations into $`F(t)^\times`$, with a common exponent on each pair and zeros elsewhere. Over the positive algebraic numbers the rank is **61 or 62**. In fact, retain both roots from the first paired cell, one from the other, and the unique root from each of the other 58 cells. Any relation into the algebraic numbers must be a power of the first pair’s product $`c_1^2`$, which is transcendental, so this specific set of 61 is independent. Full rank 62 is equivalent to multiplicative independence of $`c_1,c_2`$ modulo positive algebraic numbers. The maximum rank over $`F(t)^\times`$ through one million is 74. The earlier degree count bounds the number of represented nonzero constants by 74 for every magnitude, and the open neighborhood of 2.302529 gives 74 distinct constants for transcendental $`t`$. [Finite cell catalog](#all-crossings-through-one-million)
+
+On a residual set of $`t\in(0,5.85)`$ every sign and field on every tail has infinitely many independent quadratic inverse branches. At such a magnitude prescribe in advance any infinite sequence of field and sign choices and height lower bounds. At each step choose a new branch outside the finite span of the preceding square classes and a height beyond both the prescribed lower bound and the previous height. The character criterion makes all the chosen heights multiplicatively independent over $`F(t)^\times`$. At the exact rational magnitude, finite multiplicative rank on one sign and field on a tail would allow only finitely many distinct nonsquare classes. Their compositum has finite degree, forcing arbitrarily large deficiencies in the transcendence degree of finite sets of odd prime logarithms above every cutoff by the earlier arithmetic alternative. [Infinite branches](#infinitely-many-independent-inverse-branches) · [Fixed-target alternative](#a-test-at-the-fixed-rational-amplitude)
+
+### An arithmetic alternative for every fixed real magnitude
+
+Fix **any** real $`0\lt t\le5.85`$, any one of the two hosts, either sign and any lower height cutoff. If the multiplicative rank of the subsequent hits modulo $`F(t)^\times`$ is finite, then for every integer $`m`$ and every prime cutoff $`P`$ there is a finite set $`B`$ of odd primes above $`P`$ with
+
+```math
+|B|-\mathrm{trdeg}_{\overline{\mathbf Q}}\overline{\mathbf Q}(\log p:p\in B)\ge m.
+```
+
+This includes amplitudes that are transcendental and depend on the prime logarithms. Assuming bounded deficiency instead, one can prescribe an infinite itinerary of signs, hosts and successive cutoffs and find a multiplicatively independent sequence realizing it at this same fixed amplitude.
+
+To see this, work first over the real algebraic numbers $`k`$, which give the same transcendence degrees as their algebraic extension $`\overline{\mathbf Q}`$. Adjoin both $`t`$ and $`a=\log2`$. For any finite set of odd prime logs, changing the base to $`k(t,a)`$ increases its deficiency by at most two by the tower law. If the absolute deficiencies are bounded, choose a finite set attaining the maximal relative deficiency and include it in a base $`K_0`$ with $`t,a`$. Every other finite set of odd prime logs is algebraically independent over $`K_0`$. Otherwise adjoining it would increase that maximum. Consequently $`F(t)`$ is the rational function field over $`K_0`$ in all the remaining prime logs.
+
+Choose successive actual hits of the prescribed targets so far apart that their possible prime supports $`[y_j^{1/4},8y_j]`$ are disjoint and avoid the exceptional finite set. The common-window theorem supplies hits arbitrarily late. A sufficiently late hit cannot lie at an algebraic knot under this bounded-deficiency assumption. At such an input, after clearing the algebraic square root, the unnormalized reading is an algebraic linear form in the fresh odd logs, whereas the target is the nonzero element $`\pm ta`$ of the base. The resulting polynomial with nonzero constant cannot vanish. The same argument excludes every algebraic input on the chosen late supports.
+
+Both cell coefficient forms $`U_j,V_j`$ are nonzero. A completely split prime in $`(5y_j,6y_j]`$ contributes a nonzero slope and intercept and occurs through a single norm. On that cell the radicand is $`(ta)^2-4U_jV_j`$. It is squarefree and nonconstant in its own independent variables by the proportional and independent linear-form cases in the [fixed-target proof](#a-test-at-the-fixed-rational-amplitude). The radicands on the disjoint blocks have disjoint factors of odd valuation, so their square classes are independent over $`F(t)`$. Each hit therefore supplies a new nontrivial character and the product criterion gives multiplicative independence. Removing finitely many small primes can lower the deficiency by at most their number, yielding the assertion above any prescribed prime cutoff.

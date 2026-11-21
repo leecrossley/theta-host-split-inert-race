@@ -174,6 +174,30 @@ theorem farey_denominator {p q l r a b : ℤ}
       _ = q := by rw [hd, mul_one]
   nlinarith [mul_nonneg hb (sub_nonneg.mpr xl), mul_nonneg ha (sub_nonneg.mpr xr)]
 
+/-- The paired heights give an exact additive relation at their logarithmic midpoint. -/
+theorem log_midpoint {x z c : ℝ} (hx : 0 < x) (hz : 0 < z) (h : x*z=c^2) :
+    Real.log x + Real.log z = 2*Real.log c := by
+  rw [← Real.log_mul (ne_of_gt hx) (ne_of_gt hz), h, Real.log_pow]
+  norm_num
+
+/-- A character row orthogonal to the other columns isolates one logarithmic component. -/
+theorem isolate_character {G I : Type*} [Fintype G] [Fintype I] [DecidableEq I]
+    (m : G → I → ℝ) (w : G → ℝ) (x : I → ℝ) (t : I) (a : ℝ)
+    (ha : a ≠ 0) (hs : ∀ g, ∑ i, m g i * x i = 0)
+    (hw : ∀ i, ∑ g, w g * m g i = (if i=t then a else 0)) : x t = 0 := by
+  have hz : (∑ g, w g * ∑ i, m g i * x i) = 0 := by simp [hs]
+  simp_rw [Finset.mul_sum, ← mul_assoc] at hz
+  rw [Finset.sum_comm] at hz
+  simp_rw [← Finset.sum_mul, hw] at hz
+  simpa [ite_mul, ha] using hz
+
+/-- The rounding error and the first lattice coordinates give an explicit separation. -/
+theorem lattice_margin {g n z t e : ℝ} (hg : g^2 ≤ n+z^2)
+    (hr : |z| ≤ t+e) : g^2 ≤ n+(t+e)^2 := by
+  have hn : 0 ≤ t+e := (abs_nonneg z).trans hr
+  have hk := mul_nonneg (sub_nonneg.mpr hr) (add_nonneg hn (abs_nonneg z))
+  nlinarith [sq_abs z]
+
 end AlgebraicHeights
 
 #print axioms AlgebraicHeights.protected_log
@@ -196,3 +220,6 @@ end AlgebraicHeights
 #print axioms AlgebraicHeights.dilation_amplitude
 #print axioms AlgebraicHeights.passage_length
 #print axioms AlgebraicHeights.farey_denominator
+#print axioms AlgebraicHeights.log_midpoint
+#print axioms AlgebraicHeights.isolate_character
+#print axioms AlgebraicHeights.lattice_margin
