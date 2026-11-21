@@ -1,0 +1,12 @@
+{
+  "title": "When the 547/727 prime race first misses an 18H deadline",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Through exp(40.0507)/(2 sqrt(2)), the sharp simultaneous completion factor for the 547/727 dyadic race stays 17.493385009687... . Through exp(41.33)/(2 sqrt(2)), both moves finish before 19.95H. Both bounds use established finite zero computations. The first 18H miss on the larger interval is a loss, subject to a further critical-line check on eight primitive Dirichlet factors through ordinate five million.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/848edd0d350aac2966a62a00ed9da09abdcbbe5d/results/theta-race-factor-18/PROOF.md\">Proof and hypotheses</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "theta-race-factor-18-v1.3.0"
+}
