@@ -80,7 +80,7 @@ g_b(\log n-h)+g_b(\log n+h)-2d\,g_b(\log n)
 =\frac{2r}{c}\sinh\!\left(\frac{(h-|v|)_+}{2}\right).
 ```
 
-For $`v\le-h`$ all three terms vanish. For $`v\ge h`$ the hyperbolic addition formula cancels them. For $`-h\le v\le0`$ the only positive argument is $`v+h`$. For $`0\le v\le h`$ subtraction leaves $`\sinh((h-v)/2)`$. This proves the exact band formula, including equality at the two endpoints. At $`b=n`$ its central term simplifies because $`r=\sqrt n`$. [Kernel identities in Lean](WidthCusp.lean)
+For $`v\le-h`$ all three terms vanish. For $`v\ge h`$ the hyperbolic addition formula cancels them. For $`-h\le v\le0`$ the only positive argument is $`v+h`$. For $`0\le v\le h`$ subtraction leaves $`\sinh((h-v)/2)`$. This proves the exact band formula, including equality at the two endpoints. At $`b=n`$ its central term simplifies because $`r=\sqrt n`$. [Supporting kernel identities in Lean](WidthCusp.lean)
 
 ## The cusp at every width
 
