@@ -1,6 +1,6 @@
 # Prior work and scope of the claim
 
-Reviewed on 21 November 2026. The claim is the certified interval $`[1.008796429610,3.221800332553]`$ for the specified 547/727 profile, the two exterior sign tests that localize its component, and the resulting unconditional obstruction $`C=2\exp(2.213003902943)`$. I found no earlier publication of these results in the sources searched.
+Reviewed on 21 November 2026. The claim is the certified interval $`[1.008796429610,3.221800332553]`$ for the specified 547/727 profile, the two exterior sign tests that localize its component, and the resulting obstruction under Dirichlet GRH $`C=2\exp(2.213003902943)`$. I found no earlier publication of these results in the sources searched.
 
 | Source | What the comparison establishes |
 |---|---|

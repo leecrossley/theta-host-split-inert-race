@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "A longer obstruction in the 547/727 prime race"
-abstract: "A certified 2.213003902943 log interval rules out a larger waiting factor in the 547/727 prime-ideal race."
+abstract: "Under Dirichlet GRH, a certified log interval of length 2.213003902943 rules out a waiting factor of 2 exp(2.213003902943) in the 547/727 prime-ideal race."
 authors:
   - family-names: Crossley
     given-names: Lee
