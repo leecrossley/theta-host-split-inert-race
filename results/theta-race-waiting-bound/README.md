@@ -1,8 +1,18 @@
-# Both 547/727 prime-race moves finish by 400H through exp(12500)
+# Prime-race crossings with a deadline and a transcendental height ratio
 
-For **every real $`1\le H\le e^{12500}`$**, there is a doubling starting after $`H`$ that gains more than $`1.9735\log2`$, and another that loses more than $`1.9735\log2`$. Both finish strictly before $`400H`$. This is an unconditional bound for the actual prime-only race at width and dilation two. Platt's verification puts every zero of the eight odd factors through height 8590 on the critical line, and tilted sphere averages bound the remaining zeros wherever they lie in the strip. Any counterexample to $`400H`$ must start above $`e^{12500}`$. [Theorem and proof](PROOF.md#both-moves-through-exp12500) · [Signed covering intervals](evidence/sphere-cover.tsv)
+On the 547/727 field, after **every real $`1\le H\le e^{12500}`$**, one doubling gains more than $`1.9735\log2`$ and another loses more than $`1.9735\log2`$. **Both finish before $`251H`$.** This result is unconditional for the original prime-only race at $`b=r=2`$. [Proof](PROOF.md#time-to-two-crossings-with-transcendental-height-ratio)
 
-The former finite upper endpoint was $`e^{2000}`$. The extension uses 5,478 signed positive averages from the previously verified 6,000 ordinate brackets. Each of two computations checks every average and covers the full real interval between endpoints. Eighteen local Lean deductions cover the stated formal steps. [Two evaluation methods](finite_sphere.py) · [Verification transcript](evidence/check.txt) · [Prior work](PRIOR-WORK.md)
+| Requirement after $`H`$ | Both doublings finish before |
+| --- | --- |
+| A strict gain and a strict loss above the named magnitude | $`2e^{4.83}H<251H`$ |
+| Exact gain and loss, with transcendental starting-height quotient | $`2e^{7.38}H<3208H`$ |
+| Exact gain and loss in either prescribed order, with transcendental starting-height quotient | $`2e^{9.53}H<27534H`$ |
+
+At the original factor 400, the last two guarantees cover at least **99.35816%** and **78.18624%** of the log-height range, respectively. The two orders can use different pairs. At all heights $`H\ge1`$, an unspecified fixed factor suffices for any prescribed finite sequence of signs with pairwise transcendental starting-height ratios. [Order test](PROOF.md#an-order-test-on-four-hits) · [Continuous coverage](PROOF.md#both-endpoints-of-every-waiting-interval)
+
+The finite proof verifies 702 extra Hardy brackets, counts every zero through ordinate 294 for the eight odd factors, and evaluates 49,868 positive averages in two ways. Forward and backward schedules check every real starting height, including the endpoints. The package replays 21 local Lean deductions alongside the arithmetic and the earlier certificates. [Zero count](deadline_spectrum.py) · [Signed averages](ordered_averages.py) · [Schedule replay](ordered_deadlines.py) · [Verification transcript](evidence/check.txt) · [Prior work](PRIOR-WORK.md#time-to-incommensurate-crossings)
+
+The [previous finite deadline](PROOF.md#both-moves-through-exp12500) was $`400H`$ through $`e^{12500}`$. The factor 251 improves the positive finite range of the original race. Its global optimum, and a numerical factor proved sufficient for every height independently of a global zero theorem, remain open.
 
 ## A fixed factor at every height
 
@@ -18,7 +28,7 @@ For the all-height formulas put $`T=10^6+4\log H`$ and $`L=\log(12000T)`$. At an
 | $`3.33\log2`$ | $`H\exp(10000+(13/5)L^2)`$ |
 | $`3.02\log2`$ | $`H\exp((13/5)L^2)`$ |
 
-The last bound includes the original $`1.9735\log2`$ target. At $`\log H\ge2\cdot10^9`$ even the stronger pair finishes before $`H^{1.00001}`$. From $`\log H=2\cdot10^{10}`$ onwards, $`H^{1.000001}`$ suffices. For the earlier target of $`1.9735\log2`$ in each direction, the extended finite certificate gives $`400H`$ through $`e^{12500}`$. [Explicit comparisons](PROOF.md#the-two-margins-and-completion-factors)
+The last bound includes the original $`1.9735\log2`$ target. At $`\log H\ge2\cdot10^9`$ even the stronger pair finishes before $`H^{1.00001}`$. From $`\log H=2\cdot10^{10}`$ onwards, $`H^{1.000001}`$ suffices. For the earlier target of $`1.9735\log2`$ in each direction, the extended finite certificate gives $`251H`$ through $`e^{12500}`$. [Explicit comparisons](PROOF.md#the-two-margins-and-completion-factors)
 
 The proof builds a positive average that cancels whole groups of possible off-line zeros. Two different widths preserve the measured low-frequency signal. The explicit bound uses a finite verification and a count of all Dirichlet zeros. The fixed-factor proof uses Montgomery’s zero-density theorem to isolate a growing oscillation whenever an off-line zero exists. [Separated interpolation](PROOF.md#a-positive-density-for-separated-complex-frequencies) · [Fixed-factor criteria](PROOF.md#completion-and-what-would-give-a-fixed-factor)
 
@@ -37,7 +47,7 @@ For every fixed $`\delta\gt0`$, both $`3.32\log2`$ moves also finish before $`H^
 
 The finite proof checks 526 signed averages for the first range and 1,017 for the second. Each average has positive weights, so it locates at least one actual prime-score move of the stated size. Overlapping the intervals covered by the witnesses handles every real starting height. The four-digit obstruction at a much greater height assumes Dirichlet GRH, which Alpöge's announced theorem supplies. [First witness table](evidence/finite-1000.tsv) · [Second witness table](evidence/finite-2000.tsv) · [Four-digit obstruction](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-factor-400-v1.1.0)
 
-Run `bash verify-release.sh` to replay the complete paper on x86-64 Linux, or supply a built checkout of the pinned Mathlib with Lean 4.33.1 on the executable path. The release includes eighteen local Lean deductions. The analytic proof, interval computations and finite arithmetic are identified separately below. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+Run `bash verify-release.sh` to replay the complete paper on x86-64 Linux, or supply a built checkout of the pinned Mathlib with Lean 4.33.1 on the executable path. The release includes 21 local Lean deductions. The analytic proof, interval computations and finite arithmetic are identified separately below. [File hashes](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
 
 ## Earlier waiting interval
 
