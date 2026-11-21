@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "One-way prime-race windows recur together at positive density"
-abstract: "Uniform and finite lower logarithmic density bounds for two synchronized one-way windows on the 547/727 field."
+abstract: "Under Dirichlet GRH, two synchronised one-way windows on the 547/727 field recur together with explicit lower logarithmic density bounds."
 authors:
   - family-names: Crossley
     given-names: Lee
