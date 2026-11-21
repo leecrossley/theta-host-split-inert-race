@@ -9,7 +9,7 @@ version: 1.4.0
 date-released: 2026-11-21
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/tree/17a08f715f314c811c068c7004b578e41336ebc3/results/joint-levels-and-moves
+url: https://github.com/leecrossley/theta-host-split-inert-race/tree/c22f2be1254c0235de3b01cf99602f1d0b956e01/results/joint-levels-and-moves
 type: software
 references:
   - type: software
