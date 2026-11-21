@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
-THEOREMS = ("recurring_no_loss", "move_fits")
+THEOREMS = ("recurring_no_loss", "move_fits", "knot_lower", "gap_endpoint", "beyond_gap", "strict_bridge")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

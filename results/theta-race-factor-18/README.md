@@ -1,8 +1,24 @@
-# Why 18 fails in the 547/727 prime race
+# The sharp finite deadline in the 547/727 prime race
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410788.svg)](https://doi.org/10.5281/zenodo.24410788)
+A gain and a loss of more than $`1.9735\log 2`$ both finish by $`CH`$ after **every real start from 1 through one billion** precisely when $`C`$ exceeds $`17.493385009687\ldots`$. The infimum itself fails. At $`H=1`$ the first loss reaches the required magnitude with equality. Every larger factor gives it room to cross. These finite conclusions follow from prime arithmetic. [Exact statement and proof](PROOF.md#the-sharp-finite-deadline)
 
-From every real starting height $`1\le H\le1{,}000{,}000{,}000`$, a gain and a loss of more than $`1.9735\log2`$ both finish by $`18H`$. The sieve proves this finite statement unconditionally. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function. **At arbitrarily large heights, $`18H`$ misses the loss. At other arbitrarily large heights, it misses the gain.** Even the slightly larger factor $`2e^{11/5}=18.0500\ldots`$ fails. [Theorem and proof](PROOF.md)
+The answer changes abruptly when the required move grows. Write $`D(y)=(S(2y)-S(y))/\log 2`$ and $`\tau=-D(201007/2)=3.997034484766\ldots`$. Just below $`\tau`$ the sharp factor approaches $`17.848747144\ldots`$. **At $`\tau`$ it jumps to $`19.723571102\ldots`$.** The last qualifying loss before a long gap disappears when it just touches the threshold. In particular, $`18H`$ guarantees both strict moves of size $`t\log2`$ through one billion exactly for $`0\le t\lt\tau`$. [The disappearing loss](PROOF.md#the-loss-that-disappears)
+
+| Required magnitude in units of $`\log 2`$ | Infimum of the completion factor |
+|---|---:|
+| $`1.9735`$ | $`17.493385009687\ldots`$ |
+| $`\tau`$ | $`19.723571102\ldots`$ |
+| $`4`$ | $`19.727081988\ldots`$ |
+| $`4.5`$ | $`20.211893558\ldots`$ |
+| $`5`$ | $`20.592958664\ldots`$ |
+
+Two independent computations agree at all 31,776 knots and endpoints through $`y=214710`$. The billion-height cover uses the original sieve through prime norm 32,467,011,360. [Numerical certificate](sharp_deadline.py) · [Independent prime computations](prime_knots.py) · [Verification output](evidence/check.txt)
+
+## Earlier factor 18 result
+
+[Original factor 18 publication on Zenodo](https://doi.org/10.5281/zenodo.24410788)
+
+From every real starting height $`1\le H\le1{,}000{,}000{,}000`$, a gain and a loss of more than $`1.9735\log2`$ both finish by $`18H`$. The sieve proves this finite statement unconditionally. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $`L`$-functions in the 547/727 race and its base field, including the Riemann zeta function. **At arbitrarily large heights, $`18H`$ misses the loss. At other arbitrarily large heights, it misses the gain.** Even the slightly larger factor $`2e^{11/5}=18.0500\ldots`$ fails. [Theorem and proof](PROOF.md)
 
 Each move is a doubling $`S(y)\to S(2y)`$ with $`y\gt H`$. The score measures weighted inert prime ideals minus weighted split prime ideals on the 547/727 theta-lift host, with both the width and the move fixed at two. The allowed starts lie in $`(H,CH/2]`$ when both endpoints must finish by $`CH`$. [Prime convention and weight](PROOF.md#two-statements-about-the-same-race)
 
@@ -34,6 +50,7 @@ python -m pip install -r requirements.txt
 python profile.py
 python profile_series.py
 python finite.py
+python sharp_deadline.py
 c++ -std=c++17 -O3 sieve.cpp -o /tmp/theta-factor-18-sieve
 python finite.py /tmp/theta-factor-18-sieve
 python check_source.py

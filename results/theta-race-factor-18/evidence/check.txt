@@ -8,6 +8,21 @@ H in [1,1000000000]: both endpoints <= (18)H; worst grid start 1
 H in [1000000,1000000000]: both endpoints <= (13603772/2048491)H; worst grid start 6145473
 above one billion: gain 1016187975 to 2032375950; loss 1714594397 to 3429188794
 625 integer slope enclosures; largest prime norm sieved 32467011360
+31776 knot and endpoint values agree in two independent enumerations through y=214710; 305 grid checks
+26960 central knots: unique minimum at y=201007/2; next knot values exceed it by 0.000006
+threshold tau in (3.997034484766, 3.997034484767)
+sharp factor at 1.9735 in (17.493385009687, 17.493385009688)
+left limit at tau in (17.848747144, 17.848747145)
+tau: left (21033.5229566, 21033.5229567), right (207428.0927825, 207428.0927826), sharp factor (19.723571102, 19.723571103)
+4: left (21030.8588094, 21030.8588095), right (207438.7380146, 207438.7380147), sharp factor (19.727081988, 19.727081989)
+4.5: left (20663.1386739, 20663.1386740), right (208820.5797268, 208820.5797269), sharp factor (20.211893558, 20.211893559)
+5: left (20399.0626013, 20399.0626014), right (210038.5264724, 210038.5264725), sharp factor (20.592958664, 20.592958665)
+625 signed grid enclosures: gains by 41H/4 from H=2; losses by 10H except one witness gap
+strict loss witnesses 20068 and 214710 flank the gap; the central bridge gives 41H/4
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for FactorObstruction
 'FactorObstruction.recurring_no_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FactorObstruction.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.knot_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.gap_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.beyond_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorObstruction.strict_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]

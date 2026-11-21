@@ -12,7 +12,7 @@ S(y)=\frac{\sum_v-\epsilon_v\log(Nv)W(Nv/y)}{B\sqrt y}.
 A gain or loss means $`S(2y)-S(y)\gt 1.9735a`$ or $`S(2y)-S(y)\lt -1.9735a`$. For a starting height $`H`$ and factor $`C`$, the permitted starts satisfy $`H\lt y\le CH/2`$.
 
 1. For every real $`1\le H\le10^9`$, both moves finish by $`18H`$. For $`10^6\le H\le10^9`$, both finish by $`(13603772/2048491)H\lt 7H`$.
-2. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function. For arbitrarily large $`H`$ there is no loss finishing by $`2e^{11/5}H`$. For arbitrarily large $`H`$ there is no gain finishing by that factor. These may be different heights. Since $`2e^{11/5}\gt 18.05`$, neither $`18`$ nor $`18.05`$ works universally.
+2. Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $`L`$-functions in the 547/727 race and its base field, including the Riemann zeta function. For arbitrarily large $`H`$ there is no loss finishing by $`2e^{11/5}H`$. For arbitrarily large $`H`$ there is no gain finishing by that factor. These may be different heights. Since $`2e^{11/5}\gt 18.05`$, neither $`18`$ nor $`18.05`$ works universally.
 
 The finite count is independent of any global zero theorem. The second assertion invokes Alpöge's announced Dirichlet GRH theorem for primitive Dirichlet $`L`$-functions. Its strip statement uses Mathlib's analytic continuation of the Dirichlet series. Sutherland reports that all modules replayed, the solution export passed independent kernel checks and con-leche matched the exact primitive theorem against the challenge. Its axiom dependencies are the three standard Lean axioms. [Primitive theorem and its statement](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Statements.lean#L14) [Independent statement comparison](https://math.mit.edu/~drew/grh/con-leche-compare.log) [Verification record](https://math.mit.edu/~drew/grh/) [Concrete theta trace](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
 
@@ -116,3 +116,60 @@ The logarithms use rigorous integer enclosures. For $`k=\lfloor\log_2p\rfloor`$,
 The certificate lists outward enclosures of $`(S(2y)-S(y))/\log2`$ for 625 integer starts. The largest norm sieved is 32,467,011,360. Given $`H`$, take the **next strictly later** certified witness of each sign. Between consecutive witness starts this pair stays fixed, so the largest ratio of their endpoints to $`H`$ is attained at the left endpoint. Checking these breakpoints and both range endpoints proves the two finite bounds for every real $`H`$ in the stated ranges. At $`H=10^9`$ a gain runs from 1,016,187,975 to 2,032,375,950 and a loss from 1,714,594,397 to 3,429,188,794. [Integer table](evidence/windows.tsv) · [Recomputation and coverage](finite.py) · [Expected output](evidence/check.txt)
 
 The explicit formula and almost-period calculation are written proofs. The two profile verifiers use distinct representations and the finite check uses actual prime ideals. The Lean kernel checks the transfer and log-window implications. The global theorem is supported by the linked external kernel runs.
+
+## The sharp finite deadline
+
+Fix the field, the excluded primes and the weight in the first section. Set $`r=\sqrt2`$, $`a=\log 2`$, $`B_0=2r(r-1)^2`$ and $`D(y)=(S(2y)-S(y))/a`$. For $`t\ge0`$ call $`C`$ admissible if for every real $`1\le H\le10^9`$ there are starts $`y_+,y_-\gt H`$ with $`2y_\pm\le CH`$, $`D(y_+)\gt t`$ and $`D(y_-)\lt-t`$. Write $`C_*(t)`$ for the infimum of these factors.
+
+Put $`m=201007/2`$ and $`\tau=-D(m)`$. The following formulas give the sharp answer for $`0\le t\le5`$. In both branches the admissible factors form the open interval $`(C_*(t),\infty)`$.
+
+For $`0\le t\lt\tau`$ put $`g=8/(B_0a)`$ and define
+
+```math
+A=g\big[(1+2/r)\log31+(\log47+\log7)/r\big],
+```
+
+```math
+B=g\big[4(1+1/r)\log31/31+(8/r)(\log47/47+\log7/49)\big].
+```
+
+Then $`C_*(t)=2((t+\sqrt{t^2+4AB})/(2B))^2`$. The controlling height is $`H=1`$.
+
+For $`\tau\le t\le5`$ put $`p=20068`$ and $`q=214710`$. Define $`u(t)`$ as the supremum of the strict-loss starts in $`[p,m)`$ and $`v(t)`$ as the infimum of the strict-loss starts in $`(m,q]`$. Then
+
+```math
+C_*(t)=\frac{2v(t)}{u(t)}.
+```
+
+Only prime norms up to $`8q=1717680`$ enter these two endpoints. Each is a root of a quadratic in $`\sqrt y`$ on an explicitly enumerable cell. The controlling height is now $`H=u(t)`$. At $`t=\tau`$ one has $`21033.5229566\lt u\lt21033.5229567`$ and $`207428.0927825\lt v\lt207428.0927826`$. The left limit $`17.848747144\ldots`$ and the value $`19.723571102\ldots`$ enclose 18 strictly between them. Since admissibility decreases with the threshold, **18 covers every real height through one billion exactly for $`0\le t\lt\tau`$**, including all thresholds beyond the range of the displayed formulas in the exclusion.
+
+### Between two prime norms
+
+For a good rational prime $`\ell`$, let $`h=(\ell/547)`$, $`j=(\ell/727)`$ denote Legendre symbols. Its residue degree is the least $`f\in\{1,2,4\}`$ with $`\ell^f\equiv\pm1\bmod16`$ and $`(hj)^f=1`$. Its prime ideals together contribute the signed logarithm $`-8h^f\log\ell`$ at norm $`n=\ell^f`$. This is the fibre trace used in the original finite sieve. In $`\sqrt{y}D(y)`$ that mass is multiplied by $`(W(n/(2y))/r-W(n/y))/(B_0a)`$. The tent changes branch only at $`y=n/8,n/4,n/2,n`$. Between consecutive knots the normalized move has the form $`(c+dy)/\sqrt y`$.
+
+In $`x=\log y`$ each piece therefore solves $`F''=F/4`$. Its value between endpoints $`s\lt x\lt w`$ is
+
+```math
+\frac{\sinh((w-x)/2)}{\sinh((w-s)/2)}F(s)
++\frac{\sinh((x-s)/2)}{\sinh((w-s)/2)}F(w).
+```
+
+The two weights are positive and sum to at most one, by the hyperbolic addition formula. Thus if both endpoints are at least $`-t`$ with $`t\ge0`$, the whole cell is at least $`-t`$. This also holds on pieces clipped at an endpoint of the search range. A strictly negative minimum can be certified by testing the knots. At an equality knot with negative value, a strict bound at each adjoining knot gives a strict bound in both open cells.
+
+### The first loss
+
+Before $`y=31/4`$ the knots, including the left boundary, are $`1,31/8,47/8,49/8,31/4`$. All five values are nonnegative. At the first support boundary every weight vanishes. The knot bound covers the intervening starts. On $`[31/4,79/8]`$ the contributing norms in the open cell are $`31,47,49`$, with signed masses $`8\log31,-8\log47,-8\log7`$. Inserting the two tent branches gives exactly $`D(y)=(A-By)/\sqrt y`$. It decreases strictly, from a positive value to a value below $`-5`$. The first boundary of a strict loss at height one is $`y_0(t)=((t+\sqrt{t^2+4AB})/(2B))^2`$. A gain is already available at $`y=5`$ with $`D(5)\gt5`$. The bounds $`2y_0(0)\gt17`$ and $`2y_0(5)\lt18.1`$ hold directly from the coefficients.
+
+### The loss that disappears
+
+The finite enumeration uses integer coordinates $`k=8y`$. Among all 26,960 knots from $`k=168286`$ to $`k=1659407`$, the unique minimum is at $`k=804028`$, corresponding to $`y=m`$. Every other knot lies more than $`0.000006`$ above that minimum. The cell bound proves $`D(y)\ge-\tau`$ throughout this closed central interval, with equality only at $`m`$. Both endpoint values at $`p,q`$ are strictly below $`-5`$. In particular, $`p\lt u(t)\lt21100`$ and $`207000\lt v(t)\lt q`$ for $`\tau\le t\le5`$. The bounds follow from the certified central interval and continuity at $`p,q`$. At and above $`\tau`$ the whole closed interval $`[u(t),v(t)]`$ is free of strict losses. Strict losses approach its endpoints from the outside. The endpoints can be found by inspecting consecutive knots outwards from the centre and solving $`c+dy=-t\sqrt y`$ at the boundary of the first strict-loss component on each side.
+
+To prove the global upper bounds, the 625 original enclosures supply witnesses with $`D\gt5`$ or $`D\lt-5`$. For real $`2\le H\le10^9`$ the next strictly later gain always finishes by $`41H/4`$. The next loss finishes by $`10H`$ outside $`[p,q)`$. For a sorted witness list, it suffices to check the left boundary, the upper endpoint and each witness height in the range. On each gap the next available witness is constant and its ratio to $`H`$ decreases. Including the witness height itself enforces the strict start condition. [Original grid](evidence/windows.tsv) · [Coverage calculation](sharp_deadline.py)
+
+If $`t\lt\tau`$, the additional strict loss at $`m`$ splits the exceptional gap. Both signs then finish by $`41H/4`$ for all $`2\le H\le10^9`$. For $`1\le H\lt2`$ use the gain at 5 and losses just after $`y_0(t)`$. Every factor strictly greater than $`2y_0(t)`$ works. At $`H=1`$ the endpoint is only an equality and every earlier start misses the loss. This proves the first branch, including nonattainment.
+
+Suppose now that $`\tau\le t\le5`$. The factor $`2v/u`$ is greater than $`2(207000)/21100\gt19.6`$, which covers the early heights and both grid bounds outside the gap. For $`p\le H\lt u`$ take a strict loss approaching $`u`$ from below. Its endpoint ratio is at most $`2(21100)/p`$. For $`u\le H\le v`$ take a strict loss just above $`v`$. Every $`C\gt2v/u`$ gives $`CH\gt2v`$, so this start fits. For $`v\lt H\lt q`$ use the loss at $`q`$, with ratio at most $`2q/207000`$. Both outside ratios are below three. The gain still comes from the grid. At $`H=u`$ a factor of $`2v/u`$ permits starts only in $`(u,v]`$, throughout which the loss threshold is missed. This proves the second branch.
+
+### Numerical and formal checks
+
+One implementation sieves rational primes by Eratosthenes, finds their signs from residue tables and accumulates the changes of $`c,d`$ at each knot. An independent implementation tests primality with FLINT, applies Euler's criterion and forms the two original tent sums from prefixes of signed $`\log\ell`$ and $`(\log\ell)/n`$. Both run with 176-bit Arb arithmetic. They agree in overlapping intervals of radius below $`10^{-30}`$ at every one of 31,776 knots and endpoints through $`q`$. Comparison against the independently regenerated integer sieve checks a further 305 common grid values. The verifier brackets the boundary roots at $`\tau,4,4.5,5`$, confirms the signs of the derivatives on the four pairs of crossing cells, and compares all witness ratios as exact fractions. Four local Lean lemmas check the interpolation inequality, the failed endpoint, the strict upper bound immediately beyond a gap and the touching bridge. The prime enumeration and the analytic cell representation are covered by the programs and the foregoing argument. [Independent evaluations](prime_knots.py) · [Root and coverage checks](sharp_deadline.py) · [Lean deductions](FactorObstruction.lean) · [Replay transcript](evidence/check.txt)
