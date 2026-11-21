@@ -1,0 +1,33 @@
+547.546: real interval [1/2,1] covered by 64 cells; partial sums at most 21
+8752.1093: real interval [1/2,1] covered by 59 cells; partial sums at most 70
+4376.1093: real interval [1/2,1] covered by 44 cells; partial sums at most 62
+8752.5469: real interval [1/2,1] covered by 59 cells; partial sums at most 70
+727.726: real interval [1/2,1] covered by 17 cells; partial sums at most 29
+11632.7269: real interval [1/2,1] covered by 137 cells; partial sums at most 80
+5816.1453: real interval [1/2,1] covered by 24 cells; partial sums at most 121
+11632.1453: real interval [1/2,1] covered by 137 cells; partial sums at most 80
+571.570: real interval [1/2,1] covered by 32 cells; partial sums at most 21
+9136.1141: real interval [1/2,1] covered by 56 cells; partial sums at most 76
+4568.1141: real interval [1/2,1] covered by 64 cells; partial sums at most 53
+9136.5709: real interval [1/2,1] covered by 56 cells; partial sums at most 76
+599.598: real interval [1/2,1] covered by 9 cells; partial sums at most 37
+9584.5989: real interval [1/2,1] covered by 64 cells; partial sums at most 73
+4792.1197: real interval [1/2,1] covered by 116 cells; partial sums at most 45
+9584.1197: real interval [1/2,1] covered by 64 cells; partial sums at most 73
+710 positive disjoint-within-factor zero brackets verified by 1,420 strict Hardy endpoint signs on all sixteen primitive factors.
+Positive quadratures at 710 genuine zero brackets certify all 28 width-two level and move radii by diagonal dominance.
+4 coordinates: strict two-sided level margin 1460000/1000000 and normalized move margin 2450000/1000000 in each field.
+8 coordinates: strict two-sided level margin 1400000/1000000 and normalized move margin 1830000/1000000 in each field.
+16 coordinates: strict two-sided level margin 1394000/1000000 and normalized move margin 1190000/1000000 in each field.
+32 coordinates: strict two-sided level margin 150000/1000000 and normalized move margin 140000/1000000 in each field.
+64 coordinates: strict two-sided level margin 21000/1000000 and normalized move margin 2000/1000000 in each field.
+128 coordinates: strict two-sided level margin 5900/1000000 and normalized move margin 120/1000000 in each field.
+256 coordinates: strict two-sided level margin 1360/1000000 and normalized move margin 60/1000000 in each field.
+The trigonometric symbols stay above their required thresholds on 896 closed angular cells by an independent midpoint-and-derivative calculation.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for CompactFilters
+'CompactFilters.weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.quadrature_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.affine_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.two_sided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompactFilters.unrepresented' does not depend on any axioms
+'CompactFilters.frame_perturbation' depends on axioms: [propext, Classical.choice, Quot.sound]
