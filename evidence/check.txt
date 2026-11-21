@@ -25,7 +25,7 @@ Residue-class computation confirms 8 centres, 4 sign changes and 288 exclusions
 4792.1197: real interval [1/2,1] covered by 116 cells; partial sums at most 45
 9584.1197: real interval [1/2,1] covered by 64 cells; partial sums at most 73
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6
-2763 upstream source modules, SHA-256 of sorted module names and hashes 9af7a85d27f2e8cd9ac6934919fe899b98f2813dbcf47281c09234f012662212
+2789 upstream source modules, SHA-256 of sorted module names and hashes 3777adec61ae40822f242c942681f8713c6bcc604ffc020223378a065bedee2a
 Pinned trace source hashes match both files
 Kernel replay passed for FiberTrace, HostFrame, HostAdmissible
 HostRace.jump_eq: propext, Classical.choice, Quot.sound
