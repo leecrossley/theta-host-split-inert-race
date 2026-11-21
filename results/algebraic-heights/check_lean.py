@@ -12,7 +12,8 @@ THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cel
             "dilation_elimination", "dilation_amplitude", "passage_length", "farey_denominator",
             "log_midpoint", "isolate_character", "lattice_margin",
             "signed_vandermonde", "reciprocal_secant", "four_node_quadratic", "two_weight_interval",
-            "normalized_first_hit", "first_branch_square", "one_branch_degree", "pair_unit_quartic", "scaled_elliptic_cubic")
+            "normalized_first_hit", "first_branch_square", "one_branch_degree", "pair_unit_quartic", "scaled_elliptic_cubic",
+            "harmonic_numerator", "half_point_tangent", "half_map_degree", "genus_two_coefficients")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 
@@ -32,7 +33,7 @@ def main():
             prefix = f"'AlgebraicHeights.{theorem}' depends on axioms: ["
             if not line.startswith(prefix) or not line.endswith("]"):
                 raise RuntimeError(line)
-            expected = {"propext", "Quot.sound"} if theorem == "one_branch_degree" else ALLOWED
+            expected = {"propext", "Quot.sound"} if theorem in {"one_branch_degree", "half_map_degree", "genus_two_coefficients"} else ALLOWED
             if set(line[len(prefix):-1].split(", ")) != expected:
                 raise RuntimeError(line)
         env = os.environ.copy()
