@@ -7,8 +7,8 @@ Set $K=\mathbf Q(\zeta_{16}+\zeta_{16}^{-1})$, $E=K(\sqrt{-571},\sqrt{-599})$ an
 $$
 W_b(t)=
 \begin{cases}
-b(1-1/t) & 1<t\le b,\\
-b^2/t-1 & b<t<b^2,\\
+b(1-1/t) & 1 < t\le b,\\
+b^2/t-1 & b < t < b^2,\\
 0 & \text{otherwise},
 \end{cases}
 \qquad t=n/y .
