@@ -1,4 +1,4 @@
-# Three deadline obstructions in the dyadic 547/727 prime race
+# Deadline obstructions in the dyadic 547/727 prime race
 
 The theorem assumes Dirichlet GRH for the eight odd factors of the extension and the factors of the base field, including zeta. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
@@ -168,3 +168,81 @@ Indeed, the closure of the cyclic rotation is a compact subgroup of the $`D`$-to
 The total absolute move coefficient of the selected pairs is below $`346`$ by the global cubic majorant. Hence a good shift changes the retained sum by at most $`346\cdot2\pi/M\lt0.001`$ uniformly on the entire real line. On the translated intervals use the direct-cell bound on the *retained* sum and the same absolute tail allowance. The omitted terms at the translated point can have any phases. For every sufficiently large good $`n`$, the interval $`n+J`$ still misses the large loss and contains both interior move signs. The paired interval $`n-J`$ still misses the large gain and contains both signs in the reversed orientation. The prime-only remainder is smaller than $`10^{-20}`$ on both by taking $`n`$ large. This argument controls both intervals for the same integer shift.
 
 For the factor 1,000 one may also move the initial log height forward by any $`s\in[0,1/50]`$, since $`1/50+\log500\lt6.235`$. The interior witnesses and their reflections stay eligible. Each good integer therefore supplies a full log-height interval of length $`1/50`$ for each direction. The intervals associated to different integers are disjoint for a given orientation. Consequently the log heights missing a prescribed direction by the thousand-fold deadline have lower uniform continuous density at least $`2^{-306812}/50`$. This lower density is the limit inferior of the smallest relative measure over translated intervals as their lengths tend to infinity, with starting heights on the positive log-height half-line. [Numerical comparisons](thousand_window.py)
+
+## An earlier height for factor 400
+
+Put $`\ell=3895686.221`$, $`W=5.299`$, $`X=3895692`$, $`a=\log2`$, $`H_0=e^\ell/(2\sqrt2)`$, $`B_0=10^{12}`$ and $`\epsilon=2\cdot10^{-8}`$. Write $`\log^+v=\max(0,\log v)`$.
+
+**Theorem.** If a doubling starts at $`y\gt H_0`$, finishes by $`2e^W H_0`$ and gains at least $`1.962\log2`$, one of the eight odd primitive factors has a zero $`\beta+i\gamma`$ satisfying
+
+```math
+8590\lt|\gamma|\le T=e^{1947900},\qquad
+\beta\gt\frac12+\epsilon+
+  \frac{49}{50X}\log^+\!\left(\frac{|\gamma|}{B_0}\right).
+```
+
+This implication is unconditional. In particular a gain greater than $`1.9735\log2`$ would force $`\beta\gt0.50000002`$, and $`\beta\gt3/4`$ if $`|\gamma|\ge e^{1000000}`$. With the announced critical-line theorem for primitive characters, every eligible gain falls below $`1.962\log2`$. As $`2e^W=400.27314659968\ldots`$, this starting height rules out 400. The finite interval verification below proves the implication independently of the global theorem. A direct finite exclusion of zeros throughout the indicated region would give the same prime-race conclusion. [Primitive theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean#L12) · [Independent proof audit](https://math.mit.edu/~drew/grh/)
+
+### Projecting the odd zeros
+
+Use the bilateral transforms $`\mathcal G(z)= [3-2\sqrt2\cosh(az)]/[2(\sqrt2-1)^2(1/4-z^2)]`$ and $`J(z)=2\mathcal G(z)\sinh(az/2)/a`$. Thus $`\mathcal G(it)=G(t)\gt0`$ in the real-ordinate notation above. For each odd-factor zero write $`z=\beta-1/2+it`$. The odd nontrivial-zero contribution to the exact normalized move $`f(x)`$ is $`\sum J(z)e^{zx}`$. Define two absolutely convergent projected sums, retaining every ordinate with its full multiplicity,
+
+```math
+U_0(x)=\sum_\rho J(it)e^{itx},\qquad
+V_0(s)=\sum_\rho G(t)e^{its}.
+```
+
+Conjugation of the family makes $`U_0`$ real and $`V_0`$ real and even. Write $`V_*(s)=\sum_\rho\mathcal G(z)e^{zs}`$. The compact even explicit formula in the four-moment proof evaluates **this exact sum** at $`s=0,a`$ with the same gamma integrals for general strip zeros. In the contour formula the test at a zero is the entire Laplace transform at $`z`$. The zeros can be off the line. At these two shifts the prime terms vanish as in the earlier arithmetic check. For the exact move one can first use positive smooth averages on $`[-h,h]`$ in the established prime explicit formula and let $`h\downarrow0`$. Compact supports stay inside positive log heights. The zero weights have an inverse-square summable majorant on each fixed window, and the physical prime score is continuous. This gives the pointwise formula, including the base-field term below. [Explicit formula and coefficient estimates](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.3.0/results/theta-race-waiting-bound/PROOF.md#the-transform-and-the-prime-powers) · [Even moments](#four-moments-for-the-missing-zeros)
+
+### A bound for the high ordinates
+
+For either group of eight primitive factors with conductors at most $`Q`$, use $`Q=11632`$ for the odd family and $`Q=16\cdot547\cdot727`$ for the base. If $`v\ge8590`$, then
+
+```math
+S_Q(v)=\sum_{|\gamma|\gt v}\frac1{1+\gamma^2}
+\le \frac{80[\log(2Qv)+1]}{v-2}.
+```
+
+Here is a direct count. At $`s=2+iu`$ the real part of the Hadamard logarithmic derivative of a completed primitive factor gives a sum of $`(2-\beta)/[(2-\beta)^2+(u-\gamma)^2]`$. Its value is bounded by $`\tfrac12\log(q(|u|+2))+4.5`$. Indeed the Euler logarithmic derivative costs less than 2, and the two elementary factors for zeta cost at most $`3/2`$. For the gamma derivative use the series for $`\Re\psi(v_0+iw)`$, with $`1\le v_0\le3/2`$, $`w=u/2`$ and $`m=\max(1,\lceil|w|\rceil)`$. The first $`m`$ summands cost at most $`1+\log m`$. The tail is at most $`\sum_{n\ge m}[\tfrac12/(n+1)^2+w^2/(n+1)^3]\le1`$. This proves the stated allowance. Reflection $`\rho\mapsto1-\overline\rho`$ in the functional equation supplies the Hadamard constant just as at $`u=0`$. [Total reciprocal-square mass at zero](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.3.0/results/theta-race-waiting-bound/PROOF.md#total-mass-of-the-omitted-zeros)
+
+At the midpoint of a unit interval each of its zeros contributes more than $`1/5`$. For a bin $`n\le|\gamma|\lt n+1`$, sum over both signs and eight factors. Since $`\log(Q(n+3))\gt9`$ for the two specified choices of $`Q`$ here, the count is at most $`80\log(Q(n+3))`$. For $`n\ge\lfloor v\rfloor`$ we have $`n+3\le2n`$. Integral comparison for the decreasing function $`\log(2Qu)/u^2`$ gives the displayed bound. Counting with multiplicity also covers characters with shared ordinates.
+
+### What a displacement of an odd zero can change
+
+Assume that the region in the theorem is empty. Platt’s finite theorem puts all zeros with $`|t|\le8590`$ on the line for these eight conductors. At greater ordinates up to $`B_0`$, reflection within a factor gives opposite real shifts $`\pm d`$ at the same ordinate, $`0\le d\le\epsilon`$. These two summands have the same oscillating factor $`e^{itx}`$. The following estimates refer to the average per member of the pair. [Platt, Theorem 7.1](https://arxiv.org/pdf/1305.3087#page=14)
+
+For $`|t|\ge8590`$, the explicit kernels give $`|J(it)|\le50/(1+t^2)`$ and $`|\mathcal G(it)|\le40/(1+t^2)`$. On radii $`1/4`$ about the segment between $`it-\epsilon`$ and $`it+\epsilon`$ the real argument has absolute value below $`3/4`$ and the imaginary argument has absolute value at least $`|t|-1/4`$. In the explicit formulas the denominator factors $`z\pm1/2`$ have moduli at least this last number. The hyperbolic factors are bounded by the corresponding coshes of the real argument. This gives $`|\mathcal G|\le40/(1+t^2)`$ and $`|J|\le150/(1+t^2)`$ on the disks, hence both derivatives cost less than $`2000/(1+t^2)`$ on the segment. The bound 40 for $`\mathcal G`$ also holds throughout the critical strip at these ordinates.
+
+After subtracting $`J(it)`$ the two kernel errors cost at most $`2000\epsilon e^{\epsilon x}/(1+t^2)`$ for $`0\le x\le X`$. The common coefficient multiplying the unperturbed kernel is $`\cosh(dx)-1`$. Thus the displacement through $`B_0`$ costs at most
+
+```math
+[2000\epsilon e^{\epsilon X}+50(\cosh(\epsilon X)-1)]S_{11632}(8590).
+```
+
+For $`B_0\lt|t|\le T`$ put $`p=49/50`$. Absence of zeros in the stated region gives $`e^{dx}\le e^{\epsilon X}(|t|/B_0)^p`$. The contribution to the displacement is at most $`(1000e^{\epsilon X}+50)D_p`$. An upper bound for the weighted sum over this band is
+
+```math
+D_p=\frac{160}{B_0}
+ \left[\frac{A}{1-p}+\frac{p}{(1-p)^2}\right],
+\qquad A=\log(2QB_0)+1,\quad Q=11632.
+```
+
+Indeed $`S_Q(v)\le160[\log(2Qv)+1]/v`$ there. Integrating the nonnegative weights by layers bounds their full weighted sum by $`S_Q(B_0)+(p/B_0^p)\int_{B_0}^\infty v^{p-1}S_Q(v)\,dv`$. For $`|t|\gt T`$ use the unrestricted strip bound $`(1000e^{X/2}+50)S_Q(T)\lt10^{-8}`$. Adding the three ranges gives $`|\sum J(z)e^{zx}-U_0(x)|\lt0.03`$ throughout the interval of interest.
+
+For $`s=0,a`$ apply the reflected-pair estimate with 40 in place of 50 and $`a`$ in place of $`X`$. For all $`|t|\gt B_0`$ the unrestricted cost is at most $`40(e^{a/2}+1)S_Q(B_0)`$. Hence $`|V_*(s)-V_0(s)|\lt10^{-5}`$ at both shifts. [Outward-rounded error budgets](early_400.py)
+
+### Controlling base-field zeros without a critical-line hypothesis
+
+The base contribution for a nontrivial zero is $`-J((\rho-1)/2)e^{(\rho-1)x/2}/2`$. The pole at one vanishes because $`J(0)=0`$. Put $`Q_b=6362704`$ and $`T_b=e^{40}`$. The ordinates above $`T_b`$ in absolute value cost at most $`2000S_{Q_b}(T_b)`$, allowing for the halved argument and the factor $`1/2`$. Each base character has conductor dividing $`Q_b`$. Lifting it to modulus $`Q_b`$ only adds Euler factors with their zeros on $`\Re s=0`$.
+
+McCurley's zero-free region for the full product modulo $`Q_b`$ shows that every zero with $`|\gamma|\le T_b`$, apart from a possible simple real exceptional zero, has $`(1-\beta)/2\ge \delta=[20\log(Q_bT_b)]^{-1}`$. His constant is $`9.645908801\lt10`$. The earlier total reciprocal-square mass for the sixteen factors is less than 1,000. Thus the nonexceptional base cost through $`T_b`$ is at most $`2\cdot10^6 e^{-\delta\ell}`$. [McCurley, explicit zero-free regions](https://www.sciencedirect.com/science/article/pii/0022314X84900891) · [McCurley, statement of Theorem 1.1](https://www.ams.org/mcom/1984-42-165/S0025-5718-1984-0726004-6/S0025-5718-1984-0726004-6.pdf)
+
+For a real exceptional zero put $`d=(1-\beta)/2`$. The signed kernel of $`J`$ has total variation at most 6 and support in $`[-2,2]`$. Differentiation gives $`|J'(-v)|\le12e\lt40`$ for $`0\le v\le1/2`$. Since $`J(0)=0`$, this zero costs at most $`20d e^{-dx}\le20/(e x)`$. Even allowing one such zero per base factor gives $`160/(e\ell)`$. No lower bound for $`1-\beta`$ is needed. The higher prime-power remainder is at most $`10^6 e^{-x/10}`$ and trivial zeros cost at most $`128 e^{-(x-2)/2}/(1-e^{-(x-2)})`$. For each omitted rational prime at most $`1+4/\log2`$ exponents can meet a fixed log support of width four. The local logarithmic coefficients of either eight-factor product cost at most $`8\log p`$ per power. With the two level normalizations, all omitted-prime corrections are bounded by $`10^6 e^{-x/3}`$ at these heights. Together the base zeros, omitted primes, higher powers and trivial zeros cost less than $`0.001`$. [Arithmetic estimates and omitted primes](https://github.com/leecrossley/theta-host-split-inert-race/blob/theta-race-waiting-bound-v1.3.0/results/theta-race-waiting-bound/PROOF.md#bounding-square-contributions-without-the-base-field-zero-hypothesis)
+
+### Two checks on the whole interval
+
+Retain the 13,946 verified positive brackets and their conjugates. For one bracket containing $`t`$ the retained contribution is $`-4G(t)\sin(at/2)\sin(tx)/a`$. Subtract the retained weights from $`V_0(0)`$ and $`[V_0(0)-V_0(a)]/2`$ to get the nonnegative omitted masses $`m_0,m_1`$. They are the sums of $`G(t)`$ and $`G(t)\sin^2(at/2)`$ respectively over omitted members of the projected spectrum. The two exact gamma integrals above bound each mass from above after allowing $`10^{-5}`$ for its projection. Weighted Cauchy–Schwarz bounds the absolute omitted move by $`2\sqrt{m_0m_1}/a\lt0.831`$. This use of positivity concerns real ordinates after projection. [Gamma integral calculation](cell_check.py) · [True zero checks](thousand_zeros.py)
+
+The direct calculation passes the full ordinate bracket and each closed time cell into the sine. It bisects 512 initial cells as needed. On all 1,062 leaves the retained sum is below 1.1. The Fourier calculation separately encloses 32,769 signed nodes, the degree-16 Taylor remainder, the interpolation between adjacent nodes and the displacement of each bracket from its midpoint. It also bounds the retained sum below 1.1 at every real point of $`[\ell,\ell+W]`$. The two computations use the same bracket table, kernels and ball arithmetic library. [Both interval checks](early_400.py) · [Fourier implementation](thousand_window.py) · [Check transcript](evidence/check.txt)
+
+Adding every allowance gives $`f(x)\lt1.1+0.831+0.03+0.001=1.962`$. The endpoints $`y\gt H_0`$ and $`2y\le2e^WH_0`$ imply $`\ell\lt x=\log(2\sqrt2\,y)\le\ell+W`$. This proves the theorem by contraposition. The local Lean proofs check the deadline comparison and the numerical implication at the requested move size. The explicit formula, zero counts and kernel estimates are written proofs. [Lean deductions](PairedWindows.lean) · [Numerical verifier](early_400.py)

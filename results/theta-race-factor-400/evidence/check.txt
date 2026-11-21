@@ -18,6 +18,10 @@ A 22-bit phase mesh in 13,946 coordinates changes the retained sum by less than 
 The rational log width 6.235 exceeds log(500), and twice its exponential exceeds 1,020.
 Two gamma integrals give a separate Cauchy-Schwarz tail below 0.83. Direct interval sines certify the profile above -1.97 on 2,926 closed cells.
 Inside that same interval the profile exceeds 12.1 at log centre 3855250215.346 and falls below -0.05 at 3855250215.954.
+The finite region's odd displacement costs less than 0.03, the individual moment errors are below 0.00001, and the base and remaining arithmetic terms together cost less than 0.001.
+Above exp(1000000) a zero capable of overturning the gain obstruction must have real part greater than 3/4, up to the cutoff exp(1947900).
+The independent interval DFT covers all 32,769 nodes, their connecting intervals and the ordinate errors with the same 1.1 bound.
+True-frequency interval sines bound the retained sum below 1.1 on 1,062 closed cells; the omitted projected mass is below 0.831.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for PairedWindows
 'PairedWindows.cubic_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.spectral_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -28,3 +32,5 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'PairedWindows.thousand_deadline' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.shallow_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.both_move_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.early_deadline' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.early_gain_exclusion' depends on axioms: [propext, Classical.choice, Quot.sound]

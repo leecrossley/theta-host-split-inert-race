@@ -1,4 +1,12 @@
-# Even 1,020H can miss a move in the 547/727 prime race
+# A 400H obstruction at an earlier height in the 547/727 race
+
+Take $`H_0=e^{3895686.221}/(2\sqrt2)`$ in the dyadic 547/727 prime-ideal race. If the eight odd primitive factors have all their strip zeros on the critical line, **every** doubling $`y\gt H_0`$ that finishes by $`2e^{5.299}H_0=400.27314659968\ldots H_0`$ gains less than $`1.962\log2`$. This rules out the requested gain of more than $`1.9735\log2`$, even by $`400H_0`$. The announced primitive Dirichlet theorem supplies this input. [Earlier-height proof](PROOF.md#an-earlier-height-for-factor-400) · [Upstream theorem and verification](https://math.mit.edu/~drew/grh/)
+
+**An unconditional implication locates any zero needed to overturn that conclusion.** A qualifying gain would force an odd-factor zero $`\beta+i\gamma`$ with $`8590\lt|\gamma|\le e^{1947900}`$ and $`\beta\gt0.50000002`$. Above $`e^{1000000}`$ the forced real part exceeds $`3/4`$. The proof gives a continuous lower bound in between. The comparison requires no zero-location hypothesis on the base field. The finite zero computation covers 13,946 positive brackets. The larger zero-exclusion region is a sufficient condition whose emptiness was not established by this computation. [Exact region and proof](PROOF.md#an-earlier-height-for-factor-400) · [Replay output](evidence/check.txt)
+
+The interval of log centres is $`[3895686.221,3895691.520]`$. One calculation covers it with 1,062 closed cells and the other checks 32,769 Fourier nodes and the gaps between them. The previous certificate at this location excluded $`392.73975\ldots H`$. The smallest previously published log centre in this family that excluded $`400H`$ was over 120 times as large. [Previous interval at this location](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md) · [Prior work](PRIOR-WORK.md#the-earlier-400h-obstruction)
+
+## The four-digit obstruction
 
 At $`b=r=2`$, both a large gain and a small loss occur after the explicit height $`H=e^{3855250213.808}/(2\sqrt2)`$. No doubling that starts after $`H`$ and finishes by $`2e^{6.235}H`$ loses more than $`1.9735\log2`$. The factor is **1,020.60123689658…**. In particular, 1,000 fails. There are arbitrarily late intervals of the same width missing either prescribed direction. [Proof of the four-digit obstruction](PROOF.md#a-four-digit-deadline-and-a-shallow-loss)
 
@@ -41,7 +49,8 @@ python cell_check.py
 python thousand_zeros.py
 python thousand_window.py
 python thousand_cells.py
+python early_400.py
 python check_source.py
 ```
 
-For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar and zstd installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. An optional second argument names the directory of the five upstream records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays nine local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)
+For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar and zstd installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. An optional second argument names the directory of the five upstream records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays eleven local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)
