@@ -1,0 +1,19 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+All eight primitive odd characters match the field characters on every unit class.
+6000 disjoint-within-factor Hardy sign changes at 112 bits (12000 endpoints).
+Positive brackets by conductor/label: 547/546=602, 4376/1093=750, 8752/1093=793, 8752/5469=797, 727/726=661, 5816/1453=776, 11632/7269=810, 11632/1453=811
+Four cosine moments and the cubic majorant give omitted absolute mass < 1.44.
+Frequency-bracket error < 0.043 on both windows; midpoint curvature < 343000.
+8193 signed midpoint nodes per window exceed 1.64; interpolation costs < 0.024.
+U(x) > 0.13 throughout the six-unit gain window and U(x) < -0.13 throughout the loss window.
+Prime-only error < 10^-20 for x >= 1000; log(200) < 45/8 < 6.
+806.857586985470 < 2 exp(6) < 806.857586985471; 554.544569046267 < 2 exp(45/8) < 554.544569046268.
+Two real gamma integrals and Cauchy-Schwarz independently bound omitted absolute mass by 1.52.
+Direct true-frequency sines give U > 1/20 on 2194 closed gain cells and U < -1/20 on 993 closed loss cells.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for PairedWindows
+'PairedWindows.cubic_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.spectral_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.deadlines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.strict_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
