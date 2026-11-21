@@ -2,7 +2,7 @@
 
 ## Theorem
 
-Let $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$, put $`\epsilon_v=1`$ when it splits in $`E/F`$ and $`-1`$ when it is inert. Omit the primes above $`2,547,727,343057911569,343070636977`$. The product of the two normalized first-step theta trace jumps gives this sign at each good place. [Fibre trace identity](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83)
+Let $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. For a prime ideal $`v`$ of $`F`$, put $`\epsilon_v=1`$ when it splits in $`E/F`$ and $`-1`$ when it is inert. Omit the primes above $`2,547,727,343057911569,343070636977`$. The product of the two normalized first-step theta trace jumps gives this sign at each good place. [Fibre trace identity](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83)
 
 Write $`a=\log2`$, $`r_0=\sqrt2`$, $`c=2(r_0-1)^2`$ and $`B=r_0c`$. With the race parameters $`b=r=2`$, the weighted prime-ideal sum and its normalized move are
 
@@ -36,7 +36,7 @@ G(t)=\int_{\mathbb R}g(s)e^{-its}\,ds
 \alpha(t)=\frac{2G(t)\sin(at/2)}a .
 ```
 
-The transform of the translated difference $`j(s)=[g(s+a/2)-g(s-a/2)]/a`$ at $`it`$ is $`J(it)=i\alpha(t)`$ with the Fourier convention above. The prime-only limiting profile is $`U(x)=\sum_\nu i\alpha(\nu)e^{i\nu x}`$, where the ordinates of the eight odd factors enter with multiplicity. The coefficient bound $`O((1+t^2)^{-1})`$ and the zero count give absolute uniform convergence. Conjugation pairs $`\nu`$ and $`-\nu`$ across the family, even for a nonreal character. Thus $`U`$ is real and odd. A positive ordinate and its partner contribute $`-2\alpha(\nu)\sin(\nu x)`$. [Prime-only explicit formula](https://github.com/leecrossley/theta-race-fixed-factor/blob/12b7c94cfb9586c25fb29e7c7aaf0a20adaf5b2f/PROOF.md#global-input-and-transform)
+The transform of the translated difference $`j(s)=[g(s+a/2)-g(s-a/2)]/a`$ at $`it`$ is $`J(it)=i\alpha(t)`$ with the Fourier convention above. The prime-only limiting profile is $`U(x)=\sum_\nu i\alpha(\nu)e^{i\nu x}`$, where the ordinates of the eight odd factors enter with multiplicity. The coefficient bound $`O((1+t^2)^{-1})`$ and the zero count give absolute uniform convergence. Conjugation pairs $`\nu`$ and $`-\nu`$ across the family, even for a nonreal character. Thus $`U`$ is real and odd. A positive ordinate and its partner contribute $`-2\alpha(\nu)\sin(\nu x)`$. [Prime-only explicit formula](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md#global-input-and-transform)
 
 ## A positive bound for all omitted ordinates
 
@@ -58,7 +58,7 @@ I_g(x)&=\int_0^\infty \frac{e^{-t/2}}{2\sinh t}
 \end{aligned}
 ```
 
-Indeed the test on the dual prime term is reflected, giving the plus sign for the even kernel. The completed gamma factors all have parameter $`3/4`$ at the centre. Their symmetric difference gives the displayed integral by the integral formula for the digamma function. For $`x=0,a`$ the support permits only $`2,3,4`$. At 2 only the two odd-conductor characters contribute and their values are opposite. At 3 the quartic sum vanishes. The power 4, when present, lies at $`g(a)=0`$. Hence both prime terms vanish at both points. [Explicit formula and gamma-kernel derivation](https://github.com/leecrossley/theta-race-profile-interval/blob/264a0976afd3a59266400cf8040dbe700692dda8/PROOF.md#sum-the-gamma-correction)
+Indeed the test on the dual prime term is reflected, giving the plus sign for the even kernel. The completed gamma factors all have parameter $`3/4`$ at the centre. Their symmetric difference gives the displayed integral by the integral formula for the digamma function. For $`x=0,a`$ the support permits only $`2,3,4`$. At 2 only the two odd-conductor characters contribute and their values are opposite. At 3 the quartic sum vanishes. The power 4, when present, lies at $`g(a)=0`$. Hence both prime terms vanish at both points. [Explicit formula and gamma-kernel derivation](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-profile-interval/PROOF.md#sum-the-gamma-correction)
 
 For completeness put $`u_k=2k+3/2`$, $`z=e^{-|s|}`$ and
 
@@ -113,7 +113,7 @@ For $`x\ge1000`$ the prime-only score has the following pointwise error bound fr
  +128\,\frac{e^{-(x-2)/2}}{1-e^{-(x-2)}}+22000e^{-3x/20}\lt10^{-20}.
 ```
 
-For the base zeros, the shifted real part is $`-1/4`$, the residue coefficient is $`1/2`$, the transform bound is $`1000/(1+t^2)`$ and the sum of $`(1+(\Im\rho)^2)^{-1}`$ is below 1,000. Replacing $`t`$ by $`\Im\rho/2`$ costs at most a factor of four. The pole contributes zero since $`J(0)=0`$. The sixteen trivial-zero strings start at shifted real part at most $`-1/2`$ and have spacing at least one. The support of $`j`$ has radius $`3a/2\lt2`$ and its integral of absolute value is at most $`4/a\lt6`$, giving the stated geometric bound. The Euler-product remainder after the prime-square correction starts with third powers and is bounded pointwise by $`22000e^{-3x/20}`$. The omitted prime norms are below $`e^{53}`$ and have left the support. Each term in the displayed upper bound is decreasing. The verifier checks their sum at 1,000. [Bounds for this exact score](https://github.com/leecrossley/theta-race-fixed-factor/blob/12b7c94cfb9586c25fb29e7c7aaf0a20adaf5b2f/PROOF.md#fixed-log-window)
+For the base zeros, the shifted real part is $`-1/4`$, the residue coefficient is $`1/2`$, the transform bound is $`1000/(1+t^2)`$ and the sum of $`(1+(\Im\rho)^2)^{-1}`$ is below 1,000. Replacing $`t`$ by $`\Im\rho/2`$ costs at most a factor of four. The pole contributes zero since $`J(0)=0`$. The sixteen trivial-zero strings start at shifted real part at most $`-1/2`$ and have spacing at least one. The support of $`j`$ has radius $`3a/2\lt2`$ and its integral of absolute value is at most $`4/a\lt6`$, giving the stated geometric bound. The Euler-product remainder after the prime-square correction starts with third powers and is bounded pointwise by $`22000e^{-3x/20}`$. The omitted prime norms are below $`e^{53}`$ and have left the support. Each term in the displayed upper bound is decreasing. The verifier checks their sum at 1,000. [Bounds for this exact score](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md#fixed-log-window)
 
 At $`H_*`$ all permitted starts have $`\ell\lt x\le h`$, since $`2y\le2e^LH_*`$ is equivalent to $`y\le e^LH_*`$. The prime-only error therefore proves the first assertion at this explicit height.
 

@@ -2,7 +2,7 @@
 
 ## Field and observables
 
-Take $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. Let $`\epsilon_v`$ be the split sign $`+1`$ or inert sign $`-1`$ in $`E/F`$, supplied by the first-step theta trace on good primes of $`F`$. Remove the places above $`2,547,727,343057911569,343070636977`$. The eight primitive odd Dirichlet factors of $`\zeta_E/\zeta_F`$ have conductors $`547,4376,8752,8752,727,5816,11632,11632`$. Their aggregate multiset of zero ordinates is invariant under negation. Write $`m_t`$ for the total multiplicity at a distinct ordinate $`t`$. [Field and trace lemma](https://github.com/leecrossley/theta-race-short-shifts/blob/483c31f2df2132ed2165620ea55e20e969228bfb/RaceTrace.lean#L83) · [Primitive theorem and independent checks](https://math.mit.edu/~drew/grh/)
+Take $`K=\mathbf Q(\zeta_{16})^+`$, $`F=K(\sqrt{397669})`$ and $`E=K(\sqrt{-547},\sqrt{-727})`$. Let $`\epsilon_v`$ be the split sign $`+1`$ or inert sign $`-1`$ in $`E/F`$, supplied by the first-step theta trace on good primes of $`F`$. Remove the places above $`2,547,727,343057911569,343070636977`$. The eight primitive odd Dirichlet factors of $`\zeta_E/\zeta_F`$ have conductors $`547,4376,8752,8752,727,5816,11632,11632`$. Their aggregate multiset of zero ordinates is invariant under negation. Write $`m_t`$ for the total multiplicity at a distinct ordinate $`t`$. [Field and trace lemma](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83) · [Primitive theorem and independent checks](https://math.mit.edu/~drew/grh/)
 
 At width $`b=e^a\gt 1`$, put $`r=\sqrt b`$, $`c_b=2(r-1)^2`$, $`W_b(t)=\max(0,\min(b-b/t,b^2/t-1))`$ and
 
@@ -27,7 +27,7 @@ P_*(x)=\int\frac{c_{e^a}}{2e^{a/2}}\,d\mu(a)
    +\sum_{t\ {\rm distinct}}\frac{m_t F(t)}{t^2+1/4}\,e^{itx}.
 ```
 
-Indeed the known width multiplier is $`[b+1-2r\cos(at)]/[c_b(t^2+1/4)]`$. The prime-only explicit formula has an error tending to zero uniformly on compact sets of widths. Its quadratic spectral majorant is summable against the zero count. Thus both the limit and spectral sum can pass through the finite measure integral. [Prime-only inversion on compact families of widths](https://github.com/leecrossley/theta-race-width-cusp/blob/52eee965886958193d2ff38595f92389b90f4b93/PROOF.md#the-prime-only-limit-at-a-fixed-width)
+Indeed the known width multiplier is $`[b+1-2r\cos(at)]/[c_b(t^2+1/4)]`$. The prime-only explicit formula has an error tending to zero uniformly on compact sets of widths. Its quadratic spectral majorant is summable against the zero count. Thus both the limit and spectral sum can pass through the finite measure integral. [Prime-only inversion on compact families of widths](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-width-cusp/PROOF.md#the-prime-only-limit-at-a-fixed-width)
 
 ## The theorem
 
@@ -77,7 +77,7 @@ As $`|F(t)|\le |A|+\|\mu\|_{\rm TV}`$, the last bound prices a positive shell $`
 
 The shell contribution to the squared Sobolev norm is of order $`T^{2s-3}\log T`$. Sum over $`T=2^k`$. At $`s=3/2`$ the sum through $`T`$ is comparable to $`(\log T)^2`$. Below the threshold it converges and above it diverges. This also proves existence of one derivative in logarithmic mean square.
 
-For the width-two score, let $`C_2(h)`$ be its limiting upper symmetric second difference. It is asymptotic to $`[24/c_2]h\log(1/h)`$. Applying the mean-square estimate to $`Q_2`$ and Chebyshev's inequality shows that for any fixed $`\delta\gt 0`$ the upper uniform log density of $`|\Delta_h^2Q_2(x)|\ge\delta C_2(h)`$ is $`O_\delta(h/\log(1/h))`$. The long-interval mean is taken first, and the bound holds as $`h\downarrow0`$. [Exact small-displacement maximum](https://github.com/leecrossley/theta-race-width-cusp/blob/52eee965886958193d2ff38595f92389b90f4b93/PROOF.md#the-cusp-at-every-width)
+For the width-two score, let $`C_2(h)`$ be its limiting upper symmetric second difference. It is asymptotic to $`[24/c_2]h\log(1/h)`$. Applying the mean-square estimate to $`Q_2`$ and Chebyshev's inequality shows that for any fixed $`\delta\gt 0`$ the upper uniform log density of $`|\Delta_h^2Q_2(x)|\ge\delta C_2(h)`$ is $`O_\delta(h/\log(1/h))`$. The long-interval mean is taken first, and the bound holds as $`h\downarrow0`$. [Exact small-displacement maximum](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-width-cusp/PROOF.md#the-cusp-at-every-width)
 
 ## Constructing a smooth race at every height
 

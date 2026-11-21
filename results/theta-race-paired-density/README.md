@@ -11,7 +11,7 @@ The dyadic 547/727 prime-ideal race has two certified windows. Every doubling ga
 | All intervals of log length $`T`$, uniformly as $`T\to\infty`$ | At least $`2^{-52862}`$ in the lower limit |
 | Every finite prefix from the original positive window, for any $`T\gt 0`$ | At least $`2^{-52863}`$ |
 
-Each gain exceeds $`(\log2)/40`$ and each loss exceeds the same magnitude. The first window extends to a completion deadline of $`806.857586\ldots`$ times its starting height. The second extends to $`554.544569\ldots`$ times its own. The proportions are conservative mathematical lower bounds. The actual frequency remains open. [Original windows](https://github.com/leecrossley/theta-race-factor-400/blob/f1773b07a55e76947d4e0c6ab19a112fd91fe6cf/PROOF.md) · [Prior work](PRIOR-WORK.md)
+Each gain exceeds $`(\log2)/40`$ and each loss exceeds the same magnitude. The first window extends to a completion deadline of $`806.857586\ldots`$ times its starting height. The second extends to $`554.544569\ldots`$ times its own. The proportions are conservative mathematical lower bounds. The actual frequency remains open. [Original windows](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-400/PROOF.md) · [Prior work](PRIOR-WORK.md)
 
 The phase certificate assigns different tolerances to 6,000 individual zero ordinates. The argument allows rational relations, repeated ordinates and additional ordinates at any height on the critical line. A finite collision count proves the prefix bound. A product of triangular functions proves the uniform bound. [Integer partition](evidence/phase-bins.tsv) [Verification output](evidence/check.txt)
 
