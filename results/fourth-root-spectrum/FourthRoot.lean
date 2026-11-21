@@ -42,6 +42,30 @@ theorem signed_witness {head value cut error : ℝ} (close : |value-head| ≤ er
     (margin : cut+error < head) : cut < value := by
   linarith [(abs_le.mp close).1]
 
+/-- The six-box inclusion-exclusion polynomial at its centre. -/
+theorem quintic_normalization :
+    ((6:ℝ)^5-6*4^5+15*2^5)/2112 = 1 ∧
+    20*((6:ℝ)^3-6*4^3+15*2^3)/2112 = -(5/11) := by
+  constructor <;> norm_num
+
+/-- At the moment scale used by the polynomial formula, the variance
+part of the prime-side error is already below seven parts in a hundred million. -/
+theorem quintic_variance_budget :
+    (10:ℝ)^5*(5/11)/(5000000/6)^2 < 7/100000000 := by
+  norm_num
+
+/-- A uniform sub-quarter gap follows directly from the density exponent. -/
+theorem density_gap {s b d : ℝ} (hs : s ≤ b) (hb : b ≤ 1)
+    (hd0 : 0 ≤ d) (hd1 : d ≤ 1) (density : d ≤ (12/5)*(1-s)) :
+    (s-1/2)/(2-d) ≤ 1/4 - (1-b)/5 := by
+  apply (div_le_iff₀ (by linarith : 0 < 2-d)).2
+  nlinarith [mul_nonneg (sub_nonneg.mpr hb) hd0]
+
+/-- Numerical saving left by the zero-free region after the cutoff is lowered. -/
+theorem density_exponential_budget :
+    (1:ℝ)/1000 < 1/600-1/2000 ∧ 1-(5/2)*(1/3:ℝ) = 1/6 := by
+  constructor <;> norm_num
+
 end FourthRoot
 
 #print axioms FourthRoot.affine_cell
@@ -50,3 +74,7 @@ end FourthRoot
 #print axioms FourthRoot.box_cutoff
 #print axioms FourthRoot.reconstruction
 #print axioms FourthRoot.signed_witness
+#print axioms FourthRoot.quintic_normalization
+#print axioms FourthRoot.quintic_variance_budget
+#print axioms FourthRoot.density_gap
+#print axioms FourthRoot.density_exponential_budget

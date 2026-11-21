@@ -18,6 +18,7 @@ trap 'rm -rf -- "$tmp"' EXIT
 export PYTHONDONTWRITEBYTECODE=1
 python3 -c 'import flint; assert flint.__version__ == "0.9.0"'
 python3 spectrum.py >"$tmp/receipt"
+python3 quintic.py >>"$tmp/receipt"
 python3 prime_check.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
