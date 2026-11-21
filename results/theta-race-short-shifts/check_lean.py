@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 
 
@@ -96,6 +97,7 @@ def main():
         order.prepare()
         with ThreadPoolExecutor(max_workers=args.jobs) as pool:
             running = {}
+            completed = 0
             while order.is_active():
                 for m in order.get_ready():
                     running[pool.submit(compile_module, m)] = m
@@ -103,6 +105,9 @@ def main():
                 for task in done:
                     task.result()
                     order.done(running.pop(task))
+                    completed += 1
+                    if completed % 100 == 0 or completed == len(graph):
+                        print(f"Lean build: {completed}/{len(graph)} modules ready", file=sys.stderr, flush=True)
         subprocess.run(["leanchecker", *LOCAL], env=env, cwd=build, check=True,
                        stdout=subprocess.DEVNULL)
         audit = Path(temp) / "Audit.lean"

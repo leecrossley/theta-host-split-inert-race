@@ -37,6 +37,7 @@ else
   fetch "$lean_url" "$tmp/lean.tar.zst"
   echo "890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  $tmp/lean.tar.zst" | "${sum[@]}" -c -
   tar --zstd -xf "$tmp/lean.tar.zst" -C "$tmp"
+  rm -- "$tmp/lean.tar.zst"
   export PATH="$tmp/lean-4.33.1-linux/bin:$PATH"
   math="$tmp/mathlib4"
   git init -q "$math"
@@ -47,6 +48,7 @@ else
   fetch https://github.com/CocoSgt/riemann-hypothesis-lean/releases/download/v2026-11-20/lean.tar.gz "$tmp/source.tar.gz"
   echo "9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc  $tmp/source.tar.gz" | "${sum[@]}" -c -
   tar -xzf "$tmp/source.tar.gz" -C "$tmp"
+  rm -- "$tmp/source.tar.gz"
   src="$tmp/lean/src"
   build="$tmp/build"
   trace="$tmp/trace"
