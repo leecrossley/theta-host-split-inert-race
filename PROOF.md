@@ -18,7 +18,7 @@ Let $`I_+=[469417229.340,469417235.340]`$ and $`I_-=[484947092.225,484947097.850
 
 **Theorem.** One has $`f(x)\gt1/10`$ throughout $`I_+`$ and $`f(x)\lt-1/10`$ throughout $`I_-`$. The corresponding explicit starting heights are $`H_+=e^{469417229.340}/(2r_0)`$ and $`H_-=e^{484947092.225}/(2r_0)`$. For $`y\gt H_+`$ every doubling finishing by $`2e^6 H_+`$ gains more than $`a/10`$. For $`y\gt H_-`$ every doubling finishing by $`2e^{45/8}H_-`$ loses more than $`a/10`$. In particular the deadline $`400H`$ misses the required loss at the first height and the required gain at the second.
 
-For arbitrarily large $`H`$ every eligible doubling by $`2e^6H`$ gains more than $`a/10`$. For arbitrarily large $`H`$ they all lose more than $`a/10`$. Hence no factor up to and including $`2e^6`$ can guarantee both moves of magnitude greater than $`1.9735a`$ after every height.
+For arbitrarily large $`H`$ every eligible doubling by $`2e^6H`$ gains more than $`a/10`$. For arbitrarily large $`H`$ they all lose more than $`a/10`$. Any factor that guarantees a gain greater than $`1.9735a`$ after every height must exceed $`2e^6`$. The same lower bound holds for a factor that guarantees a loss of that magnitude after every height.
 
 ## Prime score and zero ordinates
 
