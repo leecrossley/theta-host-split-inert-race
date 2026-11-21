@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Tuning a prime race to one prime power"
-abstract: "Variable-width prime-race extrema isolate individual prime powers and have a sharp two-term curvature cusp."
+abstract: "Under Dirichlet GRH, variable-width prime-race extrema isolate individual prime powers and have a sharp two-term curvature cusp. Without GRH the band formula and the cusp expansion hold for the explicit-formula sum over zeros."
 authors:
   - family-names: Crossley
     given-names: Lee
