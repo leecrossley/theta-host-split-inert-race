@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Cite the release below."
+title: "When the 547/727 prime race identifies its conductors"
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: "conductor-horizon-v1.0.1"
+date-released: 2026-11-21
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-host-split-inert-race/tree/a29fa8cac07474b434165b1f59be764a070eb7c3/results/conductor-horizon
+doi: 10.5281/zenodo.24415485
+type: software
+references:
+  - type: software
+    title: "Theta prime races for the 547/727 and 571/599 fields"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "collection-2026-11-21"
+    doi: 10.5281/zenodo.24426586
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/collection-2026-11-21
