@@ -124,8 +124,8 @@ For each frequency $\omega$, the limit of $\sigma\int_0^\infty f(x)e^{-(\sigma+i
 If $l_j,u_j$ are the endpoints after division by $10^9$, put $c_0=69315/100000>\log 2$. The Taylor inequality $\sin v\ge v-v^3/6$ for $v\ge0$ and (4) give, including $t=0$,
 
 $$
-G_b(i\gamma_j)K_t(\gamma_j)\ \ge\
-\frac{l_j\thinspace[1-(u_jc_0)^2/24]}{2(1/4+u_j^2)} .
+G_b(i\gamma_j)K_t(\gamma_j)\ \ge
+\ \frac{l_j\thinspace[1-(u_jc_0)^2/24]}{2(1/4+u_j^2)} .
 $$
 
 The sum of these five rational lower bounds is strictly greater than $19735/10000$. The inequality survives integration against $\mu$, and each $m_{\gamma_j}\ge1$. This proves (1). The interval-to-multiplier inequality for all real $t$ in the stated range and the exact final rational comparison are also checked in Lean. [Uniform bound](ShiftBound.lean)
