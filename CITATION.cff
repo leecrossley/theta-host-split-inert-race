@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "A factor of 392 fails in the 547/727 prime race"
+abstract: "Under Dirichlet GRH, a certified log interval of length 5.28 rules out a waiting factor of 2 exp(5.28) in the dyadic 547/727 prime-ideal race."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.1
+license: CC-BY-4.0
+repository-code: https://github.com/leecrossley/theta-race-distant-interval
+type: software
