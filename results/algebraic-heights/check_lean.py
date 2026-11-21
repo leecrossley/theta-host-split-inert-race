@@ -10,7 +10,8 @@ THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cel
             "cell_energy", "energy_jump", "simple_root_obstruction",
             "ratio_relation", "recover_scaled_slope", "fresh_prime_order",
             "dilation_elimination", "dilation_amplitude", "passage_length", "farey_denominator",
-            "log_midpoint", "isolate_character", "lattice_margin")
+            "log_midpoint", "isolate_character", "lattice_margin",
+            "signed_vandermonde", "reciprocal_secant", "four_node_quadratic", "two_weight_interval")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

@@ -529,3 +529,91 @@ To see this, work first over the real algebraic numbers $`k`$, which give the sa
 Choose successive actual hits of the prescribed targets so far apart that their possible prime supports $`[y_j^{1/4},8y_j]`$ are disjoint and avoid the exceptional finite set. The common-window theorem supplies hits arbitrarily late. A sufficiently late hit cannot lie at an algebraic knot under this bounded-deficiency assumption. At such an input, after clearing the algebraic square root, the unnormalized reading is an algebraic linear form in the fresh odd logs, whereas the target is the nonzero element $`\pm ta`$ of the base. The resulting polynomial with nonzero constant cannot vanish. The same argument excludes every algebraic input on the chosen late supports.
 
 Both cell coefficient forms $`U_j,V_j`$ are nonzero. A completely split prime in $`(5y_j,6y_j]`$ contributes a nonzero slope and intercept and occurs through a single norm. On that cell the radicand is $`(ta)^2-4U_jV_j`$. It is squarefree and nonconstant in its own independent variables by the proportional and independent linear-form cases in the [fixed-target proof](#a-test-at-the-fixed-rational-amplitude). The radicands on the disjoint blocks have disjoint factors of odd valuation, so their square classes are independent over $`F(t)`$. Each hit therefore supplies a new nontrivial character and the product criterion gives multiplicative independence. Removing finitely many small primes can lower the deficiency by at most their number, yielding the assertion above any prescribed prime cutoff.
+
+## Three distinct heights across both fields
+
+For a positive real $`y`$ write $`D_A(y),D_B(y)`$ for the two normalized doubling moves. Put two positive physical heights in the same class when their quotient is algebraic. For every fixed $`t\gt0`$ a class contains at most **three distinct heights** $`y\ge2790`$ with $`|D_A(y)|=t`$ or $`|D_B(y)|=t`$. It contains at most **two distinct zero heights** in that range. At $`t=3947/2000`$ the first bound holds from $`y=1`$. The fields may be chosen independently at each point. These bounds hold without an input on the zeros of Dirichlet functions. The stronger count with two labels for a simultaneous hit still has the finite, eventual and GRH ranges given in the [labelled theorem](#three-exact-hits-per-algebraic-ratio-class).
+
+Write $`K=\overline{\mathbf Q}`$ and $`a=\log2`$. In a transcendental class set $`y_j=h s_j^2`$ with $`s_j`$ positive real algebraic. None of these heights is a prime knot. Write its chosen field’s unnormalized prime-cell coefficients as $`U_j,V_j`$ and associate the vector
+
+```math
+P_j=(s_jU_j,V_j/s_j),\qquad h s_jU_j+V_j/s_j=a\sqrt h\,D_j.
+```
+
+Over $`K`$ the span of these pairs has dimension at most three for crossings with values $`D_j=\sigma_jt`$, $`\sigma_j\in\{-1,1\}`$. At zero the dimension is at most two. Indeed evaluation $`(A,B)\mapsto hA+B`$ has rank at most one at the nonzero targets and rank zero at zero. On its kernel, projection onto $`A`$ is injective and $`A,hA`$ lie in the algebraic span of logarithms of algebraic numbers. Roy’s strong six exponentials theorem bounds this kernel by dimension two. Baker’s linear independence makes the coefficient of any given odd prime logarithm a well-defined $`K`$-linear functional on either coordinate. [Roy’s theorem and the evaluation map](#two-relations-on-a-geometric-progression) · [Baker](https://doi.org/10.1112/S0025579300003971)
+
+Use $`R=19/16`$. At all $`L\ge2790`$ there is a prime whose norm on **both** hosts lies in $`(L,RL)`$ and whose signed contributions agree. Up to $`2^{1585}`$ use the certified common same-sign prime chain. For $`L\ge(8\cdot10^9)^4`$ there are even two distinct such norms in $`(L,rL)`$ with $`r=11/10`$. Take $`x=L^{1/4}`$ and $`s=101/100`$. For primes 3 modulo 16, Bennett, Martin, O’Bryant and Rechnitzer give $`|\theta(x;16,3)-x/8|\lt x/(160\log x)`$ for $`x\ge8\cdot10^9`$. As $`\log x\gt20`$, the log mass in $`(x,sx]`$ exceeds $`x((s-1)/8-(s+1)/3200)\gt x/2000`$. Apply this also with starting point $`sx`$. Each interval survives the omission of all exceptional primes, whose total log mass is less than 300. Their two fourth powers lie strictly in $`(L,rL)`$ since $`s^8\lt r`$. Both fields have residue degree four and positive sign there. The ranges overlap. Each such rational prime has a single norm on either host. [Progression theorem](https://arxiv.org/abs/1802.00085) · [Finite chains](ratio_prime_chains.py) · [Rational margins](mixed_heights.py)
+
+For an algebraic base all heights in the class are algebraic. Two distinct readings above 2790 cannot lie on the same nonzero target line. If their ratio is at least $`R`$, a common inner norm at the first point isolates it from the later support. An inner norm at the later point also gives a nonzero coefficient there. If the heights $`y\lt z`$ have ratio below $`R`$, two norms in $`(z,Rz)`$ belong to the inner band at both. In the large range the two fourth powers have equal field signs. The determinant of the two weights $`1-y/n`$ and $`1-z/n`$ at distinct norms is nonzero. In the finite range use the two certified corner directions. On one host the same determinant applies after removing common column signs. On different hosts the distinct directions give opposite relative signs at two strictly positive inner weights, again a nonzero determinant. Baker gives linear independence of the two readings after multiplying through by $`a`$. A single inner norm excludes an algebraic zero height here.
+
+For a transcendental class, a group of starts from $`Y`$ to $`Z`$ with $`RZ\lt2Y`$ shares an inner norm in $`(Z,RZ)`$. Its raw slope and intercept coefficients at all the starts are the same nonzero constants. They give coordinate functionals on the span of the $`P_j`$ with values $`s_j`$ and $`1/s_j`$. For any nonzero target the normalized evaluation gives a third functional with values $`\sigma_j`$. Any **three distinct physical heights** give independent columns for these three functionals. Multiply column $`j`$ by $`s_j`$ and put $`x_j=\sigma_j s_j`$. The entries become $`x_j^2,1,x_j`$, with pairwise distinct $`x_j`$. The Vandermonde determinant is nonzero. For two distinct starts the first two functionals alone suffice, including when the target is zero. These arguments work with $`r`$ on the large range. [Vandermonde identity](AlgebraicHeights.lean)
+
+A gap of ratio at least $`R`$ after an extreme singleton isolates that sample. On the left choose a common norm in $`(y_1,Ry_1)`$. On the right choose one in $`(8y_{\rm last}/R,8y_{\rm last})`$, beyond the support of every earlier sample. A four-sample group with only its middle gap that large has $`y_2/y_1\lt R`$. A common norm in $`(y_2,Ry_2)`$ lies in the inner bands of its first two samples, since $`R^2\lt2`$, and is absent at both later samples. Its two coordinate functionals separate the early pair. In each case a relation has zero coefficients on the isolated samples. Every pair and every nonzero-target triple is independent, by this isolation or the Vandermonde argument, since $`R^3\lt2`$. Four nonzero-target samples or three zero samples with such a gap would exceed the dimension bound. The same statements apply with $`r`$ wherever fourth-power coverage is available.
+
+For groups with no such gap, the earlier mixed theorem covers the case in which all starts are at most $`2^{1582}`$. Otherwise $`Z\gt2^{1582}`$ and $`Z/Y\lt R^3\lt2`$, so every start exceeds $`(8\cdot10^9)^4`$. Repeat the gap argument with $`r`$. We are left with a single high cluster satisfying
+
+```math
+Z/Y\lt r^3=(11/10)^3\lt\sqrt2,\qquad rZ\lt2Y.
+```
+
+At $`t=3947/2000`$ the protected slope and intercept minors remove the restriction $`y\ge2790`$. In any putative relation, primes protected below one million force the coefficients at all starts through one million to vanish separately for each occupied cell. The two equations in each double-hit cell separate its two distinct starts. For a four-sample test containing at least one such low height, at most three high starts then remain. They are independent by the preceding argument. All named-amplitude hits are transcendental. [Protected minors and the low catalog](#the-finite-catalog-and-every-later-crossing)
+
+### Interpolation at four signed scales
+
+Suppose four distinct nonzero-target heights remain in this short cluster. The three functionals with values $`s_j,1/s_j,\sigma_j`$ are independent on their span, by the nonzero three-column determinants. Since the dimension of the span is at most three, they form a basis of its dual. Applying this to each prime’s raw slope $`u_j`$ and intercept $`v_j`$ yields constants, allowed to depend on that prime, with
+
+```math
+u_j=A+B/x_j+C/x_j^2,\qquad v_j=D+E x_j+F x_j^2.
+```
+
+Indeed the functionals first act on $`s_ju_j,v_j/s_j`$. Divide or multiply by $`s_j`$ and use $`x_j=\sigma_j s_j`$ for the displayed formulas. The same argument at three zero heights uses only the two persistent functionals and gives $`u_j=A+C/s_j^2`$ and $`v_j=D+F s_j^2`$.
+
+For an active single norm $`n`$ put $`g=1/\sqrt2`$. Up to its common normalization and trace sign, its values of $`(nu,v)`$ at the successive bands in increasing order of physical height are
+
+| Band | $`nu`$ | $`v`$ |
+| --- | ---: | ---: |
+| Outer | $`8g`$ | $`-g`$ |
+| Middle | $`-4-4g`$ | $`1+2g`$ |
+| Inner | $`2`$ | $`-2`$ |
+
+The inactive type has both coefficients zero. On a cluster of ratio below two a norm passes through at most one band transition. If a rational prime has different norms on the hosts, only one norm can enter the whole cluster’s support $`[Y,8Z]`$. Indeed an active prime satisfies $`p\ge Y^{1/4}\gt16`$ here, and distinct powers of $`p`$ differ by at least that factor, whereas $`8Z/Y\lt16`$. On that host its trace sign is fixed. If the norm is the same on both, one may see both signs in each of two adjacent bands. Across all possibilities equality of two slope coefficients is equivalent to equality of the intercepts and to equality of their types. This follows from the table.
+
+For two different types at a given prime, form the absolute secant $`|v_i-v_j|/|u_i-u_j|`$ and divide by $`n`$. In an outer–middle cluster all possible values belong to the first row below, and in a middle–inner cluster to the second. These lists include the inactive type. An end transition with just one active band is covered by its adjacent row.
+
+| Adjacent bands | Possible absolute secants divided by $`n`$ |
+| --- | --- |
+| Outer and middle | $`1/8,\ 1/4,\ 1/(2\sqrt2),\ (3+2\sqrt2)/4`$ |
+| Middle and inner | $`(3-2\sqrt2)/2,\ 1/(2\sqrt2),\ 1/2,\ 1`$ |
+
+In either row distinct entries differ by a factor at least $`\sqrt2`$. Within each band the ratio $`|v/u|`$ grows by exactly $`2\sqrt2`$ on passage to the next band. Two exact arithmetic implementations give these values from the four knot jumps and from evaluations of the original tents at rational points. [Knot calculation](mixed_heights.py) · [Original-tent reconstruction](mixed_heights_recheck.py)
+
+For the nonzero-target case, if one type occurs at least three times, both interpolating quadratics take constant values at three distinct nodes and the prime is constant across all four. If a nonconstant prime takes just two types, each twice, the two pairs have the same sum of $`x`$-coordinates by the quadratic for $`v`$, and the same sum of reciprocal $`x`$-coordinates by the quadratic for $`u`$. In each polynomial the quadratic coefficient is nonzero since a nonconstant affine function cannot repeat. Distinct absolute scales preclude a zero pair sum. Equal sums and equal reciprocal sums now give the same products and hence the same unordered roots, impossible for disjoint pairs.
+
+If three types occur, let $`x_1,x_2`$ now denote the two nodes of the repeated type $`(u_*,v_*)`$. The two nonconstant differences factor as $`v(x)-v_*=F(x-x_1)(x-x_2)`$ and $`u(x)-u_*=C(1/x-1/x_1)(1/x-1/x_2)`$. At the other two nodes their absolute secants from the repeated type are therefore a fixed nonzero constant times $`x^2`$. The ratio of the larger to the smaller is strictly between one and $`\sqrt2`$ because the physical heights are distinct and $`Z/Y\lt\sqrt2`$. The secant table excludes it. [Factoring the reciprocal coordinates](AlgebraicHeights.lean)
+
+It remains to exclude **four distinct types** at one prime. This requires a common norm in two adjacent internal bands. Both signs must occur in each, so exactly two earliest heights lie in the first band and the last two in the second. In each chronological pair the two trace signs are opposite. Write $`(u_E,v_E),(u_L,v_L)`$ for the unsigned type coordinates in the early and late bands, with the slope divided by $`n`$. The table gives
+
+```math
+\left|\frac{v_L/u_L}{v_E/u_E}\right|=2\sqrt2.
+```
+
+Set $`\rho_i=1/\prod_{j\ne i}(x_i-x_j)`$. The coefficient of degree three in Lagrange interpolation shows that $`\sum\rho_i q(x_i)=0`$ for every polynomial of degree at most two. Apply it to $`v_i`$ and to $`x_i^2 u_i`$. In increasing order of signed $`x`$ the weights $`\rho_i`$ alternate signs. The two smallest absolute scales are consecutive in this order, since all remaining nodes lie outside the interval between them. The complementary two positions also have opposite parity. Thus the two barycentric weights in **each chronological pair** have opposite signs. Multiplying by the opposite trace signs in that pair makes the two resulting weights have the same sign. [Four-node identity in Lean](AlgebraicHeights.lean) · [Berrut and Trefethen](https://doi.org/10.1137/S0036144502417715)
+
+Let $`a_E,a_L`$ be the two sums of these trace-signed barycentric weights. Each is nonzero. Let $`m_E,m_L`$ be the corresponding weighted averages of $`x_i^2`$ on the two pairs. After cancelling their common sign within each pair these are ordinary positive-weight averages. Both lie between $`Y/h`$ and $`Z/h`$. The two annihilated quadratics give
+
+```math
+v_Ea_E+v_La_L=0,\qquad
+u_Ea_E m_E+u_La_L m_L=0.
+```
+
+Division gives $`|m_L/m_E|=|(v_L/u_L)/(v_E/u_E)|=2\sqrt2`$. Yet $`m_L/m_E\le Z/Y\lt\sqrt2`$. This rules out the fourth type case. Thus every prime contributes the same raw slope and intercept at all four samples. Summing gives common coefficients $`U,V`$. The fixed-magnitude equation $`(Uy+V)^2=(ta)^2 y`$ has at most two positive roots for $`ta\ne0`$. It cannot hold at four distinct heights.
+
+For three zero heights the formulas $`v_j=D+F s_j^2`$ and $`u_j=A+C/s_j^2`$ show that a nonconstant prime has three different types with $`FC\ne0`$. Fix one node $`i`$. Its two absolute secants to the other nodes equal $`|F/C| s_i^2 s_j^2`$. Their ratio is strictly between one and $`\sqrt2`$, again excluded by the table. If all prime types are constant, then all three points solve the same $`Uy+V=0`$. The persistent inner norm gives a nonzero coefficient in $`U`$ and Baker implies $`U\ne0`$. Hence there is at most one zero of this cell formula. This proves both bounds.
+
+### Counts and shared starting heights
+
+The signed supports give at least 4,910 positive and 4,911 negative heights on 547/727 whose doublings finish by $`e^{12500}`$. These totals consist of its 35 early catalog heights and crossings strictly above one million. The 13 positive and 14 negative heights on 571/599 through one million are distinct from the 35 early 547/727 heights by the disjoint certified brackets. They add 27 different physical heights. The 9,848 combined heights occupy at least $`\lceil9848/3\rceil=3283`$ algebraic-ratio classes. For gains alone the bound is $`\lceil4923/3\rceil=1641`$, and for losses $`\lceil4925/3\rceil=1642`$. The same addition to the shorter count of 1,045 gives at least 358 classes before completion height $`e^{1000}`$. Selecting one height per class gives the stated pairwise transcendental quotients. [Signed support selection](#the-finite-catalog-and-every-later-crossing) · [Disjoint catalog brackets](evidence/exact-crossings.tsv)
+
+A triple of distinct hits in one class at a fixed nonzero target would produce two independent elements of the kernel of $`(A,B)\mapsto hA+B`$, since the three vectors are independent. Projection to $`A`$ gives independent $`u,v`$ for which $`u,v,hu,hv`$ are algebraic linear forms in logarithms. The base $`h`$ is transcendental. This is the configuration excluded by the strong four exponentials conjecture, at all heights in the theorem, including mixed triples. At the named target the protected minors give the same independence for any low samples. Two zero hits in a common class likewise give this forbidden configuration. The strong four exponentials conjecture would thus give at most two distinct nonzero-target hits and at most one zero from 2790. The nonzero bound of two can be attained at suitable magnitudes arbitrarily late by the existing one-cell construction. [Arithmetic test](#what-a-pair-or-a-triple-would-imply) · [Statement of the conjecture](https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/LegacyRamanujan2013Text.pdf#page=5)
+
+The physical-height convention matters. At a high common nonzero hit on both fields, choose the joint cell containing the start, or one adjacent cell at a knot. The two signed equations either agree throughout that cell or their difference is a nonzero affine equation in the height. In the latter case $`y`$ belongs to the field of the odd prime logs of those two cells by division of the intercept difference by the slope difference. At a nonzero algebraic normalized target, substitution gives $`(\log2)^2`$ in that same field. In the identity case a persistent common inner prime rules out opposite signed profiles, so the two unsigned field moves agree throughout the cell. A simultaneous start can carry two labels in either case. The distinct-height count makes no general assertion of different profiles at every intermediate height. [Different-height elimination](#an-algebraic-dilation-determines-the-amplitude)
