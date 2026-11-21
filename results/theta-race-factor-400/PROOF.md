@@ -181,7 +181,7 @@ Put $`\ell=3895686.221`$, $`W=5.299`$, $`X=3895692`$, $`a=\log2`$, $`H_0=e^\ell/
   \frac{49}{50X}\log^+\!\left(\frac{|\gamma|}{B_0}\right).
 ```
 
-This implication is unconditional. In particular a gain greater than $`1.9735\log2`$ would force $`\beta\gt0.50000002`$, and $`\beta\gt3/4`$ if $`|\gamma|\ge e^{1000000}`$. With the announced critical-line theorem for primitive characters, every eligible gain falls below $`1.962\log2`$. As $`2e^W=400.27314659968\ldots`$, this starting height rules out 400. The finite interval verification below proves the implication independently of the global theorem. A direct finite exclusion of zeros throughout the indicated region would give the same prime-race conclusion. [Primitive theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean#L12) · [Independent proof audit](https://math.mit.edu/~drew/grh/)
+This implication is unconditional. In particular a gain greater than $`1.9735\log2`$ would force $`\beta\gt0.50000002`$, and $`\beta\gt3/4`$ if $`|\gamma|\ge e^{1000000}`$. With the announced critical-line theorem for primitive characters, every eligible gain falls below $`1.962\log2`$. As $`2e^W=400.27314659968\ldots`$, this starting height rules out 400. The finite interval verification below proves the implication independently of the global theorem. A direct finite exclusion of zeros throughout the indicated region would give the same prime-race conclusion. [Primitive theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean#L12) · [Independent verification files](https://math.mit.edu/~drew/grh/)
 
 ### Projecting the odd zeros
 
@@ -271,7 +271,7 @@ The retained sum is below $`1.17`$ on all 2,150 closed cells of the direct cover
 
 ## The first missed move at factor 400
 
-Let $`H_*`$ denote the first real starting height $`H\ge1`$ at which at least one of the two strict $`1.9735\log2`$ moves fails to finish by $`400H`$. Write $`h=\log(2\sqrt2 H)`$ for a height and $`x=\log(2\sqrt2 y)`$ for an actual start. Let $`\mathcal E`$ be the open-right exceptional region for the eight odd factors in the preceding $`1620542.278`$ theorem, with absolute ordinates above 8,590 through $`e^{810330}`$.
+Let $`H_*`$ denote the first real starting height $`H\ge1`$ at which at least one of the two strict $`1.9735\log2`$ moves fails to finish by $`400H`$. Write $`h=\log(2\sqrt2 H)`$ for a height and $`x=\log(2\sqrt2 y)`$ for an actual start. Let $`\mathcal E`$ be the exceptional region, with its strict lower bound for $`\beta`$, for the eight odd factors in the preceding $`1620542.278`$ theorem, with absolute ordinates above 8,590 through $`e^{810330}`$.
 
 **Theorem.** If $`\mathcal E`$ contains no odd-factor zero, $`H_*`$ exists, the missing move is a **gain**, and
 
@@ -279,7 +279,7 @@ Let $`H_*`$ denote the first real starting height $`H\ge1`$ at which at least on
 1620542.262999\lt h_*=\log(2\sqrt2 H_*)\le1620542.276 .
 ```
 
-The bounding values for $`H_*`$ itself differ by a factor below $`1.0131`$. The loss still occurs at this first height. The doubling **starting exactly at** $`H_*`$ satisfies $`S(2H_*)-S(H_*)=1.9735\log2`$. It is the boundary value of the move and is excluded by the strict requirement $`y\gt H`$. The theorem implies unconditionally that failure of any of these conclusions forces a zero in $`\mathcal E`$. The announced primitive Dirichlet critical-line theorem rules out that alternative. The independent finite search for prime-race witnesses does not exhaust the zeros in $`\mathcal E`$. [Finite-zero alternative](#a-second-witness-below-log-height-1620543) · [Upstream statement and checks](https://math.mit.edu/~drew/grh/)
+The bounding values for $`H_*`$ itself differ by a factor below $`1.0131`$. The loss still occurs at this first height. The doubling **starting exactly at** $`H_*`$ satisfies $`S(2H_*)-S(H_*)=1.9735\log2`$. It is the boundary value of the move and is excluded by the strict requirement $`y\gt H`$. The theorem implies unconditionally that failure of any of these conclusions forces a zero in $`\mathcal E`$. The announced primitive Dirichlet critical-line theorem rules out that alternative. The finite computations here do not verify that $`\mathcal E`$ contains no zeros. [Finite-zero alternative](#a-second-witness-below-log-height-1620543) · [Upstream statement and checks](https://math.mit.edu/~drew/grh/)
 
 ### Comparing to the actual primes throughout the search
 
