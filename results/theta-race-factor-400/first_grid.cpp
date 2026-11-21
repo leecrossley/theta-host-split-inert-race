@@ -17,7 +17,14 @@ static_assert(size == 32768 || size == 16384);
 
 constexpr int degree = 16;
 constexpr int steps_per_unit = 8;
-constexpr int last_block = 1620550*steps_per_unit/size;
+#ifdef EXTENDED_LOSS_GRID
+constexpr int ceiling = 43380920;
+constexpr bool include_gains = false;
+#else
+constexpr int ceiling = 1620550;
+constexpr bool include_gains = true;
+#endif
+constexpr int last_block = ceiling*steps_per_unit/size;
 constexpr Integer scale = Integer{1} << 48;
 
 struct Complex {
@@ -138,8 +145,8 @@ int main() {
             }
             for (int i = 0; i < size; ++i) {
                 const int tick = block*size+i;
-                if (tick < 12494*steps_per_unit || tick > 1620550*steps_per_unit) continue;
-                if (Wide{100}*values[i] > Wide{276}*scale) gain.record(tick, 1);
+                if (tick < 12494*steps_per_unit || tick > ceiling*steps_per_unit) continue;
+                if (include_gains && Wide{100}*values[i] > Wide{276}*scale) gain.record(tick, 1);
                 if (-Wide{100}*values[i] > Wide{276}*scale) loss.record(tick, -1);
             }
         }

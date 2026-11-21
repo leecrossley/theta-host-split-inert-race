@@ -1,4 +1,19 @@
-# The first missed move at factor 400 in the 547/727 prime race
+# The first missed gain and loss at factor 400 in the 547/727 prime race
+
+The first $`400H`$ miss on this field is a gain. **The first missed loss comes more than 26 times later in centred logarithmic height.** These locations follow from the announced primitive Dirichlet critical-line theorem, or from the finite exclusions below for the eight odd factors. The score is the weighted split–inert prime-ideal race with $`b=r=2`$. Each move must exceed $`1.9735\log2`$ in magnitude and start strictly after $`H`$. [Two directional bounds](PROOF.md#the-first-missed-loss) · [First gain](PROOF.md#the-first-missed-move-at-factor-400)
+
+| First missed direction | Bounds on the starting log height $`h=\log(2\sqrt2 H)`$ |
+| --- | --- |
+| Gain | $`1620542.262999\lt h\le1620542.276`$ |
+| Loss | $`43380912.47\lt h\le77157950.44`$ |
+
+At the upper loss endpoint, a whole interval of width 5.55 misses even $`514.475H`$. At the first missed loss the boundary doubling has value exactly $`-1.9735\log2`$. The ratio comparison $`26\lt h_-/h_+\lt 48`$ is for the logarithms. [Closed interval calculations](directional_loss.py)
+
+**Unconditionally, any earlier missed loss through log centre 43,380,912.47 would force an odd zero of real part above 0.5000000012 with absolute ordinate between 8,590 and 3.5 billion.** A separate, larger finite region supplies the upper loss endpoint. These regions have not been exhaustively checked. For every $`H\le e^{12500}`$ both moves are already guaranteed independently of either region. [Finite conditions](PROOF.md#the-first-missed-loss) · [Independently established finite range](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/theta-race-waiting-bound-v1.3.0)
+
+Two integer sweeps agree on 159,453,395 negative samples. Fourteen individual samples and two triangular averages complete the cover of real starting heights. Even the full sequence of dyadic cosine moments leaves a specific loss candidate at log centre 43,380,915.948 undecided among positive weighted spectra. [Triangular averages](loss_moments.py) · [Which centres the moments determine](PROOF.md#what-all-the-dyadic-moments-can-decide) · [Prior work](PRIOR-WORK.md#directional-first-failures)
+
+## The first missed gain
 
 Assume that the eight odd primitive Dirichlet factors of the 547/727 race have no zero in the explicit region described below. GRH for these functions implies this, and Alpöge's announced Dirichlet GRH theorem supplies it. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
@@ -54,6 +69,8 @@ The proof uses four cosine moments to bound every omitted zero and certifies all
 
 ## Replay
 
+Run `python3 directional_loss.py` for the new finite tests, both integer sweeps, triangular moments, direct cells and the ambiguity estimate. The full release also checks the original 13,946 positive ordinate brackets.
+
 In a Python 3.10+ virtual environment run
 
 ```sh
@@ -71,4 +88,4 @@ python check_source.py
 
 `first_cover.py` compiles `first_grid.cpp`, so this replay also needs a C++17 compiler supporting signed 128-bit integers.
 
-For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar, zstd and a C++17 compiler supporting signed 128-bit integers installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. The family tree supplies the five pinned upstream records in the [geometric-grid evidence directory](https://github.com/leecrossley/theta-host-split-inert-race/tree/b9f9d9178f689c5aa9840eff4e61bdd75fe7268f/results/geometric-grid-deadlines/evidence/upstream). An optional second argument selects another directory with the same five records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays thirteen local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)
+For a full replay on x86-64 Linux run `bash verify-release.sh` with Git, curl, tar, zstd and a C++17 compiler supporting signed 128-bit integers installed. With Lean 4.33.1 on PATH and a clean, built Git checkout of Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, run `bash verify-release.sh /path/to/mathlib4`. The family tree supplies the five pinned upstream records in the [geometric-grid evidence directory](https://github.com/leecrossley/theta-host-split-inert-race/tree/b9f9d9178f689c5aa9840eff4e61bdd75fe7268f/results/geometric-grid-deadlines/evidence/upstream). An optional second argument selects another directory with the same five records. When the live audit logs change, the script checks archived copies against the published hashes. Set `THETA_WORKERS` to change the number of zero-check processes. The script checks file hashes, verifies the source records, repeats the numerical proofs and replays seventeen local Lean deductions. The explicit formula and its analytic consequences are written proofs. [Local Lean proofs](PairedWindows.lean) [File hashes](SHA256SUMS)

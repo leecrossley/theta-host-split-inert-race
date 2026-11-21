@@ -52,6 +52,7 @@ python3 thousand_window.py >>"$tmp/receipt"
 python3 thousand_cells.py >>"$tmp/receipt"
 python3 early_400.py >>"$tmp/receipt"
 python3 first_cover.py >>"$tmp/receipt"
+python3 directional_loss.py >>"$tmp/receipt"
 
 if [[ $# -eq 0 ]]; then
   if [[ "$(uname -s)/$(uname -m)" != Linux/x86_64 ]]; then
