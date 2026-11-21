@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "The last missing splitting patterns in two theta fields"
+abstract: "For every real L from 14493/4, the interval (L,4L/3] contains all nine joint degree-one trace pairs on the 547/727 and 571/599 fields. All sixteen quadratic sign patterns occur from 26211/4. Both thresholds are sharp. A finite table classifies all misses at any factor at least 4/3. A separate progression estimate supplies explicit lower and upper mass bounds on shrinking intervals."
+authors:
+  - family-names: Crossley
+    given-names: Lee
+version: 1.0.0
+license: CC-BY-4.0
+date-released: 2026-11-21
+repository-code: https://github.com/leecrossley/theta-host-split-inert-race
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/joint-frobenius-primes-v1.0.0
+type: software
