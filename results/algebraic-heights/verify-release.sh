@@ -31,6 +31,7 @@ python3 dilated_crossings.py >>"$tmp/receipt"
 python3 rational_ratios.py >>"$tmp/receipt"
 python3 product_relations.py >>"$tmp/receipt"
 python3 mixed_heights.py >>"$tmp/receipt"
+python3 first_hit_fields.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 1 ]]; then

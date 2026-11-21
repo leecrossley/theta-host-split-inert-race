@@ -1,4 +1,17 @@
-# Three distinct crossing heights per algebraic-ratio class
+# Algebraic curves from first prime-race crossings
+
+The very first crossings on 547/727 and 571/599 give explicit points on the elliptic curve $`V^2=U^3-U`$. On either field, for each positive integer $`m`$, take the first hits at magnitudes $`1/(2m),5/(2m),7/(2m)`$ in units of $`\log2`$. Use gains on 547/727 and losses on 571/599. The resulting points on each host are linearly independent, even over the endomorphism ring modulo constant algebraic points. Their coordinates lie in the indicated multiquadratic extension of a function field. [Point coordinates and proof](PROOF.md#independent-points-on-one-elliptic-curve)
+
+| First-hit result on either host | Exact conclusion |
+| --- | --- |
+| $`n`$ distinct positive real algebraic targets in its first band | The field of the heights has degree $`2^n`$ over $`\overline{\mathbf Q}(X)`$. Every product using all $`n`$ heights with nonzero integer exponents generates the full extension. |
+| Three targets | The possible elliptic $`j`$-invariants are exactly the real algebraic numbers $`j\ge1728`$. The targets $`1,2,3`$ give $`470596/225`$. |
+| A genus $`g`$ hyperelliptic curve with real algebraic branch points | $`2g+1`$ targets suffice to realize its quadratic function field over the displayed base. This number is minimal for that projection. |
+| Heights from different fields | Across both complete first bands, at most one pair admits a nontrivial two-height power relation modulo algebraic numbers. |
+
+The first cells involve only the prime 31 on 547/727 and norm $`7^2`$ on 571/599. They end at starting heights $`47/8`$ and $`79/8`$. Every target through 12 on the first field and through 6 on the second is covered. At the named magnitude 1.9735, the quotient with the first hit at magnitude 2 is transcendental and has degree four over the host’s base. All these statements are unconditional. [First prime cells](PROOF.md#one-rational-prime-determines-the-initial-interval) · [First-height fields](PROOF.md#the-field-generated-by-any-finite-set-of-targets) · [Curves and branch points](PROOF.md#which-curves-occur) · [Cross-field pairs](PROOF.md#how-often-can-a-pair-from-different-hosts-satisfy-a-power-relation) · [Prior work](PRIOR-WORK.md#first-crossings-and-algebraic-curves)
+
+## Earlier height-ratio and product results
 
 Choose exact crossings of either sign on either of the 547/727 and 571/599 prime races, at the same magnitude $`1.9735\log2`$. **Among any four distinct starting heights, two have transcendental quotient.** This holds at every height from one, independently of any global zero-location theorem. When both fields cross at the same height, that starting height counts once. [All-height proof](PROOF.md#three-distinct-heights-across-both-fields) · [Exact prime-band checks](mixed_heights.py)
 
@@ -85,3 +98,5 @@ The standard replay also checks the 51 early joint cells, all 529,258 joint cell
 The product checker re-evaluates both endpoints of every 512-place height bracket in the original tent sums. It verifies four integral basis changes and the lower bounds on the logarithmic gap between products. For an independent replay with python-flint 0.9.0 run `python3 product_recheck.py`. It recovers the roots directly from two original tent values per prime cell and calculates all leading Gram determinants with FLINT. The primary replay needs only the Python standard library for this arithmetic. [Product certificate](product_relations.py) · [Independent transcript](evidence/independent-products.txt) · [All 512-place brackets](evidence/height-brackets-512.tsv)
 
 The mixed-height checker verifies the complete secant tables in the quadratic field, the short-interval constants, and all sixteen target-sign orders. For a separate exact reconstruction, run `python3 mixed_heights_recheck.py` with python-flint 0.9.0. It solves for each coefficient using two rational evaluations of the original tents and polynomial arithmetic modulo $`X^2-2`$. Four additional Lean lemmas check the signed Vandermonde, reciprocal factors, four-node polynomial identity and positive-weight bounds. Roy’s theorem and the progression estimate are cited inputs to the written proof. [Exact secants](mixed_heights.py) · [Independent transcript](evidence/independent-mixed-heights.txt) · [Lean deductions](AlgebraicHeights.lean)
+
+The first-cell replay uses the prime degrees and fixed-point logarithms. An independent check evaluates both original tents with Arb and computes the elliptic invariants from translated Weierstrass cubics with FLINT. The five new Lean deductions cover the inverse identities, reciprocal quartic, one-branch degree inequality and elliptic cubic identity. [First-cell verifier](first_hit_fields.py) · [Independent calculation](first_hit_recheck.py) · [Independent transcript](evidence/independent-first-hits.txt) · [Lean deductions](AlgebraicHeights.lean)

@@ -11,7 +11,8 @@ THEOREMS = ("protected_log", "affine_zeros", "square_refinement", "threshold_cel
             "ratio_relation", "recover_scaled_slope", "fresh_prime_order",
             "dilation_elimination", "dilation_amplitude", "passage_length", "farey_denominator",
             "log_midpoint", "isolate_character", "lattice_margin",
-            "signed_vandermonde", "reciprocal_secant", "four_node_quadratic", "two_weight_interval")
+            "signed_vandermonde", "reciprocal_secant", "four_node_quadratic", "two_weight_interval",
+            "normalized_first_hit", "first_branch_square", "one_branch_degree", "pair_unit_quartic", "scaled_elliptic_cubic")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 
@@ -31,7 +32,8 @@ def main():
             prefix = f"'AlgebraicHeights.{theorem}' depends on axioms: ["
             if not line.startswith(prefix) or not line.endswith("]"):
                 raise RuntimeError(line)
-            if set(line[len(prefix):-1].split(", ")) != ALLOWED:
+            expected = {"propext", "Quot.sound"} if theorem == "one_branch_degree" else ALLOWED
+            if set(line[len(prefix):-1].split(", ")) != expected:
                 raise RuntimeError(line)
         env = os.environ.copy()
         env["LEAN_PATH"] = directory + os.pathsep + env.get("LEAN_PATH", "")

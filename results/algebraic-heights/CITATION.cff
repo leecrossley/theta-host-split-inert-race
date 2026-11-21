@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
-title: "Three distinct crossing heights per algebraic-ratio class"
-abstract: "Among any four distinct starting heights for either sign of the exact magnitude 1.9735 on the 547/727 and 571/599 prime-ideal races, two have transcendental quotient. This holds independently of global zero location. From height 2790 the same bound applies to every fixed nonzero magnitude, with at most two distinct zero heights per class."
+title: "Algebraic curves from first prime-race crossings"
+abstract: "The first hitting heights on two prime-ideal races generate explicit multiquadratic function fields. Three targets realize every real algebraic elliptic j-invariant at least 1728. Rational target triples give independent points on V^2 = U^3 - U. At most one cross-field pair admits a power relation modulo algebraic numbers."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.5.0
+version: 1.6.0
 license: CC-BY-4.0
 date-released: 2026-11-21
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/tree/3240a0c9707c7deb4cbc19ee04b4a220aeb0898c/results/algebraic-heights
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/algebraic-heights-v1.6.0
 type: software
