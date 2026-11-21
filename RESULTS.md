@@ -60,3 +60,5 @@ GitHub shows the current status and subsequent replies at each original link.
 - [theta-race-filtered-deadline PR 4](https://github.com/leecrossley/theta-race-filtered-deadline/pull/4) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/24)
 - [theta-race-curvature-euler-factors PR 3](https://github.com/leecrossley/theta-race-curvature-euler-factors/pull/3) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/26)
 - [theta-race-width-cusp PR 3](https://github.com/leecrossley/theta-race-width-cusp/pull/3) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/23)
+- [theta-race-width-regularity PR 1](https://github.com/leecrossley/theta-race-width-regularity/pull/1) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/27)
+- [theta-race-finite-euler-readout PR 1](https://github.com/leecrossley/theta-race-finite-euler-readout/pull/1) · [Maintained discussion](https://github.com/leecrossley/theta-host-split-inert-race/pull/28)
