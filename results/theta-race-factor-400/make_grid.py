@@ -19,7 +19,7 @@ def coords(z):
     return (integer(z.real*SCALE), integer(z.imag*SCALE))
 
 
-def build(table, path, size):
+def build(table, path, size, ceiling=1620550):
     assert size in (16384,32768)
     width=size//8
     ctx.prec=144
@@ -38,7 +38,7 @@ def build(table, path, size):
             d=arb(high-low)/(2*10**14)
             v=arb(low+high,high-low)/(2*10**14)
             b=coefficient(t); mass+=abs(b)
-            shift+=abs(coefficient(v)-b)+abs(b)*1620550*d
+            shift+=abs(coefficient(v)-b)+abs(b)*ceiling*d
             q=round(float(t*width/(2*pi)))
             delta=t*width/2-q*pi
             assert abs(delta) < arb(8)/5
@@ -50,11 +50,12 @@ def build(table, path, size):
                 z*=acb(0,delta)/(k+1)
             print(*values,file=out)
     assert mass < 346 and all_orders < 2000
-    assert shift < arb(1)/1000
+    assert shift < arb(2)/1000
     trunc=mass*(arb(8)/5)**17/factorial(17)
     assert trunc < arb(1)/10**7
     unit = arb(1)/SCALE
-    phase_error = 4*800*unit*(1+2*unit)**800
+    blocks = ceiling*8//size+1
+    phase_error = 4*blocks*unit*(1+2*unit)**blocks
     input_error = phase_error*2000+6*13946*(ORDER+1)*unit
     stage_error = arb(0)
     for _ in range(size.bit_length()-1):

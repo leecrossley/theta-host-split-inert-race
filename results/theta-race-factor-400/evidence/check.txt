@@ -31,6 +31,14 @@ Five extra gain witnesses use direct true-frequency sines. 23 closed cells join 
 The 32,768-point integer grid certifies 5,911,490 gain samples and 5,911,639 loss samples, with all gaps and strict endpoints checked.
 The 16,384-point integer grid certifies 5,911,490 gain samples and 5,911,639 loss samples, with all gaps and strict endpoints checked.
 The first missed move at factor 400 is a gain. The two bounding starting heights have ratio below 1.0131 if the finite odd exceptional region is empty.
+A missing loss through log centre 43,380,912.47 would force an odd zero above real part 0.5000000012 at absolute ordinate between 8,590 and 3,500,000,000. Box smoothing costs below 0.009 on the retained spectrum.
+Four filtered cosine moments on 2,048 interval pairs bound the triangular omitted mass below 0.020. Fourteen supplementary points and two positive triangular averages pass the strict loss inequality.
+At log centre 43,380,915.948 the retained signed loss lies between 1.90 and 1.96. The unknown positive spectrum has dyadic-moment ambiguity exceeding 0.59 in each direction in the relaxed measure problem.
+Two simple two-ordinate spectra with the natural weights have exactly identical dyadic moments. Their signed moves differ at log centres 1 and 43,380,915.948.
+An interval DFT with 32,769 nodes and 1,986 direct closed cells enclose the 5.55-wide no-loss interval beginning at 77,157,950.44. Its completion factor exceeds 514.475.
+The 32,768-point integer grid certifies 159,453,395 negative samples and the open real-height cover through 43,380,912.47.
+The 16,384-point integer grid certifies 159,453,395 negative samples and the open real-height cover through 43,380,912.47.
+Under the stated finite exclusions the first missed loss lies after 26 times and before 48 times the first missed gain in centred logarithmic height.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for PairedWindows
 'PairedWindows.cubic_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.spectral_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -45,3 +53,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'PairedWindows.early_gain_exclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.earlier_deadline_and_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedWindows.first_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.loss_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.extended_loss_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.half_grid_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedWindows.residual_straddles' depends on axioms: [propext, Classical.choice, Quot.sound]

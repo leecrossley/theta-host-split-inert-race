@@ -97,6 +97,27 @@ theorem first_boundary {f : ℝ → ℝ} {h t : ℝ} {l r : ℕ → ℝ}
   exact le_antisymm (le_of_tendsto' (hc.tendsto.comp hr) after)
     (ge_of_tendsto' (hc.tendsto.comp hl) before)
 
+/-- Open endpoints keep every point of a positive average in the eligible window. -/
+theorem loss_support {h v s W t : ℝ} (left : v+s-W < h) (right : h < v-s)
+    (lo : v-s ≤ t) (hi : t ≤ v+s) : h < t ∧ t < h+W := by
+  constructor <;> linarith
+
+/-- The point-head margin survives all losses in the early finite test. -/
+theorem extended_loss_budget {p f : ℝ} (head : 276/100 < p)
+    (errors : |f-p| ≤ (2+752+9+14+1)/1000) : 19735/10000 < f := by
+  linarith [(abs_le.mp errors).1]
+
+/-- A half-grid time reads two adjacent even moments. -/
+theorem half_grid_moment (u v : ℝ) :
+    2 * Real.sin u * Real.sin v = Real.cos (v-u) - Real.cos (v+u) := by
+  rw [Real.cos_sub, Real.cos_add]
+  ring
+
+/-- The two extreme residual signs straddle the required loss at the tested point. -/
+theorem residual_straddles {p M : ℝ} (lo : 19/10 < p) (hi : p < 196/100)
+    (mass : 59/100 < M) : p-M < 19735/10000 ∧ 19735/10000 < p+M := by
+  constructor <;> linarith
+
 end PairedWindows
 
 #print axioms PairedWindows.cubic_majorant
@@ -113,3 +134,7 @@ end PairedWindows
 #print axioms PairedWindows.early_gain_exclusion
 #print axioms PairedWindows.earlier_deadline_and_margin
 #print axioms PairedWindows.first_boundary
+#print axioms PairedWindows.loss_support
+#print axioms PairedWindows.extended_loss_budget
+#print axioms PairedWindows.half_grid_moment
+#print axioms PairedWindows.residual_straddles
