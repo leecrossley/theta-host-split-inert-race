@@ -248,7 +248,7 @@ Write $`b=\log(2r H)`$. A witness centre $`x`$ covers every $`b`$ in the open in
 
 ## A smaller explicit exponent at every height
 
-**Theorem.** For every real $`H\ge1`$, both signed dyadic changes of magnitude greater than $`3.32\log2`$ finish strictly before $`e^{161020}H^{17001/16999}`$. The preceding explicit all-height interval used exponent $`3001/2999`$. The new estimate uses the same isolated zero, the same complex disk exclusions for the base-field zeros, and the same 40 long boxes. Here a positive Logan kernel controls the unknown high zeros. [Earlier all-height proof](https://doi.org/10.5281/zenodo.24410806) · [Büthe's use of the Logan kernel in finite-height prime estimates](https://arxiv.org/abs/1410.7015)
+**Theorem.** For every real $`H\ge1`$, both signed dyadic changes of magnitude greater than $`3.32\log2`$ finish strictly before $`e^{161020}H^{17001/16999}`$. The preceding explicit all-height interval used exponent $`3001/2999`$. The new estimate uses the same isolated zero, the same complex disk exclusions for the base-field zeros, and the same 40 long boxes. Here a positive Logan kernel controls the unknown high zeros. [Earlier all-height proof](https://doi.org/10.5281/zenodo.24410807) · [Büthe's use of the Logan kernel in finite-height prime estimates](https://arxiv.org/abs/1410.7015)
 
 Let $`c=8550`$ and $`L\gt0`$. Take a uniform point $`(v_1,v_2,v_3)`$ on the unit two-sphere, tilt its probability law by $`e^{cLv_1}`$ and renormalize. The law of $`Lv_3`$ is a positive symmetric measure supported on $`[-L,L]`$. Its bilateral Laplace transform is
 

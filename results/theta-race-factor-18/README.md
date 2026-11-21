@@ -53,7 +53,7 @@ At large heights the normalized change approaches a uniformly convergent sum ove
 
 The recurrence proof uses Alpöge's announced primitive Dirichlet GRH theorem, independently matched to its formal statement by Sutherland's checks. Of the nine local Lean lemmas, `recurring_no_loss` assumes a bound on late translates. The lemma `move_fits` places the doubling inside the logarithmic interval. The other seven check interpolation, endpoints and deadlines in the finite calculation. The analytic recurrence and its application to gains and losses are written out in the proof. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Prior work](PRIOR-WORK.md)
 
-Under GRH for the primitive Dirichlet functions of the race and its base field, including the zeta function, the companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://doi.org/10.5281/zenodo.24410794)
+Under GRH for the primitive Dirichlet functions of the race and its base field, including the zeta function, the companion result proves that $`e^{175}`$ works at every height. [Fixed-factor proof](https://github.com/leecrossley/theta-race-fixed-factor/releases/tag/v1.0.1)
 
 ## Replay
 

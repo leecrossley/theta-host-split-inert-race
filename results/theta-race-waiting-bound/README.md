@@ -41,7 +41,7 @@ Run `bash verify-release.sh` to replay the complete paper on x86-64 Linux, or su
 
 ## Earlier waiting interval
 
-The original all-height proof and its direct prime counts are retained below. Its archived edition has its own citation. [Original release](https://doi.org/10.5281/zenodo.24410806) · [Original archived paper](https://doi.org/10.5281/zenodo.24410806)
+The original all-height proof and its direct prime counts are retained below. Its archived edition has its own citation. [Original release](https://doi.org/10.5281/zenodo.24410807) · [Original archived paper](https://doi.org/10.5281/zenodo.24410806)
 
 After **every** starting height $`H\ge1`$, the split–inert lead on the 547/727 field both gains and loses more than $`1.9735\log 2`$ over a doubling. Both moves finish before
 

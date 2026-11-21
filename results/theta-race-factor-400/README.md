@@ -56,7 +56,7 @@ The failure also occupies a positive fraction of log heights. For each prescribe
 
 ## The earlier factor-400 certificate
 
-The two earlier one-way windows and their original publication record remain available. [Original tagged release](https://doi.org/10.5281/zenodo.24411635) · [Original archived paper](https://doi.org/10.5281/zenodo.24411635)
+The two earlier one-way windows and their original publication record remain available. [Original tagged release](https://github.com/leecrossley/theta-race-factor-400/releases/tag/v1.0.0) · [Original archived paper](https://doi.org/10.5281/zenodo.24411635)
 
 **A factor of 400 fails in both directions at explicit starting heights.** In the 547/727 prime-ideal race with $`b=r=2`$, every eligible doubling gains at one height and every eligible doubling loses at another. The two certified log intervals have widths $`6`$ and $`45/8`$, both greater than $`\log200`$. [Theorem and proof](PROOF.md)
 
