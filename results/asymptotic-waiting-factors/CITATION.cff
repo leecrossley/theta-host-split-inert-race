@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Asymptotic waiting factors for the 547/727 prime race"
-abstract: "An equivalence between a short prime-race reversal and an off-line Dirichlet zero, plus a count of extremal ordinates necessary for arbitrarily late factor-400 misses."
+abstract: "In the 547/727 prime race, a gain and a loss each larger than 1.9735 log 2 in magnitude both finish by 2.00125H at arbitrarily large starting heights H if and only if one of the eight odd Dirichlet factors has an off-line zero. If an off-line zero exists and a move is missed by 400H at arbitrarily large H, the rightmost line contains at least 14,488 distinct positive zero ordinates."
 authors:
   - family-names: Crossley
     given-names: Lee
