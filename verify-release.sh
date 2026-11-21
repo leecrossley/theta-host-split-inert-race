@@ -48,9 +48,9 @@ if [[ $# -eq 0 ]]; then
   test "$(git -C "$math" rev-parse HEAD)" = "$mathrev"
   (cd "$math" && lake exe cache get)
 fi
+test "$(git -C "$math" rev-parse HEAD)" = "$mathrev"
 (cd "$math" && "${sum[@]}" -c - <<'MATHLIB_HASHES'
 3bba06a6dcfac62c11b0b06ffe6bbc953a093a92df1a58473b0daa84bd7e07f8  Mathlib.lean
-86d3aaad83e64cb64a24167fd4ddb2eeec5ca4a19a9298459e87a57fec151040  Mathlib/NumberTheory/LSeries/DirichletContinuation.lean
 1009a101f52a9d5d8ca57666f0256bae91abdb693e0f27b5a4622cffcc38cf03  lake-manifest.json
 MATHLIB_HASHES
 )

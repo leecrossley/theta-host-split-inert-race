@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "A fixed waiting factor for the 547/727 prime race"
-abstract: "A fixed multiplicative deadline for both signed doubling moves in the 547/727 prime-ideal race."
+abstract: "A fixed multiplicative deadline under Dirichlet GRH for both signed doubling moves in the 547/727 prime-ideal race."
 authors:
   - family-names: Crossley
     given-names: Lee
