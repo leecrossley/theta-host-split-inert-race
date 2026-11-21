@@ -1,6 +1,7 @@
 All 63 real primitive nonprincipal factors exceed 0.288 on [127/128,1]. Two rational cells, 2,758 Abel blocks and a uniform character-sum tail per factor.
 Bordignon's published Table 6 gives each of 16 patterns log mass between L/198 and L/186 in (L,4L/3] for log L >= 1,097.
-Each pattern has mass greater than width/1,800 from width 6L/log L. For log L >= 6,004, widths at least L/(log L)^10 give mass between width/65 and width/63.
+With t = log L >= 1,097 the mass exceeds width/1,800 for widths at least 6L/t. At t >= 6,004, widths from L/t^10 give mass between width/67 and width/61.
+The bounds width/65 and width/63 hold from width 3L/t^10 at t >= 6,004 and from width L/t^10 at t >= 12,959.
 Exact sieve to 33,554,432. The complete exceptional-gap table has 73 sign rows and 42 trace rows including initial gaps.
 All four corners and all nine trace pairs persist from 14,493/4. All sixteen sign patterns persist from 26,211/4. The best factors from L >= 1 are respectively 337, 431 and 769.
 Verified 4,126 complete bins, 66,016 labelled primes (688 trial and 65,328 Proth), and every connecting gap. Largest witness has 1,586 bits.

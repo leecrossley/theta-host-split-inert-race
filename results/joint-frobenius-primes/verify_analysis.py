@@ -112,14 +112,22 @@ def verify_constants():
     assert F(1, 64) - 7*error/1097 > F(1, 66)
     assert F(1, 64) + 7*error/1097 < F(1, 62)
     assert F(1, 64) - error*(F(2, 6) + F(1, 1097)) > F(1, 1800)
-    # Row (8.7,5,10,0.00019) of the published Table 6.
-    assert exp_upper(F(87, 10)) < 6004
+    # Bordignon, Table 6, p. 1435. The triples below are (width factor, lower denominator, upper denominator).
+    assert exp_upper(F(87, 10)) < 6004 and modulus <= 6004**5
     assert F(6004, 2)**28 / factorial(28) > (2 * 10**7) * 6004**12
-    fine = F(19, 100000 * 64) + F(1, 10**7)
-    assert F(1, 64) - fine * (2 + F(1, 6004**10)) > F(1, 65)
-    assert F(1, 64) + fine * (2 + F(1, 6004**10)) < F(1, 63)
+    assert modulus <= 12959**3 and exp_upper(F(83, 10)) < 12959
+    for log_start, table_constant, bounds in (
+        (6004, F(19, 1000), [(1, 67, 61), (3, 65, 63)]),
+        (12959, F(32, 10000), [(1, 65, 63)]),
+    ):
+        endpoint = table_constant / 64 + F(1, 10**7)
+        for width_factor, lower, upper in bounds:
+            interval = endpoint * (F(2, width_factor) + F(1, log_start**10))
+            assert F(1, lower) < F(1, 64) - interval
+            assert F(1, 64) + interval < F(1, upper)
     print("Bordignon's published Table 6 gives each of 16 patterns log mass between L/198 and L/186 in (L,4L/3] for log L >= 1,097.")
-    print("Each pattern has mass greater than width/1,800 from width 6L/log L. For log L >= 6,004, widths at least L/(log L)^10 give mass between width/65 and width/63.")
+    print("With t = log L >= 1,097 the mass exceeds width/1,800 for widths at least 6L/t. At t >= 6,004, widths from L/t^10 give mass between width/67 and width/61.")
+    print("The bounds width/65 and width/63 hold from width 3L/t^10 at t >= 6,004 and from width L/t^10 at t >= 12,959.")
 
 
 if __name__ == "__main__":
