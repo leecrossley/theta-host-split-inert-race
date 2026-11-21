@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Both prime-race moves finish by a factor of 10¹⁸"
-abstract: "An unconditional all-height waiting factor of 10^18 for both dyadic 547/727 prime-race moves."
+abstract: "Under Dirichlet GRH, an all-height waiting factor of 10^18 for both dyadic 547/727 prime-race moves. Heights up to 10^9 need no hypothesis."
 authors:
   - family-names: Crossley
     given-names: Lee

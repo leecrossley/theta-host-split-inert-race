@@ -33,11 +33,30 @@ def direct_at_727():
     return raw
 
 
+def check_archived_bands(rows):
+    bands = [tuple(map(int, line.split())) for line in
+             (ROOT / "evidence" / "bands.tsv").read_text().splitlines()]
+    edges = [band[0] for band in bands]
+    assert edges == sorted(set(edges))
+    for tick, score_lo, score_hi in rows:
+        assert {tick // 4, tick // 2, tick} <= set(edges)
+        lower = upper = Fraction(0)
+        for edge, log_lo, log_hi, ratio_lo, ratio_hi in bands:
+            if tick // 4 < edge <= tick // 2:
+                lower += Fraction(16 * log_lo, 2**80) - Fraction(4 * tick * ratio_hi, 2**112)
+                upper += Fraction(16 * log_hi, 2**80) - Fraction(4 * tick * ratio_lo, 2**112)
+            elif tick // 2 < edge <= tick:
+                lower += Fraction(8 * tick * ratio_lo, 2**112) - Fraction(8 * log_hi, 2**80)
+                upper += Fraction(8 * tick * ratio_hi, 2**112) - Fraction(8 * log_lo, 2**80)
+        assert Fraction(score_lo, 10**12) <= lower <= upper <= Fraction(score_hi, 10**12), tick
+
+
 def main():
     if not __debug__:
         raise RuntimeError("Run with assertions enabled.")
     ctx.prec=192
     rows=[tuple(map(int,row.split())) for row in (ROOT/"evidence"/"raw-scores.tsv").read_text().splitlines()]
+    check_archived_bands(rows)
     for x,(_,a,b) in zip(direct_at_727(),rows[:3],strict=True):
         assert arb(a)/10**12 <= x <= arb(b)/10**12
     for group,p in ((rows[:3],727),(rows[3:],547)):
@@ -50,6 +69,7 @@ def main():
         # The second-difference in this odd tick is a Kronecker delta at k.
         assert k==p**deg([2,0,-4,0,1],p)
     print("Direct factorization over residue fields and termwise sums independently enclose the three scores at 727 squared.")
+    print("Exact rational sums of the archived sieve bands enclose all six raw scores.")
     print("Exact rational differences exclude the alternative mass at both conductor norms.")
 
 

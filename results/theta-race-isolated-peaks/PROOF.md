@@ -10,12 +10,14 @@ S(y)=\frac1{B\sqrt y}\sum_v-\epsilon_v\log(Nv)\,W(Nv/y),\qquad
 s=\log(2y),\quad Q(s)=S(e^s/2).
 ```
 
-The upper limit of $`Q(s)`$ as $`s\to\infty`$ is $`M=1+V(0)`$, given explicitly below, with $`175.71160384847\lt M\lt 175.71160384849`$. If $`s,t\ge300`$ and $`1/2\le|s-t|\le10^9`$, the following conclusions hold simultaneously for every such real pair.
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. The upper limit of $`Q(s)`$ as $`s\to\infty`$ is $`M=1+V(0)`$, given explicitly below, with $`175.71160384847\lt M\lt 175.71160384849`$. If $`s,t\ge300`$ and $`1/2\le|s-t|\le10^9`$, the following conclusions hold simultaneously for every such real pair.
 
 1. At most one of $`Q(s),Q(t)`$ can reach 162.
 2. If $`Q(s)\gt 170`$ then $`Q(s)-Q(t)\gt 20`$. If $`Q(s)\gt 175`$ then $`Q(s)-Q(t)\gt 40`$.
 
 Thus a large score gives both gains into that centre and losses out of it across an entire continuum of allowed dilations. For centres $`s\ge10^9+300`$ both flanks are available throughout the range. The upper uniform log density of starts with $`S(y)\ge162`$ is at most $`1/(2\cdot10^9)`$. The lower uniform log density of starts with $`S(y)\gt 175`$ is at least $`2^{-48007}`$. Here the lower uniform density is $`\liminf_{T\to\infty}\inf_{A\ge0}T^{-1}\int_A^{A+T}\mathbf1_{\mathcal E}(u)\,du`$ in log height. The upper density uses $`\limsup`$ and $`\sup`$. Shifting all log coordinates by $`a`$ makes no difference to these densities.
+
+Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) Without GRH, the two interval covers still show that the terms $`2G(\nu)(1-\cos(\nu h))`$ from the listed signed-bracket pairs sum to more than 56 for every $`1/2\le h\le10^9`$. The Lean lemmas, and the formula for $`V(0)`$ as a sum over zeros, are also unconditional.
 
 ## The unshifted prime profile
 
@@ -26,7 +28,7 @@ G(t)=\frac{3-2r_0\cos(at)}{c(t^2+1/4)},\qquad
 V(s)=\sum_\nu G(\nu)e^{i\nu s},\qquad D(s)=V(0)-V(s).
 ```
 
-The weights are strictly positive. The verified primitive Dirichlet theorem places the zeros on the critical line, including the base-field factors in the inversion below. Conjugation pairs the ordinates across the family, so $`V`$ is real and even. The absolute convergence is uniform by the quadratic denominator and the zero count. In particular $`D(s)\ge0`$. [Upstream theorem checks](https://math.mit.edu/~drew/grh/) · [Factors and zero weights](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md)
+The weights are strictly positive. Under GRH, which Alpöge's announced Dirichlet GRH theorem supplies, the zeros lie on the critical line, including those of the base-field factors in the inversion below. Conjugation pairs the ordinates across the family, so $`V`$ is real and even. The absolute convergence is uniform by the quadratic denominator and the zero count. In particular $`D(s)\ge0`$. [Upstream theorem checks](https://math.mit.edu/~drew/grh/) [Factors and zero weights](https://github.com/leecrossley/theta-race-distant-interval/blob/527fffe7b7808457b47a292144fea96b556158a8/PROOF.md)
 
 We detail how the original prime-only score recovers this **unshifted** profile. The bilateral transform of $`Q`$ for the full prime sum is $`\mathcal G(z)L_D(1/2+z)`$, where
 
@@ -80,7 +82,7 @@ The remaining alternating terms decrease in magnitude. The last staggered cell c
 
 ## Why any sufficiently high score is isolated
 
-In the Hilbert space with one coordinate per zero, put $`u(s)_\nu=\sqrt{G(\nu)}e^{i\nu s}`$. Translation is unitary and $`\|u(s)-u(t)\|^2=2D(s-t)`$. Thus $`\sqrt{D(s-t)}\le\sqrt{D(s)}+\sqrt{D(t)}`$. If two prime scores reach 162 after log centre 300, then each individual deficit is less than 13.713. Their separation consequently has deficit below $`4\cdot13.713\lt 56`$. This excludes the whole band in either direction. Within any interval of length $`10^9`$ above 300 the high-score set has diameter at most $`1/2`$ and measure at most $`1/2`$. Tiling increasingly long intervals gives its upper uniform density. Initial bounded ranges contribute zero in the limit. [Geometric and rational implications in Lean](IsolatedPeaks.lean)
+In the Hilbert space with one coordinate per zero, put $`u(s)_\nu=\sqrt{G(\nu)}e^{i\nu s}`$. Translation is unitary and $`\|u(s)-u(t)\|^2=2D(s-t)`$. Thus $`\sqrt{D(s-t)}\le\sqrt{D(s)}+\sqrt{D(t)}`$. If two prime scores reach 162 after log centre 300, then each individual deficit is less than 13.713. Their separation consequently has deficit below $`4\cdot13.713\lt 56`$. This excludes the whole band in either direction. Within any interval of length $`10^9`$ above 300 the high-score set has diameter at most $`1/2`$ and measure at most $`1/2`$. Tiling increasingly long intervals gives its upper uniform density. Initial bounded ranges contribute zero in the limit. [Rational implications in Lean, taking the geometric inequality as a hypothesis](IsolatedPeaks.lean)
 
 For a score exceeding 175 its individual deficit is smaller than 0.713. For a score exceeding 170 the corresponding bound is 5.713. Let $`a_1=\sqrt{D(s-t)}`$ and $`b_1=\sqrt{D(s)}`$. The displacement certificate gives $`a_1^2\gt 56`$. In both cases $`a_1\gt b_1`$, and the triangle inequality gives
 
