@@ -2,7 +2,7 @@
 
 The sharp factor for obtaining both a gain and a loss of more than $`1.9735\log 2`$ is **$`17.493385009687\ldots`$** over every real starting height from $`1`$ through $`e^{40.0507}/(2\sqrt2)`$, about $`8.75\times10^{16}`$. Every larger factor works throughout this range. Equality already fails at $`H=1`$. From $`10^9`$ to the new upper endpoint, $`16.5H`$ suffices. This result uses finite prime and zero checks and assumes no global zero hypothesis. [Proof](PROOF.md#the-first-missed-18h-deadline) · [Two checks of the positive averages](onset_spectrum.py) · [Replay output](evidence/check.txt)
 
-For the first miss at $`18H`$, the proof gives the following finite test. Suppose all zeros of the eight specified Dirichlet functions with $`8590\lt|\Im\rho|\le5{,}000{,}000`$ lie on the critical line. The **first missed move is a loss**, and its starting height $`H_*`$ satisfies
+For the first miss at $`18H`$, the proof gives the following finite test. Suppose all zeros of the eight odd Dirichlet factors in the [finite zero test](PROOF.md#a-finite-zero-test-for-the-first-miss) with $`8590\lt|\Im\rho|\le5{,}000{,}000`$ lie on the critical line. The **first missed move is a loss**, and its starting height $`H_*`$ satisfies
 
 ```math
 40.0507 < \log(2\sqrt2\,H_*) \le 40.0936.
@@ -89,6 +89,14 @@ python finite.py /tmp/theta-factor-18-sieve
 python late_slabs.py /tmp/theta-factor-18-sieve
 python late_roots.py /tmp/theta-factor-18-sieve
 python check_source.py
+python splitting_square_bound.py /tmp/theta-factor-18-sieve /tmp/theta-factor-18-bins
+python splitting_square_recheck.py /tmp/theta-factor-18-bins
+python onset_spectrum.py hardy
+python onset_spectrum.py exterior
+python onset_spectrum.py direct
+python onset_spectrum.py split
+python onset_window.py
+python onset_window.py cells
 ```
 
 The first `finite.py` command checks coverage from the stored table. The second regenerates every enclosure. For the full x86-64 Linux replay with Git, curl, tar and zstd, use `bash verify-release.sh`. With Lean 4.33.1 on PATH and a built Mathlib at commit `0df444a360eaa60ab8c11dca51a86af692955474`, use `bash verify-release.sh /path/to/mathlib4`. An optional second argument supplies local copies of the five published source and audit files. The release replay also compiles the Lean implications, rechecks the module with the kernel and compares the full output against the receipt. [Lean deductions](FactorObstruction.lean) · [File hashes](SHA256SUMS)
