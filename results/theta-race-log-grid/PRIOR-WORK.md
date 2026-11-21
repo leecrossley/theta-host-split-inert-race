@@ -1,6 +1,6 @@
 # Prior work and scope
 
-Reviewed 21 November 2026. The claim is a uniform grid and a full log interval of width $`10^{-6}`$ for each sign of the dyadic 547/727 change, at every real starting height and within the previously certified deadline. The offset of the grid may be prescribed arbitrarily. I found no earlier publication of that discretization or of these two field-specific certified moduli for the full profile.
+Reviewed 21 November 2026. The claim is a uniform grid and a full log interval of width $`10^{-6}`$ for each sign of the dyadic 547/727 change, at every starting height $`H\ge1`$ and within the previously certified deadline. The offset of the grid may be prescribed arbitrarily. I found no earlier publication of that discretization or of these two field-specific certified moduli for the full profile.
 
 | Source | Relation |
 |---|---|

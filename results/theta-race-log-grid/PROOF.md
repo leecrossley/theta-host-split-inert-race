@@ -25,7 +25,7 @@ V(x)=\sum_\nu G(\nu)e^{i\nu x},\quad
 U(x)=\sum_\nu i\alpha(\nu)e^{i\nu x}.
 ```
 
-All $`G`$ are positive, the ordinates pair under conjugation, and both series converge absolutely and uniformly. The primitive Dirichlet strip theorem supplies all-ordinate reality. The predecessor bounds the difference between $`f`$ and $`U`$ at each $`x\ge55`$. In its notation $`|f(x)-U(x)|\le E(x)`$, with $`E`$ decreasing, $`E(58)\lt6`$ and $`E(100)\lt0.007`$. [Explicit remainder and arithmetic inputs](https://github.com/leecrossley/theta-race-filtered-deadline/blob/2400dc5ac2a7969d41e1a4bde1eb44dd6c63b7a2/PROOF.md) · [Independent primitive-theorem verification](https://math.mit.edu/~drew/grh/)
+All $`G`$ are positive, the ordinates pair under conjugation, and both series converge absolutely and uniformly. The primitive Dirichlet strip theorem supplies all-ordinate reality. The predecessor bounds the difference between $`f`$ and $`U`$ at each $`x\ge55`$. In its notation $`|f(x)-U(x)|\le E(x)`$, with $`E`$ decreasing, $`E(58)\lt6`$ and $`E(100)\lt0.007`$. The earliest linked derivation states the bound for $`x\ge1000`$. It already holds for $`x\gt53+3a/2`$, because every omitted norm is below $`e^{53}`$ and the other terms do not depend on the window. This release needs only $`x\gt58`$. [Explicit remainder and arithmetic inputs](https://github.com/leecrossley/theta-race-filtered-deadline/blob/2400dc5ac2a7969d41e1a4bde1eb44dd6c63b7a2/PROOF.md) · [Independent primitive-theorem verification](https://math.mit.edu/~drew/grh/)
 
 The Fourier coefficients of $`|\sin(s/2)|`$ give an identity with nonnegative terms
 
