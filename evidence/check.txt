@@ -1,0 +1,17 @@
+5 pinned upstream files match: primitive Dirichlet strip theorem, three standard axioms, two external kernel records
+All eight primitive odd characters match the field characters on every unit class.
+5200 disjoint-within-factor Hardy sign changes at 96 bits (10400 endpoints).
+Positive brackets by conductor/label: 547/546=520, 4376/1093=646, 8752/1093=693, 8752/5469=688, 727/726=574, 5816/1453=665, 11632/7269=703, 11632/1453=711
+Full majorant mass lies between 386.7375649676 and 386.7375649677.
+Omitted mass < 1.72; frequency-bracket error < 0.03; midpoint curvature < 320000.
+4097 grid lower bounds for the negative midpoint head exceed 0.02; interpolation costs < 0.067.
+Hence U(x) < 1.8 throughout [3895686.23, 3895691.51].
+Prime-only error < 10^-20 for x >= 1000; 392.739750703596 < 2 exp(132/25) < 392.739750703597.
+Real gamma integral encloses the full mass in (386.71, 386.76); omitted mass < 1.74.
+Direct interval sines on 1179 closed cells independently give U(x) < 1.9 throughout.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DistantInterval
+'DistantInterval.spectral_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DistantInterval.explicit_no_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DistantInterval.reflected_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DistantInterval.late_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DistantInterval.move_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
