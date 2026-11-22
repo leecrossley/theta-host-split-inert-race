@@ -29,5 +29,53 @@
       "results/theta-race-isolated-peaks/evidence/zero-brackets.tsv",
       "results/theta-race-waiting-bound/evidence/finite-zeros.tsv"
     ]
+  },
+  {
+    "source": "FiberTrace.lean",
+    "copies": [
+      "results/theta-race-short-shifts/FiberTrace.lean"
+    ]
+  },
+  {
+    "source": "results/theta-race-factor-18/evidence/windows.tsv",
+    "copies": [
+      "results/theta-race-log-grid/evidence/finite-windows.tsv"
+    ]
+  },
+  {
+    "source": "results/consecutive-doubling-patterns/check_grid_zeros.py",
+    "copies": [
+      "results/geometric-grid-deadlines/check_grid_zeros.py"
+    ]
+  },
+  {
+    "source": "results/consecutive-doubling-patterns/evidence/dyadic-zeros.tsv",
+    "copies": [
+      "results/geometric-grid-deadlines/evidence/dyadic-zeros.tsv"
+    ]
+  },
+  {
+    "source": "results/consecutive-doubling-patterns/evidence/upstream/Main.lean",
+    "copies": [
+      "results/geometric-grid-deadlines/evidence/upstream/Main.lean"
+    ]
+  },
+  {
+    "source": "results/consecutive-doubling-patterns/evidence/upstream/Statements.lean",
+    "copies": [
+      "results/geometric-grid-deadlines/evidence/upstream/Statements.lean"
+    ]
+  },
+  {
+    "source": "results/compact-filter-oscillation/check_zeros.py",
+    "copies": [
+      "results/cross-field-filter-obstruction/check_zeros.py"
+    ]
+  },
+  {
+    "source": "results/compact-filter-oscillation/evidence/brackets.tsv",
+    "copies": [
+      "results/cross-field-filter-obstruction/evidence/brackets.tsv"
+    ]
   }
 ]

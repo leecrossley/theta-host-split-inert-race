@@ -4,7 +4,7 @@
 
 Published edition 1.0.4 has DOI [10.5281/zenodo.24415520](https://doi.org/10.5281/zenodo.24415520). The [edition index](RESULTS.md#edition-dois) lists the other papers.
 
-**Research collection.** [Browse all results on 547/727 theta prime race](RESULTS.md), including proofs, certificates and original citations.
+**Research collection.** [Browse the 547/727 and 571/599 theta prime races](RESULTS.md), including proofs, certificates and original citations.
 
 Set $K=\mathbf Q(\zeta_{16}+\zeta_{16}^{-1})$, $E=K(\sqrt{-571},\sqrt{-599})$ and $F=K(\sqrt{571\cdot599})$. These are the degree-16 CM field and its degree-8 real subfield in Alpöge’s explicit example. The primes being counted are prime ideals of $F$. Each gets a sign from the first step of the theta parameter recursion over $E/F$. [Host construction](https://github.com/Deicyde/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Formalism/LocalRingCardinality/SpanPowerMembership/ExampleLayerExistsGenerators.lean#L207)
 
