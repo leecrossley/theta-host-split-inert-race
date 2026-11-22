@@ -1,0 +1,29 @@
+primary continuous cover: 52935 38997 1966 closed arcs at zero, the early integer maximum and the benchmark.
+Two strictly increasing first-passage branches: 4004 3434 slope cells. Every margin from 0 through 2 is covered.
+The 15 other words occur at integer starts through 1469, all four margins > 2.
+early peak height: (4669521616740, 4669521616741) / 10^8
+early peak margin: (16824492876, 16824492877) / 10^10
+first return above peak: (2028851406421, 2028851406422) / 10^5
+full catalogue onset: (2030653359533, 2030653359534) / 10^5
+integer peak: (16822228889, 16822228890) / 10^10
+late root at the integer peak: (2028850019344, 2028850019345) / 10^5
+zero margin: (4574015111, 4574015112) / 10^5
+margin 1.6: (4661099018, 4661099019) / 10^5
+margin 2: (2030819027109, 2030819027110) / 10^5
+The first successful integer start for four gains at 1.9735 is 20306534.
+independent continuous cover: 45267 33890 1970 closed arcs at zero, the early integer maximum and the benchmark.
+Two strictly increasing first-passage branches: 5005 4120 slope cells. Every margin from 0 through 2 is covered.
+The 15 other words occur at integer starts through 1469, all four margins > 2.
+early peak height: (4669521616740, 4669521616741) / 10^8
+early peak margin: (16824492876, 16824492877) / 10^10
+first return above peak: (2028851406421, 2028851406422) / 10^5
+full catalogue onset: (2030653359533, 2030653359534) / 10^5
+integer peak: (16822228889, 16822228890) / 10^10
+late root at the integer peak: (2028850019344, 2028850019345) / 10^5
+zero margin: (4574015111, 4574015112) / 10^5
+margin 1.6: (4661099018, 4661099019) / 10^5
+margin 2: (2030819027109, 2030819027110) / 10^5
+The first successful integer start for four gains at 1.9735 is 20306534.
+Peak height is in (46695216167402621654621, 46695216167402621654622) / 10^18 by direct prime counting.
+Peak margin is in (1682449287659191709, 1682449287659191710) / 10^18 by direct prime counting.
+Integer margin is in (1682222888957865575, 1682222888957865576) / 10^18 by direct prime counting.

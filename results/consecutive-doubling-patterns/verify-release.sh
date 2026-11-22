@@ -29,6 +29,7 @@ python3 return_bounds.py >>"$tmp/receipt"
 python3 check_grid_zeros.py >>"$tmp/receipt"
 python3 grid_certificate.py "$tmp/grid-sum" >>"$tmp/receipt"
 python3 grid_independent.py >>"$tmp/receipt"
+bash verify-first-catalogue.sh >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then
