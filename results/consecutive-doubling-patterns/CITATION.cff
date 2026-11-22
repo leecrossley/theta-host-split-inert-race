@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Cite the release below."
 title: "One, two or three readings in a two-field prime race"
-abstract: "For every lower height from 46769 up to but excluding 46993, one earlier prime-race threshold combination survives in later observations of the 547/727 and 571/599 fields. With one or two 547/727 readings and any finite number on 571/599, the common upper endpoint must strictly exceed 17341923439 squared over eight or 17258590369 squared over eight, respectively. Three 547/727 readings suffice above 46769 squared over eight. The third cuts the required endpoint by a factor exceeding 136 billion. All three bounds are sharp and unconditional for algebraic linear recovery at algebraic observation heights. The retained six-step recurrence assumes GRH for sixteen odd primitive Dirichlet L-functions. Alpöge's announced Dirichlet GRH theorem supplies this input."
+abstract: "For every lower height from 46769 up to but excluding 46993, one earlier prime-race threshold combination survives in later observations of the 547/727 and 571/599 fields. With one or two 547/727 readings and any finite number on 571/599, the common upper endpoint must strictly exceed 17341923439 squared over eight or 17258590369 squared over eight, respectively. Three 547/727 readings suffice above 46769 squared over eight. A third reading reduces the infimum by a factor exceeding 136 billion compared with two readings. All three bounds are sharp and unconditional for algebraic linear recovery at algebraic observation heights. The retained six-step recurrence assumes GRH for sixteen odd primitive Dirichlet L-functions. Alpöge's announced Dirichlet GRH theorem supplies this input."
 authors:
   - family-names: Crossley
     given-names: Lee
@@ -43,6 +43,7 @@ references:
       - family-names: Crossley
         given-names: Lee
     version: "consecutive-doubling-patterns-v1.1.1"
+    doi: 10.5281/zenodo.24431174
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.1.1
   - type: software
     title: "Prime and square starts in the two theta prime races"
