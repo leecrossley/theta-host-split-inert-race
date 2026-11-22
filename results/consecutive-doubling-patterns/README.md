@@ -2,7 +2,7 @@
 
 On the 547/727 and 571/599 fields, the first integer start for **two consecutive gains on both fields**, each larger than $`1.9735\log 2`$, is **20,306,534**. The second doubling finishes at **81,226,136**. Every other two-step joint sign pattern already occurs at an integer start by **1,469**, with all four moves larger than $`2\log 2`$ in their prescribed directions. Two finite prime counts exclude **every real start** up to the threshold crossing. The calculation is unconditional. [First-occurrence proof](PROOF.md#first-occurrence-on-two-consecutive-doublings) · [Certificate](evidence/first-catalogue.txt)
 
-The required margin makes a measurable difference. At normalised margin $`1.6`$, four gains first become possible just above $`46{,}610.99018\ldots`$. The early maximum is $`1.682449287659191709\ldots`$, at a noninteger height. At that margin, strict gains are first possible just above $`20{,}288{,}514.06421\ldots`$. Integer starts lose the early opportunity at the smaller margin $`1.682222888957865575\ldots`$. Between these two margins, the first successful integer is **more than 434 times** the infimum for real starts. Both changes of regime are sharp. [Real and integer thresholds](PROOF.md#real-and-integer-first-starts)
+The required margin makes a measurable difference. At normalized margin $`1.6`$, four gains first become possible just above $`46{,}610.99018\ldots`$. The early maximum is $`1.682449287659191709\ldots`$, at a noninteger height. At that margin, strict gains are first possible just above $`20{,}288{,}514.06421\ldots`$. Integer starts lose the early opportunity at the smaller margin $`1.682222888957865575\ldots`$. Between these two margins, the first successful integer is **more than 434 times** the infimum for real starts. Both changes of regime are sharp. [Real and integer thresholds](PROOF.md#real-and-integer-first-starts)
 
 | Required gain, in units of $`\log 2`$ | Infimum of real starts, rounded down to five decimals | First integer start |
 | ---: | ---: | ---: |
@@ -11,7 +11,7 @@ The required margin makes a measurable difference. At normalised margin $`1.6`$,
 | 1.9735 | 20,306,533.59533 | 20,306,534 |
 | 2 | 20,308,190.27109 | 20,308,191 |
 
-For **every** normalised margin from 0 through 2, two prime-sum curves determine the infimum of successful real starts and the least successful integer. At the real infimum one gain equals the threshold. On the crossing band the other three normalised gains are above 20, 48 and 38, respectively. At every algebraic margin in this range the exact real onset is transcendental. [Prime-sum branches and arithmetic type](PROOF.md#real-and-integer-first-starts)
+For **every** normalized margin from 0 through 2, two prime-sum curves determine the infimum of successful real starts and the least successful integer. At the real infimum one gain equals the threshold. On the crossing band the other three normalized gains are above 20, 48 and 38, respectively. At every algebraic margin in this range the exact real onset is transcendental. [Prime-sum branches and arithmetic type](PROOF.md#real-and-integer-first-starts)
 
 At the integer threshold, the early four-gain window is only 0.333262779289365032… units wide. Three equally spaced samples per unit miss 0.02116621319… percent of possible clock phases. Four guarantee detection. If samples instead repeat every octave, the sharp count is 97,121 offsets per octave. [Optimal sampling proof](PROOF.md#how-many-samples-detect-the-early-gain) · [Independent checks](evidence/clock-phases.txt)
 
