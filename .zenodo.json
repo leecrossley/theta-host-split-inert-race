@@ -1,0 +1,12 @@
+{
+  "title": "Prime and square starts in the two theta prime races",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>At normalized margin 1.9735, the first rational prime and perfect square at which both the 547/727 and 571/599 fields gain on two consecutive doublings are 20306543 and 20313049. Finite prime counts give the first prime and square for every margin from 0 through 2. The three successive early thresholds for squares, primes and integers are linearly independent over the real algebraic numbers. Their exact recovery from later algebraic-height moves loses one dimension at each of 46687, 46703 and 46993. For lower cutoffs from 46769 through every height below 46993 neither field alone can recover the surviving combination. Together they recover it precisely when the final observation height exceeds 273417420.125. Exactly three readings on 547/727 are required near this sharp endpoint. All three late real crossings at the arithmetic-grid thresholds are transcendental. These results are unconditional. The retained six-step recurrence assumes GRH for the sixteen odd primitive Dirichlet L-functions.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/025de8150531602ef70bae93f1cbaa9e3614c344/results/consecutive-doubling-patterns/PROOF.md\">Proof and exact endpoint conventions</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "consecutive-doubling-patterns-v1.2.0"
+}
