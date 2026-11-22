@@ -8,6 +8,7 @@ For every exponent at least 128, primes 3 mod 8 supply at least three degree-fou
 571/599 saves one prime exactly at exponents 4, 5.
 Six times the three prime densities gives the sharp constants 3/4, 15/16 and 9/8.
 Exact rational elimination reproduces all 18 early minima and the two one-field singleton primes.
+The four listed trace exclusions give degree-one pairs (0, -1), (0, 0), (1, 0) and (1, 0) in increasing prime order.
 Independent residue-square and prime-divisor checks verify 720 witnesses; a second analytic subinterval covers the infinite tail.
 Independent sign multiplicities: 8, 10 or 12 active assignments out of 64 residue/sign choices.
 Three exact rows recover log_2(31), log_2(7) and log_2(47).

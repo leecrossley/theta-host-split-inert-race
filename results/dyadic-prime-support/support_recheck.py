@@ -95,6 +95,28 @@ def early():
     return fields
 
 
+def check_field_exclusions():
+    expected = {
+        343057911569: (0, -1),
+        343070636977: (0, 0),
+        413718278401: (1, 0),
+        603339156001: (1, 0),
+    }
+    residues = [characters(host) for host in range(2)]
+    assert set(expected) == set(BAD[0][3:] + BAD[1][3:])
+    for prime, pair in expected.items():
+        actual = []
+        for host in range(2):
+            coefficient = 0
+            if prime not in BAD[host]:
+                norm, sign = prime_data(prime, host, residues[host])
+                if norm == prime:
+                    coefficient = sign
+            actual.append(coefficient)
+        assert tuple(actual) == pair
+    print("The four listed trace exclusions give degree-one pairs (0, -1), (0, 0), (1, 0) and (1, 0) in increasing prime order.")
+
+
 def verify_large_octaves():
     with (EVIDENCE / "prime-norm-witnesses.tsv").open() as f:
         rows = list(DictReader(f, delimiter="\t"))
@@ -132,5 +154,6 @@ if __name__ == "__main__":
     if not __debug__:
         raise RuntimeError("Run with assertions enabled.")
     early()
+    check_field_exclusions()
     verify_large_octaves()
     densities()
