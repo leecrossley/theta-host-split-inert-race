@@ -1,0 +1,12 @@
+{
+  "title": "First opposite runs at powers of two in two prime races",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>On the 547/727 and 571/599 fields the first exact power-of-two start for two gains on the former and two losses on the latter is 2^34. Reversing the fields gives 2^12. Each change strictly exceeds 1.9735 log 2 in its prescribed direction. Two independent prime sieves through norm 2^38 certify the complete first-occurrence table through exponent 34 for every nonnegative margin. Fourteen words occur and 23 records are controlled by sixteen margins linearly independent together with 1 over the real algebraic numbers. These are unconditional results. The retained infinite six-step recurrence uses GRH for sixteen primitive Dirichlet functions.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/d222be96bf4d3238b2d9df3c4af33da379c8603c/results/consecutive-doubling-patterns/PROOF.md\">First-exponent proof and independent arithmetic checks</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "consecutive-doubling-patterns-v1.4.0"
+}
