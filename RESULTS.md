@@ -101,7 +101,7 @@ The all-height crossing magnitude in algebraic-heights v1.5.0 and v1.5.2 is $1.9
 
 Each DOI identifies a fixed release. The final column identifies the archive that contains the proof linked on that row. A shared release can contain several papers. The collection as archived on 21 November 2026 is available at [10.5281/zenodo.24426586](https://doi.org/10.5281/zenodo.24426586).
 
-Zenodo lists the archived fourth-root spectrum and asymptotic waiting-factor releases under the collection title. Their rows use the paper titles and proof links from those editions.
+Rows for archived editions use the paper titles and proof links from those editions.
 
 The Lean verifier in versions 1.0.0 and 1.0.1 of the 571/599 prime race skips imports with non-ASCII names. A clean build stops at `DataParams₂`. The corrected verifier includes 26 more dependencies and replays the same three proof files. [Corrected source](https://github.com/leecrossley/theta-host-split-inert-race/tree/9343745adbd726ddf0c7c54511fbe38f3683984c) [Passing Linux build](https://github.com/leecrossley/theta-host-split-inert-race/actions/runs/44856323248/job/136699277357)
 
