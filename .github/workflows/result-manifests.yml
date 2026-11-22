@@ -10,5 +10,5 @@ jobs:
         with:
           persist-credentials: false
       - run: sh verify-collection.sh
-      - name: Check displayed inequalities
+      - name: Check GitHub maths notation
         run: python3 tools/check_display_math.py
