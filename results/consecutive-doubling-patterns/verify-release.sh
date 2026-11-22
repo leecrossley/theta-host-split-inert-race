@@ -31,6 +31,7 @@ python3 grid_certificate.py "$tmp/grid-sum" >>"$tmp/receipt"
 python3 grid_independent.py >>"$tmp/receipt"
 bash verify-first-catalogue.sh >>"$tmp/receipt"
 bash verify-dyadic-starts.sh >>"$tmp/receipt"
+python3 four_gain/replay.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then

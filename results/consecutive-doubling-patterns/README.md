@@ -8,6 +8,12 @@ At strict margin zero, **14 of the 16** two-step patterns occur at the 35 starts
 
 Run `bash verify-dyadic-starts.sh` from this directory to check the margins and their prime witnesses. Run `bash verify-dyadic-starts.sh --rebuild` to repeat both prime counts through norm **274,877,906,944** and compare their full integer output with the archive.
 
+## Four gains at powers of two
+
+At every starting power from $`1`$ through $`2^{41}`$, at least one of the four moves falls below $`1.9735\log 2`$. At the last start, the first move on 547/727 lies between $`-22.67\log 2`$ and $`-22.63\log 2`$. Direct counts through norm $`2^{44}`$ prove the exclusion without a zero-location hypothesis. At the candidate $`2^{54}`$, two further sieves determine the degree-two and degree-four parts of all four moves. The first successful power remains open. [Proof and outstanding inequalities](PROOF.md#four-gains-on-the-unshifted-dyadic-grid) · [Replay transcript](evidence/four-gain/check.txt)
+
+Run `python3 four_gain/replay.py` to check the stored cell moments, independently sieve 44 selected cells and recompute all four higher-degree contributions. Run `python3 four_gain/replay.py --rebuild` to regenerate every cell of the eight stored octaves and compare it with the archive. The archive includes the source of primesieve 12.18 for offline replay. [Replay program](four_gain/replay.py) · [primesieve licence](https://github.com/kimwalisch/primesieve/blob/750cf516e19daee798bcd27c59183c37917f426a/COPYING)
+
 ## One, two or three readings in a two-field prime race
 
 Allowing three readings on 547/727 instead of two lowers the infimum of the common upper observation height by a factor of **136,174,087,494.48…**. With two readings on that field, the upper limit for observations must be strictly greater than **37,232,367,690,617,444,520.125**. With three, **273,417,420.125** is the sharp lower endpoint. Any larger height suffices in each case. The same access to the 571/599 field is available throughout. [Theorem and proof](PROOF.md#the-price-of-limiting-observations-on-one-field) · [Independent checks](evidence/observation-budget.txt)

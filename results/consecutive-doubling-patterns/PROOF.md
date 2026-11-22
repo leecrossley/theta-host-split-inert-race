@@ -345,6 +345,45 @@ Multiply a proposed algebraic linear relation by $`\log 2`$. Each normalized rea
 
 At the earliest exponent the rational prime 7 has residue degree two on 571/599 and its norm 49 lies strictly between 32 and 64. At every later entry with exponent $`j`$ the listed prime has degree one on the specified field and satisfies $`2^{j+2}\lt p\lt2^{j+3}`$. The earlier exponents use norms at most $`2^{j+2}`$. In the last octave only the second score in the move is active, with strictly positive tent and nonzero signed weight. Thus each pivot occurs with nonzero coefficient in its own reading and zero coefficient in all preceding readings. Taking the largest index with nonzero scalar in a proposed relation gives a contradiction at its pivot prime. The independent program checks primality by trial division, residue degrees by quadratic residues and all octave boundaries by integers. The kernel checks the triangular argument for arbitrary finite coefficient arrays. [Pivot verification](dyadic_records_recheck.py) · [Triangular lemma](DoublingPatterns.lean)
 
+## Four gains on the unshifted dyadic grid
+
+For every start $`y=2^n`$ with $`0\le n\le41`$, at least one of the four normalized moves $`D_A(y),D_B(y),D_A(2y),D_B(2y)`$ is strictly below $`1.9735`$. Thus the two fields cannot both gain more than $`1.9735\log 2`$ on each of those two doublings. This finite result holds under both omission conventions. Direct counts extend through prime-ideal norm $`2^{44}=17{,}592{,}186{,}044{,}416`$. [Prime counts and replay transcript](evidence/four-gain/check.txt) · [Previous dyadic catalogue](#opposite-runs-on-the-unshifted-dyadic-grid)
+
+The preceding catalogue excludes the starts through exponent 34. A failed move at exponent $`k`$ excludes the starts at $`k-1`$ and $`k`$. The following strict intervals for the normalized move $`D_i(2^k)`$ therefore exclude every remaining start through exponent 41.
+
+| Exponent $`k`$ | Field | Normalized move |
+| ---: | --- | --- |
+| 36 | 547/727 | $`(-52.06,-52.03)`$ |
+| 38 | 547/727 | $`(-9.95,-9.93)`$ |
+| 40 | 571/599 | $`(-31.66,-31.62)`$ |
+| 41 | 547/727 | $`(-22.67,-22.63)`$ |
+
+For each good rational prime $`p`$ there are $`8/f`$ primes of norm $`n=p^f`$, with common sign $`\epsilon`$ and residue degree $`f\in\{1,2,4\}`$. Set $`e_p=-\epsilon`$. In each octave divide the norms into $`2^{15}`$ cells of equal integer width $`w`$. In a cell starting at $`a`$, assign the integer $`c_n=4e_p/f`$ to each such norm. Record $`s=\sum c_n`$, $`d=\sum c_n(n-a)`$ and $`m=\sum\lvert c_n\rvert`$. The factor $`1/f`$ converts $`\log n`$ to $`\log p`$. The initial count omits the two field conductors, 2 and the two exceptional rational primes on each field. Restoring the exceptional prime ideals gives the conductor-only calculation. Both computations give every exclusion in the table. [Complete octave census](four_gain/octave_moments.cpp) · [Exceptional-prime corrections](four_gain/check_octaves.py)
+
+For $`g(x)=\log x`$ and $`g(x)=\log(x)/x`$, set $`z=a+w/2`$. The signed cell sum $`\sum c_n g(n)/4`$ is enclosed by
+
+```math
+\frac{s g(z)+(d-sw/2)g'(z)}{4}
+\ \pm\ \frac{m w^2}{32}\sup_{a\le x\le a+w}\lvert g''(x)\rvert .
+```
+
+The two derivative suprema are bounded by $`1/a^2`$ and $`(2\log(a+w)+3)/a^3`$. Endpoint interpolation gives a second enclosure with the same curvature bound, since $`(x-a)(a+w-x)\le w^2/4`$. Substituting the two signed octave sums into the tent gives each move. One verifier uses the three-octave move formula. The other subtracts the two levels. The largest cell has width $`2^{28}`$, so its absolute displacement sum is at most $`4w^2\le2^{58}`$. All signed integer moments fit in 64 bits. [Midpoint calculation](four_gain/check_octaves.py) · [Endpoint calculation](four_gain/independent_checks.py)
+
+The eight stored octaves begin at exponents 24 and 37 through 43. The first two overlap both earlier full sieves. Every ordinary prime total agrees with the independently tabulated difference $`\pi(2^{k+1})-\pi(2^k)`$. A separate sieve of all odd integers reproduces the ordinary count and all three moments for each field in 44 selected cells, including the cells containing the four exceptional rational primes. The remaining cells in the six new octaves are covered by the primary complete census. The full rebuild compares every integer in every cell with the stored data. [Independent selected-cell sieve](four_gain/recheck_cells.cpp) · [Prime-count table A007053](https://oeis.org/A007053) · [Kim Walisch’s primesieve 12.18](https://github.com/kimwalisch/primesieve/tree/750cf516e19daee798bcd27c59183c37917f426a)
+
+### Higher residue degrees at the candidate start
+
+At $`y=2^{54}`$, the last level uses norms through $`2^{58}`$. Any contributing norm of degree two or four has underlying prime $`p\le2^{29}`$. Two complete sieves through this rational-prime bound compute the higher-degree part $`D_i^{(\gt 1)}`$ of each normalized move. Their strict enclosures are given below in millionths. [Two complete higher-degree sieves](four_gain/higher_degrees.cpp) · [Both move evaluations](four_gain/higher_degrees.py)
+
+| Field | $`10^6 D_i^{(\gt 1)}(2^{54})`$ | $`10^6 D_i^{(\gt 1)}(2^{55})`$ |
+| --- | --- | --- |
+| 547/727 | $`(-1080,-1079)`$ | $`(1078,1079)`$ |
+| 571/599 | $`(101,102)`$ | $`(-25,-24)`$ |
+
+For each odd unramified $`p`$, the first sieve tests $`p\bmod16`$ and the two quadratic signs. The second takes the least common multiple of the order in $`(\mathbb Z/16\mathbb Z)^\times/\{\pm1\}`$ and the order of the product of the two signs. These orders are powers of two. Every even residue degree gives $`e_p=-1`$. The fixed-point logarithm and reciprocal enclosures are those of the two earlier sieves. The two methods agree on all 52 higher-degree moves for the two fields at exponents 30 through 55.
+
+**Whether $`2^{54}`$ is the first four-gain power remains open here.** To settle it by direct counting, each start from $`2^{42}`$ through $`2^{53}`$ requires a failed inequality, and all four full moves at $`2^{54}`$ must exceed the strict threshold. For the latter calculation the missing terms are the degree-one primes $`p\equiv\pm1\bmod16`$ with $`(p/u)=(p/v)`$ on field $`(u,v)`$. Their contribution has signed weight $`-8(p/u)\log p`$ before applying the tent and its normalization. The four numbers above have absolute value below $`0.0011`$ in normalized units. [Numerical certificate](evidence/four-gain/check.txt)
+
 ## Profiles for the sixteen characters
 
 The compact test and its Fourier transform are

@@ -79,6 +79,7 @@ struct Strike {
     u64 p, first, second;
 };
 
+#ifndef THETA_REUSE_LOG_BOUNDS
 int main(int argc, char** argv) {
     Sums acc;
     if (argc != 2) return 2;
@@ -152,3 +153,4 @@ int main(int argc, char** argv) {
                   << ' ' << decimal(s.c) << ' ' << decimal(s.d) << '\n';
     }
 }
+#endif

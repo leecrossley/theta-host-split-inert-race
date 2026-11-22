@@ -95,6 +95,31 @@ First opposed runs at margin 1.9735: 547 gains at exponent 34; 571 gains at expo
 The four-gain and --+- patterns do not occur through exponent 34, even at strict margin zero.
 16 prime pivots verify the triangular coefficient minor, from 7 to 137438953567.
 All 560 signed start/word tests passed with rational endpoints and independently weighted octaves.
+Octave [16777216, 33554432) contains 985818 rational primes.
+Octave [137438953472, 274877906944) contains 5279763824 rational primes.
+Octave [274877906944, 549755813888) contains 10285641778 rational primes.
+Octave [549755813888, 1099511627776) contains 20051180846 rational primes.
+Octave [1099511627776, 2199023255552) contains 39113482640 rational primes.
+Octave [2199023255552, 4398046511104) contains 76344462797 rational primes.
+Octave [4398046511104, 8796093022208) contains 149100679004 rational primes.
+Octave [8796093022208, 17592186044416) contains 291354668495 rational primes.
+trace omissions: all 42 starts excluded; four signed move intervals verified.
+conductors only: all 42 starts excluded; four signed move intervals verified.
+Octave 24: ordinary census agrees with the independent pi(2^k) table.
+Octave 37: ordinary census agrees with the independent pi(2^k) table.
+Octave 38: ordinary census agrees with the independent pi(2^k) table.
+Octave 39: ordinary census agrees with the independent pi(2^k) table.
+Octave 40: ordinary census agrees with the independent pi(2^k) table.
+Octave 41: ordinary census agrees with the independent pi(2^k) table.
+Octave 42: ordinary census agrees with the independent pi(2^k) table.
+Octave 43: ordinary census agrees with the independent pi(2^k) table.
+All 44 independently sieved cells agree on every field moment and ordinary count.
+Independent endpoint interpolation confirms the 42 exclusions and all four signed intervals under both conventions.
+547/727 at exponent 54: higher-degree move lies strictly between -1080 and -1079 millionths.
+571/599 at exponent 54: higher-degree move lies strictly between 101 and 102 millionths.
+547/727 at exponent 55: higher-degree move lies strictly between 1078 and 1079 millionths.
+571/599 at exponent 55: higher-degree move lies strictly between -25 and -24 millionths.
+All 52 higher-degree moves agree across both full sieves and both score formulas.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DoublingPatterns
 'DoublingPatterns.sign_preserved' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.separated_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
