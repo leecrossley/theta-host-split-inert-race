@@ -103,6 +103,8 @@ Each DOI identifies a fixed release. The final column identifies the archive tha
 
 Zenodo lists the archived fourth-root spectrum and asymptotic waiting-factor releases under the collection title. Their rows use the paper titles and proof links from those editions.
 
+The Lean verifier in versions 1.0.0 and 1.0.1 of the 571/599 prime race skips imports with non-ASCII names. A clean build stops at `DataParams₂`. The corrected verifier includes 26 more dependencies and replays the same three proof files. [Corrected source](https://github.com/leecrossley/theta-host-split-inert-race/tree/9343745adbd726ddf0c7c54511fbe38f3683984c) [Passing Linux build](https://github.com/leecrossley/theta-host-split-inert-race/actions/runs/44856323248/job/136699277357)
+
 | Result | Published release | Version DOI | Current proof files |
 | --- | --- | --- | --- |
 | [A split–inert prime race on a theta-lift host](https://github.com/leecrossley/theta-host-split-inert-race/blob/2ddb57dbc78074029a5f7c5ca10d9c1a5a5e3ee3/README.md) | [v1.0.1-archive](https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/v1.0.1-archive) | [10.5281/zenodo.24444229](https://doi.org/10.5281/zenodo.24444229) | [v1.0.1 proof files](https://github.com/leecrossley/theta-host-split-inert-race/tree/2ddb57dbc78074029a5f7c5ca10d9c1a5a5e3ee3) |
