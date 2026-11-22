@@ -62,7 +62,7 @@ To replay just the first-occurrence theorem, install the Python dependencies bel
 
 Assume the generalised Riemann hypothesis (GRH) for the sixteen odd primitive Dirichlet functions in the 547/727 and 571/599 races. Alpöge’s announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
-Pick a gain or a loss for each of the 547/727 and 571/599 prime races. Do that six times. **Every one of the 4,096 sequences occurs starting at arbitrarily large powers of two.** Both races start at the same height, and the twelve prescribed changes each exceed $`4\log 2`$ in magnitude. The recurrence, the dyadic certificate and the bounds on longer words use GRH. [Proof](PROOF.md)
+Pick a gain or a loss for each of the 547/727 and 571/599 prime races. Do that six times. **Every one of the 4,096 sequences occurs starting at arbitrarily large powers of two.** Both races start at the same height, and the twelve prescribed changes each exceed $`4\log 2`$ in magnitude. The recurrence, the six-step spectral certificate and the bounds on longer words use GRH. [Proof](PROOF.md)
 
 Write $`S_i(y)`$ for field $`i`$'s normalized width-two inert-minus-split score, and $`D_i(y)=(S_i(2y)-S_i(y))/\log 2`$. A word of length $`m`$ specifies the signs of both fields at $`y,2y,\ldots,2^{m-1}y`$. Each entry of the table holds at actual power-of-two starts.
 
