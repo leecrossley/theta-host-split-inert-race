@@ -373,9 +373,9 @@ The eight stored octaves begin at exponents 24 and 37 through 43. The first two 
 
 ### Higher residue degrees at the candidate start
 
-At $`y=2^{54}`$, the last level uses norms through $`2^{58}`$. Any contributing norm of degree two or four has underlying prime $`p\le2^{29}`$. Two complete sieves through this rational-prime bound compute the higher-degree part $`D_i^{(>1)}`$ of each normalized move. Their strict enclosures are given below in millionths. [Two complete higher-degree sieves](four_gain/higher_degrees.cpp) · [Both move evaluations](four_gain/higher_degrees.py)
+At $`y=2^{54}`$, the last level uses norms through $`2^{58}`$. Any contributing norm of degree two or four has underlying prime $`p\le2^{29}`$. Two complete sieves through this rational-prime bound compute the higher-degree part $`D_i^{(\gt 1)}`$ of each normalized move. Their strict enclosures are given below in millionths. [Two complete higher-degree sieves](four_gain/higher_degrees.cpp) · [Both move evaluations](four_gain/higher_degrees.py)
 
-| Field | $`10^6 D_i^{(>1)}(2^{54})`$ | $`10^6 D_i^{(>1)}(2^{55})`$ |
+| Field | $`10^6 D_i^{(\gt 1)}(2^{54})`$ | $`10^6 D_i^{(\gt 1)}(2^{55})`$ |
 | --- | --- | --- |
 | 547/727 | $`(-1080,-1079)`$ | $`(1078,1079)`$ |
 | 571/599 | $`(101,102)`$ | $`(-25,-24)`$ |
