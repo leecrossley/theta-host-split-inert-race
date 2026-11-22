@@ -1,0 +1,12 @@
+{
+  "title": "One, two or three readings in a two-field prime race",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>For every lower height from 46769 up to but excluding 46993, one earlier prime-race threshold combination survives in later observations of the 547/727 and 571/599 fields. With one or two 547/727 readings and any finite number on 571/599, the common upper endpoint must strictly exceed 17341923439 squared over eight or 17258590369 squared over eight, respectively. Three 547/727 readings suffice above 46769 squared over eight. The third cuts the required endpoint by a factor exceeding 136 billion. All three bounds are sharp and unconditional for algebraic linear recovery at algebraic observation heights. The retained six-step recurrence assumes GRH for sixteen odd primitive Dirichlet L-functions.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/0bc3a083b65b0016d6dc5b9f3d8670d7d35f8b02/results/consecutive-doubling-patterns/PROOF.md\">Proof of the sharp common endpoints</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "consecutive-doubling-patterns-v1.3.0"
+}
