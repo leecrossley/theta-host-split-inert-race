@@ -1,12 +1,12 @@
 # Research contributions
 
-This repository maintains work on 547/727 theta prime race. Start at [the results index](RESULTS.md).
+This repository maintains work on the 547/727 and 571/599 theta prime races. Start at [the results index](RESULTS.md).
 
 Extend the existing result when an argument, bound or certificate improves it. Give a distinct result in the same family a directory under `results/` and an index entry. Record its hypotheses, its verification command and which parts the proof checker or numerical certificate covers. Keep evidence and independent checks identifiable.
 
 Use the following maintained homes when the mathematical question belongs to one of these families. Distinct questions can have their own project.
 
-- [547/727 theta prime race](https://github.com/leecrossley/theta-host-split-inert-race)
+- [547/727 and 571/599 theta prime races](https://github.com/leecrossley/theta-host-split-inert-race)
 - [Real quadratic Mertens crossings](https://github.com/leecrossley/quadratic-mertens-first-crossings)
 - [Ordinary-prime windows](https://github.com/leecrossley/prime-window-all-widths)
 - [Window criteria for the Riemann hypothesis](https://github.com/leecrossley/prime-window-rh-criterion)
