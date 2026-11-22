@@ -15,6 +15,67 @@ S_i(y)=\frac{8}{B_0\sqrt y}\sum_p s_i(p)\log(p)W(m_i(p)/y),
 
 Use the field $`K=\overline{\mathbf Q}\cap\mathbf R`$ and only **finite** $`K`$-linear combinations of $`D_i(2^j)`$, $`j\ge0`$. Readings with negative exponents would be zero. At a dyadic argument all coefficients of $`L_p`$ are algebraic. Unique factorization makes the ordinary logarithms of distinct primes linearly independent over the rationals. Baker’s theorem makes them linearly independent over the algebraic numbers. Dividing by $`a`$ preserves independence, including $`L_2=1`$ when an independent constant term is allowed. The **support** of a value is consequently its uniquely determined set of odd prime coordinates with nonzero coefficient. Isolation means that the resulting value equals $`L_p`$, after algebraic rescaling if necessary. [Baker, *Linear forms in the logarithms of algebraic numbers*](https://doi.org/10.1112/S0025579300003971)
 
+## Moving the sampling grid
+
+Fix $`1\le\alpha\lt2`$ and now read $`D_i(\alpha2^j)`$ for all nonnegative integers $`j`$. First suppose $`\alpha`$ is real algebraic. Algebraic row scalings and telescoping replace all changes through exponent $`n`$ by the levels $`T_i(\alpha2^j)`$ for $`1\le j\le n+1`$, where $`T_i(z)=B_0\sqrt z\,S_i(z)/(8a)`$. The initial level is zero because the smallest good norms on A and B are 31 and 49. Baker’s theorem identifies numerical isolation with isolation of a prime column. The table in the [overview](README.md) gives every algebraic phase and all its boundary conventions.
+
+### The last scale that needs symbolic arithmetic
+
+For an arbitrary real last start $`y=\alpha2^n\gt271/8`$, every nonzero terminal coefficient pair forces at least two distinct rational-prime coordinates, regardless of the earlier coefficients. This statement concerns the formal prime coefficients and holds for **all** real phases. The coefficient of any degree-one prime $`4y\lt p\lt8y`$ comes entirely from the terminal pair, with a common strictly positive weight. For $`271/8\lt y\le2000`$ list the projective directions of the nonzero degree-one trace vectors. Under the parameter $`t=8y`$ an eligible prime is active exactly for $`p\lt t\lt2p`$. At each event remove closing primes, test the point, add opening primes, and test the following interval. The number visible in the least favourable direction is the total minus the largest count in one projective direction. The final point where this count is below two is exactly $`t=271`$. An exact sieve through 16,000 proves this over the entire real range. [Endpoint sweep](phase_bridge.py)
+
+For $`2000\lt y\lt2^{1583}`$ put $`L=4y`$. The prior unconditional prime chains give all sixteen four-sign patterns in $`(L,4L/3]`$ whenever $`26211/4\le L\lt2^{1585}`$. This forces three projectively distinct trace directions in $`(4y,8y)`$. For $`y\ge2^{2900}`$ the [ordinary-prime estimate](#ordinary-primes-in-every-direction) applies directly to $`X=4y`$. Both parts cover arbitrary real $`y`$. [Finite Frobenius-chain proof](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-frobenius-primes-v1.0.2/results/joint-frobenius-primes/PROOF.md)
+
+### A moving knot in the intermediate range
+
+It remains to handle every $`2^{1583}\le y\le2^{2900}`$. If $`\lambda_A+\lambda_B\ne0`$, use common degree-four primes $`p\equiv3\bmod8`$ in the outer norm octave $`(4y,8y)`$. The [modulo-eight argument](#minimum-support-on-one-field) uses the real variable $`X=(4y)^{1/4}`$ and supplies at least three. Their coefficients have the same sign on both fields and only the final pair can contribute.
+
+If $`\lambda_A+\lambda_B=0`$ and the pair is nonzero, set $`x_0=2\sqrt y`$ and take the first geometric bin with lower endpoint $`l\gt x_0`$, starting from $`2^{24}`$ and replacing $`l`$ by $`\lfloor13l/10\rfloor`$ at each step. Then $`x_0\lt l\le13x_0/10`$. The twelve labelled primes used in this bin satisfy $`l\le p\le65l/64`$. Consequently $`4y\lt p^2\lt8y`$, since $`(169/128)^2\lt2`$. The bin lies inside the tabulated bit lengths 785 through 1460. Its twelve primes have nonzero degree-one vectors $`(a,b)`$ with entries in $`\{-1,0,1\}`$. A zero coordinate here means that this field contributes at the square. The four omitted labels have degree two on both fields. [21,432 prime certificates](evidence/phase-proth-witnesses.tsv)
+
+The ratio of the largest to the smallest selected prime is at most $`65/64\lt2`$. Thus at most one grid knot can separate the ordinary primes, even as $`\alpha`$ varies. Writing $`x=1/p`$, the ground-level contribution after dividing by $`L_p`$ is $`a(A_0+A_1x)+b(B_0+B_1x)`$ on either side. Permit four unrelated coefficients on each side, a relaxation of the actual continuous kernel. The square-norm contribution on A is the outer branch of the final level alone. On B the final coefficient is its opposite. After one common nonzero rescaling the combined square term is $`z(c+x^2)`$, where $`z=\mathbf1_{a=0}-\mathbf1_{b=0}`$ and $`c`$ is common to the cluster. The genuine $`c`$ is fixed by $`y`$, but allowing arbitrary $`c`$ strengthens the obstruction.
+
+Order the twelve primes and take any of the thirteen splits, including an empty side. A prime at the knot can be assigned to either side by continuity. For each split delete any one row. If at most one prime survived, one of these systems of eleven equations would have a solution, with the four ground coefficients on either side and the constant $`c`$ as its nine unknowns. A row contains $`(a,ax,b,bx)`$ in the four columns for its side, zeros in the other four, and $`z`$ in the ninth column. Its right side is $`-zx^2`$.
+
+On either side let $`m_d`$ count rows with projective direction $`d`$. The four ground columns have rank at most $`\min(4,\sum_d\min(2,m_d))`$, since all rows in a single direction span at most two dimensions. Add the two side bounds and one for the constant, calling the result $`U`$. For **every** deletion at every split, the augmented matrix has rank strictly greater than $`U`$ modulo 65537. A nonzero minor modulo this prime is nonzero over the rationals, since the denominators are powers of the selected primes and are invertible. The rational coefficient matrix has rank at most $`U`$, so the system is inconsistent even over the reals. The second checker uses modulus 1,000,000,007, eliminates the four columns on each side separately and obtains two independent residual constraints on the constant and the normalized quadratic coefficient. There are 1,786 certified clusters and 278,616 systems. This proves at least two prime coordinates survive throughout the intermediate range. [Primary rank and prime checks](phase_bridge.py) · [Independent elimination](phase_bridge_recheck.py) · [Verification output](evidence/check.txt)
+
+### The thirteen phase cells
+
+Only last starts $`y\le271/8`$ now need to be considered for isolation. Thus the needed prefix stops at exponent 5 for $`\alpha\le271/256`$ and at 4 otherwise. Its norm ceiling is 271. List all good norms through this ceiling, the endpoint $`271/256`$, and the phases $`m/2^j`$ between 1 and 2 at which a kernel branch changes. This partitions the interval at
+
+```math
+1,\ 271/256,\ 79/64,\ 81/64,\ 47/32,\ 97/64,\ 49/32,\ 223/128,\ 113/64,\ 239/128,\ 241/128,\ 31/16,\ 127/64,\ 2 .
+```
+
+In a fixed open cell every entry of the level-by-prime matrix is affine in $`\alpha`$ over the rationals. The standard vector at $`p`$ lies in the row space exactly when deleting column $`p`$ lowers the rank. This follows because the kernel dimension of the projection of the row space along that coordinate is either zero or one. At algebraic phases the rank test and all normalizations take place over $`K`$.
+
+The primary replay checks the full matrix and each single-column deletion. At $`r+2`$ distinct interior rational points it certifies rank $`r`$. All minors of size $`r+1`$ have degree at most $`r+1`$, so they vanish identically. For the lower bound choose an $`r`$-row minor, compute its determinant at $`r+1`$ equally spaced points including both endpoints, and recover its Bernstein coefficients by exact interpolation. They have a common weak sign and at least one is nonzero. The Bernstein basis elements are strictly positive inside the cell, so the rank is at least $`r`$ everywhere inside it. The case $`r=0`$ needs only the upper bound. All 344 polynomial rank tests pass. Each included boundary point has a separate rational matrix calculation. The optional independent replay builds the character tables with Euler’s criterion, computes Smith invariant factors over $`\mathbf Q[t]`$ and counts their real roots in each cell. It also checks the endpoints directly. [Rational minor proof](phase_rank.py) · [Independent Smith calculation](phase_smith_recheck.py) · [Smith transcript](evidence/phase-smith.txt)
+
+The single-field and pooled isolation lists follow. The ranks also show that every nonzero raw reading at a fixed algebraic phase is independent of all the others, including the independent constant 1. Through any exponent $`n\ge2`$ the pooled readings have rank
+
+```math
+2n-3+\mathbf1_{\alpha\gt49/32}+\mathbf1_{\alpha\gt31/16}.
+```
+
+Indeed both fields have a zero at exponent zero, B has another at exponent one, A has a zero at exponent one through phase $`31/16`$, and B has a zero at exponent two through phase $`49/32`$. The first norms and the strict support endpoints force exactly these initial zero candidates. The computed prefix rank equals the number of remaining readings. Every later linear relation would have a last nonzero pair at a start beyond $`271/8`$, where at least two prime coordinates are forced. Baker’s theorem then rules out the relation. Adding $`1=L_2`$ preserves independence.
+
+### A pair of fields that can isolate a prime only together
+
+Take $`\alpha=3/2`$, $`U=T_A(12)`$ and $`V=T_A(24)-T_B(24)`$. In the second expression the coordinates at 3, 7 and 79 cancel. The two remaining equations are
+
+```math
+U=\frac{17}{31}L_{31}-\frac1{47}L_{47},\qquad
+V=\frac{14}{31}L_{31}-\frac{46}{47}L_{47}.
+```
+
+They give $`L_{31}=31(46U-V)/768`$ and $`L_{47}=47(14U-17V)/768`$. The one-field classification shows that neither field alone isolates even one prime at this phase. At $`\sqrt{7/3}`$ the pooled list is empty because $`(97/64)^2\lt7/3\lt(49/32)^2`$. [Exact rows](phase_rank.py) · [Kernel-checked inversion](DyadicPrimeSupport.lean)
+
+### What changes at transcendental phases
+
+Here we use the physical readings $`D_i(\alpha2^j)`$ with their factor $`1/\sqrt\alpha`$, and the combination coefficients are still restricted to real algebraic numbers. For each odd prime $`p`$, the set of all real phases where both fields’ combined span contains $`L_p`$ is countable and dense. The subset realized by a rational multiple of just **one** reading, $`D_A(256\alpha)`$, is itself countable, dense and entirely transcendental. Different primes give disjoint such subsets for this one reading, since rational proportionality of distinct prime logarithms is impossible. Consequently almost every real phase recovers no prime logarithm at all.
+
+For countability, fix a finite list of exponents and algebraic coefficients. There are finitely many kernel branches as $`\alpha`$ runs from 1 to 2. On each open branch the physical combination is $`U/\sqrt\alpha+V\sqrt\alpha`$ with fixed real constants $`U,V`$. If it equals $`L_p\ne0`$, then $`Vt^2-L_pt+U=0`$ at $`t=\sqrt\alpha`$. This polynomial is nonzero and has at most two roots. Include the finitely many endpoints and take the countable union over finite lists, algebraic coefficients and primes. [Quadratic-root deduction](DyadicPrimeSupport.lean)
+
+For density, on any nonempty open interval choose a smaller interval inside a single branch of $`D_A(256\alpha)`$. The ordinary-prime octave calculation supplies at least two active terminal prime columns at every height here. At any algebraic point in that smaller interval Baker’s theorem gives a nonzero reading. Thus the coefficients $`U,V`$ are not both zero, and the function $`U/\sqrt\alpha+V\sqrt\alpha`$ is nonconstant on every such interval. Its continuous image contains a nonempty open interval. For any $`p`$ this interval contains $`qL_p`$ with nonzero rational $`q`$. The intermediate value theorem supplies a phase, and division by $`q`$ recovers $`L_p`$. An algebraic phase cannot do this using the specified single reading, since it has at least two prime coordinates. This constructs the claimed dense set of transcendental offsets. The phase is part of the choice of observation.
+
 ## Minimum support on one field
 
 Fix the field, let $`N_k`$ count its good rational primes with $`2^k\lt m_i(p)\lt2^{k+1}`$ and set $`y=2^n`$. Normalize the last coefficient, on $`D_i(y)`$, to one. As all earlier coefficients vary in $`K`$, the minimum support is $`N_{n+1}+N_{n+2}`$, with one subtracted exactly at $`n=3,4`$ on A and $`n=4,5`$ on B. For every $`n\ge8`$ the unique minimizing **value** is $`S_i(2y)/a`$, the sum of all changes through exponent $`n`$. Coefficients on initial zero readings can be chosen freely.

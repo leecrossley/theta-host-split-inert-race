@@ -29,11 +29,16 @@ if command -v brew >/dev/null 2>&1 && brew --prefix gmp >/dev/null 2>&1; then
 fi
 if "${CXX:-c++}" -O3 -std=c++17 ${flags[@]+"${flags[@]}"} proth.cpp -o "$tmp/proth" -lgmpxx -lgmp 2>"$tmp/build.log"; then
   python3 dyadic_witnesses.py --proth "$tmp/proth" >>"$tmp/receipt"
+  phase_backend=(--proth "$tmp/proth")
 else
   python3 dyadic_witnesses.py >>"$tmp/receipt"
+  phase_backend=()
 fi
 python3 zero_strip.py >>"$tmp/receipt"
 python3 zero_strip_recheck.py >>"$tmp/receipt"
+python3 phase_rank.py >>"$tmp/receipt"
+python3 phase_bridge.py ${phase_backend[@]+"${phase_backend[@]}"} >>"$tmp/receipt"
+python3 phase_bridge_recheck.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then

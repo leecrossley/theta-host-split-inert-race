@@ -92,6 +92,24 @@ theorem dyadic_sum (S : ℕ → ℝ) (n : ℕ) :
   | zero => simp
   | succ n ih => rw [Finset.sum_range_succ, ih]; ring
 
+theorem phase_quadratic {u v l x y z : ℝ} (hxy : x ≠ y) (hyz : y ≠ z)
+    (hxz : x ≠ z) (hl : l ≠ 0) (hx : u+v*x^2=l*x)
+    (hy : u+v*y^2=l*y) (hz : u+v*z^2=l*z) : False := by
+  have hx₁ : (x-y)*(v*(x+y)-l)=0 := by linear_combination hx-hy
+  have hy₁ : (y-z)*(v*(y+z)-l)=0 := by linear_combination hy-hz
+  have h₁ := (mul_eq_zero.mp hx₁).resolve_left (sub_ne_zero.mpr hxy)
+  have h₂ := (mul_eq_zero.mp hy₁).resolve_left (sub_ne_zero.mpr hyz)
+  have h₃ : v*(x-z)=0 := by linear_combination h₁-h₂
+  have hv := (mul_eq_zero.mp h₃).resolve_right (sub_ne_zero.mpr hxz)
+  exact hl (by simpa [hv] using h₁)
+
+theorem half_shift_recovery {p q u v : ℝ}
+    (hu : u=17/31*p-q/47) (hv : v=14/31*p-46/47*q) :
+    31/768*(46*u-v)=p ∧ 47/768*(14*u-17*v)=q := by
+  subst u
+  subst v
+  constructor <;> ring
+
 end DyadicPrimeSupport
 
 #print axioms DyadicPrimeSupport.two_zeros
@@ -101,3 +119,5 @@ end DyadicPrimeSupport
 #print axioms DyadicPrimeSupport.invisible_iff
 #print axioms DyadicPrimeSupport.opposite_linear_terms
 #print axioms DyadicPrimeSupport.dyadic_sum
+#print axioms DyadicPrimeSupport.phase_quadratic
+#print axioms DyadicPrimeSupport.half_shift_recovery
