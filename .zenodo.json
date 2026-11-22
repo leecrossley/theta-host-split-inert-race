@@ -1,0 +1,13 @@
+{
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Choose dyadic grids with real algebraic phases to isolate a prescribed prime logarithm from the 547/727 and 571/599 theta races by finite algebraic linear combinations. At most two grids isolate exactly seven primes per field and twelve when pooled. The largest is 271 on 547/727 and 241 on 571/599. The unique prime added by pooling at this budget is 97. Every odd prime outside the pooled list requires exactly three grids, and rational phases suffice. Any finite collection fixed in advance isolates only finitely many primes. An unconditional ordinary-prime estimate holds for every trace direction from log X at least 1095, completing the sharp two-prime octave threshold X greater than 271/2.</p>",
+  "license": "cc-by-4.0",
+  "publication_date": "2026-11-22",
+  "title": "How many dyadic sampling grids isolate one prime?",
+  "version": "dyadic-prime-support-v1.2.1",
+  "upload_type": "software"
+}
