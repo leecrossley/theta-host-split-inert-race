@@ -1,0 +1,13 @@
+{
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>For each real algebraic sampling phase between one and two, the 547/727 and 571/599 races have exactly specified recoverable prime logarithms. At phase 3/2 neither field isolates one prime alone and together they isolate 31 and 47. At every algebraic phase in (97/64, 49/32], the two fields together isolate no prime logarithm. For each odd prime, the transcendental phases where a rational multiple of the specified 547/727 reading recovers its logarithm form a countable dense set. The union of all phases recovering a prime by any finite algebraic combination is countable. All claims are unconditional.</p>",
+  "license": "cc-by-4.0",
+  "publication_date": "2026-11-22",
+  "title": "Which primes survive a shift of the dyadic sampling grid?",
+  "version": "dyadic-prime-support-v1.1.1",
+  "upload_type": "software"
+}
