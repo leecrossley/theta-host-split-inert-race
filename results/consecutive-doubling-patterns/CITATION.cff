@@ -1,16 +1,15 @@
 cff-version: 1.2.0
 message: "Cite the release below."
 title: "First opposite runs at powers of two in two prime races"
-abstract: "On the 547/727 and 571/599 fields the first exact power-of-two start for two gains on the former and two losses on the latter is 2^34. Reversing the fields gives 2^12. Each change strictly exceeds 1.9735 log 2 in its prescribed direction. Two independent prime sieves through norm 2^38 certify the complete first-occurrence table through exponent 34 for every nonnegative margin. At strict margin zero fourteen words occur. Sixteen distinct limiting readings determine the 23 records and, together with 1, are linearly independent over the real algebraic numbers. These are unconditional results. The retained six-step recurrence assumes GRH for sixteen odd primitive Dirichlet L-functions. Alpöge’s announced Dirichlet GRH theorem supplies this input."
+abstract: "On the 547/727 and 571/599 fields the first exact power-of-two start for two gains on the former and two losses on the latter is 2^34. Reversing the fields gives 2^12. Each change strictly exceeds 1.9735 log 2 in its prescribed direction. Two independent prime sieves through norm 2^38 certify the complete first-occurrence table through exponent 34 for every nonnegative margin. At strict margin zero fourteen words occur. Sixteen distinct limiting readings determine the 23 records and, together with 1, are linearly independent over the real algebraic numbers. These are unconditional results. At margin 1.9735 no power-of-two start from 1 through 2^41 gives four gains on both fields, which direct prime-ideal counts through norm 2^44 prove without a zero-location hypothesis. The retained six-step recurrence assumes GRH for sixteen odd primitive Dirichlet L-functions. Alpöge’s announced Dirichlet GRH theorem supplies this input."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.4.2
-doi: 10.5281/zenodo.24432268
+version: 1.5.0
 date-released: 2026-11-22
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.4.2
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.5.0
 type: software
 references:
   - type: software
@@ -69,3 +68,11 @@ references:
     version: "consecutive-doubling-patterns-v1.3.1"
     doi: 10.5281/zenodo.24431551
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.3.1
+  - type: software
+    title: "First opposite runs at powers of two in two prime races"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "consecutive-doubling-patterns-v1.4.2"
+    doi: 10.5281/zenodo.24432268
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.4.2
