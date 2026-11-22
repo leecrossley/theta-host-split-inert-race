@@ -126,7 +126,7 @@ def classify():
     for p in primes:
         signed = (-2*a12(0,12,p)+5*(a12(0,24,p)-a12(1,24,p))-6*(a12(0,28,p)-a12(1,28,p)))
         assert signed==F(90,97)*int(p==97)
-    print("Independent Euler symbols, hinge weights, rational ranks and bivariate Bernstein interpolation verify the entire pooled table.")
+    print("Independent Euler symbols, hinge weights and rational ranks, with the bivariate Bernstein helper from phase_rank.py, verify the entire pooled table.")
 
 
 def real_octaves():
