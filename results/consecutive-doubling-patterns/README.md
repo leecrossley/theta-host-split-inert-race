@@ -96,4 +96,6 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
+GitHub Actions runs this verifier when a pull request changes the paper or its workflow and when those changes reach `main`. It uses the 44-cell check in `four_gain/replay.py`. [Paper workflow](../../.github/workflows/consecutive-doubling-patterns-verify.yml)
+
 The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, the arithmetic-grid and rank certificates and twenty-two Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)

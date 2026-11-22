@@ -1,0 +1,43 @@
+name: Verify consecutive doubling patterns
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'results/consecutive-doubling-patterns/**'
+      - '.github/workflows/consecutive-doubling-patterns-verify.yml'
+  pull_request:
+    paths:
+      - 'results/consecutive-doubling-patterns/**'
+      - '.github/workflows/consecutive-doubling-patterns-verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-consecutive-doubling-patterns-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: results/consecutive-doubling-patterns
+
+jobs:
+  verify:
+    name: Replay consecutive doubling patterns
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Free space for Lean and Mathlib
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+      - name: Install the pinned arithmetic packages
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/python" -m pip install -r requirements.txt
+          echo "$RUNNER_TEMP/venv/bin" >> "$GITHUB_PATH"
+      - name: Replay the numerical certificates and Lean deductions
+        run: bash verify-release.sh
