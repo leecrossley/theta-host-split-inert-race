@@ -62,7 +62,7 @@ def main():
         "306 delayed nuisance norms; 188 adjacent-interval tests have maximum ratio 377952481/325766401 < 2."
     )
     print(
-        "The A-height infima for one, two and three A readings are 2167740481 (attained), 2157323809 (open), and 2187339361/8 (open)."
+        f"The A-height infima for one, two and three A readings are {n2} (attained), {n1} (open), and {z} (open)."
     )
     print(
         f"The largest delayed primes below eight times the two relevant norms are {LAST} and {p}."

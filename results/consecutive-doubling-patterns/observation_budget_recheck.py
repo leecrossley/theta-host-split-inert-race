@@ -59,10 +59,21 @@ def main():
         worst = max(worst, Fraction(after[1], before[0]))
     assert len(ends) == 189 and len(protect) == 306 and worst == Fraction(377952481, 325766401)
     assert 2 * protect[-3] > n1
+    assert (n2, n1, cut) == (2167740481, 2157323809, Fraction(2187339361, 8))
+    assert degrees(2) == (0, 0)
+    for conductor, expected_norm in ((571, 106302733681), (599, 358801)):
+        a_degree, b_degree = degrees(conductor)
+        assert b_degree == 0 and conductor**a_degree == expected_norm
+        assert expected_norm < n1 or expected_norm > 8 * n
+    assert min(413718278401, 603339156001) > 8 * n
     expected = (17258590369, 17341923439)
     for m, p in zip((n1, n2), expected, strict=True):
         found = [q for q in segment(8 * m - 1100, 8 * m, bases) if degrees(q) == (1, 2)]
         assert max(found) == p
+    two_infimum, one_infimum = (Fraction(p * p, 8) for p in expected)
+    assert one_infimum == Fraction("37592788570517198340.125")
+    assert two_infimum == Fraction("37232367690617444520.125")
+    assert 136174087494 < two_infimum / cut < 136174087495
     others = (17258590801, 17498715103, 17498715233)
     for q in others:
         assert segment(q, q, bases) == [q] and degrees(q) == (1, 2)
