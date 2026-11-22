@@ -1,0 +1,20 @@
+{
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Unconditional short-shift bounds for a split–inert prime race on the 547/727 theta-lift host.</p><p>The paper, Lean sources and replay instructions are in <code>results/theta-race-short-shifts/</code>. In version 1.0.3 the checker follows Unicode-named imports and verifies 2,789 upstream source modules.</p>",
+  "license": "cc-by-4.0",
+  "publication_date": "2026-11-22",
+  "title": "How fast can a split–inert prime race move?",
+  "version": "theta-race-short-shifts-v1.0.3",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24410823",
+      "relation": "isNewVersionOf",
+      "resource_type": "software"
+    }
+  ]
+}
