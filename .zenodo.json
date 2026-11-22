@@ -1,0 +1,12 @@
+{
+  "title": "When do both theta prime races gain twice in a row?",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>For the 547/727 and 571/599 prime-ideal races, fifteen of the sixteen two-doubling sign words occur at integer starts through 1469 with margin above 2. At margin 1.9735 the first integer start for four gains is 20306534. Two independently computed finite covers give the real and integer first-passage laws for every strict margin from 0 through 2. Their early thresholds differ, yielding an interval on which the first integer exceeds 434 times the real infimum. Four offsets per unit or 97121 per octave guarantee detection of the early gain at the integer threshold for every initial clock phase. The finite results are unconditional.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/8635d3e448edfb38d8af2e69b865204f5e34d929/results/consecutive-doubling-patterns/PROOF.md\">Proof, margins and endpoint conventions</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "consecutive-doubling-patterns-v1.1.0"
+}
