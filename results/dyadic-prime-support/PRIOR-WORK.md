@@ -12,7 +12,7 @@ The question is exact numerical recovery of an individual $`\log_2 p`$ by a fini
 | Analytic number theory | McCurley gives the classical exceptional-zero alternative. Bennett, Martin, O’Bryant and Rechnitzer give the progression error bounds and a corrected zero-count theorem. The compact smoothing, contour shift and prime number theorem in progressions are classical. The quantitative projection estimate uses the pair-character expansion for these two hosts, two finite real-axis bounds and the explicit constant in the terminal-prime count. [McCurley](https://www.sciencedirect.com/science/article/pii/0022314X84900891) · [Primes in progressions](https://arxiv.org/abs/1802.00085) · [Counting zeros](https://arxiv.org/abs/2005.02989) |
 | Prime races | Martin and Ng study the orderings reached in prime number races. Rubinstein and Sarnak study biases and limiting distributions. The invariant here is membership in an algebraic row space, an exact question at the fixed observation heights. [Martin and Ng](https://arxiv.org/abs/1710.00088) · [Rubinstein and Sarnak](https://www.math.uwaterloo.ca/~mrubinst/publications/Chebyshev.pdf) |
 
-The proof concerns a specified family of linear measurements and finite combinations. Different observation heights, closures under limits, nonlinear combinations and recovery with noisy input are separate questions.
+The first edition uses finite linear combinations on the unshifted dyadic grid. The phase extension below varies the starting height and retains the doubling ratio. Arbitrary observation schedules, limits of readings, nonlinear combinations and noisy input pose separate recovery questions.
 
 ## Shifting the sampling phase
 

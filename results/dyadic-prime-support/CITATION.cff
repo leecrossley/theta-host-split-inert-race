@@ -1,16 +1,15 @@
 cff-version: 1.2.0
 message: "Cite the release below."
 title: "Which primes survive a shift of the dyadic sampling grid?"
-abstract: "For each real algebraic sampling phase between one and two, the 547/727 and 571/599 races have exactly specified recoverable prime logarithms. At phase 3/2 neither field isolates one prime alone and together they isolate 31 and 47. On the phase interval (97/64,49/32] no prime can be isolated even jointly. For each odd prime a countable dense set of transcendental phases recovers its logarithm using a rational multiple of a single specified reading. The union of all phases recovering a prime by any finite algebraic combination is countable. All claims are unconditional."
+abstract: "For each real algebraic sampling phase between one and two, the 547/727 and 571/599 races have exactly specified recoverable prime logarithms. At phase 3/2 neither field isolates one prime alone and together they isolate 31 and 47. At every algebraic phase in (97/64, 49/32], the two fields together isolate no prime logarithm. For each odd prime, the transcendental phases where a rational multiple of the specified 547/727 reading recovers its logarithm form a countable dense set. The union of all phases recovering a prime by any finite algebraic combination is countable. All claims are unconditional."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.1.0
-doi: 10.5281/zenodo.24432391
+version: 1.1.1
 date-released: 2026-11-22
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/dyadic-prime-support-v1.1.0
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/dyadic-prime-support-v1.1.1
 type: software
 references:
   - type: software
