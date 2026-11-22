@@ -1,0 +1,12 @@
+{
+  "title": "Which primes survive a shift of the dyadic sampling grid?",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>For each real algebraic sampling phase between one and two, the 547/727 and 571/599 races have exactly specified recoverable prime logarithms. At phase 3/2 neither field isolates one prime alone and together they isolate 31 and 47. On the phase interval (97/64,49/32] no prime can be isolated even jointly. For each odd prime a countable dense set of transcendental phases recovers its logarithm using a rational multiple of a single specified reading. The union of all phases recovering a prime by any finite algebraic combination is countable. All claims are unconditional.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/69bf94c6cf3ee362719c796959307b6b8fca8f0f/results/dyadic-prime-support/PROOF.md\">Phase classification and arithmetic certificates</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "dyadic-prime-support-v1.1.0"
+}
