@@ -52,7 +52,7 @@ The final octave with fewer than two forced survivors after direction losses has
 At that point the four direction counts are 0, 1, 2 and 4. All sixteen sign patterns guarantee five survivors.
 All 2,664 joint exclusions checked across 666 unordered phase-cell pairs: 2,407 endpoint-span tests and 257 polynomial minor certificates.
 Two grids recover log_2(97) only when both fields are available. Their five rational terms were checked at every contributing prime.
-Independent Euler symbols, hinge weights, rational ranks and bivariate Bernstein interpolation verify the entire pooled table.
+Independent Euler symbols, hinge weights and rational ranks, with the bivariate Bernstein helper from phase_rank.py, verify the entire pooled table.
 Bisection in four independent prime lists gives the same sharp endpoint 431/2.
 A second triangular-kernel majorant gives error < 1/14 per twist at log X >= 1095.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DyadicPrimeSupport
