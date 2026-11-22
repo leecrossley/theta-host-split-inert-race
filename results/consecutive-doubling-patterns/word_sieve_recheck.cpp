@@ -63,6 +63,7 @@ std::vector<int> character(unsigned q) {
     return values;
 }
 
+#ifndef THETA_REUSE_LOG_BOUNDS
 int main(int argc,char** argv) {
     if (argc!=2) return 2;
     std::string host(argv[1]);
@@ -123,3 +124,4 @@ int main(int argc,char** argv) {
                  <<number(s.reciprocalLow)<<' '<<number(s.reciprocalHigh)<<'\n';
     }
 }
+#endif
