@@ -1,4 +1,23 @@
-# All 4,096 sign patterns on six consecutive doublings
+# When do both theta prime races gain twice in a row?
+
+On the 547/727 and 571/599 fields, the first integer start for **two consecutive gains on both fields**, each larger than $`1.9735\log 2`$, is **20,306,534**. The second doubling finishes at **81,226,136**. Every other two-step joint sign pattern already occurs at an integer start by **1,469**, with all four moves larger than $`2\log 2`$ in their prescribed directions. Two finite prime counts exclude **every real start** up to the threshold crossing. The calculation is unconditional. [First-occurrence proof](PROOF.md#first-occurrence-on-two-consecutive-doublings) · [Certificate](evidence/first-catalogue.txt)
+
+The required margin makes a measurable difference. At normalized margin $`1.6`$, four gains first become possible just above $`46{,}610.99018\ldots`$. The early maximum is $`1.682449287659191709\ldots`$, at a noninteger height. With strict gains at that exact margin the first opportunity moves to $`20{,}288{,}514.06421\ldots`$. Integer starts lose the early opportunity at the smaller margin $`1.682222888957865575\ldots`$. Between these two margins, the first successful integer is **more than 434 times** the infimum for real starts. Both changes of regime are sharp. [Real and integer thresholds](PROOF.md#real-and-integer-first-starts)
+
+| Required gain, in units of $`\log 2`$ | Infimum of real starts, rounded down to five decimals | First integer start |
+| ---: | ---: | ---: |
+| 0, with strict gains | 45,740.15111 | 45,741 |
+| 1.6 | 46,610.99018 | 46,611 |
+| 1.9735 | 20,306,533.59533 | 20,306,534 |
+| 2 | 20,308,190.27109 | 20,308,191 |
+
+The proof gives the first real and integer starts for **every** normalized margin from 0 through 2 as inverses of two specified prime-sum curves. On the crossing band the other three normalized gains are above 20, 48 and 38, respectively. At every algebraic margin in this range the exact real onset is transcendental. [Prime-sum branches and arithmetic type](PROOF.md#real-and-integer-first-starts)
+
+At the integer threshold, the early four-gain window is only 0.333262779289365032… units wide. Three equally spaced samples per unit miss 0.02116621319… percent of possible clock phases. Four guarantee detection. If samples instead repeat every octave, the sharp count is 97,121 offsets per octave. [Optimal sampling proof](PROOF.md#how-many-samples-detect-the-early-gain) · [Independent checks](evidence/clock-phases.txt)
+
+To replay just the first-occurrence theorem, install the Python dependencies below and run `bash verify-first-catalogue.sh`. It builds two C++17 sieves, checks both full interval covers and recomputes the early maximum at higher precision. [Direct sieve](word_sieve.cpp) · [Independent sieve](word_sieve_recheck.cpp) · [Whole-interval verification](word_cover.py)
+
+## All 4,096 sign patterns on six consecutive doublings
 
 Assume the generalised Riemann hypothesis (GRH) for the sixteen odd primitive Dirichlet functions in the 547/727 and 571/599 races. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
 
@@ -28,4 +47,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants and eight Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, both first-occurrence certificates and twelve Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)

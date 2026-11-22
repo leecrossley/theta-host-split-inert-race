@@ -13,6 +13,103 @@ S_i(y)=-\frac{1}{B_0\sqrt y}\sum_w\epsilon_w\log(Nw)W(Nw/y),
 
 The odd primitive constituents are the quadratic characters of conductors $`u,v`$, each twisted by the four powers of the primitive even quartic character modulo 16. For each odd prime conductor the primitive conductors are $`p,8p,16p,16p`$. The bound $`|V_i|\le M_i`$ below, the dyadic certificate and the infinite-height conclusions invoke Alpöge's announced theorem that each primitive Dirichlet L-function has its zeros in the critical strip on the critical line. This is GRH for these functions, and the announcement has not yet been refereed. Its statement, the printed axiom audit and the independent kernel records are pinned by digest. The finite prime-ideal catalogue uses no zero-location theorem. The density argument permits every rational relation among the ordinates. [Announcement](https://alpo.ge/remark.pdf) · [Upstream theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean) · [Independent verification](https://math.mit.edu/~drew/grh/) · [Pinned record check](check_source.py)
 
+## First occurrence on two consecutive doublings
+
+For a sign word $`s\in\{-1,1\}^4`$ use the coordinate order $`V(y)=(D_A(y),D_B(y),D_A(2y),D_B(2y))`$. Its strict margin exceeds $`q`$ if $`s_jV_j(y)\gt q`$ in all four coordinates. Write $`M(y)=\min_j V_j(y)`$. Among integer starts from 1 through 1,469, fifteen words already occur with margin greater than 2. In binary order, with the high bit corresponding to the first coordinate and a set bit denoting a gain, one witness for each word from 0000 through 1110 is given below. Both sieves check every one of the sixty signed inequalities. The remaining word 1111 consists of four gains. [Two counts and transcripts](evidence/first-catalogue.txt)
+
+| Code | 0000 | 0001 | 0010 | 0011 | 0100 | 0101 | 0110 | 0111 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Start | 1,469 | 9 | 89 | 33 | 17 | 15 | 20 | 28 |
+
+| Code | 1000 | 1001 | 1010 | 1011 | 1100 | 1101 | 1110 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Start | 45 | 8 | 39 | 150 | 56 | 248 | 629 |
+
+**Theorem.** At $`q=3947/2000`$, the infimum of real starts of word 1111 lies strictly between $`20{,}306{,}533.59533`$ and $`20{,}306{,}533.59534`$. The first integer start is 20,306,534. The infimum of heights by which every word can finish lies between 81,226,134.38132 and 81,226,134.38136. It is unattained because the controlling gain equals the threshold at the crossing. Integer starts first complete the catalogue at 81,226,136. Thus for the two-field four-gain problem a deadline from height one must exceed the real completion infimum. The single-field question asking for one gain and one loss has different quantifiers. [Direct integer witness and real exclusion](word_cover.py)
+
+### Exact prime sums and independent counts
+
+For a good odd rational prime $`p`$ let $`\chi_u(p)=(p/u)`$ and similarly for $`v`$. Its residue degree in $`F_i`$ is the least $`f\in\{1,2,4\}`$ with $`p^f\equiv\pm1\pmod {16}`$ and $`(\chi_u(p)\chi_v(p))^f=1`$. The quadratic sign is $`\chi_u(p)^f`$ by reciprocity. The $`8/f`$ base primes above $`p`$ all have norm $`n=p^f`$. Their logarithmic weight, including the inert-minus-split sign, is $`8e_p\log p`$, where $`e_p=-\chi_u(p)^f`$. This is the local trace calculation in the scores defined above. The two extra omitted rational primes for $`A`$ are 343057911569 and 343070636977, and for $`B`$ they are 413718278401 and 603339156001. All exceed the largest norm used here, 324,944,000. The two conductors and 2 in each field are omitted throughout. [Local host and score definitions](#the-scores-and-the-arithmetic-input) · [Five fixed omissions in each field](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.5.0/results/joint-levels-and-moves/deadline_arithmetic.py)
+
+Write $`P(l,h)=\sum_{l\lt n\le h}e_p\log p`$ and $`Q(l,h)=\sum_{l\lt n\le h}e_p\log(p)/n`$. Substitution of the two tent branches gives
+
+```math
+\sqrt y\,S_i(y)=\frac8{B_0}
+\bigl(2P(y,2y)-P(2y,4y)+y[4Q(2y,4y)-2Q(y,2y)]\bigr).
+```
+
+The primary sieve marks the two progressions $`16m\pm1`$ and enumerates higher residue degrees separately. It builds quadratic-residue tables from squares, uses a logarithm mesh of size $`2^{15}`$ and encloses the remainder by alternating Taylor polynomials of degrees three and four. Its scales for logarithms and reciprocal weights are $`2^{58}`$ and $`2^{96}`$. The second sieve runs through every odd rational prime, computes both Euler criteria and the residue degree independently, and sums into disjoint bins. Its mesh has size $`2^{12}`$ and its scales are $`2^{62}`$ and $`2^{102}`$. For the ratio of a number and the preceding mesh node it uses the positive series for $`2\operatorname{arctanh} t`$, with $`0\le t\lt 1/8192`$. After the fifth power the tail is below $`2t^7/(7(1-t^2))\lt 2^{-62}`$. The table entries in both runs are directed Arb floors. Cumulative lower endpoints are subtracted from cumulative lower endpoints only when recovering sums of the already enclosed disjoint bins, and likewise for upper endpoints. Individual products and the cumulative signed sums fit in their integer types. For instance $`\sum_{n\le N}\log(N)/n\le\log(N)(1+\log N)`$ bounds the unscaled reciprocal totals. [Primary arithmetic](word_sieve.cpp) · [Independent arithmetic](word_sieve_recheck.cpp) · [Finite-score identity](patterns.py)
+
+### Covering all real heights
+
+The primary cover works in $`x=\log y`$. On every open knot interval a level $`P(x)=S_i(ke^x)`$ satisfies $`P''=P/4`$. On a closed cell of log width at most $`h`$, its departure from its secant is bounded by $`\sup |P|h^2/32+hJ/4`$, where $`J`$ bounds the sum of the absolute jumps of $`P'`$. Indeed a smooth second derivative has Dirichlet Green-kernel integral at most $`h^2/8`$, and a single derivative jump contributes at most its magnitude times $`h/4`$. For log centres $`z=2ky`$ between $`L`$ and $`U`$, knots occur at norms $`n=sz`$, with $`s\in\{1/2,1,2\}`$. There are at most $`1+sUh`$ such integers for each $`s`$ when $`h=(y_{\rm right}-y_{\rm left})/y_{\rm left}`$. The jump coefficients of the log tent $`g`$ are bounded by $`2/B_0,4\cosh(a/2)/B_0,2/B_0`$ in that order. Each carries at most $`8\log(2U)/\sqrt{sL}`$. Bounding the number of active norms by $`2U+1`$ and the tent by its central value gives the smooth term. Adding the two level errors and dividing by $`a=\log 2`$ bounds the error of each move.
+
+The independent cover uses the height itself. For $`H_k(y)=\sqrt y\,D_i(ky)`$ every open knot segment is affine. In $`\sqrt y\,S_i(ky)`$ a term has slope jumps at $`n/(4k),n/(2k),n/k`$, with coefficients $`4,-6,2`$ respectively, multiplied by $`8\sqrt{k}\,e_p\log(p)/(B_0 n)`$. For $`y\in[l,r]`$ and each $`s=4,2,1`$ there are at most $`1+sk(r-l)`$ integers in $`[skl,skr]`$, each with $`\log(p)/n\le\log(skr)/(skl)`$. Add the two levels’ jump bounds and divide by $`a`$ to bound the total jump size $`J_k`$. Since $`-q\sqrt y`$ is convex for $`q\ge0`$, the maximum at the two endpoints of $`H_k(y)-q\sqrt y`$, plus $`(r-l)J_k/4`$, bounds it above on the whole cell. At least one of the four coordinates is below the selected threshold on every exclusion cell. The meshes have different dyadic resolutions, 4,096 and 3,500. [Both closed-interval implementations](word_cover.py)
+
+The slope check also gives inequalities on whole intervals. Let $`u`$ be the right slope of $`H_k`$ at $`l`$. All one-sided slopes on the cell lie in $`[u-J_k,u+J_k]`$, so its range lies in $`H_k(l)+[0,r-l][u-J_k,u+J_k]`$. Away from knots the sign of the move derivative equals that of $`2yH'_k(y)-H_k(y)`$. Strict same-sided bounds on every open segment imply strict monotonicity across the knots by continuity. For $`0\lt y\le6`$ the first $`B`$ move vanishes because its smallest eligible norm is 49.
+
+| Certified interval | Inequality throughout the interval |
+| --- | --- |
+| $`[6,45700]`$ | At least one move is strictly negative. |
+| $`[45700,46701]`$ | The first $`B`$ move increases strictly, the second $`B`$ move decreases strictly, and both $`A`$ moves exceed 2. |
+| $`[46701,20288400]`$ | At least one move is strictly below the early integer maximum defined below. |
+| $`[20288400,20309000]`$ | The first $`A`$ move increases strictly, and all three other moves exceed 2. |
+
+The primary proof checks 52,935 exclusion cells before the early window and 38,997 between the windows. The second checks 45,267 and 33,890 respectively. An additional 1,966 and 1,970 cells, respectively, give direct exclusions at the benchmark on the part between the two late crossing bands. The two slope tests use respectively 4,004 and 5,005 cells in the early window, and 3,434 and 4,120 in the late window. The finite sums and outward comparisons are executable certificates. Lean checks the abstract deductions about opposite monotone branches, the last missing word and cell intersections. [Replay transcript](evidence/first-catalogue.txt) · [Lean deductions](DoublingPatterns.lean)
+
+### Real and integer first starts
+
+Let $`y_0`$ be the intersection of the two $`B`$ moves in the early window. Near it the moves are $`u\sqrt y+v/\sqrt y`$ and $`s\sqrt y+t/\sqrt y`$. The cell $`[46695.21,46695.22]`$ contains no prime-power knot, as verified at every possible boundary norm. Hence $`y_0=(t-v)/(u-s)`$. Monotonicity gives the unique early maximum $`\mu=M(y_0)`$. Direct evaluation of the two neighbouring integer starts gives $`M(46696)\lt M(46695)=D_B(46695)=\nu`$. The same monotonicity makes 46,695 the unique best early integer. A third calculation forms the two affine lines from ordinary high-precision prime counts at the cell endpoints and encloses
+
+```math
+46695.216167402621654621\lt y_0\lt 46695.216167402621654622.
+```
+
+```math
+1.682449287659191709\lt \mu\lt 1.682449287659191710,\qquad
+1.682222888957865575\lt \nu\lt 1.682222888957865576.
+```
+
+For $`0\le q\le\mu`$, let $`b(q)`$ be the inverse of the increasing first $`B`$ move on $`[45700,y_0]`$. For $`\nu\le q\le2`$, let $`a(q)`$ be the inverse of the increasing first $`A`$ move on $`[20288400,20309000]`$. The endpoint checks give the advertised domains. Write $`T(q)`$ for the infimum of real starting heights by which every word has appeared, allowing a different start for each word. Write $`N(q)`$ for the first such integer bound when every start must be an integer. The fifteen early witnesses and the four certified intervals give the formulas
+
+```math
+T(q)=\begin{cases}b(q)&0\le q\lt \mu,\\ a(q)&\mu\le q\le2,\end{cases}
+\qquad
+N(q)=\begin{cases}\lfloor b(q)\rfloor+1&0\le q\lt \nu,\\ \lfloor a(q)\rfloor+1&\nu\le q\le2.\end{cases}
+```
+
+Indeed for $`q\lt \nu`$ the early inverse is strictly below 46,695, and the next integer lies on the increasing side through that height. At $`q=\nu`$ strict inequality eliminates that last integer. From then on the next integer after the late crossing works, since the late start at margin 2 is below 20,308,191 and the whole late branch extends through 20,309,000. For real starts the early maximum itself is eliminated only at $`\mu`$. With weak positive-margin inequalities the early height $`y_0`$ attains $`\mu`$ and 46,695 attains $`\nu`$ in the integer problem. Completion heights are four times the respective starting heights. [Third peak calculation](word_peak.py) · [Monotonicity and exact boundary checks](word_cover.py)
+
+In particular $`a(\nu)\in(20288500.19344,20288500.19345)`$ and $`a(\mu)\in(20288514.06421,20288514.06422)`$. At the integer threshold the first successful integer jumps from 46,695 to 20,288,501. The real infimum has exactly one jump on $`[0,2]`$, from left limit $`y_0`$ to $`a(\mu)`$. On the whole interval $`\nu\le q\lt \mu`$, of width greater than 0.00022639, one has $`N(q)/T(q)\ge N(\nu)/y_0\gt 434`$. At the benchmark the increasing first $`A`$ move controls the first crossing, and the first $`B`$, second $`A`$ and second $`B`$ moves are respectively greater than 20, 48 and 38 on $`[20306533.58,20306533.61]`$. The fifteen other patterns have already finished long before the all-gain pattern starts. [Certified roots, endpoints and integer tests](evidence/first-catalogue.txt)
+
+For any algebraic $`q\in(0,2]`$, an algebraic crossing height would give an algebraic linear relation between odd prime logarithms and $`\log 2`$, with nonzero coefficient $`-q`$ on $`\log 2`$. Unique factorization gives rational independence of these logarithms. Baker’s theorem rules the relation out. For $`q=0`$, the prime 183,263 has degree one on field $`B`$, has nonzero coefficient in $`S_B(2y)`$ and is absent from $`S_B(y)`$ throughout the bracket $`45700\lt y\lt 45800`$. At the early peak the prime 380,207 has degree one on $`B`$ and appears only in the last term $`S_B(4y)`$ of the second difference $`S_B(4y)-2S_B(2y)+S_B(y)`$. Its weight is nonzero on the full small peak bracket. These two nonzero odd-prime coefficients prove that $`T(0)`$ and $`y_0`$ are transcendental as well. Finally $`\nu`$ is transcendental because it is a nonzero normalized move at the algebraic height 46,695. These deductions determine the arithmetic type of every real onset at an algebraic margin. [Baker’s theorem](https://doi.org/10.1112/S0025579300003971) · [Prime coefficient checks](word_cover.py)
+
+### How many samples detect the early gain?
+
+Suppose the sampling clock has an unknown initial phase. Fix $`\nu\le q\lt \mu`$ and write $`c(q)`$ for the height on the decreasing second $`B`$ move where it equals $`q`$. Before height 20,288,400 the only starts giving four strict gains above $`q`$ form the open interval $`(b(q),c(q))`$. This follows from the four certified intervals, the vanishing move below 6 and the strict maximum. The width $`w=c(q)-b(q)`$ is less than one since $`b(q)\ge46695`$ and $`c(q)\lt 46696`$. Its width in octaves is $`w_2=\log(c(q)/b(q))/\log2`$.
+
+For additive sampling, choose $`m`$ offsets $`t_j`$ modulo one and sample at $`n+\theta+t_j`$ with common unknown $`\theta`$. For octave sampling, use $`2^{n+\theta+t_j}`$. In each case choose any integer $`n`$ that gives a positive start, taking all such observations. On the phase circle the successful offsets for a single clock form an open arc of length $`w`$ or $`w_2`$. If the chosen offsets have cyclic gaps $`g_1,\ldots,g_m`$, every initial phase is caught precisely when the largest gap is **strictly** smaller than the arc length. A gap equal to the length allows the two endpoints to meet at a missed phase. The gaps sum to one, so equal spacing minimizes their maximum and attains the minimum. For uniform initial phase the largest possible success probability is $`\min(1,mw)`$ for additive sampling, and $`\min(1,mw_2)`$ in octaves. The union bound gives the upper bound and equally spaced arcs attain the probability, including when the omitted endpoints have measure zero. Thus the smallest numbers guaranteeing success for **every** phase are
+
+```math
+m_1(q)=\lfloor 1/w\rfloor+1,\qquad m_2(q)=\lfloor 1/w_2\rfloor+1.
+```
+
+| Strict required margin | Minimum offsets per unit of height | Minimum offsets per octave |
+| --- | ---: | ---: |
+| Early integer maximum $`\nu`$ | 4 | 97,121 |
+| $`\mu-10^{-6}`$ | 680 | 21,987,939 |
+
+At $`q=\nu`$ the window starts at exactly 46,695 and ends between $`46695.333262779289365032`$ and $`46695.333262779289365033`$. Three equally spaced additive samples per unit miss **0.02116621319… percent** of initial phases. No arrangement of three does better. Four equally spaced samples guarantee a hit. The right endpoint is transcendental. If it were algebraic, equality of the second $`B`$ move there and the first $`B`$ move at 46,695 would give an algebraic linear relation in odd prime logarithms. The coefficient of 380,207 occurs only in the former move and is nonzero throughout $`[46695,46696]`$. Baker’s theorem also makes the width and the best miss probability for three samples transcendental. [Direct prime counts](clock_phases.py) · [Independent endpoint signs](clock_phases_recheck.py)
+
+The early passage becomes hard to detect at a rate fixed by two actual prime sums. Put $`p=D_B'(y_0)\gt 0`$ and $`s=(d/dy)D_B(2y)|_{y=y_0}\lt 0`$. The inverse function theorem on the knot-free peak cell gives
+
+```math
+w=(p^{-1}-s^{-1})(\mu-q)+O((\mu-q)^2),\qquad
+1472.01872576754168\lt p^{-1}-s^{-1}\lt 1472.01872576754169.
+```
+
+As the margin increases to the early maximum, $`(\mu-q)m_1(q)\to1/(p^{-1}-s^{-1})`$, while $`(\mu-q)m_2(q)\to y_0\log2/(p^{-1}-s^{-1})\in(21.98793864880736,21.98793864880737)`$. One calculation bisects the original weighted prime sums. Another constructs the two affine coefficients on each local cell by Euler criteria and direct logarithm sums, checks opposite signs at the rational bracket endpoints, and certifies the four integer minima. [Numerical evidence](evidence/clock-phases.txt) · [Lean gap-count deduction](DoublingPatterns.lean)
+
 ## Profiles for the sixteen characters
 
 The compact test and its Fourier transform are
