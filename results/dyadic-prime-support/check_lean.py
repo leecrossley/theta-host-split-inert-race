@@ -6,7 +6,7 @@ import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("two_zeros", "root_propagates", "prescribe_root", "silent_zero", "invisible_iff",
-            "opposite_linear_terms", "dyadic_sum")
+            "opposite_linear_terms", "dyadic_sum", "phase_quadratic", "half_shift_recovery")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

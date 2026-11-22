@@ -1,0 +1,1 @@
+SymPy 1.14.0 Smith factors and real-root counts certify all 39 field/cell cases, with direct ranks at every included endpoint.

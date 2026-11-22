@@ -293,7 +293,7 @@ For any required $`B`$ norm $`b\le8H`$, its last knot $`b\gt H`$ lies well insid
 
 ## Opposite runs on the unshifted dyadic grid
 
-An observation starts at exactly $`y=2^n`$. Its four changes, in order, are $`D_A(y),D_B(y),D_A(2y),D_B(2y)`$. A word succeeds at normalized margin $`q\ge0`$ if each change times its prescribed sign exceeds $`q`$. Both doublings finish at $`4y`$. We consider all integer exponents and require strict inequalities even at zero. For $`n\lt0`$ every contributing norm would be below 16. The two races have no such norms. [Scores and trace interpretation](#the-scores-and-the-arithmetic-input)
+An observation starts at exactly $`y=2^n`$. Its four normalized moves, in order, are $`D_A(y),D_B(y),D_A(2y),D_B(2y)`$. A word succeeds at normalized margin $`q\ge0`$ if each move times its prescribed sign exceeds $`q`$. Both doublings finish at $`4y`$. We consider all integer exponents and require strict inequalities even at zero. For $`n\lt0`$ every contributing norm would be below 16. The two races have no such norms. [Scores and trace interpretation](#the-scores-and-the-arithmetic-input)
 
 **Theorem.** Define $`\alpha=D_B(2^{12})`$ and $`\beta=-D_B(2^{35})`$. For every $`0\le q\lt\alpha`$, word `-+-+` first occurs at $`2^{12}`$ and `+-+-` first occurs at $`2^{34}`$. For $`\alpha\le q\lt\beta`$, the first start for `+-+-` is still $`2^{34}`$, and `-+-+` has no start through $`2^{34}`$. For $`q\ge\beta`$ neither orientation has a start through $`2^{34}`$. In particular, at $`q=3947/2000`$ the start for `+-+-`, $`2^{34}`$, is $`2^{22}=4{,}194{,}304`$ times the start for `-+-+`, $`2^{12}`$. The finishing heights are 16,384 for `-+-+` and 68,719,476,736 for `+-+-`. The enclosures
 
