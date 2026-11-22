@@ -28,6 +28,13 @@ At log X >= 2000 every pair-character prime sum has absolute value < 1/40.
 Each unit projection has weighted square sum > 1/12 and more than X/(144 log(2X)) visible primes.
 Direct values at 1 and uniform derivative bounds give L(s) > 1/4 on all 12 intervals.
 The independent zero-count integral with cutoff 640 gives absolute error < 1/50.
+Certified 344 polynomial matrix ranks throughout 13 open phase cells, plus all 13 included endpoints on each of three field choices.
+The pooled lists in phase order are (7,31,47), (31,47), (), (7), (7,31,47).
+All available nonzero readings are independent; the only changes in the initial zero count occur strictly above phases 49/32 and 31/16.
+At phase 3/2 the two pooled level combinations isolate 31 and 47; neither field alone isolates a prime.
+The last deficient ordinary-prime octave through y=2000 occurs exactly at y=271/8. Every larger real start through 2000 has two primes in every direction.
+Verified 1,786 full clusters and 21,432 prime certificates. All 278,616 knot/deletion systems are inconsistent over the reals.
+Independent elimination modulo 1,000,000,007 gives two independent residual equations in all 278,616 systems.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DyadicPrimeSupport
 'DyadicPrimeSupport.two_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DyadicPrimeSupport.root_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -36,3 +43,5 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'DyadicPrimeSupport.invisible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DyadicPrimeSupport.opposite_linear_terms' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DyadicPrimeSupport.dyadic_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.phase_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.half_shift_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
