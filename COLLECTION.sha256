@@ -1,4 +1,5 @@
 887446a07a69d6d6c2e60e84c8fdcae2331f69f579ac2355059b15ade415840e  .github/workflows/asymptotic-waiting-factors-verify.yml
+435e1ba1f4484dcdf04808cc5eafd344191211a24759c23ac5260625e85f6bbe  .github/workflows/consecutive-doubling-patterns-verify.yml
 14d11d487d02926910a32eb97253e06810ac6091ca2c18bb28139769dd5a889e  .github/workflows/dyadic-prime-support-verify.yml
 de8c513c0a6a8c2883fbd750f750d585ec7844ec33af7a2701526110fb065afa  .github/workflows/joint-levels-and-moves-verify.yml
 d2e8e5bc88048b19ce89adeea8811a717ac4ef1ca28d7fd5e19798ab9678ef2d  .github/workflows/result-manifests.yml
