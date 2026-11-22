@@ -92,7 +92,7 @@ int main(int argc, char** argv) {
     while (std::cin >> x) acc.edges.push_back(x);
     if (acc.edges.empty() || !std::is_sorted(acc.edges.begin(), acc.edges.end())) return 2;
     const u64 cap = acc.edges.back();
-    if (cap > u64(350000000) || cap < 16) return 2;
+    if (cap > (u64(1)<<38) || cap < 16) return 2;
     acc.sums.resize(acc.edges.size());
     unsigned root = 1;
     while (u64(root+1)*(root+1) <= cap) ++root;

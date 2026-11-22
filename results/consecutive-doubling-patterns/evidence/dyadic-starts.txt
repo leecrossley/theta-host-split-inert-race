@@ -1,0 +1,5 @@
+35 exact powers of two, 14 strict words, 23 margin records and 16 distinct limiting readings.
+First opposed runs at margin 1.9735: 547 gains at exponent 34; 571 gains at exponent 12.
+The four-gain and --+- patterns do not occur through exponent 34, even at strict margin zero.
+16 prime pivots verify the triangular coefficient minor, from 7 to 137438953567.
+All 560 signed start/word tests passed with rational endpoints and independently weighted octaves.

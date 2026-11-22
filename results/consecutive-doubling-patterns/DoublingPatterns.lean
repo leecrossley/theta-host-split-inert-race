@@ -128,6 +128,42 @@ theorem affine_extrapolation {x y : ℝ} (h : y ≠ x) (s u v : ℝ) :
   apply (div_eq_iff (sub_ne_zero.mpr h)).2
   ring
 
+theorem first_strict_record {score : ℕ → ℝ} {q : ℝ} {n : ℕ}
+    (hit : q < score n) (earlier : ∀ j < n, score j ≤ q) :
+    IsLeast {j | q < score j} n := by
+  refine ⟨hit, ?_⟩
+  intro j hj
+  by_contra! h
+  exact (not_lt_of_ge (earlier j h)) hj
+
+theorem last_prime_pivot {ι κ K : Type*} [LinearOrder ι] [Fintype ι] [Field K]
+    (row : ι → κ → K) (pivot : ι → κ) (weight : ι → K)
+    (diagonal : ∀ i, row i (pivot i) ≠ 0)
+    (older : ∀ i j, j < i → row j (pivot i) = 0)
+    (relation : ∀ p, ∑ i, weight i * row i p = 0) :
+    ∀ i, weight i = 0 := by
+  classical
+  by_contra! h
+  let used := Finset.univ.filter fun i => weight i ≠ 0
+  have hn : used.Nonempty := by
+    obtain ⟨i, hi⟩ := h
+    exact ⟨i, Finset.mem_filter.mpr ⟨Finset.mem_univ i, hi⟩⟩
+  let m := used.max' hn
+  have hm : m ∈ used := used.max'_mem hn
+  have hwm : weight m ≠ 0 := (Finset.mem_filter.mp hm).2
+  have hsingle : ∑ i, weight i * row i (pivot m) = weight m * row m (pivot m) := by
+    apply Finset.sum_eq_single m
+    · intro j _ hj
+      rcases lt_or_gt_of_ne hj with before | after
+      · rw [older m j before, mul_zero]
+      · have hz : weight j = 0 := by
+          by_contra hnj
+          have mem : j ∈ used := Finset.mem_filter.mpr ⟨Finset.mem_univ j, hnj⟩
+          exact (not_lt_of_ge (Finset.le_max' used j mem)) after
+        rw [hz, zero_mul]
+    · simp
+  exact (mul_ne_zero hwm (diagonal m)) (hsingle.symm.trans (relation (pivot m)))
+
 end DoublingPatterns
 
 #print axioms DoublingPatterns.sign_preserved
@@ -150,3 +186,5 @@ end DoublingPatterns
 #print axioms DoublingPatterns.two_sample_minor
 #print axioms DoublingPatterns.two_backgrounds
 #print axioms DoublingPatterns.affine_extrapolation
+#print axioms DoublingPatterns.first_strict_record
+#print axioms DoublingPatterns.last_prime_pivot

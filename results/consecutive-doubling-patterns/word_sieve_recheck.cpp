@@ -75,7 +75,7 @@ int main(int argc,char** argv) {
     while (std::cin>>t) edges.push_back(t);
     if (edges.empty() || !std::is_sorted(edges.begin(),edges.end())) return 2;
     U cap=edges.back();
-    if (cap<16 || cap>350000000) return 2;
+    if (cap<16 || cap>(U(1)<<38)) return 2;
     std::vector<Bin> sums(edges.size());
     std::vector<U> primes;
     for (U n=3;n*n<=cap;n+=2) {

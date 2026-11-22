@@ -90,6 +90,11 @@ Additional obstruction primes 17258590801, 17498715103 and 17498715233 have degr
 With one or two A readings the common upper endpoint must strictly exceed 37592788570517198340 + 1/8 or 37232367690617444520 + 1/8, respectively.
 A third A reading reduces the infimum by a factor strictly between 136174087494 and 136174087495.
 Independent residue tables, 188 closed-left intervals, segmented large-prime sieves and exact two-sample weights agree.
+35 exact powers of two, 14 strict words, 23 margin records and 16 distinct limiting readings.
+First opposed runs at margin 1.9735: 547 gains at exponent 34; 571 gains at exponent 12.
+The four-gain and --+- patterns do not occur through exponent 34, even at strict margin zero.
+16 prime pivots verify the triangular coefficient minor, from 7 to 137438953567.
+All 560 signed start/word tests passed with rational endpoints and independently weighted octaves.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DoublingPatterns
 'DoublingPatterns.sign_preserved' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.separated_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -111,3 +116,5 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'DoublingPatterns.two_sample_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.two_backgrounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.affine_extrapolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.first_strict_record' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.last_prime_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]

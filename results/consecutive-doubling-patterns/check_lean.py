@@ -9,7 +9,7 @@ THEOREMS = ("sign_preserved", "separated_signs", "move_error", "telescoping",
             "excluded_run", "word_count", "reflect_difference", "cubic_majorant",
             "strict_peak_of_opposite_branches", "catalogue_iff_last", "cell_intersection", "phase_count_needed",
             "successor_above_crossing", "three_point_slope_jump", "recover_jump_off_grid", "last_surviving_combination", "last_row_removes_combination",
-            "two_sample_minor", "two_backgrounds", "affine_extrapolation")
+            "two_sample_minor", "two_backgrounds", "affine_extrapolation", "first_strict_record", "last_prime_pivot")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 

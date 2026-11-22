@@ -11,7 +11,7 @@ S_i(y)=-\frac{1}{B_0\sqrt y}\sum_w\epsilon_w\log(Nw)W(Nw/y),
 \qquad D_i(y)=\frac{S_i(2y)-S_i(y)}a .
 ```
 
-The odd primitive constituents are the quadratic characters of conductors $`u,v`$, each twisted by the four powers of the primitive even quartic character modulo 16. For each odd prime conductor the primitive conductors are $`p,8p,16p,16p`$. The bound $`|V_i|\le M_i`$ below, the dyadic certificate and the infinite-height conclusions invoke Alpöge's announced theorem that each primitive Dirichlet L-function has its zeros in the critical strip on the critical line. This is GRH for these functions, and the announcement has not yet been refereed. Its statement, the printed axiom audit and the independent kernel records are pinned by digest. The finite prime-ideal catalogue uses no zero-location theorem. The density argument permits every rational relation among the ordinates. [Announcement](https://alpo.ge/remark.pdf) · [Upstream theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean) · [Independent verification](https://math.mit.edu/~drew/grh/) · [Pinned record check](check_source.py)
+The odd primitive constituents are the quadratic characters of conductors $`u,v`$, each twisted by the four powers of the primitive even quartic character modulo 16. For each odd prime conductor the primitive conductors are $`p,8p,16p,16p`$. The bound $`|V_i|\le M_i`$ below, the six-step spectral certificate and the infinite-height conclusions invoke Alpöge's announced theorem that each primitive Dirichlet L-function has its zeros in the critical strip on the critical line. This is GRH for these functions, and the announcement has not yet been refereed. Its statement, the printed axiom audit and the independent kernel records are pinned by digest. The finite prime-ideal catalogue uses no zero-location theorem. The density argument permits every rational relation among the ordinates. [Announcement](https://alpo.ge/remark.pdf) · [Upstream theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean) · [Independent verification](https://math.mit.edu/~drew/grh/) · [Pinned record check](check_source.py)
 
 ## First occurrence on two consecutive doublings
 
@@ -29,7 +29,7 @@ For a sign word $`s\in\{-1,1\}^4`$ use the coordinate order $`V(y)=(D_A(y),D_B(y
 
 ### Exact prime sums and independent counts
 
-For a good odd rational prime $`p`$ let $`\chi_u(p)=(p/u)`$ and similarly for $`v`$. Its residue degree in $`F_i`$ is the least $`f\in\{1,2,4\}`$ with $`p^f\equiv\pm1\pmod {16}`$ and $`(\chi_u(p)\chi_v(p))^f=1`$. The quadratic sign is $`\chi_u(p)^f`$ by reciprocity. The $`8/f`$ base primes above $`p`$ all have norm $`n=p^f`$. Their logarithmic weight, including the inert-minus-split sign, is $`8e_p\log p`$, where $`e_p=-\chi_u(p)^f`$. This is the local trace calculation in the scores defined above. The two extra omitted rational primes for $`A`$ are 343057911569 and 343070636977, and for $`B`$ they are 413718278401 and 603339156001. All exceed the largest norm used here, 324,944,000. The two conductors and 2 in each field are omitted throughout. [Local host and score definitions](#the-scores-and-the-arithmetic-input) · [Five fixed omissions in each field](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.5.0/results/joint-levels-and-moves/deadline_arithmetic.py)
+For a good odd rational prime $`p`$ let $`\chi_u(p)=(p/u)`$ and similarly for $`v`$. Its residue degree in $`F_i`$ is the least $`f\in\{1,2,4\}`$ with $`p^f\equiv\pm1\pmod {16}`$ and $`(\chi_u(p)\chi_v(p))^f=1`$. The quadratic sign is $`\chi_u(p)^f`$ by reciprocity. The $`8/f`$ base primes above $`p`$ all have norm $`n=p^f`$. Their logarithmic weight, including the inert-minus-split sign, is $`8e_p\log p`$, where $`e_p=-\chi_u(p)^f`$. This is the local trace calculation in the scores defined above. The two extra omitted rational primes for $`A`$ are 343057911569 and 343070636977, and for $`B`$ they are 413718278401 and 603339156001. All exceed 324,944,000, the largest norm in the real-start count. The two conductors and 2 in each field are omitted throughout. [Local host and score definitions](#the-scores-and-the-arithmetic-input) · [Five fixed omissions in each field](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.5.0/results/joint-levels-and-moves/deadline_arithmetic.py)
 
 Write $`P(l,h)=\sum_{l\lt n\le h}e_p\log p`$ and $`Q(l,h)=\sum_{l\lt n\le h}e_p\log(p)/n`$. Substitution of the two tent branches gives
 
@@ -288,6 +288,60 @@ This exhausts the heights and forces $`U\gt P^2/8`$. Baker’s theorem justifies
 Both common upper bounds are attained as **infima** by finite reconstructions. For one $`A`$ observation use $`y=n_2`$. For two take $`s=n_1,t=n_1+1/16`$ and the extrapolation above. No integer norm larger than $`8n_1`$ can enter either of these last two readings. After matching the target and eliminating the expired primes, the residual to be supplied by $`B`$ has only finitely many nonzero coefficients, all with $`B`$ norms exceeding $`H`$. In the one-reading case these norms are at most $`P_1^2`$. In the two-reading case they are at most $`P^2`$. Indeed all contributing $`A`$ norms are at most $`8n_2`$ or $`8n_1`$, respectively. An increase of degree from $`A`$ to $`B`$ is possible only from one to two, and the two largest eligible rational primes have just been certified. The original target contributes only $`B`$ norms below 373,560.
 
 For any required $`B`$ norm $`b\le8H`$, its last knot $`b\gt H`$ lies well inside the allowed upper bound. If $`b\gt8H`$, its first knot $`b/8`$ is strictly past $`H`$ and strictly below any permitted $`U`$ in the corresponding row. Three rational observations placed sufficiently close on either side of that knot extract its logarithm, as in the preceding section. Doing this finitely many times supplies the entire residual. The three-reading row and the zero-reading impossibility follow from the previous paired-field theorem. [Three-point recovery](#which-early-thresholds-can-later-readings-recover) · [Exact common endpoints](evidence/observation-budget.txt)
+
+## Opposite runs on the unshifted dyadic grid
+
+An observation starts at exactly $`y=2^n`$. Its four changes, in order, are $`D_A(y),D_B(y),D_A(2y),D_B(2y)`$. A word succeeds at normalized margin $`q\ge0`$ if each change times its prescribed sign exceeds $`q`$. Both doublings finish at $`4y`$. We consider all integer exponents and require strict inequalities even at zero. For $`n\lt0`$ every contributing norm would be below 16. The two races have no such norms. [Scores and trace interpretation](#the-scores-and-the-arithmetic-input)
+
+**Theorem.** Define $`\alpha=D_B(2^{12})`$ and $`\beta=-D_B(2^{35})`$. For every $`0\le q\lt\alpha`$, word `-+-+` first occurs at $`2^{12}`$ and `+-+-` first occurs at $`2^{34}`$. For $`\alpha\le q\lt\beta`$, the first start for `+-+-` is still $`2^{34}`$, and `-+-+` has no start through $`2^{34}`$. For $`q\ge\beta`$ neither orientation has a start through $`2^{34}`$. In particular the starting heights differ by $`2^{22}=4{,}194{,}304`$ at $`q=3947/2000`$. Their respective finishing heights are 16,384 and 68,719,476,736. The enclosures
+
+```math
+3.41437510\lt\alpha\lt3.41437512,\qquad
+6.75643706\lt\beta\lt6.75643708
+```
+
+are obtained by separately enclosing the limiting component. At exponent 12 the four normalized moves, rounded to two decimals, are $`(-17.92,3.41,-4.33,53.23)`$. At exponent 34 they are $`(15.50,-30.07,47.23,-6.76)`$. [Directed prime bins](evidence/dyadic-primary-571.txt) · [Record thresholds](evidence/dyadic-records.tsv)
+
+Here is the first exponent at $`q=3947/2000`$ for each word with a start through exponent 34. The last two words in the table have no strict start in this range at any nonnegative margin. The prime counts make no assertion about their first subsequent occurrences.
+
+| Word | First exponent | Word | First exponent |
+| --- | ---: | --- | ---: |
+| `+--+` | 3 | `++--` | 6 |
+| `--++` | 7 | `++-+` | 8 |
+| `---+` | 11 | `-+-+` | 12 |
+| `+-++` | 15 | `+++-` | 16 |
+| `-+--` | 18 | `-++-` | 21 |
+| `+---` | 22 | `-+++` | 24 |
+| `----` | 26 | `+-+-` | 34 |
+| `--+-` | none through 34 | `++++` | none through 34 |
+
+The table of 23 records gives a complete first-passage rule through exponent 34. For each word read its rows in increasing start exponent. A row reports the first exponent for margins from the preceding record value **inclusive** (zero for the first row) up to the current record value **exclusive**. At or above the final value there is no start in the range. The exact value in a row is the absolute value of the identified field move at the identified limiting exponent. The last column gives its floor after multiplication by ten million. At $`q=0`$ fourteen words occur. All fourteen still occur when $`0\le q\lt\alpha`$. Exactly thirteen remain at $`q=\alpha`$, since all other final record values exceed $`\alpha`$. [Complete table](evidence/dyadic-records.tsv)
+
+### Counting prime ideals on the grid
+
+Set $`A_j=P(2^{j-1},2^j)`$ and $`R_j=Q(2^{j-1},2^j)`$ with the signed logarithmic and reciprocal logarithmic sums defined above. Each rational prime supplies its single eligible ideal norm and the trace determines its sign. At the largest start the last score in the second move uses norms through $`2^{38}`$. The first exceptional auxiliary prime is 343,057,911,569, beyond this cutoff. Both calculations omit the primes above 2 and the respective two conductors. They retain all eligible degree-one, degree-two and degree-four contributions. [Splitting rule](#exact-prime-sums-and-independent-counts) · [Progression sieve](word_sieve.cpp) · [Odd-integer sieve](word_sieve_recheck.cpp)
+
+One calculation forms the three scores and differences them, using directed 58-bit logarithms and 96-bit reciprocal logarithms. The other uses 62 and 102 bits. It reconstructs the move directly from three disjoint octaves. For $`y=2^j`$ multiply the move by $`B_0a\sqrt y/8`$ to obtain
+
+```math
+-2A_{j+1}+2yR_{j+1}
+ +(1+\sqrt2)A_{j+2}-(4+2\sqrt2)yR_{j+2}
+ -A_{j+3}/\sqrt2+4\sqrt2\,yR_{j+3}.
+```
+
+The identity follows by substituting both branches of the tent and collecting the coefficients of $`1`$ and $`1/n`$ on each octave. The second calculation encloses $`\sqrt2`$ by an integer square root and $`\log 2`$ by 90 positive terms of $`2\operatorname{arctanh}(1/3)`$ with a geometric tail bound. From this point every endpoint is rational. The signed bounds from the two sieves overlap in every bin, after accounting for their different scales. [Score differences](dyadic_records.py) · [Octave weights and rational intervals](dyadic_records_recheck.py)
+
+All fixed-point products and accumulators fit their integer widths. Below $`2^{38}`$ a rational prime logarithm is below 27. A one-unit allowance in real units bounds the directed rounding. A raw log sum before scaling is consequently below $`28\cdot2^{38}`$ in absolute value. For reciprocal weights, distinct rational primes give distinct norms and $`\sum_{n\le 2^{38}}1/n\le 1+38\log 2`$. After scaling by at most $`2^{102}`$ and allowing one final rounding unit per term the total stays below $`2^{113}`$. Both signed accumulators have 128 bits. The log-normalization shifts in the sieve use inputs below $`2^{38}`$ and at most 15 mantissa bits. [Two sieve implementations](word_sieve.cpp) · [Independent integer bounds](word_sieve_recheck.cpp)
+
+For the first three exponents at least one move is exactly zero. At every other exponent the sign and the unique smallest absolute component are decided by disjoint bounds. The first verifier keeps strict records. The independent verifier checks all 560 word/exponent pairs against the proposed preceding record, including exact ties where adjacent words use the same physical reading. This proves both the successes and every earlier exclusion for each interval of margins. The kernel checks the implication from a strict hit and the earlier weak upper bounds to the least successful exponent. [Replay transcript](evidence/dyadic-starts.txt) · [Kernel deductions](DoublingPatterns.lean)
+
+### Sixteen independent transition margins
+
+There are sixteen different limiting readings among the 23 records. In increasing exponent they occur at $`3,5,6,8,10,12,14,15,17,19,21,23,24,26,31,35`$. **These sixteen positive margins and 1 are linearly independent over the real algebraic numbers.** In particular every transition value is transcendental. Margins shared across different words occur at exactly the repeated readings specified in the table. [Pivot primes and fields](evidence/dyadic-pivots.tsv)
+
+Multiply a proposed algebraic linear relation by $`\log 2`$. Each normalized reading at an algebraic height now contributes a finite linear combination of logarithms of odd rational primes with algebraic coefficients. Its absolute value changes just the overall sign. The coefficient of $`\log 2`$ comes from the constant in the relation. Baker’s theorem and unique factorization give linear independence of all these prime logarithms over the algebraic numbers. [Baker’s theorem](https://doi.org/10.1112/S0025579300003971) · [Prime-logarithm formulation for these races](https://github.com/leecrossley/theta-host-split-inert-race/blob/algebraic-heights-v1.7.1/results/algebraic-heights/PROOF.md#prime-logarithms-at-algebraic-heights)
+
+At the earliest exponent the rational prime 7 has residue degree two on 571/599 and its norm 49 lies strictly between 32 and 64. At every later entry with exponent $`j`$ the listed prime has degree one on the specified field and satisfies $`2^{j+2}\lt p\lt2^{j+3}`$. The earlier exponents use norms at most $`2^{j+2}`$. In the last octave only the second score in the move is active, with strictly positive tent and nonzero signed weight. Thus each pivot occurs with nonzero coefficient in its own reading and zero coefficient in all preceding readings. Taking the largest index with nonzero scalar in a proposed relation gives a contradiction at its pivot prime. The independent program checks primality by trial division, residue degrees by quadratic residues and all octave boundaries by integers. The kernel checks the triangular argument for arbitrary finite coefficient arrays. [Pivot verification](dyadic_records_recheck.py) · [Triangular lemma](DoublingPatterns.lean)
 
 ## Profiles for the sixteen characters
 
