@@ -1,4 +1,20 @@
-# When do both theta prime races gain twice in a row?
+# Prime and square starts in the two theta prime races
+
+The first prime starting height at which both fields gain more than $`1.9735\log 2`$ twice in a row is **20,306,543**. The first perfect square is **20,313,049**, or $`4507^2`$. Both doublings use the same starting height on the 547/727 and 571/599 fields. Among unrestricted integer starts, the first is 20,306,534. Two independent finite counts prove the exclusions for all earlier starts. [Proof](PROOF.md#prime-and-square-starting-heights) · [Replay transcript](evidence/arithmetic-starts.txt)
+
+Three early thresholds govern what happens as the required gain increases. Readings on **either** field can be used to recover them. If only readings from height 46,687 onward are available, two independent threshold values can still be recovered exactly. At 46,703 just one linear combination survives. At **46,993 none survives**, however far the observations continue. These are exact statements about finite linear combinations with real algebraic coefficients and readings at algebraic heights. The proof identifies the individual rational prime responsible for each loss. [Recovery theorem](PROOF.md#which-early-thresholds-can-later-readings-recover) · [Independent prime enumeration](recover_thresholds_recheck.py)
+
+At every starting cutoff from 46,769 up to 46,993 (excluded), neither field alone can reconstruct any nonzero combination. Together they recover one if the permitted upper observation height is **strictly above 273,417,420.125**. Every larger endpoint suffices. Through 539,330,952.25, exactly three readings on 547/727 are necessary and sufficient when combined with readings on 571/599. The missing rational prime is 46,769, whose last weight on one field has vanished before its weight on the other field begins. [Why both fields and that height are necessary](PROOF.md#when-both-fields-are-needed)
+
+| Allowed starting heights | Last successful early start as the margin approaches its threshold from below | Threshold, rounded down | First allowed start at the exact threshold |
+| --- | ---: | ---: | ---: |
+| Perfect squares | 46,656 | 1.645437640571873959 | 20,295,025 |
+| Rational primes | 46,691 | 1.677966548153054396 | 20,288,251 |
+| Positive integers | 46,695 | 1.682222888957865575 | 20,288,501 |
+
+Across **three successive margin intervals**, the first square exceeds 434 times the first prime, then the first prime exceeds 434 times the first integer, then the first integer exceeds 434 times the infimum for real starts. The proof gives the first prime and square for **every** margin from 0 through 2. The late real crossings at all three tabulated thresholds are transcendental. These conclusions use finite prime sums and Baker’s theorem and assume no hypothesis on zeros. [First-start formulas](PROOF.md#prime-and-square-starting-heights) · [Prime-logarithm coefficients](PROOF.md#which-early-thresholds-can-later-readings-recover)
+
+## First starts among real and integer heights
 
 On the 547/727 and 571/599 fields, the first integer start for **two consecutive gains on both fields**, each larger than $`1.9735\log 2`$, is **20,306,534**. The second doubling finishes at **81,226,136**. Every other two-step joint sign pattern already occurs at an integer start by **1,469**, with all four moves larger than $`2\log 2`$ in their prescribed directions. Two finite prime counts exclude **every real start** up to the threshold crossing. The calculation is unconditional. [First-occurrence proof](PROOF.md#first-occurrence-on-two-consecutive-doublings) · [Certificate](evidence/first-catalogue.txt)
 
@@ -47,4 +63,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, both first-occurrence certificates and twelve Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, the arithmetic-grid and rank certificates and seventeen Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)

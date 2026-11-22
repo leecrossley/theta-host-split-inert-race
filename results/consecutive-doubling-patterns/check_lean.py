@@ -7,7 +7,8 @@ import tempfile
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("sign_preserved", "separated_signs", "move_error", "telescoping",
             "excluded_run", "word_count", "reflect_difference", "cubic_majorant",
-            "strict_peak_of_opposite_branches", "catalogue_iff_last", "cell_intersection", "phase_count_needed")
+            "strict_peak_of_opposite_branches", "catalogue_iff_last", "cell_intersection", "phase_count_needed",
+            "successor_above_crossing", "three_point_slope_jump", "recover_jump_off_grid", "last_surviving_combination", "last_row_removes_combination")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 
