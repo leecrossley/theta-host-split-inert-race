@@ -223,6 +223,72 @@ Three $`A`$ readings are the **minimum** throughout the following interval of pe
 
 To see this, use the primes $`46447,46559`$. Both have degree one on $`B`$ and degree two on $`A`$. Each is below 46,656, so it has zero coefficient in all three thresholds, and contributes to no later $`B`$ move. Let $`n_1=46447^2`$ and $`n_2=46559^2`$. Up to $`U\le n_1/4`$, the coefficient of each of these two primes in $`\sqrt yD_A(y)`$ is a fixed nonzero multiple of $`\max(0,y-n_j/8)`$. Any successful reconstruction must include an $`A`$ reading at $`y_2\gt46769^2/8`$, where both these unwanted coefficients are nonzero. To cancel both with one other $`A`$ reading, its height $`y_1`$ must exceed $`n_2/8`$ as well. The determinant of the two background rows, after removing nonzero factors, is $`(y_1-y_2)(n_1/8-n_2/8)`$. Distinct heights give a nonzero determinant. Duplicate readings collapse into a single reading and cancelling both unwanted coefficients then cancels the desired one too. Three $`A`$ readings suffice by the entrance-knot construction. [Two-prime calculation](single_field_recovery.py) · [Independent residue check](recover_thresholds_recheck.py)
 
+## The price of limiting observations on one field
+
+Throughout this section fix any real $`46769\le H\lt46993`$. The target is the nonzero surviving threshold combination from the preceding theorem. Samples must be actual moves at algebraic heights in $`[H,U]`$. A reconstruction is a finite linear combination with real algebraic coefficients and an optional algebraic constant. Let $`m`$ be the maximum number of $`A`$ samples. The number of $`B`$ samples may be any finite number. Write
+
+```math
+n=46769^2,\qquad n_1=46447^2,\qquad n_2=46559^2,\qquad
+P=17258590369,\quad P_1=17341923439.
+```
+
+| Maximum number of $`A`$ samples | Required bound on their latest height if $`B`$ has no upper bound | Exact condition on a common endpoint $`U`$ for both fields |
+| ---: | --- | --- |
+| 0 | Impossible | Impossible |
+| 1 | At least $`n_2=2167740481`$, attained there | $`U\gt P_1^2/8`$ |
+| 2 | Strictly above $`n_1=2157323809`$ | $`U\gt P^2/8`$ |
+| 3 or more | Strictly above $`n/8=273417420.125`$ | $`U\gt n/8`$ |
+
+For the second column, each entry gives a condition on the permitted upper height for $`A`$ alone. In the third, equality fails in all three finite rows. The exact one- and two-sample common infima are **37,592,788,570,517,198,340.125** and **37,232,367,690,617,444,520.125**. Adding the third $`A`$ reading cuts the joint infimum by a factor between **136,174,087,494** and **136,174,087,495**. The proof uses exact prime coefficients, rational inequalities, and Baker’s linear independence theorem. There is no assumption on zeros. [Primary computation](observation_budget.py) · [Independent computation](observation_budget_recheck.py) · [Transcript](evidence/observation-budget.txt)
+
+### The individual prime weights
+
+The preceding basis theorem allows us to compare the coefficient of each prime logarithm. Use $`F_i(y)=\sqrt yD_i(y)`$, which has the same linear-recovery power as the move at algebraic $`y`$. Its coefficient at a good norm $`m_0`$ is a fixed nonzero algebraic multiple of $`\psi(y/m_0)`$, with
+
+```math
+\psi(x)=W(1/(2x))/\sqrt2-W(1/x).
+```
+
+Its support with endpoints removed is $`(1/8,1)`$ except for the internal zero $`1/(2\sqrt2)`$. On the three closed pieces from $`1/8`$ to $`1/4`$, from $`1/4`$ to $`1/2`$, and from $`1/2`$ to 1, the formulas are respectively $`(8x-1)/\sqrt2`$, $`1+\sqrt2-(4+2\sqrt2)x`$ and $`2x-2`$. The field-specific sign and the constant of normalization have no effect on the zero locations or proportionality tests.
+
+For a prime good on both hosts, different residue degrees can arise only when the prime is congruent to $`\pm1\bmod16`$. The two degrees then belong to $`\{1,2\}`$. Indeed, in every other odd residue class the order modulo 16 up to sign is 2 or 4, already even, so the extra quadratic condition does not change it. The primes with $`B`$ degree one and $`A`$ degree two are the ones whose weights persist on $`A`$ after their $`B`$ norms expire. Among such primes through 46,992, the largest four are 46,337, 46,447, 46,559 and 46,769. The first three are smaller than all original threshold heights and have zero coefficient in the target. Prime 46,769 has nonzero coefficient in it and must be supplied by $`A`$ at some $`y\in(n/8,n)`$.
+
+The primes omitted on $`B`$ cannot add an unwanted coefficient in the upper constructions near $`n_1,n_2`$. On $`A`$ the two $`B`$ conductors 571 and 599 have norms 106,302,733,681 and 358,801 respectively. The two additional $`B`$ omissions exceed $`8n`$ even as rational primes, and 2 is omitted on both fields. After the other $`B`$-inaccessible coefficients have been cancelled, an unbounded $`B`$ tail can reproduce every remaining finite linear combination by the last-knot formula. [Local splitting rule](#the-scores-and-the-arithmetic-input) · [Prime and omission checks](observation_budget.py)
+
+### One or two observations when the other field may be observed arbitrarily late
+
+A single nonzero $`A`$ reading must include the target prime. At every $`n/8\lt y\lt n_1`$, the unwanted norms $`n_1,n_2`$ are both in the interior of their support. Their internal zeros occur at different heights, so they cannot both vanish. For $`n_1\le y\lt n_2`$ the second norm has nonzero weight on its last affine piece. It follows that one $`A`$ observation must be at least $`n_2`$. At $`y=n_2`$, the target is present and every other $`B`$-inaccessible prime has zero weight. Choosing an algebraic multiplier matches the target prime coefficient. The rest can be supplied by $`B`$. This also works at every algebraic $`y\in[n_2,n)`$.
+
+Now suppose that at most two $`A`$ readings, at distinct heights $`s\lt t`$, recover the target. Equal heights can first be combined. To exclude $`t\le n_1`$, we may assume $`t\gt n/8`$ and both weights are nonzero. At least one of $`n_1,n_2`$ has nonzero coefficient at $`t`$, including when $`t=n_1`$. Cancellation with the observation at $`s`$ forces $`s\gt n_1/8`$. Let $`\mathcal N`$ be the 306 norms $`p^2`$ with $`p\lt46656`$, $`B`$ degree one and $`A`$ degree two. These primes have zero target coefficient and have disappeared from $`B`$ at every allowed height. Let $`b`$ be the second largest norm of $`\mathcal N`$ at most $`t`$. Then $`s\ge b`$. Otherwise at least two different expired norms $`a\le t`$ would lie strictly above $`s`$. Both have $`a/8\le t/8\le n_1/8\lt s`$, so both would have to vanish at their distinct internal zeros at that same $`s`$.
+
+For every $`n/8\lt t\lt n_1`$, two norms $`a_1,a_2`$ of $`\mathcal N`$ satisfy $`t\lt a_1\lt a_2\lt2b`$. This is a finite rational inequality. In ascending order put $`a_j'`$ for the sequence of 306 norms and take $`a_k'\le t\lt a_{k+1}'`$. Use $`b=a_{k-1}'`$ and the two subsequent norms $`a_{k+1}',a_{k+2}'`$. The maximum of $`a_{k+2}'/a_{k-1}'`$ on the 188 required intervals is exactly $`377952481/325766401\lt2`$. Thus at both $`s`$ and $`t`$ the two unwanted prime weights are on the last affine piece, proportional to $`y-a_1`$ and $`y-a_2`$. No two nonzero sample weights can cancel both. Their determinant, up to nonzero factors, is $`(s-t)(a_1-a_2)`$. At $`t=n_1`$, the second largest expired norm is $`46337^2\gt n_1/2`$. If $`s\lt n_1`$, the unwanted norm $`n_1`$ is then nonzero at $`s`$ and zero at $`t`$. This proves the strict lower bound in the two-sample row. [Two interval enumerations](evidence/observation-budget.txt) · [Two-sample determinant](DoublingPatterns.lean)
+
+For every upper bound above $`n_1`$, choose $`s=n_1`$ and a distinct rational $`t`$ sufficiently close to its right, with $`t\lt n_2`$. Only the unwanted norm $`n_2`$ and the target norm $`n`$ occur from the primes inaccessible on $`B`$. Both weights are on their last affine piece. The two affine functions have different zeros, so a linear combination can eliminate the former and match the latter. Equivalently, extrapolate the two affine values to $`n_2`$ using coefficients $`(t-n_2)/(t-s)`$ and $`(n_2-s)/(t-s)`$. Apply the final algebraic scaling for the target prime. All remaining logarithms belong to the $`B`$ tail. [Affine extrapolation](DoublingPatterns.lean)
+
+### What the other field must wait for
+
+A large rational prime that has degree one on $`A`$ and degree two on $`B`$ appears on $`B`$ only after $`p^2/8`$. If its logarithm appears spuriously in the proposed $`A`$ contribution, the $`B`$ observations must reach strictly past this endpoint to remove it. The endpoint itself has zero weight. Two interval sieves give $`P_1`$ and $`P`$ as the largest such primes below $`8n_2`$ and $`8n_1`$, respectively. Their distances below the two even upper bounds are 409 and 103.
+
+For one $`A`$ reading the possible heights are contained in $`[n_2,n)`$. The prime $`P_1`$ satisfies $`4n\lt P_1\lt8n_2`$, so it has nonzero weight in every such reading and zero coefficient in the early target. This forces $`U\gt P_1^2/8`$.
+
+For the two-reading lower bound, take the additional degree-one-on-$`A`$, degree-two-on-$`B`$ primes
+
+```math
+Q=17258590801,\qquad R_1=17498715103,\qquad R_2=17498715233.
+```
+
+They satisfy $`4n\lt P\lt8n_1\lt Q\lt8n_2\lt8n\lt R_1\lt R_2\lt2P`$. Suppose $`U\le P^2/8`$. On $`B`$, none of $`P,Q,R_1,R_2`$ can contribute. All are absent from the target. If only one $`A`$ term remains, the one-reading bound already precludes recovery since $`P_1\gt P`$. Otherwise use distinct $`s\lt t`$ with nonzero coefficients, and $`t\gt n_1`$ by the preceding argument.
+
+1. Suppose $`n_1\lt t\le Q/8`$. The unwanted norm $`n_2`$ is present on its last affine branch at $`t`$, so $`s\gt n_2/8`$. Both $`46337^2`$ and $`n_1`$ are extinct at $`t`$. If $`s\lt46337^2`$, the two distinct internal zeros could not remove both there. Hence $`s\ge46337^2\gt n_1/2`$, after which the need to remove $`n_1`$ forces $`s\ge n_1`$. The two unwanted prime weights from $`n_2`$ and $`P`$ are now proportional to $`y-n_2`$ and $`y-P/8`$ at both sampled heights. These have different zeros, and two distinct observations cannot cancel both.
+2. Suppose $`Q/8\lt t\le P/4`$. Both $`P`$ and $`Q`$ are nonzero on their first affine branches at $`t`$. Both must also be present at $`s`$, which forces $`s\gt Q/8`$. Both then lie on the first branch at both heights. The two different zeros $`P/8,Q/8`$ again give a nonzero determinant.
+3. Suppose $`t\gt P/4`$. Then $`t\gt n`$, so $`s`$ alone must supply the target prime. The two unwanted norms $`n_1,n_2`$ vanish at $`t`$. As in the one-reading lower bound, $`n_2\le s\lt n`$. The prime $`P`$ is present at $`s`$, so $`t\lt P`$ is necessary to cancel it. But throughout $`P/4\lt t\lt P`$ each of $`R_1,R_2`$ has $`R_j/8\lt t\lt R_j`$. Their distinct internal zeros cannot coincide, and neither prime occurs at $`s`$ because $`R_j\gt8n`$. At least one unwanted coefficient remains.
+
+This exhausts the heights and forces $`U\gt P^2/8`$. Baker’s theorem justifies each prime-by-prime necessity even when arbitrary algebraic coefficients and a constant are allowed. [Exact prime searches](observation_budget.py) · [Independent segmented sieves](observation_budget_recheck.py)
+
+Both common upper bounds are attained as **infima** by finite reconstructions. For one $`A`$ observation use $`y=n_2`$. For two take $`s=n_1,t=n_1+1/16`$ and the extrapolation above. No integer norm larger than $`8n_1`$ can enter either of these last two readings. After matching the target and eliminating the expired primes, the residual to be supplied by $`B`$ has only finitely many nonzero coefficients, all with $`B`$ norms exceeding $`H`$. In the one-reading case these norms are at most $`P_1^2`$. In the two-reading case they are at most $`P^2`$. Indeed all contributing $`A`$ norms are at most $`8n_2`$ or $`8n_1`$, respectively. An increase of degree from $`A`$ to $`B`$ is possible only from one to two, and the two largest eligible rational primes have just been certified. The original target contributes only $`B`$ norms below 373,560.
+
+For any required $`B`$ norm $`b\le8H`$, its last knot $`b\gt H`$ lies well inside the allowed upper bound. If $`b\gt8H`$, its first knot $`b/8`$ is strictly past $`H`$ and strictly below any permitted $`U`$ in the corresponding row. Three rational observations placed sufficiently close on either side of that knot extract its logarithm, as in the preceding section. Doing this finitely many times supplies the entire residual. The three-reading row and the zero-reading impossibility follow from the previous paired-field theorem. [Three-point recovery](#which-early-thresholds-can-later-readings-recover) · [Exact common endpoints](evidence/observation-budget.txt)
+
 ## Profiles for the sixteen characters
 
 The compact test and its Fourier transform are

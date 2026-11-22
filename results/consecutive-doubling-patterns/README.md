@@ -1,4 +1,19 @@
-# Prime and square starts in the two theta prime races
+# One, two or three readings in a two-field prime race
+
+A third reading on the 547/727 field reduces the last height needed for exact reconstruction by a factor of **136,174,087,494.48…**. With two readings on that field, the upper limit for observations must be strictly greater than **37,232,367,690,617,444,520.125**. With three, **273,417,420.125** is the sharp lower endpoint. Any larger height suffices in each case. The same access to the 571/599 field is available throughout. [Theorem and proof](PROOF.md#the-price-of-limiting-observations-on-one-field) · [Independent checks](evidence/observation-budget.txt)
+
+The target is the one surviving linear combination of the early prime and integer gain thresholds. It can be written $`3\sqrt{46695}\,D_B(46695)-2\sqrt{46691}\,D_B(46691)`$, where $`D_B`$ is the normalized move on 571/599. Fix any lower cutoff $`46769\le H\lt46993`$, for example **46,800**. Both fields may be observed at algebraic heights from $`H`$ through the common upper endpoint. The table allows any finite number of 571/599 readings and algebraic linear combinations. It gives the smallest upper endpoint as an infimum.
+
+| Available 547/727 readings | Infimum of the common upper endpoint | Is equality sufficient? |
+| ---: | ---: | --- |
+| 0 | Recovery impossible | |
+| 1 | 37,592,788,570,517,198,340.125 | No |
+| 2 | 37,232,367,690,617,444,520.125 | No |
+| 3 or more | 273,417,420.125 | No |
+
+Two readings on 547/727 can cancel one unwanted prime coefficient while leaving the desired coefficient. That choice introduces much larger rational primes whose effects on 571/599 begin only at one eighth of their **squared** norms on 547/727. A third reading isolates the original prime directly. The proof checks all possible one- and two-reading times, including the sharp endpoints. The theorem assumes no zero-location hypothesis. [Why the larger primes are necessary](PROOF.md#what-the-other-field-must-wait-for) · [306 auxiliary norms and 188 interval tests](observation_budget.py) · [Independent prime sieve](observation_budget_recheck.py)
+
+## Prime and square starting heights
 
 The first prime starting height at which both fields gain more than $`1.9735\log 2`$ twice in a row is **20,306,543**. The first perfect square is **20,313,049**, or $`4507^2`$. Both doublings use the same starting height on the 547/727 and 571/599 fields. Among unrestricted integer starts, the first is 20,306,534. Two independent finite counts prove the exclusions for all earlier starts. [Proof](PROOF.md#prime-and-square-starting-heights) · [Replay transcript](evidence/arithmetic-starts.txt)
 
@@ -63,4 +78,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, the arithmetic-grid and rank certificates and seventeen Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, the arithmetic-grid and rank certificates and twenty Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)

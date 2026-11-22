@@ -1,0 +1,7 @@
+306 delayed nuisance norms; 188 adjacent-interval tests have maximum ratio 377952481/325766401 < 2.
+The A-height infima for one, two and three A readings are 2167740481 (attained), 2157323809 (open), and 2187339361/8 (open).
+The largest delayed primes below eight times the two relevant norms are 17341923439 and 17258590369.
+Additional obstruction primes 17258590801, 17498715103 and 17498715233 have degree one on A and two on B.
+With one or two A readings the common upper endpoint must strictly exceed 37592788570517198340 + 1/8 or 37232367690617444520 + 1/8, respectively.
+A third A reading reduces the infimum by a factor strictly between 136174087494 and 136174087495.
+Independent residue tables, 188 closed-left intervals, segmented large-prime sieves and exact two-sample weights agree.

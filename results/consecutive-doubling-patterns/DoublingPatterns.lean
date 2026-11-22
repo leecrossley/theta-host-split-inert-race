@@ -110,6 +110,24 @@ theorem last_row_removes_combination {x y z : ℝ}
     x = 0 ∧ y = 0 ∧ z = 0 := by
   exact ⟨by linarith, by linarith, by linarith⟩
 
+
+theorem two_sample_minor (x y u v : ℝ) :
+    (x-u)*(y-v)-(x-v)*(y-u) = (x-y)*(u-v) := by ring
+
+theorem two_backgrounds {x y u v a b : ℝ} (hxy : x ≠ y) (huv : u ≠ v)
+    (h1 : a*(x-u)+b*(y-u) = 0) (h2 : a*(x-v)+b*(y-v) = 0) :
+    a = 0 ∧ b = 0 := by
+  have hz : (u-v)*(a+b) = 0 := by linear_combination h2-h1
+  have hab : a+b = 0 := (mul_eq_zero.mp hz).resolve_left (sub_ne_zero.mpr huv)
+  have hx : a*(x-y) = 0 := by linear_combination h1-(y-u)*hab
+  have ha : a = 0 := (mul_eq_zero.mp hx).resolve_right (sub_ne_zero.mpr hxy)
+  exact ⟨ha, by linarith⟩
+
+theorem affine_extrapolation {x y : ℝ} (h : y ≠ x) (s u v : ℝ) :
+    ((y-s)*(u*x+v)+(s-x)*(u*y+v))/(y-x) = u*s+v := by
+  apply (div_eq_iff (sub_ne_zero.mpr h)).2
+  ring
+
 end DoublingPatterns
 
 #print axioms DoublingPatterns.sign_preserved
@@ -129,3 +147,6 @@ end DoublingPatterns
 #print axioms DoublingPatterns.recover_jump_off_grid
 #print axioms DoublingPatterns.last_surviving_combination
 #print axioms DoublingPatterns.last_row_removes_combination
+#print axioms DoublingPatterns.two_sample_minor
+#print axioms DoublingPatterns.two_backgrounds
+#print axioms DoublingPatterns.affine_extrapolation
