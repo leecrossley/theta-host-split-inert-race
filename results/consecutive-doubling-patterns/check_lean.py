@@ -6,7 +6,8 @@ import tempfile
 
 COMPILER = "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
 THEOREMS = ("sign_preserved", "separated_signs", "move_error", "telescoping",
-            "excluded_run", "word_count", "reflect_difference", "cubic_majorant")
+            "excluded_run", "word_count", "reflect_difference", "cubic_majorant",
+            "strict_peak_of_opposite_branches", "catalogue_iff_last", "cell_intersection", "phase_count_needed")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
 
@@ -24,6 +25,8 @@ def main():
             raise RuntimeError(compiler.stdout)
         for theorem, line in zip(THEOREMS, lines):
             prefix = f"'DoublingPatterns.{theorem}' depends on axioms: ["
+            if line == f"'DoublingPatterns.{theorem}' does not depend on any axioms":
+                continue
             if not line.startswith(prefix) or not line.endswith("]"):
                 raise RuntimeError(line)
             expected = ALLOWED

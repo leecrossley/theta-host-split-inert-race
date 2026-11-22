@@ -47,6 +47,39 @@ theorem cubic_majorant (z : ℝ) :
   have h : 0 ≤ (8/27:ℝ)*(z-1/2)^2*(z-1)^2*((z+3/2)^2+1/2) := by positivity
   nlinarith only [h]
 
+
+theorem strict_peak_of_opposite_branches {I : Set ℝ} {f g : ℝ → ℝ} {c : ℝ}
+    (hc : c ∈ I) (hf : StrictMonoOn f I) (hg : StrictAntiOn g I)
+    (heq : f c = g c) {x : ℝ} (hx : x ∈ I) (hne : x ≠ c) :
+    min (f x) (g x) < f c := by
+  rcases lt_or_gt_of_ne hne with h | h
+  · exact lt_of_le_of_lt (min_le_left _ _) (hf hx hc h)
+  · rw [heq]
+    exact lt_of_le_of_lt (min_le_right _ _) (hg hc hx h)
+
+theorem catalogue_iff_last {ι α : Type*} {last : ι} {I : Set α} (occurs : ι → α → Prop)
+    (early : ∀ i, i ≠ last → ∃ x ∈ I, occurs i x) :
+    (∀ i, ∃ x ∈ I, occurs i x) ↔ ∃ x ∈ I, occurs last x := by
+  constructor
+  · exact fun h => h last
+  · intro h i
+    by_cases hi : i = last
+    · simpa [hi] using h
+    · exact early i hi
+
+theorem cell_intersection {u v s t x : ℝ} (h : u ≠ s)
+    (eq : u*x+v = s*x+t) : x = (t-v)/(u-s) := by
+  apply (eq_div_iff (sub_ne_zero.mpr h)).2
+  linarith only [eq, mul_comm x (u-s), sub_mul u s x]
+
+theorem phase_count_needed {m : ℕ} (hm : 0 < m) (gap : Fin m → ℝ) {w : ℝ}
+    (total : ∑ i, gap i = 1) (small : ∀ i, gap i < w) : 1 < (m : ℝ) * w := by
+  let : Nonempty (Fin m) := ⟨⟨0, hm⟩⟩
+  calc
+    1 = ∑ i, gap i := total.symm
+    _ < ∑ _i : Fin m, w := Finset.sum_lt_sum_of_nonempty Finset.univ_nonempty (fun i _ => small i)
+    _ = (m : ℝ) * w := by simp
+
 end DoublingPatterns
 
 #print axioms DoublingPatterns.sign_preserved
@@ -57,3 +90,7 @@ end DoublingPatterns
 #print axioms DoublingPatterns.word_count
 #print axioms DoublingPatterns.reflect_difference
 #print axioms DoublingPatterns.cubic_majorant
+#print axioms DoublingPatterns.strict_peak_of_opposite_branches
+#print axioms DoublingPatterns.catalogue_iff_last
+#print axioms DoublingPatterns.cell_intersection
+#print axioms DoublingPatterns.phase_count_needed

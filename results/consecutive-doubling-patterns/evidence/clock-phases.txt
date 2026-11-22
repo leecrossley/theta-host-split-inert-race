@@ -1,0 +1,13 @@
+Integer threshold: 4 phases per unit and 97121 phases per octave.
+  left floor at eighteen decimal places: 46695000000000000000000
+  right floor at eighteen decimal places: 46695333262779289365032
+  width floor at eighteen decimal places: 333262779289365032
+  octave floor at eighteen decimal places: 10296495198123
+One millionth below the real threshold: 680 phases per unit and 21987939 phases per octave.
+  left floor at eighteen decimal places: 46695215212591948194411
+  right floor at eighteen decimal places: 46695216684610667161768
+  width floor at eighteen decimal places: 1472018718967356
+  octave floor at eighteen decimal places: 45479479274
+Limiting width divided by the margin deficit is in (1472.01872576754168, 1472.01872576754169).
+Independent affine coefficients and endpoint signs verify all four optimal phase counts.
+The octave sampling constant lies in (21.98793864880736, 21.98793864880737).

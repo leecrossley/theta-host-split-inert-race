@@ -1,14 +1,15 @@
 cff-version: 1.2.0
 message: "Cite the release below."
-title: "All 4,096 sign patterns on six consecutive doublings"
+title: "When do both theta prime races gain twice in a row?"
+abstract: "For the 547/727 and 571/599 prime-ideal races, fifteen of the sixteen two-doubling sign words occur at integer starts through 1469 with margin above 2. At margin 1.9735 the first integer start for four gains is 20306534. Two independently computed finite covers give the real and integer first-passage laws for every strict margin from 0 through 2. Their early thresholds differ, yielding an interval on which the first integer exceeds 434 times the real infimum. Four offsets per unit or 97121 per octave guarantee detection of the early gain at the integer threshold for every initial clock phase. The finite results are unconditional."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: "consecutive-doubling-patterns-v1.0.1"
-date-released: 2026-11-21
+version: 1.1.0
+doi: 10.5281/zenodo.24430900
+date-released: 2026-11-22
 license: CC-BY-4.0
-repository-code: https://github.com/leecrossley/theta-host-split-inert-race/tree/a29fa8cac07474b434165b1f59be764a070eb7c3/results/consecutive-doubling-patterns
-doi: 10.5281/zenodo.24415510
+repository-code: https://github.com/leecrossley/theta-host-split-inert-race/tree/consecutive-doubling-patterns-v1.1.0/results/consecutive-doubling-patterns
 type: software
 references:
   - type: software
@@ -19,3 +20,11 @@ references:
     version: "collection-2026-11-21"
     doi: 10.5281/zenodo.24426586
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/collection-2026-11-21
+  - type: software
+    title: "All 4,096 sign patterns on six consecutive doublings"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "consecutive-doubling-patterns-v1.0.1"
+    doi: 10.5281/zenodo.24415510
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.0.1
