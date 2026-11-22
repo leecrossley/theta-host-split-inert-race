@@ -1,0 +1,12 @@
+{
+  "title": "Exactly three primes can be isolated from two dyadic prime races",
+  "creators": [
+    {
+      "name": "Crossley, Lee"
+    }
+  ],
+  "description": "<p>Finite real-algebraic linear combinations of the normalized dyadic changes in the 547/727 and 571/599 theta prime races recover exactly the individual prime logarithms for 31 and 7 separately, and 7, 31 and 47 together. The proof gives an exact one-field minimum support, an all-height rank formula, three sharp two-field asymptotic support constants and a quantitative ordinary-prime bound for every real direction. All results are unconditional.</p><p><a href=\"https://github.com/leecrossley/theta-host-split-inert-race/blob/d39d15c928f7ea548e2baf9b5883e5c76adac4e3/results/dyadic-prime-support/PROOF.md\">Proof and arithmetic certificates</a>.</p>",
+  "license": "cc-by-4.0",
+  "upload_type": "software",
+  "version": "dyadic-prime-support-v1.0.0"
+}
