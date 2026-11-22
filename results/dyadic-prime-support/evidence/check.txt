@@ -1,0 +1,38 @@
+Three distinct good norms in all 240 field/octave pairs from exponent 8 through 127.
+For every exponent at least 128, primes 3 mod 8 supply at least three degree-four norms.
+547/727 octave counts through 10: 0 0 0 0 1 2 5 1 7 10 11
+547/727 minimum support through exponent 8: 0 0 1 2 6 6 8 17 21
+547/727 saves one prime exactly at exponents 3, 4.
+571/599 octave counts through 10: 0 0 0 0 0 1 4 2 5 11 16
+571/599 minimum support through exponent 8: 0 0 0 1 4 5 7 16 27
+571/599 saves one prime exactly at exponents 4, 5.
+Six times the three prime densities gives the sharp constants 3/4, 15/16 and 9/8.
+Exact rational elimination reproduces all 18 early minima and the two one-field singleton primes.
+Independent residue-square and prime-divisor checks verify 720 witnesses; a second analytic subinterval covers the infinite tail.
+Independent sign multiplicities: 8, 10 or 12 active assignments out of 64 residue/sign choices.
+Three exact rows recover log_2(31), log_2(7) and log_2(47).
+Through exponent 0: 0 prime columns, rank 0, isolated [].
+Through exponent 1: 0 prime columns, rank 0, isolated [].
+Through exponent 2: 1 prime columns, rank 1, isolated [31].
+Through exponent 3: 3 prime columns, rank 3, isolated [7, 31, 47].
+Through exponent 4: 8 prime columns, rank 5, isolated [7, 31, 47].
+Through exponent 5: 11 prime columns, rank 7, isolated [7, 31, 47].
+Through exponent 6: 20 prime columns, rank 9, isolated [7, 31, 47].
+Through exponent 7: 36 prime columns, rank 11, isolated [7, 31, 47].
+Three distinct directions at ordinary primes in all 14 octaves for exponents 8 through 21.
+All 13,911 archived primes certified (13,863 Proth tests).
+Three terminal directions verified for exponents 22 through 1580; eight signed square-norm witnesses in one rational-prime octave for every exponent 1581 through 2899.
+All 12 real pair characters have L(s) > 0.46 throughout [0.99, 1].
+Floors of 1000 times the uniform lower bounds: 1046 528 3189 1056 480 2024 677 762 1339 1594 468 1401
+At log X >= 2000 every pair-character prime sum has absolute value < 1/40.
+Each unit projection has weighted square sum > 1/12 and more than X/(144 log(2X)) visible primes.
+Direct values at 1 and uniform derivative bounds give L(s) > 1/4 on all 12 intervals.
+The independent zero-count integral with cutoff 640 gives absolute error < 1/50.
+Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DyadicPrimeSupport
+'DyadicPrimeSupport.two_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.root_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.prescribe_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.silent_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.invisible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.opposite_linear_terms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.dyadic_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
