@@ -80,6 +80,36 @@ theorem phase_count_needed {m : ℕ} (hm : 0 < m) (gap : Fin m → ℝ) {w : ℝ
     _ < ∑ _i : Fin m, w := Finset.sum_lt_sum_of_nonempty Finset.univ_nonempty (fun i _ => small i)
     _ = (m : ℝ) * w := by simp
 
+
+theorem successor_above_crossing {G : Set ℝ} {a s : ℝ} {success : ℝ → Prop}
+    (hs : s ∈ G) (ha : a < s) (next : ∀ t ∈ G, a < t → s ≤ t)
+    (works : a < s → success s) (before : ∀ t ∈ G, t < s → success t → a < t) :
+    IsLeast {t | t ∈ G ∧ success t} s := by
+  refine ⟨⟨hs, works ha⟩, ?_⟩
+  intro t ht
+  by_contra! h
+  exact (not_lt_of_ge (next t ht.1 (before t ht.1 h ht.2))) h
+
+theorem three_point_slope_jump {v left right step : ℝ} (hh : step ≠ 0) :
+    ((v-left*step)-2*v+(v+right*step))/step = right-left := by
+  apply (div_eq_iff hh).2
+  ring
+
+theorem recover_jump_off_grid {n t v left right : ℝ} (ht : t < n) :
+    ((v+left*(t-n))-(v+right*(t-n)))/(n-t) = right-left := by
+  apply (div_eq_iff (sub_ne_zero.mpr (ne_of_gt ht))).2
+  ring
+
+theorem last_surviving_combination {x y z : ℝ}
+    (h1 : 31*x = 0) (h2 : 47*x+12*y+8*z = 0) :
+    ∃ t : ℝ, x = 0 ∧ y = -2*t ∧ z = 3*t := by
+  exact ⟨z/3, by linarith, by linarith, by ring⟩
+
+theorem last_row_removes_combination {x y z : ℝ}
+    (h1 : 31*x = 0) (h2 : 47*x+12*y+8*z = 0) (h3 : 337*x+302*y+298*z = 0) :
+    x = 0 ∧ y = 0 ∧ z = 0 := by
+  exact ⟨by linarith, by linarith, by linarith⟩
+
 end DoublingPatterns
 
 #print axioms DoublingPatterns.sign_preserved
@@ -94,3 +124,8 @@ end DoublingPatterns
 #print axioms DoublingPatterns.catalogue_iff_last
 #print axioms DoublingPatterns.cell_intersection
 #print axioms DoublingPatterns.phase_count_needed
+#print axioms DoublingPatterns.successor_above_crossing
+#print axioms DoublingPatterns.three_point_slope_jump
+#print axioms DoublingPatterns.recover_jump_off_grid
+#print axioms DoublingPatterns.last_surviving_combination
+#print axioms DoublingPatterns.last_row_removes_combination

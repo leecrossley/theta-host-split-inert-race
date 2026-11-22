@@ -110,6 +110,119 @@ w=(p^{-1}-s^{-1})(\mu-q)+O((\mu-q)^2),\qquad
 
 As the margin increases to the early maximum, $`(\mu-q)m_1(q)\to1/(p^{-1}-s^{-1})`$, while $`(\mu-q)m_2(q)\to y_0\log2/(p^{-1}-s^{-1})\in(21.98793864880736,21.98793864880737)`$. One calculation bisects the original weighted prime sums. Another constructs the two affine coefficients on each local cell by Euler criteria and direct logarithm sums, checks opposite signs at the rational bracket endpoints, and certifies the four integer minima. [Numerical evidence](evidence/clock-phases.txt) · [Lean gap-count deduction](DoublingPatterns.lean)
 
+## Prime and square starting heights
+
+Require all four coordinates $`D_A(y),D_B(y),D_A(2y),D_B(2y)`$ to exceed a common margin $`0\le q\le2`$. Write $`G`$ for the positive rational primes or the positive perfect squares, and $`g_G(t)`$ for the least member of $`G`$ **strictly** greater than $`t`$. Let $`b(q)`$ be the inverse of the first increasing $`B`$ move on the early band, used up to its intersection with the decreasing second $`B`$ move at $`y_0`$. Let $`a(q)`$ be the inverse of the increasing first $`A`$ move on the late band, now defined throughout $`[\sigma,2]`$. Define
+
+```math
+\sigma=D_B(216^2),\qquad \rho=D_B(46691),\qquad \nu=D_B(46695).
+```
+
+The critical margin $`q_G`$ equals $`\sigma`$ for squares and $`\rho`$ for primes. For **every** $`0\le q\le2`$, the least successful start in $`G`$ is
+
+```math
+g_G(b(q))\quad(0\le q\lt q_G),\qquad g_G(a(q))\quad(q_G\le q\le2).
+```
+
+Strict successors handle the case where an inverse is itself a grid point. The same least height completes the catalogue of sixteen possible two-step sign patterns when ordered by starting height. For the other fifteen patterns, the signed components all exceed 2 at explicit prime starts through 25,057 and square starts through 25,281. Each of these precedes $`b(0)`$. The order of bits and both witness lists are in the verifier. [Arithmetic witnesses and both covers](arithmetic_start_grid.py) · [Whole-interval transcript](evidence/arithmetic-starts.txt)
+
+To prove the formula, first use the existing exclusion through 45,700. On $`[45700,46740]`$ both $`A`$ moves exceed 2 and the two $`B`$ moves are strictly increasing and strictly decreasing, respectively. The crossing lies strictly between 46,695.21 and 46,695.22. The last prime below it is 46,691. The decreasing move at the next prime is already below $`\rho`$. The last square below the crossing is 46,656 and the next is 47,089, beyond the early band. Thus the last successful grid point just below the critical margin lies on the increasing branch and gives the stated unique early maximum on its grid. For every smaller margin that grid point is eligible, and the first grid point after $`b(q)`$ lies on the increasing branch no later than it.
+
+On the closed interval $`[46740,20284000]`$, at every height at least one coordinate is strictly below $`\sigma`$. The primary secant cover in log height has 38,519 cells. The independent affine cover in height has 33,411. On $`[20284000,20314000]`$ the first $`A`$ move increases from below $`\sigma`$ to above 2 and the other three moves exceed 2. The early and late monotonicity tests use 4,160 and 5,000 cells in the first count, 5,200 and 6,000 in the second. Both sieves evaluate only norms at most 325,024,000. The largest needed successor for primes or squares occurs at $`q=2`$ and is still inside the late band. This proves existence and first occurrence, including equality at each transition. The highest necessary square start 20,313,049 is below the upper endpoint by 951. [Cell bounds](#covering-all-real-heights) · [Prime sieve](word_sieve.cpp) · [Independent sieve](word_sieve_recheck.cpp)
+
+| Margin | Late real crossing, rounded down to five decimals | First start on the indicated grid |
+| --- | ---: | ---: |
+| Square threshold $`\sigma`$ | 20,286,256.45311 | $`4505^2=20295025`$ |
+| Prime threshold $`\rho`$ | 20,288,238.97111 | 20,288,251 |
+| Integer threshold $`\nu`$ | 20,288,500.19344 | 20,288,501 |
+| 1.9735 | 20,306,533.59533 | Prime 20,306,543 and square 20,313,049 |
+| 2 | 20,308,190.27109 | Prime 20,308,199 and square 20,313,049 |
+
+Each of the five-decimal lower endpoints in the table is within $`10^{-5}`$ of the exact crossing. The enclosure at $`\nu`$ is from the integer transition in the earlier calculation. At margin 1.9735 the second doubling finishes at 81,226,172 from the first prime and at 81,252,196 from the first square. [Late crossing enclosures](evidence/arithmetic-starts.txt) · [Real and integer enclosures](evidence/first-catalogue.txt)
+
+For $`\sigma\le q\lt\rho`$ the first square exceeds $`434`$ times the first prime, since $`a(\sigma)\gt434\cdot46691`$ and the first prime is at most 46,691. For $`\rho\le q\lt\nu`$ the first prime exceeds $`434`$ times the first integer, since $`a(\rho)\gt434\cdot46695`$. For $`\nu\le q\lt\mu`$ the first integer exceeds $`434`$ times the real infimum, as proved above. The intervals are nonempty. The two sieves enclose all three grid thresholds, and an independent direct prime calculation resolves them to eighteen decimal places. [Three threshold values](evidence/arithmetic-starts.txt) · [Real infimum](#real-and-integer-first-starts)
+
+## Which early thresholds can later readings recover?
+
+Let $`\mathcal A`$ be the field of real algebraic numbers. For a rational prime $`p`$ good on at least one of the two fields, let $`n_i(p)=p^{f_i(p)}`$ on each field where it is good. Let $`N(p)`$ be the largest of these one or two norms and $`L_p=\log p/\log2`$. The five fixed omissions on each field apply throughout. For a real $`H\ge1`$ define the space of exact linear combinations of later moves by
+
+```math
+T_H=\operatorname{span}_{\mathcal A}
+\{D_i(y):i=A,B,\ y\in\mathcal A,\ y\ge H\}.
+```
+
+**Theorem.** For every $`H\ge1`$ this space has basis exactly the $`L_p`$ with $`N(p)\gt H`$. Rational starting heights alone give the same space. Adding a freely chosen algebraic constant gives the direct sum $`\mathcal A\oplus T_H`$. For any finite vector of earlier algebraic-height readings, one can therefore decide which linear combinations of the vector lie in this enlarged space. Write each reading in the prime-logarithm basis and take the nullspace of the rows with $`N(p)\le H`$. This is a criterion for exact recovery by finite algebraic linear combinations. The coefficient field and the restriction to exact linear combinations are part of the statement. [Prime-log independence](https://doi.org/10.1112/S0025579300003971) · [Earlier finite coefficient test](https://github.com/leecrossley/theta-host-split-inert-race/blob/algebraic-heights-v1.7.1/results/algebraic-heights/PROOF.md#prime-logarithms-at-algebraic-heights)
+
+At algebraic $`y`$, each move is a finite algebraic linear combination of the $`L_p`$. The weight is zero for $`n_i(p)\le y`$, including equality. Thus all terms on the left are in the proposed span. For the converse fix $`p`$ and a field with $`n=n_i(p)\gt H`$. Put $`F(y)=\sqrt y\,D_i(y)`$. The explicit term of $`p`$ is
+
+```math
+\frac{8e_{i,p}}{B_0}
+\left(\frac{W(n/(2y))}{\sqrt2}-W(n/y)\right)L_p .
+```
+
+The function $`F`$ is piecewise affine. Its possible knots on a bounded interval are $`n'/k`$ with $`k=1,2,4,8`$ and $`n'`$ a good norm on this field. All such norms are odd and congruent to $`1`$ or $`-1`$ modulo 16. The only knot inside $`(n-1/2,n+1/2)`$ is $`n`$ itself. Indeed, any other integer norm is at distance at least one. For $`k=2`$ an odd numerator stays at least $`1/2`$ from $`n`$. For $`k=4`$ and $`k=8`$ the nearest possible numerator is at least 3 and 7 integer units respectively from $`kn`$. Distinct rational primes cannot have the same positive prime-power norm.
+
+At $`y=n`$ only the last knot of the subtracted level contributes. Immediately below $`n`$ its tent is $`2-2y/n`$ and immediately above it vanishes. The right slope of $`F`$ minus the left slope is therefore $`-16e_{i,p}L_p/(B_0n)`$. Take rational $`0\lt h\le1/2`$ with $`n-h\ge H`$. Continuity, including possible knots at the sample endpoints, gives the exact reconstruction formula
+
+```math
+L_p=-\frac{B_0 n}{16e_{i,p}}
+       \frac{F(n-h)-2F(n)+F(n+h)}{h}.
+```
+
+All three heights are rational. The factors that convert the moves to $`F`$ are algebraic. Unique factorisation makes the logarithms of 2 and the distinct odd primes rationally independent. Baker’s theorem gives algebraic linear independence, which proves the basis and the assertion about constants. For a fixed finite list of earlier readings, taking the cutoff at least as large as every last norm in their combined support leaves zero as the only recoverable element of their span. [Local signed trace](https://github.com/leecrossley/theta-host-split-inert-race/blob/algebraic-heights-v1.7.0/results/theta-race-short-shifts/RaceTrace.lean#L83) · [Three-point deduction](DoublingPatterns.lean) · [Baker](https://doi.org/10.1112/S0025579300003971)
+
+The same description applies to two practical sampling schedules. On the unshifted half-integer grid, put $`t=\lceil2H\rceil/2`$. Its space is $`T_t`$, since $`n\gt t`$ allows the displayed three samples with $`h=1/2`$. More generally, suppose an unbounded increasing sequence of algebraic sample heights starts at $`t\ge H`$ and its successive gaps are at most $`1/4`$. Its space on the two fields is also $`T_t`$. For each $`n\gt t`$ there is a sampled $`s\in[n-1/2,n)`$ and two distinct samples in $`[n,n+1/2]`$. A sequence increasing to infinity is locally finite. The right affine line $`R`$ is obtained from the two samples on the right. Its continuation to $`s`$ satisfies $`(F(s)-R(s))/(n-s)=F'_+(n)-F'_-(n)`$. This proves the converse without requiring the clock to sample the knot. The cutoff uses the actual first sample, so a prime whose last norm equals that sample has already disappeared. [Exact off-grid deduction](DoublingPatterns.lean)
+
+### Three rank losses
+
+Consider the three early thresholds in the preceding table, in square, prime, integer order. Scale them by the algebraic factors $`\sqrt{46656},\sqrt{46691},\sqrt{46695}`$, respectively. Each threshold is a first $`B`$ move. For a contributing rational prime with $`N(p)\le46993`$, its $`B`$ norm satisfies $`46656\lt n\le46993\lt2\cdot46656`$. The forward level $`S_B(2y)`$ has zero weight. After removing a common nonzero factor depending only on the prime, its coefficient row at $`y=46656,46691,46695`$ is $`(\max(n-y,0))_y`$. The two exact enumerations produce every such row in order of its final norm across **both** fields.
+
+| Final norm $`N(p)`$ | Rational prime | Three scaled coefficients |
+| ---: | ---: | --- |
+| 46,687 | 46,687 | $`(31,0,0)`$ |
+| 46,703 | 46,703 | $`(47,12,8)`$ |
+| 46,993 | 46,993 | $`(337,302,298)`$ |
+
+The first calculation sieves rational primes, obtains each residue degree by Euler’s criterion, and takes the larger eligible norm. The second factors each candidate norm in the support range, tests square-residue tables, and discards primes still present later on the other field. It also checks the rational finite differences at all three displayed knots. These rows have determinant 35,960. Therefore $`1,\sigma,\rho,\nu`$ are linearly independent over $`\mathcal A`$. [Sieve and determinant](recover_thresholds.py) · [Factor-by-norm verification](recover_thresholds_recheck.py) · [Transcript](evidence/arithmetic-starts.txt)
+
+For $`1\le H\lt46687`$, all three thresholds belong to $`T_H`$. For $`46687\le H\lt46703`$, the recoverable subspace of their span has basis $`\rho,\nu`$. For $`46703\le H\lt46993`$, it is the single line generated by
+
+```math
+3\sqrt{46695}\,\nu-2\sqrt{46691}\,\rho.
+```
+
+Indeed the first two rows annihilate the coefficient vector $`(0,-2,3)`$ and the third pairs with it to give 290. From $`H=46993`$ onward the intersection of their span with $`\mathcal A\oplus T_H`$ is zero. This statement permits both fields, arbitrarily many later heights, and an algebraic offset. In particular the three **late real crossings** $`a(\sigma),a(\rho),a(\nu)`$ are all transcendental. Each exceeds 46,993. If one were algebraic its first $`A`$ move would be both its nonzero early threshold and a member of $`T_{46993}`$. The endpoint proof applies even though the three margins are themselves transcendental. [Exact row deductions](DoublingPatterns.lean) · [Crossing bounds](evidence/arithmetic-starts.txt)
+
+### When both fields are needed
+
+Restricting observations to one field changes the list of accessible primes to those with $`n_i(p)\gt H`$ on that field. The same last-knot proof gives the converse on each host. Of the 3,327 rational primes occurring in the three early thresholds, all are good on both fields. The following entries are the first heights at which the dimension of the recoverable threshold space drops to the indicated value. Each drop takes effect at equality.
+
+| Available later moves | Dimension two begins | Dimension one begins | Dimension zero begins |
+| --- | ---: | ---: | ---: |
+| 547/727 alone | 223 | 271 | 46,687 |
+| 571/599 alone | 46,687 | 46,703 | 46,769 |
+| Both fields | 46,687 | 46,703 | 46,993 |
+
+For the first row of this table the only active primes with $`A`$ norm at most 46,687 are 223, 271, 353, 367, 463 and 46,687, all of degree one on $`A`$. Their $`B`$ norms are 49,729, 73,441, 124,609, 134,689, 214,369 and 46,687. Put $`w(n,y)=\max(0,\min(2n-2y,4y-n))`$. The scaled coefficient up to a nonzero common factor is $`-2w(n,y)+\sqrt2\,w(n,2y)`$. The first two rows are rational and independent. The coefficient vector $`(4,-39,35)`$ annihilates both rational parts of each of the first five rows and has nonzero pairing with the sixth. For $`B`$ alone there is a further row at 46,769 before the joint loss at 46,993. At $`n=46769`$ the previously scaled integer row is $`(113,78,74)`$. It pairs with $`(0,-2,3)`$ to give 66. This prime still occurs on $`A`$ at norm $`46769^2=2187339361`$. Two full enumerations in opposite orders check all 3,327 primes. [Single-field coefficient tests](single_field_recovery.py) · [Independent norm enumeration](recover_thresholds_recheck.py)
+
+Fix **any** $`46769\le H\lt46993`$ and an upper observation height $`U\ge H`$. On the closed interval $`[H,U]`$ the nonzero surviving threshold combination $`3\sqrt{46695}\,\nu-2\sqrt{46691}\,\rho`$ is recoverable from the two fields precisely when
+
+```math
+U\gt \frac{46769^2}{8}=273417420+\frac18 .
+```
+
+Indeed its coefficient on $`L_{46769}`$ is nonzero. Field $`B`$ gives this prime zero weight throughout $`y\ge H`$. Its first possible move on field $`A`$ begins at $`y=46769^2/8`$, where the weight is still zero. Baker’s theorem therefore forces the strict lower bound, even with an algebraic offset. This proves failure at the exact upper endpoint.
+
+For the converse, among the participating primes with $`B`$ norms at most $`H`$, the only ones are 46,687, 46,703 and 46,769. The first two have zero coefficient in the surviving combination. Every other required prime can be recovered from $`B`$ near its last knot, using starts at least $`H`$ and below 373,560. To recover $`L_{46769}`$ on $`A`$, take three rational samples around the first knot $`z=46769^2/8`$. All knots on this field lie on the one-eighth grid. At $`z`$ only this prime contributes a slope jump, since its numerator in lowest terms is odd and distinct primes have distinct norms. For $`n=46769^2`$ the outer tent of the forward level is zero to the left of $`z`$ and equals $`8y/n-1`$ immediately to its right. Its jump in the slope of $`\sqrt y\,D_A(y)`$ is $`(8e_{A,46769}/B_0)(4\sqrt2/n)L_{46769}`$. For every $`U\gt z`$ a positive rational step smaller than $`1/8`$, $`z-H`$ and $`U-z`$ gives the exact three-point extraction inside $`[H,U]`$. The single-field ranks show that both fields are necessary even if the upper endpoint is removed. [Exact numerator and entrance slope](recover_thresholds_recheck.py) · [Sharp endpoint certificate](evidence/arithmetic-starts.txt)
+
+Three $`A`$ readings are the **minimum** throughout the following interval of permitted upper endpoints, even if one is allowed arbitrarily late $`B`$ readings:
+
+```math
+273417420+\frac18\lt U\le539330952+\frac14 .
+```
+
+To see this, use the primes $`46447,46559`$. Both have degree one on $`B`$ and degree two on $`A`$. Each is below 46,656, so it has zero coefficient in all three thresholds, and contributes to no later $`B`$ move. Let $`n_1=46447^2`$ and $`n_2=46559^2`$. Up to $`U\le n_1/4`$, the coefficient of each of these two primes in $`\sqrt yD_A(y)`$ is a fixed nonzero multiple of $`\max(0,y-n_j/8)`$. Any successful reconstruction must include an $`A`$ reading at $`y_2\gt46769^2/8`$, where both these unwanted coefficients are nonzero. To cancel both with one other $`A`$ reading, its height $`y_1`$ must exceed $`n_2/8`$ as well. The determinant of the two background rows, after removing nonzero factors, is $`(y_1-y_2)(n_1/8-n_2/8)`$. Distinct heights give a nonzero determinant. Duplicate readings collapse into a single reading and cancelling both unwanted coefficients then cancels the desired one too. Three $`A`$ readings suffice by the entrance-knot construction. [Two-prime calculation](single_field_recovery.py) · [Independent residue check](recover_thresholds_recheck.py)
+
 ## Profiles for the sixteen characters
 
 The compact test and its Fourier transform are

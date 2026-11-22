@@ -51,6 +51,38 @@ One millionth below the real threshold: 680 phases per unit and 21987939 phases 
 Limiting width divided by the margin deficit is in (1472.01872576754168, 1472.01872576754169).
 Independent affine coefficients and endpoint signs verify all four optimal phase counts.
 The octave sampling constant lies in (21.98793864880736, 21.98793864880737).
+primary: 38519 inter-window exclusions and 4160 early / 5000 late slope cells.
+All fifteen other words have prime starts through 25057 and square starts through 25281, with four strict margins above 2.
+Square threshold: (16454376405, 16454376406) / 10^10.
+Prime threshold: (16779665481, 16779665482) / 10^10.
+Late square-threshold root: (2028625645311, 2028625645312) / 10^5.
+Late prime-threshold root: (2028823897111, 2028823897112) / 10^5.
+At their exact thresholds the first square and prime starters are 20295025 and 20288251 respectively.
+At 1.9735 the first prime is 20306543 and the first square is 20313049.
+At 2 the first prime is 20308199 and the first square is 20313049.
+independent: 33411 inter-window exclusions and 5200 early / 6000 late slope cells.
+All fifteen other words have prime starts through 25057 and square starts through 25281, with four strict margins above 2.
+Square threshold: (16454376405, 16454376406) / 10^10.
+Prime threshold: (16779665481, 16779665482) / 10^10.
+Late square-threshold root: (2028625645311, 2028625645312) / 10^5.
+Late prime-threshold root: (2028823897111, 2028823897112) / 10^5.
+At their exact thresholds the first square and prime starters are 20295025 and 20288251 respectively.
+At 1.9735 the first prime is 20306543 and the first square is 20313049.
+At 2 the first prime is 20308199 and the first square is 20313049.
+Cutoff 46687: rational prime 46687, scaled coefficient row (31, 0, 0).
+Cutoff 46703: rational prime 46703, scaled coefficient row (47, 12, 8).
+Cutoff 46993: rational prime 46993, scaled coefficient row (337, 302, 298).
+The last three rows have determinant 35960; the surviving combination after 46703 has coefficients (0, -2, 3).
+Degree-two primes 46447 and 46559 force three A readings through the upper endpoint 539330952 + 1/4.
+The 3327 contributing rational primes give single-field rank loss at 223, 271, 46687 on A and 46687, 46703, 46769 on B.
+Before 46687 the last A-only combination has scaled coefficients (4, -39, 35).
+For 46769 <= H < 46993 the joint survivor needs prime 46769 on A at norm 2187339361; the sharp upper observation endpoint is strictly above 273417420 + 1/8.
+Independent factor-by-norm enumeration found exactly the same three nonzero rows.
+Rational second differences at all three last knots give exactly the predicted coefficient.
+Independent enumeration recovered all 3327 active primes; both single-field tables and the exact entrance slope at 46769 squared agree.
+Direct 256-bit square threshold in (1645437640571873959, 1645437640571873960) / 10^18.
+Direct 256-bit prime threshold in (1677966548153054396, 1677966548153054397) / 10^18.
+Direct 256-bit integer threshold in (1682222888957865575, 1682222888957865576) / 10^18.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DoublingPatterns
 'DoublingPatterns.sign_preserved' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.separated_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -64,3 +96,8 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'DoublingPatterns.catalogue_iff_last' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.cell_intersection' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DoublingPatterns.phase_count_needed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.successor_above_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.three_point_slope_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.recover_jump_off_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.last_surviving_combination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DoublingPatterns.last_row_removes_combination' depends on axioms: [propext, Classical.choice, Quot.sound]
