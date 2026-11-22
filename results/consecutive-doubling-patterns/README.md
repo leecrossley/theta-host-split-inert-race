@@ -42,7 +42,7 @@ The required margin makes a measurable difference. At normalized margin $`1.6`$,
 | 1.9735 | 20,306,533.59533 | 20,306,534 |
 | 2 | 20,308,190.27109 | 20,308,191 |
 
-For **every** normalized margin from 0 through 2, two prime-sum curves determine the infimum of successful real starts and the least successful integer. At the real infimum one gain equals the threshold. On the crossing band the other three normalized gains are above 20, 48 and 38, respectively. At every algebraic margin in this range the exact real onset is transcendental. [Prime-sum branches and arithmetic type](PROOF.md#real-and-integer-first-starts)
+For **every** normalized margin from 0 through 2, two prime-sum curves determine the infimum of successful real starts and the least successful integer. At the real infimum one gain equals the threshold. On the crossing band the first $`B`$ move and the second $`A`$ and $`B`$ moves are above 20, 48 and 38. At every algebraic margin in this range the exact real onset is transcendental. [Prime-sum branches and arithmetic type](PROOF.md#real-and-integer-first-starts)
 
 At the integer threshold, the early four-gain window is only 0.333262779289365032… units wide. Three equally spaced samples per unit miss 0.02116621319… percent of possible clock phases. Four guarantee detection. If samples instead repeat every octave, the sharp count is 97,121 offsets per octave. [Optimal sampling proof](PROOF.md#how-many-samples-detect-the-early-gain) · [Independent checks](evidence/clock-phases.txt)
 

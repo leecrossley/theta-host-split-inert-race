@@ -29,7 +29,7 @@ For a sign word $`s\in\{-1,1\}^4`$ use the coordinate order $`V(y)=(D_A(y),D_B(y
 
 ### Exact prime sums and independent counts
 
-For a good odd rational prime $`p`$ let $`\chi_u(p)=(p/u)`$ and similarly for $`v`$. Its residue degree in $`F_i`$ is the least $`f\in\{1,2,4\}`$ with $`p^f\equiv\pm1\pmod {16}`$ and $`(\chi_u(p)\chi_v(p))^f=1`$. The quadratic sign is $`\chi_u(p)^f`$ by reciprocity. The $`8/f`$ base primes above $`p`$ all have norm $`n=p^f`$. Their logarithmic weight, including the inert-minus-split sign, is $`8e_p\log p`$, where $`e_p=-\chi_u(p)^f`$. This is the local trace calculation in the scores defined above. The two extra omitted rational primes for $`A`$ are 343057911569 and 343070636977, and for $`B`$ they are 413718278401 and 603339156001. All exceed the largest norm used here, 324,944,000. The two conductors and 2 in each field are omitted throughout. [Local host and score definitions](#the-scores-and-the-arithmetic-input) · [Five fixed omissions in each field](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.5.0/results/joint-levels-and-moves/deadline_arithmetic.py)
+For a good odd rational prime $`p`$ let $`\chi_u(p)=(p/u)`$ and similarly for $`v`$. Its residue degree in $`F_i`$ is the least $`f\in\{1,2,4\}`$ with $`p^f\equiv\pm1\pmod {16}`$ and $`(\chi_u(p)\chi_v(p))^f=1`$. The quadratic sign is $`\chi_u(p)^f`$ by reciprocity. The $`8/f`$ base primes above $`p`$ all have norm $`n=p^f`$. Their logarithmic weight, including the inert-minus-split sign, is $`8e_p\log p`$, where $`e_p=-\chi_u(p)^f`$. This is the local trace calculation in the scores defined above. The two extra omitted rational primes for $`A`$ are 343057911569 and 343070636977, and for $`B`$ they are 413718278401 and 603339156001. All exceed the largest norm used here, 325,024,000. The two conductors and 2 in each field are omitted throughout. [Local host and score definitions](#the-scores-and-the-arithmetic-input) · [Five fixed omissions in each field](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-levels-and-moves-v1.5.0/results/joint-levels-and-moves/deadline_arithmetic.py)
 
 Write $`P(l,h)=\sum_{l\lt n\le h}e_p\log p`$ and $`Q(l,h)=\sum_{l\lt n\le h}e_p\log(p)/n`$. Substitution of the two tent branches gives
 
@@ -147,7 +147,7 @@ For $`\sigma\le q\lt\rho`$ the first square exceeds $`434`$ times the first prim
 Let $`\mathcal A`$ be the field of real algebraic numbers. For a rational prime $`p`$ good on at least one of the two fields, let $`n_i(p)=p^{f_i(p)}`$ on each field where it is good. Let $`N(p)`$ be the largest of these one or two norms and $`L_p=\log p/\log2`$. The five fixed omissions on each field apply throughout. For a real $`H\ge1`$ define the space of exact linear combinations of later moves by
 
 ```math
-T_H=\operatorname{span}_{\mathcal A}
+T_H=\mathrm{span}_{\mathcal A}
 \{D_i(y):i=A,B,\ y\in\mathcal A,\ y\ge H\}.
 ```
 
