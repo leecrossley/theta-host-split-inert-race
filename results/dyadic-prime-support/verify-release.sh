@@ -39,6 +39,12 @@ python3 zero_strip_recheck.py >>"$tmp/receipt"
 python3 phase_rank.py >>"$tmp/receipt"
 python3 phase_bridge.py ${phase_backend[@]+"${phase_backend[@]}"} >>"$tmp/receipt"
 python3 phase_bridge_recheck.py >>"$tmp/receipt"
+python3 minimum_grids.py >>"$tmp/receipt"
+python3 grid_octaves.py >>"$tmp/receipt"
+python3 minimum_grids_recheck.py >>"$tmp/receipt"
+python3 pooled_octaves.py >>"$tmp/receipt"
+python3 pooled_grids.py >>"$tmp/receipt"
+python3 pooled_grid_recheck.py >>"$tmp/receipt"
 
 mathrev=0df444a360eaa60ab8c11dca51a86af692955474
 if [[ $# -eq 0 ]]; then

@@ -1,4 +1,20 @@
-# Which primes survive a shift of the dyadic sampling grid?
+# How many dyadic sampling grids isolate one prime?
+
+On either theta field, choose an algebraic starting phase $`1\le\alpha\lt2`$ and read the split–inert race at $`\alpha,2\alpha,4\alpha,\ldots`$. Allow a finite linear combination of readings with real algebraic coefficients. How many independently chosen grids does it take to recover exactly $`\log_2 p`$ for a prescribed prime $`p`$?
+
+| Field | Exactly one grid | Exactly two grids | Exactly three grids |
+| --- | --- | --- | --- |
+| 547/727 | 31 | 7, 47, 113, 127, 223, 271 | Every other good odd prime |
+| 571/599 | 7 | 3, 79, 113, 127, 239, 241 | Every other good odd prime |
+| Both fields | 7, 31, 47 | 3, 79, 97, 113, 127, 223, 239, 241, 271 | Every other odd prime |
+
+The grids may be chosen afresh for each prime. On 547/727 alone the largest prime accessible with two grids is 271. On 571/599 alone it is 241. **97 is the only prime that two grids can isolate jointly while neither field can isolate it with two grids on its own.** The two phases for 97 are $`3/2`$ and $`7/4`$. Even with both fields, 17 needs three. [Exact formula for 97](PROOF.md#two-grids-using-both-fields) · [Fourteen single-field formulas](evidence/minimum-grid-formulas.tsv)
+
+Three **rational** phases always suffice. On an individual field a good prime is one of the primes retained in its trace data. Every odd prime is good on at least one field. If the collection of algebraic phases must be fixed before the prime is chosen, any finite collection can isolate only finitely many prime logs, even when both fields are available. All these statements are unconditional. [Definitions](PROOF.md#the-two-readings) · [Minimum number of grids](PROOF.md#how-many-grids-isolate-a-prescribed-prime) · [Fixed collections](PROOF.md#fixing-the-grids-in-advance)
+
+The proof also closes a gap in the count of ordinary primes. For every real $`u\gt271/2`$ and every nonzero direction in the two-field trace plane, at least two primes in $`(u,2u)`$ have nonzero projection in that direction. The endpoint fails. For $`\log u\ge1095`$ there are more than $`u/(500\log(2u))`$ such primes. [Exact endpoint](PROOF.md#two-grids-using-both-fields) · [Analytic estimate](PROOF.md#an-unconditional-overlap-using-paired-zeros)
+
+## Shifting one grid
 
 Read the 547/727 and 571/599 split–inert prime races at $`\alpha,2\alpha,4\alpha,\ldots`$ and allow finite linear combinations with real algebraic coefficients. At the algebraic phase $`\alpha=3/2`$, **neither field can isolate any individual prime logarithm on its own. Together they isolate exactly 31 and 47.** At $`\alpha=\sqrt{7/3}`$ even the two fields together isolate none.
 
@@ -44,7 +60,9 @@ With Lean 4.33.1 on the path and the pinned Mathlib checkout already available, 
 bash verify-release.sh /path/to/mathlib4
 ```
 
-The replay checks the manifest, exact rational ranks, the four field-specific trace exclusions, 720 single-field prime-norm witnesses, 13,911 labelled primes and the twelve real-character certificates. It also checks the constants in both estimates for the large-height range, the phase table, 21,432 labelled prime witnesses and all 278,616 systems by two modular eliminations. It then replays nine Lean deductions in the kernel and compares the output with the archived transcript. A C++ compiler and GMP speed up modular exponentiation. The standard-library Python fallback verifies the same congruences. The global number-theory estimates and their application are in the written proof. [Expected output](evidence/check.txt) [Lean source](DyadicPrimeSupport.lean) [Prior work and scope](PRIOR-WORK.md) [Citation](CITATION.cff)
+The replay verifies the file hashes and compares its output with the archived transcript. For the grid minima it checks fourteen single-field formulas, the five-term formula for 97, 1,077 witnesses covering real norm octaves, all 2,664 pooled exclusions, and two independent estimates for the large-height range. Thirteen local Lean deductions are replayed in the kernel. The analytic number theory and the application of the certificates are in the written proof.
+
+The inherited checks cover the original dyadic table, the four field-specific trace exclusions, 720 norm witnesses, 13,911 labelled primes, twelve real-character bounds, the one-grid phase table and 278,616 systems checked twice on 21,432 prime witnesses. A C++ compiler and GMP accelerate modular powers. The Python standard library verifies the same congruences. [Expected output](evidence/check.txt) · [Lean source](DyadicPrimeSupport.lean) · [Prior work and scope](PRIOR-WORK.md) · [Citation](CITATION.cff)
 
 With SymPy 1.14.0 installed, the independent polynomial-matrix replay runs with
 

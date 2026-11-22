@@ -1,0 +1,6 @@
+host	prime	phase	level_exponent	coefficient
+0	97	3/2	3	-97/45
+0	97	3/2	4	97/18
+1	97	3/2	4	-97/18
+0	97	7/4	4	-97/15
+1	97	7/4	4	97/15
