@@ -1,15 +1,15 @@
 cff-version: 1.2.0
 message: "Cite the release below."
-title: "One, two or three readings in a two-field prime race"
-abstract: "For every lower height from 46769 up to but excluding 46993, one earlier prime-race threshold combination survives in later observations of the 547/727 and 571/599 fields. With one or two 547/727 readings and any finite number on 571/599, the common upper endpoint must strictly exceed 17341923439 squared over eight or 17258590369 squared over eight, respectively. Three 547/727 readings suffice above 46769 squared over eight. A third reading reduces the infimum by a factor exceeding 136 billion compared with two readings. All three bounds are sharp and unconditional for algebraic linear recovery at algebraic observation heights. The retained six-step recurrence assumes GRH for sixteen odd primitive Dirichlet L-functions. Alpöge’s announced Dirichlet GRH theorem supplies this input."
+title: "First opposite runs at powers of two in two prime races"
+abstract: "On the 547/727 and 571/599 fields the first exact power-of-two start for two gains on the former and two losses on the latter is 2^34. Reversing the fields gives 2^12. Each change strictly exceeds 1.9735 log 2 in its prescribed direction. Two independent prime sieves through norm 2^38 certify the complete first-occurrence table through exponent 34 for every nonnegative margin. Fourteen words occur and 23 records are controlled by sixteen margins linearly independent together with 1 over the real algebraic numbers. These are unconditional results. The retained infinite six-step recurrence uses GRH for sixteen primitive Dirichlet functions."
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.3.1
+version: 1.4.0
 date-released: 2026-11-22
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/theta-host-split-inert-race
-url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.3.1
+url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.4.0
 type: software
 references:
   - type: software
@@ -52,3 +52,18 @@ references:
     version: "consecutive-doubling-patterns-v1.2.0"
     doi: 10.5281/zenodo.24431246
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.2.0
+  - type: software
+    title: "One, two or three readings in a two-field prime race"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "consecutive-doubling-patterns-v1.3.0"
+    doi: 10.5281/zenodo.24431337
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.3.0
+  - type: software
+    title: "One, two or three readings in a two-field prime race"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "consecutive-doubling-patterns-v1.3.1"
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.3.1

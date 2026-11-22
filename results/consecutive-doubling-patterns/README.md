@@ -1,4 +1,14 @@
-# One, two or three readings in a two-field prime race
+# First opposite runs at powers of two in two prime races
+
+At an exact power of two, the 547/727 prime race first gains twice while the 571/599 race loses twice at **17,179,869,184**, or $`2^{34}`$. Reverse the two fields and the first start is **4,096**, or $`2^{12}`$. Each of the four changes exceeds $`1.9735\log 2`$ in its prescribed direction. Switching the directions multiplies the first starting height by **4,194,304**. Both statements follow from unconditional finite prime counts. [Theorem and proof](PROOF.md#opposite-runs-on-the-unshifted-dyadic-grid) · [Two independent checks](evidence/dyadic-starts.txt)
+
+This difference persists even if the required margin is reduced to zero and every move merely has to be strict. The first starts remain $`2^{12}`$ and $`2^{34}`$ for **every** common normalized margin below $`3.4143751084\ldots`$ and at least zero. The exact upper boundary is the 571/599 gain at $`2^{12}`$. At equality the early direction disappears from the whole tested range. The opposite direction survives up to the larger strict threshold $`6.756437069\ldots`$. [Exact endpoint conventions](PROOF.md#opposite-runs-on-the-unshifted-dyadic-grid)
+
+Across the first 35 powers of two, **14 of the 16** two-step patterns occur. Two finite sieves give every first start in this range for **every nonnegative margin**, including equality at the cutoffs. Sixteen distinct limiting moves govern the table. They and 1 are linearly independent over the real algebraic numbers. [All 23 record changes](evidence/dyadic-records.tsv) · [Prime witnesses for independence](evidence/dyadic-pivots.tsv)
+
+Run `bash verify-dyadic-starts.sh` from this directory to check the margins and their prime witnesses. Run `bash verify-dyadic-starts.sh --rebuild` to repeat both prime counts through norm **274,877,906,944** and compare their full integer output with the archive.
+
+## One, two or three readings in a two-field prime race
 
 Allowing three readings on 547/727 instead of two lowers the infimum of the common upper observation height by a factor of **136,174,087,494.48…**. With two readings on that field, the upper limit for observations must be strictly greater than **37,232,367,690,617,444,520.125**. With three, **273,417,420.125** is the sharp lower endpoint. Any larger height suffices in each case. The same access to the 571/599 field is available throughout. [Theorem and proof](PROOF.md#the-price-of-limiting-observations-on-one-field) · [Independent checks](evidence/observation-budget.txt)
 
@@ -78,4 +88,4 @@ python3 -m pip install -r requirements.txt
 bash verify-release.sh
 ```
 
-The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, the arithmetic-grid and rank certificates and twenty Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
+The archive includes the checked upstream statement and verification records, 14,000 certified positive zero brackets, all the finite counts, independent local polynomial and primitive-character calculations, the constants, the arithmetic-grid and rank certificates and twenty-two Lean deductions. The explicit-formula, recurrence and density arguments are written proofs. [Verification transcript](evidence/check.txt) · [Checksums](SHA256SUMS) · [Prior work](PRIOR-WORK.md)
