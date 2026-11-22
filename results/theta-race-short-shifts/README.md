@@ -1,6 +1,6 @@
 # How fast can a split–inert prime race move?
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410822.svg)](https://doi.org/10.5281/zenodo.24410822)
+[Version 1.0.3 DOI](https://doi.org/10.5281/zenodo.24439061) · [Earlier editions](https://doi.org/10.5281/zenodo.24410822)
 
 On the 547/727 theta-lift host, the normalized lead can rise or fall by more than **1.9735 times the logarithmic distance moved**. This happens arbitrarily far out, for every fixed window width and every fixed move up to a doubling. The same bound holds for the instantaneous logarithmic slope and for averages over widths and moves.
 
