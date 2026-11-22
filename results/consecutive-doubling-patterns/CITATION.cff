@@ -42,6 +42,7 @@ references:
       - family-names: Crossley
         given-names: Lee
     version: "consecutive-doubling-patterns-v1.1.1"
+    doi: 10.5281/zenodo.24431174
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.1.1
   - type: software
     title: "Prime and square starts in the two theta prime races"
@@ -59,3 +60,10 @@ references:
     version: "consecutive-doubling-patterns-v1.3.0"
     doi: 10.5281/zenodo.24431337
     url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.3.0
+  - type: software
+    title: "One, two or three readings in a two-field prime race"
+    authors:
+      - family-names: Crossley
+        given-names: Lee
+    version: "consecutive-doubling-patterns-v1.3.1"
+    url: https://github.com/leecrossley/theta-host-split-inert-race/releases/tag/consecutive-doubling-patterns-v1.3.1
