@@ -110,6 +110,37 @@ theorem half_shift_recovery {p q u v : ℝ}
   subst v
   constructor <;> ring
 
+theorem right_cell_visible {v : ℝ} (hv : v ≠ 0) (t : Interior) : line v 0 t ≠ 0 := by
+  simpa [line] using mul_ne_zero (sub_ne_zero.mpr (ne_of_gt t.2.2)) hv
+
+theorem affine_second_difference (a b x d : ℝ) :
+    (a+b*(x+d))-2*(a+b*x)+(a+b*(x-d))=0 := by ring
+
+noncomputable def normHat (m z : ℝ) := max 0 (min (2-2*z/m) (4*z/m-1))
+
+theorem one_prime_second_difference {m : ℝ} (hm : 1 ≤ m) :
+    normHat m ((m+1)/4)-2*normHat m (m/4)+normHat m ((m-1)/4)=1/m := by
+  have hp : 0 < m := by linarith
+  have hn : m ≠ 0 := ne_of_gt hp
+  have a : 4*((m+1)/4)/m-1=1/m := by field_simp; ring
+  have b : 4*(m/4)/m-1=0 := by field_simp; ring
+  have c : 4*((m-1)/4)/m-1= -(1/m) := by field_simp; ring
+  have h₁ : 1/m ≤ 2-2*((m+1)/4)/m := by field_simp; linarith
+  have h₂ : (0:ℝ) ≤ 2-2*(m/4)/m := by field_simp; linarith
+  have h₃ : -(1/m) ≤ 2-2*((m-1)/4)/m := by field_simp; linarith
+  have hm' : 0 ≤ 1/m := by positivity
+  simp only [normHat, a, b, c, min_eq_right h₁, min_eq_right h₂, min_eq_right h₃,
+    max_eq_right hm', max_self, max_eq_left (neg_nonpos.mpr hm'), mul_zero, sub_zero, add_zero]
+
+theorem dependent_column_zero {n k : ℕ} (c : Fin n → ℝ) (a : Fin k → ℝ)
+    (target : Fin n → ℝ) (others : Fin k → Fin n → ℝ)
+    (dep : ∀ i, target i = ∑ j, a j * others j i)
+    (hz : ∀ j, ∑ i, c i * others j i = 0) : ∑ i, c i * target i = 0 := by
+  simp_rw [dep, Finset.mul_sum]
+  rw [Finset.sum_comm]
+  have reorder (i : Fin n) (j : Fin k) : c i * (a j * others j i) = a j * (c i * others j i) := by ring
+  simp_rw [reorder, ← Finset.mul_sum, hz, mul_zero, Finset.sum_const_zero]
+
 end DyadicPrimeSupport
 
 #print axioms DyadicPrimeSupport.two_zeros
@@ -121,3 +152,7 @@ end DyadicPrimeSupport
 #print axioms DyadicPrimeSupport.dyadic_sum
 #print axioms DyadicPrimeSupport.phase_quadratic
 #print axioms DyadicPrimeSupport.half_shift_recovery
+#print axioms DyadicPrimeSupport.right_cell_visible
+#print axioms DyadicPrimeSupport.affine_second_difference
+#print axioms DyadicPrimeSupport.one_prime_second_difference
+#print axioms DyadicPrimeSupport.dependent_column_zero

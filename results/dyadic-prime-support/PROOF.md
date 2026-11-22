@@ -15,6 +15,115 @@ S_i(y)=\frac{8}{B_0\sqrt y}\sum_p s_i(p)\log(p)W(m_i(p)/y),
 
 Use the field $`K=\overline{\mathbf Q}\cap\mathbf R`$ and only **finite** $`K`$-linear combinations of $`D_i(2^j)`$, $`j\ge0`$. Readings with negative exponents would be zero. At a dyadic argument all coefficients of $`L_p`$ are algebraic. Unique factorization makes the ordinary logarithms of distinct primes linearly independent over the rationals. Baker’s theorem makes them linearly independent over the algebraic numbers. Dividing by $`a`$ preserves independence, including $`L_2=1`$ when an independent constant term is allowed. The **support** of a value is consequently its uniquely determined set of odd prime coordinates with nonzero coefficient. Isolation means that the resulting value equals $`L_p`$, after algebraic rescaling if necessary. [Baker, *Linear forms in the logarithms of algebraic numbers*](https://doi.org/10.1112/S0025579300003971)
 
+## How many grids isolate a prescribed prime?
+
+A grid has a real algebraic phase $`1\le\alpha\lt2`$ and supplies every $`D_i(\alpha2^j)`$ for integers $`j\ge0`$. A finite collection supplies the union of those readings. The phases and the coefficients of a finite linear combination may depend on the target $`p`$. The [table](README.md) gives the exact minimum on each field. Here a good prime is any prime retained in that field's finite expansion above.
+
+### Three rational phases always suffice
+
+Put $`T_i(z)=B_0\sqrt z\,S_i(z)/(8a)`$. This is the sum of $`s_i(q)L_q W(m_i(q)/z)`$. The initial level at every phase vanishes because $`4\alpha\lt8`$ and the smallest good norms are 31 and 49. Telescoping the changes therefore obtains every level on the grid. The final scaling is algebraic at an algebraic argument.
+
+Fix a good prime $`p`$ and write $`m=m_i(p)`$. In the level argument $`z`$ each summand is a piecewise linear function with possible knots $`m_i(q)/4,m_i(q)/2,m_i(q)`$. Multiplication by four takes every knot to an integer. The target norm $`m`$ is odd, so the only knot strictly between $`(m-1)/4`$ and $`(m+1)/4`$ is the first knot of the target. Unique factorization identifies its rational prime. Its slope increases there by $`4/m`$. All other terms have zero centered second difference, including a term with a knot at an endpoint. Hence
+
+```math
+T_i((m+1)/4)-2T_i(m/4)+T_i((m-1)/4)=\frac{s_i(p)}{m}L_p .
+```
+
+Each of the three arguments is a positive rational larger than two and belongs to a rational dyadic grid. Multiplication by $`m/s_i(p)`$ recovers the target. The three-score inversion and its interpretation for local Euler factors were proved in the earlier paper. We use its odd-norm case at the first norm of $`p`$. [Finite Euler-factor readout](https://doi.org/10.5281/zenodo.24413208) · [Kernel-checked second differences](DyadicPrimeSupport.lean)
+
+### Why two grids have a finite cutoff
+
+On one field any finite combination of levels has coefficient $`s_i(p)F(m_i(p))`$ at $`L_p`$, where $`F`$ is continuous, compactly supported and affine in $`1/m`$ between consecutive knots of the two grids. The knot sequences are $`\alpha2^j`$ and $`\beta2^j`$. A repeated grid can be augmented by a distinct grid with zero coefficients. Extend the sequences to negative exponents for convenience, with zero values before the first contributing level. If the combination isolates a prime, Baker's theorem requires every other prime coefficient to vanish.
+
+Let $`\kappa`$ be the largest knot at which $`F`$ is nonzero, and let $`u,v`$ be its neighbours. The union of two distinct dyadic grids alternates, so $`v=2u`$. On $`(u,\kappa)`$ the function has at most one zero. On $`(\kappa,v)`$ it interpolates between a nonzero value and zero and has no zero. At $`\kappa`$ its value is nonzero. Thus three different prime norms strictly inside $`(u,2u)`$ force at least two prime logarithms in the support. Beyond $`v`$ the spline is identically zero. [Affine zero lemmas](DyadicPrimeSupport.lean)
+
+On each field, every real $`t\gt289/2`$ has at least three good norms in $`(t,2t)`$. The strict lower cutoff is sharp. At $`t=289/2`$ the only such norms are 223 and 271 on A, and 239 and 241 on B. The norm 289 of 17 is at the excluded right endpoint on both. Three checks cover all larger real starts.
+
+- Up to 6554 an exact sieve lists every good norm through 13108. At $`x=2t`$ a norm $`m`$ is present precisely when $`m\lt x\lt2m`$. At each event the sweep removes closing norms, counts at the point, adds opening norms, and counts to the next event. A separate implementation checks the distance to the third successor after each good norm. [Event sweep](minimum_grids.py) · [Consecutive-norm check](minimum_grids_recheck.py)
+- For $`6554\le t\le2^{128}`$ there are 359 consecutive closed intervals $`[l,r]`$. Each carries three distinct rational primes of specified common residue degrees whose norms satisfy $`r\lt m\lt2l`$. Trial division proves primality. Euler's criterion and the orders modulo 16 check the norms on both fields. The largest rational prime in the table is 4,294,967,387. [1,077 witnesses](evidence/common-octaves.tsv) · [Deterministic reconstruction](grid_octaves.py)
+- For $`t\ge2^{128}`$ put $`X=t^{1/4}`$. The [modulo-eight estimate](#minimum-support-on-one-field) supplies more than eight primes congruent to 3 modulo 8 in $`(X,19X/16]`$. Each retained prime has degree four on both fields, and $`(19/16)^4\lt2`$. Omitting the five exceptions of either field still leaves at least three for that field. [Explicit prime progression bounds](https://arxiv.org/abs/1802.00085)
+
+Consequently a two-grid singleton must have $`v\le289`$ and its norm must be strictly less than 289. This argument allows arbitrarily large indices and any finite number of readings from the two grids. It applies also to the case of a single grid augmented by an unused phase.
+
+### The small norms and every possible grid placement
+
+The good norms below the cutoff are as follows. A superscript gives the residue degree when it exceeds one.
+
+| Field | Norms in ascending order |
+| --- | --- |
+| A | $`31,47,7^2,79,3^4,97,113,127,223,271`$ |
+| B | $`7^2,79,3^4,113,127,239,241`$ |
+
+Take all union knots up to 289. Relax the problem by allowing arbitrary nodal values except that the final knot is zero and the right tail is zero. Every true singleton obeys those constraints because its last nonzero knot has a successor at most 289. For each proposed target impose a zero at every other listed norm. A zero at a knot fixes its value. Two different zeros in an open cell force both endpoints to zero. A single interior zero propagates a forced zero at either endpoint to the other endpoint. Iterate along the finite path of knots. A target at a forced-zero knot or between two forced-zero endpoints is impossible. A target beyond the final knot is impossible as well. This is a necessary test and explicit formulas below establish sufficiency for every surviving prime.
+
+The test uses only the relative order of knots, norms and the ceiling. For one phase the only changes of order occur at the normalized phases $`m/2^{\lfloor\log_2 m\rfloor}`$ of the listed norms and 289. For two phases also record their order, including equality. Within any one open phase interval, two rational representatives cover both a coincidence and a strict ordering, because the grids can be exchanged. Take each boundary separately, including 1 and excluding 2. This gives 36 representatives and 666 unordered pairs with repetition on A, and 27 representatives and 378 pairs on B. The propagated constraints leave exactly the seven primes per field in the [overview](README.md). In particular 3, 79 and 97 are eliminated on A despite their small norms. A second computation changes the interior representatives and computes exact rational row spaces in reciprocal norm. [Order computation](minimum_grids.py) · [Independent collocation matrices](minimum_grids_recheck.py)
+
+For the remaining primes there are fourteen explicit lists of rational coefficients. A row with phase $`\alpha`$, exponent $`j`$ and coefficient $`c`$ contributes $`cT_i(\alpha2^j)`$. Direct summation gives coefficient 1 at the prescribed $`L_p`$ and 0 at every other prime. The largest support endpoint of every formula is below 512. The independent evaluation uses the positive part $`x_+=\max(x,0)`$ and the identity
+
+```math
+m W(m/z)=(4z-m)_+-6(z-m/2)_++2(z-m)_+ .
+```
+
+For example on B, $`L_{79}=-(2449/15)T_B(16)+79T_B(20)`$. The phases are 1 and $`5/4`$. The full one-grid classification below gives the unique one-grid target on either field. The other six successes on each field therefore need exactly two. The three-score identity achieves the lower bound for every remaining good prime. [Exact coefficients](evidence/minimum-grid-formulas.tsv) · [Single-phase classification](#the-thirteen-phase-cells)
+
+### Two grids using both fields
+
+The pooled table has three one-grid primes, nine further two-grid primes and every other odd prime has minimum three. In particular 97 needs three grids on either field individually and only two jointly. The two phases are $`3/2,7/4`$. Writing $`T_i`$ for the same normalized levels as above gives the explicit identity
+
+```math
+\frac{90}{97}L_{97}
+=-2T_A(12)+5\bigl(T_A(24)-T_B(24)\bigr)-6\bigl(T_A(28)-T_B(28)\bigr).
+```
+
+The largest contributing norm is strictly less than 112. Both signed expansions have been checked at every contributing prime. This supplies the one target outside the union of the two single-field lists. [Five coefficients](evidence/pooled-grid-formula.tsv) · [Independent evaluation](pooled_grid_recheck.py)
+
+For two grids take the vector of splines $`F=(F_A,F_B)`$ and its last nonzero knot $`\kappa`$ with neighbours $`u,v=2u`$. A prime $`q\in(u,v)`$ of degree one on at least one host has ordinary-prime trace vector $`e(q)`$. Use only primes good on both hosts here. When $`u\gt2`$ every higher-degree occurrence of the same prime has norm at least $`q^2\gt v`$, beyond both splines. There are four projective directions of a nonzero trace vector. For each direction $`d`$ with $`F(\kappa)\cdot d\ne0`$ the scalar spline $`F\cdot d`$ can lose at most one prime in this entire interval, by the two-cell argument. At most one direction is perpendicular to the knot value. If $`n_d`$ counts the ordinary primes of each direction in $`(u,2u)`$, a lower bound for the number of surviving prime coordinates is therefore
+
+```math
+B(u)=\sum_d(n_d-1)_+-\max_d(n_d-1)_+ .
+```
+
+Every $`u\gt431/2`$ has at least two forced survivors. Up to $`u=13000`$ an endpoint sweep computes $`B(u)`$ exactly. Its last value below two occurs precisely at $`431/2`$, where the four counts are 0, 1, 2 and 4. An independent count bisects four sorted prime lists at every possible endpoint and between endpoints. For $`26211/4\le u\lt2^{1585}`$ the unconditional sixteen-pattern certificate supplies at least 4, 4, 2 and 2 primes of the four directions in $`(u,4u/3]`$, so $`B(u)\ge5`$. For $`\log u\ge1095`$ the estimate in the next section supplies more than $`u/(500\log(2u))`$ primes with nonzero projection at the knot. At most four are lost. This last range overlaps the certified chain since $`1585\log2\gt1095`$. The finite chain is the published list of 66,016 witnesses. Its replay checks every connecting ratio. The complete argument is unconditional. It also proves the sharp ordinary-prime statement that *every* direction sees at least two primes in $`(u,2u)`$ for every $`u\gt271/2`$, using the earlier [initial sweep](#the-last-scale-that-needs-symbolic-arithmetic) through $`431/2`$. The endpoint $`271/2`$ misses. [Ordinary-prime sweep](pooled_octaves.py) · [Independent bisection](pooled_grid_recheck.py) · [Finite chain](https://github.com/leecrossley/theta-host-split-inert-race/blob/joint-frobenius-primes-v1.0.2/results/joint-frobenius-primes/PROOF.md)
+
+### An unconditional overlap using paired zeros
+
+For $`\log X\ge1095`$ every real unit direction sees more than $`X/(500\log(2X))`$ good ordinary primes in $`(X,2X)`$. Use the same base classes, 24 primitive pair twists, exceptional-zero checks and expansion of the squared trace as in the [fourfold smoothing proof](#ordinary-primes-in-every-direction). Now put $`h=(\log2)/2`$ and use the convolution of **two** uniform densities on $`[0,h]`$. Its density $`g`$ has supremum at most $`1/h\lt3`$ and total variation at most $`2/h\lt6`$. Partial summation on the two base classes gives their prime mass greater than $`1/4-14/(160\log X)\gt249/1000`$. The transform is $`K(z)=((e^{hz}-1)/(hz))^2`$. The same Mellin shift is absolutely summable with decay of order two. For a zero $`\rho=\beta+i\gamma`$ its modulus is bounded by $`\min(1,(b/|\gamma|)^2)`$ with $`b=29/5`$. [Progression bounds](https://arxiv.org/abs/1802.00085) · [Zero count, Corollary 1.2](https://arxiv.org/abs/2005.02989)
+
+Take $`Q=7000000`$, $`R=9.65`$ and $`L=1095`$. McCurley's denominator $`9.645908801\log\max(q,q|\gamma|,10)`$ gives the bound $`X^{\beta-1}\le\exp(-L/(R\log(Q\max(1,|\gamma|))))`$ after the [twelve real-character exclusions](#a-zero-free-strip-and-its-real-exception). All conductors exceed $`300000`$, so the applicable real strip boundary lies above 0.99. The functional equation and conjugation pair every zero with $`1-\bar\rho`$ of the **same** primitive character at the same ordinate, preserving multiplicity. The zeros with $`\beta\gt1/2`$ thus contribute at most half the sum of any common nonnegative ordinate majorant over all zeros. Zeros with $`\beta\le1/2`$ receive the factor $`e^{-L/2}`$. [McCurley's region](https://www.sciencedirect.com/science/article/pii/0022314X84900891) · [Functional equation](https://dlmf.nist.gov/25.15.i)
+
+Write $`\nu=8/5`$ and $`t=|\gamma|`$. For $`t\le b`$ the exponential bound is less than $`1/625`$, since $`\log(Qb)\lt17.6`$. For $`t\ge b`$, differentiate $`-L/(R\log(Qt))`$ with respect to $`\log t`$. Its derivative is decreasing and is at most $`L/(17^2 R)\lt2-\nu`$. Multiplying by the transform bound gives for every zero the common envelope
+
+```math
+X^{\beta-1}|K(\rho-1)|\le \frac1{625}\min\bigl(1,(b/t)^\nu\bigr).
+```
+
+Let $`N(t)`$ count both signs of ordinate. Integrating this last minimum without its factor $`1/625`$ against $`dN(t)`$ gives $`\int_b^\infty \nu b^\nu N(t)t^{-\nu-1}\,dt`$. The BMOR bound with $`q\le Q`$, $`\pi\gt3.14`$ and $`\log(2\pi e)\gt2.8`$ bounds this integral by
+
+```math
+\frac{\nu b}{3.14(\nu-1)}
+  \left(\log(Qb)-2.8+\frac1{\nu-1}\right)
+ +0.247\left(\log(Qb)+\frac1\nu\right)+6.894
+ <93 .
+```
+
+Thus the right-half zeros cost less than $`93/1250`$, and the others less than $`93e^{-1095/2}`$. The latter uses the same integrable majorant without the factor $`1/625`$. The trivial-zero series and the removal of proper prime powers each cost less than $`10^{-6}`$, by the bounds in the [explicit formula](#the-smoothed-character-sum) with this $`h`$. The prime-power bound is proportional to $`e^{-(\log X)/2}(\log X+\log 2)^2`$, decreasing throughout this range. Each twist has absolute prime mass below $`3/40`$. The squared-trace expansion has total absolute twist coefficient at most $`3/2`$. Its base coefficient is $`1/2`$. The resulting weighted mass exceeds $`249/2000-(3/2)(3/40)=3/250`$, and a single prime contributes at most $`6\log(2X)/X`$. This gives the claimed lower count. A separate majorant with $`b=231/40`$, $`R=9.646`$ and $`\nu=13/8`$ gives twist error below $`1/14`$. Both computations check the constants by rational inequalities. [First envelope](pooled_octaves.py) · [Second envelope](pooled_grid_recheck.py)
+
+### Four candidates and every pair of phase cells
+
+A pooled singleton has terminal endpoint at most 431 by the preceding octave obstruction. In fact **each level used can be taken to have right endpoint at most 431**. Combine repeated levels into one coefficient vector. For two different phases the right endpoints $`4\alpha2^j`$ are distinct across phases and indices. The level with largest right endpoint is the only contributing level immediately to the left of that endpoint, hence cannot cancel there. For coincident phases first combine their coefficients. An unused phase may be added when applying the two-cell bound.
+
+The union of both fields contains sixteen candidate primes of norm strictly below 431. The eleven single-field successes and the formula for 97 leave only 17, 337, 353 and 367 to exclude. Whenever a prime occurs on both fields in this prefix its norm is the same there. The full phase partition has eighteen boundary points in $`[1,2)`$ and eighteen open intervals. They come from the normalized candidate norms, the cutoff 431, and the endpoints 1 and 2. Thus there are 666 unordered pairs of cells, with coincidences included. For each open cell each allowed row of level coefficients is affine in its phase. Eligibility of a level with $`4z\le431`$ is constant in the open cell. For a boundary point use precisely those levels eligible there. Interpolation between the two endpoint rows of an open cell uses the open cell's own fixed set of levels.
+
+For a given pair of cells let the columns correspond to the sixteen primes. First stack both endpoint rows from every level available to either grid, allowing their coefficients to vary independently. This enlarged row space contains every actual row space on the pair of cells. If it excludes the desired coordinate vector, that prime is impossible throughout. This proves 2,407 of the 2,664 exclusions, including every same-cell pair. The other 257 have explicit rational column-dependence certificates of rank at most six. [Certificate table](evidence/pooled-grid-minors.tsv)
+
+Each certificate chooses columns consisting of the target and $`r`$ others. It proves that the full chosen group has rank at most $`r`$ and the other columns have rank $`r`$. A relation expressing the target column in terms of the others prevents any row combination from isolating it. For a variable phase write each row up to positive scaling as $`U+sV`$ with $`s\gt0`$ and the two endpoint rows $`U,V`$. Distinct open cells use independent variables, and a point cell uses a constant row. Each minor of size $`r+1`$ has degree in each variable at most the smaller of $`r+1`$ and the number of its available variable rows. Ranks at a product of more points than those two degree bounds prove the upper bound identically by polynomial interpolation. An insufficient number of rows gives the upper bound immediately. For the lower bound the certificate gives $`r`$ row indices. In the corresponding determinant all nonzero monomial coefficients have the same sign, so it is nonzero throughout the open cell pair. The primary replay obtains these coefficients by multilinearity in the rows. The second uses exact collocation at equally spaced phase coordinates and interpolation in the tensor-product Bernstein basis. Both replays check boundary cells explicitly. [Homogeneous determinants](pooled_grids.py) · [Independent interpolation](pooled_grid_recheck.py)
+
+The two-grid pooled list is therefore complete. The [one-grid classification](#the-thirteen-phase-cells) identifies the three primes needing only one phase. The hosts' excluded odd primes are disjoint, so every odd prime is good on at least one field and the three-level identity applies to it.
+
+### Fixing the grids in advance
+
+Finally fix any finite nonempty collection of algebraic phases, removing duplicates. Their union of knots is a fixed multiplicative pattern repeated every octave. The minimum ratio $`g`$ of successive knots is strictly larger than one, with $`g=2`$ for one phase. For every nonzero combination take its last nonzero vector knot $`\kappa`$. On $`(\kappa,g\kappa)`$ the vector is a strictly positive scalar multiple of its value at $`\kappa`$. The two axial degree-one trace directions are each realized by fixed reduced residue classes of positive density, by the Chinese remainder theorem. For every sufficiently large $`\kappa`$ the prime number theorem in these fixed progressions supplies at least two primes of each direction in this interval. At least one of the directions has nonzero projection at the knot. Higher-degree contributions of each such prime lie above the next knot, which is at most $`2\kappa`$. A singleton consequently has bounded last knot, hence bounded prime. This argument covers any fixed finite bank even if the coefficients and reading indices can depend on the target. [Residue classes and densities](#how-many-ordinary-primes-must-remain)
+
 ## Moving the sampling grid
 
 Fix $`1\le\alpha\lt2`$ and now read $`D_i(\alpha2^j)`$ for all nonnegative integers $`j`$. First suppose $`\alpha`$ is real algebraic. Algebraic row scalings and telescoping replace all changes through exponent $`n`$ by the levels $`T_i(\alpha2^j)`$ for $`1\le j\le n+1`$, where $`T_i(z)=B_0\sqrt z\,S_i(z)/(8a)`$. The initial level is zero because the smallest good norms on A and B are 31 and 49. Baker’s theorem identifies numerical isolation with isolation of a prime column. The table in the [overview](README.md) gives every algebraic phase and all its boundary conventions.

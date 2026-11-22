@@ -36,6 +36,25 @@ At phase 3/2 the two pooled level combinations isolate 31 and 47; neither field 
 The last deficient ordinary-prime octave through y=2000 occurs exactly at y=271/8. Every larger real start through 2000 has two primes in every direction.
 Verified 1,786 full clusters and 21,432 prime certificates. All 278,616 knot/deletion systems are inconsistent over the reals.
 Independent elimination modulo 1,000,000,007 gives two independent residual equations in all 278,616 systems.
+Field 0: 666 order representatives exhaust all two-grid placements; possible primes [7, 31, 47, 113, 127, 223, 271].
+Field 1: 378 order representatives exhaust all two-grid placements; possible primes [3, 7, 79, 113, 127, 239, 241].
+Both fields have at least three good norms in every (t,2t) from t>289/2 through 6554; t=289/2 has exactly two.
+All 58 nonzero coefficients in fourteen exact recovery formulas checked term by term.
+The rational three-level second difference selects precisely the target norm on both fields through norm 512.
+359 closed start intervals from 6554 to 2^128 are covered by 1077 common prime-norm witnesses; largest prime 4294967387.
+Common-octave table SHA-256 d4440ef8d7258cc5bc3fcb6428fcacb7970d423eb92966810431c54a64819e9e.
+Independent rational collocation at alternative interior representatives gives the same two seven-prime lists.
+Trial division, Euler symbols and consecutive-norm triples reproduce every real-octave certificate.
+An independent hinge expansion checks every rational prime coefficient in the fourteen formulas.
+From log X >= 1095 the paired-zero estimate gives absolute prime-weight error < 3/40 for all 24 twists.
+Every real unit direction sees more than X/(500 log(2X)) ordinary primes in (X,2X).
+The final octave with fewer than two forced survivors after direction losses has left endpoint 431/2.
+At that point the four direction counts are 0, 1, 2 and 4. All sixteen sign patterns guarantee five survivors.
+All 2,664 joint exclusions checked across 666 unordered phase-cell pairs: 2,407 endpoint-span tests and 257 polynomial minor certificates.
+Two grids recover log_2(97) only when both fields are available. Their five rational terms were checked at every contributing prime.
+Independent Euler symbols, hinge weights, rational ranks and bivariate Bernstein interpolation verify the entire pooled table.
+Bisection in four independent prime lists gives the same sharp endpoint 431/2.
+A second triangular-kernel majorant gives error < 1/14 per twist at log X >= 1095.
 Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed for DyadicPrimeSupport
 'DyadicPrimeSupport.two_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DyadicPrimeSupport.root_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -46,3 +65,7 @@ Lean 4.33.1 at 819816b2e0a3bf405af45ae5c7af2491d8f5bee6; kernel replay passed fo
 'DyadicPrimeSupport.dyadic_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DyadicPrimeSupport.phase_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
 'DyadicPrimeSupport.half_shift_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.right_cell_visible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.affine_second_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.one_prime_second_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicPrimeSupport.dependent_column_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
