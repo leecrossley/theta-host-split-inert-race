@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412641.svg)](https://doi.org/10.5281/zenodo.24412641)
 
-The curvature theorem assumes the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $`L`$-functions in the 547/727 race and its base field, including the Riemann zeta function. Given the conductor and Archimedean data, six values of $`2(V_{\mathrm{EF}}(0)-V_{\mathrm{EF}}(h))`$ determine the Euler factor at a specified rational prime unconditionally. Here $`V_{\mathrm{EF}}`$ is the zero sum in the explicit formula. Under GRH these six inputs equal values of the limiting curvature $`C(h)`$. [GRH announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+The curvature theorem assumes the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $`L`$-functions in the 547/727 race and its base field, including the Riemann zeta function. Given the conductor and Archimedean data, six values of $`2(V_{\mathrm{EF}}(0)-V_{\mathrm{EF}}(h))`$ determine the Euler factor at a specified rational prime unconditionally. Here $`V_{\mathrm{EF}}`$ is the zero sum in the explicit formula. Under GRH these six inputs equal values of the limiting curvature $`C(h)`$.
 
 Fix a rational prime $`p`$. **With the conductor data, six values of a single function of the 547/727 prime race determine the Euler factor at $`p`$ of the primitive product $`\zeta_E/\zeta_F`$.** This includes the conductor primes 2, 547 and 727. The six-value formula uses the known local degree at odd primes. Nine values recover it as well when the degree is left unspecified. [Theorem and reconstruction](PROOF.md)
 

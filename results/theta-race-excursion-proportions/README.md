@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412163.svg)](https://doi.org/10.5281/zenodo.24412163)
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function.
 
 In every interval of log starting heights of length at least 250,000, **more than 10% of starts give a gain above $`1.9735\log2`$ and more than 10% give a loss of that magnitude**. This holds for every such interval that starts at height one or above. Over increasingly long intervals the lower proportion exceeds 15% in each direction, uniformly in the starting height. The score width and the move are both two. [Theorem and proof](PROOF.md)
 

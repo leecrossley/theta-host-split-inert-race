@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412651.svg)](https://doi.org/10.5281/zenodo.24412651)
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) Without GRH, the exact band formula and the $`h\log(1/h)`$ expansion still hold for the explicit-formula sum over zeros, which GRH identifies with the limiting extrema below.
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Without GRH, the exact band formula and the $`h\log(1/h)`$ expansion still hold for the explicit-formula sum over zeros, which GRH identifies with the limiting extrema below.
 
 **Set the width of the 547/727 prime-ideal race to $`p^j`$. One limiting measurement then determines the local trace $`\sum_\chi\chi(p)^j`$, including at ramified primes.** With the conductor data, two measurements at widths $`p`$ and $`p^2`$ determine the entire Euler factor. The earlier six-value reconstruction holds the width fixed at two. [Exact formula and proof](PROOF.md) · [Fixed-width theorem](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-curvature-euler-factors/PROOF.md)
 

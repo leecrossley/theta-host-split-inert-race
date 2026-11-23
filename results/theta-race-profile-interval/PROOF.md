@@ -13,7 +13,7 @@ S(y)=\frac{1}{B\sqrt y}\sum_v-\epsilon_v\log(Nv)\,W(Nv/y).
 
 Write $`\theta=1.9735`$, $`\ell=1.008796429610`$, $`h=3.221800332553`$, $`L=h-\ell=2.213003902943`$, and $`C=2e^L`$. All terminating decimals in the proof denote exact rationals.
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Lean theorem supplies this zero-location input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function.
 
 For arbitrarily large $`H`$, **every** $`y\gt H`$ with $`2y\le CH`$ satisfies $`S(2y)-S(y)\gt-\theta a`$. For arbitrarily large $`H`$, every such $`y`$ satisfies $`S(2y)-S(y)\lt\theta a`$. In particular no factor at most $`C`$ guarantees both required moves after every height.
 

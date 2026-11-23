@@ -16,7 +16,7 @@ S(2y_+)-S(y_+)\gt1.9735\log2,\qquad
 S(2y_-)-S(y_-)\lt-1.9735\log2 .
 ```
 
-The two starts may differ. Alpöge's announced Dirichlet GRH theorem supplies the hypothesis. The range $`1\le H\le10^9`$ does not use it. The earlier all-height upper factor was $`e^{175}`$. A separate pair of certified one-way windows shows that each universal factor must exceed $`2e^6`$. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Earlier upper bound](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md) [Lower obstruction](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-400/PROOF.md)
+The two starts may differ. The range $`1\le H\le10^9`$ does not use the hypothesis. The earlier all-height upper factor was $`e^{175}`$. A separate pair of certified one-way windows shows that each universal factor must exceed $`2e^6`$. [Earlier upper bound](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md) [Lower obstruction](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-400/PROOF.md)
 
 ## The full spectrum and the prime-only error
 

@@ -87,7 +87,7 @@ For completeness, let $`V_j`$ be the least energy for predicting one entry from 
 
 ## The exact distance when the two spectra are on the line
 
-For this section only, suppose all sixteen odd factors have their strip zeros on the critical line. This is GRH for these factors, which Alpöge's announced, unrefereed Dirichlet GRH theorem supplies. [Announcement](https://alpo.ge/remark.pdf) Fix the target polynomial $`P`$ and observable. Write $`\alpha_t`$ for its signed complex coefficient at positive frequency $`t`$ and $`\beta_t`$ for the coefficient of the comparison level there. For continuous time and every harmonically sampled fixed power, the infimum of the limiting **mean square** over $`b,\nu`$ equals
+For this section only, suppose all sixteen odd factors have their strip zeros on the critical line. This is GRH for these factors. Fix the target polynomial $`P`$ and observable. Write $`\alpha_t`$ for its signed complex coefficient at positive frequency $`t`$ and $`\beta_t`$ for the coefficient of the comparison level there. For continuous time and every harmonically sampled fixed power, the infimum of the limiting **mean square** over $`b,\nu`$ equals
 
 ```math
 2\sum_{\substack{t\gt0\\\beta_t=0}}|\alpha_t|^2 .

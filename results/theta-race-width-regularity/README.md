@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24413211.svg)](https://doi.org/10.5281/zenodo.24413211)
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The construction at every finite height and the certified zero brackets do not use it.
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. The construction at every finite height and the certified zero brackets do not use it.
 
 Every nonzero finite combination of aligned window widths has the same mean-square regularity threshold, even if some widths have negative weights. Its limiting prime-race profile has spectral Sobolev order $`s`$ exactly for $`s\lt 3/2`$. At small log displacement $`h`$, the root-mean-square second difference is of order **$`h^{3/2}\sqrt{\log(1/h)}`$**. The result includes every positive average of widths with compact support. [Theorem and proof](PROOF.md)
 

@@ -68,7 +68,7 @@ To replay just the first-occurrence theorem, install the Python dependencies bel
 
 ## All 4,096 sign patterns on six consecutive doublings
 
-Assume the generalised Riemann hypothesis (GRH) for the sixteen odd primitive Dirichlet functions in the 547/727 and 571/599 races. Alpöge’s announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the sixteen odd primitive Dirichlet functions in the 547/727 and 571/599 races.
 
 Pick a gain or a loss for each of the 547/727 and 571/599 prime races. Do that six times. **Every one of the 4,096 sequences occurs starting at arbitrarily large powers of two.** Both races start at the same height, and the twelve prescribed changes each exceed $`4\log 2`$ in magnitude. The recurrence, the six-step spectral certificate and the bounds on longer words use GRH. [Proof](PROOF.md)
 

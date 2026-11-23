@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412095.svg)](https://doi.org/10.5281/zenodo.24412095)
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) For $`1\le H\le10^9`$ the result is unconditional, because a direct prime count gives both moves there. When this result was released, Sutherland's Lean-kernel replay of the export and lake comparator run were still in progress.
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. For $`1\le H\le10^9`$ the result is unconditional, because a direct prime count gives both moves there.
 
 **For every real starting height $`H\ge1`$, the dyadic 547/727 prime-ideal race has both a gain and a loss exceeding $`1.9735\log2`$ in magnitude by $`10^{18}H`$.** Both moves begin strictly after $`H`$. The gain and the loss may start at different heights. The previous universal factor was $`e^{175}`$, about $`10^{76}`$. [Theorem and proof](PROOF.md) · [Earlier upper bound](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-fixed-factor/PROOF.md)
 
