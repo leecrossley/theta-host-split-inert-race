@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412102.svg)](https://doi.org/10.5281/zenodo.24412102)
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) All three parts depend on it, including the first billion exponents. Only the arithmetic on the certified zero brackets is unconditional. When this result was released, Sutherland's Lean-kernel replay of the export and lake comparator run were still in progress.
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. All three parts depend on it, including the first billion exponents. Only the arithmetic on the certified zero brackets is unconditional.
 
 **Every one of the first billion exponents gives both large gains and large losses. Yet some larger powers of two suppress both moves at every sufficiently high start.** For the weighted 547/727 split–inert prime race let $`D_n(y)=S(2^n y)-S(y)`$ and $`\tau=1.9735\log2`$. The width of the score is fixed at $`b=2`$. [Full theorem](PROOF.md)
 

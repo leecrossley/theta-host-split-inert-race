@@ -32,7 +32,7 @@ Here and below $`n`$ is an integer. Since $`4/3\lt\tau`$, one has $`\mathcal P\s
 
 Here $`T`$ runs through the positive integers. In particular the first exponent in $`\mathcal P`$ lies strictly above a billion and at most $`2^{90000}`$.
 
-Thus the lower uniform density of $`\mathcal P`$ is positive and the upper uniform density of $`\mathcal Q`$ is at most $`1/1000000001`$. All heights in part 3 use the same $`Y_*`$, however large the exponent. These bounds leave the first exceptional exponent unidentified. All three parts use the hypothesis, part 1 included, because the supremum $`L_n`$ below is defined through the limiting profile. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The arithmetic on the certified zero brackets is unconditional.
+Thus the lower uniform density of $`\mathcal P`$ is positive and the upper uniform density of $`\mathcal Q`$ is at most $`1/1000000001`$. All heights in part 3 use the same $`Y_*`$, however large the exponent. These bounds leave the first exceptional exponent unidentified. All three parts use the hypothesis, part 1 included, because the supremum $`L_n`$ below is defined through the limiting profile. The arithmetic on the certified zero brackets is unconditional.
 
 ## Telescope the dyadic profile
 

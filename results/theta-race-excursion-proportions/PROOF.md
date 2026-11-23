@@ -19,7 +19,7 @@ For $`\sigma\in\{-1,1\}`$ and $`H\ge1`$ let $`p_\sigma(H,T)`$ be the fraction of
 | 100,000 | $`1/12`$ |
 | 250,000 | $`1/10`$ |
 
-Further, $`\liminf_{T\to\infty}\inf_{H\ge1}p_\sigma(H,T)\gt 3/20`$ for each sign. The two sets of starts are disjoint. The table and the lower density both use the hypothesis through the comparison with prime scores. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) [Field and trace in Lean](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83) [Pinned explicit formula](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-filtered-deadline/PROOF.md)
+Further, $`\liminf_{T\to\infty}\inf_{H\ge1}p_\sigma(H,T)\gt 3/20`$ for each sign. The two sets of starts are disjoint. The table and the lower density both use the hypothesis through the comparison with prime scores. [Field and trace in Lean](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-short-shifts/RaceTrace.lean#L83) [Pinned explicit formula](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-filtered-deadline/PROOF.md)
 
 ## A finite set of frequencies determines the first four diagonal moments
 

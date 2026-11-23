@@ -11,7 +11,7 @@ S_i(y)=-\frac1{B_0\sqrt y}\sum_w \epsilon_w\log(Nw)W(Nw/y),
 \qquad f_i(x)=\frac{S_i(2y)-S_i(y)}a.
 ```
 
-The eight odd factors are the quadratic characters of conductors $`p,q`$ twisted by the four powers of the even quartic character modulo 16. The eight even factors for the base field include ordinary zeta. We use Alpöge's announced primitive Dirichlet critical-line theorem for these factors. This is GRH for them, and the announcement has not yet been refereed. The profiles, the prime-only error and the remainder bound below all use it. Define
+The eight odd factors are the quadratic characters of conductors $`p,q`$ twisted by the four powers of the even quartic character modulo 16. The eight even factors for the base field include ordinary zeta. We assume the critical-line property for these factors. This is GRH for them. The profiles, the prime-only error and the remainder bound below all use it. Define
 
 ```math
 G(t)=\frac{3-2r\cos(at)}{c(t^2+1/4)},\qquad

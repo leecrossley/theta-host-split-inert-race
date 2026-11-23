@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24412100.svg)](https://doi.org/10.5281/zenodo.24412100)
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) For $`1\le H\le10^9`$ the result is unconditional, because two finite sieve rows of actual primes give both intervals there. [Finite sieve](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-18/PROOF.md)
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. For $`1\le H\le10^9`$ the result is unconditional, because two finite sieve rows of actual primes give both intervals there. [Finite sieve](https://github.com/leecrossley/theta-host-split-inert-race/blob/main/results/theta-race-factor-18/PROOF.md)
 
 Pick any real $`H\ge1`$ and any offset for a geometric grid with log step $`10^{-6}`$. In the dyadic 547/727 prime-ideal race, **both a gain and a loss above $`1.9735\log2`$ in magnitude start on that grid after $`H`$ and finish by $`10^{18}H`$.** At most 40,753,385 grid starts are eligible. [Theorem and proof](PROOF.md)
 

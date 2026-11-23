@@ -31,7 +31,7 @@ Indeed the known width multiplier is $`[b+1-2r\cos(at)]/[c_b(t^2+1/4)]`$. The pr
 
 ## The theorem
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The construction at every finite height below does not use it.
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. The construction at every finite height below does not use it.
 
 Write $`N(T)=\sum_{0\lt t\le T}m_t`$, $`D_T=N(2T)-N(T)`$, and let $`\mathcal A=A^2+\tfrac12\sum_{a\gt 0}\mu(\{a\})^2`$. Then
 

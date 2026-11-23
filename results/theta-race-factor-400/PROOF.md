@@ -1,6 +1,6 @@
 # Deadline obstructions in the dyadic 547/727 prime race
 
-The $`1{,}020H`$ obstruction and the recurrence statements assume Dirichlet GRH for the eight odd factors of the extension and the factors of the base field, including zeta. Alpöge's announced Dirichlet GRH theorem supplies this input. The first-failure theorem below needs less: only that the eight odd factors have no zero in an explicit region, with the base-field terms bounded unconditionally. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+The $`1{,}020H`$ obstruction and the recurrence statements assume Dirichlet GRH for the eight odd factors of the extension and the factors of the base field, including zeta. The first-failure theorem below needs less: only that the eight odd factors have no zero in an explicit region, with the base-field terms bounded unconditionally.
 
 ## Statement
 

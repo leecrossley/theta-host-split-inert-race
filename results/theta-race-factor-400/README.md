@@ -1,6 +1,6 @@
 # The first missed gain and loss at factor 400 in the 547/727 prime race
 
-Assume the eight odd primitive Dirichlet factors have no zero in the later region of the first-loss theorem. GRH for these factors implies this exclusion, and Alpöge's announced Dirichlet GRH theorem supplies it. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/) The first missed $`400H`$ deadline is then a gain. The first missed loss occurs at more than 26 times the centred log height of that gain. The score is the weighted split–inert prime-ideal race with $`b=r=2`$. Each move must exceed $`1.9735\log2`$ in magnitude and start strictly after $`H`$. [Two directional bounds](PROOF.md#the-first-missed-loss) · [First gain](PROOF.md#the-first-missed-move-at-factor-400)
+Assume the eight odd primitive Dirichlet factors have no zero in the later region of the first-loss theorem. GRH for these factors implies this exclusion, and The first missed $`400H`$ deadline is then a gain. The first missed loss occurs at more than 26 times the centred log height of that gain. The score is the weighted split–inert prime-ideal race with $`b=r=2`$. Each move must exceed $`1.9735\log2`$ in magnitude and start strictly after $`H`$. [Two directional bounds](PROOF.md#the-first-missed-loss) · [First gain](PROOF.md#the-first-missed-move-at-factor-400)
 
 | First missed direction | Bounds on the starting log height $`h=\log(2\sqrt2 H)`$ |
 | --- | --- |
@@ -15,7 +15,7 @@ Two integer sweeps agree on 159,453,395 negative samples. Fourteen individual sa
 
 ## The first missed gain
 
-Assume that the eight odd primitive Dirichlet factors of the 547/727 race have no zero in the explicit region described below. GRH for these functions implies this, and Alpöge's announced Dirichlet GRH theorem supplies it. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume that the eight odd primitive Dirichlet factors of the 547/727 race have no zero in the explicit region described below. GRH for these functions implies this, and
 
 The first starting height $`H_*\ge1`$ at which the dyadic 547/727 race misses a required move by $`400H_*`$ satisfies
 
@@ -38,7 +38,7 @@ The second interval extends a published window that reached $`392.73975\ldots H`
 
 ## The four-digit obstruction
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Dirichlet GRH theorem supplies this input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet functions in the 547/727 race and its base field, including the Riemann zeta function.
 
 At $`b=r=2`$, both a large gain and a small loss occur after the explicit height $`H=e^{3855250213.808}/(2\sqrt2)`$. No doubling that starts after $`H`$ and finishes by $`2e^{6.235}H`$ loses more than $`1.9735\log2`$. The factor is **1,020.60123689658…**. In particular, 1,000 fails. There are arbitrarily late intervals of the same width missing either prescribed direction. [Proof of the four-digit obstruction](PROOF.md#a-four-digit-deadline-and-a-shallow-loss)
 

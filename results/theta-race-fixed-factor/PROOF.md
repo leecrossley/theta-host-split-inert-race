@@ -9,7 +9,7 @@ W(u)=\max(0,\min(2-2/u,4/u-1)),\qquad
 S(y)=\frac1{B\sqrt y}\sum_v-\epsilon_v\log Nv\,W(Nv/y).
 ```
 
-Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function. Alpöge's announced Lean theorem supplies this zero-location input. [Announcement](https://alpo.ge/remark.pdf) [Independent formal checks](https://math.mit.edu/~drew/grh/)
+Assume the generalised Riemann hypothesis (GRH) for the primitive Dirichlet $L$-functions in the 547/727 race and its base field, including the Riemann zeta function.
 
 For every real $`H\ge1`$, there exist $`y_+,y_-\gt H`$ with $`2y_\pm\lt e^{175}H`$ and
 
@@ -22,7 +22,7 @@ The two locations can occur in either order. All logarithms are natural. [Field 
 
 ## Global input and transform
 
-We invoke Alpöge's theorem that every zero of a primitive Dirichlet $`L`$-function in the open critical strip has real part $`1/2`$. It includes the primitive character of modulus 1. The theorem `LFunction_eq_zero_re_of_isPrimitive` uses Mathlib's `DirichletCharacter.LFunction`, which agrees with the ordinary Dirichlet series on $`\Re s\gt 1`$. Andrew Sutherland reports full-module kernel replay, acceptance of the exported solution by nanoda and con-leche, and an independent comparison matching the primitive theorem to the challenge. The axiom report lists propositional extensionality, classical choice and quotient soundness. This paper uses that proved global input. Platt's finite-height result alone leaves the higher spectrum uncontrolled for this fixed window. [Pinned statement](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Statements.lean#L14) · [Theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Main.lean#L12) · [Mathlib identification](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/DirichletContinuation.lean#L75) · [Verification record](https://math.mit.edu/~drew/grh/)
+By the assumed GRH, every zero of a primitive Dirichlet $`L`$-function in the open critical strip has real part $`1/2`$. It includes the primitive character of modulus 1. The pinned formal statement of `LFunction_eq_zero_re_of_isPrimitive` uses Mathlib's `DirichletCharacter.LFunction`, which agrees with the ordinary Dirichlet series on $`\Re s\gt 1`$. This paper uses that global input as a hypothesis. Platt's finite-height result alone leaves the higher spectrum uncontrolled for this fixed window. [Pinned statement](https://github.com/leanprover-community/riemann-hypothesis/blob/371a1a26d5e17f604428e3a8ce6ce341cf517434/src/Statements.lean#L14) · [Mathlib identification](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/DirichletContinuation.lean#L75)
 
 Write $`\chi_p=(\cdot/p)`$ and take the even quartic character $`\xi`$ of conductor 16 with $`\xi(5)=i`$. At primitive conductors the eight factors of $`L=\zeta_E/\zeta_F`$ have characters $`\chi_{547}\xi^j,\chi_{727}\xi^j`$, $`0\le j\lt 4`$. All are odd. The eight base factors of $`\zeta_F`$ have characters $`\xi^j,\chi_{547}\chi_{727}\xi^j`$, including ordinary zeta. Both lists are closed under conjugation.
 
